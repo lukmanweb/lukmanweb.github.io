@@ -370,8 +370,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero-visual {
   position: absolute;
   right: 0;
-  top: 36%; /* Raised from 46% to align the top of the photo with 'Wujudkan Website Impian' */
-  transform: translateY(-40%);
+  top: 40%; /* Lowered from 36% to adjust alignment */
+  transform: translateY(-45%);
   width: 540px; /* Increased from 500px to make it even larger */
   padding-right: 80px;
   padding-left: 20px;
@@ -572,7 +572,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: -65px auto 0; /* Negatif top margin to pull it even higher */
+  margin: -35px auto 0; /* Lowered from -65px to prevent it from going too high */
 }
 .hero-photo-circle {
   width: 82%;
