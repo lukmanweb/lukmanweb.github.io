@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexaChain — Cryptocurrency & Digital Asset Exchange</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030712;
+      --panel: #0b0f19;
+      --panel-light: #151b2c;
+      --primary: #10b981;
+      --primary-glow: rgba(16,185,129,0.15);
+      --accent: #3b82f6;
+      --accent-glow: rgba(59,130,246,0.15);
+      --white: #ffffff;
+      --text-muted: #9ca3af;
+      --border: rgba(255,255,255,0.06);
+      --border-focus: rgba(16,185,129,0.3);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body {
+      background-color: var(--bg);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    h1, h2, h3, .heading-font { font-family: 'Space Grotesk', sans-serif; }
+
+    /* HEADER / NAVBAR */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(3, 7, 18, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .logo span { color: var(--primary); }
+    nav ul { display: flex; gap: 32px; list-style: none; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--primary); }
+    .header-btns { display: flex; gap: 16px; align-items: center; }
+    .btn-text { color: var(--white); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--bg);
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 20px var(--primary-glow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(16,185,129,0.4);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 180px 40px 100px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+    }
+    .hero-glow-1 {
+      position: absolute;
+      top: 10%; right: -10%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+      filter: blur(50px);
+      z-index: -1;
+    }
+    .hero-glow-2 {
+      position: absolute;
+      bottom: 10%; left: -10%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      filter: blur(50px);
+      z-index: -1;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+    .hero-tag span {
+      width: 6px; height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      max-width: 520px;
+    }
+    .hero-btns { display: flex; gap: 20px; }
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.03); border-color: var(--text-muted); }
+
+    /* EXCHANGE MODULE / LIVE CHART PREVIEW */
+    .exchange-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .exchange-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding-bottom: 12px;
+      position: relative;
+    }
+    .tab-btn.active {
+      color: var(--primary);
+    }
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 2px;
+      background: var(--primary);
+    }
+    .input-group {
+      background: var(--panel-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .input-group label { display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; }
+    .input-group input {
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-size: 1.4rem;
+      font-weight: 700;
+      width: 150px;
+      outline: none;
+    }
+    .coin-select {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .coin-icon {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--bg);
+    }
+    .rate-info {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin: 16px 0;
+    }
+    .btn-exchange-action {
+      display: block;
+      width: 100%;
+      background: var(--primary);
+      color: var(--bg);
+      text-align: center;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 20px;
+      box-shadow: 0 4px 20px var(--primary-glow);
+      transition: transform 0.3s;
+    }
+    .btn-exchange-action:hover { transform: translateY(-2px); }
+
+    /* TICKER ROW */
+    .ticker-row {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .ticker-item { display: flex; align-items: center; gap: 14px; }
+    .ticker-icon {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.9rem; color: var(--bg);
+    }
+    .ticker-item.btc .ticker-icon { background: #f7931a; }
+    .ticker-item.eth .ticker-icon { background: #627eea; }
+    .ticker-item.sol .ticker-icon { background: #14f195; }
+    .ticker-item.ada .ticker-icon { background: #0033ad; }
+    .ticker-details h4 { font-size: 0.95rem; margin-bottom: 2px; }
+    .ticker-price { font-size: 0.85rem; color: var(--white); font-weight: 600; }
+    .ticker-change { font-size: 0.78rem; font-weight: 700; margin-left: 6px; }
+    .ticker-change.up { color: var(--primary); }
+    .ticker-change.down { color: #ef4444; }
+
+    /* FOOTER */
+    footer {
+      background: var(--panel);
+      padding: 40px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    footer p { font-size: 0.85rem; color: var(--text-muted); }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero { grid-template-columns: 1fr; padding-top: 140px; text-align: center; gap: 40px; }
+      .hero p { margin: 0 auto 30px; }
+      .hero-btns { justify-content: center; }
+      .exchange-box { max-width: 500px; margin: 0 auto; }
+      header { padding: 16px 20px; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">Nexa<span>Chain</span></a>
+    <nav>
+      <ul>
+        <li><a href="#">Market</a></li>
+        <li><a href="#">Exchange</a></li>
+        <li><a href="#">Fitur</a></li>
+        <li><a href="#">Keamanan</a></li>
+      </ul>
+    </nav>
+    <div class="header-btns">
+      <a href="#" class="btn-text">Masuk</a>
+      <a href="https://wa.me/6285712225565?text=Saya%20tertarik%20dengan%20Website%20CryptoExchange%20NexaChain" target="_blank" class="btn-primary">Mulai Sekarang</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    
+    <div>
+      <div class="hero-tag"><span></span>Platform Investasi Aset Digital Teraman</div>
+      <h1>Investasi &amp; Tukar <span>Aset Kripto</span> Tanpa Batas</h1>
+      <p>Beli, jual, dan kelola portofolio kripto Anda dengan tingkat likuiditas tinggi, biaya transaksi termurah, dan enkripsi keamanan kelas militer.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/6285712225565?text=Saya%20tertarik%20dengan%20Website%20CryptoExchange%20NexaChain" target="_blank" class="btn-primary" style="padding: 14px 32px;">Mulai Trading</a>
+        <a href="#" class="btn-outline">Lihat Market</a>
+      </div>
+    </div>
+
+    <!-- EXCHANGE BOX -->
+    <div class="exchange-box">
+      <div class="exchange-header">
+        <button class="tab-btn active">Beli</button>
+        <button class="tab-btn">Jual</button>
+        <button class="tab-btn">Tukar</button>
+      </div>
+
+      <div class="input-group">
+        <div>
+          <label>Bayar (IDR)</label>
+          <input type="text" value="15.000.000" id="idrInput">
+        </div>
+        <div class="coin-select">
+          <div class="coin-icon" style="background:#2060ff; color:white;">Rp</div>
+          <strong>IDR</strong>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div>
+          <label>Terima (BTC) - Estimasi</label>
+          <input type="text" value="0.016" id="btcOutput" readonly>
+        </div>
+        <div class="coin-select">
+          <div class="coin-icon" style="background:#f7931a; color:white;">₿</div>
+          <strong>BTC</strong>
+        </div>
+      </div>
+
+      <div class="rate-info">
+        1 BTC ≈ Rp 937.500.000 | Biaya Admin: 0.1%
+      </div>
+
+      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20membuat%20website%20CryptoExchange%20seperti%20NexaChain" target="_blank" class="btn-exchange-action">Lanjutkan Pembayaran</a>
+    </div>
+  </section>
+
+  <!-- TICKER ROW -->
+  <div class="ticker-row">
+    <div class="ticker-item btc">
+      <div class="ticker-icon">₿</div>
+      <div class="ticker-details">
+        <h4>BTC/IDR</h4>
+        <span class="ticker-price">Rp 937.500.000 <span class="ticker-change up">+3.14%</span></span>
+      </div>
+    </div>
+    <div class="ticker-item eth">
+      <div class="ticker-icon">Ξ</div>
+      <div class="ticker-details">
+        <h4>ETH/IDR</h4>
+        <span class="ticker-price">Rp 52.400.000 <span class="ticker-change up">+1.85%</span></span>
+      </div>
+    </div>
+    <div class="ticker-item sol">
+      <div class="ticker-icon">S</div>
+      <div class="ticker-details">
+        <h4>SOL/IDR</h4>
+        <span class="ticker-price">Rp 2.150.000 <span class="ticker-change down">-0.42%</span></span>
+      </div>
+    </div>
+    <div class="ticker-item ada">
+      <div class="ticker-icon">A</div>
+      <div class="ticker-details">
+        <h4>ADA/IDR</h4>
+        <span class="ticker-price">Rp 8.900 <span class="ticker-change up">+0.5%</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 NexaChain. All rights reserved. | Design by <a href="../index.html">LukmanHakim JasaWeb</a></p>
+    <p>Hubungi Kami: <a href="mailto:support@nexachain.id">support@nexachain.id</a></p>
+  </footer>
+
+  <script>
+    // Live calculation simulator
+    const idrInput = document.getElementById('idrInput');
+    const btcOutput = document.getElementById('btcOutput');
+
+    idrInput.addEventListener('input', function() {
+      // Clean non-numeric characters for calculation
+      let val = this.value.replace(/\D/g, '');
+      if (val === '') {
+        btcOutput.value = '0.00';
+        return;
+      }
+      
+      // format to IDR string
+      this.value = parseInt(val).toLocaleString('id-ID');
+      
+      // Calculate equivalent BTC (based on 1 BTC = 937,500,000 IDR)
+      let btcVal = (parseInt(val) / 937500000).toFixed(5);
+      btcOutput.value = btcVal;
+    });
+  </script>
+</body>
+</html>
