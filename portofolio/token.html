@@ -3,252 +3,444 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vortex Token — Next-Gen Decentralized Finance Utility Token</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>VortexToken (VRX) — Token Cryptocurrency Presale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #05050f;
-      --panel: #0d0d1f;
-      --primary: #8b5cf6;
-      --primary-glow: rgba(139,92,246,0.25);
-      --secondary: #d946ef;
-      --white: #ffffff;
-      --text-muted: #94a3b8;
-      --border: rgba(255,255,255,0.06);
+      --bg2: #090914;
+      --panel: #0e0e20;
+      --panel2: #13132a;
+      --purple: #8b5cf6;
+      --pink: #d946ef;
+      --grad: linear-gradient(135deg, #8b5cf6, #d946ef);
+      --grad-dim: rgba(139,92,246,0.12);
+      --white: #f1f5f9;
+      --muted: #6b7280;
+      --border: rgba(255,255,255,0.07);
+      --radius: 16px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; }
-    body {
-      background-color: var(--bg);
-      color: var(--white);
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-    h1, h2, h3, .title-font { font-family: 'Space Grotesk', sans-serif; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--white); font-family: 'Outfit', sans-serif; overflow-x: hidden; }
+    h1,h2,h3 { font-family: 'Space Grotesk', sans-serif; }
+    a { text-decoration: none; }
+    .gradient-text { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
     /* HEADER */
     header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(5, 5, 15, 0.7);
-      backdrop-filter: blur(12px);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(5,5,15,0.88); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      padding: 16px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 14px 48px;
+      display: flex; align-items: center; justify-content: space-between;
     }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--white);
-      text-decoration: none;
+    .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 800; }
+    .logo .vx { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.4);
+      color: #f87171; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;
+      margin-left: 10px; text-transform: uppercase; letter-spacing: .06em;
     }
-    .logo span { color: var(--primary); }
-    nav ul { display: flex; gap: 32px; list-style: none; }
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover { color: var(--primary); }
-    .btn-presale {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: var(--white);
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 4px 15px var(--primary-glow);
-      transition: transform 0.3s;
-    }
-    .btn-presale:hover { transform: translateY(-2px); }
+    .live-badge .dot { width: 6px; height: 6px; background: #f87171; border-radius: 50%; animation: blink 1s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.1} }
+    nav { display: flex; gap: 28px; }
+    nav a { color: var(--muted); font-size: 0.88rem; font-weight: 500; transition: color .2s; }
+    nav a:hover { color: var(--white); }
+    .btn-header { background: var(--grad); color: #fff; font-weight: 700; font-size: 0.85rem; padding: 10px 22px; border-radius: 8px; transition: all .3s; }
+    .btn-header:hover { opacity: 0.88; transform: translateY(-1px); }
 
-    /* HERO & PRESALE WIDGET */
-    .hero-section {
-      padding: 180px 40px 100px;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
-      align-items: center;
+    /* HERO */
+    .hero {
+      padding: 160px 48px 90px;
+      display: grid; grid-template-columns: 1fr 420px; gap: 64px;
+      align-items: center; max-width: 1280px; margin: 0 auto;
     }
-    .hero-text h1 {
-      font-size: clamp(2.5rem, 5vw, 4.2rem);
-      line-height: 1.1;
-      margin-bottom: 24px;
+    .hero-left {}
+    .presale-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--grad-dim); border: 1px solid rgba(139,92,246,0.35);
+      color: #a78bfa; font-size: 0.8rem; font-weight: 700;
+      padding: 7px 18px; border-radius: 50px; margin-bottom: 32px;
     }
-    .hero-text h1 span {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-text p {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      margin-bottom: 40px;
-      max-width: 520px;
-    }
-    .hero-btns { display: flex; gap: 20px; }
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--white);
-      padding: 12px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .btn-outline:hover { background: rgba(255,255,255,0.03); }
+    .presale-tag .dot { width: 7px; height: 7px; background: #a78bfa; border-radius: 50%; animation: blink 1.2s infinite; }
+    .hero h1 { font-size: clamp(2.4rem, 4.5vw, 3.6rem); font-weight: 900; line-height: 1.15; margin-bottom: 20px; }
+    .hero p { font-size: 1.05rem; color: var(--muted); line-height: 1.85; max-width: 520px; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-main { background: var(--grad); color: #fff; font-weight: 700; padding: 15px 36px; border-radius: 10px; font-size: 0.95rem; transition: all .3s; }
+    .btn-main:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(139,92,246,0.35); }
+    .btn-sec { border: 1px solid var(--border); color: var(--white); font-weight: 600; padding: 15px 36px; border-radius: 10px; font-size: 0.95rem; transition: all .3s; }
+    .btn-sec:hover { background: rgba(255,255,255,0.05); }
 
-    .widget-box {
-      background: var(--panel);
-      border: 1px solid var(--border);
+    /* PRESALE WIDGET */
+    .presale-widget {
+      background: var(--panel); border: 1px solid rgba(139,92,246,0.2);
+      border-radius: 24px; padding: 36px;
+      box-shadow: 0 0 60px rgba(139,92,246,0.12), 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .widget-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; text-align: center; margin-bottom: 20px; }
+    .progress-label { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+    .progress-label span:last-child { color: #a78bfa; font-weight: 600; }
+    .progress-bar { background: var(--panel2); border-radius: 50px; height: 14px; overflow: hidden; margin-bottom: 4px; }
+    .progress-fill { height: 100%; width: 73%; border-radius: 50px; background: var(--grad); position: relative; animation: fillAnim 2s ease-out; }
+    @keyframes fillAnim { from { width: 0% } to { width: 73% } }
+    .progress-fill::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: rgba(255,255,255,0.4); border-radius: 50px; animation: glow 1.5s ease-in-out infinite; }
+    @keyframes glow { 0%,100%{opacity:0.4} 50%{opacity:1} }
+    .progress-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-bottom: 24px; }
+    .countdown-section { text-align: center; margin-bottom: 24px; }
+    .countdown-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 10px; }
+    .countdown-boxes { display: flex; justify-content: center; gap: 10px; }
+    .cbox { background: var(--panel2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; min-width: 58px; text-align: center; }
+    .cbox .num { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 800; color: #a78bfa; line-height: 1; }
+    .cbox .unit { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-top: 2px; }
+    .rate-info { background: var(--panel2); border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+    .rate-info .lbl { font-size: 0.8rem; color: var(--muted); }
+    .rate-info .val { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: #a78bfa; }
+    .calc-section { margin-bottom: 20px; }
+    .calc-section label { font-size: 0.75rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; display: block; margin-bottom: 6px; }
+    .calc-input-row { display: flex; align-items: center; background: var(--panel2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+    .calc-input-row input { flex: 1; background: transparent; border: none; color: var(--white); font-size: 1.1rem; font-weight: 700; outline: none; font-family: 'Space Grotesk', sans-serif; }
+    .calc-input-row span { color: var(--muted); font-size: 0.85rem; font-weight: 600; }
+    .calc-result { display: flex; align-items: center; background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.2); border-radius: 10px; padding: 12px 16px; }
+    .calc-result input { flex: 1; background: transparent; border: none; font-size: 1.1rem; font-weight: 700; outline: none; font-family: 'Space Grotesk', sans-serif; color: #a78bfa; }
+    .calc-result span { color: #a78bfa; font-size: 0.85rem; font-weight: 700; }
+    .buy-btns { display: flex; flex-direction: column; gap: 10px; }
+    .btn-bnb { background: #f3ba2f; color: #000; font-weight: 800; padding: 14px; border-radius: 10px; text-align: center; font-size: 0.9rem; transition: all .3s; }
+    .btn-bnb:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-usdt { background: #26a17b; color: #fff; font-weight: 800; padding: 14px; border-radius: 10px; text-align: center; font-size: 0.9rem; transition: all .3s; }
+    .btn-usdt:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* STATS BAR */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      gap: 1px; background: var(--border);
+    }
+    .stat-box { background: var(--bg2); padding: 32px; text-align: center; }
+    .stat-box .num { font-family: 'Space Grotesk', sans-serif; font-size: 1.9rem; font-weight: 800; margin-bottom: 6px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .stat-box .lbl { font-size: 0.8rem; color: var(--muted); }
+
+    /* TOKENOMICS */
+    .tokenomics-section { padding: 90px 48px; max-width: 1100px; margin: 0 auto; }
+    .section-badge { display: inline-block; background: var(--grad-dim); border: 1px solid rgba(139,92,246,0.3); color: #a78bfa; font-size: 0.75rem; font-weight: 700; padding: 5px 16px; border-radius: 50px; margin-bottom: 16px; }
+    .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
+    .section-desc { color: var(--muted); max-width: 540px; line-height: 1.7; margin-bottom: 56px; }
+    .tokenomics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .donut-chart-wrap { display: flex; flex-direction: column; align-items: center; }
+    .donut { width: 240px; height: 240px; border-radius: 50%; background: conic-gradient(#8b5cf6 0% 30%, #d946ef 30% 45%, #06b6d4 45% 70%, #f59e0b 70% 90%, #6b7280 90% 100%); position: relative; flex-shrink: 0; box-shadow: 0 0 40px rgba(139,92,246,0.2); }
+    .donut::before { content: ''; position: absolute; inset: 40px; background: var(--panel); border-radius: 50%; }
+    .donut-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .donut-inner .total { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 800; }
+    .donut-inner .sub { font-size: 0.7rem; color: var(--muted); }
+    .token-list { display: flex; flex-direction: column; gap: 16px; }
+    .token-item { display: flex; align-items: center; gap: 14px; }
+    .token-dot { width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0; }
+    .token-name { flex: 1; font-size: 0.9rem; font-weight: 500; }
+    .token-pct { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.95rem; }
+    .token-amount { font-size: 0.78rem; color: var(--muted); margin-top: 1px; }
+
+    /* ROADMAP */
+    .roadmap-section { padding: 80px 48px; background: var(--bg2); border-top: 1px solid var(--border); }
+    .roadmap-section .inner { max-width: 1000px; margin: 0 auto; }
+    .roadmap-line { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 60px; }
+    .roadmap-line::before { content: ''; position: absolute; top: 28px; left: 12.5%; right: 12.5%; height: 2px; background: linear-gradient(90deg, #8b5cf6, #d946ef); border-radius: 2px; }
+    .phase { text-align: center; position: relative; padding: 0 16px; }
+    .phase-dot {
+      width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 20px;
+      background: var(--grad); display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; position: relative; z-index: 1;
+      box-shadow: 0 0 20px rgba(139,92,246,0.4);
+    }
+    .phase.upcoming .phase-dot { background: var(--panel2); border: 2px solid rgba(139,92,246,0.4); box-shadow: none; }
+    .phase-q { font-size: 0.75rem; color: #a78bfa; font-weight: 700; margin-bottom: 6px; }
+    .phase h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .phase ul { list-style: none; }
+    .phase ul li { font-size: 0.78rem; color: var(--muted); margin-bottom: 4px; }
+    .phase.upcoming h3, .phase.upcoming .phase-q { color: var(--muted); }
+
+    /* FAQ */
+    .faq-section { padding: 90px 48px; max-width: 860px; margin: 0 auto; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; transition: border-color .3s; }
+    .faq-item.open { border-color: rgba(139,92,246,0.35); }
+    .faq-q { padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 0.95rem; user-select: none; }
+    .faq-icon { font-size: 1.1rem; color: #a78bfa; transition: transform .3s; flex-shrink: 0; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+    .faq-a p { padding: 0 24px 20px; color: var(--muted); line-height: 1.8; font-size: 0.9rem; }
+
+    /* CTA */
+    .cta-section {
+      margin: 0 48px 80px;
       border-radius: 24px;
-      padding: 36px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(217,70,239,0.2));
+      border: 1px solid rgba(139,92,246,0.25);
+      padding: 72px 60px; text-align: center;
     }
-    .widget-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; text-align: center; }
-    .progress-bar-wrap {
-      background: rgba(255,255,255,0.05);
-      height: 12px;
-      border-radius: 10px;
-      margin: 20px 0;
-      overflow: hidden;
-    }
-    .progress-bar {
-      height: 100%;
-      background: linear-gradient(to right, var(--primary), var(--secondary));
-      width: 73%;
-      border-radius: 10px;
-    }
-    .progress-labels { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); }
-    
-    /* TOKENOMICS Grid */
-    .tokenomics-section {
-      padding: 80px 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      border-top: 1px solid var(--border);
-    }
-    .section-title { text-align: center; margin-bottom: 60px; font-size: 2.2rem; }
-    .section-title span { color: var(--primary); }
-    .token-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .token-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
-    }
-    .token-card h4 { color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 8px; }
-    .token-card .value { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--secondary); }
+    .cta-section h2 { font-size: 2.4rem; font-weight: 900; margin-bottom: 16px; }
+    .cta-section p { color: var(--muted); max-width: 560px; margin: 0 auto 40px; line-height: 1.8; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
     /* FOOTER */
-    footer {
-      background: var(--panel);
-      padding: 40px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    footer p { font-size: 0.85rem; color: var(--text-muted); }
-    footer a { color: var(--primary); text-decoration: none; }
+    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer p { font-size: 0.82rem; color: var(--muted); }
+    footer a { color: #a78bfa; }
 
-    @media (max-width: 992px) {
-      .hero-section { grid-template-columns: 1fr; padding-top: 140px; text-align: center; gap: 40px; }
-      .hero-text p { margin: 0 auto 30px; }
-      .hero-btns { justify-content: center; }
-      .token-grid { grid-template-columns: repeat(2, 1fr); }
+    /* RESPONSIVE */
+    @media(max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; padding: 130px 24px 60px; }
+      .presale-widget { max-width: 100%; }
+      .tokenomics-grid { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: repeat(2,1fr); }
+      .roadmap-line { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .roadmap-line::before { display: none; }
+    }
+    @media(max-width: 768px) {
+      header { padding: 14px 20px; }
+      nav { display: none; }
+      .hero { padding: 110px 20px 60px; }
+      .tokenomics-section, .faq-section, .roadmap-section { padding: 60px 20px; }
+      .cta-section { margin: 0 20px 60px; padding: 48px 24px; }
+      .cta-section h2 { font-size: 1.8rem; }
+      footer { padding: 28px 20px; flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <a href="#" class="logo">Vortex<span>Token</span></a>
-    <nav>
-      <ul>
-        <li><a href="#fitur">Teknologi</a></li>
-        <li><a href="#tokenomics">Tokenomics</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#">Whitepaper</a></li>
-      </ul>
-    </nav>
-    <div class="header-btns">
-      <a href="https://wa.me/6285712225565?text=Saya%20tertarik%20dengan%20Website%20Token%20Crypto%20Vortex" target="_blank" class="btn-presale">Beli Token</a>
-    </div>
-  </header>
+<!-- HEADER -->
+<header>
+  <div style="display:flex; align-items:center; gap: 4px;">
+    <div class="logo"><span class="vx">Vortex</span>Token</div>
+    <div class="live-badge"><span class="dot"></span> Presale Live</div>
+  </div>
+  <nav>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#faq">FAQ</a>
+    <a href="../index.html">Portfolio</a>
+  </nav>
+  <a href="https://wa.me/6285712225565?text=Saya%20ingin%20beli%20Token%20VRX" target="_blank" class="btn-header">🔥 Beli Token Sekarang</a>
+</header>
 
-  <!-- HERO -->
-  <section class="hero-section">
-    <div class="hero-text">
-      <div class="btn-outline" style="display:inline-block; font-size:0.8rem; padding:4px 16px; margin-bottom:20px; border-color:var(--primary); color:var(--primary);">Token Presale Sedang Berlangsung</div>
-      <h1>Masa Depan DeFi Bersama <span>Vortex Token</span></h1>
-      <p>Token utilitas multi-chain generasi terbaru yang dirancang untuk mendukung ekosistem finansial terdesentralisasi yang cepat, aman, dan berbiaya rendah.</p>
-      <div class="hero-btns">
-        <a href="https://wa.me/6285712225565?text=Saya%20ingin%20membuat%20website%20Token%20Crypto%20seperti%20Vortex" target="_blank" class="btn-presale" style="padding:14px 32px; border-radius:8px;">Beli Sekarang</a>
-        <a href="#" class="btn-outline" style="border-radius:8px;">Unduh Whitepaper</a>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="presale-tag"><span class="dot"></span> Presale Stage 1 — 73% Terjual</div>
+    <h1>Token Utilitas<br><span class="gradient-text">Multi-Chain</span><br>Generasi Berikutnya</h1>
+    <p>VortexToken (VRX) adalah token utilitas DeFi yang memungkinkan transaksi lintas blockchain dengan biaya nol, staking rewards hingga 340% APY, dan akses eksklusif ke ekosistem Vortex.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20beli%20Token%20VRX%20saat%20presale" target="_blank" class="btn-main">🚀 Beli Saat Presale</a>
+      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20minta%20whitepaper%20VortexToken" target="_blank" class="btn-sec">📄 Whitepaper</a>
     </div>
-
-    <!-- WIDGET -->
-    <div class="widget-box">
-      <div class="widget-title">Alokasi Presale Publik</div>
-      <div style="font-size:2rem; font-weight:800; text-align:center; color:var(--secondary); margin-bottom:10px;">1 VRX = Rp 150</div>
-      <div class="progress-bar-wrap">
-        <div class="progress-bar"></div>
-      </div>
-      <div class="progress-labels">
-        <span>Terkumpul: 7,300,000 VRX</span>
-        <span>Target: 10,000,000 VRX</span>
-      </div>
-      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20Presale%20Token%20Vortex" target="_blank" class="btn-exchange-action" style="display:block; text-align:center; background:linear-gradient(to right, var(--primary), var(--secondary)); color:white;">Beli dengan USDT/BNB</a>
-    </div>
-  </section>
-
-  <!-- TOKENOMICS -->
-  <section class="tokenomics-section" id="tokenomics">
-    <h2 class="section-title">Struktur <span>Tokenomics</span></h2>
-    <div class="token-grid">
-      <div class="token-card">
-        <h4>Total Supply</h4>
-        <div class="value">1 Milyar</div>
-      </div>
-      <div class="token-card">
-        <h4>Nama Token</h4>
-        <div class="value">Vortex</div>
-      </div>
-      <div class="token-card">
-        <h4>Simbol Token</h4>
-        <div class="value">VRX</div>
-      </div>
-      <div class="token-card">
-        <h4>Jaringan</h4>
-        <div class="value">BSC (BEP20)</div>
+  </div>
+  <div class="presale-widget">
+    <div class="widget-title">💎 Beli VRX — Stage 1</div>
+    <div class="progress-label"><span>Terjual: 730 Juta VRX</span><span>73%</span></div>
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+    <div class="progress-note">Total Presale: 1 Miliar VRX • Sisa: 270 Juta VRX</div>
+    <div class="countdown-section">
+      <div class="countdown-label">⏱ Presale berakhir dalam</div>
+      <div class="countdown-boxes">
+        <div class="cbox"><div class="num" id="cd-d">00</div><div class="unit">Hari</div></div>
+        <div class="cbox"><div class="num" id="cd-h">00</div><div class="unit">Jam</div></div>
+        <div class="cbox"><div class="num" id="cd-m">00</div><div class="unit">Menit</div></div>
+        <div class="cbox"><div class="num" id="cd-s">00</div><div class="unit">Detik</div></div>
       </div>
     </div>
-  </section>
+    <div class="rate-info">
+      <div><div class="lbl">Harga Presale Stage 1</div></div>
+      <div class="val">1 VRX = Rp 150</div>
+    </div>
+    <div class="calc-section">
+      <label>Jumlah IDR yang ingin diinvestasikan</label>
+      <div class="calc-input-row">
+        <input type="text" id="idrIn" value="1.500.000" oninput="calcVrx()">
+        <span>IDR</span>
+      </div>
+      <div class="calc-result">
+        <input type="text" id="vrxOut" value="10.000" readonly>
+        <span>VRX</span>
+      </div>
+    </div>
+    <div class="buy-btns">
+      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20beli%20VRX%20menggunakan%20BNB" target="_blank" class="btn-bnb">⚡ Beli dengan BNB</a>
+      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20beli%20VRX%20menggunakan%20USDT" target="_blank" class="btn-usdt">💵 Beli dengan USDT</a>
+    </div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 Vortex Token. All rights reserved. | Design by <a href="../index.html">LukmanHakim JasaWeb</a></p>
-    <p><a href="mailto:info@vortextoken.io">info@vortextoken.io</a></p>
-  </footer>
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-box"><div class="num">1 Miliar</div><div class="lbl">Total Supply VRX</div></div>
+  <div class="stat-box"><div class="num">730 Juta</div><div class="lbl">VRX Terjual</div></div>
+  <div class="stat-box"><div class="num">4.820</div><div class="lbl">Holder Aktif</div></div>
+  <div class="stat-box"><div class="num">Rp 1,5 T</div><div class="lbl">Target Market Cap</div></div>
+</div>
 
+<!-- TOKENOMICS -->
+<section class="tokenomics-section" id="tokenomics">
+  <div class="section-badge">Tokenomics</div>
+  <div class="section-title">Struktur Alokasi <span class="gradient-text">VRX</span></div>
+  <div class="section-desc">Distribusi token yang transparan dan terancang untuk keberlangsungan ekosistem jangka panjang.</div>
+  <div class="tokenomics-grid">
+    <div class="donut-chart-wrap">
+      <div class="donut">
+        <div class="donut-inner">
+          <div class="total">1 Miliar</div>
+          <div class="sub">Total VRX</div>
+        </div>
+      </div>
+    </div>
+    <div class="token-list">
+      <div class="token-item">
+        <div class="token-dot" style="background:#8b5cf6;"></div>
+        <div><div class="token-name">Presale Publik</div><div class="token-amount">300 Juta VRX</div></div>
+        <div class="token-pct" style="color:#a78bfa;">30%</div>
+      </div>
+      <div class="token-item">
+        <div class="token-dot" style="background:#d946ef;"></div>
+        <div><div class="token-name">Ekosistem &amp; Pengembangan</div><div class="token-amount">250 Juta VRX</div></div>
+        <div class="token-pct" style="color:#e879f9;">25%</div>
+      </div>
+      <div class="token-item">
+        <div class="token-dot" style="background:#06b6d4;"></div>
+        <div><div class="token-name">Likuiditas DEX</div><div class="token-amount">200 Juta VRX</div></div>
+        <div class="token-pct" style="color:#22d3ee;">20%</div>
+      </div>
+      <div class="token-item">
+        <div class="token-dot" style="background:#f59e0b;"></div>
+        <div><div class="token-name">Tim &amp; Advisor (Vesting 24 bulan)</div><div class="token-amount">150 Juta VRX</div></div>
+        <div class="token-pct" style="color:#fbbf24;">15%</div>
+      </div>
+      <div class="token-item">
+        <div class="token-dot" style="background:#6b7280;"></div>
+        <div><div class="token-name">Reserve &amp; Staking Rewards</div><div class="token-amount">100 Juta VRX</div></div>
+        <div class="token-pct" style="color:#9ca3af;">10%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="roadmap-section" id="roadmap">
+  <div class="inner">
+    <div style="text-align:center; margin-bottom: 0;">
+      <div class="section-badge">Roadmap</div>
+      <div class="section-title" style="margin-bottom:0;">Rencana <span class="gradient-text">Pengembangan</span></div>
+    </div>
+    <div class="roadmap-line">
+      <div class="phase">
+        <div class="phase-dot">🚀</div>
+        <div class="phase-q">Q1 2026 ✓</div>
+        <h3>Launch Token</h3>
+        <ul><li>Deploy smart contract</li><li>Presale publik Stage 1</li><li>Audit keamanan CertiK</li></ul>
+      </div>
+      <div class="phase">
+        <div class="phase-dot">📈</div>
+        <div class="phase-q">Q2 2026 ✓</div>
+        <h3>Listing DEX</h3>
+        <ul><li>Listing di PancakeSwap</li><li>Listing di Uniswap</li><li>Program staking live</li></ul>
+      </div>
+      <div class="phase upcoming">
+        <div class="phase-dot">🔗</div>
+        <div class="phase-q">Q3 2026</div>
+        <h3>Integrasi DApp</h3>
+        <ul><li>Vortex DApp v1.0</li><li>Bridge multi-chain</li><li>NFT Marketplace</li></ul>
+      </div>
+      <div class="phase upcoming">
+        <div class="phase-dot">🌐</div>
+        <div class="phase-q">Q4 2026</div>
+        <h3>Mainnet Launch</h3>
+        <ul><li>Vortex Chain mainnet</li><li>Listing CEX tier-1</li><li>DAO governance live</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div style="text-align:center; margin-bottom:48px;">
+    <div class="section-badge">FAQ</div>
+    <div class="section-title">Pertanyaan <span class="gradient-text">Umum</span></div>
+  </div>
+  <div class="faq-item open">
+    <div class="faq-q" onclick="toggleFaq(this)">Apa itu VortexToken (VRX)?<span class="faq-icon">+</span></div>
+    <div class="faq-a" style="max-height:200px"><p>VortexToken (VRX) adalah token utilitas berbasis BNB Smart Chain yang memungkinkan pengguna melakukan transaksi lintas blockchain, staking untuk mendapatkan pasif income, dan akses ke layanan eksklusif dalam ekosistem Vortex. Token ini didesain untuk solusi DeFi (Decentralized Finance) generasi terbaru.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Bagaimana cara membeli VRX saat presale?<span class="faq-icon">+</span></div>
+    <div class="faq-a"><p>Anda bisa membeli VRX langsung melalui halaman ini menggunakan BNB atau USDT. Klik tombol "Beli Sekarang", dan tim kami akan memandu proses transaksi melalui WhatsApp. Minimum pembelian adalah 100 VRX (Rp 15.000). Tidak diperlukan wallet khusus untuk pemula.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Apakah VRX sudah diaudit keamanannya?<span class="faq-icon">+</span></div>
+    <div class="faq-a"><p>Ya. Smart contract VRX telah diaudit oleh CertiK, salah satu perusahaan audit keamanan blockchain terkemuka di dunia. Laporan audit tersedia di whitepaper. Selain itu, kode smart contract bersifat open-source dan dapat diperiksa siapapun di BSCScan.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Kapan VRX akan listing di exchange?<span class="faq-icon">+</span></div>
+    <div class="faq-a"><p>Berdasarkan roadmap, VRX akan listing di PancakeSwap dan Uniswap pada Q2 2026, segera setelah presale Stage 2 selesai. Harga listing akan lebih tinggi dari harga presale Stage 1 (Rp 150), sehingga pembeli presale mendapatkan keuntungan dari selisih harga. Listing CEX tier-1 direncanakan di Q4 2026.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Jangan Lewatkan <span class="gradient-text">Presale</span> Ini!</h2>
+  <p>Harga VRX akan naik 3x saat listing. Investor presale sudah mendapatkan keuntungan 73% dalam 30 hari pertama. Bergabunglah sekarang sebelum kehabisan.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/6285712225565?text=Saya%20ingin%20beli%20VRX%20presale" target="_blank" class="btn-main" style="font-size:1rem; padding:16px 40px;">🚀 Beli Token VRX Sekarang</a>
+    <a href="https://wa.me/6285712225565?text=Saya%20ingin%20minta%20whitepaper%20VortexToken" target="_blank" class="btn-sec" style="font-size:1rem; padding:16px 40px;">📄 Download Whitepaper</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 VortexToken. All rights reserved. <span style="color:#ef4444;">Investasi kripto memiliki risiko. DYOR.</span></p>
+  <p>Demo oleh <a href="../index.html">Lookman Code</a> | <a href="https://wa.me/6285712225565" target="_blank">Hubungi Kami</a></p>
+</footer>
+
+<script>
+  // Countdown Timer ke 2026-08-15
+  function updateCountdown() {
+    const target = new Date('2026-08-15T23:59:59+07:00');
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) { document.getElementById('cd-d').textContent = '00'; return; }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Kalkulator VRX
+  function calcVrx() {
+    const raw = document.getElementById('idrIn').value.replace(/\D/g,'');
+    const idr = parseInt(raw) || 0;
+    const vrx = Math.floor(idr / 150);
+    document.getElementById('vrxOut').value = vrx.toLocaleString('id-ID');
+    document.getElementById('idrIn').value = idr ? idr.toLocaleString('id-ID') : '';
+  }
+
+  // FAQ Accordion
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = '0';
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+  // Init first FAQ open
+  document.querySelector('.faq-item.open .faq-a').style.maxHeight = '200px';
+</script>
 </body>
 </html>
