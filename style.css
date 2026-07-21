@@ -55,12 +55,17 @@
 
 /* ---- Reset & Base ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
 body {
   font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
+  max-width: 100%;
   line-height: 1.6;
 }
 a { text-decoration: none; color: inherit; }
@@ -171,21 +176,28 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
-  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
+  background: var(--primary-50);
+  border: 1px solid rgba(196,18,32,0.15);
+  cursor: pointer;
+  transition: var(--transition);
 }
 .hamburger span {
   display: block;
-  width: 22px;
+  width: 20px;
   height: 2px;
   background: var(--primary);
   border-radius: 2px;
   transition: var(--transition);
 }
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
 
 /* ========== HERO ========== */
 .hero {
@@ -195,7 +207,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: calc(var(--nav-h) + 40px) 24px 80px;
   background: var(--grad-hero);
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   max-width: 100%;
 }
 .hero-bg-orbs { position: absolute; inset: 0; pointer-events: none; }
