@@ -302,8 +302,8 @@ class AutoSlider {
 }
 
 // Init auto sliders
-const layananSlider = new AutoSlider('layananGrid', 344, 3000);
-const portoSlider   = new AutoSlider('portoGrid',   364, 3500);
+const layananSlider = new AutoSlider('layananGrid', 344, 1800);
+const portoSlider   = new AutoSlider('portoGrid',   364, 2000);
 
 // Manual button helper (called from HTML onclick)
 function slideContainer(containerId, direction) {
