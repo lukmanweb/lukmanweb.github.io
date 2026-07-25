@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PunyaLink.id — Satu Link untuk Semua Media Sosial & Bisnis Anda</title>
+  <meta name="description" content="Platform bio link & microsite buatan Indonesia. Kumpulkan link sosial media, jualan online, katalog produk, dan analitik pengunjung dalam satu link cantik.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/profile-logo.jpg" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #090a0f;
+      --bg-card: #12141d;
+      --border: rgba(255, 255, 255, 0.08);
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.4);
+      --accent: #ec4899;
+      --cyan: #06b6d4;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --grad: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    .gtext {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(9, 10, 15, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo-badge {
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 50px;
+      font-weight: 700;
+    }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--grad);
+      color: #fff;
+      font-weight: 700;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      box-shadow: 0 4px 20px var(--primary-glow);
+      transition: all .3s;
+    }
+    .nav-cta:hover { transform: translateY(-2px); opacity: 0.95; }
+
+    /* HERO */
+    .hero {
+      padding: 150px 5% 90px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+    }
+    .hero-bg {
+      position: absolute;
+      top: 10%; right: 5%;
+      width: 450px; height: 450px;
+      background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #a5b4fc;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+
+    /* LINK INPUT PREVIEW FORM */
+    .link-input-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 8px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      max-width: 480px;
+      margin-bottom: 32px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+    .link-input-box span {
+      color: var(--muted);
+      padding-left: 18px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .link-input-box input {
+      background: none;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      flex: 1;
+      padding: 8px;
+    }
+    .btn-claim {
+      background: var(--grad);
+      color: #fff;
+      font-weight: 800;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all .2s;
+    }
+    .btn-claim:hover { opacity: 0.9; }
+
+    /* PHONE SIMULATOR */
+    .phone-mockup {
+      width: 320px;
+      height: 640px;
+      background: #000;
+      border-radius: 48px;
+      border: 10px solid #1e202e;
+      margin: 0 auto;
+      box-shadow: 0 30px 80px rgba(99, 102, 241, 0.3);
+      padding: 24px 16px;
+      position: relative;
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+    .phone-mockup::-webkit-scrollbar { display: none; }
+    .phone-notch {
+      width: 100px;
+      height: 18px;
+      background: #1e202e;
+      border-radius: 0 0 12px 12px;
+      margin: -24px auto 20px;
+    }
+    .profile-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 12px;
+      border: 3px solid var(--primary);
+    }
+    .profile-name { text-align: center; font-size: 1.1rem; font-weight: 800; }
+    .profile-bio { text-align: center; font-size: 0.78rem; color: var(--muted); margin-bottom: 20px; }
+    
+    .bio-link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      padding: 14px 18px;
+      border-radius: 16px;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: all .3s;
+    }
+    .bio-link-btn:hover {
+      background: var(--grad);
+      border-color: transparent;
+      transform: scale(1.02);
+    }
+
+    /* FEATURES */
+    .features { padding: 90px 5%; background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); }
+    .sec-top { text-align: center; margin-bottom: 56px; }
+    .sec-tag {
+      display: inline-block;
+      background: rgba(236, 72, 153, 0.12);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+    .sec-top h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; font-weight: 800; }
+    .fgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1100px; margin: 0 auto; }
+    .fcard {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      transition: all .3s;
+    }
+    .fcard:hover { border-color: var(--primary); transform: translateY(-4px); }
+    .ficon { font-size: 2.4rem; margin-bottom: 18px; }
+    .fcard h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 10px; }
+    .fcard p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+    /* CTA */
+    .cta-box {
+      margin: 0 5% 90px;
+      background: var(--grad);
+      border-radius: 28px;
+      padding: 72px 20px;
+      text-align: center;
+      box-shadow: 0 20px 60px var(--primary-glow);
+    }
+    .cta-box h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; color: #fff; margin-bottom: 14px; }
+    .cta-box p { color: rgba(255,255,255,0.85); max-width: 500px; margin: 0 auto 32px; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 40px 5%; text-align: center; color: var(--muted); font-size: 0.85rem; }
+    footer a { color: var(--primary); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .fgrid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">PunyaLink<span class="gtext">.id</span> <span class="logo-badge">PRO</span></div>
+  <div class="nav-links">
+    <a href="#fitur">Fitur</a>
+    <a href="#template">Template</a>
+    <a href="#harga">Harga</a>
+  </div>
+  <a href="https://wa.me/6285712225565?text=Saya%20tertarik%20membuat%20website%20Bio%20Link%20PunyaLink.id" target="_blank" class="nav-cta">🚀 Buat Bio Link</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div>
+    <div class="hero-badge">✨ Platform Bio Link #1 di Indonesia</div>
+    <h1>Satu Link untuk <br><span class="gtext">Semua Bisnis</span> & Sosmed Anda</h1>
+    <p>PunyaLink.id membantu Anda mengumpulkan katalog produk, tautan WhatsApp, Tokopedia, Instagram, & TikTok dalam satu microsite cantik & cepat.</p>
+    
+    <div class="link-input-box">
+      <span>punyalink.id/</span>
+      <input type="text" id="customSlug" placeholder="namatokoanda" value="katalogku">
+      <button class="btn-claim" onclick="window.open('https://wa.me/6285712225565?text=Saya%20ingin%20klaim%20link%20punyalink.id/'+document.getElementById('customSlug').value, '_blank')">Klaim Link →</button>
+    </div>
+
+    <div style="display:flex; gap:24px; font-size:0.85rem; color:var(--muted);">
+      <div>⚡ <strong>100%</strong> Responsif Mobile</div>
+      <div>📈 <strong>Statistik</strong> Analytics</div>
+      <div>💳 <strong>Integrasi</strong> Payment</div>
+    </div>
+  </div>
+
+  <div>
+    <!-- MOCKUP PHONE DEMO -->
+    <div class="phone-mockup">
+      <div class="phone-notch"></div>
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80" alt="Avatar" class="profile-avatar">
+      <div class="profile-name">Katalog Fashionku ✨</div>
+      <div class="profile-bio">Official Store • Baju Muslim & Casual Premium. Pengiriman ke Seluruh Indonesia.</div>
+      
+      <a href="https://wa.me/6285712225565" target="_blank" class="bio-link-btn"><span>💬 Order via WhatsApp Admin</span> <span>→</span></a>
+      <a href="https://wa.me/6285712225565" target="_blank" class="bio-link-btn"><span>🛍️ Katalog Shopee Official</span> <span>→</span></a>
+      <a href="https://wa.me/6285712225565" target="_blank" class="bio-link-btn"><span>📦 Cek Resi & Pengiriman</span> <span>→</span></a>
+      <a href="https://wa.me/6285712225565" target="_blank" class="bio-link-btn"><span>🔥 Promo Diskon 50% Minggu Ini</span> <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="fitur">
+  <div class="sec-top">
+    <div class="sec-tag">KEUNGGULAN</div>
+    <h2>Fitur Unggulan PunyaLink<span class="gtext">.id</span></h2>
+  </div>
+  <div class="fgrid">
+    <div class="fcard">
+      <div class="ficon">🎨</div>
+      <h3>Kustomisasi Desain Bebas</h3>
+      <p>Pilih tema warna, gaya tombol, font, dan latar belakang sesuai dengan branding bisnis Anda tanpa koding.</p>
+    </div>
+    <div class="fcard">
+      <div class="ficon">📊</div>
+      <h3>Analitik Pengunjung Realtime</h3>
+      <p>Pantau jumlah klik, lokasi pengunjung, dan link mana yang paling banyak disukai calon pembeli Anda.</p>
+    </div>
+    <div class="fcard">
+      <div class="ficon">🛍️</div>
+      <h3>Katalog Produk & Kasir WA</h3>
+      <p>Tampilkan gambar produk dengan harga dan tombol 'Beli' yang langsung mengarahkan pesanan ke WhatsApp Anda.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-box">
+  <h2>Tingkatkan Konversi Penjualan Anda</h2>
+  <p>Miliki microsite PunyaLink.id profesional dalam waktu kurang dari 24 jam bersama LukmanWeb.</p>
+  <a href="https://wa.me/6285712225565?text=Saya%20ingin%20pesan%20website%20PunyaLink.id" target="_blank" style="background:#fff; color:#000; font-weight:800; padding:14px 32px; border-radius:50px; display:inline-block;">💬 Pesan Sekarang via WhatsApp</a>
+</div>
+
+<footer>
+  <p>&copy; 2026 PunyaLink.id. Demo Portofolio oleh <a href="../index.html">LukmanWeb</a>.</p>
+</footer>
+
+</body>
+</html>
