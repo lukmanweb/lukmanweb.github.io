@@ -18,6 +18,7 @@
   <meta name="googlebot" content="index, follow" />
   <meta name="author" content="Lukman Web" />
   <link rel="canonical" href="https://lukmanweb.github.io" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -41,11 +42,12 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Lukman Web",
+    "description": "Jasa pembuatan website profesional, cepat, murah & berkualitas tinggi. Spesialis Landing Page, Company Profile, E-Commerce, Portofolio & Aplikasi Web.",
     "image": "https://lukmanweb.github.io/assets/og-banner.jpg",
     "@id": "https://lukmanweb.github.io/#web",
     "url": "https://lukmanweb.github.io",
     "telephone": "+6285712225565",
-    "priceRange": "$$",
+    "priceRange": "Rp 500.000 - Rp 5.000.000",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Krakal Mukti RT25 RW08, Ds. Sruwen",
@@ -56,18 +58,33 @@
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     },
+    "sameAs": [
+      "https://wa.me/6285712225565"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Indonesia"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Layanan Pembuatan Website",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Landing Page", "price": "500000", "priceCurrency": "IDR" },
+        { "@type": "Offer", "name": "Company Profile", "price": "1500000", "priceCurrency": "IDR" },
+        { "@type": "Offer", "name": "Toko Online / E-Commerce", "price": "3000000", "priceCurrency": "IDR" }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Open Graph extras -->
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:site_name" content="Lukman Web" />
+
   <!-- Meta Pixel Code (Facebook & Instagram Ads) -->
   <script>
     !function(f,b,e,v,n,t,s)
