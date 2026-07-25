@@ -1,5 +1,5 @@
 /**
- * PORTAL KALTIM - OFFICIAL DUMMY CLONE SCRIPT
+ * PORTAL KALTIM - OFFICIAL WEBSITE SCRIPT
  */
 
 document.addEventListener('DOMContentLoaded', () => {
