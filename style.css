@@ -722,11 +722,33 @@ section { padding: 90px 0; }
 /* ========== LAYANAN ========== */
 .layanan { background: var(--bg-alt); }
 .layanan-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   gap: 24px;
+  padding: 12px 4px 24px 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--border-light);
+}
+.layanan-grid::-webkit-scrollbar, .porto-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.layanan-grid::-webkit-scrollbar-track, .porto-grid::-webkit-scrollbar-track {
+  background: var(--border-light);
+  border-radius: 10px;
+}
+.layanan-grid::-webkit-scrollbar-thumb, .porto-grid::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
 }
 .layanan-card {
+  flex: 0 0 320px !important;
+  min-width: 320px !important;
+  max-width: 320px !important;
+  scroll-snap-align: start;
   background: white;
   border-radius: var(--radius-lg);
   padding: 30px 28px 26px;
@@ -870,11 +892,22 @@ section { padding: 90px 0; }
   box-shadow: 0 4px 14px rgba(196,18,32,0.3);
 }
 .porto-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 28px;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 24px;
+  padding: 12px 4px 24px 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--border-light);
 }
 .porto-item {
+  flex: 0 0 340px !important;
+  min-width: 340px !important;
+  max-width: 340px !important;
+  scroll-snap-align: start;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -882,11 +915,54 @@ section { padding: 90px 0; }
   border: 1.5px solid var(--border-light);
   transition: var(--transition);
 }
+
+/* Header & Controls for Sliders */
+.section-header-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.section-header-wrap .section-header {
+  text-align: left;
+  margin-bottom: 0;
+}
+.section-header-wrap .section-desc {
+  margin: 0;
+}
+.slider-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.slider-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+  border: 1.5px solid var(--border-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.slider-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
 .porto-item:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-xl);
 }
-.porto-item.hidden { display: none; }
+.porto-item.hidden { opacity: 0.4; pointer-events: none; }
 .porto-thumb {
   height: 220px;
   position: relative;
@@ -1723,8 +1799,7 @@ a.kontak-item:hover {
   .stat-item { min-width: 70px; }
 
   section { padding: 50px 0; width: 100%; overflow-x: hidden; }
-  .layanan-grid { grid-template-columns: 1fr; }
-  .porto-grid { grid-template-columns: 1fr; }
+  .layanan-grid, .porto-grid { padding-left: 0 !important; padding-right: 0 !important; }
   .harga-grid { grid-template-columns: 1fr; }
   .harga-card.popular { transform: none; }
   .testi-grid { grid-template-columns: 1fr; }
@@ -1732,6 +1807,9 @@ a.kontak-item:hover {
   .proses-arrow { transform: rotate(90deg); }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; text-align: center; }
+
+  .section-header-wrap { flex-direction: column; align-items: flex-start; }
+  .slider-controls { align-self: flex-end; }
 
   .cta-buttons { flex-direction: column; align-items: center; width: 100%; }
 }

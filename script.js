@@ -238,3 +238,12 @@ document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
   });
 });
 
+// ---- Slider Horizontal Scroll Function ----
+function slideContainer(containerId, direction) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const amount = direction === 'left' ? -340 : 340;
+  container.scrollBy({ left: amount, behavior: 'smooth' });
+}
+
+

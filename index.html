@@ -196,10 +196,20 @@
   <!-- ===== LAYANAN SECTION ===== -->
   <section class="layanan" id="layanan">
     <div class="container">
-      <div class="section-header">
-        <div class="section-badge">Layanan Kami</div>
-        <h2 class="section-title">Solusi Digital <span class="gradient-text">Lengkap</span> untuk Bisnis Anda</h2>
-        <p class="section-desc">Kami menyediakan berbagai jenis website yang disesuaikan dengan kebutuhan bisnis Anda</p>
+      <div class="section-header-wrap">
+        <div class="section-header">
+          <div class="section-badge">Layanan Kami</div>
+          <h2 class="section-title">Solusi Digital <span class="gradient-text">Lengkap</span> untuk Bisnis Anda</h2>
+          <p class="section-desc">Kami menyediakan berbagai jenis website yang disesuaikan dengan kebutuhan bisnis Anda</p>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" onclick="slideContainer('layananGrid', 'left')" aria-label="Sebelumnya">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="slider-btn" onclick="slideContainer('layananGrid', 'right')" aria-label="Selanjutnya">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
       <div class="layanan-grid" id="layananGrid">
 
@@ -449,20 +459,20 @@
   <!-- ===== PORTOFOLIO SECTION ===== -->
   <section class="portofolio" id="portofolio">
     <div class="container">
-      <div class="section-header">
-        <div class="section-badge">Portofolio</div>
-        <h2 class="section-title">Karya <span class="gradient-text">Terbaik</span> Kami</h2>
-        <p class="section-desc">Koleksi website profesional yang telah kami bangun untuk berbagai klien</p>
-      </div>
-
-      <div class="porto-filter" id="portoFilter">
-        <button class="filter-btn active" data-filter="all" id="filter-all">Semua</button>
-        <button class="filter-btn" data-filter="company" id="filter-company">Company Profile</button>
-        <button class="filter-btn" data-filter="food" id="filter-food">Restoran & FnB</button>
-        <button class="filter-btn" data-filter="edu" id="filter-edu">Pendidikan</button>
-        <button class="filter-btn" data-filter="service" id="filter-service">Jasa & Layanan</button>
-        <button class="filter-btn" data-filter="ecomm" id="filter-ecomm">E-Commerce</button>
-        <button class="filter-btn" data-filter="app" id="filter-app">Aplikasi</button>
+      <div class="section-header-wrap">
+        <div class="section-header">
+          <div class="section-badge">Portofolio</div>
+          <h2 class="section-title">Karya <span class="gradient-text">Terbaik</span> Kami</h2>
+          <p class="section-desc">Koleksi website profesional yang telah kami bangun untuk berbagai klien</p>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" onclick="slideContainer('portoGrid', 'left')" aria-label="Sebelumnya">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="slider-btn" onclick="slideContainer('portoGrid', 'right')" aria-label="Selanjutnya">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
       <div class="porto-grid" id="portoGrid">
 
