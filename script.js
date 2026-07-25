@@ -238,12 +238,76 @@ document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
   });
 });
 
-// ---- Slider Horizontal Scroll Function ----
-function slideContainer(containerId, direction) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  const amount = direction === 'left' ? -340 : 340;
-  container.scrollBy({ left: amount, behavior: 'smooth' });
+// ---- Auto Slider System ----
+class AutoSlider {
+  constructor(containerId, itemWidth = 344, interval = 3000) {
+    this.container = document.getElementById(containerId);
+    this.itemWidth = itemWidth;
+    this.interval = interval;
+    this.timer = null;
+    this.isPaused = false;
+
+    if (!this.container) return;
+    this._bindEvents();
+    this._start();
+  }
+
+  _start() {
+    this.timer = setInterval(() => {
+      if (this.isPaused) return;
+      this._scrollNext();
+    }, this.interval);
+  }
+
+  _scrollNext() {
+    const el = this.container;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    if (el.scrollLeft >= maxScroll - 10) {
+      // Loop back to start smoothly
+      el.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      el.scrollBy({ left: this.itemWidth, behavior: 'smooth' });
+    }
+  }
+
+  _scrollPrev() {
+    const el = this.container;
+    if (el.scrollLeft <= 10) {
+      // Jump to end
+      el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
+    } else {
+      el.scrollBy({ left: -this.itemWidth, behavior: 'smooth' });
+    }
+  }
+
+  _bindEvents() {
+    // Pause on hover
+    this.container.addEventListener('mouseenter', () => { this.isPaused = true; });
+    this.container.addEventListener('mouseleave', () => { this.isPaused = false; });
+    // Pause on touch
+    this.container.addEventListener('touchstart', () => { this.isPaused = true; }, { passive: true });
+    this.container.addEventListener('touchend', () => {
+      setTimeout(() => { this.isPaused = false; }, 2000);
+    });
+  }
+
+  slide(direction) {
+    this.isPaused = true;
+    if (direction === 'right') this._scrollNext();
+    else this._scrollPrev();
+    // Resume after 4 seconds of manual interaction
+    clearTimeout(this._resumeTimer);
+    this._resumeTimer = setTimeout(() => { this.isPaused = false; }, 4000);
+  }
 }
 
+// Init auto sliders
+const layananSlider = new AutoSlider('layananGrid', 344, 3000);
+const portoSlider   = new AutoSlider('portoGrid',   364, 3500);
+
+// Manual button helper (called from HTML onclick)
+function slideContainer(containerId, direction) {
+  if (containerId === 'layananGrid') layananSlider.slide(direction);
+  else if (containerId === 'portoGrid') portoSlider.slide(direction);
+}
 
