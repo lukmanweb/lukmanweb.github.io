@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Kaltim - Website Resmi Pemerintah Provinsi Kalimantan Timur</title>
+  <meta name="description" content="Selamat datang di Portal Kaltim, Dapatkan informasi dan layanan publik apapun seputar Provinsi Kalimantan Timur dengan fungsi pencarian.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://kaltimprov.go.id/images/logofavicon.png">
+  
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Emergency Bar -->
+  <div class="top-bar">
+    <div class="top-bar-info">
+      <span><i class="bi bi-geo-alt-fill" style="color: var(--accent-gold);"></i> Samarinda, Ibu Kota Prov. Kalimantan Timur</span>
+      <span><i class="bi bi-envelope-fill" style="color: var(--accent-gold);"></i> humas@kaltimprov.go.id</span>
+      <span><i class="bi bi-clock-fill" style="color: var(--accent-gold);"></i> Senin - Jumat: 08:00 - 16:00 WITA</span>
+    </div>
+    <div class="top-bar-emergency">
+      <i class="bi bi-telephone-outbound-fill"></i> Panggilan Darurat: <strong>112</strong>
+    </div>
+  </div>
+
+  <!-- Main Sticky Navbar -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">
+      <img src="https://kaltimprov.go.id/images/logofavicon.png" alt="Emblem Pemprov Kaltim" class="logo-img">
+      <div class="brand-text">
+        <h1>PORTAL KALTIM</h1>
+        <p>Pemerintah Provinsi Kalimantan Timur</p>
+      </div>
+    </a>
+
+    <button class="mobile-toggle" aria-label="Toggle Navigation">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="#" class="nav-link active"><i class="bi bi-house-door-fill"></i> Beranda</a></li>
+      
+      <!-- Profil Dropdown -->
+      <li class="nav-item">
+        <a href="#profil" class="nav-link">Profil <i class="bi bi-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="#profil" class="dropdown-item" onclick="showToast('Menampilkan Sejarah Kaltim')"><i class="bi bi-clock-history"></i> Sejarah</a>
+          <a href="#profil" class="dropdown-item" onclick="showToast('Menampilkan Visi & Misi Kaltim')"><i class="bi bi-compass-fill"></i> Visi & Misi</a>
+          <a href="#profil" class="dropdown-item" onclick="showToast('Menampilkan Kondisi Wilayah')"><i class="bi bi-map-fill"></i> Kondisi Wilayah</a>
+          <a href="#profil" class="dropdown-item" onclick="showToast('Menampilkan Tugas dan Fungsi')"><i class="bi bi-diagram-3-fill"></i> Tugas & Fungsi</a>
+          <a href="#profil" class="dropdown-item" onclick="showToast('Menampilkan Lambang Daerah')"><i class="bi bi-shield-check"></i> Lambang Daerah</a>
+          <a href="#pimpinan" class="dropdown-item"><i class="bi bi-building"></i> Struktur Organisasi</a>
+          <a href="#kontak" class="dropdown-item"><i class="bi bi-person-vcard-fill"></i> Alamat & Kontak</a>
+        </div>
+      </li>
+
+      <!-- Pemerintahan Dropdown -->
+      <li class="nav-item">
+        <a href="#pemerintahan" class="nav-link">Pemerintahan <i class="bi bi-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="#pimpinan" class="dropdown-item"><i class="bi bi-person-badge"></i> Pj. Gubernur</a>
+          <a href="#pimpinan" class="dropdown-item"><i class="bi bi-briefcase-fill"></i> Sekretaris Daerah</a>
+          <a href="#layanan" class="dropdown-item"><i class="bi bi-journal-text"></i> Perangkat Daerah (OPD)</a>
+          <a href="#kabupaten" class="dropdown-item"><i class="bi bi-geo-fill"></i> 10 Kabupaten / Kota</a>
+          <a href="https://jdih.kaltimprov.go.id" target="_blank" class="dropdown-item"><i class="bi bi-journal-bookmark-fill"></i> Produk Hukum (JDIH)</a>
+        </div>
+      </li>
+
+      <!-- Media Center Dropdown -->
+      <li class="nav-item">
+        <a href="#berita" class="nav-link">Media Center <i class="bi bi-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="#berita" class="dropdown-item" onclick="document.querySelector('[data-filter=berita]').click()"><i class="bi bi-newspaper"></i> Berita Terkini</a>
+          <a href="#berita" class="dropdown-item" onclick="document.querySelector('[data-filter=pers]').click()"><i class="bi bi-megaphone-fill"></i> Siaran Pers</a>
+          <a href="#berita" class="dropdown-item" onclick="document.querySelector('[data-filter=pengumuman]').click()"><i class="bi bi-bell-fill"></i> Pengumuman</a>
+          <a href="#berita" class="dropdown-item" onclick="document.querySelector('[data-filter=infografis]').click()"><i class="bi bi-image-fill"></i> Info Grafis</a>
+        </div>
+      </li>
+
+      <!-- Layanan Dropdown -->
+      <li class="nav-item">
+        <a href="#layanan" class="nav-link">Layanan <i class="bi bi-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="#layanan" class="dropdown-item"><i class="bi bi-car-front-fill"></i> Pajak Kendaraan (Bapenda)</a>
+          <a href="#layanan" class="dropdown-item"><i class="bi bi-file-earmark-check-fill"></i> Perizinan DPMPTSP</a>
+          <a href="#layanan" class="dropdown-item"><i class="bi bi-briefcase"></i> Bursa Kerja Kaltim</a>
+          <a href="#layanan" class="dropdown-item"><i class="bi bi-hospital-fill"></i> RSUD AWS & RSUD Kanujoso</a>
+          <a href="#layanan" class="dropdown-item"><i class="bi bi-chat-right-quote-fill"></i> SP4N LAPOR!</a>
+          <a href="#layanan" class="dropdown-item"><i class="bi bi-globe-asia-australia"></i> Geospasial Kaltim</a>
+        </div>
+      </li>
+
+      <!-- Ekonomi -->
+      <li class="nav-item">
+        <a href="#layanan" class="nav-link">Ekonomi <i class="bi bi-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="#layanan" class="dropdown-item"><i class="bi bi-graph-up-arrow"></i> Proyek Strategis</a>
+          <a href="#layanan" class="dropdown-item"><i class="bi bi-bank"></i> BUMD Kaltim</a>
+          <a href="#layanan" class="dropdown-item"><i class="bi bi-buildings-fill"></i> Kawasan Industri Kariangau</a>
+        </div>
+      </li>
+
+      <!-- PPID -->
+      <li class="nav-item">
+        <a href="https://ppid.kaltimprov.go.id" target="_blank" class="nav-link"><i class="bi bi-info-circle-fill"></i> PPID</a>
+      </li>
+
+      <!-- Wisata -->
+      <li class="nav-item">
+        <a href="#kabupaten" class="nav-link"><i class="bi bi-tree-fill"></i> Wisata</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Banner Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <p class="hero-subtitle">Semua Dalam Genggaman</p>
+        <h2 class="hero-title">
+          Layanan <br>
+          <span class="animated-word">Publik</span>
+        </h2>
+        <p class="hero-desc">
+          Selamat datang di Portal Kaltim. Dapatkan informasi resmi dan berbagai layanan publik seputar Provinsi Kalimantan Timur dengan mudah dan cepat.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="search-box-wrap">
+          <i class="bi bi-search" style="color: rgba(255,255,255,0.7); font-size: 1.2rem;"></i>
+          <input type="text" id="heroSearchInput" class="search-input" placeholder="Cari layanan, berita, atau informasi publik disini..." autocomplete="off">
+          <button type="button" id="heroSearchBtn" class="search-btn">
+            <span>Cari</span> <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Badges -->
+        <div class="hero-badges">
+          <div class="badge-item"><i class="bi bi-check-circle-fill"></i> 100+ Layanan Publik Digital</div>
+          <div class="badge-item"><i class="bi bi-check-circle-fill"></i> Keterbukaan Informasi Publik</div>
+          <div class="badge-item"><i class="bi bi-check-circle-fill"></i> Kaltim Green & Sustainable</div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Emblem & Card -->
+      <div class="hero-visual">
+        <div class="hero-card-frame">
+          <img src="https://kaltimprov.go.id/images/logofavicon.png" alt="Lambang Kalimantan Timur" class="emblem-large">
+          <h3>PROVINSI KALIMANTAN TIMUR</h3>
+          <p>Mitra Strategis Ibu Kota Nusantara (IKN)</p>
+
+          <div class="hero-quick-stats">
+            <div class="stat-item">
+              <h4>10</h4>
+              <p>Kab / Kota</p>
+            </div>
+            <div class="stat-item">
+              <h4>34</h4>
+              <p>Dinas / OPD</p>
+            </div>
+            <div class="stat-item">
+              <h4>3.9M+</h4>
+              <p>Penduduk</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Public Services Section (Layanan Unggulan) -->
+  <section id="layanan" class="section">
+    <div class="section-header">
+      <span class="section-badge">Kemudahan Akses</span>
+      <h2 class="section-title">Layanan Publik Unggulan</h2>
+      <p class="section-subtitle">Akses instan ke berbagai portal layanan digital resmi Pemerintah Provinsi Kalimantan Timur.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service Card 1 -->
+      <div class="service-card" onclick="openServiceDetail('Pajak Kendaraan (SIMPATOR)', 'Cek pajak kendaraan bermotor dan pembayaran secara daring melalui Bapenda Prov. Kaltim.', 'https://bapenda.kaltimprov.go.id/')">
+        <div class="service-icon-wrap">
+          <i class="bi bi-car-front-fill"></i>
+        </div>
+        <h3>Pajak Kendaraan (SIMPATOR)</h3>
+        <p>Layanan cek dan bayar Pajak Kendaraan Bermotor (PKB) online Bapenda Kalimantan Timur.</p>
+        <span class="service-link">Akses Layanan <i class="bi bi-arrow-right"></i></span>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="service-card" onclick="openServiceDetail('Perizinan Online (DPMPTSP)', 'Layanan perizinan dan penanaman modal terpadu satu pintu Provinsi Kalimantan Timur.', 'https://dpmptsp.kaltimprov.go.id/')">
+        <div class="service-icon-wrap">
+          <i class="bi bi-clipboard-check-fill"></i>
+        </div>
+        <h3>Perizinan DPMPTSP</h3>
+        <p>Portal pelayanan perizinan berusaha dan investasi terpadu bagi para pelaku usaha.</p>
+        <span class="service-link">Akses Layanan <i class="bi bi-arrow-right"></i></span>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="service-card" onclick="openServiceDetail('SP4N LAPOR! Kaltim', 'Layanan pengaduan dan aspirasi masyarakat terintegrasi secara nasional.', 'https://kaltimprov.lapor.go.id')">
+        <div class="service-icon-wrap">
+          <i class="bi bi-chat-right-quote-fill"></i>
+        </div>
+        <h3>SP4N LAPOR! Kaltim</h3>
+        <p>Sampaikan laporan, keluhan, dan aspirasi Anda secara aman dan terpantau langsung.</p>
+        <span class="service-link">Akses Layanan <i class="bi bi-arrow-right"></i></span>
+      </div>
+
+      <!-- Service Card 4 -->
+      <div class="service-card" onclick="openServiceDetail('Bursa Kerja Infokerja', 'Portal lowongan kerja dan pelatihan kerja resmi Dinas Tenaga Kerja dan Transmigrasi Kaltim.', 'https://www.infokerja-kaltim.com/home/')">
+        <div class="service-icon-wrap">
+          <i class="bi bi-briefcase-fill"></i>
+        </div>
+        <h3>Bursa Kerja Kaltim</h3>
+        <p>Temukan informasi lowongan pekerjaan dan program peningkatan keterampilan kerja.</p>
+        <span class="service-link">Akses Layanan <i class="bi bi-arrow-right"></i></span>
+      </div>
+
+      <!-- Service Card 5 -->
+      <div class="service-card" onclick="openServiceDetail('PPID Utama Kaltim', 'Portal Pejabat Pengelola Informasi dan Dokumentasi Pemerintah Provinsi Kaltim.', 'https://ppid.kaltimprov.go.id/')">
+        <div class="service-icon-wrap">
+          <i class="bi bi-journal-text"></i>
+        </div>
+        <h3>PPID Kaltim</h3>
+        <p>Permohonan informasi publik dan dokumen resmi pemerintahan secara terbuka.</p>
+        <span class="service-link">Akses Layanan <i class="bi bi-arrow-right"></i></span>
+      </div>
+
+      <!-- Service Card 6 -->
+      <div class="service-card" onclick="openServiceDetail('RSUD Abdul Wahab Sjahranie', 'Rumah Sakit Umum Daerah rujukan utama di Samarinda dengan fasilitas medis modern.', 'https://rsudaws.co.id/')">
+        <div class="service-icon-wrap">
+          <i class="bi bi-hospital-fill"></i>
+        </div>
+        <h3>RSUD AWS Samarinda</h3>
+        <p>Informasi pendaftaran berobat online, jadwal dokter, dan layanan fasilitas kesehatan.</p>
+        <span class="service-link">Akses Layanan <i class="bi bi-arrow-right"></i></span>
+      </div>
+
+      <!-- Service Card 7 -->
+      <div class="service-card" onclick="openServiceDetail('Satu Data Kaltim', 'Portal integrasi data statistik dan sektoral Pemerintah Provinsi Kalimantan Timur.', 'http://data.kaltimprov.go.id/')">
+        <div class="service-icon-wrap">
+          <i class="bi bi-database-fill-check"></i>
+        </div>
+        <h3>Satu Data Kaltim</h3>
+        <p>Akses data statistik daerah, indikator pembangunan, dan data terbuka (Open Data).</p>
+        <span class="service-link">Akses Layanan <i class="bi bi-arrow-right"></i></span>
+      </div>
+
+      <!-- Service Card 8 -->
+      <div class="service-card" onclick="openServiceDetail('Geospasial Kaltim', 'Sistem Informasi Geografis dan Peta Tematik Wilayah Kalimantan Timur.', 'https://kaltimprov.go.id/geospasial')">
+        <div class="service-icon-wrap">
+          <i class="bi bi-globe-asia-australia"></i>
+        </div>
+        <h3>Geospasial Kaltim</h3>
+        <p>Peta interaktif tataguna lahan, batas wilayah, dan tata ruang Provinsi Kaltim.</p>
+        <span class="service-link">Akses Layanan <i class="bi bi-arrow-right"></i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Center & News Section -->
+  <section id="berita" class="section bg-light-alt">
+    <div class="section-header">
+      <span class="section-badge">Media Center</span>
+      <h2 class="section-title">Kaltim Hari Ini</h2>
+      <p class="section-subtitle">Kabar terbaru, siaran pers, dan pengumuman resmi dari Pemerintah Provinsi Kalimantan Timur.</p>
+    </div>
+
+    <!-- Tabs Filter -->
+    <div class="tabs-header">
+      <button class="tab-btn active" data-filter="all"><i class="bi bi-grid-fill"></i> Semua</button>
+      <button class="tab-btn" data-filter="berita"><i class="bi bi-newspaper"></i> Berita Terkini</button>
+      <button class="tab-btn" data-filter="pers"><i class="bi bi-megaphone-fill"></i> Siaran Pers</button>
+      <button class="tab-btn" data-filter="pengumuman"><i class="bi bi-bell-fill"></i> Pengumuman</button>
+      <button class="tab-btn" data-filter="infografis"><i class="bi bi-image-fill"></i> Info Grafis</button>
+    </div>
+
+    <!-- News Grid -->
+    <div class="news-grid">
+      <!-- News 1 -->
+      <div class="news-card" data-category="berita" onclick="openNewsDetail('Pemprov Kaltim Genjot Percepatan Pembangunan Infrastruktur Penyangga IKN Nusantara', 'Berita Terkini', '23 Juli 2026', 'Pemerintah Provinsi Kalimantan Timur terus meyakinkan percepatan konektivitas infrastruktur jalan dan logistik penunjang Ibu Kota Nusantara (IKN) Samarinda-Balikpapan-PPU agar semakin solid dan berdampak positif bagi pertumbuhan ekonomi rakyat.', 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=800&auto=format&fit=crop')">
+        <div class="news-img-wrap">
+          <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=800&auto=format&fit=crop" alt="Infrastruktur Kaltim" class="news-img">
+          <span class="news-category">Berita Terkini</span>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span><i class="bi bi-calendar3"></i> 23 Juli 2026</span>
+            <span><i class="bi bi-person"></i> Diskominfo</span>
+          </div>
+          <h3 class="news-title">Pemprov Kaltim Genjot Percepatan Pembangunan Infrastruktur Penyangga IKN</h3>
+          <p class="news-excerpt">Pemerintah Provinsi Kalimantan Timur terus meyakinkan percepatan konektivitas infrastruktur jalan dan logistik penunjang Ibu Kota Nusantara...</p>
+        </div>
+      </div>
+
+      <!-- News 2 -->
+      <div class="news-card" data-category="pers" onclick="openNewsDetail('Siaran Pers: Pemprov Kaltim Raih Penghargaan Opini WTP 11 Kali Berturut-turut dari BPK RI', 'Siaran Pers', '22 Juli 2026', 'Keberhasilan Pemprov Kaltim mempertahankan predikat Wajar Tanpa Pengecualian (WTP) menandakan komitmen kuat dalam pengelolaan tata kelola keuangan yang transparan, akuntabel, dan bebas dari korupsi.', 'https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=800&auto=format&fit=crop')">
+        <div class="news-img-wrap">
+          <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=800&auto=format&fit=crop" alt="Penghargaan WTP" class="news-img">
+          <span class="news-category">Siaran Pers</span>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span><i class="bi bi-calendar3"></i> 22 Juli 2026</span>
+            <span><i class="bi bi-person"></i> Biro Adpim</span>
+          </div>
+          <h3 class="news-title">Pemprov Kaltim Raih Penghargaan Opini WTP 11 Kali Berturut-turut dari BPK RI</h3>
+          <p class="news-excerpt">Keberhasilan Pemprov Kaltim mempertahankan predikat Wajar Tanpa Pengecualian (WTP) menandakan komitmen kuat tata kelola keuangan...</p>
+        </div>
+      </div>
+
+      <!-- News 3 -->
+      <div class="news-card" data-category="pengumuman" onclick="openNewsDetail('Pengumuman Hasil Seleksi Beasiswa Kaltim Tuntas Tahap Pertama Tahun 2026', 'Pengumuman', '20 Juli 2026', 'Dinas Pendidikan dan Kebudayaan Prov. Kaltim secara resmi mengumumkan daftar nama penerima Beasiswa Kaltim Tuntas untuk jenjang D3, S1, S2, dan S3.', 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop')">
+        <div class="news-img-wrap">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="Beasiswa Kaltim" class="news-img">
+          <span class="news-category">Pengumuman</span>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span><i class="bi bi-calendar3"></i> 20 Juli 2026</span>
+            <span><i class="bi bi-person"></i> BBP Kaltim</span>
+          </div>
+          <h3 class="news-title">Pengumuman Hasil Seleksi Beasiswa Kaltim Tuntas Tahap Pertama Tahun 2026</h3>
+          <p class="news-excerpt">Dinas Pendidikan dan Kebudayaan Prov. Kaltim secara resmi mengumumkan daftar penerima Beasiswa Kaltim Tuntas jenjang D3 hingga S3...</p>
+        </div>
+      </div>
+
+      <!-- News 4 -->
+      <div class="news-card" data-category="infografis" onclick="openNewsDetail('Info Grafis: Capaian Program Kaltim Green & Penurunan Emisi Karbon 2026', 'Info Grafis', '18 Juli 2026', 'Provinsi Kalimantan Timur menjadi pelopor dalam insentif penurunan emisi karbon dunia bekerja sama dengan Bank Dunia melalui skema FCPF Carbon Fund.', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop')">
+        <div class="news-img-wrap">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop" alt="Kaltim Green" class="news-img">
+          <span class="news-category">Info Grafis</span>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span><i class="bi bi-calendar3"></i> 18 Juli 2026</span>
+            <span><i class="bi bi-person"></i> DLH Kaltim</span>
+          </div>
+          <h3 class="news-title">Info Grafis: Capaian Program Kaltim Green & Penurunan Emisi Karbon</h3>
+          <p class="news-excerpt">Kalimantan Timur sukses mengukir prestasi sebagai pelopor penurunan emisi hutan dengan insentif karbon internasional dari World Bank...</p>
+        </div>
+      </div>
+
+      <!-- News 5 -->
+      <div class="news-card" data-category="berita" onclick="openNewsDetail('Festival Budaya Mahakam 2026 Sambut Wisatawan Mancanegara di Sungai Mahakam', 'Berita Terkini', '15 Juli 2026', 'Dinas Pariwisata Kaltim meluncurkan Festival Budaya Mahakam 2026 dengan menyajikan tarian adat Dayak, lomba perahu naga, dan kuliner khas Kaltim.', 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop')">
+        <div class="news-img-wrap">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop" alt="Festival Mahakam" class="news-img">
+          <span class="news-category">Berita Terkini</span>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span><i class="bi bi-calendar3"></i> 15 Juli 2026</span>
+            <span><i class="bi bi-person"></i> Dispar Kaltim</span>
+          </div>
+          <h3 class="news-title">Festival Budaya Mahakam 2026 Sambut Wisatawan Mancanegara</h3>
+          <p class="news-excerpt">Dinas Pariwisata Kaltim menyajikan pagelaran seni tarian adat Dayak dan perahu naga di Sungai Mahakam Samarinda...</p>
+        </div>
+      </div>
+
+      <!-- News 6 -->
+      <div class="news-card" data-category="pers" onclick="openNewsDetail('Siaran Pers: Ekspor Komoditas Non-Migas Kalimantan Timur Naik 18.5% YoY', 'Siaran Pers', '10 Juli 2026', 'Badan Pusat Statistik dan Dinas Perdagangan Kaltim mencatat lonjakan nilai ekspor komoditas kelapa sawit dan hasil industri kreatif Kaltim.', 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop')">
+        <div class="news-img-wrap">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" alt="Ekspor Kaltim" class="news-img">
+          <span class="news-category">Siaran Pers</span>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span><i class="bi bi-calendar3"></i> 10 Juli 2026</span>
+            <span><i class="bi bi-person"></i> Disperindag</span>
+          </div>
+          <h3 class="news-title">Ekspor Komoditas Non-Migas Kalimantan Timur Naik 18.5% YoY</h3>
+          <p class="news-excerpt">BPS dan Dinas Perdagangan mencatat peningkatan signifikan sektor ekspor non-migas mendukung ketahanan ekonomi Kaltim...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pimpinan Daerah Section -->
+  <section id="pimpinan" class="section">
+    <div class="section-header">
+      <span class="section-badge">Jajaran Eksekutif</span>
+      <h2 class="section-title">Pimpinan Pemerintah Provinsi</h2>
+      <p class="section-subtitle">Komitmen mengabdi demi kemajuan masyarakat Kalimantan Timur.</p>
+    </div>
+
+    <div class="leaders-grid">
+      <!-- Leader 1 -->
+      <div class="leader-card">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop" alt="Pj. Gubernur Kalimantan Timur" class="leader-avatar">
+        <div class="leader-info">
+          <h3>Prof. Dr. Akmal Malik, M.Si</h3>
+          <p class="leader-role">Pj. Gubernur Kalimantan Timur</p>
+          <p class="leader-quote">"Mewujudkan Kalimantan Timur sebagai penyangga utama IKN yang berdaya saing, sejahtera, dan berkelanjutan."</p>
+        </div>
+      </div>
+
+      <!-- Leader 2 -->
+      <div class="leader-card">
+        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=300&auto=format&fit=crop" alt="Sekretaris Daerah Prov Kaltim" class="leader-avatar">
+        <div class="leader-info">
+          <h3>Drs. Sri Wahyuni, M.PP</h3>
+          <p class="leader-role">Sekretaris Daerah Prov. Kaltim</p>
+          <p class="leader-quote">"Meningkatkan kualitas pelayanan publik berbasis digital yang cepat, akuntabel, dan transparan."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Directory (10 Kabupaten / Kota) -->
+  <section id="kabupaten" class="section bg-light-alt">
+    <div class="section-header">
+      <span class="section-badge">Wilayah Administrasi</span>
+      <h2 class="section-title">10 Kabupaten & Kota Kalimantan Timur</h2>
+      <p class="section-subtitle">Sinergi pembangunan daerah di seluruh wilayah Provinsi Kalimantan Timur.</p>
+    </div>
+
+    <div class="regio-grid">
+      <div class="regio-card" onclick="showToast('Menampilkan informasi Kota Samarinda')">
+        <i class="bi bi-building regio-icon"></i>
+        <div class="regio-name">Kota Samarinda</div>
+        <div class="regio-capital">Ibu Kota Provinsi</div>
+      </div>
+
+      <div class="regio-card" onclick="showToast('Menampilkan informasi Kota Balikpapan')">
+        <i class="bi bi-airplane-fill regio-icon"></i>
+        <div class="regio-name">Kota Balikpapan</div>
+        <div class="regio-capital">Pusat Bisnis & Logistik</div>
+      </div>
+
+      <div class="regio-card" onclick="showToast('Menampilkan informasi Kota Bontang')">
+        <i class="bi bi-fuel-pump-fill regio-icon"></i>
+        <div class="regio-name">Kota Bontang</div>
+        <div class="regio-capital">Kota Industri Gas & Pupuk</div>
+      </div>
+
+      <div class="regio-card" onclick="showToast('Menampilkan informasi Kabupaten Kutai Kartanegara')">
+        <i class="bi bi-bank2 regio-icon"></i>
+        <div class="regio-name">Kab. Kutai Kartanegara</div>
+        <div class="regio-capital">Tenggarong</div>
+      </div>
+
+      <div class="regio-card" onclick="showToast('Menampilkan informasi Kabupaten Kutai Timur')">
+        <i class="bi bi-tree-fill regio-icon"></i>
+        <div class="regio-name">Kab. Kutai Timur</div>
+        <div class="regio-capital">Sangatta</div>
+      </div>
+
+      <div class="regio-card" onclick="showToast('Menampilkan informasi Kabupaten Kutai Barat')">
+        <i class="bi bi-flower1 regio-icon"></i>
+        <div class="regio-name">Kab. Kutai Barat</div>
+        <div class="regio-capital">Sendawar</div>
+      </div>
+
+      <div class="regio-card" onclick="showToast('Menampilkan informasi Kabupaten Paser')">
+        <i class="bi bi-geo-alt-fill regio-icon"></i>
+        <div class="regio-name">Kab. Paser</div>
+        <div class="regio-capital">Tana Paser</div>
+      </div>
+
+      <div class="regio-card" onclick="showToast('Menampilkan informasi Kabupaten Penajam Paser Utara')">
+        <i class="bi bi-pin-map-fill regio-icon"></i>
+        <div class="regio-name">Kab. Penajam Paser Utara</div>
+        <div class="regio-capital">Penajam (Kawasan IKN)</div>
+      </div>
+
+      <div class="regio-card" onclick="showToast('Menampilkan informasi Kabupaten Berau')">
+        <i class="bi bi-water regio-icon"></i>
+        <div class="regio-name">Kab. Berau</div>
+        <div class="regio-capital">Tanjung Redeb (Derawan)</div>
+      </div>
+
+      <div class="regio-card" onclick="showToast('Menampilkan informasi Kabupaten Mahakam Ulu')">
+        <i class="bi bi-compass-fill regio-icon"></i>
+        <div class="regio-name">Kab. Mahakam Ulu</div>
+        <div class="regio-capital">Ujoh Bilang</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="kontak">
+    <div class="footer-container">
+      <div class="footer-col footer-about">
+        <h3>PEMPROV KALTIM</h3>
+        <p>Portal Resmi Pemerintah Provinsi Kalimantan Timur sebagai sarana transparansi informasi publik dan penyedia layanan masyarakat terpadu.</p>
+        
+        <div class="footer-contact-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>Jl. Basuki Rahmat No. 41, Samarinda, Kalimantan Timur 75112</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="bi bi-telephone-fill"></i>
+          <span>(0541) 733333 / Call Center 112</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="bi bi-envelope-fill"></i>
+          <span>diskominfo@kaltimprov.go.id</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Menu Utama</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="bi bi-chevron-right"></i> Beranda</a></li>
+          <li><a href="#profil"><i class="bi bi-chevron-right"></i> Profil Daerah</a></li>
+          <li><a href="#pemerintahan"><i class="bi bi-chevron-right"></i> Struktur OPD</a></li>
+          <li><a href="#berita"><i class="bi bi-chevron-right"></i> Media Center</a></li>
+          <li><a href="#layanan"><i class="bi bi-chevron-right"></i> Layanan Publik</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Layanan Populer</h3>
+        <ul class="footer-links">
+          <li><a href="https://bapenda.kaltimprov.go.id/" target="_blank"><i class="bi bi-chevron-right"></i> Pajak Kendaraan (Bapenda)</a></li>
+          <li><a href="https://dpmptsp.kaltimprov.go.id/" target="_blank"><i class="bi bi-chevron-right"></i> Perizinan DPMPTSP</a></li>
+          <li><a href="https://kaltimprov.lapor.go.id" target="_blank"><i class="bi bi-chevron-right"></i> SP4N LAPOR!</a></li>
+          <li><a href="https://ppid.kaltimprov.go.id/" target="_blank"><i class="bi bi-chevron-right"></i> PPID Kaltim</a></li>
+          <li><a href="http://data.kaltimprov.go.id/" target="_blank"><i class="bi bi-chevron-right"></i> Satu Data Kaltim</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Media Sosial</h3>
+        <p style="font-size: 0.85rem; margin-bottom: 15px;">Ikuti pembaruan berita resmi Pemprov Kaltim di kanal sosial media kami:</p>
+        <div style="display: flex; gap: 12px; font-size: 1.3rem;">
+          <a href="#" style="color: white;"><i class="bi bi-facebook"></i></a>
+          <a href="#" style="color: white;"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" style="color: white;"><i class="bi bi-instagram"></i></a>
+          <a href="#" style="color: white;"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pemerintah Provinsi Kalimantan Timur. All Rights Reserved. Diskominfo Prov. Kaltim.</p>
+    </div>
+  </footer>
+
+  <!-- Modal Viewer Dialog -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalTitle">Detail Informasi</h3>
+        <button id="modalClose" class="modal-close">&times;</button>
+      </div>
+      <div id="modalBody" class="modal-body">
+        <!-- Dynamic Modal Content -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
