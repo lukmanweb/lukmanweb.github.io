@@ -6,9 +6,9 @@
 /* ---- Google Fonts ---- */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
-/* ---- CSS Variables ---- */
+/* ---- CSS Variables (3D Claymorphism Theme) ---- */
 :root {
-  /* Red Cola Palette */
+  /* Crimson Red Clay Palette */
   --primary: #c41220;
   --primary-dark: #9a0e19;
   --primary-light: #e63946;
@@ -17,40 +17,45 @@
   --accent: #ff4d5a;
   --accent2: #ff8a93;
 
-  /* Neutrals */
-  --bg: #ffffff;
-  --bg-alt: #fafafa;
-  --bg-card: #ffffff;
-  --bg-section: #f8f0f1;
-  --border: #efe0e1;
-  --border-light: #faeaea;
+  /* Claymorphism Backgrounds */
+  --bg: #f4f5f9;
+  --bg-alt: #ebdce0;
+  --bg-card: #f8f9fc;
+  --bg-section: #f0e6e8;
+  --border: rgba(196, 18, 32, 0.12);
+  --border-light: rgba(255, 255, 255, 0.8);
 
   /* Text */
   --text: #1a0a0b;
-  --text-secondary: #6b3a3d;
-  --text-muted: #9b6468;
+  --text-secondary: #5e2528;
+  --text-muted: #8c4c50;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 4px rgba(196,18,32,0.06);
-  --shadow: 0 4px 20px rgba(196,18,32,0.1);
-  --shadow-lg: 0 8px 40px rgba(196,18,32,0.15);
-  --shadow-xl: 0 20px 60px rgba(196,18,32,0.18);
+  /* 3D Clay Shadows (Extruded Claymorphism Effect) */
+  --clay-shadow-sm: 6px 6px 14px rgba(196,18,32,0.12), -6px -6px 14px rgba(255,255,255,1), inset 2px 2px 4px rgba(255,255,255,0.8), inset -2px -2px 4px rgba(0,0,0,0.04);
+  --clay-shadow: 12px 12px 28px rgba(196,18,32,0.15), -12px -12px 28px rgba(255,255,255,1), inset 3px 3px 6px rgba(255,255,255,0.9), inset -3px -3px 6px rgba(196,18,32,0.06);
+  --clay-shadow-lg: 18px 18px 40px rgba(196,18,32,0.18), -18px -18px 40px rgba(255,255,255,1), inset 4px 4px 8px rgba(255,255,255,0.9), inset -4px -4px 8px rgba(196,18,32,0.08);
+  --clay-shadow-btn: 8px 8px 20px rgba(196,18,32,0.35), -4px -4px 14px rgba(255,255,255,0.9), inset 3px 3px 6px rgba(255,255,255,0.4), inset -3px -3px 6px rgba(0,0,0,0.2);
+
+  --shadow-sm: var(--clay-shadow-sm);
+  --shadow: var(--clay-shadow);
+  --shadow-lg: var(--clay-shadow-lg);
+  --shadow-xl: var(--clay-shadow-lg);
 
   /* Gradients */
-  --grad-primary: linear-gradient(135deg, #c41220 0%, #e63946 100%);
-  --grad-hero: linear-gradient(135deg, #fff5f5 0%, #ffe0e3 40%, #fff 100%);
-  --grad-card: linear-gradient(145deg, #ffffff, #fff5f5);
+  --grad-primary: linear-gradient(145deg, #e63946 0%, #c41220 100%);
+  --grad-hero: linear-gradient(135deg, #fcecee 0%, #f4dcd0 50%, #f4f5f9 100%);
+  --grad-card: linear-gradient(145deg, #ffffff, #f7ecee);
 
   /* Typography */
   --font-head: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Outfit', sans-serif;
 
-  /* Sizing */
-  --radius: 14px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --nav-h: 70px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Sizing (Clay Extra Rounded) */
+  --radius: 20px;
+  --radius-lg: 30px;
+  --radius-xl: 40px;
+  --nav-h: 74px;
+  --transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* ---- Reset & Base ---- */
@@ -312,34 +317,35 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 14px 28px;
   background: var(--grad-primary);
   color: white;
-  border-radius: var(--radius);
-  font-weight: 700;
+  border-radius: 50px;
+  font-weight: 800;
   font-size: 1rem;
   transition: var(--transition);
-  box-shadow: 0 6px 24px rgba(196,18,32,0.4);
+  box-shadow: var(--clay-shadow-btn);
+  border: 1px solid rgba(255,255,255,0.4);
 }
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(196,18,32,0.5);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 12px 12px 30px rgba(196,18,32,0.45), -4px -4px 16px rgba(255,255,255,1), inset 4px 4px 8px rgba(255,255,255,0.6);
 }
 .btn-secondary {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  background: white;
+  background: var(--bg-card);
   color: var(--primary);
-  border: 2px solid var(--primary-light);
-  border-radius: var(--radius);
-  font-weight: 700;
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 50px;
+  font-weight: 800;
   font-size: 1rem;
   transition: var(--transition);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--clay-shadow);
 }
 .btn-secondary:hover {
-  background: var(--primary-ultra-light);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  background: #ffffff;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--clay-shadow-lg);
 }
 
 .hero-stats {
@@ -749,28 +755,28 @@ section { padding: 90px 0; }
   min-width: 320px !important;
   max-width: 320px !important;
   scroll-snap-align: start;
-  background: white;
+  background: var(--bg-card);
   border-radius: var(--radius-lg);
   padding: 30px 28px 26px;
-  border: 1.5px solid var(--border-light);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--clay-shadow);
 }
 .layanan-card::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 3px;
+  height: 4px;
   background: var(--grad-primary);
   opacity: 0;
   transition: var(--transition);
 }
 .layanan-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(196,18,32,0.2);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--clay-shadow-lg);
+  border-color: rgba(196,18,32,0.25);
 }
 .layanan-card:hover::before { opacity: 1; }
 .layanan-card.featured {
@@ -910,10 +916,14 @@ section { padding: 90px 0; }
   scroll-snap-align: start;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow);
-  background: white;
-  border: 1.5px solid var(--border-light);
+  box-shadow: var(--clay-shadow);
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   transition: var(--transition);
+}
+.porto-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--clay-shadow-lg);
 }
 
 /* Header & Controls for Sliders */
