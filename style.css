@@ -728,35 +728,18 @@ section { padding: 90px 0; }
 /* ========== LAYANAN ========== */
 .layanan { background: var(--bg-alt); }
 .layanan-grid {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  overflow-x: auto !important;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  flex-wrap: unset !important;
+  overflow-x: unset !important;
   gap: 24px;
-  padding: 16px 8px 30px 8px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Hide scrollbar Firefox */
-  -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
-}
-.layanan-grid::-webkit-scrollbar, .porto-grid::-webkit-scrollbar {
-  display: none; /* Hide scrollbar Chrome/Safari */
-  width: 0;
-  height: 0;
-}
-.layanan-grid::-webkit-scrollbar-track, .porto-grid::-webkit-scrollbar-track {
-  background: var(--border-light);
-  border-radius: 10px;
-}
-.layanan-grid::-webkit-scrollbar-thumb, .porto-grid::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 10px;
+  padding: 8px 4px 12px;
 }
 .layanan-card {
-  flex: 0 0 320px !important;
-  min-width: 320px !important;
-  max-width: 320px !important;
-  scroll-snap-align: start;
+  flex: unset !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  scroll-snap-align: unset;
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   padding: 30px 28px 26px;
@@ -900,22 +883,18 @@ section { padding: 90px 0; }
   box-shadow: 0 4px 14px rgba(196,18,32,0.3);
 }
 .porto-grid {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  overflow-x: auto !important;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  flex-wrap: unset !important;
+  overflow-x: unset !important;
   gap: 24px;
-  padding: 16px 8px 30px 8px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Hide scrollbar Firefox */
-  -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+  padding: 8px 4px 12px;
 }
 .porto-item {
-  flex: 0 0 340px !important;
-  min-width: 340px !important;
-  max-width: 340px !important;
-  scroll-snap-align: start;
+  flex: unset !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  scroll-snap-align: unset;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--clay-shadow);
@@ -945,30 +924,10 @@ section { padding: 90px 0; }
   margin: 0;
 }
 .slider-controls {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+  display: none; /* Tombol slider disembunyikan — tampil sebagai grid */
 }
 .slider-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: white;
-  border: 1.5px solid var(--border-light);
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-}
-.slider-btn:hover {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  display: none;
 }
 .porto-item:hover {
   transform: translateY(-6px);
