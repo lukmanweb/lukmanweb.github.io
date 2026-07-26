@@ -734,13 +734,15 @@ section { padding: 90px 0; }
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   gap: 24px;
-  padding: 12px 4px 24px 4px;
+  padding: 16px 8px 30px 8px;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary) var(--border-light);
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
 }
 .layanan-grid::-webkit-scrollbar, .porto-grid::-webkit-scrollbar {
-  height: 6px;
+  display: none; /* Hide scrollbar Chrome/Safari */
+  width: 0;
+  height: 0;
 }
 .layanan-grid::-webkit-scrollbar-track, .porto-grid::-webkit-scrollbar-track {
   background: var(--border-light);
@@ -904,10 +906,10 @@ section { padding: 90px 0; }
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   gap: 24px;
-  padding: 12px 4px 24px 4px;
+  padding: 16px 8px 30px 8px;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary) var(--border-light);
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
 }
 .porto-item {
   flex: 0 0 340px !important;
