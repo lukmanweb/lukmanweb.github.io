@@ -301,11 +301,12 @@ class AutoSlider {
   }
 }
 
-// Auto slider dinonaktifkan — Layanan & Portofolio ditampilkan sebagai grid penuh di halaman
-// const layananSlider = new AutoSlider('layananGrid', 344, 1800);
-// const portoSlider   = new AutoSlider('portoGrid',   364, 2000);
+// Init auto sliders
+const layananSlider = new AutoSlider('layananGrid', 344, 1800);
+const portoSlider   = new AutoSlider('portoGrid',   364, 2000);
 
-// Manual button helper (tidak digunakan lagi)
+// Manual button helper (called from HTML onclick)
 function slideContainer(containerId, direction) {
-  // Slider dinonaktifkan
+  if (containerId === 'layananGrid') layananSlider.slide(direction);
+  else if (containerId === 'portoGrid') portoSlider.slide(direction);
 }

@@ -727,19 +727,65 @@ section { padding: 90px 0; }
 
 /* ========== LAYANAN ========== */
 .layanan { background: var(--bg-alt); }
+
+/* Wrapper dengan fade edge agar slider menyatu di halaman */
+.slider-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.slider-wrap::before,
+.slider-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Fade untuk section Layanan (bg-alt) */
+.layanan .slider-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-alt), transparent);
+}
+.layanan .slider-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-alt), transparent);
+}
+
+/* Fade untuk section Portofolio (bg) */
+.portofolio .slider-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+.portofolio .slider-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
 .layanan-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  flex-wrap: unset !important;
-  overflow-x: unset !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   gap: 24px;
-  padding: 8px 4px 12px;
+  padding: 16px 0 24px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.layanan-grid::-webkit-scrollbar, .porto-grid::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 .layanan-card {
-  flex: unset !important;
-  min-width: unset !important;
-  max-width: unset !important;
-  scroll-snap-align: unset;
+  flex: 0 0 320px !important;
+  min-width: 320px !important;
+  max-width: 320px !important;
+  scroll-snap-align: start;
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   padding: 30px 28px 26px;
@@ -883,18 +929,22 @@ section { padding: 90px 0; }
   box-shadow: 0 4px 14px rgba(196,18,32,0.3);
 }
 .porto-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  flex-wrap: unset !important;
-  overflow-x: unset !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   gap: 24px;
-  padding: 8px 4px 12px;
+  padding: 16px 0 24px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .porto-item {
-  flex: unset !important;
-  min-width: unset !important;
-  max-width: unset !important;
-  scroll-snap-align: unset;
+  flex: 0 0 340px !important;
+  min-width: 340px !important;
+  max-width: 340px !important;
+  scroll-snap-align: start;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--clay-shadow);
@@ -924,10 +974,30 @@ section { padding: 90px 0; }
   margin: 0;
 }
 .slider-controls {
-  display: none; /* Tombol slider disembunyikan — tampil sebagai grid */
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 .slider-btn {
-  display: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.slider-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
 .porto-item:hover {
   transform: translateY(-6px);
