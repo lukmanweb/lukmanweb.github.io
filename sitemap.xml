@@ -90,4 +90,48 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://lukmanweb.github.io/jasa-web/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/jakarta.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/surabaya.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/bandung.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/semarang.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/yogyakarta.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/solo.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/boyolali.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/salatiga.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/magelang.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/klaten.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/kudus.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/pekalongan.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/tegal.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/purwokerto.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/cilacap.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/malang.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/sidoarjo.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/kediri.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/jember.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/tangerang.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/bekasi.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/depok.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/bogor.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/cirebon.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/medan.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/palembang.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/pekanbaru.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/padang.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/batam.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/makassar.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/manado.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/balikpapan.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/samarinda.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/pontianak.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/banjarmasin.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/bali.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/mataram.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lukmanweb.github.io/jasa-web/jayapura.html</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
