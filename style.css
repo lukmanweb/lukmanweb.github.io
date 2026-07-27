@@ -6,9 +6,9 @@
 /* ---- Google Fonts ---- */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
-/* ---- CSS Variables (3D Claymorphism Theme) ---- */
+/* ---- CSS Variables (Modern Flat & Soft Theme) ---- */
 :root {
-  /* Crimson Red Clay Palette */
+  /* Crimson Red Palette */
   --primary: #c41220;
   --primary-dark: #9a0e19;
   --primary-light: #e63946;
@@ -17,45 +17,45 @@
   --accent: #ff4d5a;
   --accent2: #ff8a93;
 
-  /* Claymorphism Backgrounds */
-  --bg: #f4f5f9;
-  --bg-alt: #ebdce0;
-  --bg-card: #f8f9fc;
-  --bg-section: #f0e6e8;
-  --border: rgba(196, 18, 32, 0.12);
-  --border-light: rgba(255, 255, 255, 0.8);
+  /* Clean Backgrounds */
+  --bg: #f8f9fa;
+  --bg-alt: #f1f3f5;
+  --bg-card: #ffffff;
+  --bg-section: #e9ecef;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-light: rgba(0, 0, 0, 0.05);
 
   /* Text */
-  --text: #1a0a0b;
-  --text-secondary: #5e2528;
-  --text-muted: #8c4c50;
+  --text: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
 
-  /* 3D Clay Shadows (Extruded Claymorphism Effect) */
-  --clay-shadow-sm: 6px 6px 14px rgba(196,18,32,0.12), -6px -6px 14px rgba(255,255,255,1), inset 2px 2px 4px rgba(255,255,255,0.8), inset -2px -2px 4px rgba(0,0,0,0.04);
-  --clay-shadow: 12px 12px 28px rgba(196,18,32,0.15), -12px -12px 28px rgba(255,255,255,1), inset 3px 3px 6px rgba(255,255,255,0.9), inset -3px -3px 6px rgba(196,18,32,0.06);
-  --clay-shadow-lg: 18px 18px 40px rgba(196,18,32,0.18), -18px -18px 40px rgba(255,255,255,1), inset 4px 4px 8px rgba(255,255,255,0.9), inset -4px -4px 8px rgba(196,18,32,0.08);
-  --clay-shadow-btn: 8px 8px 20px rgba(196,18,32,0.35), -4px -4px 14px rgba(255,255,255,0.9), inset 3px 3px 6px rgba(255,255,255,0.4), inset -3px -3px 6px rgba(0,0,0,0.2);
+  /* Clean Modern Soft Shadows (No 3D Claymorphism) */
+  --clay-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --clay-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --clay-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --clay-shadow-btn: 0 4px 14px rgba(196, 18, 32, 0.3);
 
-  --shadow-sm: var(--clay-shadow-sm);
-  --shadow: var(--clay-shadow);
-  --shadow-lg: var(--clay-shadow-lg);
-  --shadow-xl: var(--clay-shadow-lg);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 35px rgba(0, 0, 0, 0.12);
 
   /* Gradients */
-  --grad-primary: linear-gradient(145deg, #e63946 0%, #c41220 100%);
-  --grad-hero: linear-gradient(135deg, #fcecee 0%, #f4dcd0 50%, #f4f5f9 100%);
-  --grad-card: linear-gradient(145deg, #ffffff, #f7ecee);
+  --grad-primary: linear-gradient(135deg, #e63946 0%, #c41220 100%);
+  --grad-hero: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  --grad-card: #ffffff;
 
   /* Typography */
   --font-head: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Outfit', sans-serif;
 
-  /* Sizing (Clay Extra Rounded) */
-  --radius: 20px;
-  --radius-lg: 30px;
-  --radius-xl: 40px;
+  /* Sizing (Modern Clean Radius) */
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   --nav-h: 74px;
-  --transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition: all 0.25s ease-in-out;
 }
 
 /* ---- Reset & Base ---- */
