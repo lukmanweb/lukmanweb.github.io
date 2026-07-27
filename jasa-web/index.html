@@ -23,14 +23,14 @@
   </script>
   <style>
     :root {
-      --primary: #6366f1;
-      --primary-dark: #4f46e5;
-      --navy: #0f172a;
-      --navy-light: #1e293b;
-      --slate: #64748b;
-      --border: #e2e8f0;
+      --primary: #dc2626;
+      --primary-dark: #991b1b;
+      --navy: #180505;
+      --navy-light: #2b0c0c;
+      --slate: #7f1d1d;
+      --border: #fecaca;
       --white: #fff;
-      --bg: #f8fafc;
+      --bg: #fff5f5;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--navy); }
@@ -48,7 +48,7 @@
       z-index: 99;
     }
     .nav-logo { color: white; font-weight: 900; font-size: 1.3rem; }
-    .nav-logo span { color: #818cf8; }
+    .nav-logo span { color: #ef4444; }
     .nav-back {
       color: #94a3b8;
       font-size: 0.85rem;
@@ -62,7 +62,7 @@
 
     /* HERO */
     .hero {
-      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+      background: linear-gradient(135deg, #180505 0%, #450a0a 50%, #7f1d1d 100%);
       color: white;
       text-align: center;
       padding: 80px 24px;
@@ -73,13 +73,13 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 80%, rgba(99,102,241,0.25) 0%, transparent 70%);
+      background: radial-gradient(ellipse at 50% 80%, rgba(220,38,38,0.3) 0%, transparent 70%);
     }
     .hero-badge {
       display: inline-block;
-      background: rgba(99,102,241,0.2);
-      border: 1px solid rgba(99,102,241,0.4);
-      color: #a5b4fc;
+      background: rgba(220,38,38,0.2);
+      border: 1px solid rgba(220,38,38,0.4);
+      color: #fca5a5;
       padding: 6px 18px;
       border-radius: 50px;
       font-size: 0.82rem;
@@ -94,7 +94,7 @@
       margin-bottom: 18px;
       position: relative;
     }
-    .hero h1 span { color: #818cf8; }
+    .hero h1 span { color: #f87171; }
     .hero p {
       font-size: 1.05rem;
       color: #cbd5e1;
@@ -113,11 +113,11 @@
     .hero-stat .num {
       font-size: 2rem;
       font-weight: 900;
-      color: #a5b4fc;
+      color: #fca5a5;
     }
     .hero-stat .label {
       font-size: 0.8rem;
-      color: #94a3b8;
+      color: #f87171;
       font-weight: 500;
     }
 
@@ -215,7 +215,7 @@
       box-shadow: 0 4px 16px rgba(99,102,241,0.12);
       transform: translateY(-2px);
     }
-    .kota-card.has-page:hover { background: #fafafe; }
+    .kota-card.has-page:hover { background: #fff5f5; }
     .kota-name {
       font-size: 0.88rem;
       font-weight: 800;
@@ -233,7 +233,7 @@
       border-radius: 20px;
       width: fit-content;
     }
-    .badge-page { background: #eef2ff; color: #4f46e5; }
+    .badge-page { background: #fef2f2; color: #dc2626; }
     .badge-wa { background: #f0fdf4; color: #15803d; }
 
     /* DIVIDER */
@@ -241,7 +241,7 @@
 
     /* CTA */
     .cta-section {
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      background: linear-gradient(135deg, #b91c1c, #991b1b);
       color: white;
       text-align: center;
       padding: 60px 24px;
@@ -268,13 +268,30 @@
     /* FOOTER */
     footer {
       background: var(--navy);
-      color: #64748b;
+      color: #fca5a5;
       text-align: center;
       padding: 24px;
       font-size: 0.83rem;
       margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
-    footer a { color: #818cf8; font-weight: 700; }
+    footer a { color: #ef4444; font-weight: 700; }
+    .footer-wa-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(37,211,102,0.3);
+      transition: transform .2s;
+    }
+    .footer-wa-icon:hover { transform: scale(1.1); }
 
     /* HIDDEN */
     .hidden { display: none !important; }
@@ -389,7 +406,9 @@
 
 <footer>
   <p>© 2026 <a href="../index.html">LukmanWeb</a> — Jasa Pembuatan Website Profesional Seluruh Indonesia</p>
-  <p style="margin-top: 6px; font-size: 0.75rem;">WhatsApp: <a href="https://wa.me/6285712225565">+62 857-1222-5565</a></p>
+  <a href="https://wa.me/6285712225565?text=Halo%20LukmanWeb%2C%20saya%20ingin%20konsultasi%20pembuatan%20website" target="_blank" class="footer-wa-icon" title="Chat WhatsApp">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 </footer>
 
 <script>
