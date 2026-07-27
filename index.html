@@ -19,6 +19,32 @@
   <meta name="author" content="Lukman Web" />
   <link rel="canonical" href="https://lukmanweb.github.io" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- Google Tag (gtag.js) - Google Ads & Google Analytics 4 -->
+  <!-- Ganti G-MEASUREMENT_ID atau AW-CONVERSION_ID dengan ID asli Anda saat membuat kampanye Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // Config untuk Google Analytics & Ads
+    gtag('config', 'G-MEASUREMENT_ID');
+    // gtag('config', 'AW-CONVERSION_ID'); // Aktifkan ini saat memasang Google Ads ID
+
+    // Tracking Event Konversi Klik WhatsApp untuk Google Ads / Analytics
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          gtag('event', 'conversion', {
+            'send_to': 'G-MEASUREMENT_ID',
+            'event_category': 'Contact',
+            'event_label': 'WhatsApp Click'
+          });
+        });
+      });
+    });
+  </script>
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
