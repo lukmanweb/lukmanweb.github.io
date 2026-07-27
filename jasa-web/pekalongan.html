@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Pembuatan Website Pekalongan Profesional & Murah | LukmanWeb</title>
+    <meta name="description" content="Jasa pembuatan website di Pekalongan, Jawa Tengah. Solusi terbaik untuk bisnis lokal, perusahaan, toko online, instansi, dll di Pekalongan. Percayakan pada LukmanWeb.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lukmanweb.github.io/jasa-web/pekalongan.html" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --navy: #0f172a;
+            --navy2: #1e293b;
+            --light: #f8fafc;
+            --text: #334155;
+            --white: #ffffff;
+            --whatsapp: #25D366;
+            --whatsapp-hover: #128C7E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Header & Hero */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            color: var(--white);
+            padding: 2rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 5rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+        
+        .hero h1 span {
+            color: #818cf8;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #cbd5e1;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            gap: 10px;
+        }
+        
+        .btn-wa {
+            background-color: var(--whatsapp);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .btn-wa:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-2px);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 5%;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 3rem;
+            font-weight: 800;
+        }
+        
+        /* Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .icon {
+            width: 64px;
+            height: 64px;
+            background: #e0e7ff;
+            color: var(--primary);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .card h3 {
+            color: var(--navy);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Portfolio */
+        .portfolio-card {
+            background: var(--white);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 200px;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+            border-radius: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy2);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 4rem;
+        }
+        
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "LukmanWeb Jasa Website Pekalongan",
+      "image": "https://lukmanweb.github.io/logo.png",
+      "description": "Jasa pembuatan website profesional, murah, dan terpercaya di Pekalongan.",
+      "url": "https://lukmanweb.github.io/jasa-web/pekalongan.html",
+      "telephone": "+6285712225565",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pekalongan",
+        "addressRegion": "Jawa Tengah",
+        "addressCountry": "ID"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">LukmanWeb.</a>
+            <div class="nav-links">
+                <a href="#layanan">Layanan</a>
+                <a href="#keunggulan">Keunggulan</a>
+                <a href="#portofolio">Portofolio</a>
+            </div>
+        </nav>
+        
+        <div class="hero">
+            <h1>Jasa Website <span>Pekalongan</span> Terpercaya</h1>
+            <p>Tingkatkan omset bisnis Anda di Pekalongan dengan website profesional, cepat, dan SEO-friendly. Harga terjangkau dengan kualitas premium.</p>
+            <a href="https://wa.me/6285712225565?text=Halo%20LukmanWeb%2C%20saya%20dari%20Pekalongan%20ingin%20order%20website" class="btn btn-wa">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                Konsultasi Gratis Sekarang
+            </a>
+        </div>
+    </header>
+
+    <section id="layanan">
+        <h2 class="section-title">Layanan Kami di Pekalongan</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </div>
+                <h3>Landing Page</h3>
+                <p>Website satu halaman untuk konversi tinggi, cocok untuk iklan produk atau jasa spesifik.</p>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </div>
+                <h3>Company Profile</h3>
+                <p>Bangun kredibilitas perusahaan Anda dengan profil digital profesional dan elegan.</p>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                </div>
+                <h3>Toko Online</h3>
+                <p>Website e-commerce siap pakai dengan fitur keranjang belanja dan pembayaran.</p>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9.5a2.5 2.5 0 0 0-2.5-2.5H15"></path></svg>
+                </div>
+                <h3>Portal Berita</h3>
+                <p>Sistem manajemen konten (CMS) canggih untuk media online dan blog profesional.</p>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                </div>
+                <h3>Website Klinik</h3>
+                <p>Website khusus dokter, rumah sakit, klinik kesehatan dengan fitur booking pasien.</p>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                </div>
+                <h3>Website Laundry</h3>
+                <p>Solusi website khusus bisnis laundry untuk kemudahan promosi dan layanan antar-jemput.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="keunggulan" style="background: var(--white);">
+        <h2 class="section-title">Kenapa Memilih Kami?</h2>
+        <div class="grid" style="max-width: 900px;">
+            <div class="card" style="box-shadow: none; border: 1px solid #e2e8f0;">
+                <h3 style="color: var(--primary);">Desain Premium</h3>
+                <p>Tampilan website modern, responsif, dan disesuaikan dengan identitas brand Anda.</p>
+            </div>
+            <div class="card" style="box-shadow: none; border: 1px solid #e2e8f0;">
+                <h3 style="color: var(--primary);">SEO Friendly</h3>
+                <p>Struktur kode yang bersih membantu website Anda mudah ditemukan di Google.</p>
+            </div>
+            <div class="card" style="box-shadow: none; border: 1px solid #e2e8f0;">
+                <h3 style="color: var(--primary);">Performa Cepat</h3>
+                <p>Optimasi kecepatan loading untuk kenyamanan pengunjung website Anda.</p>
+            </div>
+            <div class="card" style="box-shadow: none; border: 1px solid #e2e8f0;">
+                <h3 style="color: var(--primary);">Support Terbaik</h3>
+                <p>Layanan bantuan teknis responsif kapanpun Anda membutuhkan.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portofolio">
+        <h2 class="section-title">Portofolio Kami</h2>
+        <div class="grid">
+            <div class="portfolio-card">
+                <div class="portfolio-img">Preview Website 1</div>
+                <div class="portfolio-content">
+                    <h3>Website Company Profile</h3>
+                    <p style="color: #64748b; font-size: 0.9rem;">Perusahaan Manufaktur</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-img">Preview Website 2</div>
+                <div class="portfolio-content">
+                    <h3>Landing Page Produk</h3>
+                    <p style="color: #64748b; font-size: 0.9rem;">Bisnis Retail</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-img">Preview Website 3</div>
+                <div class="portfolio-content">
+                    <h3>Toko Online</h3>
+                    <p style="color: #64748b; font-size: 0.9rem;">Fashion & Apparel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="cta">
+            <h2>Siap Go Digital di Pekalongan?</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #cbd5e1;">Jangan biarkan kompetitor Anda melangkah lebih dulu. Hubungi kami sekarang dan dapatkan penawaran spesial.</p>
+            <a href="https://wa.me/6285712225565?text=Halo%20LukmanWeb%2C%20saya%20dari%20Pekalongan%20ingin%20order%20website" class="btn btn-wa">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                Pesan Website Sekarang
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="../index.html">Beranda</a>
+            <a href="../jasa-web/">Jasa Website</a>
+        </div>
+        <p>&copy; 2024 LukmanWeb. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
