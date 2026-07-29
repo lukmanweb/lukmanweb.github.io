@@ -789,11 +789,11 @@ section { padding: 90px 0; }
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   padding: 30px 28px 26px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  box-shadow: var(--clay-shadow);
+  box-shadow: none;
 }
 .layanan-card::before {
   content: '';
@@ -805,8 +805,8 @@ section { padding: 90px 0; }
   transition: var(--transition);
 }
 .layanan-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--clay-shadow-lg);
+  transform: translateY(-4px);
+  box-shadow: none;
   border-color: rgba(196,18,32,0.25);
 }
 .layanan-card:hover::before { opacity: 1; }
@@ -814,7 +814,7 @@ section { padding: 90px 0; }
   background: var(--grad-primary);
   border-color: transparent;
   color: white;
-  box-shadow: var(--shadow-xl);
+  box-shadow: none;
 }
 .layanan-card.featured h3, .layanan-card.featured p { color: white; }
 .layanan-card.featured .layanan-features li { color: rgba(255,255,255,0.9); }
@@ -947,14 +947,14 @@ section { padding: 90px 0; }
   scroll-snap-align: start;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--clay-shadow);
+  box-shadow: none;
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
   transition: var(--transition);
 }
 .porto-item:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--clay-shadow-lg);
+  transform: translateY(-4px);
+  box-shadow: none;
 }
 
 /* Header & Controls for Sliders */
@@ -983,13 +983,13 @@ section { padding: 90px 0; }
   height: 38px;
   border-radius: 50%;
   background: var(--bg-card);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border);
   color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
   transition: var(--transition);
 }
 .slider-btn:hover {
@@ -997,7 +997,7 @@ section { padding: 90px 0; }
   color: white;
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  box-shadow: none;
 }
 .porto-item:hover {
   transform: translateY(-6px);
