@@ -2,631 +2,671 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>💌 Gombalin Dia — Pilih Kata-Katamu!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>💌 Chat Romantis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html, body { height: 100%; overflow: hidden; }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      min-height: 100vh;
-      background: #0d0415;
-      color: #fff;
-      overflow-x: hidden;
+      background: #0d0d0d;
       display: flex;
       flex-direction: column;
+      max-width: 480px;
+      margin: 0 auto;
+      height: 100dvh;
+      position: relative;
+    }
+
+    /* ===== TOP BAR (Chat Header) ===== */
+    .topbar {
+      background: #1a1a2e;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 10px 16px;
+      display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding: 24px 16px 80px;
+      gap: 12px;
+      flex-shrink: 0;
+      z-index: 10;
     }
-
-    /* BG gradient animated */
-    body::before {
-      content: '';
-      position: fixed; inset: 0; z-index: -1;
-      background:
-        radial-gradient(ellipse at 15% 40%, rgba(236,72,153,0.2) 0%, transparent 55%),
-        radial-gradient(ellipse at 85% 20%, rgba(139,92,246,0.2) 0%, transparent 55%),
-        radial-gradient(ellipse at 50% 90%, rgba(219,39,119,0.15) 0%, transparent 50%),
-        #0d0415;
+    .back-arrow {
+      color: #ec4899;
+      font-size: 1.2rem;
+      cursor: pointer;
     }
-
-    /* Stars */
-    .stars { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
-    .star {
-      position: absolute; background: white; border-radius: 50%;
-      animation: twinkle linear infinite;
-    }
-    @keyframes twinkle {
-      0%,100%{ opacity:.1; transform: scale(1); }
-      50%     { opacity:.75; transform: scale(1.4); }
-    }
-
-    /* ===== HEADER ===== */
-    .header {
-      text-align: center; margin-bottom: 24px; width: 100%; max-width: 520px;
-    }
-    .badge {
-      display: inline-block;
-      background: rgba(236,72,153,0.15);
-      border: 1px solid rgba(236,72,153,0.4);
-      color: #f9a8d4; padding: 5px 14px;
-      border-radius: 20px; font-size: 0.75rem; font-weight: 700;
-      margin-bottom: 12px; letter-spacing: .5px;
-    }
-    .header h1 {
-      font-size: clamp(1.5rem,5vw,2.1rem);
-      font-weight: 900;
-      background: linear-gradient(135deg,#f9a8d4,#ec4899,#a855f7);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 6px;
-    }
-    .header p { color:rgba(255,255,255,.4); font-size:.82rem; }
-
-    /* ===== ROMANCE METER ===== */
-    .meter-wrap {
-      width: 100%; max-width: 520px; margin-bottom: 20px;
-    }
-    .meter-top {
-      display: flex; justify-content: space-between;
-      font-size: .75rem; color: rgba(255,255,255,.4); margin-bottom: 5px;
-    }
-    .meter-bar {
-      height: 10px; background: rgba(255,255,255,.08); border-radius: 10px; overflow: hidden;
-    }
-    .meter-fill {
-      height: 100%; width: 0%;
-      background: linear-gradient(90deg, #ec4899, #a855f7);
-      border-radius: 10px;
-      transition: width .7s cubic-bezier(.34,1.56,.64,1);
-      box-shadow: 0 0 12px rgba(236,72,153,.5);
-    }
-
-    /* ===== CHARACTER AREA ===== */
-    .char-area {
-      width: 100%; max-width: 520px;
-      display: flex; align-items: flex-end; gap: 14px;
-      margin-bottom: 18px;
-    }
-    .avatar {
-      width: 72px; height: 72px; min-width: 72px;
+    .partner-avatar {
+      width: 42px; height: 42px;
       border-radius: 50%;
-      border: 3px solid rgba(236,72,153,.5);
-      background: linear-gradient(135deg, #1e0a2e, #3b0f5e);
+      background: linear-gradient(135deg, #be185d, #7e22ce);
       display: flex; align-items: center; justify-content: center;
-      font-size: 2.2rem;
-      box-shadow: 0 0 20px rgba(236,72,153,.3);
-      animation: avatarPulse 3s ease-in-out infinite;
-      transition: transform .3s;
+      font-size: 1.4rem;
+      position: relative;
+      transition: transform 0.3s;
     }
-    @keyframes avatarPulse {
-      0%,100%{ box-shadow: 0 0 20px rgba(236,72,153,.3); }
-      50%    { box-shadow: 0 0 35px rgba(236,72,153,.55); }
+    .partner-avatar.react {
+      animation: avatarReact 0.5s cubic-bezier(.34,1.56,.64,1);
     }
-    .avatar.react { animation: avatarReact .5s cubic-bezier(.34,1.56,.64,1); }
     @keyframes avatarReact {
       0%  { transform: scale(1); }
-      40% { transform: scale(1.25) rotate(-8deg); }
-      70% { transform: scale(.95) rotate(5deg); }
+      40% { transform: scale(1.3) rotate(-8deg); }
+      70% { transform: scale(0.95) rotate(5deg); }
       100%{ transform: scale(1) rotate(0deg); }
     }
+    .online-dot {
+      width: 10px; height: 10px;
+      background: #22c55e;
+      border-radius: 50%;
+      border: 2px solid #1a1a2e;
+      position: absolute;
+      bottom: 1px; right: 1px;
+    }
+    .partner-info h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .partner-info span {
+      font-size: 0.72rem;
+      color: #22c55e;
+      font-weight: 600;
+    }
+    .partner-info .typing-status {
+      font-size: 0.72rem;
+      color: #ec4899;
+      display: none;
+    }
 
-    /* Chat bubble (partner) */
-    .bubble-partner {
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(236,72,153,.25);
-      border-radius: 18px 18px 18px 4px;
-      padding: 14px 18px;
-      font-size: .92rem;
-      color: #fdf2f8;
-      line-height: 1.55;
+    /* Meter di topbar */
+    .meter-mini {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .meter-mini-bar {
+      width: 60px; height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .meter-mini-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ec4899, #a855f7);
+      border-radius: 10px;
+      transition: width 0.6s cubic-bezier(.34,1.56,.64,1);
+      box-shadow: 0 0 8px rgba(236,72,153,0.6);
+    }
+    .meter-mini-icon { font-size: 1rem; }
+
+    /* ===== CHAT AREA ===== */
+    .chat-area {
       flex: 1;
-      position: relative;
-      min-height: 60px;
+      overflow-y: auto;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background:
+        radial-gradient(ellipse at 15% 30%, rgba(236,72,153,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 70%, rgba(139,92,246,0.08) 0%, transparent 50%),
+        #0f0f1a;
+      scroll-behavior: smooth;
     }
-    .bubble-partner .typing-dots {
-      display: inline-flex; gap: 4px; align-items: center;
+    .chat-area::-webkit-scrollbar { width: 3px; }
+    .chat-area::-webkit-scrollbar-thumb { background: rgba(236,72,153,0.3); border-radius: 3px; }
+
+    /* Date badge */
+    .date-badge {
+      text-align: center;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.05);
+      padding: 4px 12px;
+      border-radius: 20px;
+      align-self: center;
+      margin: 4px 0;
     }
-    .typing-dots span {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: #ec4899; opacity: .6;
-      animation: dotBounce .9s ease-in-out infinite;
+
+    /* Partner message (left) */
+    .msg-partner {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      align-self: flex-start;
+      max-width: 82%;
+      animation: msgIn 0.3s ease both;
     }
-    .typing-dots span:nth-child(2){ animation-delay:.2s; }
-    .typing-dots span:nth-child(3){ animation-delay:.4s; }
+    @keyframes msgIn {
+      from { opacity: 0; transform: translateY(10px) scale(0.95); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .msg-avatar-sm {
+      width: 30px; height: 30px; min-width: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #be185d, #7e22ce);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .bubble-left {
+      background: #1e1e35;
+      border: 1px solid rgba(236,72,153,0.2);
+      border-radius: 18px 18px 18px 4px;
+      padding: 10px 14px;
+      color: #f3e8ff;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .bubble-left .emotion {
+      font-size: 0.68rem;
+      color: #ec4899;
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .bubble-left .time {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.25);
+      margin-top: 4px;
+      display: block;
+      text-align: right;
+    }
+
+    /* Typing bubble */
+    .typing-bubble {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      align-self: flex-start;
+    }
+    .typing-inner {
+      background: #1e1e35;
+      border: 1px solid rgba(236,72,153,0.2);
+      border-radius: 18px 18px 18px 4px;
+      padding: 12px 16px;
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+    .dot {
+      width: 7px; height: 7px;
+      background: #ec4899; border-radius: 50%; opacity: 0.6;
+      animation: dotBounce 0.9s ease-in-out infinite;
+    }
+    .dot:nth-child(2){ animation-delay: 0.2s; }
+    .dot:nth-child(3){ animation-delay: 0.4s; }
     @keyframes dotBounce {
       0%,60%,100%{ transform: translateY(0); }
       30%        { transform: translateY(-6px); }
     }
 
-    .emotion-tag {
-      display: inline-block;
-      font-size: .7rem; font-weight: 700;
-      background: rgba(236,72,153,.2);
-      border: 1px solid rgba(236,72,153,.35);
-      color: #f9a8d4;
-      padding: 2px 10px; border-radius: 20px;
-      margin-bottom: 6px;
+    /* Player message (right) */
+    .msg-me {
+      align-self: flex-end;
+      max-width: 82%;
+      animation: msgInRight 0.3s ease both;
     }
-
-    /* ===== PLAYER BUBBLE ===== */
-    .bubble-player-wrap {
-      width: 100%; max-width: 520px;
-      display: flex; justify-content: flex-end;
-      margin-bottom: 20px;
+    @keyframes msgInRight {
+      from { opacity: 0; transform: translateX(14px); }
+      to   { opacity: 1; transform: translateX(0); }
     }
-    .bubble-player {
-      background: linear-gradient(135deg, rgba(236,72,153,.25), rgba(168,85,247,.2));
-      border: 1px solid rgba(236,72,153,.35);
+    .bubble-right {
+      background: linear-gradient(135deg, rgba(236,72,153,0.35), rgba(168,85,247,0.3));
+      border: 1px solid rgba(236,72,153,0.4);
       border-radius: 18px 18px 4px 18px;
-      padding: 12px 18px;
-      font-size: .9rem;
+      padding: 10px 14px;
       color: #fce7f3;
-      max-width: 75%;
-      font-style: italic;
-      display: none;
+      font-size: 0.88rem;
+      line-height: 1.5;
     }
-    .bubble-player.show { display: block; animation: slideIn .35s ease both; }
-    @keyframes slideIn {
-      from{ opacity:0; transform: translateX(20px); }
-      to  { opacity:1; transform: translateX(0); }
+    .bubble-right .time {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 4px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 3px;
     }
+    .read-tick { color: #60a5fa; font-size: 0.7rem; }
 
-    /* ===== CHOICE BUTTONS ===== */
-    .choices {
-      width: 100%; max-width: 520px;
-      display: flex; flex-direction: column; gap: 10px;
-      margin-bottom: 22px;
+    /* ===== CHOICE AREA (bottom) ===== */
+    .choice-area {
+      flex-shrink: 0;
+      background: #1a1a2e;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 12px 12px 16px;
+    }
+    .choice-label {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 8px;
+      padding-left: 2px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .choices-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
     }
     .choice-btn {
-      padding: 14px 20px;
-      background: rgba(255,255,255,.06);
-      border: 1.5px solid rgba(255,255,255,.12);
-      border-radius: 14px;
-      color: rgba(255,255,255,.85);
+      padding: 11px 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      color: rgba(255,255,255,0.8);
       font-family: inherit;
-      font-size: .88rem;
+      font-size: 0.83rem;
       font-weight: 600;
       cursor: pointer;
       text-align: left;
-      transition: all .2s;
-      display: flex; align-items: center; gap: 10px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      transition: all 0.18s;
+      line-height: 1.35;
     }
-    .choice-btn:hover {
-      background: rgba(236,72,153,.15);
-      border-color: rgba(236,72,153,.45);
+    .choice-btn:hover, .choice-btn:focus {
+      background: rgba(236,72,153,0.15);
+      border-color: rgba(236,72,153,0.45);
       color: #fce7f3;
-      transform: translateX(4px);
+      transform: translateX(3px);
     }
-    .choice-btn:active { transform: scale(.97); }
-    .choice-btn .btn-icon {
-      font-size: 1.1rem; min-width: 24px; text-align: center;
+    .choice-btn:active { transform: scale(0.97); }
+    .choice-btn.selected {
+      background: rgba(236,72,153,0.2);
+      border-color: rgba(236,72,153,0.5);
+      color: #fce7f3;
+      pointer-events: none;
     }
     .choice-btn.disabled {
-      opacity: .4; pointer-events: none;
+      opacity: 0.35;
+      pointer-events: none;
     }
+    .btn-icon { font-size: 1rem; min-width: 20px; }
 
-    /* ===== BOTTOM ACTION ===== */
-    .bottom-row {
-      width: 100%; max-width: 520px;
-      display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+    /* ===== END CARD ===== */
+    .end-overlay {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      display: none;
     }
-    .btn-next {
-      flex: 1; min-width: 140px;
-      padding: 14px 20px;
-      background: linear-gradient(135deg, #ec4899, #a855f7);
-      color: white; border: none; border-radius: 12px;
-      font-family: inherit; font-weight: 800; font-size: .9rem;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(236,72,153,.4);
-      transition: all .2s;
-    }
-    .btn-next:hover { transform: translateY(-2px); }
-    .btn-reset {
-      padding: 14px 20px;
-      background: rgba(255,255,255,.07);
-      border: 1.5px solid rgba(255,255,255,.15);
-      color: rgba(255,255,255,.7);
-      border-radius: 12px;
-      font-family: inherit; font-weight: 700; font-size: .9rem;
-      cursor: pointer;
-      transition: all .2s;
-    }
-    .btn-reset:hover { background: rgba(255,255,255,.13); }
-    .btn-share-wa {
-      padding: 14px 20px;
-      background: rgba(37,211,102,.15);
-      border: 1.5px solid rgba(37,211,102,.35);
-      color: #4ade80;
-      border-radius: 12px;
-      font-family: inherit; font-weight: 700; font-size: .9rem;
-      cursor: pointer;
-      transition: all .2s;
-    }
-    .btn-share-wa:hover { background: rgba(37,211,102,.25); }
-
-    /* Score popup */
-    .score-pop {
-      position: fixed; top: 50%; left: 50%;
-      transform: translate(-50%,-50%) scale(0);
-      background: rgba(15,4,21,.92);
-      border: 2px solid rgba(236,72,153,.5);
+    .end-card {
+      background: #1a1a2e;
+      border: 1px solid rgba(236,72,153,0.4);
       border-radius: 24px;
-      padding: 40px 50px;
+      padding: 36px 28px;
       text-align: center;
-      z-index: 999;
-      transition: transform .4s cubic-bezier(.34,1.56,.64,1);
-      backdrop-filter: blur(20px);
+      width: 100%;
+      max-width: 360px;
+      animation: popIn 0.4s cubic-bezier(.34,1.56,.64,1) both;
     }
-    .score-pop.show { transform: translate(-50%,-50%) scale(1); }
-    .score-pop h2 { font-size: 1.5rem; margin-bottom: 8px; }
-    .score-pop .big-emoji { font-size: 3.5rem; margin-bottom: 14px; display: block; }
-    .score-pop p { color: rgba(255,255,255,.6); font-size: .85rem; margin-bottom: 20px; line-height: 1.6; }
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+    .end-emoji { font-size: 3.5rem; margin-bottom: 12px; display: block; }
+    .end-title { font-size: 1.35rem; font-weight: 800; margin-bottom: 8px; color: #fce7f3; }
+    .end-desc  { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 22px; }
+    .end-btns  { display: flex; flex-direction: column; gap: 10px; }
+    .btn-wa {
+      padding: 13px;
+      background: rgba(37,211,102,0.15);
+      border: 1.5px solid rgba(37,211,102,0.4);
+      border-radius: 12px;
+      color: #4ade80;
+      font-family: inherit; font-weight: 700; font-size: 0.88rem;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .btn-wa:hover { background: rgba(37,211,102,0.28); }
+    .btn-ulang {
+      padding: 13px;
+      background: rgba(236,72,153,0.15);
+      border: 1.5px solid rgba(236,72,153,0.4);
+      border-radius: 12px;
+      color: #f9a8d4;
+      font-family: inherit; font-weight: 700; font-size: 0.88rem;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .btn-ulang:hover { background: rgba(236,72,153,0.28); }
 
     /* Floating hearts */
-    .fheart {
-      position: fixed; pointer-events: none; z-index: 0;
-      font-size: 1.2rem; opacity: 0;
-      animation: fhRise linear forwards;
+    .fh {
+      position: fixed; pointer-events: none; z-index: 50;
+      animation: fhRise linear forwards; opacity: 0;
     }
     @keyframes fhRise {
-      0%  { opacity:0; transform: translateY(0) scale(.7); }
-      15% { opacity:.7; }
-      85% { opacity:.3; }
-      100%{ opacity:0; transform: translateY(-100vh) scale(1.2) rotate(20deg); }
+      0%  { opacity: 0; transform: translateY(0) scale(0.6); }
+      15% { opacity: 0.8; }
+      85% { opacity: 0.3; }
+      100%{ opacity: 0; transform: translateY(-100vh) scale(1.2) rotate(20deg); }
     }
-
-    /* Toast */
-    .toast {
-      position: fixed; bottom: 24px; left: 50%;
-      transform: translateX(-50%) translateY(60px);
-      background: rgba(30,30,50,.95);
-      border: 1px solid rgba(236,72,153,.4);
-      color: #f9a8d4; padding: 10px 22px;
-      border-radius: 30px; font-size: .82rem; font-weight: 700;
-      z-index: 9999; opacity: 0;
-      transition: all .35s cubic-bezier(.34,1.56,.64,1);
-    }
-    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
   </style>
 </head>
 <body>
 
-<div class="stars" id="stars"></div>
-
-<!-- Header -->
-<div class="header">
-  <div class="badge">💌 Gombal Interaktif</div>
-  <h1>Gombalin Dia Sekarang! 🌹</h1>
-  <p>Pilih kata-katamu & lihat reaksi pasanganmu!</p>
-</div>
-
-<!-- Meter -->
-<div class="meter-wrap">
-  <div class="meter-top">
-    <span>💕 Meter Cinta</span>
-    <span id="meterLabel">0 / 100</span>
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="back-arrow">←</span>
+  <div class="partner-avatar" id="partnerAvatar">
+    😊
+    <div class="online-dot"></div>
   </div>
-  <div class="meter-bar"><div class="meter-fill" id="meterFill"></div></div>
-</div>
-
-<!-- Character -->
-<div class="char-area">
-  <div class="avatar" id="avatar">😊</div>
-  <div class="bubble-partner" id="bubblePartner">
-    <span class="typing-dots"><span></span><span></span><span></span></span>
+  <div class="partner-info">
+    <h3>Sayangku 💕</h3>
+    <span id="onlineStatus">Online sekarang</span>
+    <div class="typing-status" id="typingStatus">sedang mengetik...</div>
+  </div>
+  <div class="meter-mini">
+    <span class="meter-mini-icon">💕</span>
+    <div class="meter-mini-bar">
+      <div class="meter-mini-fill" id="meterFill"></div>
+    </div>
   </div>
 </div>
 
-<!-- Player bubble -->
-<div class="bubble-player-wrap">
-  <div class="bubble-player" id="bubblePlayer"></div>
+<!-- CHAT AREA -->
+<div class="chat-area" id="chatArea">
+  <div class="date-badge">Hari ini</div>
 </div>
 
-<!-- Choices -->
-<div class="choices" id="choices"></div>
-
-<!-- Bottom -->
-<div class="bottom-row" id="bottomRow" style="display:none">
-  <button class="btn-next" id="btnNext" onclick="nextScene()">Lanjut ➜</button>
-  <button class="btn-reset" onclick="resetGame()">🔄 Ulang</button>
-  <button class="btn-share-wa" id="btnShareWA" onclick="shareWA()" style="display:none">💬 Kirim WA</button>
+<!-- CHOICE AREA -->
+<div class="choice-area" id="choiceArea">
+  <div class="choice-label">Pilih balasanmu</div>
+  <div class="choices-grid" id="choicesGrid"></div>
 </div>
 
-<!-- Score popup -->
-<div class="score-pop" id="scorePop">
-  <span class="big-emoji" id="popEmoji">🎉</span>
-  <h2 id="popTitle">Selamat!</h2>
-  <p id="popDesc">Kamu berhasil menggombal pasanganmu!</p>
-  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:6px">
-    <button class="btn-next" onclick="resetGame()" style="font-size:.85rem;padding:12px 20px">🔄 Main Lagi</button>
-    <button class="btn-share-wa" onclick="shareResult()" style="font-size:.85rem;padding:12px 20px">💬 Kirim WA</button>
+<!-- END OVERLAY -->
+<div class="end-overlay" id="endOverlay">
+  <div class="end-card">
+    <span class="end-emoji" id="endEmoji">💍</span>
+    <h2 class="end-title" id="endTitle">Kamu berhasil!</h2>
+    <p class="end-desc"  id="endDesc">Deskripsi</p>
+    <div class="end-btns">
+      <button class="btn-wa"    onclick="shareWA()">💬 Kirim ke Pasangan via WA</button>
+      <button class="btn-ulang" onclick="resetGame()">🔄 Mulai Lagi</button>
+    </div>
   </div>
 </div>
-
-<div class="toast" id="toast"></div>
 
 <script>
-// ===== SCENES DATA =====
+// Jam sekarang
+function nowTime() {
+  const d = new Date();
+  return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+}
+
+// ===== SKENARIO =====
 const scenes = [
   {
-    partnerText: "Hai... kamu mau ngomong apa sih hari ini? 😏",
-    emotion: "😏 Penasaran",
-    avatar: "😊",
+    avatar: '😊',
+    partnerMsg: 'Haii... kamu kenapa tiba-tiba chat aku? 😏',
+    emotion: '',
     choices: [
-      { icon:"🌹", text: "Aku mau bilang sesuatu yang udah lama aku pendam...", score: 15, next: 1 },
-      { icon:"😅", text: "Eh... nggak ada sih, basa-basi aja.", score: -5, next: 1 },
-      { icon:"🥰", text: "Aku cuma mau bilang... kamu cantik banget hari ini.", score: 20, next: 1 },
-      { icon:"😈", text: "Kamu tau nggak, aku punya satu rahasia tentang kamu...", score: 10, next: 1 },
+      { icon:'🌹', text:'Aku cuma mau bilang... kamu cantik banget hari ini.',            score: 20 },
+      { icon:'😅', text:'Eh, nggak ada sih. Basa-basi aja hehe.',                         score: -5 },
+      { icon:'💌', text:'Aku lagi kangen kamu. Boleh chat kamu kan?',                     score: 18 },
+      { icon:'😏', text:'Punya rahasia nih, tapi nggak yakin kamu siap dengerin...',       score: 15 },
     ]
   },
   {
-    partnerText: "Ih serius? Terus-terus, lanjutin dong~",
-    emotion: "🤩 Excited",
-    avatar: "🤩",
+    avatar: '🤩',
+    partnerMsg: 'Ih serius?! Ayo-ayo, lanjut! Aku penasaran deh~ 😍',
+    emotion: '',
     choices: [
-      { icon:"💫", text: "Matamu itu kayak bintang... aku bisa nyasar selamanya di dalamnya.", score: 25, next: 2 },
-      { icon:"🌸", text: "Senyummu itu penawar dari segala lelahku seharian.", score: 20, next: 2 },
-      { icon:"☕", text: "Kamu itu kayak kopi — tanpa kamu, hariku nggak akan pernah produktif.", score: 15, next: 2 },
-      { icon:"😂", text: "Eh lupa mau ngomong apa. Hehe.", score: -10, next: 2 },
+      { icon:'💫', text:'Matamu itu kayak bintang. Aku bisa nyasar selamanya di dalamnya.', score: 28 },
+      { icon:'🌸', text:'Senyummu penawar dari semua lelahku seharian ini.',               score: 25 },
+      { icon:'☕', text:'Kamu kayak kopi pagi — tanpa kamu, hariku nggak lengkap.',       score: 22 },
+      { icon:'🤐', text:'Eh lupa mau ngomong apa. Haha.',                                 score: -8 },
     ]
   },
   {
-    partnerText: "Aish... kamu lebay banget deh! 😳 Tapi aku suka...",
-    emotion: "😳 Malu-Malu",
-    avatar: "😳",
+    avatar: '😳',
+    partnerMsg: 'Hiii kamu lebay banget sih! 😳 Tapi... aku suka dengerin kamu...',
+    emotion: '',
     choices: [
-      { icon:"💝", text: "Lebay? Nggak dong. Ini baru 10% dari yang aku rasain benerannya.", score: 30, next: 3 },
-      { icon:"🌺", text: "Biarin lebay, yang penting itu jujur dari hati.", score: 25, next: 3 },
-      { icon:"😇", text: "Maaf ya kalau berlebihan, tapi kamu emang spesial buat aku.", score: 20, next: 3 },
-      { icon:"😂", text: "Haha iya deh, aku emang lebay. Serius sih.", score: 5, next: 3 },
+      { icon:'💝', text:'Ini baru 10% dari yang aku rasain benerannya loh.',              score: 30 },
+      { icon:'🌺', text:'Biarin lebay, yang penting jujur dari hati.',                     score: 26 },
+      { icon:'🤭', text:'Maaf ya kalau berlebihan. Tapi kamu emang spesial buat aku.',    score: 24 },
+      { icon:'😂', text:'Haha iya deh. Aku emang begini orangnya.',                        score:  5 },
     ]
   },
   {
-    partnerText: "Stop stop stop... kamu bikin aku baper banget tau nggak! 🫠",
-    emotion: "🫠 Luluh",
-    avatar: "🥰",
+    avatar: '🥰',
+    partnerMsg: 'Aduh... kamu bikin aku susah berhenti senyum-senyum sendiri nih! 🫠',
+    emotion: '',
     choices: [
-      { icon:"💌", text: "Itu emang tujuannya~ Aku suka lihat kamu baper.", score: 30, next: 4 },
-      { icon:"🌙", text: "Maaf kalau ganggu. Tapi jujur, itu semua tulus.", score: 25, next: 4 },
-      { icon:"🎯", text: "Baper itu tanda kamu juga merasakannya kan? 😏", score: 28, next: 4 },
-      { icon:"😶", text: "Oh... aku nggak nyangka efeknya segini.", score: 10, next: 4 },
+      { icon:'💌', text:'Itu emang tujuannya~ Aku suka lihat kamu senyum.',              score: 32 },
+      { icon:'🌙', text:'Serius, itu semua tulus. Aku nggak pernah bohong sama kamu.',    score: 28 },
+      { icon:'😏', text:'Baper itu tandanya kamu juga merasakannya kan? 😏',              score: 30 },
+      { icon:'😶', text:'Oh... aku nggak nyangka efeknya segini.',                        score: 10 },
     ]
   },
   {
-    partnerText: "Aduh... aku mau jawab apa ya? Kamu ini...",
-    emotion: "💘 Jatuh Cinta",
-    avatar: "😍",
+    avatar: '😍',
+    partnerMsg: 'Kamu ini... aku mau jawab apa ya? 😭💕',
+    emotion: '',
     choices: [
-      { icon:"🌹", text: "Nggak usah jawab. Senyummu udah cukup jadi jawabannya.", score: 35, next: 5 },
-      { icon:"💬", text: "Jawab aja jujur. Aku siap dengerin apapun.", score: 25, next: 5 },
-      { icon:"💖", text: "Kamu nggak perlu jawab sekarang. Aku akan tetap di sini.", score: 30, next: 5 },
-      { icon:"😜", text: "Jawab dong! Aku penasaran banget!", score: 10, next: 5 },
+      { icon:'🌹', text:'Nggak usah jawab. Senyummu udah cukup jadi jawabannya.',        score: 35 },
+      { icon:'💬', text:'Jawab aja jujur. Apapun jawabannya, aku siap.',                  score: 27 },
+      { icon:'💖', text:'Kamu nggak perlu jawab sekarang. Aku akan tetap di sini.',       score: 32 },
+      { icon:'😜', text:'Jawab dong! Aku udah nggak sabar nih!',                          score: 12 },
     ]
   },
   {
-    partnerText: "Aku... aku nggak bisa berhenti senyum-senyum sendiri deh gara-gara kamu! 🌸",
-    emotion: "🌸 Bahagia",
-    avatar: "🌸",
+    avatar: '🌸',
+    partnerMsg: 'Aku... aku nggak bisa bohong. Aku bahagia banget chat sama kamu hari ini 🌸❤️',
+    emotion: '',
     choices: [
-      { icon:"💞", text: "Itu yang aku mau. Kamu selalu bahagia, apalagi gara-gara aku.", score: 40, next: -1, final: true },
-      { icon:"🌟", text: "Semoga senyummu selalu ada, hari ini, besok, dan selamanya.", score: 38, next: -1, final: true },
-      { icon:"💌", text: "Kamu layak bahagia. Dan aku ingin jadi alasannya selalu.", score: 42, next: -1, final: true },
-      { icon:"😘", text: "Hehe, makasih ya udah mau dengerin gombalanku hari ini 😘", score: 30, next: -1, final: true },
+      { icon:'💞', text:'Itu yang aku mau. Kamu selalu bahagia, terutama gara-gara aku.',   score: 40 },
+      { icon:'🌟', text:'Semoga senyummu selalu ada, hari ini, besok, dan selamanya.',       score: 38 },
+      { icon:'💌', text:'Kamu layak bahagia. Dan aku ingin selalu jadi alasannya.',          score: 42 },
+      { icon:'😘', text:'Sama. Aku juga bahagia bisa cerita kayak gini sama kamu 😘',        score: 33 },
     ]
-  }
+  },
 ];
 
 let currentScene = 0;
-let totalScore = 0;
-let maxScore = 0;
-let lastChoice = '';
-let chosen = false;
+let totalScore   = 0;
+let maxScore     = 0;
+let lastChoice   = '';
+let busy         = false;
 
-// Count max possible score
 scenes.forEach(s => { maxScore += Math.max(...s.choices.map(c => c.score)); });
 
+// ===== RENDER SCENE =====
 function renderScene(idx) {
+  busy = false;
   const s = scenes[idx];
-  chosen = false;
 
-  // Avatar
-  document.getElementById('avatar').textContent = s.avatar;
+  // Show typing indicator
+  showTyping().then(() => {
+    // Show partner message
+    addPartnerMsg(s.avatar, s.partnerMsg);
+    // Show choices
+    renderChoices(s.choices);
+    // Update avatar
+    document.getElementById('partnerAvatar').textContent = s.avatar + '\n';
+    document.getElementById('partnerAvatar').innerHTML =
+      s.avatar + '<div class="online-dot"></div>';
+  });
+}
 
-  // Partner typing animation then show text
-  const bubble = document.getElementById('bubblePartner');
-  bubble.innerHTML = `<span class="typing-dots"><span></span><span></span><span></span></span>`;
+function showTyping() {
+  return new Promise(resolve => {
+    const chatArea = document.getElementById('chatArea');
+    // Typing indicator
+    const typingEl = document.createElement('div');
+    typingEl.className = 'typing-bubble';
+    typingEl.id = 'typingBubble';
+    typingEl.innerHTML = `
+      <div class="msg-avatar-sm">${scenes[currentScene]?.avatar || '😊'}</div>
+      <div class="typing-inner">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>`;
+    chatArea.appendChild(typingEl);
+    scrollBottom();
 
-  setTimeout(() => {
-    bubble.innerHTML = `<span class="emotion-tag">${s.emotion}</span><br>${s.partnerText}`;
-    bubble.style.animation = 'none'; void bubble.offsetWidth;
-    bubble.style.animation = 'slideIn .4s ease both';
-  }, 900);
+    // Show typing status in topbar
+    document.getElementById('onlineStatus').style.display   = 'none';
+    document.getElementById('typingStatus').style.display   = 'block';
 
-  // Hide player bubble
-  const pb = document.getElementById('bubblePlayer');
-  pb.textContent = '';
-  pb.classList.remove('show');
+    setTimeout(() => {
+      typingEl.remove();
+      document.getElementById('onlineStatus').style.display = 'block';
+      document.getElementById('typingStatus').style.display = 'none';
+      resolve();
+    }, 1200);
+  });
+}
 
-  // Render choices
-  const choicesEl = document.getElementById('choices');
-  choicesEl.innerHTML = '';
-  s.choices.forEach((c, i) => {
+function addPartnerMsg(avatar, text) {
+  const chatArea = document.getElementById('chatArea');
+  const wrap = document.createElement('div');
+  wrap.className = 'msg-partner';
+  wrap.innerHTML = `
+    <div class="msg-avatar-sm">${avatar}</div>
+    <div class="bubble-left">
+      ${text}
+      <span class="time">${nowTime()}</span>
+    </div>`;
+  chatArea.appendChild(wrap);
+  scrollBottom();
+
+  // Avatar react
+  const av = document.getElementById('partnerAvatar');
+  av.classList.remove('react');
+  void av.offsetWidth;
+  av.classList.add('react');
+  setTimeout(() => av.classList.remove('react'), 600);
+}
+
+function addMyMsg(text) {
+  const chatArea = document.getElementById('chatArea');
+  const wrap = document.createElement('div');
+  wrap.className = 'msg-me';
+  wrap.innerHTML = `
+    <div class="bubble-right">
+      ${text}
+      <div class="time">${nowTime()} <span class="read-tick">✓✓</span></div>
+    </div>`;
+  chatArea.appendChild(wrap);
+  scrollBottom();
+}
+
+function renderChoices(choices) {
+  const grid = document.getElementById('choicesGrid');
+  grid.innerHTML = '';
+  choices.forEach((c, i) => {
     const btn = document.createElement('button');
     btn.className = 'choice-btn';
     btn.innerHTML = `<span class="btn-icon">${c.icon}</span><span>${c.text}</span>`;
-    btn.onclick = () => selectChoice(c, i, btn);
-    choicesEl.appendChild(btn);
+    btn.onclick = () => pick(c, btn, choices);
+    grid.appendChild(btn);
   });
-
-  document.getElementById('bottomRow').style.display = 'none';
 }
 
-function selectChoice(choice, idx, btn) {
-  if (chosen) return;
-  chosen = true;
+function pick(choice, btn, allChoices) {
+  if (busy) return;
+  busy = true;
 
-  // Disable all
+  // Mark selected
   document.querySelectorAll('.choice-btn').forEach(b => b.classList.add('disabled'));
   btn.classList.remove('disabled');
-  btn.style.background = 'rgba(236,72,153,0.25)';
-  btn.style.borderColor = 'rgba(236,72,153,0.6)';
-  btn.style.color = '#fce7f3';
+  btn.classList.add('selected');
 
-  // Show player bubble
-  const pb = document.getElementById('bubblePlayer');
-  pb.textContent = choice.text;
-  pb.classList.remove('show');
-  void pb.offsetWidth;
-  pb.classList.add('show');
-
+  // My bubble
+  addMyMsg(choice.text);
   lastChoice = choice.text;
 
   // Score
   const pts = Math.max(0, choice.score);
   totalScore += pts;
   updateMeter();
+  if (choice.score >= 20) burstHearts(choice.score >= 32 ? 12 : 7);
 
-  // Burst hearts if positive
-  if (choice.score >= 20) burstHearts(choice.score >= 30 ? 12 : 7);
-
-  // Avatar react
-  const av = document.getElementById('avatar');
-  av.classList.remove('react');
-  void av.offsetWidth;
-  av.classList.add('react');
-  setTimeout(() => av.classList.remove('react'), 600);
-
-  // Show next button
-  const bottomRow = document.getElementById('bottomRow');
-  bottomRow.style.display = 'flex';
-
-  if (choice.final) {
-    document.getElementById('btnNext').style.display = 'none';
-    document.getElementById('btnShareWA').style.display = 'block';
-    setTimeout(() => showResult(), 1200);
-  } else {
-    document.getElementById('btnNext').style.display = 'block';
-    document.getElementById('btnShareWA').style.display = 'none';
-  }
-}
-
-function nextScene() {
-  if (!chosen) { showToast('⚠️ Pilih dulu ya!'); return; }
-  currentScene++;
-  if (currentScene < scenes.length) renderScene(currentScene);
+  // Clear choices & go next
+  setTimeout(() => {
+    document.getElementById('choicesGrid').innerHTML = '';
+    currentScene++;
+    if (currentScene < scenes.length) {
+      renderScene(currentScene);
+    } else {
+      showEnd();
+    }
+  }, 700);
 }
 
 function updateMeter() {
   const pct = Math.min(100, Math.round((totalScore / maxScore) * 100));
   document.getElementById('meterFill').style.width = pct + '%';
-  document.getElementById('meterLabel').textContent = `${pct} / 100`;
 }
 
-function showResult() {
+function scrollBottom() {
+  const ca = document.getElementById('chatArea');
+  setTimeout(() => { ca.scrollTop = ca.scrollHeight; }, 50);
+}
+
+// ===== END GAME =====
+function showEnd() {
   const pct = Math.round((totalScore / maxScore) * 100);
   let emoji, title, desc;
+  if      (pct >= 85){ emoji='💍'; title='GOMBAL MASTERCLASS!';     desc=`Skor ${pct}/100 🔥 — Kamu berhasil melelehkan hatinya sepenuhnya! Dia pasti sudah jatuh cinta!`; }
+  else if (pct >= 65){ emoji='💖'; title='Gombal Level Pro!';       desc=`Skor ${pct}/100 😍 — Kata-katamu berhasil buat dia baper besar! Tinggal satu langkah lagi~`; }
+  else if (pct >= 45){ emoji='🌸'; title='Lumayan Romantis~';       desc=`Skor ${pct}/100 🙂 — Dia mulai tertarik! Coba lebih romantis lain kali ya.`; }
+  else               { emoji='😅'; title='Perlu Belajar Lagi~';     desc=`Skor ${pct}/100 😅 — Kurang greget nih. Coba ulang dengan pilihan yang lebih manis!`; }
 
-  if (pct >= 85) {
-    emoji = '💍'; title = 'GOMBAL MASTERCLASS!';
-    desc = `Skor kamu ${pct}/100 🔥\nKamu berhasil melelehkan hatinya sepenuhnya! Dia pasti sudah jatuh cinta sama kamu!`;
-  } else if (pct >= 65) {
-    emoji = '💖'; title = 'Gombal Level Pro!';
-    desc = `Skor kamu ${pct}/100 😍\nKata-katamu berhasil membuat dia baper! Tinggal selangkah lagi menuju hatinya~`;
-  } else if (pct >= 45) {
-    emoji = '🌸'; title = 'Lumayan nih!';
-    desc = `Skor kamu ${pct}/100 🙂\nDia mulai tertarik! Coba lebih romantis lain kali ya~`;
-  } else {
-    emoji = '😅'; title = 'Perlu Banyak Belajar~';
-    desc = `Skor kamu ${pct}/100 😅\nDia kurang terkesan nih. Coba lagi dengan pilihan yang lebih manis!`;
-  }
-
-  document.getElementById('popEmoji').textContent = emoji;
-  document.getElementById('popTitle').textContent = title;
-  document.getElementById('popDesc').textContent = desc;
-  document.getElementById('scorePop').classList.add('show');
+  document.getElementById('endEmoji').textContent = emoji;
+  document.getElementById('endTitle').textContent = title;
+  document.getElementById('endDesc').textContent  = desc;
+  document.getElementById('endOverlay').style.display = 'flex';
 
   if (pct >= 65) burstHearts(20);
 }
 
 function resetGame() {
-  currentScene = 0;
-  totalScore = 0;
-  lastChoice = '';
-  chosen = false;
+  currentScene = 0; totalScore = 0; lastChoice = '';
   document.getElementById('meterFill').style.width = '0%';
-  document.getElementById('meterLabel').textContent = '0 / 100';
-  document.getElementById('scorePop').classList.remove('show');
+  document.getElementById('endOverlay').style.display = 'none';
+  const ca = document.getElementById('chatArea');
+  ca.innerHTML = '<div class="date-badge">Hari ini</div>';
   renderScene(0);
 }
 
 function shareWA() {
   const pct = Math.round((totalScore / maxScore) * 100);
   const msg = encodeURIComponent(
-    `💌 *Hasil Gombal Interaktif*\n\n` +
-    `Skor Cinta: ${pct}/100 💕\n\n` +
-    `Kata terbaikku:\n"${lastChoice}"\n\n` +
-    `Coba juga di: https://lukmanweb.github.io/gombal.html`
+    `💌 Hai sayang...\n\n"${lastChoice}"\n\n` +
+    `(Skor gombal aku: ${pct}/100 💕)\n` +
+    `— dikirim pakai gombal.html`
   );
   window.open('https://wa.me/?text=' + msg, '_blank');
 }
 
-function shareResult() {
-  shareWA();
-  document.getElementById('scorePop').classList.remove('show');
-}
-
-// Hearts burst
-function burstHearts(count = 8) {
-  const emojis = ['❤️','💕','💖','💗','🌹','✨','💘','🌸'];
-  for (let i = 0; i < count; i++) {
+// Floating hearts
+function burstHearts(n = 8) {
+  const emojis = ['❤️','💕','💖','🌹','✨','💘','🌸','💗'];
+  for (let i = 0; i < n; i++) {
     setTimeout(() => {
       const h = document.createElement('div');
-      h.className = 'fheart';
-      h.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-      h.style.left   = (10 + Math.random()*80) + 'vw';
-      h.style.bottom = '0';
-      h.style.animationDuration = (3 + Math.random()*3) + 's';
+      h.className = 'fh';
+      h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      h.style.fontSize = (0.9 + Math.random() * 1) + 'rem';
+      h.style.left   = (10 + Math.random() * 80) + 'vw';
+      h.style.bottom = '80px';
+      h.style.animationDuration = (3 + Math.random() * 3) + 's';
       document.body.appendChild(h);
       setTimeout(() => h.remove(), 6500);
-    }, i * 100);
+    }, i * 110);
   }
 }
-
-// Toast
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2000);
-}
-
-// Stars
-const starsEl = document.getElementById('stars');
-for (let i = 0; i < 70; i++) {
-  const s = document.createElement('div');
-  s.className = 'star';
-  const sz = Math.random()*2.5+.5;
-  s.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random()*100}vw;top:${Math.random()*100}vh;animation-duration:${(Math.random()*4+2).toFixed(1)}s;animation-delay:-${(Math.random()*5).toFixed(1)}s;`;
-  starsEl.appendChild(s);
-}
-
-// Ambient floating hearts
-setInterval(() => {
-  if (Math.random() > .7) {
-    const h = document.createElement('div');
-    h.className = 'fheart';
-    h.textContent = ['❤️','💕','✨','🌹','💫','🌸'][Math.floor(Math.random()*6)];
-    h.style.left = Math.random()*100 + 'vw';
-    h.style.bottom = '0';
-    h.style.fontSize = (.7+Math.random()*.7) + 'rem';
-    h.style.animationDuration = (8+Math.random()*7) + 's';
-    document.body.appendChild(h);
-    setTimeout(() => h.remove(), 15000);
-  }
-}, 1500);
 
 // Start
 renderScene(0);
