@@ -310,3 +310,22 @@ function slideContainer(containerId, direction) {
   if (containerId === 'layananGrid') layananSlider.slide(direction);
   else if (containerId === 'portoGrid') portoSlider.slide(direction);
 }
+
+// ---- Back to Top Button ----
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
