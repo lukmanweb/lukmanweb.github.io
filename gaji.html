@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pertanyaan Penting 😈</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Floating particles */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.08;
+      animation: floatParticle linear infinite;
+      pointer-events: none;
+    }
+    @keyframes floatParticle {
+      0% { transform: translateY(110vh) rotate(0deg); }
+      100% { transform: translateY(-10vh) rotate(360deg); }
+    }
+
+    /* Card */
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      padding: 50px 44px 44px;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 10;
+      animation: cardIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+    @keyframes cardIn {
+      from { opacity: 0; transform: scale(0.8) translateY(30px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .emoji-top {
+      font-size: 3.2rem;
+      margin-bottom: 20px;
+      display: block;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-size: clamp(1.2rem, 4vw, 1.55rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .sub {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 36px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    /* YA button */
+    .btn-ya {
+      padding: 16px 40px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: white;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(34,197,94,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      z-index: 2;
+    }
+    .btn-ya:hover {
+      transform: scale(1.06);
+      box-shadow: 0 10px 28px rgba(34,197,94,0.5);
+    }
+    .btn-ya:active {
+      transform: scale(0.97);
+    }
+
+    /* TIDAK button */
+    .btn-tidak {
+      padding: 16px 40px;
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: white;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(239,68,68,0.4);
+      transition: box-shadow 0.2s;
+      position: fixed;
+      z-index: 9999;
+    }
+
+    /* Result message */
+    .result {
+      display: none;
+      margin-top: 30px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(16,185,129,0.15));
+      border: 1px solid rgba(34,197,94,0.3);
+      border-radius: 16px;
+      color: #4ade80;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5;
+      animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    .result.show { display: block; }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.7); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .result .result-emoji { font-size: 2rem; margin-bottom: 8px; display: block; }
+
+    /* Confetti */
+    .confetti-piece {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 9999;
+      animation: confettiFall 1.8s ease-in forwards;
+    }
+    @keyframes confettiFall {
+      0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* Counter tidak attempts */
+    .tidak-counter {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      font-weight: 600;
+    }
+
+    /* Mobile touch note */
+    .touch-note {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="card">
+  <span class="emoji-top">💰</span>
+  <h1>Apakah Anda puas<br>dengan gaji Anda?</h1>
+  <p class="sub">Jawab dengan jujur ya...</p>
+
+  <div class="btn-group" id="btnGroup">
+    <button class="btn-ya" id="btnYa" onclick="jawabYa()">✅ Ya</button>
+    <button class="btn-tidak" id="btnTidak">❌ Tidak</button>
+  </div>
+
+  <div class="result" id="result">
+    <span class="result-emoji">🎉</span>
+    <div>Oke sip, silahkan lanjutkan bekerja!<br><span style="color:rgba(255,255,255,0.6); font-size:0.85rem;">haha 😄</span></div>
+  </div>
+
+  <p class="touch-note" id="touchNote">Coba sentuh tombol "Tidak" 😏</p>
+  <span class="tidak-counter" id="tidakCounter"></span>
+</div>
+
+<script>
+  let tidakCount = 0;
+  let isPlaced = false;
+  const btn = document.getElementById('btnTidak');
+
+  // --- Place button at initial position first ---
+  function initTidakBtn() {
+    const rect = document.getElementById('btnGroup').getBoundingClientRect();
+    const btnW = 140;
+    const btnH = 56;
+    // Position roughly where it would appear in the flex row (right side)
+    btn.style.left = (rect.right - btnW - 8) + 'px';
+    btn.style.top  = (rect.top + (rect.height - btnH) / 2) + 'px';
+    btn.style.width = btnW + 'px';
+    isPlaced = true;
+  }
+
+  window.addEventListener('load', () => {
+    setTimeout(initTidakBtn, 400);
+  });
+
+  function escapeButton(e) {
+    if (!isPlaced) return;
+    const margin = 20;
+    const btnW = btn.offsetWidth;
+    const btnH = btn.offsetHeight;
+    const maxX = window.innerWidth  - btnW - margin;
+    const maxY = window.innerHeight - btnH - margin;
+
+    // Get cursor or touch position
+    let cx = e.clientX ?? (e.touches?.[0]?.clientX ?? window.innerWidth/2);
+    let cy = e.clientY ?? (e.touches?.[0]?.clientY ?? window.innerHeight/2);
+
+    // Move AWAY from cursor
+    let btnCX = btn.offsetLeft + btnW/2;
+    let btnCY = btn.offsetTop  + btnH/2;
+    let dx = btnCX - cx;
+    let dy = btnCY - cy;
+    let dist = Math.sqrt(dx*dx + dy*dy) || 1;
+
+    // Escape distance: bigger when cursor is closer
+    let force = Math.min(220, 6000 / dist);
+    let newX = btnCX + (dx/dist) * force - btnW/2;
+    let newY = btnCY + (dy/dist) * force - btnH/2;
+
+    // Clamp to viewport
+    newX = Math.max(margin, Math.min(maxX, newX));
+    newY = Math.max(margin, Math.min(maxY, newY));
+
+    btn.style.transition = 'left 0.15s ease, top 0.15s ease';
+    btn.style.left = newX + 'px';
+    btn.style.top  = newY + 'px';
+
+    tidakCount++;
+    if (tidakCount === 1) {
+      document.getElementById('touchNote').textContent = 'Susah kan? 😂';
+    } else if (tidakCount === 3) {
+      document.getElementById('touchNote').textContent = 'Masih mau coba? 🤣';
+    } else if (tidakCount >= 6) {
+      document.getElementById('tidakCounter').textContent = `Sudah ${tidakCount}x gagal 😭`;
+      document.getElementById('touchNote').textContent = 'Mungkin kamu MEMANG puas? 😏';
+    }
+  }
+
+  // Mouse hover escape
+  btn.addEventListener('mouseenter', escapeButton);
+  btn.addEventListener('mousemove', escapeButton);
+
+  // Touch escape (mobile)
+  document.addEventListener('touchmove', (e) => {
+    if (!isPlaced) return;
+    const touch = e.touches[0];
+    const bRect = btn.getBoundingClientRect();
+    const margin = 80; // larger trigger zone for touch
+    if (
+      touch.clientX > bRect.left - margin &&
+      touch.clientX < bRect.right + margin &&
+      touch.clientY > bRect.top - margin &&
+      touch.clientY < bRect.bottom + margin
+    ) {
+      escapeButton(e);
+    }
+  }, { passive: true });
+
+  btn.addEventListener('touchstart', escapeButton, { passive: true });
+
+  // YA answer
+  function jawabYa() {
+    document.getElementById('result').classList.add('show');
+    document.getElementById('btnYa').disabled = true;
+    document.getElementById('btnYa').style.opacity = '0.6';
+    document.getElementById('touchNote').style.display = 'none';
+    spawnConfetti();
+  }
+
+  // Confetti
+  function spawnConfetti() {
+    const colors = ['#22c55e','#facc15','#60a5fa','#f472b6','#fb923c','#a78bfa'];
+    for (let i = 0; i < 60; i++) {
+      setTimeout(() => {
+        const el = document.createElement('div');
+        el.classList.add('confetti-piece');
+        el.style.left = Math.random() * 100 + 'vw';
+        el.style.top = '-20px';
+        el.style.background = colors[Math.floor(Math.random() * colors.length)];
+        el.style.width  = (Math.random() * 8 + 6) + 'px';
+        el.style.height = (Math.random() * 8 + 6) + 'px';
+        el.style.animationDuration = (Math.random() * 1 + 1.2) + 's';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 2500);
+      }, i * 30);
+    }
+  }
+
+  // Generate background particles
+  for (let i = 0; i < 14; i++) {
+    const p = document.createElement('div');
+    p.classList.add('particle');
+    const size = Math.random() * 80 + 20;
+    p.style.width  = size + 'px';
+    p.style.height = size + 'px';
+    p.style.left   = Math.random() * 100 + 'vw';
+    p.style.background = ['#6366f1','#8b5cf6','#ec4899','#14b8a6'][Math.floor(Math.random()*4)];
+    p.style.animationDuration  = (Math.random() * 15 + 10) + 's';
+    p.style.animationDelay     = '-' + (Math.random() * 15) + 's';
+    document.body.appendChild(p);
+  }
+</script>
+</body>
+</html>
