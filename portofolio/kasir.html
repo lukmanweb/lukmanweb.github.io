@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DASHBOARD KASIR — Warung Nusantara POS</title>
+  <meta name="description" content="Dashboard kasir real-time penerima pesanan dari konsumen restoran Warung Nusantara.">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-bg: #0f172a;
+      --card-dark: #1e293b;
+      --accent: #d97706;
+      --green: #10b981;
+      --blue: #3b82f6;
+      --red: #ef4444;
+      --border: rgba(255,255,255,0.1);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--dark-bg); color: var(--text); padding-bottom: 40px; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAVBAR */
+    .kasir-nav {
+      background: var(--card-dark);
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .kasir-brand { display: flex; align-items: center; gap: 12px; }
+    .kasir-badge { background: #d97706; color: white; padding: 4px 10px; border-radius: 6px; font-weight: 800; font-size: 0.75rem; }
+    .kasir-title { font-size: 1.15rem; font-weight: 800; }
+    .live-status { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #34d399; font-weight: 700; }
+    .pulse-dot { width: 10px; height: 10px; background: #34d399; border-radius: 50%; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.3); } 100% { opacity: 1; transform: scale(1); } }
+
+    /* STATS SUMMARY BAR */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 1300px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .stat-card {
+      background: var(--card-dark);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .stat-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; margin-bottom: 6px; }
+    .stat-val { font-size: 1.4rem; font-weight: 900; color: #fef08a; }
+
+    /* CONTAINER & ORDERS GRID */
+    .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
+    .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .section-title { font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+
+    .clear-btn { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+    .clear-btn:hover { background: var(--red); color: white; }
+
+    .orders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .order-card {
+      background: var(--card-dark);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: all 0.25s;
+    }
+    .order-card.pending { border-color: var(--accent); }
+    .order-card.process { border-color: var(--blue); }
+    .order-card.completed { border-color: var(--green); opacity: 0.85; }
+
+    .order-header {
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .table-badge { background: #d97706; color: white; font-weight: 900; font-size: 0.88rem; padding: 4px 12px; border-radius: 20px; }
+    .order-time { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; }
+    
+    .order-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+    .cust-info { margin-bottom: 12px; font-size: 0.85rem; }
+    .cust-info span { color: #cbd5e1; font-weight: 700; }
+    
+    .items-list { background: rgba(0,0,0,0.2); border-radius: 10px; padding: 10px 12px; margin-bottom: 12px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .item-row { display: flex; justify-content: space-between; font-size: 0.82rem; }
+    .item-name { font-weight: 700; color: #f1f5f9; }
+    .item-subtotal { font-weight: 800; color: #fef08a; }
+
+    .notes-box { font-size: 0.78rem; background: rgba(217,119,6,0.15); border: 1px solid rgba(217,119,6,0.3); color: #fef08a; padding: 8px 10px; border-radius: 8px; margin-bottom: 12px; }
+
+    .order-total-bar { display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; font-weight: 900; padding-top: 10px; border-top: 1px solid var(--border); margin-bottom: 14px; }
+    .total-val { font-size: 1.15rem; color: var(--green); }
+
+    /* ACTION BUTTONS */
+    .status-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .btn-status { padding: 10px; border-radius: 10px; border: none; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; text-align: center; }
+    .btn-process { background: #2563eb; color: white; }
+    .btn-process:hover { background: #1d4ed8; }
+    .btn-complete { background: #059669; color: white; }
+    .btn-complete:hover { background: #047857; }
+    .btn-print { background: rgba(255,255,255,0.1); color: #e2e8f0; grid-column: span 2; }
+    .btn-print:hover { background: rgba(255,255,255,0.2); }
+
+    .empty-orders {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--card-dark);
+      border-radius: 16px;
+      border: 1px dashed var(--border);
+    }
+    .empty-orders h3 { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 8px; }
+    .empty-orders p { font-size: 0.85rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="kasir-nav">
+    <div class="kasir-brand">
+      <span class="kasir-badge">POS KASIR</span>
+      <div class="kasir-title">WARUNG NUSANTARA 🍲</div>
+    </div>
+    <div class="live-status">
+      <div class="pulse-dot"></div>
+      Layar Kasir Aktif (Real-Time Synchronized)
+    </div>
+  </header>
+
+  <!-- SUMMARY STATS -->
+  <div class="summary-grid">
+    <div class="stat-card">
+      <div class="stat-label">Total Pesanan Masuk Hari Ini</div>
+      <div class="stat-val" id="statTotalCount">0 Pesanan</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Pesanan Belum Diproses (Pending)</div>
+      <div class="stat-val" style="color:#f59e0b;" id="statPendingCount">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Total Omset Penjualan</div>
+      <div class="stat-val" style="color:#34d399;" id="statOmset">Rp 0</div>
+    </div>
+  </div>
+
+  <!-- MAIN ORDERS -->
+  <main class="container">
+    <div class="section-header">
+      <div class="section-title">📋 Antrean Pesanan Konsumen</div>
+      <button class="clear-btn" onclick="clearAllOrders()">🗑️ Reset Semua Pesanan</button>
+    </div>
+
+    <div class="orders-grid" id="ordersGrid"></div>
+  </main>
+
+  <script>
+    // Sample Initial Data jika kosong
+    const defaultSample = [
+      {
+        orderId: 'ORD-882103',
+        table: 'Meja 03',
+        name: 'Budi Santoso',
+        notes: 'Sate jangan terlalu manis, es teh dipisah',
+        items: [
+          { name: 'Nasi Goreng Spesialis Nusantara', qty: 2, price: 28000 },
+          { name: 'Sate Ayam Madura (10 Tusuk)', qty: 1, price: 32000 },
+          { name: 'Es Teh Manis Jumbo', qty: 3, price: 6000 }
+        ],
+        total: 112000,
+        time: '13:10',
+        status: 'PENDING'
+      }
+    ];
+
+    function getOrders() {
+      const data = localStorage.getItem('kasir_orders');
+      if (!data) {
+        localStorage.setItem('kasir_orders', JSON.stringify(defaultSample));
+        return defaultSample;
+      }
+      return JSON.parse(data);
+    }
+
+    function renderOrders() {
+      const orders = getOrders();
+      const grid = document.getElementById('ordersGrid');
+      
+      // Update Summary Stats
+      document.getElementById('statTotalCount').textContent = orders.length + ' Pesanan';
+      const pendingCount = orders.filter(o => o.status === 'PENDING').length;
+      document.getElementById('statPendingCount').textContent = pendingCount + ' Meja';
+      
+      const totalOmset = orders.filter(o => o.status === 'COMPLETED').reduce((sum, o) => sum + o.total, 0);
+      document.getElementById('statOmset').textContent = `Rp ${totalOmset.toLocaleString('id-ID')}`;
+
+      if (orders.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-orders">
+            <h3>Belum Ada Pesanan Masuk</h3>
+            <p>Buka <a href="restoran.html" target="_blank" style="color:#d97706; text-decoration:underline;">menu restoran</a> di tab lain dan coba lakukan pesanan!</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = orders.map((o, idx) => `
+        <div class="order-card ${o.status.toLowerCase()}">
+          <div class="order-header">
+            <div class="table-badge">${o.table}</div>
+            <div class="order-time">⏰ ${o.time} &nbsp;|&nbsp; <span>${o.orderId}</span></div>
+          </div>
+          <div class="order-body">
+            <div class="cust-info">
+              Pemesan: <span>${o.name}</span>
+            </div>
+
+            <div class="items-list">
+              ${o.items.map(i => `
+                <div class="item-row">
+                  <span class="item-name">${i.qty}x ${i.name}</span>
+                  <span class="item-subtotal">Rp ${(i.price * i.qty).toLocaleString('id-ID')}</span>
+                </div>
+              `).join('')}
+            </div>
+
+            ${o.notes && o.notes !== '-' ? `<div class="notes-box">📝 Catatan: ${o.notes}</div>` : ''}
+
+            <div class="order-total-bar">
+              <span>Total Tagihan:</span>
+              <span class="total-val">Rp ${o.total.toLocaleString('id-ID')}</span>
+            </div>
+
+            <div class="status-btns">
+              ${o.status === 'PENDING' ? `
+                <button class="btn-status btn-process" style="grid-column:span 2;" onclick="updateStatus(${idx}, 'PROCESS')">
+                  👩‍🍳 Terima &amp; Kirim ke Dapur
+                </button>
+              ` : o.status === 'PROCESS' ? `
+                <button class="btn-status btn-complete" style="grid-column:span 2;" onclick="updateStatus(${idx}, 'COMPLETED')">
+                  💵 Lunasi &amp; Selesaikan Order
+                </button>
+              ` : `
+                <div style="grid-column:span 2; text-align:center; color:#34d399; font-weight:800; font-size:0.85rem; padding:6px; background:rgba(52,211,153,0.1); border-radius:8px;">
+                  ✅ PESANAN SELESAI &amp; LUNAS
+                </div>
+              `}
+              <button class="btn-status btn-print" onclick="printReceipt(${idx})">
+                🖨️ Cetak Struk Kasir
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function updateStatus(index, newStatus) {
+      let orders = getOrders();
+      orders[index].status = newStatus;
+      localStorage.setItem('kasir_orders', JSON.stringify(orders));
+      renderOrders();
+    }
+
+    function clearAllOrders() {
+      if (confirm('Apakah Anda yakin ingin menghapus semua daftar pesanan?')) {
+        localStorage.setItem('kasir_orders', JSON.stringify([]));
+        renderOrders();
+      }
+    }
+
+    function printReceipt(index) {
+      const orders = getOrders();
+      const o = orders[index];
+      
+      const receiptWindow = window.open('', '_blank', 'width=350,height=500');
+      receiptWindow.document.write(`
+        <html>
+        <head>
+          <title>Struk Pembayaran - ${o.orderId}</title>
+          <style>
+            body { font-family: monospace; padding: 20px; font-size: 12px; width: 280px; margin: 0 auto; }
+            .center { text-align: center; }
+            .line { border-bottom: 1px dashed #000; margin: 10px 0; }
+            .flex { display: flex; justify-content: space-between; }
+          </style>
+        </head>
+        <body onload="window.print();">
+          <div class="center">
+            <h3>WARUNG NUSANTARA</h3>
+            <p>Jl. Raya Nusantara No. 88<br>Telp: 0857-1222-5565</p>
+          </div>
+          <div class="line"></div>
+          <div class="flex"><span>Order ID:</span><span>${o.orderId}</span></div>
+          <div class="flex"><span>Lokasi:</span><span>${o.table}</span></div>
+          <div class="flex"><span>Kasir/Pemesan:</span><span>${o.name}</span></div>
+          <div class="flex"><span>Waktu:</span><span>${o.time}</span></div>
+          <div class="line"></div>
+          ${o.items.map(i => `
+            <div>${i.name}</div>
+            <div class="flex"><span>${i.qty} x ${i.price.toLocaleString('id-ID')}</span><span>${(i.qty * i.price).toLocaleString('id-ID')}</span></div>
+          `).join('')}
+          <div class="line"></div>
+          <div class="flex" style="font-weight:bold; font-size:14px;"><span>TOTAL:</span><span>Rp ${o.total.toLocaleString('id-ID')}</span></div>
+          <div class="line"></div>
+          <div class="center">
+            <p>Terima kasih atas kunjungan Anda!<br>Selamat Menikmati Hidangan</p>
+          </div>
+        </body>
+        </html>
+      `);
+      receiptWindow.document.close();
+    }
+
+    // Event Listener Sync Real-time saat ada order baru dari tab restoran.html
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'kasir_orders' || e.key === 'kasir_new_event') {
+        renderOrders();
+      }
+    });
+
+    // Auto Refresh Polling setiap 2 detik sebagai backup real-time
+    setInterval(renderOrders, 2000);
+
+    // Initial Load
+    renderOrders();
+  </script>
+</body>
+</html>
