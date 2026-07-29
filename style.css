@@ -789,11 +789,11 @@ section { padding: 90px 0; }
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   padding: 30px 28px 26px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border) !important;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 .layanan-card::before {
   content: '';
@@ -806,15 +806,15 @@ section { padding: 90px 0; }
 }
 .layanan-card:hover {
   transform: translateY(-4px);
-  box-shadow: none;
-  border-color: rgba(196,18,32,0.25);
+  box-shadow: none !important;
+  border-color: rgba(196,18,32,0.25) !important;
 }
 .layanan-card:hover::before { opacity: 1; }
 .layanan-card.featured {
   background: var(--grad-primary);
-  border-color: transparent;
+  border-color: transparent !important;
   color: white;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 .layanan-card.featured h3, .layanan-card.featured p { color: white; }
 .layanan-card.featured .layanan-features li { color: rgba(255,255,255,0.9); }
@@ -926,7 +926,7 @@ section { padding: 90px 0; }
   background: var(--primary);
   color: white;
   border-color: transparent;
-  box-shadow: 0 4px 14px rgba(196,18,32,0.3);
+  box-shadow: none !important;
 }
 .porto-grid {
   display: flex !important;
@@ -947,14 +947,14 @@ section { padding: 90px 0; }
   scroll-snap-align: start;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: none !important;
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border) !important;
   transition: var(--transition);
 }
 .porto-item:hover {
   transform: translateY(-4px);
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 /* Header & Controls for Sliders */
