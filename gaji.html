@@ -19,313 +19,268 @@
       position: relative;
     }
 
-    /* Floating particles */
+    /* Particles */
     .particle {
       position: absolute;
       border-radius: 50%;
-      opacity: 0.08;
-      animation: floatParticle linear infinite;
+      opacity: 0.07;
+      animation: floatUp linear infinite;
       pointer-events: none;
     }
-    @keyframes floatParticle {
-      0% { transform: translateY(110vh) rotate(0deg); }
+    @keyframes floatUp {
+      0%   { transform: translateY(110vh) rotate(0deg); }
       100% { transform: translateY(-10vh) rotate(360deg); }
     }
 
-    /* Card */
+    /* Card — posisinya kita kontrol via JS */
     .card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255,255,255,0.06);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255,255,255,0.13);
       border-radius: 28px;
       padding: 50px 44px 44px;
       text-align: center;
-      max-width: 500px;
       width: 90%;
+      max-width: 460px;
       box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-      position: relative;
+      position: fixed;        /* fixed agar bisa digerakkan bebas */
       z-index: 10;
-      animation: cardIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-    }
-    @keyframes cardIn {
-      from { opacity: 0; transform: scale(0.8) translateY(30px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
+      /* Posisi awal diatur JS */
+      transition: left 0.18s cubic-bezier(.25,.8,.25,1),
+                  top  0.18s cubic-bezier(.25,.8,.25,1);
     }
 
     .emoji-top {
-      font-size: 3.2rem;
-      margin-bottom: 20px;
+      font-size: 3rem;
+      margin-bottom: 18px;
       display: block;
       animation: bounce 2s ease-in-out infinite;
     }
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
     }
 
     h1 {
-      font-size: clamp(1.2rem, 4vw, 1.55rem);
+      font-size: clamp(1.1rem, 4vw, 1.45rem);
       font-weight: 800;
-      color: #ffffff;
+      color: #fff;
       line-height: 1.4;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
-
     .sub {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 36px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 32px;
     }
 
     .btn-group {
       display: flex;
       gap: 16px;
       justify-content: center;
-      flex-wrap: wrap;
-      position: relative;
     }
 
-    /* YA button */
+    .btn {
+      padding: 15px 38px;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 1.05rem;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
     .btn-ya {
-      padding: 16px 40px;
       background: linear-gradient(135deg, #22c55e, #16a34a);
       color: white;
-      font-family: inherit;
-      font-weight: 800;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 14px;
-      cursor: pointer;
       box-shadow: 0 6px 20px rgba(34,197,94,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-      position: relative;
-      z-index: 2;
     }
-    .btn-ya:hover {
-      transform: scale(1.06);
-      box-shadow: 0 10px 28px rgba(34,197,94,0.5);
-    }
-    .btn-ya:active {
-      transform: scale(0.97);
-    }
+    .btn-ya:hover { transform: scale(1.07); }
+    .btn-ya:active { transform: scale(0.97); }
 
-    /* TIDAK button */
     .btn-tidak {
-      padding: 16px 40px;
       background: linear-gradient(135deg, #ef4444, #dc2626);
       color: white;
-      font-family: inherit;
-      font-weight: 800;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 14px;
-      cursor: pointer;
       box-shadow: 0 6px 20px rgba(239,68,68,0.4);
-      transition: box-shadow 0.2s;
-      position: fixed;
-      z-index: 9999;
+    }
+    /* tidak punya hover effect biasa — form yang kabur */
+
+    /* Hint kecil */
+    .hint {
+      margin-top: 18px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+      min-height: 18px;
+      transition: color 0.3s;
     }
 
-    /* Result message */
+    /* Pesan sukses */
     .result {
       display: none;
-      margin-top: 30px;
-      padding: 20px 24px;
-      background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(16,185,129,0.15));
-      border: 1px solid rgba(34,197,94,0.3);
+      margin-top: 24px;
+      padding: 18px 22px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(16,185,129,0.1));
+      border: 1px solid rgba(34,197,94,0.35);
       border-radius: 16px;
       color: #4ade80;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      line-height: 1.5;
-      animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+      line-height: 1.6;
+      animation: popIn 0.4s cubic-bezier(.34,1.56,.64,1) both;
     }
     .result.show { display: block; }
     @keyframes popIn {
-      from { opacity: 0; transform: scale(0.7); }
-      to { opacity: 1; transform: scale(1); }
+      from { opacity:0; transform: scale(0.7); }
+      to   { opacity:1; transform: scale(1);   }
     }
-    .result .result-emoji { font-size: 2rem; margin-bottom: 8px; display: block; }
+    .result-emoji { font-size: 1.8rem; display: block; margin-bottom: 8px; }
 
     /* Confetti */
     .confetti-piece {
       position: fixed;
-      width: 10px;
-      height: 10px;
-      border-radius: 2px;
       pointer-events: none;
       z-index: 9999;
+      border-radius: 2px;
       animation: confettiFall 1.8s ease-in forwards;
     }
     @keyframes confettiFall {
-      0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-    }
-
-    /* Counter tidak attempts */
-    .tidak-counter {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.3);
-      font-weight: 600;
-    }
-
-    /* Mobile touch note */
-    .touch-note {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.25);
-      margin-top: 20px;
+      0%   { opacity:1; transform: translateY(-20px) rotate(0deg); }
+      100% { opacity:0; transform: translateY(100vh) rotate(720deg); }
     }
   </style>
 </head>
 <body>
 
-<div class="card" id="card">
-  <span class="emoji-top">💰</span>
-  <h1>Apakah Anda puas<br>dengan gaji Anda?</h1>
-  <p class="sub">Jawab dengan jujur ya...</p>
+  <div class="card" id="card">
+    <span class="emoji-top">💰</span>
+    <h1>Apakah Anda puas<br>dengan gaji Anda?</h1>
+    <p class="sub">Jawab dengan jujur ya...</p>
 
-  <div class="btn-group" id="btnGroup">
-    <button class="btn-ya" id="btnYa" onclick="jawabYa()">✅ Ya</button>
-    <button class="btn-tidak" id="btnTidak">❌ Tidak</button>
+    <div class="btn-group">
+      <button class="btn btn-ya"    id="btnYa"    onclick="jawabYa()">✅ Ya</button>
+      <button class="btn btn-tidak" id="btnTidak"
+              onmouseenter="kabur()"
+              onmousemove="kabur()"
+              ontouchstart="kabur()"
+              onclick="kabur()">❌ Tidak</button>
+    </div>
+
+    <p class="hint" id="hint">Coba sentuh tombol "Tidak" 😏</p>
+
+    <div class="result" id="result">
+      <span class="result-emoji">🎉</span>
+      Oke sip, silahkan lanjutkan bekerja!<br>
+      <span style="color:rgba(255,255,255,0.5); font-size:0.82rem;">haha 😄</span>
+    </div>
   </div>
-
-  <div class="result" id="result">
-    <span class="result-emoji">🎉</span>
-    <div>Oke sip, silahkan lanjutkan bekerja!<br><span style="color:rgba(255,255,255,0.6); font-size:0.85rem;">haha 😄</span></div>
-  </div>
-
-  <p class="touch-note" id="touchNote">Coba sentuh tombol "Tidak" 😏</p>
-  <span class="tidak-counter" id="tidakCounter"></span>
-</div>
 
 <script>
-  let tidakCount = 0;
-  let isPlaced = false;
-  const btn = document.getElementById('btnTidak');
+  const card   = document.getElementById('card');
+  const hint   = document.getElementById('hint');
+  let count    = 0;
+  let cardW, cardH;
 
-  // --- Place button at initial position first ---
-  function initTidakBtn() {
-    const rect = document.getElementById('btnGroup').getBoundingClientRect();
-    const btnW = 140;
-    const btnH = 56;
-    // Position roughly where it would appear in the flex row (right side)
-    btn.style.left = (rect.right - btnW - 8) + 'px';
-    btn.style.top  = (rect.top + (rect.height - btnH) / 2) + 'px';
-    btn.style.width = btnW + 'px';
-    isPlaced = true;
+  /* Taruh card di tengah layar */
+  function centerCard() {
+    cardW = card.offsetWidth;
+    cardH = card.offsetHeight;
+    card.style.left = ((window.innerWidth  - cardW) / 2) + 'px';
+    card.style.top  = ((window.innerHeight - cardH) / 2) + 'px';
   }
+  window.addEventListener('load',   centerCard);
+  window.addEventListener('resize', centerCard);
 
-  window.addEventListener('load', () => {
-    setTimeout(initTidakBtn, 400);
-  });
-
-  function escapeButton(e) {
-    if (!isPlaced) return;
+  /* Kabur = card berpindah ke posisi acak */
+  function kabur() {
+    cardW = card.offsetWidth;
+    cardH = card.offsetHeight;
     const margin = 20;
-    const btnW = btn.offsetWidth;
-    const btnH = btn.offsetHeight;
-    const maxX = window.innerWidth  - btnW - margin;
-    const maxY = window.innerHeight - btnH - margin;
+    const maxX   = window.innerWidth  - cardW - margin;
+    const maxY   = window.innerHeight - cardH - margin;
 
-    // Get cursor or touch position
-    let cx = e.clientX ?? (e.touches?.[0]?.clientX ?? window.innerWidth/2);
-    let cy = e.clientY ?? (e.touches?.[0]?.clientY ?? window.innerHeight/2);
+    let newX, newY;
+    // Pastikan posisi baru berbeda cukup jauh dari posisi saat ini
+    const curX = parseFloat(card.style.left) || 0;
+    const curY = parseFloat(card.style.top)  || 0;
+    let attempts = 0;
+    do {
+      newX = margin + Math.random() * maxX;
+      newY = margin + Math.random() * maxY;
+      attempts++;
+    } while (
+      Math.abs(newX - curX) < 120 &&
+      Math.abs(newY - curY) < 80  &&
+      attempts < 20
+    );
 
-    // Move AWAY from cursor
-    let btnCX = btn.offsetLeft + btnW/2;
-    let btnCY = btn.offsetTop  + btnH/2;
-    let dx = btnCX - cx;
-    let dy = btnCY - cy;
-    let dist = Math.sqrt(dx*dx + dy*dy) || 1;
+    card.style.left = newX + 'px';
+    card.style.top  = newY + 'px';
 
-    // Escape distance: bigger when cursor is closer
-    let force = Math.min(220, 6000 / dist);
-    let newX = btnCX + (dx/dist) * force - btnW/2;
-    let newY = btnCY + (dy/dist) * force - btnH/2;
-
-    // Clamp to viewport
-    newX = Math.max(margin, Math.min(maxX, newX));
-    newY = Math.max(margin, Math.min(maxY, newY));
-
-    btn.style.transition = 'left 0.15s ease, top 0.15s ease';
-    btn.style.left = newX + 'px';
-    btn.style.top  = newY + 'px';
-
-    tidakCount++;
-    if (tidakCount === 1) {
-      document.getElementById('touchNote').textContent = 'Susah kan? 😂';
-    } else if (tidakCount === 3) {
-      document.getElementById('touchNote').textContent = 'Masih mau coba? 🤣';
-    } else if (tidakCount >= 6) {
-      document.getElementById('tidakCounter').textContent = `Sudah ${tidakCount}x gagal 😭`;
-      document.getElementById('touchNote').textContent = 'Mungkin kamu MEMANG puas? 😏';
-    }
+    count++;
+    if (count === 1)  hint.textContent = 'Susah ya? 😂';
+    else if (count === 3)  hint.textContent = 'Masih mau coba? 🤣';
+    else if (count === 5)  hint.textContent = 'Terus-terusin aja~ 😈';
+    else if (count >= 8)   hint.textContent = `Sudah ${count}x gagal... mending pilih YA aja 😭`;
   }
 
-  // Mouse hover escape
-  btn.addEventListener('mouseenter', escapeButton);
-  btn.addEventListener('mousemove', escapeButton);
-
-  // Touch escape (mobile)
-  document.addEventListener('touchmove', (e) => {
-    if (!isPlaced) return;
-    const touch = e.touches[0];
-    const bRect = btn.getBoundingClientRect();
-    const margin = 80; // larger trigger zone for touch
-    if (
-      touch.clientX > bRect.left - margin &&
-      touch.clientX < bRect.right + margin &&
-      touch.clientY > bRect.top - margin &&
-      touch.clientY < bRect.bottom + margin
-    ) {
-      escapeButton(e);
-    }
-  }, { passive: true });
-
-  btn.addEventListener('touchstart', escapeButton, { passive: true });
-
-  // YA answer
+  /* Klik Ya */
   function jawabYa() {
-    document.getElementById('result').classList.add('show');
+    // Stop kabur
+    document.getElementById('btnTidak').onmouseenter = null;
+    document.getElementById('btnTidak').onmousemove  = null;
+    document.getElementById('btnTidak').ontouchstart = null;
+    document.getElementById('btnTidak').onclick      = null;
+
+    // Kembalikan ke tengah dulu
+    card.style.transition = 'left 0.4s cubic-bezier(.34,1.56,.64,1), top 0.4s cubic-bezier(.34,1.56,.64,1)';
+    cardW = card.offsetWidth;
+    cardH = card.offsetHeight;
+    card.style.left = ((window.innerWidth  - cardW) / 2) + 'px';
+    card.style.top  = ((window.innerHeight - cardH) / 2) + 'px';
+
+    // Disable tombol Ya
     document.getElementById('btnYa').disabled = true;
     document.getElementById('btnYa').style.opacity = '0.6';
-    document.getElementById('touchNote').style.display = 'none';
+    hint.style.display = 'none';
+
+    // Tampilkan hasil
+    setTimeout(() => {
+      document.getElementById('result').classList.add('show');
+    }, 300);
+
     spawnConfetti();
   }
 
-  // Confetti
+  /* Confetti */
   function spawnConfetti() {
-    const colors = ['#22c55e','#facc15','#60a5fa','#f472b6','#fb923c','#a78bfa'];
-    for (let i = 0; i < 60; i++) {
+    const colors = ['#22c55e','#facc15','#60a5fa','#f472b6','#fb923c','#a78bfa','#fff'];
+    for (let i = 0; i < 70; i++) {
       setTimeout(() => {
         const el = document.createElement('div');
-        el.classList.add('confetti-piece');
-        el.style.left = Math.random() * 100 + 'vw';
-        el.style.top = '-20px';
-        el.style.background = colors[Math.floor(Math.random() * colors.length)];
-        el.style.width  = (Math.random() * 8 + 6) + 'px';
-        el.style.height = (Math.random() * 8 + 6) + 'px';
-        el.style.animationDuration = (Math.random() * 1 + 1.2) + 's';
+        el.className = 'confetti-piece';
+        const size = Math.random() * 9 + 6;
+        el.style.cssText = `
+          width:${size}px; height:${size}px;
+          left:${Math.random()*100}vw; top:-20px;
+          background:${colors[Math.floor(Math.random()*colors.length)]};
+          animation-duration:${(Math.random()*1+1.3).toFixed(2)}s;
+        `;
         document.body.appendChild(el);
-        setTimeout(() => el.remove(), 2500);
-      }, i * 30);
+        setTimeout(() => el.remove(), 2600);
+      }, i * 28);
     }
   }
 
-  // Generate background particles
-  for (let i = 0; i < 14; i++) {
+  /* Particles latar */
+  const cols = ['#6366f1','#8b5cf6','#ec4899','#14b8a6','#f59e0b'];
+  for (let i = 0; i < 12; i++) {
     const p = document.createElement('div');
-    p.classList.add('particle');
-    const size = Math.random() * 80 + 20;
-    p.style.width  = size + 'px';
-    p.style.height = size + 'px';
-    p.style.left   = Math.random() * 100 + 'vw';
-    p.style.background = ['#6366f1','#8b5cf6','#ec4899','#14b8a6'][Math.floor(Math.random()*4)];
-    p.style.animationDuration  = (Math.random() * 15 + 10) + 's';
-    p.style.animationDelay     = '-' + (Math.random() * 15) + 's';
+    p.className = 'particle';
+    const s = Math.random()*80+20;
+    p.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}vw;
+      background:${cols[Math.floor(Math.random()*cols.length)]};
+      animation-duration:${(Math.random()*15+10).toFixed(1)}s;
+      animation-delay:-${(Math.random()*15).toFixed(1)}s;`;
     document.body.appendChild(p);
   }
 </script>
