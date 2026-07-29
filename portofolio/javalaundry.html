@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Java Laundry Andong — Cuci Kering & Antar Jemput Boyolali</title>
   <meta name="description" content="Java Laundry Andong Boyolali: Jasa laundry kiloan, cuci setrika, sprei, antar jemput gratis. Rating Google 5.0⭐">
+  <!-- PWA & Web View Support -->
+  <link rel="manifest" href="manifest-laundry.json">
+  <meta name="theme-color" content="#ec4899">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Java Laundry">
+  <link rel="apple-touch-icon" href="https://img.icons8.com/color/192/washing-machine.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -569,6 +577,11 @@
       `👤 Nama: ${nm}\n📱 WA: ${wa}\n📍 Alamat: ${al}\n🧺 Layanan: ${lv}\n⏰ Jam Jemput: ${jm} WIB\n\nMohon diproses ya, terima kasih 🙏`
     );
     window.open(`https://wa.me/6285799574986?text=${msg}`, '_blank');
+  }
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw-laundry.js');
+    });
   }
 </script>
 </body>

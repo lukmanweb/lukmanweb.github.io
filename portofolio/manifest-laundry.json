@@ -1,0 +1,22 @@
+{
+  "name": "Java Laundry Andong",
+  "short_name": "JavaLaundry",
+  "description": "Jasa Cuci Kering & Antar Jemput Pakaian Andong Boyolali",
+  "start_url": "javalaundry.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ec4899",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/color/192/washing-machine.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://img.icons8.com/color/512/washing-machine.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
