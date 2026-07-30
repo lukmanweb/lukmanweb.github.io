@@ -3,847 +3,588 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>💌 Chat Romantis</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>💌 Gombal Chat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; overflow: hidden; }
-
+    html, body { height: 100%; }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #0d0d0d;
-      display: flex;
-      flex-direction: column;
-      max-width: 480px;
-      margin: 0 auto;
-      height: 100dvh;
-      position: relative;
-    }
-
-    /* ===== TOP BAR (Chat Header) ===== */
-    .topbar {
-      background: #1a1a2e;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-      z-index: 10;
-    }
-    .back-arrow {
-      color: #ec4899;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-    .partner-avatar {
-      width: 42px; height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #be185d, #7e22ce);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem;
-      position: relative;
-      transition: transform 0.3s;
-    }
-    .partner-avatar.react {
-      animation: avatarReact 0.5s cubic-bezier(.34,1.56,.64,1);
-    }
-    @keyframes avatarReact {
-      0%  { transform: scale(1); }
-      40% { transform: scale(1.3) rotate(-8deg); }
-      70% { transform: scale(0.95) rotate(5deg); }
-      100%{ transform: scale(1) rotate(0deg); }
-    }
-    .online-dot {
-      width: 10px; height: 10px;
-      background: #22c55e;
-      border-radius: 50%;
-      border: 2px solid #1a1a2e;
-      position: absolute;
-      bottom: 1px; right: 1px;
-    }
-    .partner-info h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #fff;
-    }
-    .partner-info span {
-      font-size: 0.72rem;
-      color: #22c55e;
-      font-weight: 600;
-    }
-    .partner-info .typing-status {
-      font-size: 0.72rem;
-      color: #ec4899;
-      display: none;
-    }
-
-    /* Meter di topbar */
-    .meter-mini {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .meter-mini-bar {
-      width: 60px; height: 6px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .meter-mini-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #ec4899, #a855f7);
-      border-radius: 10px;
-      transition: width 0.6s cubic-bezier(.34,1.56,.64,1);
-      box-shadow: 0 0 8px rgba(236,72,153,0.6);
-    }
-    .meter-mini-icon { font-size: 1rem; }
-
-    /* ===== CHAT AREA ===== */
-    .chat-area {
-      flex: 1;
-      overflow-y: auto;
-      padding: 16px 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      background:
-        radial-gradient(ellipse at 15% 30%, rgba(236,72,153,0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 85% 70%, rgba(139,92,246,0.08) 0%, transparent 50%),
-        #0f0f1a;
-      scroll-behavior: smooth;
-    }
-    .chat-area::-webkit-scrollbar { width: 3px; }
-    .chat-area::-webkit-scrollbar-thumb { background: rgba(236,72,153,0.3); border-radius: 3px; }
-
-    /* Date badge */
-    .date-badge {
-      text-align: center;
-      font-size: 0.7rem;
-      color: rgba(255,255,255,0.3);
-      background: rgba(255,255,255,0.05);
-      padding: 4px 12px;
-      border-radius: 20px;
-      align-self: center;
-      margin: 4px 0;
-    }
-
-    /* Partner message (left) */
-    .msg-partner {
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-      align-self: flex-start;
-      max-width: 82%;
-      animation: msgIn 0.3s ease both;
-    }
-    @keyframes msgIn {
-      from { opacity: 0; transform: translateY(10px) scale(0.95); }
-      to   { opacity: 1; transform: translateY(0) scale(1); }
-    }
-    .msg-avatar-sm {
-      width: 30px; height: 30px; min-width: 30px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #be185d, #7e22ce);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-    }
-    .bubble-left {
-      background: #1e1e35;
-      border: 1px solid rgba(236,72,153,0.2);
-      border-radius: 18px 18px 18px 4px;
-      padding: 10px 14px;
-      color: #f3e8ff;
-      font-size: 0.88rem;
-      line-height: 1.5;
-    }
-    .bubble-left .emotion {
-      font-size: 0.68rem;
-      color: #ec4899;
-      font-weight: 700;
-      margin-bottom: 4px;
-      display: block;
-    }
-    .bubble-left .time {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.25);
-      margin-top: 4px;
-      display: block;
-      text-align: right;
-    }
-
-    /* Typing bubble */
-    .typing-bubble {
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-      align-self: flex-start;
-    }
-    .typing-inner {
-      background: #1e1e35;
-      border: 1px solid rgba(236,72,153,0.2);
-      border-radius: 18px 18px 18px 4px;
-      padding: 12px 16px;
-      display: flex;
-      gap: 4px;
-      align-items: center;
-    }
-    .dot {
-      width: 7px; height: 7px;
-      background: #ec4899; border-radius: 50%; opacity: 0.6;
-      animation: dotBounce 0.9s ease-in-out infinite;
-    }
-    .dot:nth-child(2){ animation-delay: 0.2s; }
-    .dot:nth-child(3){ animation-delay: 0.4s; }
-    @keyframes dotBounce {
-      0%,60%,100%{ transform: translateY(0); }
-      30%        { transform: translateY(-6px); }
-    }
-
-    /* Player message (right) */
-    .msg-me {
-      align-self: flex-end;
-      max-width: 82%;
-      animation: msgInRight 0.3s ease both;
-    }
-    @keyframes msgInRight {
-      from { opacity: 0; transform: translateX(14px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-    .bubble-right {
-      background: linear-gradient(135deg, rgba(236,72,153,0.35), rgba(168,85,247,0.3));
-      border: 1px solid rgba(236,72,153,0.4);
-      border-radius: 18px 18px 4px 18px;
-      padding: 10px 14px;
-      color: #fce7f3;
-      font-size: 0.88rem;
-      line-height: 1.5;
-    }
-    .bubble-right .time {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.3);
-      margin-top: 4px;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 3px;
-    }
-    .read-tick { color: #60a5fa; font-size: 0.7rem; }
-
-    /* ===== CHOICE AREA (bottom) ===== */
-    .choice-area {
-      flex-shrink: 0;
-      background: #1a1a2e;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding: 12px 12px 16px;
-    }
-    .choice-label {
-      font-size: 0.7rem;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: 8px;
-      padding-left: 2px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    .choices-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-    .choice-btn {
-      padding: 11px 14px;
-      background: rgba(255,255,255,0.05);
-      border: 1.5px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      color: rgba(255,255,255,0.8);
-      font-family: inherit;
-      font-size: 0.83rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-align: left;
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      transition: all 0.18s;
-      line-height: 1.35;
-    }
-    .choice-btn:hover, .choice-btn:focus {
-      background: rgba(236,72,153,0.15);
-      border-color: rgba(236,72,153,0.45);
-      color: #fce7f3;
-      transform: translateX(3px);
-    }
-    .choice-btn:active { transform: scale(0.97); }
-    .choice-btn.selected {
-      background: rgba(236,72,153,0.2);
-      border-color: rgba(236,72,153,0.5);
-      color: #fce7f3;
-      pointer-events: none;
-    }
-    .choice-btn.disabled {
-      opacity: 0.35;
-      pointer-events: none;
-    }
-    .btn-icon { font-size: 1rem; min-width: 20px; }
-
-    /* ===== END CARD ===== */
-    .end-overlay {
-      position: fixed; inset: 0; z-index: 100;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(10px);
-      display: flex; align-items: center; justify-content: center;
-      padding: 20px;
-      display: none;
-    }
-    .end-card {
-      background: #1a1a2e;
-      border: 1px solid rgba(236,72,153,0.4);
-      border-radius: 24px;
-      padding: 36px 28px;
-      text-align: center;
-      width: 100%;
-      max-width: 360px;
-      animation: popIn 0.4s cubic-bezier(.34,1.56,.64,1) both;
-    }
-    @keyframes popIn {
-      from { transform: scale(0.8); opacity: 0; }
-      to   { transform: scale(1); opacity: 1; }
-    }
-    .end-emoji { font-size: 3.5rem; margin-bottom: 12px; display: block; }
-    .end-title { font-size: 1.35rem; font-weight: 800; margin-bottom: 8px; color: #fce7f3; }
-    .end-desc  { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 22px; }
-    .end-btns  { display: flex; flex-direction: column; gap: 10px; }
-    .btn-wa {
-      padding: 13px;
-      background: rgba(37,211,102,0.15);
-      border: 1.5px solid rgba(37,211,102,0.4);
-      border-radius: 12px;
-      color: #4ade80;
-      font-family: inherit; font-weight: 700; font-size: 0.88rem;
-      cursor: pointer; transition: all 0.2s;
-    }
-    .btn-wa:hover { background: rgba(37,211,102,0.28); }
-    .btn-ulang {
-      padding: 13px;
-      background: rgba(236,72,153,0.15);
-      border: 1.5px solid rgba(236,72,153,0.4);
-      border-radius: 12px;
-      color: #f9a8d4;
-      font-family: inherit; font-weight: 700; font-size: 0.88rem;
-      cursor: pointer; transition: all 0.2s;
-    }
-    .btn-ulang:hover { background: rgba(236,72,153,0.28); }
-
-    /* Floating hearts */
-    .fh {
-      position: fixed; pointer-events: none; z-index: 50;
-      animation: fhRise linear forwards; opacity: 0;
-    }
-    @keyframes fhRise {
-      0%  { opacity: 0; transform: translateY(0) scale(0.6); }
-      15% { opacity: 0.8; }
-      85% { opacity: 0.3; }
-      100%{ opacity: 0; transform: translateY(-100vh) scale(1.2) rotate(20deg); }
+      background: #0f0f1a;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      min-height: 100dvh;
     }
 
     /* ===== PICK SCREEN ===== */
     .pick-screen {
       position: fixed; inset: 0; z-index: 200;
       background:
-        radial-gradient(ellipse at 20% 40%, rgba(236,72,153,0.2) 0%, transparent 55%),
-        radial-gradient(ellipse at 80% 60%, rgba(139,92,246,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 40%, rgba(236,72,153,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 60%, rgba(139,92,246,0.18) 0%, transparent 55%),
         #0d0415;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      padding: 24px;
-      text-align: center;
+      padding: 28px 20px; text-align: center;
     }
+    .pick-logo { font-size: 3rem; margin-bottom: 16px; animation: bounce 2s ease-in-out infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
     .pick-screen h2 {
-      font-size: clamp(1.3rem,5vw,1.8rem);
-      font-weight: 900;
+      font-size: clamp(1.4rem,5vw,1.9rem); font-weight: 900;
       background: linear-gradient(135deg,#f9a8d4,#ec4899,#a855f7);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 8px;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 6px;
     }
-    .pick-screen p {
-      color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-bottom: 36px;
+    .pick-screen > p { color: rgba(255,255,255,0.4); font-size: 0.83rem; margin-bottom: 32px; }
+    .pick-label-sub {
+      font-size: 0.73rem; color: rgba(255,255,255,0.35);
+      margin-bottom: 12px; font-weight: 600; letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
     .pick-cards {
-      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
-      width: 100%; max-width: 420px;
+      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+      width: 100%; max-width: 380px;
     }
     .pick-card {
-      flex: 1; min-width: 140px; max-width: 180px;
+      flex: 1; min-width: 140px; max-width: 170px;
       background: rgba(255,255,255,0.05);
       border: 2px solid rgba(255,255,255,0.1);
-      border-radius: 22px;
-      padding: 28px 16px;
+      border-radius: 22px; padding: 26px 14px;
       cursor: pointer;
       transition: all 0.25s cubic-bezier(.34,1.56,.64,1);
-      display: flex; flex-direction: column; align-items: center; gap: 12px;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
     }
-    .pick-card:hover {
-      transform: translateY(-6px) scale(1.04);
-      border-color: rgba(236,72,153,0.6);
-      background: rgba(236,72,153,0.1);
-      box-shadow: 0 16px 40px rgba(236,72,153,0.25);
+    .pick-card:hover { transform: translateY(-6px) scale(1.04); }
+    .pick-card.girl { border-color: rgba(244,114,182,0.35); }
+    .pick-card.boy  { border-color: rgba(96,165,250,0.35); }
+    .pick-card.girl:hover { border-color:#f472b6; background:rgba(244,114,182,0.1); box-shadow:0 16px 40px rgba(244,114,182,0.25); }
+    .pick-card.boy:hover  { border-color:#60a5fa; background:rgba(96,165,250,0.1);  box-shadow:0 16px 40px rgba(96,165,250,0.25); }
+    .pick-emoji { font-size: 3rem; }
+    .pick-name  { font-size: 0.88rem; font-weight: 800; color: #fff; }
+    .pick-desc  { font-size: 0.7rem; color: rgba(255,255,255,0.35); font-weight: 600; }
+
+    /* ===== PHONE FRAME ===== */
+    .phone {
+      width: 100%; max-width: 420px;
+      height: 100dvh; max-height: 820px;
+      display: none; flex-direction: column;
+      background: #0f0f1a;
+      position: relative; overflow: hidden;
     }
-    .pick-card .pick-emoji { font-size: 3.2rem; }
-    .pick-card .pick-label {
-      font-size: 0.82rem; font-weight: 700;
-      color: rgba(255,255,255,0.7); line-height: 1.4;
+
+    /* Top bar */
+    .topbar {
+      background: rgba(26,26,46,0.98);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 10px 14px;
+      display: flex; align-items: center; gap: 11px;
+      flex-shrink: 0; z-index: 10;
     }
-    .pick-card .pick-role {
-      font-size: 0.7rem; color: rgba(255,255,255,0.3); font-weight: 600;
+    .back-btn {
+      color: #ec4899; font-size: 1.1rem; cursor: pointer;
+      padding: 4px 6px; border-radius: 8px;
+      transition: background 0.15s;
     }
-    .pick-card.girl { border-color: rgba(244,114,182,0.3); }
-    .pick-card.boy  { border-color: rgba(96,165,250,0.3); }
-    .pick-card.girl:hover { border-color: #f472b6; background: rgba(244,114,182,0.1); box-shadow: 0 16px 40px rgba(244,114,182,0.25); }
-    .pick-card.boy:hover  { border-color: #60a5fa; background: rgba(96,165,250,0.1);  box-shadow: 0 16px 40px rgba(96,165,250,0.25); }
+    .back-btn:hover { background: rgba(236,72,153,0.15); }
+    .partner-av {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg,#be185d,#7e22ce);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; position: relative;
+      transition: transform 0.3s;
+    }
+    .partner-av.react { animation: avReact 0.5s cubic-bezier(.34,1.56,.64,1); }
+    @keyframes avReact {
+      0%{transform:scale(1)} 40%{transform:scale(1.3) rotate(-8deg)}
+      70%{transform:scale(0.95) rotate(5deg)} 100%{transform:scale(1)}
+    }
+    .online-dot {
+      width: 9px; height: 9px; background: #22c55e;
+      border-radius: 50%; border: 2px solid #1a1a2e;
+      position: absolute; bottom: 1px; right: 1px;
+    }
+    .partner-info h3 { font-size: 0.92rem; font-weight: 800; color: #fff; }
+    .partner-info .status { font-size: 0.68rem; color: #22c55e; font-weight: 600; }
+    .partner-info .typing { font-size: 0.68rem; color: #ec4899; display: none; }
+
+    /* Meter kanan atas */
+    .meter-wrap { margin-left: auto; display: flex; align-items: center; gap: 5px; }
+    .meter-track { width: 55px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+    .meter-bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg,#ec4899,#a855f7);
+      border-radius: 10px;
+      transition: width 0.7s cubic-bezier(.34,1.56,.64,1);
+      box-shadow: 0 0 8px rgba(236,72,153,0.5);
+    }
+
+    /* Chat scroll area */
+    .chat {
+      flex: 1; overflow-y: auto; padding: 14px 12px 10px;
+      display: flex; flex-direction: column; gap: 8px;
+      background:
+        radial-gradient(ellipse at 15% 30%,rgba(236,72,153,0.06) 0%,transparent 50%),
+        radial-gradient(ellipse at 85% 70%,rgba(139,92,246,0.06) 0%,transparent 50%),
+        #0f0f1a;
+    }
+    .chat::-webkit-scrollbar { width: 2px; }
+    .chat::-webkit-scrollbar-thumb { background: rgba(236,72,153,0.3); border-radius: 2px; }
+
+    .date-badge {
+      text-align: center; font-size: 0.68rem; color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.05); padding: 3px 12px;
+      border-radius: 20px; align-self: center; margin-bottom: 4px;
+    }
+
+    /* Bubble KIRI (pasangan) */
+    .row-left { display: flex; align-items: flex-end; gap: 7px; align-self: flex-start; max-width: 85%; }
+    .av-sm { width: 28px; height: 28px; min-width: 28px; border-radius: 50%;
+      background: linear-gradient(135deg,#be185d,#7e22ce);
+      display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
+    .bubble-left {
+      background: #1e1e35; border: 1px solid rgba(236,72,153,0.2);
+      border-radius: 16px 16px 16px 3px;
+      padding: 9px 13px; color: #f3e8ff; font-size: 0.85rem; line-height: 1.5;
+    }
+    .bubble-left .time { font-size: 0.62rem; color: rgba(255,255,255,0.25); margin-top: 3px; text-align: right; }
+
+    /* Bubble KANAN (kamu) */
+    .row-right { align-self: flex-end; max-width: 85%; }
+    .bubble-right {
+      background: linear-gradient(135deg,rgba(236,72,153,0.3),rgba(168,85,247,0.25));
+      border: 1px solid rgba(236,72,153,0.38);
+      border-radius: 16px 16px 3px 16px;
+      padding: 9px 13px; color: #fce7f3; font-size: 0.85rem; line-height: 1.5;
+    }
+    .bubble-right .time {
+      font-size: 0.62rem; color: rgba(255,255,255,0.3); margin-top: 3px;
+      display: flex; justify-content: flex-end; align-items: center; gap: 3px;
+    }
+    .tick { color: #60a5fa; font-size: 0.72rem; }
+
+    /* Typing indicator */
+    .typing-row { display: flex; align-items: flex-end; gap: 7px; align-self: flex-start; }
+    .typing-bubble {
+      background: #1e1e35; border: 1px solid rgba(236,72,153,0.2);
+      border-radius: 16px 16px 16px 3px;
+      padding: 10px 14px; display: flex; gap: 4px; align-items: center;
+    }
+    .dot { width: 6px; height: 6px; background: #ec4899; border-radius: 50%; opacity: 0.6;
+      animation: dotB 0.9s ease-in-out infinite; }
+    .dot:nth-child(2){ animation-delay:.2s; }
+    .dot:nth-child(3){ animation-delay:.4s; }
+    @keyframes dotB { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+    /* Animasi masuk pesan */
+    .anim-left  { animation: msgL 0.3s ease both; }
+    .anim-right { animation: msgR 0.3s ease both; }
+    @keyframes msgL { from{opacity:0;transform:translateX(-12px)} to{opacity:1;transform:translateX(0)} }
+    @keyframes msgR { from{opacity:0;transform:translateX(12px)}  to{opacity:1;transform:translateX(0)} }
+
+    /* ===== BOTTOM AREA ===== */
+    .bottom {
+      flex-shrink: 0;
+      background: rgba(26,26,46,0.98);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 12px 14px 16px;
+    }
+    .preview-box {
+      background: rgba(236,72,153,0.08);
+      border: 1px solid rgba(236,72,153,0.2);
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      font-style: italic;
+      min-height: 44px;
+      line-height: 1.5;
+    }
+    .preview-box span { color: #f9a8d4; }
+    .send-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg,#ec4899,#a855f7);
+      color: white; border: none; border-radius: 14px;
+      font-family: inherit; font-weight: 800; font-size: 0.95rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 6px 20px rgba(236,72,153,0.4);
+      transition: all 0.2s;
+    }
+    .send-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(236,72,153,0.5); }
+    .send-btn:active { transform: scale(0.97); }
+    .send-btn:disabled { opacity: 0.5; pointer-events: none; }
+    .progress-text {
+      text-align: center; font-size: 0.68rem; color: rgba(255,255,255,0.25);
+      margin-top: 8px; font-weight: 600;
+    }
+
+    /* ===== END OVERLAY ===== */
+    .end-overlay {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(0,0,0,0.88); backdrop-filter: blur(12px);
+      display: none; align-items: center; justify-content: center; padding: 20px;
+    }
+    .end-card {
+      background: #1a1a2e; border: 1px solid rgba(236,72,153,0.4);
+      border-radius: 26px; padding: 36px 26px; text-align: center;
+      width: 100%; max-width: 340px;
+      animation: popIn 0.4s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    @keyframes popIn { from{transform:scale(0.8);opacity:0} to{transform:scale(1);opacity:1} }
+    .end-big { font-size: 3.5rem; margin-bottom: 12px; display: block; }
+    .end-title { font-size: 1.3rem; font-weight: 900; color: #fce7f3; margin-bottom: 8px; }
+    .end-desc  { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 22px; }
+    .end-btns  { display: flex; flex-direction: column; gap: 10px; }
+    .btn-wa {
+      padding: 13px; background: rgba(37,211,102,0.15);
+      border: 1.5px solid rgba(37,211,102,0.4); border-radius: 12px;
+      color: #4ade80; font-family: inherit; font-weight: 700; font-size: 0.87rem;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .btn-wa:hover { background: rgba(37,211,102,0.28); }
+    .btn-ulang {
+      padding: 13px; background: rgba(236,72,153,0.15);
+      border: 1.5px solid rgba(236,72,153,0.4); border-radius: 12px;
+      color: #f9a8d4; font-family: inherit; font-weight: 700; font-size: 0.87rem;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .btn-ulang:hover { background: rgba(236,72,153,0.28); }
+
+    /* Floating hearts */
+    .fh {
+      position: fixed; pointer-events: none; z-index: 50; opacity: 0;
+      animation: fhUp linear forwards;
+    }
+    @keyframes fhUp {
+      0%  { opacity:0; transform:translateY(0) scale(0.6); }
+      15% { opacity:0.8; }
+      85% { opacity:0.3; }
+      100%{ opacity:0; transform:translateY(-100vh) scale(1.2) rotate(20deg); }
+    }
   </style>
 </head>
 <body>
 
-<!-- PICK SCREEN -->
+<!-- ===== PICK SCREEN ===== -->
 <div class="pick-screen" id="pickScreen">
-  <h2>Kamu siapa? 💕</h2>
-  <p>Pilih dulu sebelum mulai ngobrol~</p>
+  <div class="pick-logo">💌</div>
+  <h2>Mau gombalin siapa?</h2>
+  <p>Pilih pasanganmu, terus kamu yang ngirim gombal deh~</p>
+  <p class="pick-label-sub">Kamu adalah...</p>
   <div class="pick-cards">
     <div class="pick-card girl" onclick="startGame('girl')">
-      <span class="pick-emoji">👧</span>
-      <span class="pick-label">Aku Cewek<br>Dia Cowok</span>
-      <span class="pick-role">Gombal ke pacar cowok 💙</span>
+      <span class="pick-emoji">👩</span>
+      <span class="pick-name">Cewek</span>
+      <span class="pick-desc">Gombal ke pacar cowok 💙</span>
     </div>
     <div class="pick-card boy" onclick="startGame('boy')">
-      <span class="pick-emoji">👦</span>
-      <span class="pick-label">Aku Cowok<br>Dia Cewek</span>
-      <span class="pick-role">Gombal ke pacar cewek 💗</span>
+      <span class="pick-emoji">👨</span>
+      <span class="pick-name">Cowok</span>
+      <span class="pick-desc">Gombal ke pacar cewek 💗</span>
     </div>
   </div>
 </div>
 
-<!-- TOP BAR -->
-<div class="topbar" id="chatUI" style="display:none">
-  <span class="back-arrow" onclick="backToMenu()">←</span>
-  <div class="partner-avatar" id="partnerAvatar">
-    😊
-    <div class="online-dot"></div>
-  </div>
-  <div class="partner-info">
-    <h3 id="partnerName">Sayangku 💕</h3>
-    <span id="onlineStatus">Online sekarang</span>
-    <div class="typing-status" id="typingStatus">sedang mengetik...</div>
-  </div>
-  <div class="meter-mini">
-    <span class="meter-mini-icon">💕</span>
-    <div class="meter-mini-bar">
-      <div class="meter-mini-fill" id="meterFill"></div>
+<!-- ===== PHONE / CHAT UI ===== -->
+<div class="phone" id="phone">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <span class="back-btn" onclick="backToMenu()">←</span>
+    <div class="partner-av" id="partnerAv">😊<div class="online-dot"></div></div>
+    <div class="partner-info">
+      <h3 id="partnerName">Sayangku 💕</h3>
+      <span class="status" id="statusOnline">Online</span>
+      <span class="typing" id="statusTyping">sedang mengetik...</span>
+    </div>
+    <div class="meter-wrap">
+      💕<div class="meter-track"><div class="meter-bar" id="meterBar"></div></div>
     </div>
   </div>
+
+  <!-- Chat area -->
+  <div class="chat" id="chat">
+    <div class="date-badge">Hari ini</div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="bottom">
+    <div class="preview-box" id="previewBox">
+      <span>Tekan tombol untuk kirim gombal pertama~ 💌</span>
+    </div>
+    <button class="send-btn" id="sendBtn" onclick="sendNext()">
+      💌 Kirim Gombal
+    </button>
+    <div class="progress-text" id="progressText"></div>
+  </div>
 </div>
 
-<!-- CHAT AREA -->
-<div class="chat-area" id="chatArea" style="display:none">
-  <div class="date-badge">Hari ini</div>
-</div>
-
-<!-- CHOICE AREA -->
-<div class="choice-area" id="choiceArea" style="display:none">
-  <div class="choice-label">Pilih balasanmu</div>
-  <div class="choices-grid" id="choicesGrid"></div>
-</div>
-
-<!-- END OVERLAY -->
+<!-- End overlay -->
 <div class="end-overlay" id="endOverlay">
   <div class="end-card">
-    <span class="end-emoji" id="endEmoji">💍</span>
-    <h2 class="end-title" id="endTitle">Kamu berhasil!</h2>
-    <p class="end-desc"  id="endDesc">Deskripsi</p>
+    <span class="end-big" id="endBig">💍</span>
+    <h2 class="end-title" id="endTitle">Berhasil!</h2>
+    <p class="end-desc" id="endDesc">–</p>
     <div class="end-btns">
-      <button class="btn-wa"    onclick="shareWA()">💬 Kirim ke Pasangan via WA</button>
-      <button class="btn-ulang" onclick="resetGame()">🔄 Mulai Lagi</button>
+      <button class="btn-wa" onclick="shareWA()">💬 Kirim Bukti Gombal via WA</button>
+      <button class="btn-ulang" onclick="resetGame()">🔄 Gombal Lagi</button>
     </div>
   </div>
 </div>
 
 <script>
-// Jam sekarang
+// ===== DATA GOMBAL =====
+// Format: { gombal: "...", reaksi: "...", avatar: "emoji", level: 1-5 }
+
+const dataGirl = [
+  { gombal:"Kak, maaf ya ganggu. Tapi aku nggak bisa nahan diri buat nggak bilang... kamu ganteng banget hari ini 😳", reaksi:"Hah?! Apaan sih tiba-tiba~", avatar:"😏", level:1 },
+  { gombal:"Seriusan deh. Tiap kali kamu senyum, aku lupa mau ngomong apa.", reaksi:"Ih kamu bisa aja deh lebaynya 🙈", avatar:"🙈", level:1 },
+  { gombal:"Kalau kamu adalah cuaca, pasti kamu cerah setiap hari. Karena kamu selalu bikin hari-hariku terang.", reaksi:"Aduh... aku jadi senyum-senyum sendiri nih 😳", avatar:"😳", level:2 },
+  { gombal:"Aku nggak percaya cinta pada pandangan pertama... sampai aku pertama kali lihat kamu.", reaksi:"Kamu ini ya... bisa-bisanya ngomong gitu 🫠", avatar:"🫠", level:2 },
+  { gombal:"Matamu itu serius bikin aku susah fokus. Kayak ada magnet yang bikin aku selalu mau lihat kamu.", reaksi:"Hiii aku mau sembunyi aja deh kamu bikin aku malu 🥺", avatar:"🥺", level:3 },
+  { gombal:"Kalau rindu ini bisa diukur, jaraknya pasti lebih jauh dari bintang paling ujung di galaksi.", reaksi:"Ya Allah kamu ini... aku beneran speechless deh 😭", avatar:"😭", level:3 },
+  { gombal:"Bukan karena kamu sempurna aku suka sama kamu. Tapi karena kamu bikin aku merasa jadi versi terbaik dari diri aku.", reaksi:"Aku nggak tau harus jawab apa... tapi hatiku penuh banget 🥰", avatar:"🥰", level:4 },
+  { gombal:"Aku harap kamu tau, nggak ada satu pun hari yang aku lewatin tanpa kepikiran soal kamu.", reaksi:"Jangan ngomong gitu dong... aku jadi nggak bisa berhenti senyum 🌸", avatar:"🌸", level:4 },
+  { gombal:"Kalau dunia ini punya satu orang yang paling aku mau ada di sampingku selamanya... itu kamu.", reaksi:"Aku... aku nggak tau mau bilang apa. Makasih udah ada buat aku 💕", avatar:"😍", level:5 },
+  { gombal:"Dan satu hal lagi yang perlu kamu tau... aku serius sama semua yang aku bilang tadi. Setiap kata. 💌", reaksi:"Aku percaya kamu. Dan aku bahagia banget ada kamu di hidupku 🥹❤️", avatar:"🥹", level:5 },
+];
+
+const dataBoy = [
+  { gombal:"Eh maaf ya tiba-tiba chat... tapi aku nggak bisa nggak bilang, kamu cantik banget hari ini 😳", reaksi:"Hah?! Apaan sih tiba-tiba~", avatar:"😏", level:1 },
+  { gombal:"Tiap kali kamu senyum, aku lupa semua yang mau aku omongin.", reaksi:"Ih kamu bisa aja! Lebay deh 🙈", avatar:"🙈", level:1 },
+  { gombal:"Kalau kamu adalah lagu, pasti aku putar repeat terus... karena aku nggak pernah bosen lihat kamu.", reaksi:"Aduh... aku jadi senyum-senyum sendiri nih 😳", avatar:"😳", level:2 },
+  { gombal:"Aku nggak percaya cinta pada pandangan pertama... sampai aku pertama kali lihat kamu.", reaksi:"Kamu ini ya... bisa-bisanya ngomong gitu 🫠", avatar:"🫠", level:2 },
+  { gombal:"Matamu itu serius bikin aku susah fokus. Kayak ada magnet yang selalu narik perhatianku ke kamu.", reaksi:"Hiii aku mau sembunyi aja deh kamu bikin aku malu 🥺", avatar:"🥺", level:3 },
+  { gombal:"Kalau rindu ini bisa diukur, jaraknya pasti lebih panjang dari semua mimpi yang pernah aku punya.", reaksi:"Ya Allah kamu ini... aku beneran speechless 😭", avatar:"😭", level:3 },
+  { gombal:"Bukan karena kamu sempurna aku suka sama kamu. Tapi karena kamu bikin aku merasa jadi versi terbaik dari diri aku.", reaksi:"Aku nggak tau harus jawab apa... tapi hatiku penuh banget 🥰", avatar:"🥰", level:4 },
+  { gombal:"Aku harap kamu tau, nggak ada satu pun hari yang aku lewatin tanpa kepikiran soal kamu.", reaksi:"Jangan ngomong gitu dong... aku jadi nggak bisa berhenti senyum 🌸", avatar:"🌸", level:4 },
+  { gombal:"Kalau dunia ini punya satu orang yang paling aku mau ada di sampingku selamanya... itu kamu.", reaksi:"Aku... aku nggak tau mau bilang apa. Makasih udah ada buat aku 💕", avatar:"😍", level:5 },
+  { gombal:"Dan satu hal lagi yang perlu kamu tau... aku serius sama semua yang aku bilang tadi. Setiap kata. 💌", reaksi:"Aku percaya kamu. Dan aku bahagia banget ada kamu di hidupku 🥹❤️", avatar:"🥹", level:5 },
+];
+
+// ===== STATE =====
+let data = [];
+let idx  = 0;
+let busy = false;
+let gender = '';
+let sentGombals = [];
+
 function nowTime() {
   const d = new Date();
   return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
 }
 
-// ===== SKENARIO: CEWEK → COWOK =====
-const scenesGirl = [
-  {
-    avatar: '😏',
-    partnerMsg: 'Haii sayang... ada apa nih tiba-tiba chat? 😏',
-    choices: [
-      { icon:'💙', text:'Kangen aja sama suara kamu. Boleh nemenin aku bentar?',           score: 20 },
-      { icon:'😅', text:'Eh nggak ada. Basa-basi aja deh.',                                score: -5 },
-      { icon:'🌟', text:'Aku mau bilang sesuatu... kamu ganteng banget hari ini loh.',    score: 22 },
-      { icon:'😈', text:'Punya rahasia soal kamu nih. Mau tau nggak?',                     score: 15 },
-    ]
-  },
-  {
-    avatar: '😄',
-    partnerMsg: 'Hah?! Serius? Ayo-ayo bilang, aku penasaran banget! 😄',
-    choices: [
-      { icon:'💫', text:'Senyummu itu bisa bikin hari-hariku jadi lebih cerah.',           score: 26 },
-      { icon:'☕', text:'Kamu tuh kayak kopi pagi — bikin aku semangat seharian.',         score: 22 },
-      { icon:'🌙', text:'Kalau bintang-bintang bisa ngomong, pasti mereka iri sama matamu.', score: 28 },
-      { icon:'😂', text:'Eh lupa mau ngomong apa tadi. Hehe.',                              score: -8 },
-    ]
-  },
-  {
-    avatar: '😳',
-    partnerMsg: 'Aduh kamu gombal banget sih! 😳 Tapi aku suka dengerinnya...',
-    choices: [
-      { icon:'💝', text:'Ini baru 10% dari yang aku rasain sebenernya.',                   score: 30 },
-      { icon:'🌺', text:'Biarin gombal, yang penting tulus dari hati.',                     score: 26 },
-      { icon:'🤭', text:'Maaf ya lebay. Tapi kamu emang spesial banget buat aku.',         score: 24 },
-      { icon:'😂', text:'Haha emang iya sih, aku orangnya begini.',                        score:  5 },
-    ]
-  },
-  {
-    avatar: '🥰',
-    partnerMsg: 'Gilaa... kamu bikin aku senyum-senyum sendiri nih 🥰',
-    choices: [
-      { icon:'💌', text:'Itu emang tujuannya~ Aku suka lihat kamu senyum.',                score: 32 },
-      { icon:'🌙', text:'Serius, semua yang aku bilang itu jujur. Nggak ada bohongnya.',   score: 28 },
-      { icon:'😏', text:'Baper ya? Berarti kamu juga ngerasain hal yang sama? 😏',          score: 30 },
-      { icon:'😶', text:'Ah masa sih? Nggak nyangka efeknya segini.',                      score: 10 },
-    ]
-  },
-  {
-    avatar: '😍',
-    partnerMsg: 'Kamu ini ya... aku mau jawab apa coba 😭💕',
-    choices: [
-      { icon:'🌹', text:'Nggak usah jawab. Senyummu udah cukup jadi jawabannya.',          score: 35 },
-      { icon:'💬', text:'Jawab aja jujur sayang. Apapun jawabannya aku siap.',              score: 27 },
-      { icon:'💖', text:'Kamu nggak perlu jawab sekarang. Aku akan tetap di sini.',         score: 32 },
-      { icon:'😜', text:'Jawab dong! Penasaran banget nih!',                                score: 12 },
-    ]
-  },
-  {
-    avatar: '🌸',
-    partnerMsg: 'Aku nggak bisa bohong... bahagia banget bisa dapet cowok kayak kamu 🌸❤️',
-    choices: [
-      { icon:'💞', text:'Aku yang lebih bahagia bisa punya kamu di sisi aku.',              score: 40 },
-      { icon:'🌟', text:'Semoga kamu selalu bahagia, hari ini, besok, dan selamanya.',      score: 38 },
-      { icon:'💌', text:'Kamu layak bahagia. Dan aku ingin selalu jadi alasannya.',          score: 42 },
-      { icon:'😘', text:'Sama! Aku juga seneng banget bisa ngobrol kayak gini 😘',           score: 33 },
-    ]
-  },
-];
+function startGame(g) {
+  gender = g;
+  data   = g === 'girl' ? dataGirl : dataBoy;
+  idx    = 0;
+  sentGombals = [];
 
-// ===== SKENARIO: COWOK → CEWEK =====
-const scenesBoy = [
-  {
-    avatar: '😊',
-    partnerMsg: 'Haii... kamu kenapa tiba-tiba chat aku? 😏',
-    choices: [
-      { icon:'🌹', text:'Aku cuma mau bilang... kamu cantik banget hari ini.',              score: 20 },
-      { icon:'😅', text:'Eh, nggak ada sih. Basa-basi aja hehe.',                           score: -5 },
-      { icon:'💌', text:'Aku lagi kangen kamu. Boleh chat kamu kan?',                       score: 18 },
-      { icon:'😏', text:'Punya rahasia nih, tapi nggak yakin kamu siap dengerin...',         score: 15 },
-    ]
-  },
-  {
-    avatar: '🤩',
-    partnerMsg: 'Ih serius?! Ayo-ayo, lanjut! Aku penasaran deh~ 😍',
-    choices: [
-      { icon:'💫', text:'Matamu itu kayak bintang. Aku bisa nyasar selamanya di dalamnya.', score: 28 },
-      { icon:'🌸', text:'Senyummu penawar dari semua lelahku seharian ini.',                 score: 25 },
-      { icon:'☕', text:'Kamu kayak kopi pagi — tanpa kamu, hariku nggak lengkap.',         score: 22 },
-      { icon:'🤐', text:'Eh lupa mau ngomong apa. Haha.',                                   score: -8 },
-    ]
-  },
-  {
-    avatar: '😳',
-    partnerMsg: 'Hiii kamu lebay banget sih! 😳 Tapi... aku suka dengerin kamu...',
-    choices: [
-      { icon:'💝', text:'Ini baru 10% dari yang aku rasain benerannya loh.',                score: 30 },
-      { icon:'🌺', text:'Biarin lebay, yang penting jujur dari hati.',                       score: 26 },
-      { icon:'🤭', text:'Maaf ya kalau berlebihan. Tapi kamu emang spesial buat aku.',      score: 24 },
-      { icon:'😂', text:'Haha iya deh. Aku emang begini orangnya.',                          score:  5 },
-    ]
-  },
-  {
-    avatar: '🥰',
-    partnerMsg: 'Aduh... kamu bikin aku susah berhenti senyum-senyum sendiri nih! 🫠',
-    choices: [
-      { icon:'💌', text:'Itu emang tujuannya~ Aku suka lihat kamu senyum.',                 score: 32 },
-      { icon:'🌙', text:'Serius, itu semua tulus. Aku nggak pernah bohong sama kamu.',      score: 28 },
-      { icon:'😏', text:'Baper itu tandanya kamu juga merasakannya kan? 😏',                 score: 30 },
-      { icon:'😶', text:'Oh... aku nggak nyangka efeknya segini.',                          score: 10 },
-    ]
-  },
-  {
-    avatar: '😍',
-    partnerMsg: 'Kamu ini... aku mau jawab apa ya? 😭💕',
-    choices: [
-      { icon:'🌹', text:'Nggak usah jawab. Senyummu udah cukup jadi jawabannya.',           score: 35 },
-      { icon:'💬', text:'Jawab aja jujur. Apapun jawabannya, aku siap.',                    score: 27 },
-      { icon:'💖', text:'Kamu nggak perlu jawab sekarang. Aku akan tetap di sini.',          score: 32 },
-      { icon:'😜', text:'Jawab dong! Aku udah nggak sabar nih!',                             score: 12 },
-    ]
-  },
-  {
-    avatar: '🌸',
-    partnerMsg: 'Aku... aku nggak bisa bohong. Aku bahagia banget chat sama kamu hari ini 🌸❤️',
-    choices: [
-      { icon:'💞', text:'Itu yang aku mau. Kamu selalu bahagia, terutama gara-gara aku.',   score: 40 },
-      { icon:'🌟', text:'Semoga senyummu selalu ada, hari ini, besok, dan selamanya.',       score: 38 },
-      { icon:'💌', text:'Kamu layak bahagia. Dan aku ingin selalu jadi alasannya.',          score: 42 },
-      { icon:'😘', text:'Sama. Aku juga bahagia bisa cerita kayak gini sama kamu 😘',        score: 33 },
-    ]
-  },
-];
-
-let scenes = [];
-let playerGender = '';
-
-function startGame(gender) {
-  playerGender = gender;
-  scenes = gender === 'girl' ? scenesGirl : scenesBoy;
-  maxScore = 0;
-  scenes.forEach(s => { maxScore += Math.max(...s.choices.map(c => c.score)); });
-
-  // Update partner name & avatar
-  if (gender === 'girl') {
-    document.getElementById('partnerName').textContent = 'Abangku 💙';
-    document.getElementById('partnerAvatar').innerHTML = '😏<div class="online-dot"></div>';
+  if (g === 'girl') {
+    document.getElementById('partnerName').textContent = 'Abang 💙';
+    document.getElementById('partnerAv').innerHTML     = '😏<div class="online-dot"></div>';
   } else {
-    document.getElementById('partnerName').textContent = 'Sayangku 💕';
-    document.getElementById('partnerAvatar').innerHTML = '😊<div class="online-dot"></div>';
+    document.getElementById('partnerName').textContent = 'Sayang 💕';
+    document.getElementById('partnerAv').innerHTML     = '😊<div class="online-dot"></div>';
   }
 
-  // Hide pick screen, show chat
-  document.getElementById('pickScreen').style.display  = 'none';
-  document.getElementById('chatUI').style.display      = 'flex';
-  document.getElementById('chatArea').style.display    = 'flex';
-  document.getElementById('choiceArea').style.display  = 'block';
-
-  renderScene(0);
+  document.getElementById('pickScreen').style.display = 'none';
+  document.getElementById('phone').style.display      = 'flex';
+  updatePreview();
 }
 
 function backToMenu() {
-  currentScene = 0; totalScore = 0; lastChoice = '';
-  document.getElementById('meterFill').style.width = '0%';
-  document.getElementById('endOverlay').style.display = 'none';
-  const ca = document.getElementById('chatArea');
-  ca.innerHTML = '<div class="date-badge">Hari ini</div>';
-  document.getElementById('choicesGrid').innerHTML = '';
-  document.getElementById('chatUI').style.display     = 'none';
-  document.getElementById('chatArea').style.display   = 'none';
-  document.getElementById('choiceArea').style.display = 'none';
+  document.getElementById('phone').style.display      = 'none';
   document.getElementById('pickScreen').style.display = 'flex';
+  document.getElementById('endOverlay').style.display = 'none';
+  document.getElementById('chat').innerHTML  = '<div class="date-badge">Hari ini</div>';
+  document.getElementById('meterBar').style.width = '0%';
+  idx = 0; busy = false;
 }
 
-
-
-let currentScene = 0;
-let totalScore   = 0;
-let maxScore     = 0;
-let lastChoice   = '';
-let busy         = false;
-
-scenes.forEach(s => { maxScore += Math.max(...s.choices.map(c => c.score)); });
-
-// ===== RENDER SCENE =====
-function renderScene(idx) {
-  busy = false;
-  const s = scenes[idx];
-
-  // Show typing indicator
-  showTyping().then(() => {
-    // Show partner message
-    addPartnerMsg(s.avatar, s.partnerMsg);
-    // Show choices
-    renderChoices(s.choices);
-    // Update avatar
-    document.getElementById('partnerAvatar').textContent = s.avatar + '\n';
-    document.getElementById('partnerAvatar').innerHTML =
-      s.avatar + '<div class="online-dot"></div>';
-  });
-}
-
-function showTyping() {
-  return new Promise(resolve => {
-    const chatArea = document.getElementById('chatArea');
-    // Typing indicator
-    const typingEl = document.createElement('div');
-    typingEl.className = 'typing-bubble';
-    typingEl.id = 'typingBubble';
-    typingEl.innerHTML = `
-      <div class="msg-avatar-sm">${scenes[currentScene]?.avatar || '😊'}</div>
-      <div class="typing-inner">
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-      </div>`;
-    chatArea.appendChild(typingEl);
-    scrollBottom();
-
-    // Show typing status in topbar
-    document.getElementById('onlineStatus').style.display   = 'none';
-    document.getElementById('typingStatus').style.display   = 'block';
-
-    setTimeout(() => {
-      typingEl.remove();
-      document.getElementById('onlineStatus').style.display = 'block';
-      document.getElementById('typingStatus').style.display = 'none';
-      resolve();
-    }, 1200);
-  });
-}
-
-function addPartnerMsg(avatar, text) {
-  const chatArea = document.getElementById('chatArea');
-  const wrap = document.createElement('div');
-  wrap.className = 'msg-partner';
-  wrap.innerHTML = `
-    <div class="msg-avatar-sm">${avatar}</div>
-    <div class="bubble-left">
-      ${text}
-      <span class="time">${nowTime()}</span>
-    </div>`;
-  chatArea.appendChild(wrap);
-  scrollBottom();
-
-  // Avatar react
-  const av = document.getElementById('partnerAvatar');
-  av.classList.remove('react');
-  void av.offsetWidth;
-  av.classList.add('react');
-  setTimeout(() => av.classList.remove('react'), 600);
-}
-
-function addMyMsg(text) {
-  const chatArea = document.getElementById('chatArea');
-  const wrap = document.createElement('div');
-  wrap.className = 'msg-me';
-  wrap.innerHTML = `
-    <div class="bubble-right">
-      ${text}
-      <div class="time">${nowTime()} <span class="read-tick">✓✓</span></div>
-    </div>`;
-  chatArea.appendChild(wrap);
-  scrollBottom();
-}
-
-function renderChoices(choices) {
-  const grid = document.getElementById('choicesGrid');
-  grid.innerHTML = '';
-  choices.forEach((c, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'choice-btn';
-    btn.innerHTML = `<span class="btn-icon">${c.icon}</span><span>${c.text}</span>`;
-    btn.onclick = () => pick(c, btn, choices);
-    grid.appendChild(btn);
-  });
-}
-
-function pick(choice, btn, allChoices) {
-  if (busy) return;
+// ===== KIRIM GOMBAL =====
+function sendNext() {
+  if (busy || idx >= data.length) return;
   busy = true;
 
-  // Mark selected
-  document.querySelectorAll('.choice-btn').forEach(b => b.classList.add('disabled'));
-  btn.classList.remove('disabled');
-  btn.classList.add('selected');
+  const item = data[idx];
+  const btn  = document.getElementById('sendBtn');
+  btn.disabled = true;
 
-  // My bubble
-  addMyMsg(choice.text);
-  lastChoice = choice.text;
+  // 1. Tampilkan bubble kamu (kanan)
+  addMyBubble(item.gombal);
+  sentGombals.push(item.gombal);
 
-  // Score
-  const pts = Math.max(0, choice.score);
-  totalScore += pts;
-  updateMeter();
-  if (choice.score >= 20) burstHearts(choice.score >= 32 ? 12 : 7);
-
-  // Clear choices & go next
+  // 2. Setelah jeda, pasangan mengetik...
   setTimeout(() => {
-    document.getElementById('choicesGrid').innerHTML = '';
-    currentScene++;
-    if (currentScene < scenes.length) {
-      renderScene(currentScene);
-    } else {
-      showEnd();
-    }
-  }, 700);
+    showTyping(item.avatar);
+
+    // 3. Pasangan balas
+    setTimeout(() => {
+      hideTyping();
+      addPartnerBubble(item.avatar, item.reaksi);
+      updateMeter(idx + 1);
+
+      // Update avatar di topbar
+      const av = document.getElementById('partnerAv');
+      av.innerHTML = item.avatar + '<div class="online-dot"></div>';
+      av.classList.remove('react'); void av.offsetWidth; av.classList.add('react');
+      setTimeout(() => av.classList.remove('react'), 600);
+
+      // Floating hearts tiap 2 pesan
+      if ((idx + 1) % 2 === 0) burstHearts();
+
+      idx++;
+      busy = false;
+      btn.disabled = false;
+
+      if (idx >= data.length) {
+        document.getElementById('previewBox').innerHTML = '<span style="color:#ec4899">Kamu udah kirim semua gombal! 🎉</span>';
+        btn.textContent = '🎉 Lihat Hasil';
+        btn.onclick = showEnd;
+        document.getElementById('progressText').textContent = '';
+      } else {
+        updatePreview();
+      }
+    }, 1400);
+  }, 600);
 }
 
-function updateMeter() {
-  const pct = Math.min(100, Math.round((totalScore / maxScore) * 100));
-  document.getElementById('meterFill').style.width = pct + '%';
+function updatePreview() {
+  if (idx >= data.length) return;
+  const item = data[idx];
+  const total = data.length;
+  document.getElementById('previewBox').innerHTML =
+    `<span style="color:rgba(255,255,255,0.35);font-size:0.7rem;">Gombal ${idx+1}/${total} — preview:</span><br><span>${item.gombal.slice(0,65)}${item.gombal.length>65?'...':''}</span>`;
+  document.getElementById('progressText').textContent = `${total - idx - 1} gombal lagi tersisa`;
+  document.getElementById('sendBtn').textContent = '💌 Kirim Gombal';
+  document.getElementById('sendBtn').onclick = sendNext;
+}
+
+// ===== DOM HELPERS =====
+function addMyBubble(text) {
+  const chat = document.getElementById('chat');
+  const row  = document.createElement('div');
+  row.className = 'row-right anim-right';
+  row.innerHTML = `
+    <div class="bubble-right">
+      ${text}
+      <div class="time">${nowTime()} <span class="tick">✓✓</span></div>
+    </div>`;
+  chat.appendChild(row);
+  scrollBottom();
+}
+
+function addPartnerBubble(avatar, text) {
+  const chat = document.getElementById('chat');
+  const row  = document.createElement('div');
+  row.className = 'row-left anim-left';
+  row.innerHTML = `
+    <div class="av-sm">${avatar}</div>
+    <div class="bubble-left">
+      ${text}
+      <div class="time">${nowTime()}</div>
+    </div>`;
+  chat.appendChild(row);
+  scrollBottom();
+}
+
+let typingEl = null;
+function showTyping(avatar) {
+  document.getElementById('statusOnline').style.display = 'none';
+  document.getElementById('statusTyping').style.display = 'block';
+  const chat = document.getElementById('chat');
+  typingEl = document.createElement('div');
+  typingEl.className = 'typing-row anim-left';
+  typingEl.innerHTML = `
+    <div class="av-sm">${avatar}</div>
+    <div class="typing-bubble">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>`;
+  chat.appendChild(typingEl);
+  scrollBottom();
+}
+function hideTyping() {
+  document.getElementById('statusOnline').style.display = 'block';
+  document.getElementById('statusTyping').style.display = 'none';
+  if (typingEl) { typingEl.remove(); typingEl = null; }
+}
+
+function updateMeter(count) {
+  const pct = Math.round((count / data.length) * 100);
+  document.getElementById('meterBar').style.width = pct + '%';
 }
 
 function scrollBottom() {
-  const ca = document.getElementById('chatArea');
-  setTimeout(() => { ca.scrollTop = ca.scrollHeight; }, 50);
+  const c = document.getElementById('chat');
+  setTimeout(() => c.scrollTop = c.scrollHeight, 60);
 }
 
 // ===== END GAME =====
 function showEnd() {
-  const pct = Math.round((totalScore / maxScore) * 100);
-  let emoji, title, desc;
-  if      (pct >= 85){ emoji='💍'; title='GOMBAL MASTERCLASS!';     desc=`Skor ${pct}/100 🔥 — Kamu berhasil melelehkan hatinya sepenuhnya! Dia pasti sudah jatuh cinta!`; }
-  else if (pct >= 65){ emoji='💖'; title='Gombal Level Pro!';       desc=`Skor ${pct}/100 😍 — Kata-katamu berhasil buat dia baper besar! Tinggal satu langkah lagi~`; }
-  else if (pct >= 45){ emoji='🌸'; title='Lumayan Romantis~';       desc=`Skor ${pct}/100 🙂 — Dia mulai tertarik! Coba lebih romantis lain kali ya.`; }
-  else               { emoji='😅'; title='Perlu Belajar Lagi~';     desc=`Skor ${pct}/100 😅 — Kurang greget nih. Coba ulang dengan pilihan yang lebih manis!`; }
-
-  document.getElementById('endEmoji').textContent = emoji;
+  const total = data.length;
+  let big, title, desc;
+  big   = '💍';
+  title = 'GOMBAL MASTERCLASS! 🔥';
+  desc  = `Kamu berhasil ngirim ${total} gombal sekaligus!\nDia pasti udah baper berat dan nggak bisa nolak kamu~ 🥹❤️`;
+  document.getElementById('endBig').textContent   = big;
   document.getElementById('endTitle').textContent = title;
   document.getElementById('endDesc').textContent  = desc;
   document.getElementById('endOverlay').style.display = 'flex';
-
-  if (pct >= 65) burstHearts(20);
+  burstHearts(20);
 }
 
 function resetGame() {
-  currentScene = 0; totalScore = 0; lastChoice = '';
-  document.getElementById('meterFill').style.width = '0%';
+  idx = 0; busy = false; sentGombals = [];
   document.getElementById('endOverlay').style.display = 'none';
-  const ca = document.getElementById('chatArea');
-  ca.innerHTML = '<div class="date-badge">Hari ini</div>';
-  renderScene(0);
+  document.getElementById('chat').innerHTML = '<div class="date-badge">Hari ini</div>';
+  document.getElementById('meterBar').style.width = '0%';
+  document.getElementById('sendBtn').textContent = '💌 Kirim Gombal';
+  document.getElementById('sendBtn').onclick = sendNext;
+  document.getElementById('sendBtn').disabled = false;
+
+  // Reset partner avatar
+  if (gender === 'girl') {
+    document.getElementById('partnerAv').innerHTML = '😏<div class="online-dot"></div>';
+  } else {
+    document.getElementById('partnerAv').innerHTML = '😊<div class="online-dot"></div>';
+  }
+  updatePreview();
 }
 
 function shareWA() {
-  const pct = Math.round((totalScore / maxScore) * 100);
-  const msg = encodeURIComponent(
-    `💌 Hai sayang...\n\n"${lastChoice}"\n\n` +
-    `(Skor gombal aku: ${pct}/100 💕)\n` +
-    `— dikirim pakai gombal.html`
+  const last = sentGombals[sentGombals.length - 1] || '';
+  const msg  = encodeURIComponent(
+    `💌 *Hai sayang...*\n\n"${last}"\n\n_(Dan masih banyak lagi yang mau aku bilang... 💕)_`
   );
   window.open('https://wa.me/?text=' + msg, '_blank');
 }
 
 // Floating hearts
-function burstHearts(n = 8) {
-  const emojis = ['❤️','💕','💖','🌹','✨','💘','🌸','💗'];
+function burstHearts(n = 7) {
+  const e = ['❤️','💕','💖','🌹','✨','💘','🌸','💗'];
   for (let i = 0; i < n; i++) {
     setTimeout(() => {
       const h = document.createElement('div');
       h.className = 'fh';
-      h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-      h.style.fontSize = (0.9 + Math.random() * 1) + 'rem';
-      h.style.left   = (10 + Math.random() * 80) + 'vw';
-      h.style.bottom = '80px';
-      h.style.animationDuration = (3 + Math.random() * 3) + 's';
+      h.textContent = e[Math.floor(Math.random()*e.length)];
+      h.style.fontSize = (0.9 + Math.random()*1) + 'rem';
+      h.style.left     = (5 + Math.random()*90) + 'vw';
+      h.style.bottom   = '80px';
+      h.style.animationDuration = (3 + Math.random()*3) + 's';
       document.body.appendChild(h);
-      setTimeout(() => h.remove(), 6500);
+      setTimeout(() => h.remove(), 7000);
     }, i * 110);
   }
 }
 
-// Start
-renderScene(0);
+// Ambient hearts
+setInterval(() => {
+  if (Math.random() > 0.75 && document.getElementById('phone').style.display !== 'none') {
+    burstHearts(1);
+  }
+}, 3000);
 </script>
 </body>
 </html>
