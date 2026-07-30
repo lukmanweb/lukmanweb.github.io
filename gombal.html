@@ -348,19 +348,93 @@
       85% { opacity: 0.3; }
       100%{ opacity: 0; transform: translateY(-100vh) scale(1.2) rotate(20deg); }
     }
+
+    /* ===== PICK SCREEN ===== */
+    .pick-screen {
+      position: fixed; inset: 0; z-index: 200;
+      background:
+        radial-gradient(ellipse at 20% 40%, rgba(236,72,153,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 60%, rgba(139,92,246,0.2) 0%, transparent 55%),
+        #0d0415;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .pick-screen h2 {
+      font-size: clamp(1.3rem,5vw,1.8rem);
+      font-weight: 900;
+      background: linear-gradient(135deg,#f9a8d4,#ec4899,#a855f7);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .pick-screen p {
+      color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-bottom: 36px;
+    }
+    .pick-cards {
+      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+      width: 100%; max-width: 420px;
+    }
+    .pick-card {
+      flex: 1; min-width: 140px; max-width: 180px;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 22px;
+      padding: 28px 16px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(.34,1.56,.64,1);
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+    .pick-card:hover {
+      transform: translateY(-6px) scale(1.04);
+      border-color: rgba(236,72,153,0.6);
+      background: rgba(236,72,153,0.1);
+      box-shadow: 0 16px 40px rgba(236,72,153,0.25);
+    }
+    .pick-card .pick-emoji { font-size: 3.2rem; }
+    .pick-card .pick-label {
+      font-size: 0.82rem; font-weight: 700;
+      color: rgba(255,255,255,0.7); line-height: 1.4;
+    }
+    .pick-card .pick-role {
+      font-size: 0.7rem; color: rgba(255,255,255,0.3); font-weight: 600;
+    }
+    .pick-card.girl { border-color: rgba(244,114,182,0.3); }
+    .pick-card.boy  { border-color: rgba(96,165,250,0.3); }
+    .pick-card.girl:hover { border-color: #f472b6; background: rgba(244,114,182,0.1); box-shadow: 0 16px 40px rgba(244,114,182,0.25); }
+    .pick-card.boy:hover  { border-color: #60a5fa; background: rgba(96,165,250,0.1);  box-shadow: 0 16px 40px rgba(96,165,250,0.25); }
   </style>
 </head>
 <body>
 
+<!-- PICK SCREEN -->
+<div class="pick-screen" id="pickScreen">
+  <h2>Kamu siapa? 💕</h2>
+  <p>Pilih dulu sebelum mulai ngobrol~</p>
+  <div class="pick-cards">
+    <div class="pick-card girl" onclick="startGame('girl')">
+      <span class="pick-emoji">👧</span>
+      <span class="pick-label">Aku Cewek<br>Dia Cowok</span>
+      <span class="pick-role">Gombal ke pacar cowok 💙</span>
+    </div>
+    <div class="pick-card boy" onclick="startGame('boy')">
+      <span class="pick-emoji">👦</span>
+      <span class="pick-label">Aku Cowok<br>Dia Cewek</span>
+      <span class="pick-role">Gombal ke pacar cewek 💗</span>
+    </div>
+  </div>
+</div>
+
 <!-- TOP BAR -->
-<div class="topbar">
-  <span class="back-arrow">←</span>
+<div class="topbar" id="chatUI" style="display:none">
+  <span class="back-arrow" onclick="backToMenu()">←</span>
   <div class="partner-avatar" id="partnerAvatar">
     😊
     <div class="online-dot"></div>
   </div>
   <div class="partner-info">
-    <h3>Sayangku 💕</h3>
+    <h3 id="partnerName">Sayangku 💕</h3>
     <span id="onlineStatus">Online sekarang</span>
     <div class="typing-status" id="typingStatus">sedang mengetik...</div>
   </div>
@@ -373,12 +447,12 @@
 </div>
 
 <!-- CHAT AREA -->
-<div class="chat-area" id="chatArea">
+<div class="chat-area" id="chatArea" style="display:none">
   <div class="date-badge">Hari ini</div>
 </div>
 
 <!-- CHOICE AREA -->
-<div class="choice-area" id="choiceArea">
+<div class="choice-area" id="choiceArea" style="display:none">
   <div class="choice-label">Pilih balasanmu</div>
   <div class="choices-grid" id="choicesGrid"></div>
 </div>
@@ -403,67 +477,125 @@ function nowTime() {
   return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
 }
 
-// ===== SKENARIO =====
-const scenes = [
+// ===== SKENARIO: CEWEK → COWOK =====
+const scenesGirl = [
+  {
+    avatar: '😏',
+    partnerMsg: 'Haii sayang... ada apa nih tiba-tiba chat? 😏',
+    choices: [
+      { icon:'💙', text:'Kangen aja sama suara kamu. Boleh nemenin aku bentar?',           score: 20 },
+      { icon:'😅', text:'Eh nggak ada. Basa-basi aja deh.',                                score: -5 },
+      { icon:'🌟', text:'Aku mau bilang sesuatu... kamu ganteng banget hari ini loh.',    score: 22 },
+      { icon:'😈', text:'Punya rahasia soal kamu nih. Mau tau nggak?',                     score: 15 },
+    ]
+  },
+  {
+    avatar: '😄',
+    partnerMsg: 'Hah?! Serius? Ayo-ayo bilang, aku penasaran banget! 😄',
+    choices: [
+      { icon:'💫', text:'Senyummu itu bisa bikin hari-hariku jadi lebih cerah.',           score: 26 },
+      { icon:'☕', text:'Kamu tuh kayak kopi pagi — bikin aku semangat seharian.',         score: 22 },
+      { icon:'🌙', text:'Kalau bintang-bintang bisa ngomong, pasti mereka iri sama matamu.', score: 28 },
+      { icon:'😂', text:'Eh lupa mau ngomong apa tadi. Hehe.',                              score: -8 },
+    ]
+  },
+  {
+    avatar: '😳',
+    partnerMsg: 'Aduh kamu gombal banget sih! 😳 Tapi aku suka dengerinnya...',
+    choices: [
+      { icon:'💝', text:'Ini baru 10% dari yang aku rasain sebenernya.',                   score: 30 },
+      { icon:'🌺', text:'Biarin gombal, yang penting tulus dari hati.',                     score: 26 },
+      { icon:'🤭', text:'Maaf ya lebay. Tapi kamu emang spesial banget buat aku.',         score: 24 },
+      { icon:'😂', text:'Haha emang iya sih, aku orangnya begini.',                        score:  5 },
+    ]
+  },
+  {
+    avatar: '🥰',
+    partnerMsg: 'Gilaa... kamu bikin aku senyum-senyum sendiri nih 🥰',
+    choices: [
+      { icon:'💌', text:'Itu emang tujuannya~ Aku suka lihat kamu senyum.',                score: 32 },
+      { icon:'🌙', text:'Serius, semua yang aku bilang itu jujur. Nggak ada bohongnya.',   score: 28 },
+      { icon:'😏', text:'Baper ya? Berarti kamu juga ngerasain hal yang sama? 😏',          score: 30 },
+      { icon:'😶', text:'Ah masa sih? Nggak nyangka efeknya segini.',                      score: 10 },
+    ]
+  },
+  {
+    avatar: '😍',
+    partnerMsg: 'Kamu ini ya... aku mau jawab apa coba 😭💕',
+    choices: [
+      { icon:'🌹', text:'Nggak usah jawab. Senyummu udah cukup jadi jawabannya.',          score: 35 },
+      { icon:'💬', text:'Jawab aja jujur sayang. Apapun jawabannya aku siap.',              score: 27 },
+      { icon:'💖', text:'Kamu nggak perlu jawab sekarang. Aku akan tetap di sini.',         score: 32 },
+      { icon:'😜', text:'Jawab dong! Penasaran banget nih!',                                score: 12 },
+    ]
+  },
+  {
+    avatar: '🌸',
+    partnerMsg: 'Aku nggak bisa bohong... bahagia banget bisa dapet cowok kayak kamu 🌸❤️',
+    choices: [
+      { icon:'💞', text:'Aku yang lebih bahagia bisa punya kamu di sisi aku.',              score: 40 },
+      { icon:'🌟', text:'Semoga kamu selalu bahagia, hari ini, besok, dan selamanya.',      score: 38 },
+      { icon:'💌', text:'Kamu layak bahagia. Dan aku ingin selalu jadi alasannya.',          score: 42 },
+      { icon:'😘', text:'Sama! Aku juga seneng banget bisa ngobrol kayak gini 😘',           score: 33 },
+    ]
+  },
+];
+
+// ===== SKENARIO: COWOK → CEWEK =====
+const scenesBoy = [
   {
     avatar: '😊',
     partnerMsg: 'Haii... kamu kenapa tiba-tiba chat aku? 😏',
-    emotion: '',
     choices: [
-      { icon:'🌹', text:'Aku cuma mau bilang... kamu cantik banget hari ini.',            score: 20 },
-      { icon:'😅', text:'Eh, nggak ada sih. Basa-basi aja hehe.',                         score: -5 },
-      { icon:'💌', text:'Aku lagi kangen kamu. Boleh chat kamu kan?',                     score: 18 },
-      { icon:'😏', text:'Punya rahasia nih, tapi nggak yakin kamu siap dengerin...',       score: 15 },
+      { icon:'🌹', text:'Aku cuma mau bilang... kamu cantik banget hari ini.',              score: 20 },
+      { icon:'😅', text:'Eh, nggak ada sih. Basa-basi aja hehe.',                           score: -5 },
+      { icon:'💌', text:'Aku lagi kangen kamu. Boleh chat kamu kan?',                       score: 18 },
+      { icon:'😏', text:'Punya rahasia nih, tapi nggak yakin kamu siap dengerin...',         score: 15 },
     ]
   },
   {
     avatar: '🤩',
     partnerMsg: 'Ih serius?! Ayo-ayo, lanjut! Aku penasaran deh~ 😍',
-    emotion: '',
     choices: [
       { icon:'💫', text:'Matamu itu kayak bintang. Aku bisa nyasar selamanya di dalamnya.', score: 28 },
-      { icon:'🌸', text:'Senyummu penawar dari semua lelahku seharian ini.',               score: 25 },
-      { icon:'☕', text:'Kamu kayak kopi pagi — tanpa kamu, hariku nggak lengkap.',       score: 22 },
-      { icon:'🤐', text:'Eh lupa mau ngomong apa. Haha.',                                 score: -8 },
+      { icon:'🌸', text:'Senyummu penawar dari semua lelahku seharian ini.',                 score: 25 },
+      { icon:'☕', text:'Kamu kayak kopi pagi — tanpa kamu, hariku nggak lengkap.',         score: 22 },
+      { icon:'🤐', text:'Eh lupa mau ngomong apa. Haha.',                                   score: -8 },
     ]
   },
   {
     avatar: '😳',
     partnerMsg: 'Hiii kamu lebay banget sih! 😳 Tapi... aku suka dengerin kamu...',
-    emotion: '',
     choices: [
-      { icon:'💝', text:'Ini baru 10% dari yang aku rasain benerannya loh.',              score: 30 },
-      { icon:'🌺', text:'Biarin lebay, yang penting jujur dari hati.',                     score: 26 },
-      { icon:'🤭', text:'Maaf ya kalau berlebihan. Tapi kamu emang spesial buat aku.',    score: 24 },
-      { icon:'😂', text:'Haha iya deh. Aku emang begini orangnya.',                        score:  5 },
+      { icon:'💝', text:'Ini baru 10% dari yang aku rasain benerannya loh.',                score: 30 },
+      { icon:'🌺', text:'Biarin lebay, yang penting jujur dari hati.',                       score: 26 },
+      { icon:'🤭', text:'Maaf ya kalau berlebihan. Tapi kamu emang spesial buat aku.',      score: 24 },
+      { icon:'😂', text:'Haha iya deh. Aku emang begini orangnya.',                          score:  5 },
     ]
   },
   {
     avatar: '🥰',
     partnerMsg: 'Aduh... kamu bikin aku susah berhenti senyum-senyum sendiri nih! 🫠',
-    emotion: '',
     choices: [
-      { icon:'💌', text:'Itu emang tujuannya~ Aku suka lihat kamu senyum.',              score: 32 },
-      { icon:'🌙', text:'Serius, itu semua tulus. Aku nggak pernah bohong sama kamu.',    score: 28 },
-      { icon:'😏', text:'Baper itu tandanya kamu juga merasakannya kan? 😏',              score: 30 },
-      { icon:'😶', text:'Oh... aku nggak nyangka efeknya segini.',                        score: 10 },
+      { icon:'💌', text:'Itu emang tujuannya~ Aku suka lihat kamu senyum.',                 score: 32 },
+      { icon:'🌙', text:'Serius, itu semua tulus. Aku nggak pernah bohong sama kamu.',      score: 28 },
+      { icon:'😏', text:'Baper itu tandanya kamu juga merasakannya kan? 😏',                 score: 30 },
+      { icon:'😶', text:'Oh... aku nggak nyangka efeknya segini.',                          score: 10 },
     ]
   },
   {
     avatar: '😍',
     partnerMsg: 'Kamu ini... aku mau jawab apa ya? 😭💕',
-    emotion: '',
     choices: [
-      { icon:'🌹', text:'Nggak usah jawab. Senyummu udah cukup jadi jawabannya.',        score: 35 },
-      { icon:'💬', text:'Jawab aja jujur. Apapun jawabannya, aku siap.',                  score: 27 },
-      { icon:'💖', text:'Kamu nggak perlu jawab sekarang. Aku akan tetap di sini.',       score: 32 },
-      { icon:'😜', text:'Jawab dong! Aku udah nggak sabar nih!',                          score: 12 },
+      { icon:'🌹', text:'Nggak usah jawab. Senyummu udah cukup jadi jawabannya.',           score: 35 },
+      { icon:'💬', text:'Jawab aja jujur. Apapun jawabannya, aku siap.',                    score: 27 },
+      { icon:'💖', text:'Kamu nggak perlu jawab sekarang. Aku akan tetap di sini.',          score: 32 },
+      { icon:'😜', text:'Jawab dong! Aku udah nggak sabar nih!',                             score: 12 },
     ]
   },
   {
     avatar: '🌸',
     partnerMsg: 'Aku... aku nggak bisa bohong. Aku bahagia banget chat sama kamu hari ini 🌸❤️',
-    emotion: '',
     choices: [
       { icon:'💞', text:'Itu yang aku mau. Kamu selalu bahagia, terutama gara-gara aku.',   score: 40 },
       { icon:'🌟', text:'Semoga senyummu selalu ada, hari ini, besok, dan selamanya.',       score: 38 },
@@ -472,6 +604,48 @@ const scenes = [
     ]
   },
 ];
+
+let scenes = [];
+let playerGender = '';
+
+function startGame(gender) {
+  playerGender = gender;
+  scenes = gender === 'girl' ? scenesGirl : scenesBoy;
+  maxScore = 0;
+  scenes.forEach(s => { maxScore += Math.max(...s.choices.map(c => c.score)); });
+
+  // Update partner name & avatar
+  if (gender === 'girl') {
+    document.getElementById('partnerName').textContent = 'Abangku 💙';
+    document.getElementById('partnerAvatar').innerHTML = '😏<div class="online-dot"></div>';
+  } else {
+    document.getElementById('partnerName').textContent = 'Sayangku 💕';
+    document.getElementById('partnerAvatar').innerHTML = '😊<div class="online-dot"></div>';
+  }
+
+  // Hide pick screen, show chat
+  document.getElementById('pickScreen').style.display  = 'none';
+  document.getElementById('chatUI').style.display      = 'flex';
+  document.getElementById('chatArea').style.display    = 'flex';
+  document.getElementById('choiceArea').style.display  = 'block';
+
+  renderScene(0);
+}
+
+function backToMenu() {
+  currentScene = 0; totalScore = 0; lastChoice = '';
+  document.getElementById('meterFill').style.width = '0%';
+  document.getElementById('endOverlay').style.display = 'none';
+  const ca = document.getElementById('chatArea');
+  ca.innerHTML = '<div class="date-badge">Hari ini</div>';
+  document.getElementById('choicesGrid').innerHTML = '';
+  document.getElementById('chatUI').style.display     = 'none';
+  document.getElementById('chatArea').style.display   = 'none';
+  document.getElementById('choiceArea').style.display = 'none';
+  document.getElementById('pickScreen').style.display = 'flex';
+}
+
+
 
 let currentScene = 0;
 let totalScore   = 0;
