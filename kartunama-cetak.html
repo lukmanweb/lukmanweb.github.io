@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desain Kartu Nama Cetak (Print Ready 9x5.5cm) - Lukman Hakim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #0f172a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .toolbar {
+      margin-bottom: 30px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .btn-print {
+      background: linear-gradient(135deg, #6366f1, #38bdf8);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-print:hover { transform: translateY(-2px); opacity: 0.95; }
+
+    .print-instructions {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-align: center;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    /* Standard Business Card Size (90mm x 55mm = 9cm x 5.5cm) */
+    /* At 96 DPI: 340px x 208px, but scaled x2 for high clarity display: 680px x 416px (Aspect Ratio 9:5.5) */
+    .card-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .card-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .card-print {
+      width: 540px;
+      height: 330px; /* Ratio 9 : 5.5 */
+      background: #0b132b;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 36px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Front Card Design */
+    .card-front::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 220px;
+      height: 220px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(56, 189, 248, 0.15));
+      border-radius: 50%;
+      filter: blur(20px);
+    }
+
+    .card-front::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #6366f1, #38bdf8, #818cf8);
+    }
+
+    .front-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      z-index: 2;
+    }
+
+    .brand-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, #6366f1, #38bdf8);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    }
+
+    .brand-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .brand-name span { color: #38bdf8; }
+
+    .brand-tag {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .person-details {
+      margin-top: 10px;
+      z-index: 2;
+    }
+
+    .person-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 2px;
+    }
+
+    .person-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #38bdf8;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .front-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      z-index: 2;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 18px;
+    }
+
+    .info-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-icon {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #818cf8;
+    }
+
+    .info-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-lbl {
+      font-size: 0.65rem;
+      color: #94a3b8;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .info-val {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      line-height: 1.2;
+    }
+
+    /* Back Card Design */
+    .card-back {
+      background: linear-gradient(135deg, #090e1a 0%, #1e1b4b 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .card-back::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    }
+
+    .back-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .back-logo {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #6366f1, #38bdf8);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 2.2rem;
+      color: #fff;
+      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+      margin-bottom: 16px;
+    }
+
+    .back-brand-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .back-brand-name span { color: #38bdf8; }
+
+    .back-slogan {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+
+    .back-services-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #e2e8f0;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 0 !important;
+      }
+
+      .toolbar, .print-instructions, .card-label {
+        display: none !important;
+      }
+
+      .card-wrap {
+        gap: 20mm;
+      }
+
+      .card-print {
+        width: 90mm !important;
+        height: 55mm !important;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        page-break-inside: avoid;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Cetak Kartu Nama (PDF / Print)
+    </button>
+  </div>
+
+  <div class="print-instructions">
+    💡 <strong>Petunjuk Cetak:</strong> Ukuran kartu disetting standar <strong>90mm x 55mm (9 x 5.5 cm)</strong>. Saat mencetak, atur <em>Scale</em> ke <strong>100% (Actual Size)</strong> dan pilih kertas Art Paper/Carton (260-310 gsm) untuk hasil cetak terbaik.
+  </div>
+
+  <div class="card-wrap">
+
+    <!-- DEPAN / FRONT -->
+    <div>
+      <div class="card-label">SISI DEPAN (FRONT)</div>
+      <div class="card-print card-front">
+        <div class="front-top">
+          <div class="brand-logo-group">
+            <div class="brand-icon">LW</div>
+            <div>
+              <div class="brand-name">Lukman <span>Web</span></div>
+              <div class="brand-tag">Web Development & IT Solutions</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="person-details">
+          <div class="person-name">Lukman Hakim</div>
+          <div class="person-title">Web Developer & Consultant</div>
+        </div>
+
+        <div class="front-bottom">
+          <div class="info-group">
+            <div class="info-icon">📱</div>
+            <div class="info-text">
+              <span class="info-lbl">No. HP / WA</span>
+              <span class="info-val">0857-1222-5565</span>
+            </div>
+          </div>
+
+          <div class="info-group">
+            <div class="info-icon">🌐</div>
+            <div class="info-text">
+              <span class="info-lbl">Website</span>
+              <span class="info-val">lukmanweb.github.io</span>
+            </div>
+          </div>
+
+          <div class="info-group" style="grid-column: span 2;">
+            <div class="info-icon">📍</div>
+            <div class="info-text">
+              <span class="info-lbl">Alamat Workshop</span>
+              <span class="info-val">Krakal Mukti RT25/RW08, Sruwen, Tengaran, Kab. Semarang, Jawa Tengah 50775</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BELAKANG / BACK -->
+    <div>
+      <div class="card-label">SISI BELAKANG (BACK)</div>
+      <div class="card-print card-back">
+        <div class="back-content">
+          <div class="back-logo">LW</div>
+          <div class="back-brand-name">Lukman <span>Web</span></div>
+          <div class="back-slogan">Solusi Website Profesional, Cepat & Terpercaya</div>
+          <div class="back-services-pills">
+            <span class="pill">Company Profile</span>
+            <span class="pill">Toko Online</span>
+            <span class="pill">Landing Page</span>
+            <span class="pill">Sistem POS / Kasir</span>
+            <span class="pill">Aplikasi Web / PWA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
