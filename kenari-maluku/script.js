@@ -20,19 +20,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
+            navLinks.classList.toggle('mobile-open');
+            // Toggle hamburger icon
+            const icon = mobileToggle.querySelector('i');
+            if (navLinks.classList.contains('mobile-open')) {
+                icon.classList.replace('fa-bars', 'fa-xmark');
             } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'var(--dark-green)';
-                navLinks.style.padding = '20px';
-                navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+                icon.classList.replace('fa-xmark', 'fa-bars');
             }
+        });
+
+        // Tutup menu saat klik link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-open');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            });
         });
     }
 
