@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KENARI MALUKU | Persembahan Liar Hutan Kepulauan Rempah</title>
+    <meta name="description" content="Kenari Maluku dipanen liar secara alami dari hutan purba Kepulauan Rempah. Kelezatan langka yang dipanen hanya sekali dalam setahun.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <span class="logo-title">KENARI MALUKU</span>
+                <span class="logo-sub">WILD HARVEST OF SPICE ISLANDS</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#hero">Beranda</a>
+                
+                <!-- Our Story Dropdown (Like Yagi.co.id) -->
+                <div class="nav-dropdown">
+                    <a href="#purpose" class="dropdown-trigger">Kisah Kami <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#purpose"><i class="fa-solid fa-bullseye"></i> Purpose (Tujuan Kami)</a>
+                        <a href="#process"><i class="fa-solid fa-arrows-spin"></i> Process (Proses Panen)</a>
+                        <a href="#ingredients"><i class="fa-solid fa-leaf"></i> Ingredients (Nutrisi Alami)</a>
+                        <a href="#people"><i class="fa-solid fa-users"></i> People (Masyarakat Petani)</a>
+                        <a href="#partners"><i class="fa-solid fa-handshake"></i> Partners (Mitra & Komunitas)</a>
+                    </div>
+                </div>
+
+                <a href="#products">Produk</a>
+                <a href="#impact">Dampak Sosial</a>
+                <a href="#contact" class="btn-cta-nav">Hubungi Kami</a>
+            </nav>
+            
+            <div class="header-actions">
+                <!-- Cart Icon Button -->
+                <div class="cart-icon-btn" id="cartBtn" title="Keranjang Belanja">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </div>
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Slide-over Shopping Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Keranjang Belanja</h3>
+            <button class="cart-close-btn" id="cartCloseBtn">&times;</button>
+        </div>
+
+        <div class="cart-drawer-body" id="cartItemsContainer">
+            <!-- Dynamic Cart Items via JavaScript -->
+            <div class="cart-empty-state" id="cartEmptyState">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <p>Keranjang belanja Anda masih kosong.</p>
+                <a href="#products" class="btn-shop-now" id="btnShopNow">Mulai Belanja</a>
+            </div>
+        </div>
+
+        <div class="cart-drawer-footer" id="cartFooter">
+            <div class="cart-summary-row">
+                <span>Subtotal</span>
+                <span class="cart-total-price" id="cartSubtotal">Rp 0</span>
+            </div>
+            <p class="cart-notes">* Klik tombol checkout untuk mengisi data pengiriman</p>
+            <button class="btn-checkout" id="btnOpenCheckoutForm">
+                Lanjut Pembelian <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Order Form Modal (Nama, Alamat, No HP) -->
+    <div class="modal-overlay" id="checkoutModalOverlay">
+        <div class="checkout-modal">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-clipboard-list"></i> Form Data Pemesan</h3>
+                <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+            </div>
+            <form id="checkoutForm" class="checkout-form">
+                <div class="form-group">
+                    <label for="custName"><i class="fa-solid fa-user"></i> Nama Lengkap *</label>
+                    <input type="text" id="custName" placeholder="Contoh: Budi Santoso" required>
+                </div>
+                <div class="form-group">
+                    <label for="custPhone"><i class="fa-solid fa-phone"></i> Nomor WhatsApp / HP *</label>
+                    <input type="tel" id="custPhone" placeholder="Contoh: 081234567890" required>
+                </div>
+                <div class="form-group">
+                    <label for="custAddress"><i class="fa-solid fa-location-dot"></i> Alamat Lengkap Pengiriman *</label>
+                    <textarea id="custAddress" rows="3" placeholder="Jl. Mawar No. 12, RT 01/RW 02, Kecamatan, Kota/Kabupaten, Kode Pos" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="custNotes"><i class="fa-solid fa-pen"></i> Catatan Tambahan (Opsional)</label>
+                    <input type="text" id="custNotes" placeholder="Contoh: Titipkan di satpam jika tidak ada orang">
+                </div>
+
+                <div class="order-summary-box">
+                    <h4>Ringkasan Pesanan</h4>
+                    <div id="modalOrderSummary"></div>
+                    <div class="modal-total-row">
+                        <span>Total Pembayaran</span>
+                        <strong id="modalGrandTotal">Rp 0</strong>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit-order">
+                    <i class="fa-brands fa-whatsapp"></i> Kirim Pesanan ke WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-overlay"></div>
+        <img src="file:///C:/Users/LUKMAN%20HAKIM/.gemini/antigravity/brain/3d0daec2-ce97-4858-9b97-499855d06a64/kenari_hero_banner_1785588758702.jpg" alt="Kenari Maluku Hero" class="hero-bg-img">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-seedling"></i> 100% Liar & Alami • Tanpa Ditanam
+            </div>
+            <h1 class="hero-title">Kelezatan Langka dari Hutan Purba Maluku</h1>
+            <p class="hero-subtitle">
+                Dipanen alami hanya setahun sekali dari keanggunan pohon kenari raksasa yang tumbuh liar di Kepulauan Rempah.
+            </p>
+            <div class="hero-buttons">
+                <a href="#purpose" class="btn-primary">Jelajahi Kisah Kami <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#products" class="btn-secondary">Lihat Koleksi Produk</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Gulir Ke Bawah</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Key Highlights Counter -->
+    <section class="highlights-bar">
+        <div class="container highlights-wrapper">
+            <div class="highlight-item">
+                <span class="highlight-num">100%</span>
+                <span class="highlight-label">Tumbuh Liar Alami</span>
+            </div>
+            <div class="highlight-divider"></div>
+            <div class="highlight-item">
+                <span class="highlight-num">1x</span>
+                <span class="highlight-label">Musim Panen Utama Per Tahun</span>
+            </div>
+            <div class="highlight-divider"></div>
+            <div class="highlight-item">
+                <span class="highlight-num">0%</span>
+                <span class="highlight-label">Pupuk Kimia & Pestisida</span>
+            </div>
+            <div class="highlight-divider"></div>
+            <div class="highlight-item">
+                <span class="highlight-num">Maluku</span>
+                <span class="highlight-label">Warisan Asli Kepulauan Rempah</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY DETAILED SUB-SECTIONS -->
+    
+    <!-- 1. PURPOSE -->
+    <section class="story-subsection" id="purpose">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image-wrap">
+                    <img src="file:///C:/Users/LUKMAN%20HAKIM/.gemini/antigravity/brain/3d0daec2-ce97-4858-9b97-499855d06a64/kenari_wild_forest_1785588891314.jpg" alt="Purpose Kenari Maluku" class="story-img">
+                    <div class="story-badge-floating">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <span>OUR PURPOSE</span>
+                    </div>
+                </div>
+
+                <div class="story-text-content">
+                    <span class="section-tag">OUR STORY — PURPOSE</span>
+                    <h2 class="section-title">Menjaga Hutan Purba melalui Kenari Liar</h2>
+                    <p class="story-paragraph">
+                        Tujuan utama KENARI MALUKU lahir bukan sekadar untuk menghadirkan camilan lezat, melainkan untuk **melindungi bentang hutan alam Kepulauan Maluku**. Pohon Kenari (*Canarium indicum*) telah tumbuh alami beratus-ratus tahun tanpa pernah ditanam di perkebunan komersial.
+                    </p>
+                    <p class="story-paragraph">
+                        Dengan memberikan nilai ekonomi yang tinggi dan adil bagi produk kenari liar, masyarakat lokal termotivasi untuk menjaga keutuhan hutan purba agar tetap lestari, alih-alih mengalihfungsikan lahan menjadi industri perkayuan atau perkebunan monokultur.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. PROCESS -->
+    <section class="story-subsection alt-bg" id="process">
+        <div class="container">
+            <div class="story-grid reverse">
+                <div class="story-text-content">
+                    <span class="section-tag">OUR STORY — PROCESS</span>
+                    <h2 class="section-title">Panen Musiman & Keterampilan Tradisional</h2>
+                    <p class="story-paragraph">
+                        Pohon Kenari raksasa hanya mengalami musim panen raya **satu kali dalam setahun**. Proses pengambilannya mempertahankan kearifan lokal secara utuh:
+                    </p>
+                    <ul class="process-list">
+                        <li><i class="fa-solid fa-check"></i> <strong>Menunggu Buah Jatuh Alami:</strong> Petani mengumpulkan buah matang yang jatuh ke tanah hutan secara alami.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Galah Tradisional (*Popoga*):</strong> Menggunakan bambu panjang untuk menjatuhkan buah dari pohon berukuran tinggi puluhan meter.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Pengeringan Matahari:</strong> Biji kenari dikeringkan secara perlahan di bawah sinar matahari alami Maluku.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Pemecahan Manual:</strong> Setiap cangkang keras dipecah secara hati-hati oleh tangan-tangan terampil warga lokal.</li>
+                    </ul>
+                </div>
+
+                <div class="story-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Proses Panen Kenari" class="story-img">
+                    <div class="story-badge-floating">
+                        <i class="fa-solid fa-arrows-spin"></i>
+                        <span>1x PANEN SETAHUN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. INGREDIENTS -->
+    <section class="story-subsection" id="ingredients">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">OUR STORY — INGREDIENTS</span>
+                <h2 class="section-title">Keajaiban Super-Nutrisi Kenari Maluku</h2>
+                <p class="section-desc">Murni 100% dari alam tanpa bahan kimia, bahan pengawet, atau rekayasa genetik.</p>
+            </div>
+
+            <div class="ingredients-grid">
+                <div class="ingredient-box">
+                    <div class="ing-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h4>Kaya Omega-3 Alami</h4>
+                    <p>Sangat baik untuk kesehatan jantung, menurunkan kolesterol jahat, dan meningkatkan fokus daya ingat otak.</p>
+                </div>
+                <div class="ingredient-box">
+                    <div class="ing-icon"><i class="fa-solid fa-sparkles"></i></div>
+                    <h4>Tinggi Vitamin E</h4>
+                    <p>Antioksidan kuat untuk kesehatan kulit alami, memperlambat penuaan dini, dan meningkatkan imunitas.</p>
+                </div>
+                <div class="ingredient-box">
+                    <div class="ing-icon"><i class="fa-solid fa-plant-wilt"></i></div>
+                    <h4>Tanpa Pestisida & Pupuk Kimia</h4>
+                    <p>Karena tumbuh liar di alam, seluruh buah kenari benar-benar bersih dari zat kimia berbahaya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PEOPLE -->
+    <section class="story-subsection alt-bg" id="people">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80" alt="Masyarakat Petani Kenari" class="story-img">
+                    <div class="story-badge-floating">
+                        <i class="fa-solid fa-users"></i>
+                        <span>LOCAL COMMUNITY</span>
+                    </div>
+                </div>
+
+                <div class="story-text-content">
+                    <span class="section-tag">OUR STORY — PEOPLE</span>
+                    <h2 class="section-title">Pahlawan di Balik Kenari Maluku</h2>
+                    <p class="story-paragraph">
+                        Di balik setiap kemasan Kenari Maluku, ada ribuan jam kerja keras dan dedikasi dari ibu-ibu dan pria pengumpul kenari di desa-desa terpencil Maluku. Bagi mereka, kenari adalah warisan leluhur yang memberikan mata pencaharian berkelanjutan.
+                    </p>
+                    <p class="story-paragraph">
+                        Kami menjamin pendapatan yang layak melebihi harga pasar melalui sistem perdagangan langsung (*Direct Trade*) tanpa melalui mata rantai tengkulak yang merugikan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PARTNERS -->
+    <section class="story-subsection" id="partners">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">OUR STORY — PARTNERS</span>
+                <h2 class="section-title">Kemitraan & Perdagangan Adil (Fair Trade)</h2>
+                <p class="section-desc">Bekerja sama dengan kelompok tani hutan, koperasi lokal, dan lembaga konservasi.</p>
+            </div>
+
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <i class="fa-solid fa-tree-city partner-icon"></i>
+                    <h4>Koperasi Hutan Lestari Maluku</h4>
+                    <p>Wadah kolaborasi ribuan petani pengumpul kenari di wilayah Kepulauan Maluku.</p>
+                </div>
+                <div class="partner-card">
+                    <i class="fa-solid fa-hand-holding-heart partner-icon"></i>
+                    <h4>Fair Trade Community</h4>
+                    <p>Komitmen pembayaran harga di atas standar pasar untuk kesejahteraan keluarga petani.</p>
+                </div>
+                <div class="partner-card">
+                    <i class="fa-solid fa-earth-americas partner-icon"></i>
+                    <h4>Mitra Konservasi Alam</h4>
+                    <p>Menjaga zona hutan tutupan alami agar terhindar dari pembalakan liar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Uniqueness Summary Cards Section -->
+    <section class="uniqueness-section" id="uniqueness">
+        <div class="container">
+            <div class="section-header center light-text">
+                <span class="section-tag">NATURE'S PROCESS</span>
+                <h2 class="section-title">Mengapa Kenari Maluku Sangat Istimewa?</h2>
+                <p class="section-desc">Empat pilar keaslian yang menjadikan Kenari Maluku sebagai mahakarya nutrisi alam.</p>
+            </div>
+
+            <div class="uniqueness-grid">
+                <!-- Card 1 -->
+                <div class="unique-card">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3>Tumbuh Liar (Tanpa Ditanam)</h3>
+                    <p>
+                        Seluruh produk KENARI MALUKU berasal dari pohon-pohon yang tumbuh secara alami di hutan dan kebun tradisional tanpa intervensi rekayasa genetik atau pupuk kimia.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="unique-card highlight-card">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h3>Panen 1x Setahun</h3>
+                    <p>
+                        Pohon Kenari mencapai puncak kematangan panen besar hanya satu kali dalam sebulan-bulan tertentu setiap tahunnya. Ketersediaannya sangat terbatas dan penuh nilai eksklusivitas.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="unique-card">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-hands-holding-circle"></i>
+                    </div>
+                    <h3>Tradisi Pengambilan Tradisional</h3>
+                    <p>
+                        Masyarakat memanen kenari dengan menunggu buah matang jatuh secara alami atau menjatuhkannya menggunakan galah bambu khas (*popoga*), dilanjutkan proses pengeringan matahari yang alami.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="unique-card">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3>Kaya Super-Nutrisi</h3>
+                    <p>
+                        Kandungan Omega-3 alami, vitamin E tinggi, magnesium, serta lemak baik yang kaya manfaat untuk kesehatan jantung, otak, dan kecantikan kulit alami.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Showcase Section with Unique Images for Each Product -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">OUR COLLECTION</span>
+                <h2 class="section-title">Koleksi Kenari Maluku Pilihan</h2>
+                <p class="section-desc">Diproses secara terampil dan higienis untuk menjaga kemurnian rasa dan nutrisi alami.</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1: Raw Wild Kenari -->
+                <div class="product-card" data-id="p1" data-title="Raw Wild Kenari Nuts (Mentah Organic)" data-price="85000" data-img="file:///C:/Users/LUKMAN%20HAKIM/.gemini/antigravity/brain/3d0daec2-ce97-4858-9b97-499855d06a64/kenari_raw_nuts_1785589921215.jpg">
+                    <div class="product-img-box">
+                        <img src="file:///C:/Users/LUKMAN%20HAKIM/.gemini/antigravity/brain/3d0daec2-ce97-4858-9b97-499855d06a64/kenari_raw_nuts_1785589921215.jpg" alt="Raw Wild Kenari Nuts">
+                        <span class="badge-product">Best Seller</span>
+                    </div>
+                    <div class="product-details">
+                        <div class="product-category">Artisan Snack</div>
+                        <h3 class="product-title">Raw Wild Kenari Nuts (Mentah Organic)</h3>
+                        <p class="product-desc">Kacang Kenari Maluku mentah organik, dikeringkan perlahan di bawah sinar matahari. Cocok untuk cemilan sehat atau campuran artisan baking.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rp 85.000 <small>/ 250g</small></span>
+                            <button class="btn-buy"><i class="fa-solid fa-cart-plus"></i> + Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Roasted Kenari with Sea Salt -->
+                <div class="product-card" data-id="p2" data-title="Roasted Kenari with Sea Salt" data-price="95000" data-img="file:///C:/Users/LUKMAN%20HAKIM/.gemini/antigravity/brain/3d0daec2-ce97-4858-9b97-499855d06a64/kenari_roasted_salt_1785589938296.jpg">
+                    <div class="product-img-box">
+                        <img src="file:///C:/Users/LUKMAN%20HAKIM/.gemini/antigravity/brain/3d0daec2-ce97-4858-9b97-499855d06a64/kenari_roasted_salt_1785589938296.jpg" alt="Roasted Kenari with Sea Salt">
+                        <span class="badge-product gold">Limited Release</span>
+                    </div>
+                    <div class="product-details">
+                        <div class="product-category">Gourmet Snack</div>
+                        <h3 class="product-title">Roasted Kenari with Sea Salt</h3>
+                        <p class="product-desc">Kenari panggang gurih dengan taburan garam laut alami Maluku. Renyah, gurih, dan meledak di mulut tanpa minyak tambahan.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rp 95.000 <small>/ 250g</small></span>
+                            <button class="btn-buy"><i class="fa-solid fa-cart-plus"></i> + Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Cold-Pressed Kenari Oil -->
+                <div class="product-card" data-id="p3" data-title="Cold-Pressed Kenari Oil" data-price="160000" data-img="file:///C:/Users/LUKMAN%20HAKIM/.gemini/antigravity/brain/3d0daec2-ce97-4858-9b97-499855d06a64/kenari_oil_bottle_1785589951070.jpg">
+                    <div class="product-img-box">
+                        <img src="file:///C:/Users/LUKMAN%20HAKIM/.gemini/antigravity/brain/3d0daec2-ce97-4858-9b97-499855d06a64/kenari_oil_bottle_1785589951070.jpg" alt="Cold Pressed Kenari Oil">
+                        <span class="badge-product green">Wellness</span>
+                    </div>
+                    <div class="product-details">
+                        <div class="product-category">Pure Oil</div>
+                        <h3 class="product-title">Cold-Pressed Kenari Oil</h3>
+                        <p class="product-desc">Minyak kenari murni hasil ekstraksi dingin tanpa bahan kimia. Sangat berharga untuk perawatan kulit alami dan salad dressing premium.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rp 160.000 <small>/ 100ml</small></span>
+                            <button class="btn-buy"><i class="fa-solid fa-cart-plus"></i> + Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Impact Section (Yagi Inspired) -->
+    <section class="impact-section" id="impact">
+        <div class="container">
+            <div class="impact-wrapper">
+                <div class="impact-content">
+                    <span class="section-tag light">SUSTAINABILITY & COMMUNITY</span>
+                    <h2 class="impact-title">Mendukung Petani Lokal & Menjaga Hutan Maluku</h2>
+                    <p class="impact-text">
+                        Setiap kemasan <strong>KENARI MALUKU</strong> yang Anda nikmati turut mendukung keberlangsungan hidup para petani lokal dan pengumpul kenari di desa-desa pelosok Kepulauan Maluku. 
+                    </p>
+                    <p class="impact-text">
+                        Dengan memberikan nilai ekonomi yang tinggi pada pohon kenari liar, masyarakat terdorong untuk menjaga dan melestarikan hutan alam tempat pohon-pohon ini tumbuh, alih-alih mengalihfungsikan lahan menjadi kawasan industri.
+                    </p>
+                    <div class="impact-stats">
+                        <div class="stat-box">
+                            <h4>200+</h4>
+                            <p>Keluarga Petani Diberdayakan</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>100%</h4>
+                            <p>Perdagangan Adil (Fair Trade)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <h3 class="footer-logo">KENARI MALUKU</h3>
+                <p>Warisan kelezatan dan nutrisi liar alami dari jantung Kepulauan Rempah Maluku untuk dunia.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigasi Kisah</h4>
+                <ul>
+                    <li><a href="#purpose">Purpose</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#ingredients">Ingredients</a></li>
+                    <li><a href="#people">People</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak & Pemesanan</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Ambon, Maluku - Indonesia</p>
+                <p><i class="fa-solid fa-envelope"></i> halo@kenarimaluku.com</p>
+                <p><i class="fa-solid fa-phone"></i> +62 812-3456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KENARI MALUKU. Hak Cipta Dilindungi Undang-Undang.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
