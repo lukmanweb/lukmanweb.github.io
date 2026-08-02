@@ -3,15 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desain Kartu Nama Cetak (Print Ready 9x5.5cm) - Lukman Hakim</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <title>Kartu Nama Cetak — Lukman Hakim (Red Cola Light)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --red: #c41220;
+      --red-dark: #9a0e19;
+      --red-light: #e63946;
+      --red-ultra: #fff0f1;
+      --gray: #6b7280;
+      --dark: #111827;
+      --border: #e5e7eb;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #0f172a;
-      color: #fff;
+      background: #f4f4f5;
+      color: var(--dark);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -20,93 +30,109 @@
       padding: 40px 20px;
     }
 
+    /* ---- Toolbar ---- */
     .toolbar {
-      margin-bottom: 30px;
+      margin-bottom: 16px;
       display: flex;
-      gap: 16px;
+      gap: 12px;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .btn-print {
-      background: linear-gradient(135deg, #6366f1, #38bdf8);
+      background: linear-gradient(135deg, var(--red), var(--red-light));
       color: #fff;
       border: none;
-      padding: 12px 24px;
+      padding: 11px 22px;
       border-radius: 50px;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       cursor: pointer;
-      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+      box-shadow: 0 6px 20px rgba(196, 18, 32, 0.35);
       transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      display: flex; align-items: center; gap: 8px;
     }
-    .btn-print:hover { transform: translateY(-2px); opacity: 0.95; }
-
+    .btn-print:hover { transform: translateY(-2px); opacity: 0.9; }
+    .btn-back {
+      background: #fff;
+      color: var(--dark);
+      border: 1.5px solid var(--border);
+      padding: 11px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
     .print-instructions {
-      font-size: 0.85rem;
-      color: #94a3b8;
+      font-size: 0.82rem;
+      color: #6b7280;
       text-align: center;
-      max-width: 600px;
-      margin-bottom: 40px;
+      max-width: 580px;
+      margin-bottom: 36px;
+      background: #fff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
     }
+    .print-instructions strong { color: var(--red); }
 
-    /* Standard Business Card Size (90mm x 55mm = 9cm x 5.5cm) */
-    /* At 96 DPI: 340px x 208px, but scaled x2 for high clarity display: 680px x 416px (Aspect Ratio 9:5.5) */
+    /* ---- Card Wrap ---- */
     .card-wrap {
       display: flex;
       flex-direction: column;
-      gap: 40px;
-      align-items: center;
+      gap: 32px;
+      align-items: flex-start;
     }
-
+    .card-group { display: flex; flex-direction: column; gap: 8px; }
     .card-label {
-      font-size: 0.9rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      color: #38bdf8;
+      color: var(--red);
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
+      letter-spacing: 1.5px;
     }
 
+    /* ---- Card Base (Screen preview = 90mm×55mm × 3.78 DPI scale) ---- */
     .card-print {
-      width: 540px;
-      height: 330px; /* Ratio 9 : 5.5 */
-      background: #0b132b;
-      border-radius: 16px;
+      width: 540px;   /* 90mm × 6 */
+      height: 330px;  /* 55mm × 6 */
+      border-radius: 14px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 32px 36px;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
 
-    /* Front Card Design */
+    /* ===================== SISI DEPAN ===================== */
+    .card-front {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      padding: 32px 38px;
+      justify-content: space-between;
+    }
+
+    /* Red accent strip top */
     .card-front::before {
       content: '';
       position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 220px;
-      height: 220px;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(56, 189, 248, 0.15));
-      border-radius: 50%;
-      filter: blur(20px);
+      top: 0; left: 0;
+      width: 100%; height: 5px;
+      background: linear-gradient(90deg, var(--red), var(--red-light), #ff7f8a);
     }
 
+    /* Watermark circle decoration */
     .card-front::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(90deg, #6366f1, #38bdf8, #818cf8);
+      bottom: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(196,18,32,0.06) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
     .front-top {
@@ -114,6 +140,7 @@
       justify-content: space-between;
       align-items: flex-start;
       z-index: 2;
+      position: relative;
     }
 
     .brand-logo-group {
@@ -123,195 +150,232 @@
     }
 
     .brand-icon {
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, #6366f1, #38bdf8);
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--red), var(--red-light));
       border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: 1.3rem;
+      font-weight: 900;
+      font-size: 1.2rem;
       color: #fff;
-      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+      box-shadow: 0 4px 12px rgba(196,18,32,0.35);
+      letter-spacing: -1px;
     }
 
     .brand-name {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      color: var(--dark);
+      line-height: 1;
     }
-    .brand-name span { color: #38bdf8; }
+    .brand-name span { color: var(--red); }
 
     .brand-tag {
-      font-size: 0.7rem;
-      color: #94a3b8;
+      font-size: 0.65rem;
+      color: var(--gray);
       font-weight: 600;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
+      margin-top: 2px;
     }
 
+    /* QR placeholder (opsional, kanan atas) */
+    .qr-placeholder {
+      width: 50px; height: 50px;
+      background: var(--red-ultra);
+      border: 1.5px dashed rgba(196,18,32,0.3);
+      border-radius: 8px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-size: 0.5rem;
+      color: var(--red);
+      font-weight: 700;
+      text-align: center;
+      gap: 2px;
+    }
+    .qr-placeholder svg { opacity: 0.6; }
+
+    /* Middle — person info */
     .person-details {
-      margin-top: 10px;
+      position: relative;
       z-index: 2;
+      margin-top: 8px;
     }
 
     .person-name {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: #fff;
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: var(--dark);
       letter-spacing: -0.5px;
-      margin-bottom: 2px;
+      line-height: 1.1;
     }
 
     .person-title {
-      font-size: 0.88rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      color: #38bdf8;
-      letter-spacing: 1px;
+      color: var(--red);
+      letter-spacing: 1.5px;
       text-transform: uppercase;
+      margin-top: 3px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .person-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, var(--red), transparent);
+      border-radius: 2px;
     }
 
+    /* Bottom — contact info */
     .front-bottom {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 10px 18px;
       z-index: 2;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 18px;
+      position: relative;
+      border-top: 1.5px solid var(--border);
+      padding-top: 14px;
     }
 
     .info-group {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
     }
 
     .info-icon {
-      width: 28px;
-      height: 28px;
-      min-width: 28px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #818cf8;
+      width: 26px; height: 26px; min-width: 26px;
+      background: var(--red-ultra);
+      border: 1px solid rgba(196,18,32,0.15);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--red);
+      font-size: 0.8rem;
     }
 
-    .info-text {
-      display: flex;
-      flex-direction: column;
-    }
+    .info-text { display: flex; flex-direction: column; }
 
     .info-lbl {
-      font-size: 0.65rem;
-      color: #94a3b8;
+      font-size: 0.6rem;
+      color: var(--gray);
       font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .info-val {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #f1f5f9;
-      line-height: 1.2;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.25;
     }
 
-    /* Back Card Design */
+    /* ===================== SISI BELAKANG ===================== */
     .card-back {
-      background: linear-gradient(135deg, #090e1a 0%, #1e1b4b 100%);
-      display: flex;
-      flex-direction: column;
+      background: linear-gradient(145deg, var(--red-dark) 0%, var(--red) 45%, var(--red-light) 100%);
+      padding: 28px 38px;
       align-items: center;
       justify-content: center;
       text-align: center;
-      position: relative;
     }
 
     .card-back::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+      top: -80px; left: -80px;
+      width: 250px; height: 250px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    .card-back::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 180px; height: 180px;
+      background: rgba(0,0,0,0.08);
+      border-radius: 50%;
     }
 
     .back-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%;
     }
 
     .back-logo {
-      width: 64px;
-      height: 64px;
-      background: linear-gradient(135deg, #6366f1, #38bdf8);
-      border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 54px; height: 54px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
       font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: 2.2rem;
+      font-weight: 900;
+      font-size: 1.5rem;
       color: #fff;
-      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
-      margin-bottom: 16px;
+      margin-bottom: 10px;
+      backdrop-filter: blur(4px);
     }
 
     .back-brand-name {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
+      font-size: 1.45rem;
+      font-weight: 900;
       color: #fff;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
     }
-    .back-brand-name span { color: #38bdf8; }
+    .back-brand-name span { color: rgba(255,255,255,0.75); }
 
     .back-slogan {
-      font-size: 0.85rem;
-      color: #cbd5e1;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.85);
       font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+      margin-bottom: 14px;
+    }
+
+    .back-divider {
+      width: 40px; height: 2px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+      margin-bottom: 12px;
     }
 
     .back-services-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: 5px;
       justify-content: center;
-      margin-top: 10px;
-      max-width: 90%;
+      max-width: 92%;
     }
 
     .pill {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 3px 7px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 3px 9px;
       border-radius: 20px;
-      font-size: 0.6rem;
-      color: #cbd5e1;
-      font-weight: 500;
+      font-size: 0.62rem;
+      color: #fff;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
     }
 
-    /* Print Styles */
+    /* ===================== PRINT STYLES ===================== */
     @media print {
       @page {
         size: A4 portrait;
-        margin: 10mm;
+        margin: 12mm 15mm;
       }
 
       body {
         background: #fff !important;
-        color: #000 !important;
         padding: 0 !important;
         margin: 0 !important;
         display: block !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
 
       .toolbar, .print-instructions, .card-label {
@@ -322,150 +386,105 @@
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
-        gap: 8mm !important;
+        gap: 10mm !important;
       }
 
       .card-print {
         width: 90mm !important;
         height: 55mm !important;
+        border-radius: 3.5mm !important;
         box-shadow: none !important;
-        border-radius: 4mm !important;
-        border: 0.5px solid rgba(0,0,0,0.15) !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
         margin: 0 !important;
-        padding: 5mm 6mm !important;
-        overflow: hidden !important;
+        padding: 4.5mm 6mm !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
 
-      /* FRONT CARD PRINT */
+      /* Front Print */
       .brand-icon {
-        width: 9mm !important;
-        height: 9mm !important;
-        min-width: 9mm !important;
-        font-size: 0.28in !important;
+        width: 8.5mm !important; height: 8.5mm !important;
+        min-width: 8.5mm !important;
+        font-size: 4mm !important;
         border-radius: 2mm !important;
       }
-
-      .brand-logo-group {
-        gap: 2.5mm !important;
-      }
-
-      .brand-name {
-        font-size: 0.13in !important;
-        letter-spacing: 0 !important;
-      }
-
-      .brand-tag {
-        font-size: 0.07in !important;
-        letter-spacing: 0 !important;
-      }
-
-      .person-details {
-        margin-top: 2mm !important;
-      }
-
-      .person-name {
-        font-size: 0.2in !important;
-        letter-spacing: -0.3px !important;
-        margin-bottom: 0.5mm !important;
-      }
-
-      .person-title {
-        font-size: 0.08in !important;
-        letter-spacing: 0.5px !important;
-      }
-
-      .front-bottom {
-        gap: 3mm !important;
-        padding-top: 3mm !important;
-      }
-
+      .brand-logo-group { gap: 2.5mm !important; }
+      .brand-name { font-size: 5mm !important; }
+      .brand-tag { font-size: 2.5mm !important; margin-top: 0.5mm !important; }
+      .qr-placeholder { width: 11mm !important; height: 11mm !important; font-size: 1.8mm !important; border-radius: 2mm !important; }
+      .person-details { margin-top: 2mm !important; }
+      .person-name { font-size: 7.5mm !important; }
+      .person-title { font-size: 2.8mm !important; margin-top: 1mm !important; }
+      .front-bottom { padding-top: 3mm !important; gap: 2mm 4mm !important; }
       .info-icon {
-        width: 6mm !important;
-        height: 6mm !important;
-        min-width: 6mm !important;
-        font-size: 0.09in !important;
+        width: 5.5mm !important; height: 5.5mm !important;
+        min-width: 5.5mm !important;
+        font-size: 3mm !important;
+        border-radius: 1.5mm !important;
       }
+      .info-group { gap: 2mm !important; }
+      .info-lbl { font-size: 2mm !important; }
+      .info-val { font-size: 2.8mm !important; }
 
-      .info-group {
-        gap: 2mm !important;
-      }
-
-      .info-lbl {
-        font-size: 0.06in !important;
-      }
-
-      .info-val {
-        font-size: 0.08in !important;
-      }
-
-      /* BACK CARD PRINT */
+      /* Back Print */
       .back-logo {
-        width: 12mm !important;
-        height: 12mm !important;
-        font-size: 0.22in !important;
+        width: 11mm !important; height: 11mm !important;
+        font-size: 5.5mm !important;
         border-radius: 3mm !important;
         margin-bottom: 2mm !important;
       }
-
-      .back-brand-name {
-        font-size: 0.18in !important;
-        margin-bottom: 1mm !important;
-      }
-
-      .back-slogan {
-        font-size: 0.08in !important;
-        margin-bottom: 2mm !important;
-        letter-spacing: 0 !important;
-      }
-
-      .back-services-pills {
-        gap: 1.5mm !important;
-        max-width: 95% !important;
-        margin-top: 0 !important;
-      }
-
-      .pill {
-        font-size: 0.065in !important;
-        padding: 0.8mm 2mm !important;
-        border-radius: 10px !important;
-      }
+      .back-brand-name { font-size: 5.5mm !important; margin-bottom: 1mm !important; }
+      .back-slogan { font-size: 2.5mm !important; margin-bottom: 2.5mm !important; }
+      .back-divider { margin-bottom: 2.5mm !important; }
+      .back-services-pills { gap: 1.5mm !important; max-width: 95% !important; }
+      .pill { font-size: 2mm !important; padding: 0.8mm 2.5mm !important; }
     }
   </style>
 </head>
 <body>
 
   <div class="toolbar">
+    <a href="kartunama.html" class="btn-back">← Kembali ke Kartu Digital</a>
     <button class="btn-print" onclick="window.print()">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-      Cetak Kartu Nama (PDF / Print)
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Cetak Kartu Nama (Ctrl+P)
     </button>
   </div>
 
   <div class="print-instructions">
-    💡 <strong>Petunjuk Cetak:</strong> Ukuran kartu disetting standar <strong>90mm x 55mm (9 x 5.5 cm)</strong>. Saat mencetak, atur <em>Scale</em> ke <strong>100% (Actual Size)</strong> dan pilih kertas Art Paper/Carton (260-310 gsm) untuk hasil cetak terbaik.
+    💡 Ukuran standar <strong>90mm × 55mm (9×5.5 cm) – 2 Sisi</strong>. Saat dialog print muncul: pilih <strong>Scale: 100%</strong>, kertas <strong>A4</strong>, margin <strong>Minimum</strong>. Rekomendasi cetak: <strong>Art Carton 260–310 gsm + Laminasi Doff</strong>.
   </div>
 
   <div class="card-wrap">
 
-    <!-- DEPAN / FRONT -->
-    <div>
-      <div class="card-label">SISI DEPAN (FRONT)</div>
+    <!-- SISI DEPAN -->
+    <div class="card-group">
+      <div class="card-label">▲ Sisi Depan (Front)</div>
       <div class="card-print card-front">
+
         <div class="front-top">
           <div class="brand-logo-group">
             <div class="brand-icon">LW</div>
             <div>
               <div class="brand-name">Lukman <span>Web</span></div>
-              <div class="brand-tag">Web Development & IT Solutions</div>
+              <div class="brand-tag">Web Development &amp; IT Solutions</div>
             </div>
+          </div>
+          <div class="qr-placeholder">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c41220" stroke-width="1.5">
+              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/>
+              <rect x="19" y="14" width="2" height="2"/><rect x="14" y="19" width="2" height="2"/>
+              <rect x="17" y="17" width="4" height="4"/>
+            </svg>
+            <span>Scan WA</span>
           </div>
         </div>
 
         <div class="person-details">
           <div class="person-name">Lukman Hakim</div>
-          <div class="person-title">Web Developer & Consultant</div>
+          <div class="person-title">Web Developer &amp; Consultant</div>
         </div>
 
         <div class="front-bottom">
@@ -489,21 +508,23 @@
             <div class="info-icon">📍</div>
             <div class="info-text">
               <span class="info-lbl">Alamat Workshop</span>
-              <span class="info-val">Krakal Mukti RT25/RW08, Sruwen, Tengaran, Kab. Semarang, Jawa Tengah 50775</span>
+              <span class="info-val">Krakal Mukti RT25/RW08, Sruwen, Tengaran, Kab. Semarang 50775</span>
             </div>
           </div>
         </div>
+
       </div>
     </div>
 
-    <!-- BELAKANG / BACK -->
-    <div>
-      <div class="card-label">SISI BELAKANG (BACK)</div>
+    <!-- SISI BELAKANG -->
+    <div class="card-group">
+      <div class="card-label">▼ Sisi Belakang (Back)</div>
       <div class="card-print card-back">
         <div class="back-content">
           <div class="back-logo">LW</div>
           <div class="back-brand-name">Lukman <span>Web</span></div>
-          <div class="back-slogan">Solusi Website Profesional, Cepat & Terpercaya</div>
+          <div class="back-slogan">Solusi Website Profesional, Cepat &amp; Terpercaya</div>
+          <div class="back-divider"></div>
           <div class="back-services-pills">
             <span class="pill">Company Profile</span>
             <span class="pill">Toko Online / E-Commerce</span>
