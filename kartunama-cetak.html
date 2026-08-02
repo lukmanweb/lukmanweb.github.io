@@ -301,10 +301,17 @@
 
     /* Print Styles */
     @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm;
+      }
+
       body {
         background: #fff !important;
         color: #000 !important;
         padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
       }
 
       .toolbar, .print-instructions, .card-label {
@@ -312,16 +319,117 @@
       }
 
       .card-wrap {
-        gap: 20mm;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8mm !important;
       }
 
       .card-print {
         width: 90mm !important;
         height: 55mm !important;
         box-shadow: none !important;
-        border: 1px solid #ddd !important;
-        page-break-inside: avoid;
-        margin: 0 auto;
+        border-radius: 4mm !important;
+        border: 0.5px solid rgba(0,0,0,0.15) !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        margin: 0 !important;
+        padding: 5mm 6mm !important;
+        overflow: hidden !important;
+      }
+
+      /* FRONT CARD PRINT */
+      .brand-icon {
+        width: 9mm !important;
+        height: 9mm !important;
+        min-width: 9mm !important;
+        font-size: 0.28in !important;
+        border-radius: 2mm !important;
+      }
+
+      .brand-logo-group {
+        gap: 2.5mm !important;
+      }
+
+      .brand-name {
+        font-size: 0.13in !important;
+        letter-spacing: 0 !important;
+      }
+
+      .brand-tag {
+        font-size: 0.07in !important;
+        letter-spacing: 0 !important;
+      }
+
+      .person-details {
+        margin-top: 2mm !important;
+      }
+
+      .person-name {
+        font-size: 0.2in !important;
+        letter-spacing: -0.3px !important;
+        margin-bottom: 0.5mm !important;
+      }
+
+      .person-title {
+        font-size: 0.08in !important;
+        letter-spacing: 0.5px !important;
+      }
+
+      .front-bottom {
+        gap: 3mm !important;
+        padding-top: 3mm !important;
+      }
+
+      .info-icon {
+        width: 6mm !important;
+        height: 6mm !important;
+        min-width: 6mm !important;
+        font-size: 0.09in !important;
+      }
+
+      .info-group {
+        gap: 2mm !important;
+      }
+
+      .info-lbl {
+        font-size: 0.06in !important;
+      }
+
+      .info-val {
+        font-size: 0.08in !important;
+      }
+
+      /* BACK CARD PRINT */
+      .back-logo {
+        width: 12mm !important;
+        height: 12mm !important;
+        font-size: 0.22in !important;
+        border-radius: 3mm !important;
+        margin-bottom: 2mm !important;
+      }
+
+      .back-brand-name {
+        font-size: 0.18in !important;
+        margin-bottom: 1mm !important;
+      }
+
+      .back-slogan {
+        font-size: 0.08in !important;
+        margin-bottom: 2mm !important;
+        letter-spacing: 0 !important;
+      }
+
+      .back-services-pills {
+        gap: 1.5mm !important;
+        max-width: 95% !important;
+        margin-top: 0 !important;
+      }
+
+      .pill {
+        font-size: 0.065in !important;
+        padding: 0.8mm 2mm !important;
+        border-radius: 10px !important;
       }
     }
   </style>
