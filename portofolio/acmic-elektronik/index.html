@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACMIC Indonesia — Aksesoris Elektronik Premium</title>
+  <meta name="description" content="Temukan powerbank, earphone, kabel, dan charger berkualitas tinggi di ACMIC. Belanja sekarang untuk penawaran eksklusif pada elektronik konsumen yang andal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand: #00baff;
+      --brand-dark: #0099d6;
+      --brand-light: #e6f9ff;
+      --dark: #282828;
+      --gray: #555;
+      --light-gray: #f5f5f5;
+      --border: #d6d6d6;
+      --white: #fff;
+      --sale: #de2a2a;
+      --star: #f6a429;
+      --radius: 0px;
+      --shadow: 0 2px 12px rgba(0,0,0,0.08);
+      --transition: all 0.2s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--light-gray);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: inherit; }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============ ANNOUNCEMENT BAR ============ */
+    .announcement-bar {
+      background: var(--brand);
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .announcement-bar a { color: #fff; text-decoration: underline; }
+
+    /* ============ HEADER ============ */
+    .header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: var(--brand);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon img { width: 30px; height: 30px; }
+    .logo-text {
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--dark);
+      text-transform: uppercase;
+    }
+    .logo-text span { color: var(--brand); }
+
+    /* Search */
+    .header-search {
+      flex: 1;
+      max-width: 480px;
+      position: relative;
+    }
+    .header-search input {
+      width: 100%;
+      height: 44px;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      padding: 0 44px 0 16px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      background: var(--light-gray);
+      outline: none;
+      transition: var(--transition);
+    }
+    .header-search input:focus {
+      border-color: var(--brand);
+      background: #fff;
+    }
+    .header-search button {
+      position: absolute;
+      right: 0; top: 0;
+      height: 44px; width: 44px;
+      background: var(--brand);
+      border: none;
+      border-radius: 0 4px 4px 0;
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Header Actions */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .header-icon-btn {
+      width: 42px; height: 42px;
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--dark);
+      position: relative;
+      transition: var(--transition);
+    }
+    .header-icon-btn:hover { border-color: var(--brand); color: var(--brand); }
+
+    .cart-badge-num {
+      position: absolute;
+      top: -6px; right: -6px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ============ NAVIGATION ============ */
+    .nav-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      height: 48px;
+      overflow-x: auto;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+
+    .nav-link {
+      padding: 0 18px;
+      height: 100%;
+      display: flex; align-items: center;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--dark);
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: var(--transition);
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--brand);
+      border-bottom-color: var(--brand);
+    }
+
+    /* ============ HERO BANNER ============ */
+    .hero-banner {
+      position: relative;
+      background: linear-gradient(135deg, #001a2e 0%, #003153 40%, #00557a 100%);
+      overflow: hidden;
+      min-height: 480px;
+      display: flex; align-items: center;
+    }
+
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,186,255,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 30%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(0,186,255,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,186,255,0.2);
+      border: 1px solid rgba(0,186,255,0.4);
+      color: var(--brand);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .hero-title span { color: var(--brand); }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+      font-weight: 400;
+      max-width: 480px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      border-radius: 2px;
+      transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    .hero-visual {
+      position: absolute;
+      right: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 480px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .hero-product-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 20px;
+    }
+
+    .hero-product-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+    }
+    .hero-product-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-4px); }
+    .hero-product-card .prod-emoji { font-size: 2.5rem; margin-bottom: 8px; }
+    .hero-product-card .prod-name { font-size: 0.75rem; font-weight: 700; color: #fff; text-transform: uppercase; }
+    .hero-product-card .prod-price { font-size: 0.85rem; font-weight: 800; color: var(--brand); margin-top: 4px; }
+    .hero-product-card .prod-badge { font-size: 0.65rem; background: var(--sale); color: #fff; padding: 2px 6px; border-radius: 2px; display: inline-block; margin-top: 4px; }
+
+    /* ============ CATEGORY GRID ============ */
+    .section { padding: 60px 0; }
+    .section.bg-white { background: #fff; }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .section-sub {
+      font-size: 0.88rem;
+      color: #888;
+      margin-bottom: 36px;
+    }
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+    .section-header-left { flex: 1; }
+    .see-all {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex; align-items: center; gap: 4px;
+      white-space: nowrap;
+    }
+    .see-all:hover { color: var(--brand-dark); }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .cat-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .cat-card:hover {
+      border-color: var(--brand);
+      box-shadow: 0 4px 20px rgba(0,186,255,0.15);
+      transform: translateY(-4px);
+    }
+    .cat-icon {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .cat-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--dark);
+    }
+    .cat-count {
+      font-size: 0.72rem;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    /* ============ PRODUCT GRID ============ */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+    .product-card:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--brand);
+      transform: translateY(-4px);
+    }
+
+    .product-img-wrap {
+      aspect-ratio: 1;
+      background: var(--light-gray);
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem;
+      position: relative;
+    }
+
+    .product-label {
+      position: absolute;
+      top: 10px; left: 10px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      letter-spacing: 0.5px;
+    }
+    .product-label.sale { background: var(--sale); }
+    .product-label.new { background: #16a34a; }
+
+    .product-wishlist {
+      position: absolute;
+      top: 10px; right: 10px;
+      width: 32px; height: 32px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #bbb;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .product-wishlist:hover { color: var(--sale); border-color: var(--sale); }
+
+    .product-info {
+      padding: 14px 16px 16px;
+    }
+
+    .product-vendor {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .product-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .product-stars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+    .stars { color: var(--star); font-size: 0.75rem; letter-spacing: 1px; }
+    .review-count { font-size: 0.7rem; color: #999; }
+
+    .product-price-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .price-current {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .price-original {
+      font-size: 0.82rem;
+      color: #bbb;
+      text-decoration: line-through;
+    }
+    .price-discount {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--sale);
+      background: #fce8e8;
+      padding: 2px 6px;
+      border-radius: 2px;
+    }
+
+    .btn-add-cart {
+      width: 100%;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .btn-add-cart:hover { background: var(--brand-dark); }
+
+    /* ============ PROMO BANNER ============ */
+    .promo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .promo-card {
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      padding: 32px;
+    }
+
+    .promo-card-1 {
+      background: linear-gradient(135deg, #00284a, #004d7a);
+    }
+    .promo-card-2 {
+      background: linear-gradient(135deg, #1a0038, #4a0080);
+    }
+
+    .promo-card::before {
+      content: '';
+      position: absolute;
+      right: -40px; top: -40px;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+
+    .promo-content { position: relative; z-index: 2; }
+    .promo-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .promo-title {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .promo-subtitle {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+    }
+    .btn-promo {
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 22px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 2px;
+      display: inline-block;
+      transition: var(--transition);
+    }
+    .btn-promo:hover { background: var(--brand-dark); }
+
+    .promo-emoji {
+      position: absolute;
+      right: 24px; bottom: 16px;
+      font-size: 5rem;
+      opacity: 0.25;
+    }
+
+    /* ============ FEATURES STRIP ============ */
+    .features-strip {
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .feature-icon {
+      width: 44px; height: 44px;
+      background: var(--brand-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .feature-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .feature-desc {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    /* ============ BRAND STRIP ============ */
+    .brand-strip {
+      padding: 40px 0;
+      background: var(--light-gray);
+    }
+    .brand-title {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #999;
+      margin-bottom: 24px;
+    }
+    .brand-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .brand-logo-item {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #ccc;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+    }
+    .brand-logo-item:hover { color: var(--brand); }
+
+    /* ============ TESTIMONIALS ============ */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .testi-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .testi-stars { color: var(--star); margin-bottom: 12px; letter-spacing: 2px; }
+    .testi-text {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .testi-avatar {
+      width: 38px; height: 38px;
+      background: var(--brand);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      font-size: 0.88rem;
+      flex-shrink: 0;
+    }
+    .testi-name { font-size: 0.85rem; font-weight: 700; }
+    .testi-location { font-size: 0.72rem; color: #999; }
+
+    /* ============ NEWSLETTER ============ */
+    .newsletter-section {
+      background: linear-gradient(135deg, #001a2e, #003153);
+      padding: 60px 0;
+      text-align: center;
+    }
+    .newsletter-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .newsletter-desc {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 28px;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .newsletter-form input {
+      flex: 1;
+      height: 48px;
+      border: none;
+      padding: 0 16px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      border-radius: 2px 0 0 2px;
+      outline: none;
+    }
+    .newsletter-form button {
+      height: 48px;
+      padding: 0 24px;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 0 2px 2px 0;
+      transition: var(--transition);
+    }
+    .newsletter-form button:hover { background: var(--brand-dark); }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.65);
+      padding: 60px 0 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand-name {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .footer-brand-name span { color: var(--brand); }
+    .footer-desc {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .footer-socials {
+      display: flex; gap: 10px;
+    }
+    .social-btn {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .social-btn:hover { background: var(--brand); color: #fff; }
+    .footer-col-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      font-size: 0.82rem;
+      transition: var(--transition);
+    }
+    .footer-links a:hover { color: var(--brand); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.78rem;
+    }
+    .footer-bottom a { color: var(--brand); }
+
+    /* ============ MOBILE MENU TOGGLE ============ */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--dark);
+      font-size: 1.3rem;
+      padding: 4px;
+    }
+
+    /* ============ BACK LINK (Porto) ============ */
+    .back-porto-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 24px;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #888;
+    }
+    .back-porto-bar a {
+      color: var(--brand);
+      font-weight: 700;
+      display: flex; align-items: center; gap: 4px;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1024px) {
+      .product-grid { grid-template-columns: repeat(3, 1fr); }
+      .category-grid { grid-template-columns: repeat(4, 1fr); }
+      .hero-visual { display: none; }
+      .hero-content { max-width: 100%; }
+    }
+    @media (max-width: 768px) {
+      .header-search { display: none; }
+      .mobile-menu-btn { display: block; }
+      .nav-bar { display: none; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .category-grid { grid-template-columns: repeat(3, 1fr); }
+      .promo-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .hero-banner { min-height: 360px; padding: 40px 0; }
+      .hero-title { font-size: 1.8rem; }
+    }
+    @media (max-width: 480px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .features-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input { border-radius: 2px; }
+      .newsletter-form button { border-radius: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back to Portfolio Bar -->
+  <div class="back-porto-bar">
+    <a href="../../index.html#porto-acmic">← Kembali ke Portfolio LukmanWeb</a>
+    <span>|</span>
+    <span>Demo: Website Toko Elektronik / E-Commerce</span>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    🎉 GRATIS ONGKIR ke seluruh Indonesia untuk pembelian min. Rp 150.000 &nbsp;|&nbsp;
+    <a href="#">Belanja Sekarang →</a>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5" stroke="#00baff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="logo-text">AC<span>MIC</span></span>
+        </a>
+
+        <div class="header-search">
+          <input type="text" placeholder="Cari Powerbank, Charger, Earphone...">
+          <button>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </button>
+        </div>
+
+        <div class="header-actions">
+          <button class="header-icon-btn" title="Wishlist">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <button class="header-icon-btn" title="Akun">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </button>
+          <button class="header-icon-btn" title="Keranjang" style="position:relative;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="cart-badge-num">3</span>
+          </button>
+          <button class="mobile-menu-btn">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-link active">Beranda</a>
+        <a href="#produk" class="nav-link">Semua Produk</a>
+        <a href="#powerbank" class="nav-link">Powerbank</a>
+        <a href="#charger" class="nav-link">Charger</a>
+        <a href="#earphone" class="nav-link">Earphone</a>
+        <a href="#kabel" class="nav-link">Kabel</a>
+        <a href="#aksesoris" class="nav-link">Aksesoris</a>
+        <a href="#promo" class="nav-link" style="color:#de2a2a;">🔥 Promo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          ⚡ Teknologi Terdepan · Kualitas Terjamin
+        </div>
+        <h1 class="hero-title">
+          Aksesoris<br>Elektronik<br><span>Premium</span>
+        </h1>
+        <p class="hero-desc">
+          Powerbank ultra-tipis, charger super cepat, earphone HD, dan kabel premium untuk kehidupan digital Anda yang semakin aktif.
+        </p>
+        <div class="hero-buttons">
+          <a href="#produk" class="btn-primary">
+            Belanja Sekarang
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#promo" class="btn-outline">Lihat Promo</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-product-showcase">
+        <div class="hero-product-card">
+          <div class="prod-emoji">🔋</div>
+          <div class="prod-name">Powerbank 20.000 mAh</div>
+          <div class="prod-price">Rp 349.000</div>
+          <div class="prod-badge">BEST SELLER</div>
+        </div>
+        <div class="hero-product-card">
+          <div class="prod-emoji">🔌</div>
+          <div class="prod-name">GaN Charger 65W</div>
+          <div class="prod-price">Rp 289.000</div>
+          <div class="prod-badge">NEW</div>
+        </div>
+        <div class="hero-product-card">
+          <div class="prod-emoji">🎧</div>
+          <div class="prod-name">TWS Earphone Pro</div>
+          <div class="prod-price">Rp 199.000</div>
+          <div class="prod-badge">SALE 30%</div>
+        </div>
+        <div class="hero-product-card">
+          <div class="prod-emoji">🔶</div>
+          <div class="prod-name">Kabel Type-C 100W</div>
+          <div class="prod-price">Rp 89.000</div>
+          <div class="prod-badge">HOT</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Strip -->
+  <div class="features-strip">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🚚</div>
+          <div>
+            <div class="feature-title">Gratis Ongkir</div>
+            <div class="feature-desc">Pembelian min. Rp 150.000</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🛡️</div>
+          <div>
+            <div class="feature-title">Garansi Resmi</div>
+            <div class="feature-desc">1 Tahun garansi produk</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">↩️</div>
+          <div>
+            <div class="feature-title">Retur 7 Hari</div>
+            <div class="feature-desc">Barang rusak / tidak sesuai</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💬</div>
+          <div>
+            <div class="feature-title">CS 24/7</div>
+            <div class="feature-desc">Siap membantu kapan saja</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Grid -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <h2 class="section-title">Kategori Produk</h2>
+          <p class="section-sub">Temukan aksesoris yang tepat untuk perangkat Anda</p>
+        </div>
+        <a href="#produk" class="see-all">Lihat Semua →</a>
+      </div>
+      <div class="category-grid">
+        <div class="cat-card">
+          <span class="cat-icon">🔋</span>
+          <div class="cat-name">Powerbank</div>
+          <div class="cat-count">48 Produk</div>
+        </div>
+        <div class="cat-card">
+          <span class="cat-icon">🔌</span>
+          <div class="cat-name">Charger</div>
+          <div class="cat-count">36 Produk</div>
+        </div>
+        <div class="cat-card">
+          <span class="cat-icon">🎧</span>
+          <div class="cat-name">Earphone</div>
+          <div class="cat-count">24 Produk</div>
+        </div>
+        <div class="cat-card">
+          <span class="cat-icon">🔶</span>
+          <div class="cat-name">Kabel Data</div>
+          <div class="cat-count">52 Produk</div>
+        </div>
+        <div class="cat-card">
+          <span class="cat-icon">📱</span>
+          <div class="cat-name">Aksesoris HP</div>
+          <div class="cat-count">30 Produk</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Sellers -->
+  <section class="section" id="produk">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <h2 class="section-title">Produk Terlaris</h2>
+          <p class="section-sub">Pilihan terfavorit pelanggan setia ACMIC</p>
+        </div>
+        <a href="#" class="see-all">Lihat Semua →</a>
+      </div>
+      <div class="product-grid">
+
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <span>🔋</span>
+            <span class="product-label">BEST SELLER</span>
+            <button class="product-wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-vendor">ACMIC</div>
+            <div class="product-name">Powerbank Ultra Slim 10.000 mAh PD 22.5W Fast Charging</div>
+            <div class="product-stars">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">(142)</span>
+            </div>
+            <div class="product-price-wrap">
+              <span class="price-current">Rp 249.000</span>
+              <span class="price-original">Rp 329.000</span>
+              <span class="price-discount">-24%</span>
+            </div>
+            <button class="btn-add-cart">+ Keranjang</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-img-wrap" style="background:#e8f4ff;">
+            <span>🔌</span>
+            <span class="product-label new">NEW</span>
+            <button class="product-wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-vendor">ACMIC</div>
+            <div class="product-name">GaN Charger 65W USB-C+A 3 Port Travel Charger</div>
+            <div class="product-stars">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">(89)</span>
+            </div>
+            <div class="product-price-wrap">
+              <span class="price-current">Rp 289.000</span>
+            </div>
+            <button class="btn-add-cart">+ Keranjang</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-img-wrap" style="background:#fff0e6;">
+            <span>🎧</span>
+            <span class="product-label sale">SALE 30%</span>
+            <button class="product-wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-vendor">ACMIC</div>
+            <div class="product-name">TWS Earphone Pro ENC Noise Cancelling Bluetooth 5.3</div>
+            <div class="product-stars">
+              <span class="stars">★★★★☆</span>
+              <span class="review-count">(67)</span>
+            </div>
+            <div class="product-price-wrap">
+              <span class="price-current">Rp 199.000</span>
+              <span class="price-original">Rp 285.000</span>
+              <span class="price-discount">-30%</span>
+            </div>
+            <button class="btn-add-cart">+ Keranjang</button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-img-wrap" style="background:#f0fff4;">
+            <span>🔶</span>
+            <button class="product-wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-vendor">ACMIC</div>
+            <div class="product-name">Kabel Type-C to Type-C 100W PD Fast Charging 1.2m</div>
+            <div class="product-stars">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">(213)</span>
+            </div>
+            <div class="product-price-wrap">
+              <span class="price-current">Rp 89.000</span>
+              <span class="price-original">Rp 119.000</span>
+              <span class="price-discount">-25%</span>
+            </div>
+            <button class="btn-add-cart">+ Keranjang</button>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <span>🔋</span>
+            <span class="product-label" style="background:#7c3aed;">PREMIUM</span>
+            <button class="product-wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-vendor">ACMIC</div>
+            <div class="product-name">Powerbank 20.000 mAh 65W Super Fast Charge Display LED</div>
+            <div class="product-stars">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">(98)</span>
+            </div>
+            <div class="product-price-wrap">
+              <span class="price-current">Rp 349.000</span>
+              <span class="price-original">Rp 449.000</span>
+              <span class="price-discount">-22%</span>
+            </div>
+            <button class="btn-add-cart">+ Keranjang</button>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+          <div class="product-img-wrap" style="background:#ffe8e8;">
+            <span>📱</span>
+            <button class="product-wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-vendor">ACMIC</div>
+            <div class="product-name">Magnetic Wireless Charger MagSafe Compatible 15W Stand</div>
+            <div class="product-stars">
+              <span class="stars">★★★★☆</span>
+              <span class="review-count">(44)</span>
+            </div>
+            <div class="product-price-wrap">
+              <span class="price-current">Rp 159.000</span>
+            </div>
+            <button class="btn-add-cart">+ Keranjang</button>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card">
+          <div class="product-img-wrap" style="background:#f0f4ff;">
+            <span>🎧</span>
+            <span class="product-label new">NEW</span>
+            <button class="product-wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-vendor">ACMIC</div>
+            <div class="product-name">Wired Earphone Hi-Res Audio In-Ear Dynamic Driver 3.5mm</div>
+            <div class="product-stars">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">(31)</span>
+            </div>
+            <div class="product-price-wrap">
+              <span class="price-current">Rp 129.000</span>
+              <span class="price-original">Rp 169.000</span>
+              <span class="price-discount">-24%</span>
+            </div>
+            <button class="btn-add-cart">+ Keranjang</button>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card">
+          <div class="product-img-wrap" style="background:#fff8e8;">
+            <span>🔌</span>
+            <button class="product-wishlist">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-vendor">ACMIC</div>
+            <div class="product-name">Car Charger Dual Port USB 40W QC3.0 Compact Design</div>
+            <div class="product-stars">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">(76)</span>
+            </div>
+            <div class="product-price-wrap">
+              <span class="price-current">Rp 119.000</span>
+              <span class="price-original">Rp 149.000</span>
+              <span class="price-discount">-20%</span>
+            </div>
+            <button class="btn-add-cart">+ Keranjang</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Banners -->
+  <section class="section bg-white" id="promo">
+    <div class="container">
+      <div class="promo-grid">
+        <div class="promo-card promo-card-1">
+          <div class="promo-content">
+            <div class="promo-tag">🔥 Flash Sale</div>
+            <div class="promo-title">Powerbank<br>Mulai 149K</div>
+            <div class="promo-subtitle">Stok terbatas! Hemat hingga 40%<br>untuk semua seri Powerbank ACMIC</div>
+            <a href="#produk" class="btn-promo">Beli Sekarang →</a>
+          </div>
+          <div class="promo-emoji">🔋</div>
+        </div>
+        <div class="promo-card promo-card-2">
+          <div class="promo-content">
+            <div class="promo-tag">🎧 Bundle Deal</div>
+            <div class="promo-title">Beli Charger<br>Dapat Kabel</div>
+            <div class="promo-subtitle">Beli charger GaN manapun dan<br>dapatkan kabel Type-C GRATIS!</div>
+            <a href="#produk" class="btn-promo">Klaim Sekarang →</a>
+          </div>
+          <div class="promo-emoji">🔌</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Strip -->
+  <div class="brand-strip">
+    <div class="container">
+      <div class="brand-title">Tersedia di Marketplace Resmi</div>
+      <div class="brand-logos">
+        <span class="brand-logo-item">🟠 Tokopedia</span>
+        <span class="brand-logo-item">🔴 Shopee</span>
+        <span class="brand-logo-item">🔵 Lazada</span>
+        <span class="brand-logo-item">🟢 Blibli</span>
+        <span class="brand-logo-item">⚫ Tiktok Shop</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <h2 class="section-title">Ulasan Pelanggan</h2>
+          <p class="section-sub">Apa kata mereka tentang produk ACMIC</p>
+        </div>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Powerbank ACMIC 20.000mAh ini luar biasa! Tipis tapi kapasitasnya besar. Bisa ngisi HP 4x penuh. Desainnya juga premium banget, cocok dibawa kemana-mana."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RH</div>
+            <div>
+              <div class="testi-name">Rizky Hidayat</div>
+              <div class="testi-location">Jakarta · Verified Purchase</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"GaN Charger 65W-nya keren banget, bisa nge-charge laptop, HP, dan tablet sekaligus cuma pake 1 colokan. Ukurannya kecil tapi powernya gila-gilaan!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SA</div>
+            <div>
+              <div class="testi-name">Siti Aminah</div>
+              <div class="testi-location">Surabaya · Verified Purchase</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★☆</div>
+          <p class="testi-text">"TWS Earphone Pro sound quality-nya bagus untuk harga segini. Bass-nya cukup dalam dan vokalnya jernih. Cocok untuk dengerin musik dan meeting online."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">BP</div>
+            <div>
+              <div class="testi-name">Budi Prasetyo</div>
+              <div class="testi-location">Bandung · Verified Purchase</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="container">
+      <h2 class="newsletter-title">Dapatkan Penawaran Eksklusif</h2>
+      <p class="newsletter-desc">Daftar newsletter kami dan dapatkan diskon 10% untuk pembelian pertama Anda!</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Terima kasih! Anda telah berlangganan newsletter ACMIC.');">
+        <input type="email" placeholder="Masukkan alamat email Anda...">
+        <button type="submit">Daftar Sekarang</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">AC<span>MIC</span></div>
+          <p class="footer-desc">ACMIC adalah brand aksesoris elektronik premium yang menghadirkan inovasi terbaik untuk mendukung gaya hidup digital Anda. Powerbank, charger, earphone, dan kabel berkualitas tinggi.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn">📘</a>
+            <a href="#" class="social-btn">📸</a>
+            <a href="#" class="social-btn">🐦</a>
+            <a href="#" class="social-btn">📺</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Produk</div>
+          <ul class="footer-links">
+            <li><a href="#">Powerbank</a></li>
+            <li><a href="#">Charger GaN</a></li>
+            <li><a href="#">Earphone TWS</a></li>
+            <li><a href="#">Kabel Data</a></li>
+            <li><a href="#">Aksesoris HP</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Informasi</div>
+          <ul class="footer-links">
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Cara Pemesanan</a></li>
+            <li><a href="#">Cek Garansi</a></li>
+            <li><a href="#">Kebijakan Retur</a></li>
+            <li><a href="#">Blog & Tips</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Hubungi Kami</div>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/6285712225565">💬 WhatsApp CS</a></li>
+            <li><a href="#">📧 Email Support</a></li>
+            <li><a href="#">📍 Jakarta, Indonesia</a></li>
+            <li><a href="#">🕐 Senin–Sabtu, 08.00–17.00</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ACMIC Electronic Indonesia. Hak Cipta Dilindungi. | Dibuat dengan ❤️ oleh <a href="../../index.html">LukmanWeb</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Add to cart animation
+    document.querySelectorAll('.btn-add-cart').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const orig = this.textContent;
+        this.textContent = '✓ Ditambahkan!';
+        this.style.background = '#16a34a';
+        setTimeout(() => {
+          this.textContent = orig;
+          this.style.background = '';
+        }, 1500);
+      });
+    });
+
+    // Wishlist toggle
+    document.querySelectorAll('.product-wishlist').forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.textContent = this.textContent === '♡' ? '♥' : '♡';
+        this.style.color = this.textContent === '♥' ? '#de2a2a' : '';
+        this.style.borderColor = this.textContent === '♥' ? '#de2a2a' : '';
+      });
+    });
+
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      header.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.1)' : 'none';
+    });
+  </script>
+
+</body>
+</html>
