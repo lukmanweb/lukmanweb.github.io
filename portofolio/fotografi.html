@@ -68,6 +68,89 @@
     }
     .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
 
+    /* TEAM SECTION STYLES */
+    .team-section {
+      padding: 100px 60px;
+      background: var(--dark);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+    .team-card {
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.4s ease, border-color 0.4s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+    }
+    .team-img-wrap {
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      position: relative;
+    }
+    .team-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(80%);
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+    .team-card:hover .team-img-wrap img {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+    .team-badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: rgba(10,10,10,0.85);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+    }
+    .team-content {
+      padding: 24px;
+    }
+    .team-role {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .team-quote {
+      font-size: 0.85rem;
+      color: var(--grey);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    @media (max-width: 992px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .team-section { padding: 60px 24px; }
+    }
+
     /* HERO */
     .hero {
       position: relative;
@@ -624,13 +707,13 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">Frame<span>Studio</span></a>
-    <ul class="nav-links">
-      <li><a href="#galeri">Galeri</a></li>
-      <li><a href="#layanan">Layanan</a></li>
-      <li><a href="#paket">Paket</a></li>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="https://wa.me/6285712225565?text=Halo%20FrameStudio,%20saya%20ingin%20booking%20sesi%20foto" target="_blank" class="nav-cta">Booking Sekarang</a></li>
-    </ul>
+      <ul class="nav-links">
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#tim">Tim Kami</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#paket">Harga</a></li>
+        <li><a href="https://wa.me/6285712225565?text=Halo%20FrameStudio,%20saya%20ingin%20konsultasi%20sesi%20foto" target="_blank" class="nav-cta">Booking</a></li>
+      </ul>
   </nav>
 
   <!-- HERO -->
@@ -738,6 +821,134 @@
         <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=80" alt="Wedding Ceremony">
         <div class="gallery-overlay">
           <div class="gallery-info"><strong>Akad Nikah Dewi & Rizki</strong><span>Wedding Photography</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM MEMBERS (FROM FREDY PHOTOGRAPHY OFFICIAL PDF) -->
+  <section class="team-section" id="tim">
+    <div class="section-header">
+      <span class="section-tag">Meet The Team</span>
+      <h2 class="section-title">Fotografer &amp; Videografer <em>Profesional</em> Kami</h2>
+      <p style="color: var(--grey); max-width: 600px; margin-top: 12px;">Tim seniman visual berpengalaman di Salatiga, Semarang, dan sekitarnya yang siap mengabadikan momen berharga Anda secara estetik &amp; bercerita.</p>
+    </div>
+
+    <div class="team-grid">
+      <!-- Fredy -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_4.jpg" alt="Fredy - Founder & Photographer">
+          <span class="team-badge">Founder</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Founder &amp; Lead Photographer</div>
+          <div class="team-name">Fredy</div>
+          <p class="team-quote">"Surrounded by works of art that spark imagination, Fredy loves to create, arrange, and photograph masterpieces."</p>
+        </div>
+      </div>
+
+      <!-- Anjas -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_5.jpg" alt="Anjas - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Anjas</div>
+          <p class="team-quote">"Behind the lens, Anjas is a great storyteller. A humble, sincere, and fun-loving visual creator."</p>
+        </div>
+      </div>
+
+      <!-- Ismadi -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_6.jpg" alt="Ismadi - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Ismadi</div>
+          <p class="team-quote">"Expression, story, and moment are his favorite flows in forming a frame."</p>
+        </div>
+      </div>
+
+      <!-- Dita -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_7.jpg" alt="Dita - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Dita</div>
+          <p class="team-quote">"Always dreamed of creating magical and emotional moments through every photo taken."</p>
+        </div>
+      </div>
+
+      <!-- Nunung -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_8.jpg" alt="Nunung - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Nunung</div>
+          <p class="team-quote">"With unique artistic style and creative ideas, she always manages to capture the perfect moment."</p>
+        </div>
+      </div>
+
+      <!-- Andy -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_9.jpg" alt="Andy - Videographer">
+          <span class="team-badge">Videographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Videographer</div>
+          <div class="team-name">Andy</div>
+          <p class="team-quote">"It only took a moment to be completely captivated by this vibrant young cinematic storyteller."</p>
+        </div>
+      </div>
+
+      <!-- Rory -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_10.jpg" alt="Rory - Videographer">
+          <span class="team-badge">Videographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Videographer</div>
+          <div class="team-name">Rory</div>
+          <p class="team-quote">"We call him the eagle-eyed genius. A passionate creator full of cinematic ideas."</p>
+        </div>
+      </div>
+
+      <!-- Mega -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_11.jpg" alt="Mega - Videographer">
+          <span class="team-badge">Videographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Videographer</div>
+          <div class="team-name">Mega</div>
+          <p class="team-quote">"A friendly guy whose creative energy &amp; jokes make clients smile and laugh all day long."</p>
+        </div>
+      </div>
+
+      <!-- Arjuna -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_12.jpg" alt="Arjuna - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Arjuna</div>
+          <p class="team-quote">"The silent shooter who focuses intensely on capturing the authentic story as it unfolds."</p>
         </div>
       </div>
     </div>
