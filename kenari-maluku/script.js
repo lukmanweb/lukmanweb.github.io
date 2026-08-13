@@ -286,4 +286,58 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)';
         observer.observe(el);
     });
+
+    // ── NATSEPA: Nutrition Bar Animation on Scroll ──
+    const nutritionSection = document.getElementById('nutritionBars');
+    if (nutritionSection) {
+        const barObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.nutr-bar-fill');
+                    bars.forEach((bar, i) => {
+                        const targetWidth = bar.getAttribute('data-width');
+                        setTimeout(() => {
+                            bar.style.width = targetWidth + '%';
+                        }, i * 150);
+                    });
+                    barObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        barObserver.observe(nutritionSection);
+    }
+
+    // ── NATSEPA: Journey Steps Staggered Entrance ──
+    const journeySteps = document.querySelectorAll('.journey-step');
+    if (journeySteps.length) {
+        const stepObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const steps = entry.target.querySelectorAll('.journey-step');
+                    steps.forEach((step, i) => {
+                        step.style.opacity = '0';
+                        step.style.transform = 'translateY(32px)';
+                        step.style.transition = 'all 0.6s ease';
+                        setTimeout(() => {
+                            step.style.opacity = '1';
+                            step.style.transform = 'translateY(0)';
+                        }, i * 160);
+                    });
+                    stepObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        const timeline = document.querySelector('.journey-timeline');
+        if (timeline) stepObserver.observe(timeline);
+    }
+
+    // ── NATSEPA: Why Cards Fade In ──
+    const whyCards = document.querySelectorAll('.why-card, .trust-item');
+    whyCards.forEach((card, i) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(24px)';
+        card.style.transition = `all 0.55s ease ${i * 80}ms`;
+        observer.observe(card);
+    });
 });
+

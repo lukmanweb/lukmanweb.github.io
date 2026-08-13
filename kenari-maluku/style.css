@@ -1589,3 +1589,440 @@ body {
         width: 100%;
     }
 }
+
+/* ============================================================
+   NATSEPA — NEW SECTIONS CSS
+   Anti-mainstream premium editorial design
+   ============================================================ */
+
+/* ── 1. NUT JOURNEY TIMELINE ── */
+.nut-journey-section {
+    padding: 100px 0;
+    background: var(--warm-bg);
+    overflow: hidden;
+}
+
+.journey-timeline {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 64px;
+    position: relative;
+}
+
+.journey-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+}
+
+.step-number {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: rgba(207, 168, 86, 0.12);
+    line-height: 1;
+    margin-bottom: -16px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.05em;
+}
+
+.step-icon-ring {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 2;
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    box-shadow: 0 8px 24px rgba(207, 168, 86, 0.2);
+    transition: var(--transition);
+}
+
+.step-icon-ring.gold-ring {
+    background: var(--accent-gold);
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(207, 168, 86, 0.45);
+}
+
+.journey-step:hover .step-icon-ring {
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 16px 40px rgba(207, 168, 86, 0.35);
+}
+
+.step-connector {
+    position: absolute;
+    top: 80px;
+    right: -50%;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent-gold), transparent);
+    z-index: 1;
+}
+
+.last-step .step-connector { display: none; }
+
+.step-title {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.step-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+
+/* ── 2. NUTRITIONAL GOODNESS ── */
+.nutrition-section {
+    padding: 100px 0;
+    background: var(--primary-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.nutrition-section::before {
+    content: 'NUTRITION';
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.03);
+    letter-spacing: 0.3em;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.nutrition-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.nutrition-statement .section-tag.light { color: rgba(207,168,86,0.8); }
+
+.nutrition-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.05;
+    margin: 16px 0 20px;
+    letter-spacing: -0.02em;
+}
+
+.nutrition-title em {
+    font-style: italic;
+    color: var(--accent-gold);
+}
+
+.nutrition-lead {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.75;
+    margin-bottom: 28px;
+}
+
+.nutrition-cert-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.cert-pill {
+    background: rgba(207,168,86,0.15);
+    border: 1px solid rgba(207,168,86,0.35);
+    color: var(--accent-gold);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.04em;
+}
+
+.nutrition-note {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+}
+
+/* Nutrition Bars */
+.nutrition-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.nutr-row { display: flex; flex-direction: column; gap: 6px; }
+
+.nutr-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nutr-name {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nutr-name i { color: var(--accent-gold); font-size: 0.75rem; }
+
+.nutr-value {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.05em;
+}
+
+.nutr-bar-track {
+    height: 8px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.nutr-bar-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 100px;
+    transition: width 1.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nutr-bar-fill.animated { width: attr(data-width '%'); }
+
+.nutr-sub {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    font-style: italic;
+    margin-top: 2px;
+}
+
+/* ── 3. WHY NATSEPA EDITORIAL GRID ── */
+.why-natsepa-section {
+    padding: 100px 0;
+    background: #0e0e0e;
+}
+
+.why-natsepa-section .section-title {
+    color: #fff;
+}
+
+.why-editorial-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2px;
+    margin-top: 56px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.why-card {
+    background: #1a1a1a;
+    padding: 40px;
+    position: relative;
+    border: 1px solid #2a2a2a;
+    transition: background 0.3s ease;
+}
+
+.why-card:hover { background: #222; }
+
+.why-num {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    opacity: 0.7;
+}
+
+.why-featured {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(145deg, #1a1208, #0d0d0d);
+    padding: 48px;
+    min-height: 420px;
+}
+
+.why-icon-large {
+    font-size: 3rem;
+    color: var(--accent-gold);
+    margin-bottom: 24px;
+    opacity: 0.8;
+}
+
+.why-featured h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+}
+
+.why-featured p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.8;
+}
+
+.why-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.why-right-column .why-card { flex: 1; }
+
+.why-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.why-card p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+}
+
+.why-icon-sm {
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    margin-bottom: 16px;
+    display: block;
+    opacity: 0.75;
+}
+
+.why-bottom {
+    grid-column: span 1;
+}
+
+.why-accent {
+    background: linear-gradient(145deg, rgba(207,168,86,0.12), rgba(207,168,86,0.04));
+    border-color: rgba(207,168,86,0.2);
+}
+
+/* Bottom row grid fix */
+.why-editorial-grid .why-bottom:nth-child(3),
+.why-editorial-grid .why-bottom:nth-child(4),
+.why-editorial-grid .why-bottom:nth-child(5) {
+    /* Will be in 3-col row automatically */
+}
+
+/* ── 4. TRUST STRIP ── */
+.trust-strip-section {
+    padding: 48px 0;
+    background: var(--dark-green);
+    border-top: 1px solid rgba(207,168,86,0.15);
+    border-bottom: 1px solid rgba(207,168,86,0.15);
+}
+
+.trust-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.trust-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(207,168,86,0.12);
+    border: 1px solid rgba(207,168,86,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+    flex-shrink: 0;
+}
+
+.trust-item strong {
+    display: block;
+    font-size: 0.88rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-bottom: 3px;
+}
+
+.trust-item span {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+}
+
+.trust-divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(255,255,255,0.08);
+    flex-shrink: 0;
+}
+
+/* ── RESPONSIVE for new sections ── */
+@media (max-width: 900px) {
+    .journey-timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+    .step-connector { display: none; }
+    .step-number { font-size: 2.5rem; }
+    .nutrition-wrapper { grid-template-columns: 1fr; gap: 48px; }
+    .why-editorial-grid { grid-template-columns: 1fr; }
+    .why-featured { grid-row: span 1; min-height: auto; }
+    .why-right-column { flex-direction: row; }
+    .trust-inner { flex-direction: column; gap: 20px; }
+    .trust-divider { display: none; }
+}
+
+@media (max-width: 576px) {
+    .nut-journey-section,
+    .nutrition-section,
+    .why-natsepa-section { padding: 64px 0; }
+    .nutrition-title { font-size: 2.8rem; }
+    .why-right-column { flex-direction: column; }
+    .trust-item { min-width: 100%; }
+}
+
