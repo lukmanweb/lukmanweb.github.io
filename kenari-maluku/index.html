@@ -1,837 +1,683 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NATSEPA | Premium Canarium Products & Wild Harvested Nuts from Maluku The Spice Islands</title>
-    <meta name="description" content="NATSEPA (natsepacanarium.com) brings you the finest wild harvested Canarium nuts (Canarium indicum) from Maluku Spice Islands. 100% organic, hand cracked, rich in Omega-3, Vitamin E, and plant-based protein.">
-    <meta name="keywords" content="NATSEPA, Canarium nuts, Java Almond, Maluku Kenari, Wild Harvested Nuts, Canarium Indicum, Spice Islands Superfood, Indonesian Organic Nuts, Roasted Kenari, Export Canarium">
-    <meta name="author" content="NATSEPA Indonesia">
-    <link rel="canonical" href="https://natsepacanarium.com/">
-    
-    <!-- Open Graph / Facebook / LinkedIn -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://natsepacanarium.com/">
-    <meta property="og:title" content="NATSEPA | Premium Canarium Products From Maluku The Spice Islands">
-    <meta property="og:description" content="Wild harvested, handcrafted, made at origin. Discover the rare superfood nuts from Maluku Spice Islands of Indonesia.">
-    <meta property="og:image" content="https://natsepacanarium.com/images/natsepa-logo.png">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://natsepacanarium.com/">
-    <meta property="twitter:title" content="NATSEPA | Premium Canarium Products">
-    <meta property="twitter:description" content="Finest wild harvested Canarium nuts crafted with care by local communities in Maluku, Indonesia.">
-    <meta property="twitter:image" content="https://natsepacanarium.com/images/natsepa-logo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NATSEPA® | Not A Walnut. A Wonder. — Premium Canarium from Maluku, The Spice Islands</title>
+<meta name="description" content="NATSEPA brings you Canarium indicum — the ancient, wild-harvested nut of Maluku's rainforests. Not a walnut. Not cultivated. A rare superfood with centuries of heritage.">
+<meta property="og:title" content="NATSEPA® — Not A Walnut. A Wonder.">
+<meta property="og:description" content="Wild-harvested Canarium nuts from Maluku, The Spice Islands of Indonesia. Handcrafted, rich in Omega-3, Vitamin E and local heritage.">
+<meta property="og:image" content="images/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── INDEX-SPECIFIC ADDITIONS ── */
+.kenari-intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+}
+.ki-left{
+  background:var(--forest);
+  padding:72px 60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.ki-right{
+  position:relative;
+  overflow:hidden;
+  min-height:520px;
+}
+.ki-right img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.ki-right::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(12,20,9,.3),transparent);
+}
+.ki-fact-list{
+  display:flex;flex-direction:column;gap:16px;
+  margin-top:32px;
+}
+.ki-fact{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px;
+  border:1px solid var(--border-dark);
+  border-radius:var(--radius);
+}
+.ki-fact-icon{
+  width:34px;height:34px;border-radius:8px;
+  background:var(--gold-pale);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;color:var(--gold);
+  flex-shrink:0;
+}
+.ki-fact-text h6{font-size:.84rem;font-weight:700;color:#fff;margin-bottom:3px}
+.ki-fact-text p{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6}
 
-    <!-- Schema.org JSON-LD Structured Data for International Search Engines -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Brand",
-      "name": "NATSEPA",
-      "legalName": "NATSEPA Premium Canarium Products",
-      "url": "https://natsepacanarium.com/",
-      "logo": "https://natsepacanarium.com/images/natsepa-logo.png",
-      "description": "Premium wild harvested Canarium nut products from Maluku, The Spice Islands of Indonesia.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ambon",
-        "addressRegion": "Maluku",
-        "addressCountry": "ID"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+62-813-4330-1302",
-        "contactType": "customer service",
-        "email": "natsepakenari02@gmail.com",
-        "availableLanguage": ["Indonesian", "English"]
-      },
-      "sameAs": [
-        "https://instagram.com/natsepa.kenari.ambon"
-      ]
-    }
-    </script>
+/* Impact numbers bar */
+.numbers-bar{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  background:var(--cream-2);
+}
+.nb-cell{
+  padding:40px 28px;
+  text-align:center;
+  border-right:1px solid rgba(0,0,0,.06);
+}
+.nb-cell:last-child{border-right:none}
+.nb-num{
+  font-family:var(--font-display);
+  font-size:2.6rem;font-weight:700;
+  color:var(--leaf);
+  line-height:1;display:block;
+  margin-bottom:8px;
+}
+.nb-label{font-size:.78rem;color:var(--text-muted);font-weight:500;line-height:1.5}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+/* Story preview */
+.story-preview-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:0;
+  min-height:520px;
+}
+.sp-img{position:relative;overflow:hidden}
+.sp-img img{width:100%;height:100%;object-fit:cover}
+.sp-img::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(12,20,9,.6),transparent 40%);
+}
+.sp-content{
+  background:var(--cream);
+  padding:72px 60px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.sp-quote{
+  font-family:var(--font-display);
+  font-size:1.5rem;
+  font-style:italic;
+  color:var(--text);
+  line-height:1.5;
+  margin:28px 0;
+  padding-left:20px;
+  border-left:3px solid var(--gold);
+}
+
+/* Featured product row */
+.feat-prod-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:40px;
+}
+
+@media(max-width:900px){
+  .kenari-intro{grid-template-columns:1fr}
+  .ki-right{min-height:300px}
+  .numbers-bar{grid-template-columns:repeat(2,1fr)}
+  .story-preview-grid{grid-template-columns:1fr}
+  .sp-img{min-height:300px}
+  .sp-content{padding:44px 28px}
+  .ki-left{padding:44px 28px}
+}
+</style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="brand-logo">
-                <img src="images/natsepa-logo.png" alt="NATSEPA Logo" class="logo-img">
-                <div class="logo-text-group">
-                    <span class="logo-title">NATSEPA<sup>®</sup></span>
-                    <span class="logo-sub">PREMIUM CANARIUM PRODUCTS</span>
-                </div>
-            </a>
-            <nav class="nav-links">
-                <a href="#hero">Beranda</a>
-                
-                <!-- Our Story Dropdown (Like Yagi.co.id) -->
-                <div class="nav-dropdown">
-                    <a href="#purpose" class="dropdown-trigger">Kisah Kami <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="#purpose"><i class="fa-solid fa-bullseye"></i> Purpose (Tujuan Kami)</a>
-                        <a href="#process"><i class="fa-solid fa-arrows-spin"></i> Process (Proses Panen)</a>
-                        <a href="#ingredients"><i class="fa-solid fa-leaf"></i> Ingredients (Nutrisi Alami)</a>
-                        <a href="#people"><i class="fa-solid fa-users"></i> People (Masyarakat Petani)</a>
-                        <a href="#partners"><i class="fa-solid fa-handshake"></i> Partners (Mitra & Komunitas)</a>
-                    </div>
-                </div>
+<!-- ═══ HEADER ═══ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">
+      <img src="images/natsepa-logo.png" alt="NATSEPA" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-brand">NATSEPA<sup>®</sup></span>
+        <span class="logo-sub">PREMIUM CANARIUM PRODUCTS</span>
+      </div>
+    </a>
 
-                <a href="#products">Produk</a>
-                <a href="#journey">Perjalanan Kenari</a>
-                <a href="#nutrition">Nutrisi</a>
-                <a href="#impact">Dampak Sosial</a>
-                <a href="#contact" class="btn-cta-nav">Hubungi Kami</a>
-            </nav>
-            
-            <div class="header-actions">
-                <!-- Cart Icon Button -->
-                <div class="cart-icon-btn" id="cartBtn" title="Keranjang Belanja">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="cart-badge" id="cartBadge">0</span>
-                </div>
-                <div class="mobile-toggle" id="mobileToggle">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </div>
+    <nav class="main-nav" id="main-nav">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link active">Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="story.html" class="nav-link">
+          Our Story <span class="nav-arrow">▾</span>
+        </a>
+        <div class="nav-dropdown">
+          <a href="story.html#purpose">Purpose</a>
+          <a href="process.html">The Process</a>
+          <a href="story.html#people">People &amp; Heritage</a>
+          <a href="story.html#culture">Maluku Culture</a>
         </div>
-    </header>
-
-    <!-- Slide-over Shopping Cart Drawer -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <aside class="cart-drawer" id="cartDrawer">
-        <div class="cart-drawer-header">
-            <h3><i class="fa-solid fa-bag-shopping"></i> Keranjang Belanja</h3>
-            <button class="cart-close-btn" id="cartCloseBtn">&times;</button>
+      </div>
+      <div class="nav-item">
+        <a href="process.html" class="nav-link">The Process</a>
+      </div>
+      <div class="nav-item">
+        <a href="nutrition.html" class="nav-link">
+          The Kenari <span class="nav-arrow">▾</span>
+        </a>
+        <div class="nav-dropdown">
+          <a href="nutrition.html#whatiskenari">What is Kenari?</a>
+          <a href="nutrition.html#nutrition">Nutrition Facts</a>
+          <a href="nutrition.html#benefits">Health Benefits</a>
+          <a href="nutrition.html#compare">vs. Other Nuts</a>
         </div>
+      </div>
+      <div class="nav-item">
+        <a href="products.html" class="nav-link">Products</a>
+      </div>
+      <a href="products.html#contact" class="nav-link nav-cta">Order Now</a>
+    </nav>
 
-        <div class="cart-drawer-body" id="cartItemsContainer">
-            <!-- Dynamic Cart Items via JavaScript -->
-            <div class="cart-empty-state" id="cartEmptyState">
-                <i class="fa-solid fa-basket-shopping"></i>
-                <p>Keranjang belanja Anda masih kosong.</p>
-                <a href="#products" class="btn-shop-now" id="btnShopNow">Mulai Belanja</a>
-            </div>
-        </div>
+    <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-        <div class="cart-drawer-footer" id="cartFooter">
-            <div class="cart-summary-row">
-                <span>Subtotal</span>
-                <span class="cart-total-price" id="cartSubtotal">Rp 0</span>
-            </div>
-            <p class="cart-notes">* Klik tombol checkout untuk mengisi data pengiriman</p>
-            <button class="btn-checkout" id="btnOpenCheckoutForm">
-                Lanjut Pembelian <i class="fa-solid fa-arrow-right"></i>
-            </button>
-        </div>
-    </aside>
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html">Home</a>
+  <a href="story.html">Our Story</a>
+  <a href="story.html#purpose" class="m-sub">— Purpose</a>
+  <a href="story.html#people" class="m-sub">— People &amp; Heritage</a>
+  <a href="process.html">The Process</a>
+  <a href="nutrition.html">The Kenari</a>
+  <a href="nutrition.html#nutrition" class="m-sub">— Nutrition Facts</a>
+  <a href="nutrition.html#benefits" class="m-sub">— Health Benefits</a>
+  <a href="products.html">Products</a>
+  <a href="products.html#contact" class="m-cta">Order Now via WhatsApp</a>
+</div>
 
-    <!-- Order Form Modal (Nama, Alamat, No HP) -->
-    <div class="modal-overlay" id="checkoutModalOverlay">
-        <div class="checkout-modal">
-            <div class="modal-header">
-                <h3><i class="fa-solid fa-clipboard-list"></i> Form Data Pemesan</h3>
-                <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
-            </div>
-            <form id="checkoutForm" class="checkout-form">
-                <div class="form-group">
-                    <label for="custName"><i class="fa-solid fa-user"></i> Nama Lengkap *</label>
-                    <input type="text" id="custName" placeholder="Contoh: Budi Santoso" required>
-                </div>
-                <div class="form-group">
-                    <label for="custPhone"><i class="fa-solid fa-phone"></i> Nomor WhatsApp / HP *</label>
-                    <input type="tel" id="custPhone" placeholder="Contoh: 081234567890" required>
-                </div>
-                <div class="form-group">
-                    <label for="custAddress"><i class="fa-solid fa-location-dot"></i> Alamat Lengkap Pengiriman *</label>
-                    <textarea id="custAddress" rows="3" placeholder="Jl. Mawar No. 12, RT 01/RW 02, Kecamatan, Kota/Kabupaten, Kode Pos" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="custNotes"><i class="fa-solid fa-pen"></i> Catatan Tambahan (Opsional)</label>
-                    <input type="text" id="custNotes" placeholder="Contoh: Titipkan di satpam jika tidak ada orang">
-                </div>
-
-                <div class="order-summary-box">
-                    <h4>Ringkasan Pesanan</h4>
-                    <div id="modalOrderSummary"></div>
-                    <div class="modal-total-row">
-                        <span>Total Pembayaran</span>
-                        <strong id="modalGrandTotal">Rp 0</strong>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-submit-order">
-                    <i class="fa-brands fa-whatsapp"></i> Kirim Pesanan ke WhatsApp
-                </button>
-            </form>
-        </div>
+<!-- ═══ HERO ═══ -->
+<section class="hero" style="margin-top:70px">
+  <div class="hero-bg">
+    <img src="images/hero.jpg" alt="Kenari Maluku wild forest">
+  </div>
+  <div class="hero-body">
+    <p class="hero-eyebrow">Canarium indicum — Maluku, The Spice Islands of Indonesia</p>
+    <h1 class="hero-headline">Not A Walnut.<br><em>A Wonder.</em></h1>
+    <p class="hero-lead">NATSEPA brings you the rarest nut on earth — wild-harvested from ancient rainforests, never cultivated, cracked by hand, and roasted with generations of knowledge. One harvest. One year. Infinite care.</p>
+    <div class="hero-actions">
+      <a href="products.html" class="btn-primary"><i class="fa-solid fa-bag-shopping"></i> Explore Products</a>
+      <a href="story.html" class="btn-outline">Our Story</a>
     </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Discover</span>
+    <div class="scroll-bar"></div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="hstat">
+        <span class="hstat-num">45m</span>
+        <span class="hstat-label">Tree Height — Wild Grown</span>
+      </div>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <span class="hstat-num">1×</span>
+        <span class="hstat-label">Harvest Per Year</span>
+      </div>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <span class="hstat-num">100+</span>
+        <span class="hstat-label">Years — Ancient Trees</span>
+      </div>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <span class="hstat-num">66%</span>
+        <span class="hstat-label">Healthy Unsaturated Fats</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-bg-overlay"></div>
-        <img src="images/hero.jpg" alt="NATSEPA Premium Canarium" class="hero-bg-img">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fa-solid fa-seedling"></i> Wild Harvested • Handcrafted • Made at Origin
-            </div>
-            <h1 class="hero-title">NATSEPA — Premium Canarium Products</h1>
-            <p class="hero-subtitle">
-                From Maluku The Spice Islands of Indonesia. NATSEPA brings you the finest canarium nuts harvested from the wild and crafted with care by local communities in Maluku. A rare gift from nature, full of flavor, nutrition, and authentic stories.
-            </p>
-            <div class="hero-buttons">
-                <a href="#purpose" class="btn-primary">Jelajahi Kisah NATSEPA <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#products" class="btn-secondary">Lihat Koleksi Produk</a>
-            </div>
+<!-- ═══ BRAND STRIP ═══ -->
+<div class="brand-strip">
+  <div class="strip-scroller">
+    <div class="strip-item"><i class="fa-solid fa-seedling"></i> 100% Wild Harvested</div>
+    <div class="strip-item"><i class="fa-solid fa-hands"></i> Hand Cracked by Local Farmers</div>
+    <div class="strip-item gold-text">Canarium indicum</div>
+    <div class="strip-item"><i class="fa-solid fa-map-pin"></i> Ambon · Maluku · Indonesia</div>
+    <div class="strip-item"><i class="fa-solid fa-leaf"></i> No Pesticides · No Fertilizers</div>
+    <div class="strip-item"><i class="fa-solid fa-certificate"></i> Halal · BPOM Registered</div>
+    <div class="strip-item gold-text">HS Code: 2008.19.91</div>
+    <div class="strip-item"><i class="fa-solid fa-heart-pulse"></i> Rich in Omega-3 &amp; Vitamin E</div>
+    <!-- duplicate for seamless scroll -->
+    <div class="strip-item"><i class="fa-solid fa-seedling"></i> 100% Wild Harvested</div>
+    <div class="strip-item"><i class="fa-solid fa-hands"></i> Hand Cracked by Local Farmers</div>
+    <div class="strip-item gold-text">Canarium indicum</div>
+    <div class="strip-item"><i class="fa-solid fa-map-pin"></i> Ambon · Maluku · Indonesia</div>
+    <div class="strip-item"><i class="fa-solid fa-leaf"></i> No Pesticides · No Fertilizers</div>
+    <div class="strip-item"><i class="fa-solid fa-certificate"></i> Halal · BPOM Registered</div>
+    <div class="strip-item gold-text">HS Code: 2008.19.91</div>
+    <div class="strip-item"><i class="fa-solid fa-heart-pulse"></i> Rich in Omega-3 &amp; Vitamin E</div>
+  </div>
+</div>
+
+<!-- ═══ WHAT IS KENARI? ═══ -->
+<section class="kenari-intro" id="kenari">
+  <div class="ki-left" data-sr>
+    <span class="label-tag on-dark">THE KENARI NUT</span>
+    <h2 style="font-family:var(--font-display);font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">
+      Not A Walnut.<br>Not An Almond.<br><em style="color:var(--gold)">Something Far Rarer.</em>
+    </h2>
+    <p style="color:rgba(255,255,255,.62);line-height:1.82;margin-bottom:8px;font-size:.96rem">
+      The <em>Canarium indicum</em> — locally called <strong style="color:#fff">Kenari</strong> — is a nut endemic to the rainforests of Maluku, Eastern Indonesia. Unlike walnuts or almonds, it has never been commercially cultivated. It grows wild, on trees that can live for hundreds of years, reaching 45 meters tall.
+    </p>
+    <p style="color:rgba(255,255,255,.62);line-height:1.82;font-size:.96rem;margin-bottom:0">
+      Harvested just <strong style="color:#fff">once a year</strong> using traditional bamboo tools called <em>poga-poga</em>, by families who have guarded these forests for generations. Every nut carries a piece of Maluku's living heritage.
+    </p>
+    <div class="ki-fact-list">
+      <div class="ki-fact">
+        <div class="ki-fact-icon"><i class="fa-solid fa-dna"></i></div>
+        <div class="ki-fact-text">
+          <h6>Canarium indicum / amboinense</h6>
+          <p>Scientific name — endemic to Maluku's volcanic soil, also known as Galip, Ngali, or Nangai nut in Pacific regions.</p>
         </div>
-        <div class="scroll-indicator">
-            <span>Gulir Ke Bawah</span>
-            <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="ki-fact">
+        <div class="ki-fact-icon"><i class="fa-solid fa-tree"></i></div>
+        <div class="ki-fact-text">
+          <h6>Wild — Never Cultivated</h6>
+          <p>Grows naturally in primary rainforests without any pesticides, fertilizers, or irrigation. A true gift from nature.</p>
         </div>
-    </section>
-
-    <!-- Key Highlights Counter -->
-    <section class="highlights-bar">
-        <div class="container highlights-wrapper">
-            <div class="highlight-item">
-                <span class="highlight-num">100%</span>
-                <span class="highlight-label">Tumbuh Liar Alami</span>
-            </div>
-            <div class="highlight-divider"></div>
-            <div class="highlight-item">
-                <span class="highlight-num">1x</span>
-                <span class="highlight-label">Musim Panen Utama Per Tahun</span>
-            </div>
-            <div class="highlight-divider"></div>
-            <div class="highlight-item">
-                <span class="highlight-num">0%</span>
-                <span class="highlight-label">Pupuk Kimia & Pestisida</span>
-            </div>
-            <div class="highlight-divider"></div>
-            <div class="highlight-item">
-                <span class="highlight-num">Maluku</span>
-                <span class="highlight-label">Warisan Asli Kepulauan Rempah</span>
-            </div>
+      </div>
+      <div class="ki-fact">
+        <div class="ki-fact-icon"><i class="fa-solid fa-droplet"></i></div>
+        <div class="ki-fact-text">
+          <h6>66% Healthy Fats — Like Olive Oil</h6>
+          <p>Dominated by heart-healthy oleic acid (~45–50%), comparable to the best-grade extra-virgin olive oil.</p>
         </div>
-    </section>
+      </div>
+    </div>
+    <a href="nutrition.html" class="btn-outline" style="align-self:flex-start;margin-top:28px">Learn the Science <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+  <div class="ki-right">
+    <img src="images/wild-tree.jpg" alt="Pohon Kenari Purba Hutan Maluku">
+  </div>
+</section>
 
-    <!-- OUR STORY DETAILED SUB-SECTIONS -->
-    
-    <!-- 1. PURPOSE -->
-    <section class="story-subsection" id="purpose">
-        <div class="container">
-            <div class="story-grid">
-                <div class="story-image-wrap">
-                    <img src="images/wild-tree.jpg" alt="Pohon Kenari Purba Maluku - Wild Harvested NATSEPA" class="story-img">
-                    <div class="story-badge-floating">
-                        <i class="fa-solid fa-tree"></i>
-                        <span>WILD HARVESTED</span>
-                    </div>
-                </div>
+<!-- ═══ NUMBERS BAR ═══ -->
+<div class="numbers-bar">
+  <div class="nb-cell" data-sr>
+    <span class="nb-num">200+</span>
+    <span class="nb-label">Local Farming<br>Families</span>
+  </div>
+  <div class="nb-cell" data-sr>
+    <span class="nb-num">1×/yr</span>
+    <span class="nb-label">Harvest Season<br>— Respecting Nature</span>
+  </div>
+  <div class="nb-cell" data-sr>
+    <span class="nb-num">100%</span>
+    <span class="nb-label">Wild &amp; Organic<br>No Chemicals</span>
+  </div>
+  <div class="nb-cell" data-sr>
+    <span class="nb-num">757</span>
+    <span class="nb-label">kcal per 100g<br>— Energy Dense Superfood</span>
+  </div>
+</div>
 
-                <div class="story-text-content">
-                    <span class="section-tag">OUR STORY — PURPOSE</span>
-                    <h2 class="section-title">Menjaga Hutan Purba melalui Kenari Liar</h2>
-                    <p class="story-paragraph">
-                        Tujuan utama **NATSEPA** lahir bukan sekadar untuk menghadirkan camilan lezat, melainkan untuk **melindungi bentang hutan alam Kepulauan Maluku**. Pohon Kenari (*Canarium indicum*) telah tumbuh alami beratus-ratus tahun tanpa pernah ditanam di perkebunan komersial.
-                    </p>
-                    <p class="story-paragraph">
-                        Dengan memberikan nilai ekonomi yang tinggi dan adil bagi produk kenari liar, masyarakat lokal termotivasi untuk menjaga keutuhan hutan purba agar tetap lestari, alih-alih mengalihfungsikan lahan menjadi industri perkayuan atau perkebunan monokultur.
-                    </p>
-                </div>
-            </div>
+<!-- ═══ JOURNEY — 5 STEPS ═══ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head center" data-sr>
+      <span class="label-tag on-dark">FROM FOREST TO YOUR HANDS</span>
+      <h2 class="section-title on-dark">Our Story in Every Nut</h2>
+      <p class="section-lead on-dark center">Five steps. One year. One ancient forest. Each NATSEPA product carries this complete journey.</p>
+    </div>
+    <div class="journey-grid">
+      <div class="journey-step" data-sr>
+        <div class="step-num">01</div>
+        <div class="step-ring">
+          <img src="images/wild-tree.jpg" alt="Wild Harvested">
         </div>
-    </section>
-
-    <!-- 2. PROCESS -->
-    <section class="story-subsection alt-bg" id="process">
-        <div class="container">
-            <div class="story-grid reverse">
-                <div class="story-text-content">
-                    <span class="section-tag">OUR STORY — PROCESS</span>
-                    <h2 class="section-title">Panen Musiman & Keterampilan Tradisional</h2>
-                    <p class="story-paragraph">
-                        Pohon Kenari raksasa hanya mengalami musim panen raya **satu kali dalam setahun**. Proses pengambilannya mempertahankan kearifan lokal secara utuh:
-                    </p>
-                    <ul class="process-list">
-                        <li><i class="fa-solid fa-check"></i> <strong>Menunggu Buah Jatuh Alami:</strong> Petani mengumpulkan buah matang yang jatuh ke tanah hutan secara alami.</li>
-                        <li><i class="fa-solid fa-check"></i> <strong>Galah Tradisional (*Popoga*):</strong> Menggunakan bambu panjang untuk menjatuhkan buah dari pohon berukuran tinggi puluhan meter.</li>
-                        <li><i class="fa-solid fa-check"></i> <strong>Pengeringan Matahari:</strong> Biji kenari dikeringkan secara perlahan di bawah sinar matahari alami Maluku.</li>
-                        <li><i class="fa-solid fa-check"></i> <strong>Pemecahan Manual:</strong> Setiap cangkang keras dipecah secara hati-hati oleh tangan-tangan terampil warga lokal.</li>
-                    </ul>
-                </div>
-
-                <div class="story-image-wrap">
-                    <img src="images/careful-selection.jpg" alt="Seleksi Buah Kenari Segar Maluku - Careful Selection NATSEPA" class="story-img">
-                    <div class="story-badge-floating">
-                        <i class="fa-solid fa-hand-holding"></i>
-                        <span>CAREFUL SELECTION</span>
-                    </div>
-                </div>
-            </div>
+        <h4 class="step-name">Wild Harvested</h4>
+        <p class="step-desc">Gathered once a year from primary rainforests using traditional <em>poga-poga</em> bamboo tools. No trees are cut. Nature's cycle is respected.</p>
+      </div>
+      <div class="journey-step" data-sr>
+        <div class="step-num">02</div>
+        <div class="step-ring">
+          <img src="images/careful-selection.jpg" alt="Careful Selection">
         </div>
-    </section>
-
-    <!-- 3. INGREDIENTS -->
-    <section class="story-subsection" id="ingredients">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">OUR STORY — INGREDIENTS</span>
-                <h2 class="section-title">Keajaiban Super-Nutrisi Kenari Maluku</h2>
-                <p class="section-desc">Murni 100% dari alam tanpa bahan kimia, bahan pengawet, atau rekayasa genetik.</p>
-            </div>
-
-            <div class="ingredients-grid">
-                <div class="ingredient-box">
-                    <div class="ing-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h4>Kaya Omega-3 Alami</h4>
-                    <p>Sangat baik untuk kesehatan jantung, menurunkan kolesterol jahat, dan meningkatkan fokus daya ingat otak.</p>
-                </div>
-                <div class="ingredient-box">
-                    <div class="ing-icon"><i class="fa-solid fa-sun"></i></div>
-                    <h4>Tinggi Vitamin E</h4>
-                    <p>Antioksidan kuat untuk kesehatan kulit alami, memperlambat penuaan dini, dan meningkatkan imunitas.</p>
-                </div>
-                <div class="ingredient-box">
-                    <div class="ing-icon"><i class="fa-solid fa-leaf"></i></div>
-                    <h4>Tanpa Pestisida & Pupuk Kimia</h4>
-                    <p>Karena tumbuh liar di alam, seluruh buah kenari benar-benar bersih dari zat kimia berbahaya.</p>
-                </div>
-            </div>
+        <h4 class="step-name">Careful Selection</h4>
+        <p class="step-desc">Only premium-grade kernels pass inspection. Local community women hand-sort every batch for size, color, and freshness.</p>
+      </div>
+      <div class="journey-step" data-sr>
+        <div class="step-num">03</div>
+        <div class="step-ring">
+          <img src="images/hand-cracked.jpg" alt="Hand Cracked">
         </div>
-    </section>
-
-    <!-- 4. PEOPLE -->
-    <section class="story-subsection alt-bg" id="people">
-        <div class="container">
-            <div class="story-grid">
-                <div class="story-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80" alt="Masyarakat Petani Kenari" class="story-img">
-                    <div class="story-badge-floating">
-                        <i class="fa-solid fa-users"></i>
-                        <span>LOCAL COMMUNITY</span>
-                    </div>
-                </div>
-
-                <div class="story-text-content">
-                    <span class="section-tag">OUR STORY — PEOPLE</span>
-                    <h2 class="section-title">Pahlawan di Balik NATSEPA Canarium</h2>
-                    <p class="story-paragraph">
-                        Di balik setiap kemasan **NATSEPA**, ada ribuan jam kerja keras dan dedikasi dari ibu-ibu dan pria pengumpul kenari di desa-desa terpencil Maluku. Bagi mereka, kenari adalah warisan leluhur yang memberikan mata pencaharian berkelanjutan.
-                    </p>
-                    <p class="story-paragraph">
-                        Kami menjamin pendapatan yang layak melebihi harga pasar melalui sistem perdagangan langsung (*Direct Trade*) tanpa melalui mata rantai tengkulak yang merugikan.
-                    </p>
-                </div>
-            </div>
+        <h4 class="step-name">Hand Cracked</h4>
+        <p class="step-desc">Each hard shell is opened using traditional tools and skilled hands, preserving the natural oils and integrity of every kernel.</p>
+      </div>
+      <div class="journey-step" data-sr>
+        <div class="step-num">04</div>
+        <div class="step-ring">
+          <img src="images/expertly-crafted.jpg" alt="Expertly Crafted">
         </div>
-    </section>
-
-    <!-- 5. PARTNERS -->
-    <section class="story-subsection" id="partners">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">OUR STORY — PARTNERS</span>
-                <h2 class="section-title">Kemitraan & Perdagangan Adil (Fair Trade)</h2>
-                <p class="section-desc">Bekerja sama dengan kelompok tani hutan, koperasi lokal, dan lembaga konservasi.</p>
-            </div>
-
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <i class="fa-solid fa-tree-city partner-icon"></i>
-                    <h4>Koperasi Hutan Lestari Maluku</h4>
-                    <p>Wadah kolaborasi ribuan petani pengumpul kenari di wilayah Kepulauan Maluku.</p>
-                </div>
-                <div class="partner-card">
-                    <i class="fa-solid fa-hand-holding-heart partner-icon"></i>
-                    <h4>Fair Trade Community</h4>
-                    <p>Komitmen pembayaran harga di atas standar pasar untuk kesejahteraan keluarga petani.</p>
-                </div>
-                <div class="partner-card">
-                    <i class="fa-solid fa-earth-americas partner-icon"></i>
-                    <h4>Mitra Konservasi Alam</h4>
-                    <p>Menjaga zona hutan tutupan alami agar terhindar dari pembalakan liar.</p>
-                </div>
-            </div>
+        <h4 class="step-name">Expertly Crafted</h4>
+        <p class="step-desc">Roasted and seasoned with local ingredients — garlic, wild honey, arengga sugar — using generations-old recipes passed down in Maluku.</p>
+      </div>
+      <div class="journey-step" data-sr>
+        <div class="step-num">05</div>
+        <div class="step-ring featured">
+          <img src="images/premium-quality.jpg" alt="Premium Quality">
         </div>
-    </section>
+        <h4 class="step-name">Premium Quality</h4>
+        <p class="step-desc">Packed with strict quality control — Halal-certified, BPOM registered — from Maluku to the world. HS Code: 2008.19.91</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:52px" data-sr>
+      <a href="process.html" class="btn-outline">See Full Process <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
 
-    </section>
+<!-- ═══ STORY PREVIEW ═══ -->
+<section class="story-preview-grid">
+  <div class="sp-img">
+    <img src="images/why-indigenous.jpg" alt="Hutan Maluku — Pohon Kenari">
+  </div>
+  <div class="sp-content" data-sr>
+    <span class="label-tag">OUR STORY</span>
+    <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--text);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px">
+      Born in the Spice Islands.<br>Rooted in History.
+    </h2>
+    <p style="color:var(--text-2);line-height:1.82;font-size:.96rem;margin-bottom:16px">
+      The Kenari tree has been part of Maluku life since before colonial times. When the VOC monopolized cloves and nutmeg, it was the Kenari that saved Maluku families — becoming the <em>"pohon kehidupan"</em> (tree of life). Today, NATSEPA honors this legacy.
+    </p>
+    <blockquote class="sp-quote">
+      "From Maluku's ancient forests to your hands — every nut is a testament to centuries of life, wisdom, and the resilience of our people."
+    </blockquote>
+    <a href="story.html" class="btn-green" style="align-self:flex-start">Read Our Story <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</section>
 
-    <!-- ===== NATSEPA: OUR STORY IN EVERY NUT (HORIZONTAL TIMELINE) ===== -->
-    <section class="nut-journey-section" id="journey">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">NATSEPA — FROM FOREST TO YOUR HANDS</span>
-                <h2 class="section-title">Our Story in Every Nut</h2>
-                <p class="section-desc">Setiap butir kenari membawa perjalanan panjang dari hutan purba ke tangan Anda — sebuah kisah yang layak untuk dikenang.</p>
-            </div>
-
-            <div class="journey-timeline">
-                <!-- Step 1 -->
-                <div class="journey-step">
-                    <div class="step-number">01</div>
-                    <div class="step-icon-ring">
-                        <i class="fa-solid fa-tree"></i>
-                    </div>
-                    <div class="step-connector"></div>
-                    <h4 class="step-title">Wild Harvested</h4>
-                    <p class="step-desc">Pohon Kenari tumbuh liar di hutan Maluku. Dipanen dengan cara tradisional, sekali dalam setahun, menghormati siklus alam.</p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="journey-step">
-                    <div class="step-number">02</div>
-                    <div class="step-icon-ring">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                    <div class="step-connector"></div>
-                    <h4 class="step-title">Careful Selection</h4>
-                    <p class="step-desc">Hanya kenari terbaik yang dipilih oleh tangan-tangan komunitas lokal yang terlatih selama generasi.</p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="journey-step">
-                    <div class="step-number">03</div>
-                    <div class="step-icon-ring">
-                        <img src="images/hand-cracked.jpg" alt="Hand Cracked Kenari Nut NATSEPA" class="step-img-thumb">
-                    </div>
-                    <div class="step-connector"></div>
-                    <h4 class="step-title">Hand Cracked</h4>
-                    <p class="step-desc">Setiap cangkang dibuka secara manual menggunakan alat tradisional oleh tangan-tangan terampil warga lokal.</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="journey-step">
-                    <div class="step-number">04</div>
-                    <div class="step-icon-ring">
-                        <img src="images/expertly-crafted.jpg" alt="Expertly Crafted Roasting Process NATSEPA" class="step-img-thumb">
-                    </div>
-                    <div class="step-connector"></div>
-                    <h4 class="step-title">Expertly Crafted</h4>
-                    <p class="step-desc">Dipanggang secara tradisional dengan penuh kecermatan untuk mempertahankan nutrisi alami dan aroma kenari khas Maluku.</p>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="journey-step last-step">
-                    <div class="step-number">05</div>
-                    <div class="step-icon-ring gold-ring">
-                        <img src="images/premium-quality.jpg" alt="Premium Quality Product Lineup NATSEPA" class="step-img-thumb">
-                    </div>
-                    <h4 class="step-title">Premium Quality</h4>
-                    <p class="step-desc">Dikemas dengan kontrol kualitas ketat — dari Maluku ke seluruh penjuru dunia, dengan cinta dan kebanggaan lokal.</p>
-                </div>
-            </div>
+<!-- ═══ FEATURED PRODUCTS ═══ -->
+<section class="section section-cream" id="products">
+  <div class="container">
+    <div class="feat-prod-header">
+      <div data-sr>
+        <span class="label-tag">NATSEPA PRODUCTS</span>
+        <h2 class="section-title" style="margin-bottom:0">Handcrafted<br>For Every Palate</h2>
+      </div>
+      <a href="products.html" class="btn-outline" style="color:var(--text-2);border-color:rgba(0,0,0,.2);white-space:nowrap" data-sr="right">
+        View All Products <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+    <div class="products-grid">
+      <!-- Product 1 -->
+      <div class="product-card" data-sr data-id="p1" data-title="Roasted Kenari with Garlic" data-price="85000" data-img="images/roasted-garlic.jpg">
+        <div class="prod-img">
+          <img src="images/roasted-garlic.jpg" alt="Roasted Kenari with Garlic">
+          <span class="prod-tag">Savory</span>
         </div>
-    </section>
-
-    <!-- ===== NATSEPA: NUTRITIONAL GOODNESS (ANIMATED DATA VIZ) ===== -->
-    <section class="nutrition-section" id="nutrition">
-        <div class="container">
-            <div class="nutrition-wrapper">
-
-                <!-- Left: Editorial Statement -->
-                <div class="nutrition-statement">
-                    <span class="section-tag light">NUTRITIONAL GOODNESS</span>
-                    <h2 class="nutrition-title">757 kkal<br><em>per 100 gram.</em></h2>
-                    <p class="nutrition-lead">Kenari Maluku bukan sekadar camilan. Ia adalah paket energi alam yang lengkap — lemak baik, protein, serat, dan mineral penting dalam satu genggaman.</p>
-                    <div class="nutrition-cert-row">
-                        <div class="cert-pill">
-                            <i class="fa-solid fa-circle-check"></i> Halal Certified
-                        </div>
-                        <div class="cert-pill">
-                            <i class="fa-solid fa-shield-halved"></i> BPOM Approved
-                        </div>
-                    </div>
-                    <p class="nutrition-note">* Nilai gizi berdasarkan analisis laboratorium per 100g produk siap konsumsi.</p>
-                </div>
-
-                <!-- Right: Animated Nutrition Bars -->
-                <div class="nutrition-bars" id="nutritionBars">
-                    <div class="nutr-row">
-                        <div class="nutr-label">
-                            <span class="nutr-name"><i class="fa-solid fa-bolt"></i> Energi</span>
-                            <span class="nutr-value">757 kkal</span>
-                        </div>
-                        <div class="nutr-bar-track">
-                            <div class="nutr-bar-fill" data-width="100" style="background: linear-gradient(90deg, #c9a84c, #f0c040);"></div>
-                        </div>
-                    </div>
-
-                    <div class="nutr-row">
-                        <div class="nutr-label">
-                            <span class="nutr-name"><i class="fa-solid fa-dumbbell"></i> Protein</span>
-                            <span class="nutr-value">16.5 g</span>
-                        </div>
-                        <div class="nutr-bar-track">
-                            <div class="nutr-bar-fill" data-width="22" style="background: linear-gradient(90deg, #4ade80, #22c55e);"></div>
-                        </div>
-                    </div>
-
-                    <div class="nutr-row">
-                        <div class="nutr-label">
-                            <span class="nutr-name"><i class="fa-solid fa-droplet"></i> Total Lemak</span>
-                            <span class="nutr-value">73.5 g</span>
-                        </div>
-                        <div class="nutr-bar-track">
-                            <div class="nutr-bar-fill" data-width="85" style="background: linear-gradient(90deg, #fb923c, #f97316);"></div>
-                        </div>
-                        <p class="nutr-sub">Lemak Baik (Unsaturated): 62.3 g</p>
-                    </div>
-
-                    <div class="nutr-row">
-                        <div class="nutr-label">
-                            <span class="nutr-name"><i class="fa-solid fa-wheat-awn"></i> Karbohidrat</span>
-                            <span class="nutr-value">7.5 g</span>
-                        </div>
-                        <div class="nutr-bar-track">
-                            <div class="nutr-bar-fill" data-width="10" style="background: linear-gradient(90deg, #60a5fa, #3b82f6);"></div>
-                        </div>
-                    </div>
-
-                    <div class="nutr-row">
-                        <div class="nutr-label">
-                            <span class="nutr-name"><i class="fa-solid fa-seedling"></i> Serat Pangan</span>
-                            <span class="nutr-value">5.2 g</span>
-                        </div>
-                        <div class="nutr-bar-track">
-                            <div class="nutr-bar-fill" data-width="18" style="background: linear-gradient(90deg, #a3e635, #84cc16);"></div>
-                        </div>
-                    </div>
-
-                    <div class="nutr-row">
-                        <div class="nutr-label">
-                            <span class="nutr-name"><i class="fa-solid fa-atom"></i> Mineral Penting</span>
-                            <span class="nutr-value">Mg · P · Zn · Fe</span>
-                        </div>
-                        <div class="nutr-bar-track">
-                            <div class="nutr-bar-fill" data-width="70" style="background: linear-gradient(90deg, #e879f9, #d946ef);"></div>
-                        </div>
-                        <p class="nutr-sub">Kaya Magnesium, Fosfor, Zinc & Zat Besi</p>
-                    </div>
-                </div>
-
+        <div class="prod-body">
+          <h3 class="prod-name">Roasted Kenari</h3>
+          <span class="prod-variant">With Garlic · NATSEPA®</span>
+          <p class="prod-desc">Wild-harvested Canarium kernels slow-roasted with fragrant Maluku garlic. Bold, savory, and utterly addictive.</p>
+          <div class="prod-footer">
+            <div>
+              <div class="prod-price">Rp 85.000 <small>/ Pack</small></div>
             </div>
+            <button class="btn-cart" onclick="addToCart(this)"><i class="fa-solid fa-plus"></i> Add</button>
+          </div>
         </div>
-    </section>
-
-    <!-- ===== NATSEPA: WHY NATSEPA — EDITORIAL MAGAZINE GRID ===== -->
-    <section class="why-natsepa-section" id="why-natsepa">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">WHY NATSEPA?</span>
-                <h2 class="section-title">Enam Alasan yang<br>Tidak Bisa Diabaikan</h2>
-            </div>
-
-            <div class="why-editorial-grid">
-                <!-- Featured Big Card -->
-                <div class="why-card why-featured">
-                    <div class="why-bg-img" style="background-image: url('images/why-indigenous.jpg');"></div>
-                    <div class="why-featured-content">
-                        <div class="why-num">I — INDIGENOUS &amp; RARE</div>
-                        <h3>Indigenous &amp; Rare</h3>
-                        <p>Kenari (<em>Canarium indicum</em>) adalah tanaman endemik Maluku yang tidak bisa dengan mudah dibudidayakan di tempat lain. Ini bukan sekadar kacang — ini adalah warisan ekologis langka yang hanya bisa Anda temukan dari Kepulauan Rempah.</p>
-                    </div>
-                </div>
-
-                <!-- 2 Regular Cards Right Side -->
-                <div class="why-right-column">
-                    <div class="why-card">
-                        <div class="why-num">II</div>
-                        <i class="fa-solid fa-tree why-icon-sm"></i>
-                        <h4>Wild &amp; Sustainable</h4>
-                        <p>Dipanen dari hutan alam tanpa menebang pohon, menjaga keanekaragaman hayati dan siklus ekosistem hutan Maluku tetap utuh.</p>
-                    </div>
-                    <div class="why-card">
-                        <div class="why-num">III</div>
-                        <i class="fa-solid fa-hands why-icon-sm"></i>
-                        <h4>Handcrafted Tradition</h4>
-                        <p>Setiap proses melibatkan tangan terampil lokal dan pengetahuan lintas generasi yang tak bisa ditiru oleh mesin pabrik manapun.</p>
-                    </div>
-                </div>
-
-                <!-- 3 Bottom Cards -->
-                <div class="why-card why-bottom">
-                    <div class="why-num">IV</div>
-                    <i class="fa-solid fa-map-location-dot why-icon-sm"></i>
-                    <h4>Value Created at Origin</h4>
-                    <p>Diproses dan dikemas langsung di Maluku — nilai ekonomi tercipta di sumber, memberdayakan komunitas lokal.</p>
-                </div>
-                <div class="why-card why-bottom why-accent">
-                    <div class="why-num">V</div>
-                    <i class="fa-solid fa-shield-heart why-icon-sm"></i>
-                    <h4>Premium Quality</h4>
-                    <p>Seleksi ketat, proses higenis, dan kontrol kualitas menyeluruh untuk rasa terbaik dan keamanan konsumsi.</p>
-                </div>
-                <div class="why-card why-bottom">
-                    <div class="why-num">VI</div>
-                    <i class="fa-solid fa-book-open why-icon-sm"></i>
-                    <h4>Authentic Story</h4>
-                    <p>Dari Kepulauan Rempah Indonesia — setiap kemasan membawa budaya kaya dan warisan sejarah Maluku yang hidup.</p>
-                </div>
-            </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="product-card" data-sr data-id="p2" data-title="ALGARI Crunchy Kenari Cluster" data-price="95000" data-img="images/algari-cluster.jpg">
+        <div class="prod-img">
+          <img src="images/algari-cluster.jpg" alt="ALGARI Crunchy">
+          <span class="prod-tag">Crunchy</span>
         </div>
-    </section>
-
-    <!-- ===== NATSEPA: CERTIFICATIONS & TRUST STRIP ===== -->
-    <section class="trust-strip-section">
-        <div class="container">
-            <div class="trust-inner">
-                <div class="trust-item">
-                    <div class="trust-icon-wrap">
-                        <i class="fa-solid fa-certificate"></i>
-                    </div>
-                    <div>
-                        <strong>Halal Certified</strong>
-                        <span>Bersertifikat Halal MUI</span>
-                    </div>
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-icon-wrap">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <div>
-                        <strong>BPOM Approved</strong>
-                        <span>Terdaftar Resmi BPOM RI</span>
-                    </div>
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-icon-wrap">
-                        <i class="fa-solid fa-venus"></i>
-                    </div>
-                    <div>
-                        <strong>Women Empowerment</strong>
-                        <span>Memberdayakan Perempuan Maluku</span>
-                    </div>
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-icon-wrap">
-                        <i class="fa-solid fa-leaf"></i>
-                    </div>
-                    <div>
-                        <strong>Harvest Once a Year</strong>
-                        <span>Panen Alami Musiman — HS 2008.19.91</span>
-                    </div>
-                </div>
+        <div class="prod-body">
+          <h3 class="prod-name">ALGARI<sup>®</sup></h3>
+          <span class="prod-variant">Crunchy Kenari Cluster</span>
+          <p class="prod-desc">Clusters of whole Kenari kernels with a satisfying crunch. A unique texture experience unlike any nut product you've tried.</p>
+          <div class="prod-footer">
+            <div>
+              <div class="prod-price">Rp 95.000 <small>/ Pack</small></div>
             </div>
+            <button class="btn-cart" onclick="addToCart(this)"><i class="fa-solid fa-plus"></i> Add</button>
+          </div>
         </div>
-    </section>
-
-    <!-- Uniqueness Summary Cards Section -->
-
-    <section class="uniqueness-section" id="uniqueness">
-        <div class="container">
-            <div class="section-header center light-text">
-                <span class="section-tag">NATURE'S PROCESS</span>
-                <h2 class="section-title">Mengapa Kenari Maluku Sangat Istimewa?</h2>
-                <p class="section-desc">Empat pilar keaslian yang menjadikan Kenari Maluku sebagai mahakarya nutrisi alam.</p>
-            </div>
-
-            <div class="uniqueness-grid">
-                <!-- Card 1 -->
-                <div class="unique-card">
-                    <div class="card-icon-box">
-                        <i class="fa-solid fa-seedling"></i>
-                    </div>
-                    <h3>Tumbuh Liar (Tanpa Ditanam)</h3>
-                    <p>
-                        Seluruh produk KENARI MALUKU berasal dari pohon-pohon yang tumbuh secara alami di hutan dan kebun tradisional tanpa intervensi rekayasa genetik atau pupuk kimia.
-                    </p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="unique-card highlight-card">
-                    <div class="card-icon-box">
-                        <i class="fa-solid fa-calendar-check"></i>
-                    </div>
-                    <h3>Panen 1x Setahun</h3>
-                    <p>
-                        Pohon Kenari mencapai puncak kematangan panen besar hanya satu kali dalam sebulan-bulan tertentu setiap tahunnya. Ketersediaannya sangat terbatas dan penuh nilai eksklusivitas.
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="unique-card">
-                    <div class="card-icon-box">
-                        <i class="fa-solid fa-hands-holding-circle"></i>
-                    </div>
-                    <h3>Tradisi Pengambilan Tradisional</h3>
-                    <p>
-                        Masyarakat memanen kenari dengan menunggu buah matang jatuh secara alami atau menjatuhkannya menggunakan galah bambu khas (*popoga*), dilanjutkan proses pengeringan matahari yang alami.
-                    </p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="unique-card">
-                    <div class="card-icon-box">
-                        <i class="fa-solid fa-shield-heart"></i>
-                    </div>
-                    <h3>Kaya Super-Nutrisi</h3>
-                    <p>
-                        Kandungan Omega-3 alami, vitamin E tinggi, magnesium, serta lemak baik yang kaya manfaat untuk kesehatan jantung, otak, dan kecantikan kulit alami.
-                    </p>
-                </div>
-            </div>
+      </div>
+      <!-- Product 3 -->
+      <div class="product-card" data-sr data-id="p3" data-title="NARIPONG Honey Roasted Kenari" data-price="90000" data-img="images/naripong-honey.jpg">
+        <div class="prod-img">
+          <img src="images/naripong-honey.jpg" alt="NARIPONG Honey">
+          <span class="prod-tag">Sweet</span>
         </div>
-    </section>
-
-    <!-- Products Showcase Section with Unique Images for Each Product -->
-    <section class="products-section" id="products">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">OUR PRODUCTS</span>
-                <h2 class="section-title">Koleksi Produk NATSEPA</h2>
-                <p class="section-desc">Olahan Kenari Maluku pilihan dengan kualitas premium dan resep rasa autentik.</p>
+        <div class="prod-body">
+          <h3 class="prod-name">NARIPONG<sup>®</sup></h3>
+          <span class="prod-variant">Honey Roasted Kenari</span>
+          <p class="prod-desc">Glazed with pure local wild honey — naturally sweet, deeply satisfying. A timeless pairing of forest nut and forest honey.</p>
+          <div class="prod-footer">
+            <div>
+              <div class="prod-price">Rp 90.000 <small>/ Pack</small></div>
             </div>
-
-            <div class="products-grid">
-                <!-- Product 1: Roasted Kenari with Garlic -->
-                <div class="product-card" data-id="p1" data-title="Roasted Kenari with Garlic" data-price="85000" data-img="images/roasted-garlic.jpg">
-                    <div class="product-img-box">
-                        <img src="images/roasted-garlic.jpg" alt="Roasted Kenari with Garlic - NATSEPA">
-                        <span class="badge-product">Best Seller</span>
-                    </div>
-                    <div class="product-details">
-                        <div class="product-category">NATSEPA Premium</div>
-                        <h3 class="product-title">Roasted Kenari with Garlic</h3>
-                        <p class="product-desc">Kenari sangrai gurih dipadukan dengan aroma bawang putih pilihan. Diproses alami tanpa minyak berlebih.</p>
-                        <div class="product-meta">
-                            <span class="product-price">Rp 85.000 <small>/ Pack</small></span>
-                            <button class="btn-buy"><i class="fa-solid fa-cart-plus"></i> + Keranjang</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 2: ALGARI Crunchy Kenari Nut -->
-                <div class="product-card" data-id="p2" data-title="ALGARI Crunchy Kenari Nut" data-price="95000" data-img="images/algari-cluster.jpg">
-                    <div class="product-img-box">
-                        <img src="images/algari-cluster.jpg" alt="ALGARI Crunchy Kenari Nut - NATSEPA">
-                        <span class="badge-product gold">Speciality</span>
-                    </div>
-                    <div class="product-details">
-                        <div class="product-category">NATSEPA Gourmet</div>
-                        <h3 class="product-title">ALGARI Crunchy Kenari Nut</h3>
-                        <p class="product-desc">Kenari renyah kluster resep tradisional Ambon dengan varian Butter Caramel &amp; Spicy Caramel. One is never enough!</p>
-                        <div class="product-meta">
-                            <span class="product-price">Rp 95.000 <small>/ Pack</small></span>
-                            <button class="btn-buy"><i class="fa-solid fa-cart-plus"></i> + Keranjang</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3: NARIPONG Honey Roasted Kenari Nut -->
-                <div class="product-card" data-id="p3" data-title="NARIPONG Honey Roasted Kenari Nut" data-price="90000" data-img="images/naripong-honey.jpg">
-                    <div class="product-img-box">
-                        <img src="images/naripong-honey.jpg" alt="NARIPONG Honey Roasted Kenari Nut - NATSEPA">
-                        <span class="badge-product green">Healthy Sweet</span>
-                    </div>
-                    <div class="product-details">
-                        <div class="product-category">NATSEPA Honey Series</div>
-                        <h3 class="product-title">NARIPONG<sup>®</sup> Honey Roasted Kenari</h3>
-                        <p class="product-desc">Kenari sangrai alami dengan balutan madu hutan murni pilihan. Perpaduan manis alami yang gurih. One is never enough!</p>
-                        <div class="product-meta">
-                            <span class="product-price">Rp 90.000 <small>/ Pack</small></span>
-                            <button class="btn-buy"><i class="fa-solid fa-cart-plus"></i> + Keranjang</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4: GLOWRY Arengga Sugar Glazed Crisp Kenari Nut -->
-                <div class="product-card" data-id="p4" data-title="GLOWRY Arengga Sugar Glazed Crisp Kenari Nut" data-price="90000" data-img="images/glowry-arengga.jpg">
-                    <div class="product-img-box">
-                        <img src="images/glowry-arengga.jpg" alt="GLOWRY Arengga Sugar Glazed Crisp Kenari Nut - NATSEPA">
-                        <span class="badge-product gold">Award Winner</span>
-                    </div>
-                    <div class="product-details">
-                        <div class="product-category">NATSEPA Heritage • UKM Pangan Award</div>
-                        <h3 class="product-title">GLOWRY<sup>®</sup> Arengga Sugar Glazed</h3>
-                        <p class="product-desc">Kenari renyah pilihan disalut gula aren asli Maluku (Brown Sugar Glazed). Peraih UKM Pangan Award! One is never enough!</p>
-                        <div class="product-meta">
-                            <span class="product-price">Rp 90.000 <small>/ Pack</small></span>
-                            <button class="btn-buy"><i class="fa-solid fa-cart-plus"></i> + Keranjang</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button class="btn-cart" onclick="addToCart(this)"><i class="fa-solid fa-plus"></i> Add</button>
+          </div>
         </div>
-    </section>
-
-    <!-- Social Impact Section (Yagi Inspired) -->
-    <section class="impact-section" id="impact">
-        <div class="container">
-            <div class="impact-wrapper">
-                <div class="impact-content">
-                    <span class="section-tag light">SUSTAINABILITY & COMMUNITY</span>
-                    <h2 class="impact-title">Mendukung Petani Lokal & Menjaga Hutan Maluku</h2>
-                    <p class="impact-text">
-                        Setiap kemasan <strong>NATSEPA</strong> yang Anda nikmati turut mendukung keberlangsungan hidup para petani lokal dan pengumpul kenari di desa-desa pelosok Kepulauan Maluku. 
-                    </p>
-                    <p class="impact-text">
-                        Dengan memberikan nilai ekonomi yang tinggi pada pohon kenari liar, masyarakat terdorong untuk menjaga dan melestarikan hutan alam tempat pohon-pohon ini tumbuh, alih-alih mengalihfungsikan lahan menjadi kawasan industri.
-                    </p>
-                    <div class="impact-stats">
-                        <div class="stat-box">
-                            <h4>200+</h4>
-                            <p>Keluarga Petani Diberdayakan</p>
-                        </div>
-                        <div class="stat-box">
-                            <h4>100%</h4>
-                            <p>Perdagangan Adil (Fair Trade)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <!-- Product 4 -->
+      <div class="product-card" data-sr data-id="p4" data-title="GLOWRY Arengga Sugar Glazed Kenari" data-price="90000" data-img="images/glowry-arengga.jpg">
+        <div class="prod-img">
+          <img src="images/glowry-arengga.jpg" alt="GLOWRY Arengga Sugar">
+          <span class="prod-tag" style="background:var(--gold);color:#000">🏆 Award</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="container footer-grid">
-            <div class="footer-col brand-col">
-                <div class="footer-logo-wrap">
-                    <img src="images/natsepa-logo.png" alt="NATSEPA Logo" class="footer-logo-img">
-                    <h3 class="footer-logo">NATSEPA<sup>®</sup></h3>
-                </div>
-                <p>PREMIUM CANARIUM PRODUCTS FROM MALUKU THE SPICE ISLANDS OF INDONESIA. HS Code: 2008.19.91</p>
-                <div class="social-links">
-                    <a href="https://instagram.com/natsepa.kenari.ambon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/6281343301302" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
+        <div class="prod-body">
+          <h3 class="prod-name">GLOWRY<sup>®</sup></h3>
+          <span class="prod-variant">Arengga Sugar Glazed · Award Winner</span>
+          <p class="prod-desc">Glazed with traditional palm sugar (<em>Arengga</em>), this award-winning variant delivers a rich caramel depth unique to Indonesian heritage.</p>
+          <div class="prod-footer">
+            <div>
+              <div class="prod-price">Rp 90.000 <small>/ Pack</small></div>
             </div>
-            <div class="footer-col">
-                <h4>Navigasi Kisah</h4>
-                <ul>
-                    <li><a href="#purpose">Purpose</a></li>
-                    <li><a href="#journey">Journey</a></li>
-                    <li><a href="#nutrition">Nutrition</a></li>
-                    <li><a href="#why-natsepa">Why NATSEPA</a></li>
-                    <li><a href="#products">Products</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Kontak &amp; Pemesanan</h4>
-                <p><i class="fa-solid fa-location-dot"></i> Ambon, Maluku - Indonesia</p>
-                <p><i class="fa-solid fa-envelope"></i> natsepakenari02@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i> +62-813-4330-1302</p>
-                <p><i class="fa-brands fa-instagram"></i> @natsepa.kenari.ambon</p>
-            </div>
+            <button class="btn-cart" onclick="addToCart(this)"><i class="fa-solid fa-plus"></i> Add</button>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 NATSEPA. Premium Canarium Products. All Rights Reserved.</p>
-        </div>
-    </footer>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:.78rem;font-family:var(--font-display);letter-spacing:.12em;color:var(--text-muted);margin-top:28px">
+      HS CODE: 2008.19.91 &nbsp;·&nbsp; HALAL CERTIFIED &nbsp;·&nbsp; BPOM REGISTERED
+    </p>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- ═══ WHY NATSEPA ═══ -->
+<section class="section section-forest">
+  <div class="container">
+    <div class="section-head center" data-sr>
+      <span class="label-tag on-dark">WHY NATSEPA?</span>
+      <h2 class="section-title on-dark">Six Reasons You'll<br>Love This Nut</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card" data-sr>
+        <div class="why-icon"><img src="images/why-indigenous.jpg" alt="Indigenous"></div>
+        <h4>Indigenous &amp; Rare</h4>
+        <p>Canarium is native to Maluku and cannot be cultivated anywhere else in the world. Ecologically unique — scientifically confirmed.</p>
+      </div>
+      <div class="why-card" data-sr>
+        <div class="why-icon"><i class="fa-solid fa-tree"></i></div>
+        <h4>Wild &amp; Sustainable</h4>
+        <p>Harvested from primary rainforest without cutting trees. Fallen fruits are left to grow new seedlings. Net positive for ecosystems.</p>
+      </div>
+      <div class="why-card" data-sr>
+        <div class="why-icon"><img src="images/why-handcrafted.jpg" alt="Handcrafted"></div>
+        <h4>Handcrafted Tradition</h4>
+        <p>Every step involves skilled local hands, traditional tools, and generations-deep knowledge. No machine can replicate this.</p>
+      </div>
+      <div class="why-card" data-sr>
+        <div class="why-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <h4>Value at Origin</h4>
+        <p>Processed and packed in Maluku — empowering local communities and keeping the economic value where it belongs.</p>
+      </div>
+      <div class="why-card" data-sr>
+        <div class="why-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <h4>Science-Backed Nutrition</h4>
+        <p>66% healthy unsaturated fats, 14% protein, Vitamin E, Omega-3, plus essential minerals — all naturally occurring, no additives.</p>
+      </div>
+      <div class="why-card" data-sr>
+        <div class="why-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+        <h4>A Living Story</h4>
+        <p>From the Spice Islands' colonial era to today — the Kenari has been the "tree of life" for Maluku families for centuries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FULL BLEED — FOREST IMAGE ═══ -->
+<div class="full-bleed">
+  <img src="images/expertly-crafted.jpg" alt="NATSEPA expertly crafted">
+  <div class="full-bleed-overlay">
+    <div class="full-bleed-text">
+      <div data-sr>
+        <h2>Roasted the<br>Maluku Way.</h2>
+        <p>Every roasting technique at NATSEPA is derived from traditional Maluku culinary wisdom — never rushed, never forced. The Kenari knows when it's ready.</p>
+        <a href="process.html" class="btn-primary">See The Process</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ IMPACT STRIP ═══ -->
+<div class="impact-strip" style="background:var(--cream)">
+  <div class="impact-cell" data-sr>
+    <div class="impact-icon"><i class="fa-solid fa-venus"></i></div>
+    <div class="impact-title">Women Empowerment</div>
+    <div class="impact-desc">Local women lead selection, cracking, and processing — building economic independence in Maluku communities.</div>
+  </div>
+  <div class="impact-cell" data-sr>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+      <div class="cert-item">
+        <div class="cert-circle halal"><i class="fa-solid fa-star-and-crescent"></i></div>
+        <span>Halal MUI</span>
+      </div>
+      <div class="cert-item">
+        <div class="cert-circle bpom"><i class="fa-solid fa-shield-halved"></i></div>
+        <span>BPOM</span>
+      </div>
+      <div class="cert-item">
+        <div class="cert-circle award"><i class="fa-solid fa-award"></i></div>
+        <span>UKM Pangan<br>Award</span>
+      </div>
+    </div>
+    <div class="impact-title" style="margin-top:16px">Certified &amp; Trusted</div>
+  </div>
+  <div class="impact-cell" data-sr>
+    <div class="impact-icon"><i class="fa-solid fa-tree"></i></div>
+    <div class="impact-title">Forest Guardian</div>
+    <div class="impact-desc">We harvest naturally once a year. Each year, fallen fruits regenerate new trees — a self-sustaining cycle we protect.</div>
+  </div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="section section-cream2" id="contact">
+  <div class="container">
+    <div class="contact-block" data-sr>
+      <div>
+        <span class="label-tag" style="color:rgba(200,169,74,.8)">ORDER NOW</span>
+        <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">
+          Ready to Taste<br>Maluku's Finest?
+        </h2>
+        <p style="color:rgba(255,255,255,.55);line-height:1.8;font-size:.96rem;margin-bottom:28px">
+          Order directly via WhatsApp for the freshest batch. We ship nationwide across Indonesia and internationally via HS Code 2008.19.91.
+        </p>
+        <a href="https://wa.me/6281343301302?text=Halo%20NATSEPA%2C%20saya%20ingin%20memesan%20produk%20kenari%20anda." target="_blank" class="contact-wa-btn">
+          <i class="fa-brands fa-whatsapp"></i> Chat &amp; Order on WhatsApp
+        </a>
+      </div>
+      <div>
+        <div class="contact-details">
+          <div class="cdetail"><i class="fa-solid fa-phone"></i><span>+62-813-4330-1302</span></div>
+          <div class="cdetail"><i class="fa-solid fa-envelope"></i><span>natsepakenari02@gmail.com</span></div>
+          <div class="cdetail"><i class="fa-brands fa-instagram"></i><a href="https://instagram.com/natsepa.kenari.ambon" target="_blank">@natsepa.kenari.ambon</a></div>
+          <div class="cdetail"><i class="fa-solid fa-location-dot"></i><span>Ambon, Maluku — Indonesia</span></div>
+          <div class="cdetail"><i class="fa-solid fa-barcode"></i><span>HS Code: 2008.19.91</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/natsepa-logo.png" alt="NATSEPA">
+        <p>PREMIUM CANARIUM PRODUCTS<br>FROM MALUKU THE SPICE ISLANDS OF INDONESIA<br><br>Canarium indicum — Wild Harvested · Handcrafted · Made at Origin</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/natsepa.kenari.ambon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/6281343301302" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="process.html">The Process</a>
+        <a href="nutrition.html">The Kenari</a>
+        <a href="products.html">Products</a>
+      </div>
+      <div class="footer-col">
+        <h5>Our Story</h5>
+        <a href="story.html#purpose">Purpose</a>
+        <a href="story.html#people">People</a>
+        <a href="story.html#culture">Culture</a>
+        <a href="process.html">Process</a>
+      </div>
+      <div class="footer-col">
+        <h5>Products</h5>
+        <a href="products.html">Roasted with Garlic</a>
+        <a href="products.html">ALGARI® Cluster</a>
+        <a href="products.html">NARIPONG® Honey</a>
+        <a href="products.html">GLOWRY® Arengga</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NATSEPA®. All rights reserved. natsepacanarium.com</p>
+      <div class="footer-bottom-right">HS · 2008.19.91</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Overlay + Drawer -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-head">
+    <h4><i class="fa-solid fa-bag-shopping"></i> Your Order</h4>
+    <button class="cart-close-btn" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items-area" id="cart-items"></div>
+  <div class="cart-foot" id="cart-foot" style="display:none">
+    <div class="cart-total-row">
+      <span>Total</span>
+      <strong id="cart-total"></strong>
+    </div>
+    <a id="wa-btn" href="#" target="_blank" class="btn-wa">
+      <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
+    </a>
+  </div>
+</div>
+<div class="float-cart" onclick="openCart()">
+  <i class="fa-solid fa-bag-shopping"></i>
+  <span class="float-count" id="cart-count">0</span>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

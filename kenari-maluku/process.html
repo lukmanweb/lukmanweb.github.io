@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Process | NATSEPA® — From Forest to Your Hands</title>
+<meta name="description" content="Follow the complete NATSEPA process: Wild Harvested → Careful Selection → Hand Cracked → Expertly Crafted → Premium Quality. Five steps, one ancient forest, one year.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── PROCESS PAGE SPECIFIC ── */
+.process-step{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;
+}
+.ps-img{
+  position:sticky;
+  top:70px;
+  height:calc(100vh - 70px);
+  overflow:hidden;
+}
+.ps-img img{width:100%;height:100%;object-fit:cover}
+.ps-img::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(12,20,9,.3),transparent);
+}
+.ps-content{
+  padding:80px 60px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.ps-step-num{
+  font-family:var(--font-display);
+  font-size:6rem;font-weight:700;
+  color:rgba(200,169,74,.08);
+  line-height:1;margin-bottom:-20px;
+  display:block;
+}
+.ps-step-label{
+  font-size:.68rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;display:block;
+}
+.ps-title{
+  font-family:var(--font-display);
+  font-size:clamp(2.5rem,4vw,3.8rem);
+  font-weight:700;line-height:1.06;
+  letter-spacing:-.02em;
+  margin-bottom:24px;
+}
+.ps-body{
+  font-size:.96rem;line-height:1.82;
+  margin-bottom:20px;
+}
+.ps-detail-list{
+  display:flex;flex-direction:column;gap:12px;
+  margin-top:8px;
+}
+.ps-detail{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:14px;border-radius:var(--radius);
+  border:1px solid;
+  font-size:.84rem;line-height:1.65;
+}
+.ps-detail i{font-size:1rem;flex-shrink:0;margin-top:1px}
+
+/* Alternating bg for each step */
+.step-1{background:var(--forest)}
+.step-2{background:var(--cream)}
+.step-3{background:var(--forest-2)}
+.step-4{background:var(--cream-2)}
+.step-5{background:var(--forest)}
+
+.step-1 .ps-title,.step-3 .ps-title,.step-5 .ps-title{color:#fff}
+.step-2 .ps-title,.step-4 .ps-title{color:var(--text)}
+.step-1 .ps-body,.step-3 .ps-body,.step-5 .ps-body{color:rgba(255,255,255,.6)}
+.step-2 .ps-body,.step-4 .ps-body{color:var(--text-2)}
+.step-1 .ps-detail,.step-3 .ps-detail,.step-5 .ps-detail{
+  border-color:var(--border-dark);
+  background:rgba(255,255,255,.03);
+  color:rgba(255,255,255,.55);
+}
+.step-1 .ps-detail i,.step-3 .ps-detail i,.step-5 .ps-detail i{color:var(--gold)}
+.step-2 .ps-detail,.step-4 .ps-detail{
+  border-color:rgba(0,0,0,.07);
+  background:rgba(0,0,0,.02);
+  color:var(--text-2);
+}
+.step-2 .ps-detail i,.step-4 .ps-detail i{color:var(--leaf)}
+
+@media(max-width:900px){
+  .process-step{grid-template-columns:1fr}
+  .ps-img{position:relative;height:360px;top:0}
+  .ps-content{padding:44px 24px}
+  .ps-step-num{font-size:4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">
+      <img src="images/natsepa-logo.png" alt="NATSEPA" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-brand">NATSEPA<sup>®</sup></span>
+        <span class="logo-sub">PREMIUM CANARIUM PRODUCTS</span>
+      </div>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item">
+        <a href="story.html" class="nav-link">Our Story <span class="nav-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="story.html#purpose">Purpose</a>
+          <a href="process.html" class="active">The Process</a>
+          <a href="story.html#people">People &amp; Heritage</a>
+          <a href="story.html#culture">Maluku Culture</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="process.html" class="nav-link active">The Process</a></div>
+      <div class="nav-item">
+        <a href="nutrition.html" class="nav-link">The Kenari <span class="nav-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="nutrition.html#whatiskenari">What is Kenari?</a>
+          <a href="nutrition.html#nutrition">Nutrition Facts</a>
+          <a href="nutrition.html#benefits">Health Benefits</a>
+          <a href="nutrition.html#compare">vs. Other Nuts</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="products.html" class="nav-link">Products</a></div>
+      <a href="products.html#contact" class="nav-link nav-cta">Order Now</a>
+    </nav>
+    <button class="mobile-toggle" id="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html">Home</a>
+  <a href="story.html">Our Story</a>
+  <a href="process.html">The Process</a>
+  <a href="nutrition.html">The Kenari</a>
+  <a href="products.html">Products</a>
+  <a href="products.html#contact" class="m-cta">Order Now</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <img src="images/expertly-crafted.jpg" alt="NATSEPA process — from forest to hands">
+  <div class="page-hero-body">
+    <div class="container">
+      <span class="page-hero-tag">The Process</span>
+      <h1 class="page-hero-title">Five Steps.<br>One Year.<br>One Forest.</h1>
+      <p class="page-hero-sub">Every NATSEPA product is the result of a complete, unhurried journey. No shortcuts. No compromises. This is how it's done.</p>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 1 — WILD HARVESTED -->
+<div class="process-step step-1" id="step1">
+  <div class="ps-img">
+    <img src="images/wild-tree.jpg" alt="Wild Harvested — Pohon Kenari Maluku">
+  </div>
+  <div class="ps-content">
+    <span class="ps-step-num">01</span>
+    <span class="ps-step-label">Step One</span>
+    <h2 class="ps-title">Wild<br>Harvested.</h2>
+    <p class="ps-body">The Kenari tree (<em>Canarium indicum</em>) grows naturally in the primary rainforests of Maluku — on steep hillsides, deep valleys, and volcanic soil that no farm could replicate. These trees have never been planted by human hands. They are gifts of the forest.</p>
+    <p class="ps-body">Harvested once a year, at the exact moment of peak ripeness — determined by generations of local knowledge, not a calendar. Fruit that falls naturally to the forest floor is left to regenerate new trees, ensuring the cycle continues forever.</p>
+    <div class="ps-detail-list">
+      <div class="ps-detail"><i class="fa-solid fa-tree"></i><span><strong style="color:#fff">No planting.</strong> Kenari trees grow wild and have done so for hundreds of years. The oldest trees are estimated to be over a century old.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-tools"></i><span><strong style="color:#fff">Traditional tool: Poga-Poga.</strong> A 5–10 meter bamboo pole with a V-shaped fork tip, used to hook and shake fruit from trees up to 45 meters tall.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-calendar"></i><span><strong style="color:#fff">Once per year.</strong> NATSEPA only harvests during the natural peak season — honoring the forest's rhythm rather than commercial demand.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 2 — CAREFUL SELECTION -->
+<div class="process-step step-2" id="step2">
+  <div class="ps-img">
+    <img src="images/careful-selection.jpg" alt="Careful Selection — Kenari Quality Check">
+  </div>
+  <div class="ps-content">
+    <span class="ps-step-num" style="color:rgba(59,107,42,.08)">02</span>
+    <span class="ps-step-label">Step Two</span>
+    <h2 class="ps-title">Careful<br>Selection.</h2>
+    <p class="ps-body">After harvest, every batch of Kenari undergoes rigorous hand-sorting by local community members — primarily women — who have developed an extraordinary sensory precision through years of practice.</p>
+    <p class="ps-body">Kernels are evaluated by size, color, weight, and aroma. Only those meeting NATSEPA's premium standard proceed to the next stage. Rejected nuts are returned to the community for local consumption or composting — zero waste.</p>
+    <div class="ps-detail-list">
+      <div class="ps-detail"><i class="fa-solid fa-eye"></i><span><strong>Visual inspection:</strong> Color consistency, shell integrity, and absence of mold or pest damage.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-hand"></i><span><strong>Touch assessment:</strong> Skilled hands detect hollow shells and inferior kernels by weight and texture — a skill no machine replicates.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-venus"></i><span><strong>Women-led quality.</strong> The selection process is primarily led by experienced women from local Maluku communities — the real guardians of Kenari quality.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 3 — HAND CRACKED -->
+<div class="process-step step-3" id="step3">
+  <div class="ps-img">
+    <img src="images/hand-cracked.jpg" alt="Hand Cracked — Traditional Kenari Processing">
+  </div>
+  <div class="ps-content">
+    <span class="ps-step-num">03</span>
+    <span class="ps-step-label">Step Three</span>
+    <h2 class="ps-title">Hand<br>Cracked.</h2>
+    <p class="ps-body">The Kenari shell is one of the hardest nut shells in nature — significantly harder than macadamia or walnut. It must be cracked open by hand using traditional wooden mallets and stone anvils in a precise technique developed over generations.</p>
+    <p class="ps-body">Industrial cracking machines destroy the delicate kernel inside and contaminate the natural oils. At NATSEPA, every single nut is opened by hand — slowly, carefully — to preserve the full, unbroken kernel and its precious fat content.</p>
+    <div class="ps-detail-list">
+      <div class="ps-detail"><i class="fa-solid fa-hammer"></i><span><strong style="color:#fff">Traditional tools only.</strong> Wooden mallets and stone surfaces — the same tools Maluku families have used for centuries.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-gem"></i><span><strong style="color:#fff">Kernel integrity matters.</strong> Whole, unbroken kernels retain more natural oils, better flavor, and superior nutritional value.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-clock"></i><span><strong style="color:#fff">Slow, skilled work.</strong> An experienced cracker can open approximately 2kg of kernels per hour — each one requiring individual attention.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 4 — EXPERTLY CRAFTED -->
+<div class="process-step step-4" id="step4">
+  <div class="ps-img">
+    <img src="images/expertly-crafted.jpg" alt="Expertly Crafted — NATSEPA Traditional Roasting">
+  </div>
+  <div class="ps-content">
+    <span class="ps-step-num" style="color:rgba(59,107,42,.08)">04</span>
+    <span class="ps-step-label">Step Four</span>
+    <h2 class="ps-title">Expertly<br>Crafted.</h2>
+    <p class="ps-body">This is where the Kenari's character comes alive. Roasting at NATSEPA is never rushed — it is guided by smell, sound, and the color of the kernel. Each product variant receives its unique treatment:</p>
+    <div class="ps-detail-list">
+      <div class="ps-detail"><i class="fa-solid fa-pepper-hot"></i><span><strong>Garlic Roast:</strong> Low-heat roasting with fresh Maluku garlic, added in layers to build depth without bitterness.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-jar-wheat"></i><span><strong>Cluster Binding:</strong> ALGARI kernels are carefully bound with a light natural starch coating, then slow-baked for maximum crunch.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-droplet"></i><span><strong>Honey Glaze:</strong> Wild honey is heated and applied in careful stages, allowing each layer to caramelize before the next is added.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-fire"></i><span><strong>Arengga Glaze:</strong> Palm sugar is cooked to a precise temperature before coating — creating GLOWRY's signature toffee-caramel finish.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 5 — PREMIUM QUALITY -->
+<div class="process-step step-5" id="step5">
+  <div class="ps-img">
+    <img src="images/premium-quality.jpg" alt="Premium Quality — NATSEPA Final Product">
+  </div>
+  <div class="ps-content">
+    <span class="ps-step-num">05</span>
+    <span class="ps-step-label">Step Five</span>
+    <h2 class="ps-title">Premium<br>Quality.</h2>
+    <p class="ps-body">The final stage of every NATSEPA product is a multi-point quality check before packaging. Appearance, aroma, texture, and flavor are each assessed by our quality team against NATSEPA's exacting standards.</p>
+    <p class="ps-body">Packed in Maluku — at origin — ensuring maximum freshness and that every economic benefit remains in the hands of the community that created it. Certified, registered, and ready for the world.</p>
+    <div class="ps-detail-list">
+      <div class="ps-detail"><i class="fa-solid fa-star-and-crescent"></i><span><strong style="color:#fff">Halal Certified — MUI</strong><br>Certified by the Indonesian Ulema Council. Every ingredient and process step verified.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-shield-halved"></i><span><strong style="color:#fff">BPOM Registered</strong><br>Registered with Indonesia's National Agency of Drug and Food Control for domestic and export distribution.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-trophy"></i><span><strong style="color:#fff">UKM Pangan Award</strong><br>GLOWRY® awarded at Indonesia's national food innovation competition — recognizing exceptional product quality and heritage value.</span></div>
+      <div class="ps-detail"><i class="fa-solid fa-globe"></i><span><strong style="color:#fff">Export Ready — HS Code 2008.19.91</strong><br>Classified and ready for international trade. Shipped from Ambon, Maluku to the world.</span></div>
+    </div>
+    <div style="margin-top:32px">
+      <a href="products.html" class="btn-primary">Shop NATSEPA Products <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/natsepa-logo.png" alt="NATSEPA">
+        <p>PREMIUM CANARIUM PRODUCTS<br>FROM MALUKU THE SPICE ISLANDS OF INDONESIA</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/natsepa.kenari.ambon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/6281343301302" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Navigate</h5><a href="index.html">Home</a><a href="story.html">Our Story</a><a href="process.html">The Process</a><a href="nutrition.html">The Kenari</a><a href="products.html">Products</a></div>
+      <div class="footer-col"><h5>The Process</h5><a href="#step1">Wild Harvested</a><a href="#step2">Careful Selection</a><a href="#step3">Hand Cracked</a><a href="#step4">Expertly Crafted</a><a href="#step5">Premium Quality</a></div>
+      <div class="footer-col"><h5>Products</h5><a href="products.html">Roasted with Garlic</a><a href="products.html">ALGARI® Cluster</a><a href="products.html">NARIPONG® Honey</a><a href="products.html">GLOWRY® Arengga</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NATSEPA®. All rights reserved. natsepacanarium.com</p>
+      <div class="footer-bottom-right">HS · 2008.19.91</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

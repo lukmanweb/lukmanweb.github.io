@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Kenari — Nutrition & Science | NATSEPA®</title>
+<meta name="description" content="The complete science of Canarium indicum (Kenari): nutritional profile, health benefits, comparison with other nuts, and why it's nature's most complete nut.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── NUTRITION PAGE SPECIFIC ── */
+.nutr-panel{
+  background:var(--forest);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:40px 36px;
+}
+.nutr-panel-title{
+  font-size:.65rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.3);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  padding-bottom:12px;margin-bottom:24px;
+}
+
+.comparison-table{
+  width:100%;border-collapse:collapse;
+  margin-top:36px;
+  font-size:.84rem;
+}
+.comparison-table th{
+  font-size:.7rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);
+  padding:12px 16px;
+  text-align:left;
+  border-bottom:1px solid var(--border-dark);
+}
+.comparison-table td{
+  padding:14px 16px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  color:rgba(255,255,255,.65);
+  vertical-align:middle;
+}
+.comparison-table tr:hover td{background:rgba(255,255,255,.02)}
+.comparison-table td:first-child{font-weight:600;color:#fff}
+.ct-highlight{color:var(--gold) !important;font-weight:700 !important}
+.ct-nut-name{
+  font-weight:700;color:#fff;
+  display:flex;align-items:center;gap:8px;
+}
+.ct-badge{
+  background:var(--gold-pale);
+  color:var(--gold);
+  font-size:.62rem;font-weight:700;
+  padding:2px 8px;border-radius:100px;
+  letter-spacing:.06em;
+}
+
+.benefit-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+.benefit-card{
+  padding:28px 22px;
+  border-radius:var(--radius-lg);
+  background:var(--cream);
+  border:1px solid rgba(0,0,0,.06);
+  transition:var(--trans);
+}
+.benefit-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.benefit-icon{
+  width:52px;height:52px;
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;
+  margin-bottom:16px;
+}
+.benefit-card h5{
+  font-family:var(--font-display);
+  font-size:1.15rem;font-weight:700;
+  color:var(--text);margin-bottom:10px;
+}
+.benefit-card p{font-size:.82rem;color:var(--text-muted);line-height:1.72}
+.benefit-ref{
+  font-size:.7rem;color:var(--leaf);
+  font-style:italic;margin-top:8px;
+  display:block;
+}
+
+.science-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+@media(max-width:900px){
+  .benefit-cards{grid-template-columns:1fr 1fr}
+  .science-row{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .benefit-cards{grid-template-columns:1fr}
+  .comparison-table th:nth-child(n+4),.comparison-table td:nth-child(n+4){display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">
+      <img src="images/natsepa-logo.png" alt="NATSEPA" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-brand">NATSEPA<sup>®</sup></span>
+        <span class="logo-sub">PREMIUM CANARIUM PRODUCTS</span>
+      </div>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item">
+        <a href="story.html" class="nav-link">Our Story <span class="nav-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="story.html#purpose">Purpose</a>
+          <a href="process.html">The Process</a>
+          <a href="story.html#people">People &amp; Heritage</a>
+          <a href="story.html#culture">Maluku Culture</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="process.html" class="nav-link">The Process</a></div>
+      <div class="nav-item">
+        <a href="nutrition.html" class="nav-link active">The Kenari <span class="nav-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="#whatiskenari" class="active">What is Kenari?</a>
+          <a href="#nutrition">Nutrition Facts</a>
+          <a href="#benefits">Health Benefits</a>
+          <a href="#compare">vs. Other Nuts</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="products.html" class="nav-link">Products</a></div>
+      <a href="products.html#contact" class="nav-link nav-cta">Order Now</a>
+    </nav>
+    <button class="mobile-toggle" id="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html">Home</a>
+  <a href="story.html">Our Story</a>
+  <a href="process.html">The Process</a>
+  <a href="nutrition.html">The Kenari</a>
+  <a href="products.html">Products</a>
+  <a href="products.html#contact" class="m-cta">Order Now</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <img src="images/careful-selection.jpg" alt="Kenari nuts — nature's most complete nut">
+  <div class="page-hero-body">
+    <div class="container">
+      <span class="page-hero-tag">The Kenari — Canarium indicum</span>
+      <h1 class="page-hero-title">Nature's Most<br>Complete Nut.</h1>
+      <p class="page-hero-sub">66% healthy fats. 14% protein. Vitamin E, Omega-3, Magnesium, Iron, Zinc. One nut. A complete nutritional story.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IS KENARI -->
+<section class="section section-dark" id="whatiskenari">
+  <div class="container">
+    <div class="science-row">
+      <div data-sr>
+        <span class="label-tag on-dark">WHAT IS KENARI?</span>
+        <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">
+          The Nut the World<br>Hasn't Discovered Yet.
+        </h2>
+        <p style="color:rgba(255,255,255,.6);line-height:1.82;font-size:.96rem;margin-bottom:16px">
+          <em>Canarium indicum</em> — also known as Kenari in Indonesia, Galip in Papua New Guinea, Ngali in Solomon Islands, and Nangai in Vanuatu — is a nut unlike any other. It belongs to the Burseraceae family, the same family as frankincense and myrrh trees.
+        </p>
+        <p style="color:rgba(255,255,255,.6);line-height:1.82;font-size:.96rem;margin-bottom:24px">
+          Its fatty acid profile is remarkably similar to olive oil — dominated by heart-healthy oleic acid (~45–50%) — but with the added nutritional richness of a tree nut. Scientists have called it <em>"one of the most nutritious nuts in the Asia-Pacific region."</em>
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="padding:16px;border:1px solid var(--border-dark);border-radius:var(--radius)">
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:6px">Scientific Name</div>
+            <div style="font-size:.9rem;color:#fff;font-style:italic">Canarium indicum /<br>Canarium amboinense</div>
+          </div>
+          <div style="padding:16px;border:1px solid var(--border-dark);border-radius:var(--radius)">
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:6px">Family</div>
+            <div style="font-size:.9rem;color:#fff">Burseraceae<br><span style="color:rgba(255,255,255,.4);font-size:.8rem">(Frankincense family)</span></div>
+          </div>
+          <div style="padding:16px;border:1px solid var(--border-dark);border-radius:var(--radius)">
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:6px">Origin</div>
+            <div style="font-size:.9rem;color:#fff">Maluku, Indonesia<br><span style="color:rgba(255,255,255,.4);font-size:.8rem">Eastern Indonesia & Pacific</span></div>
+          </div>
+          <div style="padding:16px;border:1px solid var(--border-dark);border-radius:var(--radius)">
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:6px">Other Names</div>
+            <div style="font-size:.9rem;color:#fff">Galip · Ngali · Nangai<br><span style="color:rgba(255,255,255,.4);font-size:.8rem">Java Almond (historical)</span></div>
+          </div>
+        </div>
+      </div>
+      <div data-sr="right">
+        <img src="images/premium-quality.jpg" alt="Kenari kernels — NATSEPA premium quality" style="width:100%;border-radius:var(--radius-lg);aspect-ratio:4/5;object-fit:cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUTRITION FACTS -->
+<section class="section section-forest" id="nutrition">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:start">
+      <div data-sr>
+        <span class="label-tag on-dark">NUTRITION FACTS</span>
+        <h2 style="font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:8px">Per 100g</h2>
+        <p style="font-size:.78rem;color:rgba(255,255,255,.35);margin-bottom:36px;font-style:italic">*Based on laboratory analysis. Values may vary.</p>
+
+        <div class="nutr-table">
+          <div class="nutr-row">
+            <div class="nutr-icon-box energy"><i class="fa-solid fa-bolt"></i></div>
+            <div class="nutr-info">
+              <div class="nutr-name">Energy</div>
+              <div class="nutr-bar-track"><div class="nutr-bar" data-pct="92"></div></div>
+            </div>
+            <div class="nutr-val">757 kcal</div>
+          </div>
+          <div class="nutr-row">
+            <div class="nutr-icon-box protein"><i class="fa-solid fa-dumbbell"></i></div>
+            <div class="nutr-info">
+              <div class="nutr-name">Protein</div>
+              <div class="nutr-bar-track"><div class="nutr-bar" data-pct="33"></div></div>
+            </div>
+            <div class="nutr-val">14–16.5 g</div>
+          </div>
+          <div class="nutr-row">
+            <div class="nutr-icon-box fat"><i class="fa-solid fa-droplet"></i></div>
+            <div class="nutr-info">
+              <div class="nutr-name">Total Fat</div>
+              <div class="nutr-bar-track"><div class="nutr-bar" data-pct="80"></div></div>
+            </div>
+            <div class="nutr-val">62–73.5 g</div>
+          </div>
+          <div class="nutr-row">
+            <div class="nutr-icon-box fat" style="background:rgba(100,200,100,.12);color:#64C864"><i class="fa-solid fa-heart"></i></div>
+            <div class="nutr-info">
+              <div class="nutr-name">Unsaturated Fat (Good Fat)</div>
+              <div class="nutr-bar-track"><div class="nutr-bar" data-pct="72"></div></div>
+            </div>
+            <div class="nutr-val">~62.3 g</div>
+          </div>
+          <div class="nutr-row">
+            <div class="nutr-icon-box carb"><i class="fa-solid fa-wheat-awn"></i></div>
+            <div class="nutr-info">
+              <div class="nutr-name">Carbohydrate</div>
+              <div class="nutr-bar-track"><div class="nutr-bar" data-pct="14"></div></div>
+            </div>
+            <div class="nutr-val">7.5 g</div>
+          </div>
+          <div class="nutr-row">
+            <div class="nutr-icon-box fiber"><i class="fa-solid fa-leaf"></i></div>
+            <div class="nutr-info">
+              <div class="nutr-name">Dietary Fiber</div>
+              <div class="nutr-bar-track"><div class="nutr-bar" data-pct="20"></div></div>
+            </div>
+            <div class="nutr-val">5.2 g</div>
+          </div>
+          <div class="nutr-row">
+            <div class="nutr-icon-box mineral"><i class="fa-solid fa-gem"></i></div>
+            <div class="nutr-info">
+              <div class="nutr-name">Minerals (Mg, Fe, Zn, P, K)</div>
+              <div class="nutr-bar-track"><div class="nutr-bar" data-pct="65"></div></div>
+            </div>
+            <div class="nutr-val">Rich</div>
+          </div>
+        </div>
+      </div>
+
+      <div data-sr="right">
+        <div class="nutr-panel">
+          <div class="nutr-panel-title">Key Nutritional Highlights</div>
+
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,165,0,.1);color:#FFA500;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0"><i class="fa-solid fa-fire-flame-curved"></i></div>
+              <div>
+                <h6 style="font-size:.88rem;font-weight:700;color:#fff;margin-bottom:4px">Oleic Acid — Like Olive Oil</h6>
+                <p style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.65">45–50% oleic acid — the same heart-healthy monounsaturated fat that makes extra-virgin olive oil famous. Stable, buttery, and deeply nourishing.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:40px;height:40px;border-radius:10px;background:rgba(100,200,255,.1);color:#64C8FF;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0"><i class="fa-solid fa-brain"></i></div>
+              <div>
+                <h6 style="font-size:.88rem;font-weight:700;color:#fff;margin-bottom:4px">Omega-3 Fatty Acids</h6>
+                <p style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.65">Contains linolenic acid — essential Omega-3 — supporting cardiovascular health, brain function, and reducing systemic inflammation.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:40px;height:40px;border-radius:10px;background:rgba(200,169,74,.1);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0"><i class="fa-solid fa-sun"></i></div>
+              <div>
+                <h6 style="font-size:.88rem;font-weight:700;color:#fff;margin-bottom:4px">Vitamin E — Antioxidant Shield</h6>
+                <p style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.65">High tocopherol (Vitamin E) content — a fat-soluble antioxidant protecting cells from oxidative stress. Critical for skin health and immunity.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:40px;height:40px;border-radius:10px;background:rgba(100,200,100,.1);color:#64C864;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0"><i class="fa-solid fa-star"></i></div>
+              <div>
+                <h6 style="font-size:.88rem;font-weight:700;color:#fff;margin-bottom:4px">Mineral Complex</h6>
+                <p style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.65">Rich in Magnesium, Phosphorus, Iron, Zinc, Potassium, Selenium, Manganese, and Copper — essential for bone density, energy metabolism, and immune defense.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:40px;height:40px;border-radius:10px;background:rgba(200,100,200,.1);color:#C864C8;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0"><i class="fa-solid fa-shield-virus"></i></div>
+              <div>
+                <h6 style="font-size:.88rem;font-weight:700;color:#fff;margin-bottom:4px">Phenolic Antioxidants</h6>
+                <p style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.65">Contains phenolic compounds and tocopherols with high antioxidative activity — fighting free radicals and supporting long-term cellular health.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;padding:20px 24px;border:1px solid var(--border-dark);border-radius:var(--radius);display:flex;align-items:center;gap:12px">
+          <i class="fa-solid fa-flask" style="color:var(--gold);font-size:1.2rem"></i>
+          <p style="font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6">Scientific data from: Universitas Gadjah Mada, ACIAR Research, StuartXchange Phytochemical Studies, Nth Wonder Canarium Research.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEALTH BENEFITS -->
+<section class="section section-cream" id="benefits">
+  <div class="container">
+    <div class="section-head center" data-sr>
+      <span class="label-tag">HEALTH BENEFITS</span>
+      <h2 class="section-title">What Kenari<br>Does For You</h2>
+      <p class="section-lead center">Backed by science. Proven by centuries of traditional use. The Kenari nut is more than food — it's medicine, energy, and vitality in every bite.</p>
+    </div>
+    <div class="benefit-cards">
+      <div class="benefit-card" data-sr>
+        <div class="benefit-icon" style="background:rgba(220,50,50,.08);color:#DC3232"><i class="fa-solid fa-heart"></i></div>
+        <h5>Heart Health</h5>
+        <p>High oleic acid and Omega-3 content supports healthy cholesterol levels, reduces inflammation in arterial walls, and improves cardiovascular function — similar to a daily dose of olive oil.</p>
+        <span class="benefit-ref">*Supported by fatty acid profiling research — Canarium indicum</span>
+      </div>
+      <div class="benefit-card" data-sr>
+        <div class="benefit-icon" style="background:rgba(50,100,220,.08);color:#3264DC"><i class="fa-solid fa-brain"></i></div>
+        <h5>Brain Function</h5>
+        <p>Omega-3 fatty acids are essential for cognitive function, memory, and mental clarity. Regular consumption supports brain health and may help reduce the risk of age-related cognitive decline.</p>
+        <span class="benefit-ref">*Linolenic acid content — polyunsaturated Omega-3 fat</span>
+      </div>
+      <div class="benefit-card" data-sr>
+        <div class="benefit-icon" style="background:rgba(220,180,50,.08);color:#DCB432"><i class="fa-solid fa-sun"></i></div>
+        <h5>Skin &amp; Glow</h5>
+        <p>Vitamin E and Kenari oil's emollient properties nourish skin from within. Traditionally used topically for eczema and psoriasis. Internally, it supports healthy, glowing skin through antioxidant action.</p>
+        <span class="benefit-ref">*Tocopherol + emollient oil profile studies</span>
+      </div>
+      <div class="benefit-card" data-sr>
+        <div class="benefit-icon" style="background:rgba(50,150,50,.08);color:#329632"><i class="fa-solid fa-bone"></i></div>
+        <h5>Bone &amp; Muscle</h5>
+        <p>Magnesium, Phosphorus, and Calcium content supports bone density and muscle function. The 14–16.5g protein per 100g makes it an excellent plant-based protein source for muscle maintenance.</p>
+        <span class="benefit-ref">*Mineral profile — Mg, P, Ca, Zn content analysis</span>
+      </div>
+      <div class="benefit-card" data-sr>
+        <div class="benefit-icon" style="background:rgba(150,50,200,.08);color:#9632C8"><i class="fa-solid fa-shield-heart"></i></div>
+        <h5>Immunity &amp; Anti-Inflammatory</h5>
+        <p>Used in traditional medicine for rheumatism, angina, and respiratory issues. Modern research confirms anti-inflammatory phenolic compounds that support immune system resilience.</p>
+        <span class="benefit-ref">*Traditional medicine + phytochemical research</span>
+      </div>
+      <div class="benefit-card" data-sr>
+        <div class="benefit-icon" style="background:rgba(50,180,180,.08);color:#32B4B4"><i class="fa-solid fa-bolt"></i></div>
+        <h5>Sustained Energy</h5>
+        <p>At 757 kcal per 100g with a healthy fat-to-carb ratio, Kenari provides slow-burning, long-lasting energy. An ideal meal-replacement or performance snack without the sugar crash.</p>
+        <span class="benefit-ref">*Energy density + low glycemic index profile</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUT COMPARISON TABLE -->
+<section class="section section-forest" id="compare">
+  <div class="container">
+    <div class="section-head center" data-sr>
+      <span class="label-tag on-dark">COMPARISON</span>
+      <h2 class="section-title on-dark">Kenari vs. The World</h2>
+      <p class="section-lead on-dark center">How does Canarium indicum stack up against the most popular nuts globally? Per 100g.</p>
+    </div>
+    <div data-sr style="overflow-x:auto">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Nut</th>
+            <th>Energy (kcal)</th>
+            <th>Fat (g)</th>
+            <th>Protein (g)</th>
+            <th>Carbs (g)</th>
+            <th>Vitamin E</th>
+            <th>Origin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="ct-nut-name"><i class="fa-solid fa-star" style="color:var(--gold);font-size:.8rem"></i> Kenari (NATSEPA) <span class="ct-badge">Wild</span></div></td>
+            <td class="ct-highlight">757</td>
+            <td class="ct-highlight">62–73.5</td>
+            <td class="ct-highlight">14–16.5</td>
+            <td>7.5</td>
+            <td class="ct-highlight">High ✓</td>
+            <td>Maluku, Indonesia</td>
+          </tr>
+          <tr>
+            <td><div class="ct-nut-name">Walnut</div></td>
+            <td>654</td>
+            <td>65</td>
+            <td>15</td>
+            <td>14</td>
+            <td>Moderate</td>
+            <td>Cultivated — Global</td>
+          </tr>
+          <tr>
+            <td><div class="ct-nut-name">Almond</div></td>
+            <td>579</td>
+            <td>50</td>
+            <td>21</td>
+            <td>22</td>
+            <td>Very High ✓</td>
+            <td>Cultivated — USA, Spain</td>
+          </tr>
+          <tr>
+            <td><div class="ct-nut-name">Macadamia</div></td>
+            <td>718</td>
+            <td>76</td>
+            <td>7.9</td>
+            <td>14</td>
+            <td>Low</td>
+            <td>Cultivated — Australia</td>
+          </tr>
+          <tr>
+            <td><div class="ct-nut-name">Cashew</div></td>
+            <td>553</td>
+            <td>44</td>
+            <td>18</td>
+            <td>30</td>
+            <td>Low</td>
+            <td>Cultivated — India, Vietnam</td>
+          </tr>
+          <tr>
+            <td><div class="ct-nut-name">Peanut</div></td>
+            <td>567</td>
+            <td>49</td>
+            <td>26</td>
+            <td>16</td>
+            <td>Moderate</td>
+            <td>Cultivated — Global</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.72rem;color:rgba(255,255,255,.25);margin-top:16px;font-style:italic">*Values sourced from USDA Nutrient Database, scientific papers, and laboratory analysis. Kenari values may vary by harvest season.</p>
+
+    <div style="text-align:center;margin-top:52px" data-sr>
+      <a href="products.html" class="btn-primary"><i class="fa-solid fa-bag-shopping"></i> Try NATSEPA Kenari Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/natsepa-logo.png" alt="NATSEPA">
+        <p>PREMIUM CANARIUM PRODUCTS<br>FROM MALUKU THE SPICE ISLANDS OF INDONESIA</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/natsepa.kenari.ambon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/6281343301302" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Navigate</h5><a href="index.html">Home</a><a href="story.html">Our Story</a><a href="process.html">The Process</a><a href="nutrition.html">The Kenari</a><a href="products.html">Products</a></div>
+      <div class="footer-col"><h5>The Kenari</h5><a href="#whatiskenari">What is Kenari?</a><a href="#nutrition">Nutrition Facts</a><a href="#benefits">Health Benefits</a><a href="#compare">vs. Other Nuts</a></div>
+      <div class="footer-col"><h5>Products</h5><a href="products.html">Roasted with Garlic</a><a href="products.html">ALGARI® Cluster</a><a href="products.html">NARIPONG® Honey</a><a href="products.html">GLOWRY® Arengga</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NATSEPA®. All rights reserved. natsepacanarium.com</p>
+      <div class="footer-bottom-right">HS · 2008.19.91</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

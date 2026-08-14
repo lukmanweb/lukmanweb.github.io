@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Products | NATSEPA® — Premium Canarium Kenari Maluku</title>
+<meta name="description" content="Shop NATSEPA premium Canarium nut products: Roasted with Garlic, ALGARI Crunchy Cluster, NARIPONG Honey, and GLOWRY Arengga Sugar. Order via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── PRODUCTS PAGE SPECIFIC ── */
+.products-full-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:80px;
+}
+.prod-detail{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:72px;
+  align-items:center;
+}
+.prod-detail:nth-child(even) .pd-img{order:2}
+.prod-detail:nth-child(even) .pd-content{order:1}
+
+.pd-img{position:relative}
+.pd-img img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  border-radius:var(--radius-xl);
+}
+.pd-award-badge{
+  position:absolute;
+  top:20px;right:20px;
+  background:var(--gold);
+  color:#000;
+  font-size:.7rem;font-weight:700;
+  letter-spacing:.08em;
+  padding:6px 14px;border-radius:100px;
+  display:flex;align-items:center;gap:6px;
+}
+
+.pd-content{}
+.pd-brand{
+  font-family:var(--font-display);
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  font-weight:700;
+  color:var(--text);
+  letter-spacing:-.02em;
+  line-height:1;
+  margin-bottom:4px;
+}
+.pd-brand.on-dark{color:#fff}
+.pd-sub{
+  font-size:.75rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;display:block;
+}
+.pd-desc{
+  color:var(--text-2);line-height:1.82;font-size:.96rem;margin-bottom:24px;
+}
+.pd-desc.on-dark{color:rgba(255,255,255,.6)}
+
+.pd-details-list{
+  display:flex;flex-direction:column;gap:10px;margin-bottom:28px;
+}
+.pd-detail-row{
+  display:flex;align-items:center;gap:10px;
+  font-size:.84rem;color:var(--text-muted);
+}
+.pd-detail-row.on-dark{color:rgba(255,255,255,.45)}
+.pd-detail-row i{color:var(--gold);width:16px}
+.pd-detail-row strong{color:var(--text);font-weight:600}
+.pd-detail-row.on-dark strong{color:#fff}
+
+.pd-footer{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  padding-top:24px;border-top:1px solid rgba(0,0,0,.07);
+}
+.pd-footer.on-dark{border-top-color:rgba(255,255,255,.07)}
+.pd-price-big{
+  font-family:var(--font-display);
+  font-size:2rem;font-weight:700;
+  color:var(--gold);
+}
+.pd-price-big small{font-size:.7rem;font-weight:400;font-family:var(--font-body);color:var(--text-muted)}
+
+@media(max-width:900px){
+  .prod-detail{grid-template-columns:1fr;gap:36px}
+  .prod-detail:nth-child(even) .pd-img,.prod-detail:nth-child(even) .pd-content{order:unset}
+  .pd-img img{aspect-ratio:16/9}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">
+      <img src="images/natsepa-logo.png" alt="NATSEPA" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-brand">NATSEPA<sup>®</sup></span>
+        <span class="logo-sub">PREMIUM CANARIUM PRODUCTS</span>
+      </div>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item">
+        <a href="story.html" class="nav-link">Our Story <span class="nav-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="story.html#purpose">Purpose</a>
+          <a href="process.html">The Process</a>
+          <a href="story.html#people">People &amp; Heritage</a>
+          <a href="story.html#culture">Maluku Culture</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="process.html" class="nav-link">The Process</a></div>
+      <div class="nav-item">
+        <a href="nutrition.html" class="nav-link">The Kenari <span class="nav-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="nutrition.html#whatiskenari">What is Kenari?</a>
+          <a href="nutrition.html#nutrition">Nutrition Facts</a>
+          <a href="nutrition.html#benefits">Health Benefits</a>
+          <a href="nutrition.html#compare">vs. Other Nuts</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="products.html" class="nav-link active">Products</a></div>
+      <a href="#contact" class="nav-link nav-cta">Order Now</a>
+    </nav>
+    <button class="mobile-toggle" id="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html">Home</a>
+  <a href="story.html">Our Story</a>
+  <a href="process.html">The Process</a>
+  <a href="nutrition.html">The Kenari</a>
+  <a href="products.html">Products</a>
+  <a href="#contact" class="m-cta">Order Now</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <img src="images/roasted-garlic.jpg" alt="NATSEPA Premium Canarium Products">
+  <div class="page-hero-body">
+    <div class="container">
+      <span class="page-hero-tag">NATSEPA Products</span>
+      <h1 class="page-hero-title">Handcrafted<br>For Every Palate.</h1>
+      <p class="page-hero-sub">Four distinct expressions of Maluku's finest Kenari — each one a craft product honoring local tradition and premium quality.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT 1 -->
+<section class="section section-cream" id="p1">
+  <div class="container">
+    <div class="prod-detail">
+      <div class="pd-img">
+        <img src="images/roasted-garlic.jpg" alt="Roasted Kenari with Garlic — NATSEPA">
+      </div>
+      <div class="pd-content" data-sr="right">
+        <span class="label-tag">01 — Savory</span>
+        <h2 class="pd-brand">Roasted<br>Kenari</h2>
+        <span class="pd-sub">With Garlic · NATSEPA®</span>
+        <p class="pd-desc">Our flagship product — wild Canarium kernels slow-roasted with fragrant Maluku garlic. The savory, umami-rich coating enhances the Kenari's natural buttery depth without overpowering its earthy authenticity.</p>
+        <p class="pd-desc">Bold. Savory. Utterly addictive. Best enjoyed as a premium snack, on cheese boards, or crumbled over Indonesian dishes.</p>
+        <div class="pd-details-list">
+          <div class="pd-detail-row"><i class="fa-solid fa-seedling"></i><span><strong>Ingredients:</strong> Wild Kenari, Garlic, Sea Salt</span></div>
+          <div class="pd-detail-row"><i class="fa-solid fa-fire-flame-curved"></i><span><strong>Process:</strong> Traditional slow-roast, hand-crafted</span></div>
+          <div class="pd-detail-row"><i class="fa-solid fa-certificate"></i><span><strong>Certified:</strong> Halal MUI · BPOM Registered</span></div>
+          <div class="pd-detail-row"><i class="fa-solid fa-barcode"></i><span><strong>Export:</strong> HS Code 2008.19.91</span></div>
+          <div class="pd-detail-row"><i class="fa-solid fa-map-pin"></i><span><strong>Origin:</strong> Ambon, Maluku, Indonesia</span></div>
+        </div>
+        <div class="pd-footer">
+          <div class="pd-price-big">Rp 85.000 <small>/ Pack</small></div>
+          <button class="btn-cart" style="padding:12px 28px;font-size:.9rem" onclick="addToCart(this)" data-id="p1" data-title="Roasted Kenari with Garlic" data-price="85000" data-img="images/roasted-garlic.jpg">
+            <i class="fa-solid fa-plus"></i> Add to Order
+          </button>
+          <a href="https://wa.me/6281343301302?text=Halo%20NATSEPA%2C%20saya%20ingin%20memesan%20Roasted%20Kenari%20with%20Garlic." target="_blank" class="btn-green" style="padding:12px 22px">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT 2 -->
+<section class="section section-forest" id="p2">
+  <div class="container">
+    <div class="prod-detail">
+      <div class="pd-img">
+        <img src="images/algari-cluster.jpg" alt="ALGARI Crunchy Kenari Cluster — NATSEPA">
+      </div>
+      <div class="pd-content" data-sr="right">
+        <span class="label-tag on-dark">02 — Crunchy</span>
+        <h2 class="pd-brand on-dark">ALGARI<sup style="font-size:.45em">®</sup></h2>
+        <span class="pd-sub">Crunchy Kenari Cluster</span>
+        <p class="pd-desc on-dark">Clusters of whole Kenari kernels bound together with a whisper-light crisp coating. ALGARI delivers a unique textural experience — shatteringly crunchy outside, richly buttery inside — unlike any other nut product.</p>
+        <p class="pd-desc on-dark">The name <em>ALGARI</em> derives from the Maluku word for the sound of cracking Kenari — a celebration of the nut's most satisfying characteristic.</p>
+        <div class="pd-details-list">
+          <div class="pd-detail-row on-dark"><i class="fa-solid fa-seedling"></i><span><strong>Ingredients:</strong> Wild Kenari, Rice Flour, Natural Seasoning</span></div>
+          <div class="pd-detail-row on-dark"><i class="fa-solid fa-fire-flame-curved"></i><span><strong>Process:</strong> Clustered &amp; oven-baked, no deep frying</span></div>
+          <div class="pd-detail-row on-dark"><i class="fa-solid fa-certificate"></i><span><strong>Certified:</strong> Halal MUI · BPOM Registered</span></div>
+          <div class="pd-detail-row on-dark"><i class="fa-solid fa-barcode"></i><span><strong>Export:</strong> HS Code 2008.19.91</span></div>
+        </div>
+        <div class="pd-footer on-dark">
+          <div class="pd-price-big">Rp 95.000 <small>/ Pack</small></div>
+          <button class="btn-cart" style="padding:12px 28px;font-size:.9rem" onclick="addToCart(this)" data-id="p2" data-title="ALGARI Crunchy Kenari Cluster" data-price="95000" data-img="images/algari-cluster.jpg">
+            <i class="fa-solid fa-plus"></i> Add to Order
+          </button>
+          <a href="https://wa.me/6281343301302?text=Halo%20NATSEPA%2C%20saya%20ingin%20memesan%20ALGARI%20Crunchy%20Kenari%20Cluster." target="_blank" class="btn-green" style="padding:12px 22px">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT 3 -->
+<section class="section section-cream" id="p3">
+  <div class="container">
+    <div class="prod-detail">
+      <div class="pd-img">
+        <img src="images/naripong-honey.jpg" alt="NARIPONG Honey Roasted Kenari — NATSEPA">
+      </div>
+      <div class="pd-content" data-sr="right">
+        <span class="label-tag">03 — Sweet</span>
+        <h2 class="pd-brand">NARIPONG<sup style="font-size:.3em">®</sup></h2>
+        <span class="pd-sub">Honey Roasted Kenari</span>
+        <p class="pd-desc">Glazed with pure local wild honey — naturally sweet, deeply satisfying. NARIPONG marries the Kenari's rich forest earthiness with Maluku's wild floral honey in perfect harmony.</p>
+        <p class="pd-desc">A timeless pairing of forest nut and forest honey. No refined sugar. No artificial flavors. Just two gifts from the same ancient forest.</p>
+        <div class="pd-details-list">
+          <div class="pd-detail-row"><i class="fa-solid fa-seedling"></i><span><strong>Ingredients:</strong> Wild Kenari, Pure Wild Honey, Sea Salt</span></div>
+          <div class="pd-detail-row"><i class="fa-solid fa-fire-flame-curved"></i><span><strong>Process:</strong> Honey-glazed roasting, traditional method</span></div>
+          <div class="pd-detail-row"><i class="fa-solid fa-certificate"></i><span><strong>Certified:</strong> Halal MUI · BPOM Registered</span></div>
+          <div class="pd-detail-row"><i class="fa-solid fa-leaf"></i><span><strong>Natural:</strong> No preservatives, no artificial flavor</span></div>
+        </div>
+        <div class="pd-footer">
+          <div class="pd-price-big">Rp 90.000 <small>/ Pack</small></div>
+          <button class="btn-cart" style="padding:12px 28px;font-size:.9rem" onclick="addToCart(this)" data-id="p3" data-title="NARIPONG Honey Roasted Kenari" data-price="90000" data-img="images/naripong-honey.jpg">
+            <i class="fa-solid fa-plus"></i> Add to Order
+          </button>
+          <a href="https://wa.me/6281343301302?text=Halo%20NATSEPA%2C%20saya%20ingin%20memesan%20NARIPONG%20Honey%20Roasted%20Kenari." target="_blank" class="btn-green" style="padding:12px 22px">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT 4 -->
+<section class="section section-dark" id="p4">
+  <div class="container">
+    <div class="prod-detail">
+      <div class="pd-img">
+        <img src="images/glowry-arengga.jpg" alt="GLOWRY Arengga Sugar Glazed Kenari — NATSEPA">
+        <div class="pd-award-badge"><i class="fa-solid fa-trophy"></i> UKM Pangan Award Winner</div>
+      </div>
+      <div class="pd-content" data-sr="right">
+        <span class="label-tag">04 — Award Winning</span>
+        <h2 class="pd-brand on-dark">GLOWRY<sup style="font-size:.3em">®</sup></h2>
+        <span class="pd-sub">Arengga Sugar Glazed Kenari</span>
+        <p class="pd-desc on-dark">Our award-winning masterpiece — Kenari kernels glazed with traditional Arengga palm sugar (<em>gula aren</em>), creating a rich caramel-toffee depth that is uniquely and unmistakably Indonesian.</p>
+        <p class="pd-desc on-dark">GLOWRY won the UKM Pangan Award for its innovation in combining Maluku's finest wild nut with one of Indonesia's most treasured traditional sweeteners. A product that tells two stories at once.</p>
+        <div class="pd-details-list">
+          <div class="pd-detail-row on-dark"><i class="fa-solid fa-seedling"></i><span><strong>Ingredients:</strong> Wild Kenari, Arengga Palm Sugar, Sea Salt</span></div>
+          <div class="pd-detail-row on-dark"><i class="fa-solid fa-trophy"></i><span><strong>Award:</strong> UKM Pangan Award Winner</span></div>
+          <div class="pd-detail-row on-dark"><i class="fa-solid fa-certificate"></i><span><strong>Certified:</strong> Halal MUI · BPOM Registered</span></div>
+          <div class="pd-detail-row on-dark"><i class="fa-solid fa-barcode"></i><span><strong>Export:</strong> HS Code 2008.19.91</span></div>
+        </div>
+        <div class="pd-footer on-dark">
+          <div class="pd-price-big">Rp 90.000 <small>/ Pack</small></div>
+          <button class="btn-cart" style="padding:12px 28px;font-size:.9rem" onclick="addToCart(this)" data-id="p4" data-title="GLOWRY Arengga Sugar Glazed Kenari" data-price="90000" data-img="images/glowry-arengga.jpg">
+            <i class="fa-solid fa-plus"></i> Add to Order
+          </button>
+          <a href="https://wa.me/6281343301302?text=Halo%20NATSEPA%2C%20saya%20ingin%20memesan%20GLOWRY%20Arengga%20Sugar%20Glazed%20Kenari." target="_blank" class="btn-green" style="padding:12px 22px">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / ORDER CTA -->
+<section class="section section-cream2" id="contact">
+  <div class="container">
+    <div class="contact-block" data-sr>
+      <div>
+        <span class="label-tag" style="color:rgba(200,169,74,.8)">ORDER NATSEPA</span>
+        <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px">
+          Order The Full<br>Collection Today.
+        </h2>
+        <p style="color:rgba(255,255,255,.5);line-height:1.8;font-size:.9rem;margin-bottom:24px">
+          Mix and match your selection. We ship nationwide across Indonesia and internationally. Minimum order and bulk pricing available — just ask via WhatsApp.
+        </p>
+        <a href="https://wa.me/6281343301302?text=Halo%20NATSEPA%2C%20saya%20ingin%20memesan%20produk%20kenari%20anda.%20Tolong%20info%20harga%20dan%20pengiriman." target="_blank" class="contact-wa-btn">
+          <i class="fa-brands fa-whatsapp"></i> Chat &amp; Order on WhatsApp
+        </a>
+        <p style="font-size:.72rem;color:rgba(255,255,255,.25);margin-top:12px">Reseller &amp; bulk order inquiries welcome</p>
+      </div>
+      <div>
+        <div class="contact-details">
+          <div class="cdetail"><i class="fa-solid fa-phone"></i><span>+62-813-4330-1302</span></div>
+          <div class="cdetail"><i class="fa-solid fa-envelope"></i><span>natsepakenari02@gmail.com</span></div>
+          <div class="cdetail"><i class="fa-brands fa-instagram"></i><a href="https://instagram.com/natsepa.kenari.ambon" target="_blank">@natsepa.kenari.ambon</a></div>
+          <div class="cdetail"><i class="fa-solid fa-location-dot"></i><span>Ambon, Maluku — Indonesia</span></div>
+          <div class="cdetail"><i class="fa-solid fa-barcode"></i><span>HS Code: 2008.19.91 (International Export)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/natsepa-logo.png" alt="NATSEPA">
+        <p>PREMIUM CANARIUM PRODUCTS<br>FROM MALUKU THE SPICE ISLANDS OF INDONESIA</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/natsepa.kenari.ambon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/6281343301302" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Navigate</h5><a href="index.html">Home</a><a href="story.html">Our Story</a><a href="process.html">The Process</a><a href="nutrition.html">The Kenari</a><a href="products.html">Products</a></div>
+      <div class="footer-col"><h5>Products</h5><a href="#p1">Roasted with Garlic</a><a href="#p2">ALGARI® Cluster</a><a href="#p3">NARIPONG® Honey</a><a href="#p4">GLOWRY® Arengga</a></div>
+      <div class="footer-col"><h5>Order</h5><a href="https://wa.me/6281343301302" target="_blank">WhatsApp Order</a><a href="mailto:natsepakenari02@gmail.com">Email Us</a><a href="https://instagram.com/natsepa.kenari.ambon" target="_blank">Instagram DM</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NATSEPA®. All rights reserved. natsepacanarium.com</p>
+      <div class="footer-bottom-right">HS · 2008.19.91</div>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-head">
+    <h4><i class="fa-solid fa-bag-shopping"></i> Your Order</h4>
+    <button class="cart-close-btn" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items-area" id="cart-items"></div>
+  <div class="cart-foot" id="cart-foot" style="display:none">
+    <div class="cart-total-row"><span>Total</span><strong id="cart-total"></strong></div>
+    <a id="wa-btn" href="#" target="_blank" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> Order via WhatsApp</a>
+  </div>
+</div>
+<div class="float-cart" onclick="openCart()">
+  <i class="fa-solid fa-bag-shopping"></i>
+  <span class="float-count" id="cart-count">0</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

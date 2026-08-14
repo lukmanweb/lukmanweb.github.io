@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Our Story | NATSEPA® — Born in the Spice Islands</title>
+<meta name="description" content="The story of NATSEPA and the Kenari nut — from Maluku's colonial history to today's handcrafted premium products. A tree of life, a nut of wonder.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── STORY PAGE SPECIFIC ── */
+.timeline{
+  position:relative;
+  padding-left:48px;
+  margin-top:48px;
+}
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:0;top:8px;bottom:0;
+  width:2px;
+  background:linear-gradient(to bottom,var(--gold),var(--leaf),var(--gold));
+}
+.tl-item{
+  position:relative;
+  margin-bottom:44px;
+  padding-left:24px;
+}
+.tl-item::before{
+  content:'';
+  position:absolute;
+  left:-48px;top:6px;
+  width:14px;height:14px;
+  border-radius:50%;
+  background:var(--gold);
+  border:3px solid var(--forest);
+  box-shadow:0 0 0 4px rgba(200,169,74,.2);
+}
+.tl-year{
+  font-family:var(--font-display);
+  font-size:.8rem;font-weight:700;
+  letter-spacing:.15em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:6px;display:block;
+}
+.tl-item h4{
+  font-family:var(--font-display);
+  font-size:1.3rem;font-weight:700;color:#fff;
+  margin-bottom:10px;line-height:1.2;
+}
+.tl-item p{font-size:.86rem;color:rgba(255,255,255,.5);line-height:1.75}
+
+/* Culture grid */
+.culture-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+.culture-card{
+  padding:28px 24px;
+  border-radius:var(--radius-lg);
+  background:var(--cream-2);
+  border:1px solid rgba(0,0,0,.06);
+}
+.culture-card h5{
+  font-family:var(--font-display);
+  font-size:1.1rem;font-weight:700;
+  color:var(--text);margin-bottom:10px;
+}
+.culture-card p{font-size:.82rem;color:var(--text-muted);line-height:1.7}
+.culture-card .cc-tag{
+  display:inline-block;
+  background:var(--forest);color:var(--gold);
+  font-size:.65rem;font-weight:700;
+  letter-spacing:.1em;padding:3px 10px;
+  border-radius:100px;margin-bottom:12px;
+  text-transform:uppercase;
+}
+
+.people-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+@media(max-width:768px){
+  .culture-grid{grid-template-columns:1fr}
+  .people-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER (same as index) -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">
+      <img src="images/natsepa-logo.png" alt="NATSEPA" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-brand">NATSEPA<sup>®</sup></span>
+        <span class="logo-sub">PREMIUM CANARIUM PRODUCTS</span>
+      </div>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item">
+        <a href="story.html" class="nav-link active">Our Story <span class="nav-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="story.html#purpose" class="active">Purpose</a>
+          <a href="process.html">The Process</a>
+          <a href="story.html#people">People &amp; Heritage</a>
+          <a href="story.html#culture">Maluku Culture</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="process.html" class="nav-link">The Process</a></div>
+      <div class="nav-item">
+        <a href="nutrition.html" class="nav-link">The Kenari <span class="nav-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="nutrition.html#whatiskenari">What is Kenari?</a>
+          <a href="nutrition.html#nutrition">Nutrition Facts</a>
+          <a href="nutrition.html#benefits">Health Benefits</a>
+          <a href="nutrition.html#compare">vs. Other Nuts</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="products.html" class="nav-link">Products</a></div>
+      <a href="products.html#contact" class="nav-link nav-cta">Order Now</a>
+    </nav>
+    <button class="mobile-toggle" id="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html">Home</a>
+  <a href="story.html">Our Story</a>
+  <a href="process.html" class="m-sub">— The Process</a>
+  <a href="story.html#people" class="m-sub">— People &amp; Heritage</a>
+  <a href="nutrition.html">The Kenari</a>
+  <a href="products.html">Products</a>
+  <a href="products.html#contact" class="m-cta">Order Now</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero" id="purpose">
+  <img src="images/why-indigenous.jpg" alt="Pohon Kenari Maluku">
+  <div class="page-hero-body">
+    <div class="container">
+      <span class="page-hero-tag">Our Story</span>
+      <h1 class="page-hero-title">Born in the<br>Spice Islands.</h1>
+      <p class="page-hero-sub">The Kenari nut didn't begin as a product. It began as a lifeline — the "tree of life" for Maluku families for centuries.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PURPOSE -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="editorial-grid" data-sr>
+      <div class="editorial-text">
+        <span class="label-tag on-dark">OUR PURPOSE</span>
+        <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">
+          To Show the World<br>What Maluku Has<br>Always Known.
+        </h2>
+        <p class="on-dark" style="color:rgba(255,255,255,.62);line-height:1.82;margin-bottom:16px;font-size:.96rem">
+          NATSEPA was born from a simple conviction: the Kenari nut — <em>Canarium indicum</em> — is one of the world's most extraordinary foods, yet almost no one outside Maluku knows it exists.
+        </p>
+        <p style="color:rgba(255,255,255,.62);line-height:1.82;font-size:.96rem;margin-bottom:24px">
+          While walnut and almond dominate global shelves, Maluku's ancient forest quietly produces something rarer, richer, and more soulful. NATSEPA exists to change that — by honoring traditional practices, empowering local communities, and crafting premium products that let the Kenari speak for itself.
+        </p>
+        <div class="quote-block">
+          <p class="on-dark">"The Kenari doesn't need us. We need it — to remember where real food comes from."</p>
+          <span class="quote-author">— NATSEPA, Ambon Maluku</span>
+        </div>
+      </div>
+      <div class="editorial-img">
+        <img src="images/wild-tree.jpg" alt="Pohon Kenari — Hutan Maluku" style="border-radius:var(--radius-lg)">
+        <div class="img-badge br"><i class="fa-solid fa-tree"></i> Wild · Never Planted</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY TIMELINE -->
+<section class="section section-forest">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start" data-sr>
+      <div>
+        <span class="label-tag on-dark">HISTORY</span>
+        <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px">
+          A Tree That Outlived<br>Empires.
+        </h2>
+        <p style="color:rgba(255,255,255,.55);line-height:1.8;font-size:.9rem;margin-bottom:0">
+          The Kenari tree has witnessed the full arc of Maluku history — from the age of spice empires, through VOC colonization, to independence and beyond. While spice trees were controlled and monopolized, the Kenari quietly sustained the people.
+        </p>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-year">Ancient — Pre-Colonial</span>
+            <h4>The Forest Provides</h4>
+            <p>Indigenous Maluku communities have harvested Kenari from wild forests for generations. Integrated into daily food, medicine, and ceremony. The nut that fed the spice traders.</p>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">1600s — VOC Era</span>
+            <h4>The Tree of Life Emerges</h4>
+            <p>When the Dutch VOC enforced the <em>Hongi</em> voyages — destroying clove and nutmeg trees to control supply — Maluku families pivoted to Kenari. It became their economic lifeline: <em>pohon kehidupan</em>.</p>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">1945 — Independence</span>
+            <h4>Cultural Identity Preserved</h4>
+            <p>Kenari remains central to Maluku's culinary culture. Traditional preparations — <em>Halua Kenari</em>, <em>Bagea</em>, <em>Air Guraka</em> — are passed down through families, preserving flavor and knowledge together.</p>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">Today — NATSEPA</span>
+            <h4>Premium. Global. Proud.</h4>
+            <p>NATSEPA channels this deep heritage into modern premium products — processed at origin, certified Halal, BPOM registered — bringing Maluku's finest to the world market.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="images/hand-cracked.jpg" alt="Tangan memecah kenari" style="width:100%;border-radius:var(--radius-lg);aspect-ratio:3/4;object-fit:cover;margin-bottom:20px">
+        <div style="padding:24px;background:var(--forest);border-radius:var(--radius);border:1px solid var(--border)">
+          <h5 style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--gold);margin-bottom:10px">The Poga-Poga</h5>
+          <p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.7">The traditional harvesting tool of Maluku — a bamboo pole of 5 to 10 meters with a V-shaped fork at the tip, used to hook and shake Kenari fruits from trees that can tower 45 meters above the forest floor. No ladders. No machinery. Just skill.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+<section class="section section-cream" id="people">
+  <div class="container">
+    <div class="section-head" data-sr>
+      <span class="label-tag">THE PEOPLE</span>
+      <h2 class="section-title">The Hands<br>Behind Every Nut.</h2>
+      <p class="section-lead">NATSEPA is nothing without the people of Maluku. Over 200 farming families. Skilled craftspeople. And above all, the women who lead the selection and processing with unmatched precision.</p>
+    </div>
+    <div class="people-grid">
+      <div data-sr>
+        <img src="images/careful-selection.jpg" alt="Careful selection by local farmers" style="width:100%;border-radius:var(--radius-lg);aspect-ratio:4/3;object-fit:cover">
+      </div>
+      <div data-sr="right">
+        <h3 style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--text);line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">Women-Led.<br>Community-Owned.</h3>
+        <p style="color:var(--text-2);line-height:1.82;margin-bottom:16px;font-size:.96rem">
+          In Maluku's Kenari communities, women are the backbone of quality. They hand-select every kernel, identifying imperfections by touch and sight with a precision no machine has matched.
+        </p>
+        <p style="color:var(--text-2);line-height:1.82;margin-bottom:24px;font-size:.96rem">
+          NATSEPA's commitment is to ensure that the value created from Maluku's forests stays in Maluku — in the hands of the people who tend, harvest, and craft with such care.
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="padding:20px;background:var(--cream-2);border-radius:var(--radius);text-align:center">
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--leaf);margin-bottom:6px">200+</div>
+            <div style="font-size:.78rem;color:var(--text-muted)">Farming Families<br>in Maluku</div>
+          </div>
+          <div style="padding:20px;background:var(--cream-2);border-radius:var(--radius);text-align:center">
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--leaf);margin-bottom:6px">100%</div>
+            <div style="font-size:.78rem;color:var(--text-muted)">Local Community<br>Empowerment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MALUKU CULTURE -->
+<section class="section section-dark" id="culture">
+  <div class="container">
+    <div class="section-head center" data-sr>
+      <span class="label-tag on-dark">MALUKU CULTURE</span>
+      <h2 class="section-title on-dark">The Kenari in<br>Maluku's Daily Life</h2>
+      <p class="section-lead on-dark center">For centuries, every part of the Kenari tree has been woven into the fabric of Maluku life — from food and medicine to ceremony and economy.</p>
+    </div>
+    <div class="culture-grid">
+      <div class="culture-card" style="background:var(--forest-2);border-color:var(--border-dark)" data-sr>
+        <span class="cc-tag" style="background:var(--gold-pale);color:var(--gold)">Kuliner</span>
+        <h5 style="color:#fff">Halua Kenari</h5>
+        <p style="color:rgba(255,255,255,.5)">A beloved Maluku sweet — Kenari kernels glazed with palm sugar, still made by hand using ancestral recipes. The original NATSEPA inspiration.</p>
+      </div>
+      <div class="culture-card" style="background:var(--forest-2);border-color:var(--border-dark)" data-sr>
+        <span class="cc-tag" style="background:var(--gold-pale);color:var(--gold)">Minuman</span>
+        <h5 style="color:#fff">Air Guraka</h5>
+        <p style="color:rgba(255,255,255,.5)">Maluku's iconic ginger drink, topped with crushed Kenari. Served at every gathering — a symbol of hospitality and warmth in the Spice Islands.</p>
+      </div>
+      <div class="culture-card" style="background:var(--forest-2);border-color:var(--border-dark)" data-sr>
+        <span class="cc-tag" style="background:var(--gold-pale);color:var(--gold)">Roti Tradisional</span>
+        <h5 style="color:#fff">Bagea Kenari</h5>
+        <p style="color:rgba(255,255,255,.5)">Sago flour cookies enriched with Kenari — crisp, nutty, and deeply aromatic. The most famous Maluku oleh-oleh, inseparable from the Kenari's identity.</p>
+      </div>
+      <div class="culture-card" style="background:var(--forest-2);border-color:var(--border-dark)" data-sr>
+        <span class="cc-tag" style="background:var(--gold-pale);color:var(--gold)">Hidangan Utama</span>
+        <h5 style="color:#fff">Gohu Ikan</h5>
+        <p style="color:rgba(255,255,255,.5)">Ternate's raw tuna salad — a Maluku version of sashimi — served with crushed Kenari for richness and texture. Ancient, bold, unforgettable.</p>
+      </div>
+      <div class="culture-card" style="background:var(--forest-2);border-color:var(--border-dark)" data-sr>
+        <span class="cc-tag" style="background:var(--gold-pale);color:var(--gold)">Obat Tradisional</span>
+        <h5 style="color:#fff">Natural Medicine</h5>
+        <p style="color:rgba(255,255,255,.5)">Used in traditional medicine for rheumatism, inflammation, respiratory conditions, and as a natural energy booster. Science has since confirmed these benefits.</p>
+      </div>
+      <div class="culture-card" style="background:var(--forest-2);border-color:var(--border-dark)" data-sr>
+        <span class="cc-tag" style="background:var(--gold-pale);color:var(--gold)">Ekosistem</span>
+        <h5 style="color:#fff">Agroforestry Wisdom</h5>
+        <p style="color:rgba(255,255,255,.5)">Kenari trees were historically planted alongside nutmeg as natural windbreakers and shade providers — an ancient, sustainable agroforestry system still practiced today.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:52px" data-sr>
+      <a href="process.html" class="btn-outline">See How We Craft It <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/natsepa-logo.png" alt="NATSEPA">
+        <p>PREMIUM CANARIUM PRODUCTS<br>FROM MALUKU THE SPICE ISLANDS OF INDONESIA</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/natsepa.kenari.ambon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/6281343301302" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Navigate</h5><a href="index.html">Home</a><a href="story.html">Our Story</a><a href="process.html">The Process</a><a href="nutrition.html">The Kenari</a><a href="products.html">Products</a></div>
+      <div class="footer-col"><h5>Our Story</h5><a href="story.html#purpose">Purpose</a><a href="story.html#people">People</a><a href="story.html#culture">Culture</a><a href="process.html">Process</a></div>
+      <div class="footer-col"><h5>Products</h5><a href="products.html">Roasted with Garlic</a><a href="products.html">ALGARI® Cluster</a><a href="products.html">NARIPONG® Honey</a><a href="products.html">GLOWRY® Arengga</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NATSEPA®. All rights reserved.</p>
+      <div class="footer-bottom-right">HS · 2008.19.91</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
