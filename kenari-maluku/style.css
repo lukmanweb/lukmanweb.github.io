@@ -1914,9 +1914,38 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background: linear-gradient(145deg, #1a1208, #0d0d0d);
+    position: relative;
     padding: 48px;
-    min-height: 420px;
+    min-height: 440px;
+    overflow: hidden;
+    background: #0d0d0d;
+}
+
+.why-bg-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.45;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.why-featured:hover .why-bg-img {
+    transform: scale(1.06);
+    opacity: 0.6;
+}
+
+.why-featured::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(13,13,13,0.95) 20%, rgba(13,13,13,0.3) 100%);
+    pointer-events: none;
+}
+
+.why-featured-content {
+    position: relative;
+    z-index: 2;
 }
 
 .why-icon-large {
