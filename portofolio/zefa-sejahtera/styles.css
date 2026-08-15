@@ -560,6 +560,8 @@ button, input, select, textarea {
 .slide-1 { background: linear-gradient(145deg, #082e23 0%, #0c3b2e 55%, #0f5040 100%); }
 .slide-2 { background: linear-gradient(145deg, #0a2d1e 0%, #104035 55%, #1a6b52 100%); }
 .slide-3 { background: linear-gradient(145deg, #070f0b 0%, #0c3b2e 55%, #1c4f3b 100%); }
+.slide-4 { background: linear-gradient(145deg, #06231b 0%, #0c3b2e 55%, #184e3f 100%); }
+.slide-5 { background: linear-gradient(145deg, #0a1f18 0%, #08281f 55%, #0c3b2e 100%); }
 
 .slide-overlay {
     position: absolute;
@@ -1494,31 +1496,32 @@ section {
 }
 
 /* ==========================================================================
-   9. BRAND LOGO SHOWCASE GRID (Matching screenshot)
+   9. BRAND LOGO SHOWCASE GRID (Corporate Minimalist Luxury Grid)
    ========================================================================== */
 .brand-logo-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    background: #c38c46;
-    padding: 30px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    background: #ffffff;
+    padding: 24px;
     border-radius: 20px;
     margin-bottom: 60px;
-    box-shadow: 0 16px 40px rgba(195, 140, 70, 0.25);
+    border: 1px solid rgba(12, 59, 46, 0.08);
+    box-shadow: 0 10px 30px rgba(12, 59, 46, 0.04);
     align-items: stretch;
 }
 
 .brand-logo-card {
-    background: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 14px;
+    background: #f8faf9;
+    border: 1px solid rgba(12, 59, 46, 0.06);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 110px;
-    padding: 16px 20px;
+    height: 85px;
+    padding: 12px 16px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -1527,21 +1530,22 @@ section {
     max-width: 100%;
     width: auto;
     height: auto;
-    max-height: 60px;
+    max-height: 46px;
     object-fit: contain;
     display: block;
     margin: 0 auto;
-    transition: transform 0.25s ease;
+    transition: transform 0.3s ease;
 }
 
 .brand-logo-card:hover {
     background: #ffffff;
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    border-color: var(--color-gold-medium);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(12, 59, 46, 0.08);
 }
 
 .brand-logo-card:hover .brand-real-logo {
-    transform: scale(1.06);
+    transform: scale(1.08);
 }
 
 .logo-typography {

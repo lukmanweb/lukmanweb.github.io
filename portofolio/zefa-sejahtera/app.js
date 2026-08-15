@@ -407,4 +407,51 @@ document.addEventListener('DOMContentLoaded', () => {
             regModal.classList.remove('active');
         }
     });
+
+    // ==========================================
+    // 12. ANIMATED COUNTER FOR STATS BAR
+    // ==========================================
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let animated = false;
+
+    if (statNumbers.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    statNumbers.forEach(el => {
+                        const targetText = el.textContent.trim();
+                        const isPercent = targetText.includes('%');
+                        const isPlus = targetText.includes('+');
+                        const num = parseInt(targetText.replace(/[^0-9]/g, ''), 10);
+                        
+                        if (isNaN(num)) return;
+                        
+                        let current = 0;
+                        const duration = 1500;
+                        const stepTime = 25;
+                        const totalSteps = duration / stepTime;
+                        const increment = num / totalSteps;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= num) {
+                                current = num;
+                                clearInterval(timer);
+                            }
+                            let formatted = Math.floor(current).toLocaleString('id-ID');
+                            if (isPercent) formatted += '%';
+                            if (isPlus) formatted += '+';
+                            el.textContent = formatted;
+                        }, stepTime);
+                    });
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const statsSection = document.querySelector('.stats-bar-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    }
 });
