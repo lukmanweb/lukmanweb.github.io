@@ -54,12 +54,12 @@ html {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
-    background-color: var(--color-emerald-deep);
+    background-color: var(--color-bg-light);
 }
 
 body {
     font-family: var(--font-primary);
-    background-color: var(--color-emerald-deep);
+    background-color: var(--color-bg-light);
     color: var(--color-text-dark);
     line-height: 1.6;
     overflow-x: hidden;
@@ -130,11 +130,11 @@ button, input, select, textarea {
 #app-root {
     position: relative;
     width: 100%;
-    background-color: var(--color-emerald-deep);
+    background-color: var(--color-bg-light);
 }
 
 #home-view {
-    background-color: transparent;
+    background-color: var(--color-bg-light);
 }
 
 .view-active {
