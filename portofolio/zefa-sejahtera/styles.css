@@ -650,47 +650,72 @@ button, input, select, textarea {
 .mosaic-3 { animation: floatImg 3.8s ease-in-out infinite 1s; }
 .mosaic-4 { animation: floatImg 4.2s ease-in-out infinite 0.25s; }
 
-/* Stats bar */
-.slide-stats {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding: 18px 0;
+/* ==========================================================================
+   5B. KEY STATS COUNTER BAR SECTION (STANDALONE)
+   ========================================================================== */
+.stats-bar-section {
+    padding: 0;
+    margin-top: -36px;
+    position: relative;
+    z-index: 10;
 }
-.slide-stats-inner {
+
+.stats-bar-card {
+    background: linear-gradient(135deg, #0a2d23 0%, #0c3b2e 60%, #115340 100%);
+    border: 2px solid rgba(212, 175, 55, 0.4);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 16px 40px rgba(12, 59, 46, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 24px 32px;
+}
+
+.stat-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stat-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    color: var(--color-gold-medium);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0;
-    flex-wrap: wrap;
+    font-size: 1.4rem;
+    flex-shrink: 0;
 }
-.stat-pill {
+
+.stat-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 0 32px;
 }
-.stat-val {
-    font-size: 1.5rem;
+
+.stat-number {
+    font-size: 1.75rem;
     font-weight: 900;
-    color: var(--color-gold-medium);
+    color: #ffffff;
     line-height: 1.1;
+    letter-spacing: -0.5px;
 }
-.stat-lbl {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.65);
+
+.stat-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
     margin-top: 2px;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
-.stat-divider {
+
+.stat-bar-divider {
     width: 1px;
-    height: 36px;
-    background: rgba(255,255,255,0.15);
+    height: 48px;
+    background: rgba(255, 255, 255, 0.15);
 }
 
 /* Slider controls */
@@ -761,25 +786,87 @@ button, input, select, textarea {
 
 /* Mobile slider */
 @media (max-width: 768px) {
-    .hero-slider { height: auto; min-height: 100svh; }
+    .hero-slider {
+        height: auto;
+        min-height: unset;
+        position: relative;
+    }
+    .slide {
+        position: relative;
+        opacity: 1;
+        display: none;
+        inset: auto;
+    }
+    .slide.active {
+        display: flex;
+        opacity: 1;
+    }
     .slide-inner {
         grid-template-columns: 1fr;
-        padding-top: calc(var(--navbar-height) + 20px);
-        padding-bottom: 130px;
+        padding-top: calc(var(--navbar-height) + 15px);
+        padding-bottom: 40px;
         text-align: center;
-        gap: 30px;
+        gap: 20px;
     }
-    .slide-image { order: -1; }
-    .slide-img-hero { max-width: 280px; }
-    .slide-actions { justify-content: center; }
-    .slide-desc { max-width: 100%; font-size: 0.95rem; }
-    .product-mosaic { max-width: 300px; margin: 0 auto; }
-    .mosaic-img { height: 130px; }
-    .stat-pill { padding: 0 14px; }
-    .stat-val { font-size: 1.15rem; }
-    .slider-btn { width: 40px; height: 40px; font-size: 0.85rem; }
-    .slider-prev { left: 10px; }
-    .slider-next { right: 10px; }
+    .slide-image {
+        order: -1;
+        margin-top: 10px;
+    }
+    .slide-img-hero {
+        max-width: 250px;
+        width: 75%;
+    }
+    .slide-actions {
+        justify-content: center;
+        gap: 10px;
+    }
+    .slide-desc {
+        max-width: 100%;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    .slider-dots {
+        bottom: 12px;
+    }
+    .slider-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 0.8rem;
+        top: 35%;
+    }
+    .slider-prev { left: 8px; }
+    .slider-next { right: 8px; }
+
+    /* Stats Bar Section Mobile */
+    .stats-bar-section {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .stats-bar-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 20px 16px;
+    }
+    .stat-bar-divider {
+        display: none;
+    }
+    .stat-box {
+        gap: 12px;
+    }
+    .stat-icon-wrapper {
+        width: 44px;
+        height: 44px;
+        font-size: 1.15rem;
+        border-radius: 10px;
+    }
+    .stat-number {
+        font-size: 1.35rem;
+    }
+    .stat-label {
+        font-size: 0.75rem;
+    }
 }
 
 
@@ -1418,6 +1505,7 @@ section {
     border-radius: 20px;
     margin-bottom: 60px;
     box-shadow: 0 16px 40px rgba(195, 140, 70, 0.25);
+    align-items: stretch;
 }
 
 .brand-logo-card {
@@ -1427,16 +1515,22 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
-    padding: 16px;
+    height: 110px;
+    padding: 16px 20px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .brand-real-logo {
-    max-width: 90%;
-    max-height: 85px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 60px;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
     transition: transform 0.25s ease;
 }
 
@@ -1450,7 +1544,10 @@ section {
     transform: scale(1.06);
 }
 
-/* Detofit logo */
+.logo-typography {
+    display: inline-block;
+    text-align: center;
+}
 .logo-detofit {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 2.1rem;
@@ -3207,15 +3304,25 @@ section {
     
     .brand-logo-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 16px;
+        border-radius: 16px;
+        margin-bottom: 40px;
     }
 
     .brand-logo-card {
-        min-height: 110px;
-        padding: 18px 12px;
+        height: 90px;
+        padding: 12px 14px;
     }
 
-    .brand-logo-img {
-        height: 50px;
+    .brand-real-logo {
+        max-height: 48px;
+        max-width: 100%;
+    }
+
+    .logo-verossa {
+        font-size: 1.15rem;
+        letter-spacing: 2px;
     }
 
     .certificates-container {
@@ -3269,11 +3376,105 @@ section {
     .training-grid {
         grid-template-columns: 1fr;
     }
+
+    /* Section Spacing & Header Adjustments */
+    section {
+        padding: 50px 0;
+    }
+    .section-header {
+        margin-bottom: 30px;
+    }
+    .section-title {
+        font-size: 1.85rem;
+    }
+    .sub-heading {
+        font-size: 0.8rem;
+    }
+
+    /* About Section */
+    .about-subtitle {
+        font-size: 1.35rem;
+    }
+    .about-badges {
+        gap: 10px;
+    }
+    .badge-item {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    /* CTA Section */
+    .cta-container {
+        padding: 44px 20px;
+        border-radius: var(--border-radius-md);
+    }
+    .cta-content h2 {
+        font-size: 1.65rem;
+        line-height: 1.3;
+    }
+    .cta-content p {
+        font-size: 0.95rem;
+        margin-bottom: 24px;
+    }
+
+    /* FAQ */
+    .accordion-header {
+        padding: 16px 18px;
+        font-size: 0.95rem;
+        gap: 12px;
+    }
+    .accordion-body p {
+        padding: 16px 18px;
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer-wrapper {
+        padding-top: 48px;
+    }
+    .footer-col h4 {
+        margin-bottom: 16px;
+    }
 }
 
 @media (max-width: 480px) {
+    section {
+        padding: 40px 0;
+    }
+
+    .section-header {
+        margin-bottom: 24px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.65rem;
+    }
+
+    .slide-img-hero {
+        max-width: 210px;
+    }
+
+    .slide-title {
+        font-size: 1.45rem;
+    }
+
+    .btn-lg {
+        padding: 10px 18px;
+        font-size: 0.88rem;
+        width: 100%;
+    }
+
+    .slide-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .slide-actions .btn {
+        width: 100%;
     }
     
     .hero-stats {
@@ -3293,9 +3494,64 @@ section {
     .ethics-grid {
         grid-template-columns: 1fr;
     }
+
+    .certificates-container {
+        grid-template-columns: 1fr !important;
+    }
     
     .products-grid {
         grid-template-columns: 1fr;
+    }
+
+    .brand-logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 12px;
+        border-radius: 14px;
+    }
+
+    .brand-logo-card {
+        height: 75px;
+        padding: 8px 10px;
+        border-radius: 10px;
+    }
+
+    .brand-real-logo {
+        max-height: 38px;
+        max-width: 100%;
+    }
+
+    .logo-verossa {
+        font-size: 0.95rem;
+        letter-spacing: 1.5px;
+    }
+
+    .stats-bar-card {
+        padding: 16px 12px;
+        gap: 12px 8px;
+    }
+
+    .stat-icon-wrapper {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .stat-number {
+        font-size: 1.15rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    .cta-container {
+        padding: 32px 16px;
+    }
+
+    .cta-content h2 {
+        font-size: 1.35rem;
     }
     
     .db-stats-grid {
@@ -3314,3 +3570,4 @@ section {
         padding: 20px;
     }
 }
+
