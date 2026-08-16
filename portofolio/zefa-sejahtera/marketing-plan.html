@@ -186,53 +186,92 @@
         <p style="color: #64748b; font-size: 0.95rem; margin-top: 6px;"><strong>*Reward Akumulasi Tanpa Batas Waktu &amp; Reward Tidak Reset*</strong></p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">
-        <!-- Marketer -->
-        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
-          <div style="background: #3b82f6; color: #fff; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 10px;">MARKETER</div>
-          <div style="font-size: 1.25rem; font-weight: 900; color: var(--color-emerald-deep);">25 Point</div>
-          <div style="font-size: 0.82rem; color: #64748b; margin: 4px 0 10px;">(Promo) Cash</div>
-          <div style="font-size: 1rem; font-weight: 800; color: #0c3b2e;">Rp 500.000</div>
+      <style>
+        .reward-grid-2x3 {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+        @media (max-width: 900px) {
+          .reward-grid-2x3 {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 580px) {
+          .reward-grid-2x3 {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+
+      <div class="reward-grid-2x3">
+        <!-- 1. Marketer -->
+        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 20px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: #e0f2fe; color: #0369a1; font-size: 0.8rem; font-weight: 800; padding: 4px 14px; border-radius: 14px; display: inline-block; margin-bottom: 12px;">MARKETER</div>
+            <div style="font-size: 1.6rem; font-weight: 900; color: var(--color-emerald-deep); margin-bottom: 4px;">25 Point</div>
+            <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 12px;">(Promo) Cash</div>
+          </div>
+          <div style="font-size: 1.25rem; font-weight: 800; color: #0c3b2e; border-top: 1px dashed #e2e8f0; padding-top: 14px;">Rp 500.000</div>
         </div>
 
-        <!-- Leader -->
-        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
-          <div style="background: #10b981; color: #fff; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 10px;">LEADER</div>
-          <div style="font-size: 1.25rem; font-weight: 900; color: var(--color-emerald-deep);">100 Point</div>
-          <div style="font-size: 0.82rem; color: #64748b; margin: 4px 0 10px;">Smartphone / Cash</div>
-          <div style="font-size: 1rem; font-weight: 800; color: #0c3b2e;">Rp 1.500.000</div>
+        <!-- 2. Leader -->
+        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 20px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: #dcfce7; color: #15803d; font-size: 0.8rem; font-weight: 800; padding: 4px 14px; border-radius: 14px; display: inline-block; margin-bottom: 12px;">LEADER</div>
+            <div style="font-size: 1.6rem; font-weight: 900; color: var(--color-emerald-deep); margin-bottom: 4px;">100 Point</div>
+            <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 12px;">Smartphone / Cash</div>
+          </div>
+          <div style="font-size: 1.25rem; font-weight: 800; color: #0c3b2e; border-top: 1px dashed #e2e8f0; padding-top: 14px;">Rp 1.500.000</div>
         </div>
 
-        <!-- Supervisor -->
-        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
-          <div style="background: #8b5cf6; color: #fff; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 10px;">SUPERVISOR</div>
-          <div style="font-size: 1.25rem; font-weight: 900; color: var(--color-emerald-deep);">600 Point</div>
-          <div style="font-size: 0.82rem; color: #64748b; margin: 4px 0 10px;">Laptop / Cash</div>
-          <div style="font-size: 1rem; font-weight: 800; color: #0c3b2e;">Rp 7.500.000</div>
+        <!-- 3. Supervisor -->
+        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 20px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: #f3e8ff; color: #7e22ce; font-size: 0.8rem; font-weight: 800; padding: 4px 14px; border-radius: 14px; display: inline-block; margin-bottom: 12px;">SUPERVISOR</div>
+            <div style="font-size: 1.6rem; font-weight: 900; color: var(--color-emerald-deep); margin-bottom: 4px;">600 Point</div>
+            <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 12px;">Laptop / Cash</div>
+          </div>
+          <div style="font-size: 1.25rem; font-weight: 800; color: #0c3b2e; border-top: 1px dashed #e2e8f0; padding-top: 14px;">Rp 7.500.000</div>
         </div>
 
-        <!-- Manager -->
-        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
-          <div style="background: #ec4899; color: #fff; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 10px;">MANAGER</div>
-          <div style="font-size: 1.25rem; font-weight: 900; color: var(--color-emerald-deep);">3.000 Point</div>
-          <div style="font-size: 0.82rem; color: #64748b; margin: 4px 0 10px;">Tiket Umroh / Cash</div>
-          <div style="font-size: 1rem; font-weight: 800; color: #0c3b2e;">Rp 35.000.000 <br><span style="font-size:0.75rem; color:#b58900;">+ 3% Royalti Nas.</span></div>
+        <!-- 4. Manager -->
+        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 20px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: #fce7f3; color: #be185d; font-size: 0.8rem; font-weight: 800; padding: 4px 14px; border-radius: 14px; display: inline-block; margin-bottom: 12px;">MANAGER</div>
+            <div style="font-size: 1.6rem; font-weight: 900; color: var(--color-emerald-deep); margin-bottom: 4px;">3.000 Point</div>
+            <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 12px;">Tiket Umroh / Cash</div>
+          </div>
+          <div style="font-size: 1.25rem; font-weight: 800; color: #0c3b2e; border-top: 1px dashed #e2e8f0; padding-top: 14px;">
+            Rp 35.000.000<br>
+            <span style="font-size: 0.82rem; color: #b58900; font-weight: 700;">+ 3% Royalti Nasional</span>
+          </div>
         </div>
 
-        <!-- Executive -->
-        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
-          <div style="background: #f59e0b; color: #fff; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 10px;">EXECUTIVE</div>
-          <div style="font-size: 1.25rem; font-weight: 900; color: var(--color-emerald-deep);">10.000 Point</div>
-          <div style="font-size: 0.82rem; color: #64748b; margin: 4px 0 10px;">City Car / Cash</div>
-          <div style="font-size: 1rem; font-weight: 800; color: #0c3b2e;">Rp 105.000.000 <br><span style="font-size:0.75rem; color:#b58900;">+ 2% Royalti Nas.</span></div>
+        <!-- 5. Executive -->
+        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 20px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: #fef3c7; color: #b45309; font-size: 0.8rem; font-weight: 800; padding: 4px 14px; border-radius: 14px; display: inline-block; margin-bottom: 12px;">EXECUTIVE</div>
+            <div style="font-size: 1.6rem; font-weight: 900; color: var(--color-emerald-deep); margin-bottom: 4px;">10.000 Point</div>
+            <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 12px;">City Car / Cash</div>
+          </div>
+          <div style="font-size: 1.25rem; font-weight: 800; color: #0c3b2e; border-top: 1px dashed #e2e8f0; padding-top: 14px;">
+            Rp 105.000.000<br>
+            <span style="font-size: 0.82rem; color: #b58900; font-weight: 700;">+ 2% Royalti Nasional</span>
+          </div>
         </div>
 
-        <!-- Director -->
-        <div style="background: linear-gradient(135deg, #0c3b2e, #125c48); color: #fff; border: 2px solid #d4af37; border-radius: 14px; padding: 22px 16px; text-align: center; box-shadow: 0 6px 20px rgba(12, 59, 46, 0.2);">
-          <div style="background: #d4af37; color: #0c3b2e; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 10px;">DIRECTOR</div>
-          <div style="font-size: 1.25rem; font-weight: 900; color: #fff;">30.000 Point</div>
-          <div style="font-size: 0.82rem; color: #fef08a; margin: 4px 0 10px;">Family Car / Cash</div>
-          <div style="font-size: 1rem; font-weight: 800; color: #d4af37;">Rp 300.000.000 <br><span style="font-size:0.75rem; color:#fef08a;">+ 1% Royalti Nas.</span></div>
+        <!-- 6. Director -->
+        <div style="background: linear-gradient(145deg, #0c3b2e 0%, #125c48 100%); color: #fff; border: 2px solid #d4af37; border-radius: 16px; padding: 28px 20px; text-align: center; box-shadow: 0 8px 24px rgba(12, 59, 46, 0.25); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: #d4af37; color: #0c3b2e; font-size: 0.8rem; font-weight: 800; padding: 4px 14px; border-radius: 14px; display: inline-block; margin-bottom: 12px;">DIRECTOR</div>
+            <div style="font-size: 1.6rem; font-weight: 900; color: #fff; margin-bottom: 4px;">30.000 Point</div>
+            <div style="font-size: 0.9rem; color: #fef08a; margin-bottom: 12px;">Family Car / Cash</div>
+          </div>
+          <div style="font-size: 1.25rem; font-weight: 800; color: #d4af37; border-top: 1px dashed rgba(212, 175, 55, 0.4); padding-top: 14px;">
+            Rp 300.000.000<br>
+            <span style="font-size: 0.82rem; color: #fef08a; font-weight: 700;">+ 1% Royalti Nasional</span>
+          </div>
         </div>
       </div>
     </div>
