@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang=id>
 <head>
   <meta charset=UTF-8>
@@ -10,32 +10,6 @@
   <link rel=stylesheet href=styles.css>
   <link rel=stylesheet href=pages.css>
   <style>
-    :root {
-      --color-emerald-deep: #0c3b2e;
-      --color-emerald-medium: #125c46;
-      --color-gold-medium: #d4af37;
-      --color-emerald-soft: #f0f7f4;
-    }
-    .page-banner {
-      background: linear-gradient(135deg, var(--color-emerald-deep), var(--color-emerald-medium));
-      color: white;
-      padding: 70px 0 45px;
-      text-align: center;
-    }
-    .page-banner h1 {
-      font-size: 2.4rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-    .breadcrumb {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.75);
-    }
-    .breadcrumb a {
-      color: var(--color-gold-medium);
-      text-decoration: none;
-      font-weight: 600;
-    }
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -104,12 +78,6 @@
       box-shadow: 0 10px 30px rgba(12, 59, 46, 0.18);
     }
     @media (max-width: 768px) {
-      .page-banner {
-        padding: 50px 0 35px;
-      }
-      .page-banner h1 {
-        font-size: 1.8rem;
-      }
       .office-card {
         padding: 24px 18px;
       }
@@ -123,8 +91,8 @@
 
 <header class=navbar-wrapper>
   <div class=container navbar-container>
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="Zefa Mulia Sejahtera Logo" style="height: 46px; width: auto; transition: transform 0.3s ease;">
+    <a href=index.html class=nav-logo>
+      <img src=images/logo.png alt=Zefa Mulia Sejahtera Logo style=height: 46px; width: auto; transition: transform 0.3s ease;>
     </a>
     <nav class=nav-menu id=nav-menu>
       <a href=index.html class=nav-link>HOME</a>
@@ -141,7 +109,7 @@
         <div class=dropdown-menu>
           <a href=katalog-produk.html class=dropdown-item><i class=fa fa-box-open></i> Katalog Produk</a>
           <a href=kode-etik.html class=dropdown-item><i class=fa fa-scale-balanced></i> Kode Etik Direct Selling</a>
-          <a href="marketing-plan.html" class="dropdown-item"><i class="fa fa-chart-pie"></i> Marketing Plan</a>
+          <a href=marketing-plan.html class=dropdown-item><i class=fa fa-chart-pie></i> Marketing Plan</a>
         </div>
       </div>
       <a href=kontak.html class=nav-link active>CONTACT</a>
@@ -155,9 +123,9 @@
 
 <div class=page-banner>
   <div class=container>
-    <h1>Kontak Kami</h1>
+    <h1 class=page-title>Kontak Kami</h1>
     <div class=breadcrumb>
-      <a href=index.html>HOME</a> &gt; Kontak Kami
+      <a href=index.html>HOME</a> > Kontak Kami
     </div>
   </div>
 </div>
