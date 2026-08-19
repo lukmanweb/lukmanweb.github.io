@@ -302,15 +302,23 @@ button, input, select, textarea {
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
+}
+
+.brand-logo-img {
+    height: 56px;
+    width: auto;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
 }
 
 .logo-icon {
-    width: 44px;
-    height: 44px;
+    width: 52px;
+    height: 52px;
 }
 .logo-icon-sm {
-    width: 32px;
-    height: 32px;
+    width: 38px;
+    height: 38px;
 }
 .svg-logo {
     width: 100%;
@@ -326,21 +334,23 @@ button, input, select, textarea {
 .logo-text {
     display: flex;
     flex-direction: column;
+    line-height: 1.1;
 }
 
 .logo-title {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     font-weight: 800;
     color: var(--color-emerald-deep);
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    line-height: 1;
 }
 
 .logo-sub {
-    font-size: 0.625rem;
-    font-weight: 700;
+    font-size: 0.72rem;
+    font-weight: 800;
     color: var(--color-gold-deep);
-    letter-spacing: 1.5px;
-    margin-top: -4px;
+    letter-spacing: 2px;
+    margin-top: 2px;
 }
 
 .nav-menu {
@@ -2231,12 +2241,22 @@ section {
     gap: 24px;
 }
 
+.footer-logo img {
+    height: 76px;
+    width: auto;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+}
+
 .footer-logo .logo-title {
-    font-size: 1.75rem;
+    font-size: 2.35rem;
     font-weight: 800;
+    line-height: 1;
 }
 .footer-logo .logo-sub {
     color: var(--color-gold-medium);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
 }
 
 .footer-desc-p {
