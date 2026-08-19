@@ -597,7 +597,7 @@ button, input, select, textarea {
     pointer-events: none;
 }
 
-/* Slide inner layout - 2 Columns Side by Side */
+/* Slide inner layout - 2 Columns Side by Side with Strict Alignment */
 .slide-inner {
     flex: 1;
     width: 100%;
@@ -611,9 +611,15 @@ button, input, select, textarea {
     z-index: 2;
 }
 
-/* Glass Card for Text - Clear, Readable, and Never Obstructing the Hero Image */
+/* Glass Card for Text - Strict Uniform Size & Spacing Across All Slides */
 .slide-content {
     z-index: 3;
+    width: 100%;
+    max-width: 580px;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: rgba(12, 59, 46, 0.9);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -624,7 +630,7 @@ button, input, select, textarea {
 }
 
 .slide-title {
-    font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
     font-weight: 900;
     color: #ffffff;
     line-height: 1.25;
@@ -633,7 +639,7 @@ button, input, select, textarea {
 }
 
 .slide-desc {
-    font-size: 1rem;
+    font-size: 0.98rem;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.7;
     margin-bottom: 24px;
@@ -643,20 +649,23 @@ button, input, select, textarea {
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
+    margin-top: auto;
 }
 
-/* Hero Image Side - Large, Prominent, Fully Visible without Crop */
+/* Hero Image Side - Strict Uniform Image Box & Max Height */
 .slide-image {
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
     width: 100%;
+    height: 480px;
 }
 
 .slide-img-hero {
     width: 100%;
-    max-height: 520px;
+    height: 100% !important;
+    max-height: 480px;
     object-fit: contain !important;
     object-position: center center !important;
     border-radius: 20px;
@@ -3533,20 +3542,22 @@ section {
         padding-bottom: 60px;
     }
     .slide-content {
-        padding: 22px 18px;
+        min-height: unset;
+        max-width: 100%;
+        padding: 24px 20px;
         border-radius: 16px;
         order: 2; /* Content below image on mobile for clear hero focus */
     }
     .slide-image {
         order: 1;
         width: 100%;
+        height: 280px;
     }
     .slide-img-hero {
         width: 100%;
-        max-width: 100%;
-        height: auto;
-        max-height: 380px;
-        object-fit: cover !important;
+        height: 100% !important;
+        max-height: 280px;
+        object-fit: contain !important;
         border-radius: 16px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     }
@@ -3559,11 +3570,14 @@ section {
         padding-right: 14px;
     }
     .slide-content {
-        padding: 18px 14px;
+        padding: 20px 16px;
         border-radius: 14px;
     }
+    .slide-image {
+        height: 240px;
+    }
     .slide-img-hero {
-        max-height: 300px;
+        max-height: 240px;
     }
     section {
         padding: 40px 0;
