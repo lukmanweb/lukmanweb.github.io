@@ -4,7 +4,7 @@
 
 /* ─── Page wrapper ─────────────────────────────── */
 .page-body {
-    padding-top: var(--navbar-height);
+    padding-top: 100px;
 }
 
 /* ─── Page Banner ──────────────────────────────── */
