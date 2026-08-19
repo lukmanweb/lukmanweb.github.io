@@ -390,9 +390,22 @@ button, input, select, textarea {
     color: var(--color-emerald-medium);
 }
 
-.nav-menu > .nav-link:hover::after,
-.nav-menu > .nav-link.active::after {
-    width: calc(100% - 24px);
+.nav-menu-mobile-only {
+    display: none;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-border);
+}
+
+.nav-menu-mobile-only .btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
 }
 
 /* =============================================
@@ -3340,8 +3353,15 @@ section {
     .nav-actions {
         gap: 8px;
     }
+    .nav-actions .btn {
+        display: none; /* Hide Login & WA buttons from mobile top header bar */
+    }
     .nav-actions .btn-outline {
-        display: none; /* Hide WA on mobile header to save space */
+        display: none;
+    }
+
+    .nav-menu-mobile-only {
+        display: block;
     }
     
     .hero-title {
