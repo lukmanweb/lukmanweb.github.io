@@ -567,50 +567,93 @@ button, input, select, textarea {
 }
 
 /* Slide backgrounds */
-.slide-1 { background: linear-gradient(145deg, #082e23 0%, #0c3b2e 55%, #0f5040 100%); }
-.slide-2 { background: linear-gradient(145deg, #0a2d1e 0%, #104035 55%, #1a6b52 100%); }
-.slide-3 { background: linear-gradient(145deg, #070f0b 0%, #0c3b2e 55%, #1c4f3b 100%); }
-.slide-4 { background: linear-gradient(145deg, #06231b 0%, #0c3b2e 55%, #184e3f 100%); }
-.slide-5 { background: linear-gradient(145deg, #0a1f18 0%, #08281f 55%, #0c3b2e 100%); }
+/* Slide backgrounds & Full-Cover Layout */
+.slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Individual Slide Full-Cover Backgrounds */
+.slide-1 { 
+    background: linear-gradient(135deg, rgba(8, 46, 35, 0.72) 0%, rgba(12, 59, 46, 0.65) 100%), url("images/hero.png") center center / cover no-repeat; 
+}
+.slide-2 { 
+    background: linear-gradient(135deg, rgba(8, 46, 35, 0.75) 0%, rgba(16, 64, 53, 0.68) 100%), url("images/all-products.jpg") center center / cover no-repeat; 
+}
+.slide-3 { 
+    background: linear-gradient(135deg, rgba(7, 15, 11, 0.72) 0%, rgba(12, 59, 46, 0.65) 100%), url("images/zefa-family.jpg") center center / cover no-repeat; 
+}
+.slide-4 { 
+    background: linear-gradient(135deg, rgba(6, 35, 27, 0.75) 0%, rgba(12, 59, 46, 0.68) 100%), url("images/slide-kode-etik.jpg") center center / cover no-repeat; 
+}
+.slide-5 { 
+    background: linear-gradient(135deg, rgba(10, 31, 24, 0.78) 0%, rgba(8, 40, 31, 0.72) 100%), url("images/slide-disclaimer.jpg") center center / cover no-repeat; 
+}
 
 .slide-overlay {
     position: absolute;
     inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background: linear-gradient(to right, rgba(12, 59, 46, 0.88) 0%, rgba(12, 59, 46, 0.65) 50%, rgba(12, 59, 46, 0.4) 100%);
     pointer-events: none;
 }
 
 /* Slide inner layout */
 .slide-inner {
     flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    display: flex;
     align-items: center;
-    gap: 60px;
-    padding-top: calc(var(--navbar-height) + 30px);
-    padding-bottom: 100px;
-}
-
-/* Text side */
-.slide-content {
+    justify-content: flex-start;
+    padding-top: calc(var(--navbar-height) + 20px);
+    padding-bottom: 90px;
+    position: relative;
     z-index: 2;
 }
 
+/* Readable Glass Card for Hero Text */
+.slide-content {
+    z-index: 3;
+    max-width: 640px;
+    background: rgba(12, 59, 46, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 38px 42px;
+    border-radius: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
 .slide-title {
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-size: clamp(2rem, 4vw, 2.9rem);
     font-weight: 900;
     color: #ffffff;
-    line-height: 1.2;
-    margin: 16px 0;
-    letter-spacing: -1px;
+    line-height: 1.25;
+    margin: 14px 0 16px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .slide-desc {
     font-size: 1.05rem;
-    color: rgba(255,255,255,0.78);
+    color: rgba(255, 255, 255, 0.92);
     line-height: 1.75;
-    margin-bottom: 28px;
-    max-width: 520px;
+    margin-bottom: 26px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .slide-actions {
@@ -619,20 +662,9 @@ button, input, select, textarea {
     flex-wrap: wrap;
 }
 
-/* Image side */
+/* Image side - hidden in full background mode for cleaner full-bleed look */
 .slide-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-}
-
-.slide-img-hero {
-    width: 100%;
-    max-width: 460px;
-    border-radius: 22px;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
-    animation: floatImg 4s ease-in-out infinite;
+    display: none;
 }
 
 @keyframes floatImg {
@@ -3482,7 +3514,24 @@ section {
     }
 }
 
+@media (max-width: 768px) {
+    .slide-content {
+        padding: 28px 22px;
+        border-radius: 18px;
+        margin: 0 10px;
+    }
+    .slide-inner {
+        padding-top: calc(var(--navbar-height) + 15px);
+        padding-bottom: 75px;
+    }
+}
+
 @media (max-width: 480px) {
+    .slide-content {
+        padding: 22px 16px;
+        border-radius: 14px;
+        margin: 0 5px;
+    }
     section {
         padding: 40px 0;
     }
@@ -3499,12 +3548,8 @@ section {
         font-size: 1.65rem;
     }
 
-    .slide-img-hero {
-        max-width: 210px;
-    }
-
     .slide-title {
-        font-size: 1.45rem;
+        font-size: 1.35rem;
     }
 
     .btn-lg {
