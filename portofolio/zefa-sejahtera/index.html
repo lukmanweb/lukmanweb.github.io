@@ -27,6 +27,60 @@
     <link rel="stylesheet" href="styles.css?v=1787146449565">
 </head>
 <body class="smooth-scroll">
+<header class="navbar-wrapper">
+    <div class="container navbar-container">
+        <a href="#beranda" class="nav-logo">
+            <img src="images/logo.png" alt="Zefa Mulia Sejahtera Logo" class="brand-logo-img" style="height: 56px; width: auto; transition: transform 0.3s ease;">
+            <div class="logo-text">
+                <span class="logo-title text-gradient-gold" style="font-size: 1.65rem; font-weight: 800; line-height: 1; letter-spacing: 1.5px;">ZEFA</span>
+                <span class="logo-sub" style="font-size: 0.72rem; font-weight: 700; color: var(--color-gold-deep); letter-spacing: 2px;">MULIA SEJAHTERA</span>
+            </div>
+        </a>
+
+        <!-- Navigation Links with Submenu -->
+        <nav class="nav-menu" id="nav-menu">
+            <a href="index.html" class="nav-link active">HOME</a>
+            
+            <!-- PROFIL Dropdown -->
+            <div class="nav-dropdown">
+                <a href="#" class="nav-link dropdown-toggle">PROFIL <i class="fa fa-chevron-down nav-arrow"></i></a>
+                <div class="dropdown-menu">
+                    <a href="tentang-perusahaan.html" class="dropdown-item"><i class="fa fa-building"></i> Tentang Perusahaan</a>
+                    <a href="visi-misi.html" class="dropdown-item"><i class="fa fa-bullseye"></i> Visi &amp; Misi</a>
+                    <a href="legalitas.html" class="dropdown-item"><i class="fa fa-shield-alt"></i> Legalitas Perusahaan</a>
+                </div>
+            </div>
+
+            <!-- PRODUK & BISNIS Dropdown -->
+            <div class="nav-dropdown">
+                <a href="#" class="nav-link dropdown-toggle">PRODUK &amp; BISNIS <i class="fa fa-chevron-down nav-arrow"></i></a>
+                <div class="dropdown-menu">
+                    <a href="katalog-produk.html" class="dropdown-item"><i class="fa fa-box-open"></i> Katalog Produk</a>
+                    <a href="kode-etik.html" class="dropdown-item"><i class="fa fa-scale-balanced"></i> Kode Etik</a>
+                    <a href="marketing-plan.html" class="dropdown-item"><i class="fa fa-chart-pie"></i> Marketing Plan</a>
+                </div>
+            </div>
+
+            <a href="kontak.html" class="nav-link">CONTACT</a>
+            
+            <div class="nav-menu-mobile-only">
+                <a href="https://manage.zefa.biz.id/login.php" target="_blank" class="btn btn-primary font-bold">
+                    <i class="fa fa-user-lock"></i> Login Member Area
+                </a>
+            </div>
+        </nav>
+
+        <!-- Nav Actions -->
+        <div class="nav-actions">
+            <a href="https://manage.zefa.biz.id/login.php" target="_blank" class="btn btn-primary btn-sm font-sm pulse-button">
+                <i class="fa fa-user-lock"></i> Login Member
+            </a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
 
     <!-- App Root Wrapper -->
     <div id="app-root">
@@ -36,61 +90,6 @@
         <!-- ========================================== -->
         <div id="home-view" class="view-active">
             
-            <!-- Floating Navigation -->
-            <header class="navbar-wrapper">
-                <div class="container navbar-container">
-                    <a href="#beranda" class="nav-logo">
-                        <img src="images/logo.png" alt="Zefa Mulia Sejahtera Logo" class="brand-logo-img" style="height: 56px; width: auto; transition: transform 0.3s ease;">
-                        <div class="logo-text">
-                            <span class="logo-title text-gradient-gold" style="font-size: 1.65rem; font-weight: 800; line-height: 1; letter-spacing: 1.5px;">ZEFA</span>
-                            <span class="logo-sub" style="font-size: 0.72rem; font-weight: 700; color: var(--color-gold-deep); letter-spacing: 2px;">MULIA SEJAHTERA</span>
-                        </div>
-                    </a>
-
-                    <!-- Navigation Links with Submenu (BRILIAN.BIZ Style) -->
-                    <nav class="nav-menu" id="nav-menu">
-                        <a href="index.html" class="nav-link active">HOME</a>
-                        
-                        <!-- PROFIL Dropdown -->
-                        <div class="nav-dropdown">
-        <a href="#" class="nav-link dropdown-toggle">PROFIL <i class="fa fa-chevron-down nav-arrow"></i></a>
-        <div class="dropdown-menu">
-          <a href="tentang-perusahaan.html" class="dropdown-item"><i class="fa fa-building"></i> Tentang Perusahaan</a>
-          <a href="visi-misi.html" class="dropdown-item"><i class="fa fa-bullseye"></i> Visi &amp; Misi</a>
-          <a href="legalitas.html" class="dropdown-item"><i class="fa fa-shield-alt"></i> Legalitas Perusahaan</a>
-        </div>
-      </div>
-      <div class="nav-dropdown">
-        <a href="#" class="nav-link dropdown-toggle">PRODUK &amp; BISNIS <i class="fa fa-chevron-down nav-arrow"></i></a>
-        <div class="dropdown-menu">
-          <a href="katalog-produk.html" class="dropdown-item"><i class="fa fa-box-open"></i> Katalog Produk</a>
-          <a href="kode-etik.html" class="dropdown-item"><i class="fa fa-scale-balanced"></i> Kode Etik</a>
-          <a href="marketing-plan.html" class="dropdown-item"><i class="fa fa-chart-pie"></i> Marketing Plan</a>
-        </div>
-      </div>
-
-
-                        <a href="kontak.html" class="nav-link">CONTACT</a>
-                    
-  <div class="nav-menu-mobile-only">
-    <a href="https://manage.zefa.biz.id/login.php" target="_blank" class="btn btn-primary font-bold">
-      <i class="fa fa-user-lock"></i> Login Member Area
-    </a>
-  </div>
-</nav>
-
-                    <!-- Nav Actions -->
-                    <div class="nav-actions">
-                        <a href="https://manage.zefa.biz.id/login.php" target="_blank" class="btn btn-primary btn-sm font-sm pulse-button">
-                            <i class="fa fa-user-lock"></i> Login Member
-                        </a>
-                        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </div>
-                </div>
-            </header>
-
             <!-- ===== HERO SLIDER (BRILIAN.BIZ Style) ===== -->
             <section id="beranda" class="hero-slider-section">
 
