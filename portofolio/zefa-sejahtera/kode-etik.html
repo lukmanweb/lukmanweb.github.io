@@ -298,8 +298,12 @@
         <span class="logo-sub" style="font-size: 0.72rem; font-weight: 700; color: var(--color-gold-deep); letter-spacing: 2px;">MULIA SEJAHTERA</span>
       </div>
     </a>
+
+    <!-- Navigation Links with Submenu (BRILIAN.BIZ Style) -->
     <nav class="nav-menu" id="nav-menu">
       <a href="index.html" class="nav-link">HOME</a>
+      
+      <!-- PROFIL Dropdown -->
       <div class="nav-dropdown">
         <a href="#" class="nav-link dropdown-toggle">PROFIL <i class="fa fa-chevron-down nav-arrow"></i></a>
         <div class="dropdown-menu">
@@ -308,33 +312,34 @@
           <a href="legalitas.html" class="dropdown-item"><i class="fa fa-shield-alt"></i> Legalitas Perusahaan</a>
         </div>
       </div>
+
+      <!-- PRODUK & BISNIS Dropdown -->
       <div class="nav-dropdown">
         <a href="#" class="nav-link dropdown-toggle">PRODUK &amp; BISNIS <i class="fa fa-chevron-down nav-arrow"></i></a>
         <div class="dropdown-menu">
           <a href="katalog-produk.html" class="dropdown-item"><i class="fa fa-box-open"></i> Katalog Produk</a>
-          <a href="kode-etik.html" class="dropdown-item"><i class="fa fa-scale-balanced"></i> Kode Etik</a>
+          <a href="kode-etik.html" class="dropdown-item active"><i class="fa fa-scale-balanced"></i> Kode Etik</a>
           <a href="marketing-plan.html" class="dropdown-item"><i class="fa fa-chart-pie"></i> Marketing Plan</a>
         </div>
       </div>
-      <div class="nav-dropdown">
-        <a href="#" class="nav-link dropdown-toggle">INFORMASI <i class="fa fa-chevron-down nav-arrow"></i></a>
-        <div class="dropdown-menu">
-          <a href="index.html#faq" class="dropdown-item"><i class="fa fa-circle-question"></i> FAQ / Bantuan</a>
-          <a href="https://manage.zefa.biz.id/login.php" target="_blank" class="dropdown-item"><i class="fa fa-user-lock"></i> Login Member Area</a>
-        </div>
-      </div>
+
       <a href="kontak.html" class="nav-link">CONTACT</a>
-    
-  <div class="nav-menu-mobile-only">
-    <a href="https://manage.zefa.biz.id/login.php" target="_blank" class="btn btn-primary font-bold">
-      <i class="fa fa-user-lock"></i> Login Member Area
-    </a>
-  </div>
-</nav>
+      
+      <div class="nav-menu-mobile-only">
+        <a href="https://manage.zefa.biz.id/login.php" target="_blank" class="btn btn-primary font-bold">
+          <i class="fa fa-user-lock"></i> Login Member Area
+        </a>
+      </div>
+    </nav>
+
+    <!-- Nav Actions -->
     <div class="nav-actions">
-      <a href="https://wa.me/6285727289279" target="_blank" class="btn btn-outline btn-sm font-sm"><i class="fab fa-whatsapp"></i> Tanya Admin</a>
-      <a href="https://manage.zefa.biz.id/login.php" target="_blank" class="btn btn-primary btn-sm font-sm"><i class="fa fa-user-lock"></i> Login Member</a>
-      <button class="mobile-toggle" id="mobile-toggle"><i class="fa fa-bars"></i></button>
+      <a href="https://manage.zefa.biz.id/login.php" target="_blank" class="btn btn-primary btn-sm font-sm pulse-button">
+        <i class="fa fa-user-lock"></i> Login Member
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+        <i class="fa fa-bars"></i>
+      </button>
     </div>
   </div>
 </header>
