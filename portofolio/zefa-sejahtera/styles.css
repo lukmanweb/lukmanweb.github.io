@@ -567,20 +567,15 @@ button, input, select, textarea {
 }
 
 /* Slide backgrounds */
-/* Slide backgrounds & Full-Cover Layout */
+/* Slide Backgrounds - Deep Emerald Theme */
 .slide {
     position: absolute;
     inset: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     opacity: 0;
-    transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.75s ease;
     pointer-events: none;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
 }
 
 .slide.active {
@@ -588,84 +583,84 @@ button, input, select, textarea {
     pointer-events: auto;
 }
 
-/* Individual Slide Backgrounds - Clean & Full Cover without heavy tint */
-.slide-1 { 
-    background: url("images/hero.png") center center / cover no-repeat; 
-}
-.slide-2 { 
-    background: url("images/all-products.jpg") center center / cover no-repeat; 
-}
-.slide-3 { 
-    background: url("images/zefa-family.jpg") center center / cover no-repeat; 
-}
-.slide-4 { 
-    background: url("images/slide-kode-etik.jpg") center center / cover no-repeat; 
-}
-.slide-5 { 
-    background: url("images/slide-disclaimer.jpg") center center / cover no-repeat; 
-}
+.slide-1 { background: linear-gradient(145deg, #072a20 0%, #0c3b2e 55%, #104f3d 100%); }
+.slide-2 { background: linear-gradient(145deg, #08281e 0%, #0e3d30 55%, #155543 100%); }
+.slide-3 { background: linear-gradient(145deg, #061c14 0%, #0c3b2e 55%, #124d3a 100%); }
+.slide-4 { background: linear-gradient(145deg, #06231b 0%, #0c3b2e 55%, #184e3f 100%); }
+.slide-5 { background: linear-gradient(145deg, #0a1f18 0%, #08281f 55%, #0c3b2e 100%); }
 
-/* Remove dark overlay completely so the images are 100% pure & vivid */
 .slide-overlay {
-    display: none;
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+    pointer-events: none;
 }
 
-/* Slide inner layout - align card to left/bottom so image remains fully visible */
+/* Slide inner layout - 2 Columns Side by Side */
 .slide-inner {
     flex: 1;
     width: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+    gap: 40px;
     padding-top: calc(var(--navbar-height) + 20px);
-    padding-bottom: 70px;
+    padding-bottom: 80px;
     position: relative;
     z-index: 2;
 }
 
-/* Compact Glass Card for Hero Text - doesn't block the hero visual */
+/* Glass Card for Text - Clear, Readable, and Never Obstructing the Hero Image */
 .slide-content {
     z-index: 3;
-    max-width: 520px;
-    background: rgba(12, 59, 46, 0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 24px 28px;
-    border-radius: 16px;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    background: rgba(12, 59, 46, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 36px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35), 0 0 25px rgba(212, 175, 55, 0.1);
 }
 
 .slide-title {
-    font-size: clamp(1.6rem, 3.2vw, 2.3rem);
-    font-weight: 800;
+    font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+    font-weight: 900;
     color: #ffffff;
     line-height: 1.25;
-    margin: 10px 0 12px;
+    margin: 14px 0 16px;
     letter-spacing: -0.5px;
 }
 
 .slide-desc {
-    font-size: 0.92rem;
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-    margin-bottom: 18px;
+    line-height: 1.7;
+    margin-bottom: 24px;
 }
 
 .slide-actions {
     display: flex;
-    gap: 12px;
+    gap: 14px;
     flex-wrap: wrap;
 }
 
-.slide-actions .btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+/* Hero Image Side - Large, Prominent, Fully Visible without Crop */
+.slide-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
 }
 
-/* Image side - hidden in full background mode for cleaner full-bleed look */
-.slide-image {
-    display: none;
+.slide-img-hero {
+    width: 100%;
+    max-height: 520px;
+    object-fit: contain !important;
+    object-position: center center !important;
+    border-radius: 20px;
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.35));
+    transition: transform 0.4s ease;
 }
 
 @keyframes floatImg {
@@ -3516,22 +3511,28 @@ section {
 }
 
 @media (max-width: 768px) {
-    .slide-content {
-        padding: 28px 22px;
-        border-radius: 18px;
-        margin: 0 10px;
-    }
     .slide-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
         padding-top: calc(var(--navbar-height) + 15px);
         padding-bottom: 75px;
+    }
+    .slide-content {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+    .slide-img-hero {
+        max-height: 240px;
     }
 }
 
 @media (max-width: 480px) {
     .slide-content {
-        padding: 22px 16px;
+        padding: 20px 16px;
         border-radius: 14px;
-        margin: 0 5px;
+    }
+    .slide-img-hero {
+        max-height: 200px;
     }
     section {
         padding: 40px 0;
