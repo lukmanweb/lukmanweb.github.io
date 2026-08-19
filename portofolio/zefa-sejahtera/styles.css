@@ -583,6 +583,7 @@ button, input, select, textarea {
     pointer-events: auto;
 }
 
+.slide-promo { background: linear-gradient(145deg, #7f1d1d 0%, #991b1b 50%, #0c3b2e 100%); }
 .slide-1 { background: linear-gradient(145deg, #072a20 0%, #0c3b2e 55%, #104f3d 100%); }
 .slide-2 { background: linear-gradient(145deg, #08281e 0%, #0e3d30 55%, #155543 100%); }
 .slide-3 { background: linear-gradient(145deg, #061c14 0%, #0c3b2e 55%, #124d3a 100%); }
