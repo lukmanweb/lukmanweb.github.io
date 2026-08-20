@@ -568,42 +568,44 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
-  padding: 20px 24px;
-  background: rgba(255, 255, 255, 0.85);
+  gap: 14px;
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(228, 30, 43, 0.12);
+  border: 1px solid rgba(228, 30, 43, 0.15);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 24px rgba(11, 19, 43, 0.05);
+  width: fit-content;
+  max-width: 100%;
 }
 
 .stat-item {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  align-items: baseline;
+  gap: 12px;
   text-align: left;
-  width: 100%;
 }
 
 .stat-num {
   font-family: var(--font-tech);
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   font-weight: 800;
   color: var(--cola-red);
   line-height: 1;
-  margin-bottom: 4px;
+  min-width: 85px;
+  letter-spacing: -0.02em;
 }
 
 .stat-label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
 .stat-divider {
-  display: none;
+  display: none !important;
 }
 
 /* Hero Visual & Holographic Avatar */
