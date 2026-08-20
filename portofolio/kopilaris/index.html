@@ -77,6 +77,25 @@
         .pulse-glow-green {
             animation: pulse-green 2s infinite;
         }
+        
+        /* Mobile Performance & Responsiveness */
+        html, body {
+            overflow-x: hidden !important;
+            width: 100%;
+        }
+        input, select, textarea {
+            font-size: 16px !important; /* Mencegah auto-zoom di browser iOS Safari */
+        }
+        button, a {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        @media (max-width: 640px) {
+            .hero-product-img {
+                max-height: 280px;
+                object-fit: cover;
+            }
+        }
     </style>
 </head>
 <body class="font-sans bg-cream-50 text-slate-800 antialiased selection:bg-brandRed-600 selection:text-white pb-20 md:pb-0">
@@ -202,19 +221,19 @@
                         <div class="absolute inset-0 bg-gradient-to-tr from-brandRed-600/40 to-amberGold-500/30 rounded-3xl filter blur-2xl transform rotate-2 scale-95"></div>
                         
                         <!-- Floating Halal Badge (Dipindah ke atas-kiri luar kartu agar tidak menutupi foto produk) -->
-                        <div class="absolute -top-3.5 -left-3 bg-white text-brandRed-900 px-3.5 py-1.5 rounded-full shadow-xl flex items-center gap-2 border-2 border-emerald-500 text-xs font-black z-20">
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                        <div class="absolute -top-3.5 -left-1 sm:-left-3 bg-white text-brandRed-900 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full shadow-xl flex items-center gap-1.5 sm:gap-2 border-2 border-emerald-500 text-[10px] sm:text-xs font-black z-20">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
                             <span>HALAL INDONESIA</span>
                         </div>
 
                         <!-- Main Product Card -->
-                        <div class="relative bg-cream-100 p-3 rounded-3xl border-2 border-amberGold-400 shadow-2xl overflow-hidden">
-                            <img src="assets/images/kopilaris-hero.jpg" alt="Kopilaris Kopi Susu Herbal 10 Sachet" class="w-full h-auto rounded-2xl object-cover shadow-inner hover:scale-105 transition-transform duration-500">
+                        <div class="relative bg-cream-100 p-2 sm:p-3 rounded-3xl border-2 border-amberGold-400 shadow-2xl overflow-hidden">
+                            <img src="assets/images/kopilaris-hero.jpg" alt="Kopilaris Kopi Susu Herbal 10 Sachet" class="hero-product-img w-full h-auto rounded-2xl object-cover shadow-inner hover:scale-105 transition-transform duration-500">
 
                             <!-- Floating Price Tag (Red & Gold) -->
-                            <div class="absolute bottom-4 right-4 bg-brandRed-700 border-2 border-amberGold-400 text-white font-black px-4 py-2 rounded-2xl shadow-2xl text-center transform -rotate-2">
-                                <div class="text-[10px] uppercase font-bold text-amberGold-300 tracking-wider">Isi 10 Sachet</div>
-                                <div class="text-xl leading-none font-extrabold text-white">Rp 125.000</div>
+                            <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-brandRed-700 border-2 border-amberGold-400 text-white font-black px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl shadow-2xl text-center transform -rotate-2">
+                                <div class="text-[9px] sm:text-[10px] uppercase font-bold text-amberGold-300 tracking-wider">Isi 10 Sachet</div>
+                                <div class="text-lg sm:text-xl leading-none font-extrabold text-white">Rp 125.000</div>
                             </div>
                         </div>
                     </div>
