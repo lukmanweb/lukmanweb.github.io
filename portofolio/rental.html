@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+﻿ 
+            <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -278,5 +279,736 @@
     <p>&copy; 2026 NusaDrive Rental Mobil. Created by <a href="../index.html">LukmanWeb JasaWeb</a></p>
   </footer>
 
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
 </body>
 </html>
+.Groups[1].Value + $mobileCss + "`n    " + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NusaDrive - Rental Mobil Mewah & Terpercaya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #f59e0b;
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --light-bg: #f8fafc;
+      --text-gray: #64748b;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--light-bg); color: var(--dark); line-height: 1.6; }
+
+    /* Header / Navbar */
+    .navbar { position: sticky; top: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 16px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .logo { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .logo span { color: var(--primary); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .btn-contact { background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: 0.2s; }
+    .btn-contact:hover { background: var(--primary-dark); }
+
+    /* Hero Section */
+    .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; padding: 80px 5% 100px; text-align: center; position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: var(--light-bg); clip-path: polygon(0 100%, 100% 100%, 100% 0); }
+    .hero-badge { display: inline-block; background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(37, 99, 235, 0.4); color: #60a5fa; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+    .hero p { max-width: 600px; margin: 0 auto 30px; color: #94a3b8; font-size: 1.05rem; }
+
+    /* Filter & Car Fleet Section */
+    .fleet-section { max-width: 1200px; margin: -50px auto 80px; padding: 0 20px; position: relative; z-index: 10; }
+    .search-box { background: #fff; padding: 24px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .filter-group label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-gray); margin-bottom: 6px; text-transform: uppercase; }
+    .filter-group select, .filter-group input { width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-family: inherit; font-weight: 600; outline: none; }
+    
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--dark); }
+    .section-title p { color: var(--text-gray); }
+
+    .car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .car-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.3s, box-shadow 0.3s; }
+    .car-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+    .car-img { width: 100%; height: 200px; object-fit: cover; background: #cbd5e1; }
+    .car-body { padding: 24px; }
+    .car-category { font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
+    .car-title { font-size: 1.3rem; font-weight: 700; margin: 4px 0 12px; color: var(--dark); }
+    .car-specs { display: flex; gap: 16px; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 20px; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; padding: 10px 0; }
+    .car-spec-item { display: flex; align-items: center; gap: 6px; }
+    .car-footer { display: flex; justify-content: space-between; align-items: center; }
+    .car-price { font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--dark); }
+    .car-price span { font-size: 0.8rem; font-weight: 500; color: var(--text-gray); }
+    .btn-book { background: var(--primary); color: #fff; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: 0.2s; }
+    .btn-book:hover { background: var(--primary-dark); }
+
+    /* Features Section */
+    .features { background: #fff; padding: 80px 5%; border-top: 1px solid #e2e8f0; }
+    .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .feature-card { text-align: center; padding: 30px 20px; border-radius: 16px; background: var(--light-bg); border: 1px solid #f1f5f9; }
+    .feature-icon { font-size: 2.5rem; margin-bottom: 16px; display: inline-block; }
+    .feature-card h3 { font-weight: 700; margin-bottom: 10px; }
+    .feature-card p { font-size: 0.9rem; color: var(--text-gray); }
+
+    /* Footer */
+    footer { background: var(--dark); color: #94a3b8; padding: 50px 5% 30px; text-align: center; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    footer a { color: #fff; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">🚗 Nusa<span>Drive</span></a>
+    <ul class="nav-links">
+      <li><a href="#armada">Armada Mobil</a></li>
+      <li><a href="#keunggulan">Keunggulan</a></li>
+      <li><a href="#syarat">Syarat & Ketentuan</a></li>
+    </ul>
+    <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20mobil" class="btn-contact" target="_blank">Sewa Sekarang</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="hero-badge">✨ Jasa Rental Mobil Terpercaya & Lepas Kunci</span>
+    <h1>Sewa Mobil Murah & Nyaman Untuk Perjalanan Anda</h1>
+    <p>Pilihan armada terlengkap, kondisi prima, bersih, terawat, siap pakai untuk keperluan bisnis, keluarga, atau liburan.</p>
+  </section>
+
+  <!-- Main Content / Fleet -->
+  <section class="fleet-section" id="armada">
+    <!-- Filter Search Box -->
+    <div class="search-box">
+      <div class="filter-group">
+        <label>Tipe Mobil</label>
+        <select id="typeFilter">
+          <option value="all">Semua Tipe</option>
+          <option value="mpv">MPV / Family</option>
+          <option value="suv">SUV / Crossover</option>
+          <option value="sedan">Sedan / Luxury</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Layanan</label>
+        <select>
+          <option>Lepas Kunci</option>
+          <option>Dengan Driver</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Tanggal Sewa</label>
+        <input type="date">
+      </div>
+    </div>
+
+    <!-- Title -->
+    <div class="section-title">
+      <h2>Pilihan Armada Populer</h2>
+      <p>Pilih unit yang sesuai dengan kebutuhan perjalanan Anda</p>
+    </div>
+
+    <!-- Car Grid -->
+    <div class="car-grid">
+      <!-- Car Item 1 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="Toyota Avanza" class="car-img">
+        <div class="car-body">
+          <span class="car-category">MPV / Family</span>
+          <h3 class="car-title">Toyota All New Avanza</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 7 Kursi</div>
+            <div class="car-spec-item">⚙️ Matic / Manual</div>
+            <div class="car-spec-item">⛽ Bensin</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 350.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Toyota%20Avanza" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car Item 2 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Toyota Innova Zenix" class="car-img">
+        <div class="car-body">
+          <span class="car-category">MPV Premium</span>
+          <h3 class="car-title">Toyota Innova Zenix</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 7 Kursi</div>
+            <div class="car-spec-item">⚙️ Automatic</div>
+            <div class="car-spec-item">⛽ Hybrid</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 650.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Toyota%20Innova%20Zenix" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car Item 3 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=600&q=80" alt="Mitsubishi Pajero Sport" class="car-img">
+        <div class="car-body">
+          <span class="car-category">SUV Luxury</span>
+          <h3 class="car-title">Mitsubishi Pajero Sport</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 7 Kursi</div>
+            <div class="car-spec-item">⚙️ Automatic</div>
+            <div class="car-spec-item">⛽ Diesel</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 900.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Pajero%20Sport" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car Item 4 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Honda Brio" class="car-img">
+        <div class="car-body">
+          <span class="car-category">City Car</span>
+          <h3 class="car-title">Honda Brio RS</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 5 Kursi</div>
+            <div class="car-spec-item">⚙️ Matic / Manual</div>
+            <div class="car-spec-item">⛽ Bensin</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 300.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Honda%20Brio" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car Item 5 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" alt="Toyota Alphard" class="car-img">
+        <div class="car-body">
+          <span class="car-category">VIP / Luxury</span>
+          <h3 class="car-title">Toyota Alphard Transformer</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 7 Kursi</div>
+            <div class="car-spec-item">⚙️ Automatic</div>
+            <div class="car-spec-item">⛽ Bensin</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 2.200.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Toyota%20Alphard" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car Item 6 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80" alt="Fortuner VRZ" class="car-img">
+        <div class="car-body">
+          <span class="car-category">SUV Premium</span>
+          <h3 class="car-title">Toyota Fortuner VRZ</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 7 Kursi</div>
+            <div class="car-spec-item">⚙️ Automatic</div>
+            <div class="car-spec-item">⛽ Diesel</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 850.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Fortuner%20VRZ" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="keunggulan">
+    <div class="section-title">
+      <h2>Mengapa Memilih NusaDrive?</h2>
+      <p>Keuntungan dan kemudahan layanan rental mobil di tempat kami</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Armada Terawat & Bersih</h3>
+        <p>Setiap mobil selalu diservis berkala dan dibersihkan sebelum diserahkan ke pelanggan.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔑</div>
+        <h3>Bisa Lepas Kunci</h3>
+        <p>Nikmati privasi dan kebebasan penuh mengendarai mobil sendiri ke mana pun tujuan Anda.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👨‍✈️</div>
+        <h3>Driver Berpengalaman</h3>
+        <p>Tersedia driver profesional, ramah, dan berpengalaman untuk kenyamanan perjalanan Anda.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Proses Cepat & Mudah</h3>
+        <p>Persyaratan tidak rumit dan verifikasi cepat sehingga mobil siap dipake tanpa ribet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 NusaDrive Rental Mobil. Created by <a href="../index.html">LukmanWeb JasaWeb</a></p>
+  </footer>
+
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[2].Value + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NusaDrive - Rental Mobil Mewah & Terpercaya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #f59e0b;
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --light-bg: #f8fafc;
+      --text-gray: #64748b;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--light-bg); color: var(--dark); line-height: 1.6; }
+
+    /* Header / Navbar */
+    .navbar { position: sticky; top: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 16px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .logo { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .logo span { color: var(--primary); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .btn-contact { background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: 0.2s; }
+    .btn-contact:hover { background: var(--primary-dark); }
+
+    /* Hero Section */
+    .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; padding: 80px 5% 100px; text-align: center; position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: var(--light-bg); clip-path: polygon(0 100%, 100% 100%, 100% 0); }
+    .hero-badge { display: inline-block; background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(37, 99, 235, 0.4); color: #60a5fa; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+    .hero p { max-width: 600px; margin: 0 auto 30px; color: #94a3b8; font-size: 1.05rem; }
+
+    /* Filter & Car Fleet Section */
+    .fleet-section { max-width: 1200px; margin: -50px auto 80px; padding: 0 20px; position: relative; z-index: 10; }
+    .search-box { background: #fff; padding: 24px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .filter-group label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-gray); margin-bottom: 6px; text-transform: uppercase; }
+    .filter-group select, .filter-group input { width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-family: inherit; font-weight: 600; outline: none; }
+    
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--dark); }
+    .section-title p { color: var(--text-gray); }
+
+    .car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .car-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.3s, box-shadow 0.3s; }
+    .car-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+    .car-img { width: 100%; height: 200px; object-fit: cover; background: #cbd5e1; }
+    .car-body { padding: 24px; }
+    .car-category { font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
+    .car-title { font-size: 1.3rem; font-weight: 700; margin: 4px 0 12px; color: var(--dark); }
+    .car-specs { display: flex; gap: 16px; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 20px; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; padding: 10px 0; }
+    .car-spec-item { display: flex; align-items: center; gap: 6px; }
+    .car-footer { display: flex; justify-content: space-between; align-items: center; }
+    .car-price { font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--dark); }
+    .car-price span { font-size: 0.8rem; font-weight: 500; color: var(--text-gray); }
+    .btn-book { background: var(--primary); color: #fff; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: 0.2s; }
+    .btn-book:hover { background: var(--primary-dark); }
+
+    /* Features Section */
+    .features { background: #fff; padding: 80px 5%; border-top: 1px solid #e2e8f0; }
+    .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .feature-card { text-align: center; padding: 30px 20px; border-radius: 16px; background: var(--light-bg); border: 1px solid #f1f5f9; }
+    .feature-icon { font-size: 2.5rem; margin-bottom: 16px; display: inline-block; }
+    .feature-card h3 { font-weight: 700; margin-bottom: 10px; }
+    .feature-card p { font-size: 0.9rem; color: var(--text-gray); }
+
+    /* Footer */
+    footer { background: var(--dark); color: #94a3b8; padding: 50px 5% 30px; text-align: center; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    footer a { color: #fff; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">🚗 Nusa<span>Drive</span></a>
+    <ul class="nav-links">
+      <li><a href="#armada">Armada Mobil</a></li>
+      <li><a href="#keunggulan">Keunggulan</a></li>
+      <li><a href="#syarat">Syarat & Ketentuan</a></li>
+    </ul>
+    <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20mobil" class="btn-contact" target="_blank">Sewa Sekarang</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="hero-badge">✨ Jasa Rental Mobil Terpercaya & Lepas Kunci</span>
+    <h1>Sewa Mobil Murah & Nyaman Untuk Perjalanan Anda</h1>
+    <p>Pilihan armada terlengkap, kondisi prima, bersih, terawat, siap pakai untuk keperluan bisnis, keluarga, atau liburan.</p>
+  </section>
+
+  <!-- Main Content / Fleet -->
+  <section class="fleet-section" id="armada">
+    <!-- Filter Search Box -->
+    <div class="search-box">
+      <div class="filter-group">
+        <label>Tipe Mobil</label>
+        <select id="typeFilter">
+          <option value="all">Semua Tipe</option>
+          <option value="mpv">MPV / Family</option>
+          <option value="suv">SUV / Crossover</option>
+          <option value="sedan">Sedan / Luxury</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Layanan</label>
+        <select>
+          <option>Lepas Kunci</option>
+          <option>Dengan Driver</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Tanggal Sewa</label>
+        <input type="date">
+      </div>
+    </div>
+
+    <!-- Title -->
+    <div class="section-title">
+      <h2>Pilihan Armada Populer</h2>
+      <p>Pilih unit yang sesuai dengan kebutuhan perjalanan Anda</p>
+    </div>
+
+    <!-- Car Grid -->
+    <div class="car-grid">
+      <!-- Car Item 1 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="Toyota Avanza" class="car-img">
+        <div class="car-body">
+          <span class="car-category">MPV / Family</span>
+          <h3 class="car-title">Toyota All New Avanza</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 7 Kursi</div>
+            <div class="car-spec-item">⚙️ Matic / Manual</div>
+            <div class="car-spec-item">⛽ Bensin</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 350.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Toyota%20Avanza" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car Item 2 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Toyota Innova Zenix" class="car-img">
+        <div class="car-body">
+          <span class="car-category">MPV Premium</span>
+          <h3 class="car-title">Toyota Innova Zenix</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 7 Kursi</div>
+            <div class="car-spec-item">⚙️ Automatic</div>
+            <div class="car-spec-item">⛽ Hybrid</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 650.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Toyota%20Innova%20Zenix" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car Item 3 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=600&q=80" alt="Mitsubishi Pajero Sport" class="car-img">
+        <div class="car-body">
+          <span class="car-category">SUV Luxury</span>
+          <h3 class="car-title">Mitsubishi Pajero Sport</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 7 Kursi</div>
+            <div class="car-spec-item">⚙️ Automatic</div>
+            <div class="car-spec-item">⛽ Diesel</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 900.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Pajero%20Sport" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car Item 4 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Honda Brio" class="car-img">
+        <div class="car-body">
+          <span class="car-category">City Car</span>
+          <h3 class="car-title">Honda Brio RS</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 5 Kursi</div>
+            <div class="car-spec-item">⚙️ Matic / Manual</div>
+            <div class="car-spec-item">⛽ Bensin</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 300.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Honda%20Brio" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car Item 5 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" alt="Toyota Alphard" class="car-img">
+        <div class="car-body">
+          <span class="car-category">VIP / Luxury</span>
+          <h3 class="car-title">Toyota Alphard Transformer</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 7 Kursi</div>
+            <div class="car-spec-item">⚙️ Automatic</div>
+            <div class="car-spec-item">⛽ Bensin</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 2.200.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Toyota%20Alphard" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car Item 6 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80" alt="Fortuner VRZ" class="car-img">
+        <div class="car-body">
+          <span class="car-category">SUV Premium</span>
+          <h3 class="car-title">Toyota Fortuner VRZ</h3>
+          <div class="car-specs">
+            <div class="car-spec-item">👥 7 Kursi</div>
+            <div class="car-spec-item">⚙️ Automatic</div>
+            <div class="car-spec-item">⛽ Diesel</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">Rp 850.000 <span>/ hari</span></div>
+            <a href="https://wa.me/6285712225565?text=Halo%20NusaDrive,%20saya%20ingin%20sewa%20Fortuner%20VRZ" class="btn-book" target="_blank">Booking WA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="keunggulan">
+    <div class="section-title">
+      <h2>Mengapa Memilih NusaDrive?</h2>
+      <p>Keuntungan dan kemudahan layanan rental mobil di tempat kami</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Armada Terawat & Bersih</h3>
+        <p>Setiap mobil selalu diservis berkala dan dibersihkan sebelum diserahkan ke pelanggan.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔑</div>
+        <h3>Bisa Lepas Kunci</h3>
+        <p>Nikmati privasi dan kebebasan penuh mengendarai mobil sendiri ke mana pun tujuan Anda.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👨‍✈️</div>
+        <h3>Driver Berpengalaman</h3>
+        <p>Tersedia driver profesional, ramah, dan berpengalaman untuk kenyamanan perjalanan Anda.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Proses Cepat & Mudah</h3>
+        <p>Persyaratan tidak rumit dan verifikasi cepat sehingga mobil siap dipake tanpa ribet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 NusaDrive Rental Mobil. Created by <a href="../index.html">LukmanWeb JasaWeb</a></p>
+  </footer>
+
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[3].Value 
+        

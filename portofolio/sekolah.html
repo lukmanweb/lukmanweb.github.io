@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+﻿ 
+            <!DOCTYPE html>
 <html lang="id">
 <head>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
@@ -289,5 +290,758 @@
   </div>
   <div class="footer-bottom">&copy; 2026 SMA Negeri 1 Harapan Bangsa. Demo oleh <a href="../index.html">LukmanWeb</a></div>
 </footer>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
 </body>
 </html>
+.Groups[1].Value + $mobileCss + "`n    " + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/profile-logo.jpg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMA Negeri 1 Harapan Bangsa — Prestasi, Karakter, dan Inovasi</title>
+  <meta name="description" content="Website resmi SMAN 1 Harapan Bangsa. Informasi akademik, PPDB online, ekstrakulikuler, dan prestasi sekolah terakreditasi A.">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#0f4c81;--blue-dark:#083260;--yellow:#f5a623;--bg:#f0f5fa;--white:#ffffff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);}
+    a{text-decoration:none;color:inherit;}
+
+    /* TOPBAR */
+    .topbar{background:var(--blue-dark);padding:8px 5%;display:flex;justify-content:space-between;font-size:0.78rem;color:rgba(255,255,255,0.65);}
+    .topbar span{display:flex;align-items:center;gap:8px;}
+
+    /* NAV */
+    nav{background:var(--blue);padding:0 5%;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,0.15);}
+    .nav-logo{display:flex;align-items:center;gap:12px;}
+    .logo-icon{width:44px;height:44px;background:var(--yellow);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;color:var(--blue-dark);font-family:'Merriweather',serif;}
+    .logo-text strong{display:block;color:#fff;font-size:0.95rem;font-weight:700;}
+    .logo-text span{font-size:0.7rem;color:rgba(255,255,255,0.6);}
+    .nav-links{display:flex;gap:24px;}
+    .nav-links a{color:rgba(255,255,255,0.8);font-size:0.85rem;font-weight:500;transition:color .2s;}
+    .nav-links a:hover{color:var(--yellow);}
+    .nav-cta{background:var(--yellow);color:var(--blue-dark);font-weight:700;padding:9px 20px;border-radius:8px;font-size:0.85rem;transition:all .2s;}
+    .nav-cta:hover{background:#ffc144;}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:80px 5% 100px;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:rgba(245,166,35,0.08);border-radius:50%;}
+    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto;position:relative;}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.4);color:var(--yellow);font-size:0.78rem;font-weight:700;padding:6px 14px;border-radius:50px;margin-bottom:24px;}
+    .hero h1{font-family:'Merriweather',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;line-height:1.3;margin-bottom:18px;}
+    .hero h1 span{color:var(--yellow);}
+    .hero p{color:rgba(255,255,255,0.7);font-size:0.95rem;line-height:1.8;margin-bottom:32px;}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn-yellow{background:var(--yellow);color:var(--blue-dark);font-weight:700;padding:13px 28px;border-radius:8px;font-size:0.9rem;transition:all .3s;}
+    .btn-yellow:hover{background:#ffc144;transform:translateY(-2px);}
+    .btn-white{border:2px solid rgba(255,255,255,0.3);color:#fff;font-weight:600;padding:13px 28px;border-radius:8px;font-size:0.9rem;transition:all .3s;}
+    .btn-white:hover{border-color:var(--yellow);color:var(--yellow);}
+    .hero-image{border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.35);}
+    .hero-image img{width:100%;height:380px;object-fit:cover;display:block;}
+
+    /* STATS */
+    .stats-row{background:var(--white);padding:40px 5%;border-bottom:1px solid var(--border);}
+    .stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:1px;background:var(--border);}
+    .stat-box{background:var(--white);padding:28px;}
+    .stat-box .num{font-family:'Merriweather',serif;font-size:2rem;font-weight:900;color:var(--blue);margin-bottom:4px;}
+    .stat-box .lbl{font-size:0.8rem;color:var(--muted);}
+
+    /* PPDB */
+    .ppdb{background:linear-gradient(135deg,var(--yellow),#ff8c00);padding:36px 5%;text-align:center;}
+    .ppdb-inner{max-width:800px;margin:0 auto;}
+    .ppdb h2{font-family:'Merriweather',serif;font-size:1.6rem;color:var(--blue-dark);margin-bottom:8px;}
+    .ppdb p{color:rgba(8,50,96,0.8);margin-bottom:20px;font-size:0.9rem;}
+    .ppdb-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-navy{background:var(--blue-dark);color:#fff;font-weight:700;padding:12px 28px;border-radius:8px;font-size:0.88rem;transition:all .2s;}
+    .btn-navy:hover{background:var(--blue);}
+
+    /* PROGRAM */
+    .program{padding:80px 5%;background:var(--bg);}
+    .section-center{text-align:center;margin-bottom:48px;}
+    .sec-tag{display:inline-block;background:rgba(15,76,129,0.1);border:1px solid rgba(15,76,129,0.25);color:var(--blue);font-size:0.75rem;font-weight:700;padding:5px 16px;border-radius:50px;margin-bottom:12px;}
+    .section-center h2{font-family:'Merriweather',serif;font-size:1.9rem;color:var(--text);margin-bottom:10px;}
+    .section-center p{color:var(--muted);max-width:540px;margin:0 auto;}
+    .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .program-card{background:var(--white);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);transition:all .3s;}
+    .program-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(15,76,129,0.15);}
+    .program-img{height:180px;object-fit:cover;width:100%;display:block;}
+    .program-body{padding:24px;}
+    .program-tag{display:inline-block;background:rgba(15,76,129,0.1);color:var(--blue);font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-bottom:10px;}
+    .program-body h3{font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--text);}
+    .program-body p{font-size:0.83rem;color:var(--muted);line-height:1.7;}
+
+    /* EKSKUL */
+    .ekskul{background:var(--white);padding:80px 5%;}
+    .ekskul-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1100px;margin:0 auto;}
+    .ekskul-item{border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;transition:all .3s;}
+    .ekskul-item:hover{border-color:var(--blue);background:rgba(15,76,129,0.04);}
+    .ekskul-icon{font-size:2rem;margin-bottom:10px;}
+    .ekskul-item h4{font-size:0.88rem;font-weight:700;color:var(--text);}
+    .ekskul-item p{font-size:0.75rem;color:var(--muted);margin-top:4px;}
+
+    /* PRESTASI */
+    .prestasi{background:var(--blue);padding:80px 5%;}
+    .prestasi-inner{max-width:1100px;margin:0 auto;}
+    .prestasi h2{font-family:'Merriweather',serif;font-size:1.9rem;color:#fff;text-align:center;margin-bottom:48px;}
+    .prestasi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .prestasi-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:28px;}
+    .medal{font-size:2rem;margin-bottom:12px;}
+    .prestasi-card h3{color:#fff;font-size:0.95rem;font-weight:700;margin-bottom:8px;}
+    .prestasi-card p{color:rgba(255,255,255,0.6);font-size:0.82rem;line-height:1.6;}
+    .year-tag{display:inline-block;background:rgba(245,166,35,0.2);color:var(--yellow);font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-top:10px;}
+
+    /* BERITA */
+    .berita{padding:80px 5%;background:var(--bg);}
+    .berita-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .berita-card{background:var(--white);border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+    .berita-img{height:160px;width:100%;object-fit:cover;display:block;}
+    .berita-body{padding:20px;}
+    .berita-date{font-size:0.72rem;color:var(--muted);margin-bottom:8px;}
+    .berita-body h3{font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.4;}
+    .berita-body p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+    .baca-lagi{display:inline-block;margin-top:12px;color:var(--blue);font-size:0.82rem;font-weight:700;}
+
+    /* FOOTER */
+    footer{background:var(--blue-dark);padding:56px 5% 24px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+    .footer-logo-text{font-family:'Merriweather',serif;color:#fff;font-size:1rem;margin-bottom:12px;}
+    footer p.desc{color:rgba(255,255,255,0.5);font-size:0.82rem;line-height:1.7;}
+    .footer-title{color:var(--yellow);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{color:rgba(255,255,255,0.55);font-size:0.82rem;transition:color .2s;}
+    .footer-links a:hover{color:var(--yellow);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;text-align:center;color:rgba(255,255,255,0.35);font-size:0.78rem;}
+    .footer-bottom a{color:rgba(245,166,35,0.7);}
+
+    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.hero-image{display:none;}.stats-inner{grid-template-columns:1fr 1fr;}.program-grid{grid-template-columns:1fr 1fr;}.prestasi-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.nav-links{display:none;}.ekskul-grid{grid-template-columns:1fr 1fr;}.program-grid{grid-template-columns:1fr;}.berita-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>📍 Jl. Pendidikan No. 1, Kota Harapan, Jawa Barat</span>
+  <span>📞 (022) 4567-8901 &nbsp;|&nbsp; ✉ info@sman1harapanbangsa.sch.id</span>
+</div>
+
+<nav>
+  <div class="nav-logo">
+    <div class="logo-icon">H</div>
+    <div class="logo-text"><strong>SMAN 1 HARAPAN BANGSA</strong><span>Terakreditasi A — NSS: 301020801001</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#program">Program</a>
+    <a href="#ekskul">Ekskul</a>
+    <a href="#prestasi">Prestasi</a>
+    <a href="#berita">Berita</a>
+    <a href="#ppdb">PPDB</a>
+  </div>
+  <a href="https://wa.me/6285712225565?text=Saya%20ingin%20informasi%20PPDB%20SMAN1" target="_blank" class="nav-cta">Daftar PPDB</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🏆 Sekolah Terakreditasi A Nasional</div>
+      <h1>Membentuk Generasi<br><span>Unggul, Berkarakter</span><br>& Berwawasan Global</h1>
+      <p>SMAN 1 Harapan Bangsa hadir sebagai sekolah menengah atas terbaik yang mengintegrasikan kurikulum akademik unggul dengan pengembangan karakter Pancasila dan kesiapan menghadapi era digital.</p>
+      <div class="hero-btns">
+        <a href="#ppdb" class="btn-yellow">📋 Daftar Sekarang</a>
+        <a href="#program" class="btn-white">Lihat Program</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=80" alt="Sekolah">
+    </div>
+  </div>
+</section>
+
+<div class="stats-row">
+  <div class="stats-inner">
+    <div class="stat-box"><div class="num">2.400+</div><div class="lbl">Siswa Aktif</div></div>
+    <div class="stat-box"><div class="num">120+</div><div class="lbl">Guru Berpengalaman</div></div>
+    <div class="stat-box"><div class="num">98%</div><div class="lbl">Tingkat Kelulusan</div></div>
+    <div class="stat-box"><div class="num">340+</div><div class="lbl">Prestasi Nasional</div></div>
+  </div>
+</div>
+
+<div class="ppdb" id="ppdb">
+  <div class="ppdb-inner">
+    <h2>📣 PPDB 2026/2027 Sudah Dibuka!</h2>
+    <p>Pendaftaran Peserta Didik Baru (PPDB) Tahun Pelajaran 2026/2027 jalur Zonasi, Afirmasi, Prestasi, dan Perpindahan. Daftar sekarang sebelum kuota habis!</p>
+    <div class="ppdb-actions">
+      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20mendaftar%20PPDB%20SMAN1%20Harapan%20Bangsa" target="_blank" class="btn-navy">Daftar Online Sekarang</a>
+      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20informasi%20PPDB" target="_blank" class="btn-navy" style="background:rgba(8,50,96,0.3);">Info Lebih Lanjut</a>
+    </div>
+  </div>
+</div>
+
+<section class="program" id="program">
+  <div class="section-center">
+    <div class="sec-tag">Program Unggulan</div>
+    <h2>Jurusan & Program Studi</h2>
+    <p>Kami menyediakan tiga jurusan utama dengan program pembelajaran yang komprehensif dan berbasis proyek.</p>
+  </div>
+  <div class="program-grid">
+    <div class="program-card">
+      <img src="https://images.unsplash.com/photo-1532094349884-543559b8f9b3?w=500&q=80" alt="MIPA" class="program-img">
+      <div class="program-body">
+        <div class="program-tag">Sains & Teknologi</div>
+        <h3>Jurusan MIPA</h3>
+        <p>Program Matematika dan Ilmu Pengetahuan Alam dengan laboratorium modern, olimpiade sains, dan persiapan masuk PTN favorit.</p>
+      </div>
+    </div>
+    <div class="program-card">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&q=80" alt="IPS" class="program-img">
+      <div class="program-body">
+        <div class="program-tag">Sosial & Humaniora</div>
+        <h3>Jurusan IPS</h3>
+        <p>Program Ilmu Pengetahuan Sosial dengan simulasi bisnis, debat ekonomi, dan pembekalan karir di bidang hukum, ekonomi, dan komunikasi.</p>
+      </div>
+    </div>
+    <div class="program-card">
+      <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=500&q=80" alt="Program Akselerasi" class="program-img">
+      <div class="program-body">
+        <div class="program-tag">Program Khusus</div>
+        <h3>Kelas Akselerasi & Digital</h3>
+        <p>Program percepatan dengan kurikulum Cambridge dan pelatihan coding, AI, dan digital literacy untuk siswa berprestasi tinggi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ekskul" id="ekskul">
+  <div class="section-center">
+    <div class="sec-tag">Pengembangan Diri</div>
+    <h2>Ekstrakurikuler</h2>
+    <p>32 kegiatan ekstrakurikuler pilihan untuk mengembangkan bakat dan minat setiap siswa.</p>
+  </div>
+  <div class="ekskul-grid">
+    <div class="ekskul-item"><div class="ekskul-icon">🏆</div><h4>Olimpiade Sains</h4><p>Matematika, Fisika, Kimia, Biologi</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">🎭</div><h4>Teater & Seni</h4><p>Drama, tari, musik, melukis</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">⚽</div><h4>Olahraga</h4><p>Sepak bola, basket, bulu tangkis</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">💻</div><h4>Coding Club</h4><p>Web, Android, AI & Robotika</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">📰</div><h4>Jurnalistik</h4><p>Majalah sekolah & konten digital</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">🎤</div><h4>Debat Bahasa</h4><p>Bahasa Indonesia & Inggris</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">🔬</div><h4>Karya Ilmiah</h4><p>Riset & inovasi siswa (KIR)</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">🏕️</div><h4>Pramuka & PMR</h4><p>Kepanduan & kepalangmerahan</p></div>
+  </div>
+</section>
+
+<section class="prestasi" id="prestasi">
+  <div class="prestasi-inner">
+    <h2>🏅 Prestasi Kebanggaan</h2>
+    <div class="prestasi-grid">
+      <div class="prestasi-card"><div class="medal">🥇</div><h3>Juara 1 Olimpiade Matematika Nasional</h3><p>Siswa kami meraih medali emas di Olimpiade Matematika tingkat Nasional yang diikuti 34 provinsi se-Indonesia.</p><div class="year-tag">2025</div></div>
+      <div class="prestasi-card"><div class="medal">🥈</div><h3>Juara 2 Lomba Debat Bahasa Inggris Nasional</h3><p>Tim debat sekolah meraih posisi runner-up di ajang National English Debate Championship tingkat SMA.</p><div class="year-tag">2025</div></div>
+      <div class="prestasi-card"><div class="medal">🏆</div><h3>Sekolah Ramah Anak Terbaik Nasional</h3><p>Penghargaan dari Kementerian PPPA atas implementasi program sekolah ramah anak dan anti-bullying terbaik.</p><div class="year-tag">2024</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="berita" id="berita">
+  <div class="section-center">
+    <div class="sec-tag">Berita & Kegiatan</div>
+    <h2>Info Terbaru Sekolah</h2>
+  </div>
+  <div class="berita-grid">
+    <div class="berita-card">
+      <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&q=80" alt="Berita" class="berita-img">
+      <div class="berita-body"><div class="berita-date">15 Juli 2026</div><h3>Masa Orientasi Siswa Baru 2026/2027 Resmi Dimulai</h3><p>Sebanyak 720 siswa baru mengikuti MOS dengan tema "Generasi Tangguh, Indonesia Maju" selama tiga hari.</p><a href="#" class="baca-lagi">Baca Selengkapnya →</a></div>
+    </div>
+    <div class="berita-card">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="Berita" class="berita-img">
+      <div class="berita-body"><div class="berita-date">2 Juli 2026</div><h3>100% Lulusan Kelas XII Berhasil Lolos PTN 2026</h3><p>Seluruh 348 lulusan kelas XII berhasil diterima di berbagai universitas negeri terkemuka melalui jalur SNBT dan SNBP.</p><a href="#" class="baca-lagi">Baca Selengkapnya →</a></div>
+    </div>
+    <div class="berita-card">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80" alt="Berita" class="berita-img">
+      <div class="berita-body"><div class="berita-date">20 Juni 2026</div><h3>Laboratorium Komputer & AI Baru Resmi Dibuka</h3><p>Sekolah meresmikan laboratorium komputer terbaru dengan 80 unit PC berteknologi AI yang didukung Kementerian Dikbud.</p><a href="#" class="baca-lagi">Baca Selengkapnya →</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-text">SMA Negeri 1 Harapan Bangsa</div>
+      <p class="desc">Sekolah menengah atas negeri terakreditasi A yang berkomitmen mencetak generasi cerdas, berkarakter, dan siap menghadapi tantangan global.</p>
+    </div>
+    <div>
+      <div class="footer-title">Akademik</div>
+      <div class="footer-links"><a href="#">Kurikulum Merdeka</a><a href="#">Jadwal Pelajaran</a><a href="#">Kalender Akademik</a><a href="#">E-Rapor</a></div>
+    </div>
+    <div>
+      <div class="footer-title">Informasi</div>
+      <div class="footer-links"><a href="#">PPDB Online</a><a href="#">Berita Sekolah</a><a href="#">Prestasi</a><a href="#">Galeri Foto</a></div>
+    </div>
+    <div>
+      <div class="footer-title">Kontak</div>
+      <div class="footer-links"><a href="#">(022) 4567-8901</a><a href="#">info@sman1harapan.sch.id</a><a href="#">Jl. Pendidikan No. 1</a><a href="../index.html">← Kembali ke Portfolio</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 SMA Negeri 1 Harapan Bangsa. Demo oleh <a href="../index.html">LukmanWeb</a></div>
+</footer>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[2].Value + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/profile-logo.jpg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMA Negeri 1 Harapan Bangsa — Prestasi, Karakter, dan Inovasi</title>
+  <meta name="description" content="Website resmi SMAN 1 Harapan Bangsa. Informasi akademik, PPDB online, ekstrakulikuler, dan prestasi sekolah terakreditasi A.">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#0f4c81;--blue-dark:#083260;--yellow:#f5a623;--bg:#f0f5fa;--white:#ffffff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);}
+    a{text-decoration:none;color:inherit;}
+
+    /* TOPBAR */
+    .topbar{background:var(--blue-dark);padding:8px 5%;display:flex;justify-content:space-between;font-size:0.78rem;color:rgba(255,255,255,0.65);}
+    .topbar span{display:flex;align-items:center;gap:8px;}
+
+    /* NAV */
+    nav{background:var(--blue);padding:0 5%;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,0.15);}
+    .nav-logo{display:flex;align-items:center;gap:12px;}
+    .logo-icon{width:44px;height:44px;background:var(--yellow);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;color:var(--blue-dark);font-family:'Merriweather',serif;}
+    .logo-text strong{display:block;color:#fff;font-size:0.95rem;font-weight:700;}
+    .logo-text span{font-size:0.7rem;color:rgba(255,255,255,0.6);}
+    .nav-links{display:flex;gap:24px;}
+    .nav-links a{color:rgba(255,255,255,0.8);font-size:0.85rem;font-weight:500;transition:color .2s;}
+    .nav-links a:hover{color:var(--yellow);}
+    .nav-cta{background:var(--yellow);color:var(--blue-dark);font-weight:700;padding:9px 20px;border-radius:8px;font-size:0.85rem;transition:all .2s;}
+    .nav-cta:hover{background:#ffc144;}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:80px 5% 100px;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:rgba(245,166,35,0.08);border-radius:50%;}
+    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto;position:relative;}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.4);color:var(--yellow);font-size:0.78rem;font-weight:700;padding:6px 14px;border-radius:50px;margin-bottom:24px;}
+    .hero h1{font-family:'Merriweather',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;line-height:1.3;margin-bottom:18px;}
+    .hero h1 span{color:var(--yellow);}
+    .hero p{color:rgba(255,255,255,0.7);font-size:0.95rem;line-height:1.8;margin-bottom:32px;}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn-yellow{background:var(--yellow);color:var(--blue-dark);font-weight:700;padding:13px 28px;border-radius:8px;font-size:0.9rem;transition:all .3s;}
+    .btn-yellow:hover{background:#ffc144;transform:translateY(-2px);}
+    .btn-white{border:2px solid rgba(255,255,255,0.3);color:#fff;font-weight:600;padding:13px 28px;border-radius:8px;font-size:0.9rem;transition:all .3s;}
+    .btn-white:hover{border-color:var(--yellow);color:var(--yellow);}
+    .hero-image{border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.35);}
+    .hero-image img{width:100%;height:380px;object-fit:cover;display:block;}
+
+    /* STATS */
+    .stats-row{background:var(--white);padding:40px 5%;border-bottom:1px solid var(--border);}
+    .stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:1px;background:var(--border);}
+    .stat-box{background:var(--white);padding:28px;}
+    .stat-box .num{font-family:'Merriweather',serif;font-size:2rem;font-weight:900;color:var(--blue);margin-bottom:4px;}
+    .stat-box .lbl{font-size:0.8rem;color:var(--muted);}
+
+    /* PPDB */
+    .ppdb{background:linear-gradient(135deg,var(--yellow),#ff8c00);padding:36px 5%;text-align:center;}
+    .ppdb-inner{max-width:800px;margin:0 auto;}
+    .ppdb h2{font-family:'Merriweather',serif;font-size:1.6rem;color:var(--blue-dark);margin-bottom:8px;}
+    .ppdb p{color:rgba(8,50,96,0.8);margin-bottom:20px;font-size:0.9rem;}
+    .ppdb-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-navy{background:var(--blue-dark);color:#fff;font-weight:700;padding:12px 28px;border-radius:8px;font-size:0.88rem;transition:all .2s;}
+    .btn-navy:hover{background:var(--blue);}
+
+    /* PROGRAM */
+    .program{padding:80px 5%;background:var(--bg);}
+    .section-center{text-align:center;margin-bottom:48px;}
+    .sec-tag{display:inline-block;background:rgba(15,76,129,0.1);border:1px solid rgba(15,76,129,0.25);color:var(--blue);font-size:0.75rem;font-weight:700;padding:5px 16px;border-radius:50px;margin-bottom:12px;}
+    .section-center h2{font-family:'Merriweather',serif;font-size:1.9rem;color:var(--text);margin-bottom:10px;}
+    .section-center p{color:var(--muted);max-width:540px;margin:0 auto;}
+    .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .program-card{background:var(--white);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);transition:all .3s;}
+    .program-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(15,76,129,0.15);}
+    .program-img{height:180px;object-fit:cover;width:100%;display:block;}
+    .program-body{padding:24px;}
+    .program-tag{display:inline-block;background:rgba(15,76,129,0.1);color:var(--blue);font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-bottom:10px;}
+    .program-body h3{font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--text);}
+    .program-body p{font-size:0.83rem;color:var(--muted);line-height:1.7;}
+
+    /* EKSKUL */
+    .ekskul{background:var(--white);padding:80px 5%;}
+    .ekskul-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1100px;margin:0 auto;}
+    .ekskul-item{border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;transition:all .3s;}
+    .ekskul-item:hover{border-color:var(--blue);background:rgba(15,76,129,0.04);}
+    .ekskul-icon{font-size:2rem;margin-bottom:10px;}
+    .ekskul-item h4{font-size:0.88rem;font-weight:700;color:var(--text);}
+    .ekskul-item p{font-size:0.75rem;color:var(--muted);margin-top:4px;}
+
+    /* PRESTASI */
+    .prestasi{background:var(--blue);padding:80px 5%;}
+    .prestasi-inner{max-width:1100px;margin:0 auto;}
+    .prestasi h2{font-family:'Merriweather',serif;font-size:1.9rem;color:#fff;text-align:center;margin-bottom:48px;}
+    .prestasi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .prestasi-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:28px;}
+    .medal{font-size:2rem;margin-bottom:12px;}
+    .prestasi-card h3{color:#fff;font-size:0.95rem;font-weight:700;margin-bottom:8px;}
+    .prestasi-card p{color:rgba(255,255,255,0.6);font-size:0.82rem;line-height:1.6;}
+    .year-tag{display:inline-block;background:rgba(245,166,35,0.2);color:var(--yellow);font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-top:10px;}
+
+    /* BERITA */
+    .berita{padding:80px 5%;background:var(--bg);}
+    .berita-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .berita-card{background:var(--white);border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+    .berita-img{height:160px;width:100%;object-fit:cover;display:block;}
+    .berita-body{padding:20px;}
+    .berita-date{font-size:0.72rem;color:var(--muted);margin-bottom:8px;}
+    .berita-body h3{font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.4;}
+    .berita-body p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+    .baca-lagi{display:inline-block;margin-top:12px;color:var(--blue);font-size:0.82rem;font-weight:700;}
+
+    /* FOOTER */
+    footer{background:var(--blue-dark);padding:56px 5% 24px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+    .footer-logo-text{font-family:'Merriweather',serif;color:#fff;font-size:1rem;margin-bottom:12px;}
+    footer p.desc{color:rgba(255,255,255,0.5);font-size:0.82rem;line-height:1.7;}
+    .footer-title{color:var(--yellow);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{color:rgba(255,255,255,0.55);font-size:0.82rem;transition:color .2s;}
+    .footer-links a:hover{color:var(--yellow);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;text-align:center;color:rgba(255,255,255,0.35);font-size:0.78rem;}
+    .footer-bottom a{color:rgba(245,166,35,0.7);}
+
+    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.hero-image{display:none;}.stats-inner{grid-template-columns:1fr 1fr;}.program-grid{grid-template-columns:1fr 1fr;}.prestasi-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.nav-links{display:none;}.ekskul-grid{grid-template-columns:1fr 1fr;}.program-grid{grid-template-columns:1fr;}.berita-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>📍 Jl. Pendidikan No. 1, Kota Harapan, Jawa Barat</span>
+  <span>📞 (022) 4567-8901 &nbsp;|&nbsp; ✉ info@sman1harapanbangsa.sch.id</span>
+</div>
+
+<nav>
+  <div class="nav-logo">
+    <div class="logo-icon">H</div>
+    <div class="logo-text"><strong>SMAN 1 HARAPAN BANGSA</strong><span>Terakreditasi A — NSS: 301020801001</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#program">Program</a>
+    <a href="#ekskul">Ekskul</a>
+    <a href="#prestasi">Prestasi</a>
+    <a href="#berita">Berita</a>
+    <a href="#ppdb">PPDB</a>
+  </div>
+  <a href="https://wa.me/6285712225565?text=Saya%20ingin%20informasi%20PPDB%20SMAN1" target="_blank" class="nav-cta">Daftar PPDB</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🏆 Sekolah Terakreditasi A Nasional</div>
+      <h1>Membentuk Generasi<br><span>Unggul, Berkarakter</span><br>& Berwawasan Global</h1>
+      <p>SMAN 1 Harapan Bangsa hadir sebagai sekolah menengah atas terbaik yang mengintegrasikan kurikulum akademik unggul dengan pengembangan karakter Pancasila dan kesiapan menghadapi era digital.</p>
+      <div class="hero-btns">
+        <a href="#ppdb" class="btn-yellow">📋 Daftar Sekarang</a>
+        <a href="#program" class="btn-white">Lihat Program</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=80" alt="Sekolah">
+    </div>
+  </div>
+</section>
+
+<div class="stats-row">
+  <div class="stats-inner">
+    <div class="stat-box"><div class="num">2.400+</div><div class="lbl">Siswa Aktif</div></div>
+    <div class="stat-box"><div class="num">120+</div><div class="lbl">Guru Berpengalaman</div></div>
+    <div class="stat-box"><div class="num">98%</div><div class="lbl">Tingkat Kelulusan</div></div>
+    <div class="stat-box"><div class="num">340+</div><div class="lbl">Prestasi Nasional</div></div>
+  </div>
+</div>
+
+<div class="ppdb" id="ppdb">
+  <div class="ppdb-inner">
+    <h2>📣 PPDB 2026/2027 Sudah Dibuka!</h2>
+    <p>Pendaftaran Peserta Didik Baru (PPDB) Tahun Pelajaran 2026/2027 jalur Zonasi, Afirmasi, Prestasi, dan Perpindahan. Daftar sekarang sebelum kuota habis!</p>
+    <div class="ppdb-actions">
+      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20mendaftar%20PPDB%20SMAN1%20Harapan%20Bangsa" target="_blank" class="btn-navy">Daftar Online Sekarang</a>
+      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20informasi%20PPDB" target="_blank" class="btn-navy" style="background:rgba(8,50,96,0.3);">Info Lebih Lanjut</a>
+    </div>
+  </div>
+</div>
+
+<section class="program" id="program">
+  <div class="section-center">
+    <div class="sec-tag">Program Unggulan</div>
+    <h2>Jurusan & Program Studi</h2>
+    <p>Kami menyediakan tiga jurusan utama dengan program pembelajaran yang komprehensif dan berbasis proyek.</p>
+  </div>
+  <div class="program-grid">
+    <div class="program-card">
+      <img src="https://images.unsplash.com/photo-1532094349884-543559b8f9b3?w=500&q=80" alt="MIPA" class="program-img">
+      <div class="program-body">
+        <div class="program-tag">Sains & Teknologi</div>
+        <h3>Jurusan MIPA</h3>
+        <p>Program Matematika dan Ilmu Pengetahuan Alam dengan laboratorium modern, olimpiade sains, dan persiapan masuk PTN favorit.</p>
+      </div>
+    </div>
+    <div class="program-card">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&q=80" alt="IPS" class="program-img">
+      <div class="program-body">
+        <div class="program-tag">Sosial & Humaniora</div>
+        <h3>Jurusan IPS</h3>
+        <p>Program Ilmu Pengetahuan Sosial dengan simulasi bisnis, debat ekonomi, dan pembekalan karir di bidang hukum, ekonomi, dan komunikasi.</p>
+      </div>
+    </div>
+    <div class="program-card">
+      <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=500&q=80" alt="Program Akselerasi" class="program-img">
+      <div class="program-body">
+        <div class="program-tag">Program Khusus</div>
+        <h3>Kelas Akselerasi & Digital</h3>
+        <p>Program percepatan dengan kurikulum Cambridge dan pelatihan coding, AI, dan digital literacy untuk siswa berprestasi tinggi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ekskul" id="ekskul">
+  <div class="section-center">
+    <div class="sec-tag">Pengembangan Diri</div>
+    <h2>Ekstrakurikuler</h2>
+    <p>32 kegiatan ekstrakurikuler pilihan untuk mengembangkan bakat dan minat setiap siswa.</p>
+  </div>
+  <div class="ekskul-grid">
+    <div class="ekskul-item"><div class="ekskul-icon">🏆</div><h4>Olimpiade Sains</h4><p>Matematika, Fisika, Kimia, Biologi</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">🎭</div><h4>Teater & Seni</h4><p>Drama, tari, musik, melukis</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">⚽</div><h4>Olahraga</h4><p>Sepak bola, basket, bulu tangkis</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">💻</div><h4>Coding Club</h4><p>Web, Android, AI & Robotika</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">📰</div><h4>Jurnalistik</h4><p>Majalah sekolah & konten digital</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">🎤</div><h4>Debat Bahasa</h4><p>Bahasa Indonesia & Inggris</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">🔬</div><h4>Karya Ilmiah</h4><p>Riset & inovasi siswa (KIR)</p></div>
+    <div class="ekskul-item"><div class="ekskul-icon">🏕️</div><h4>Pramuka & PMR</h4><p>Kepanduan & kepalangmerahan</p></div>
+  </div>
+</section>
+
+<section class="prestasi" id="prestasi">
+  <div class="prestasi-inner">
+    <h2>🏅 Prestasi Kebanggaan</h2>
+    <div class="prestasi-grid">
+      <div class="prestasi-card"><div class="medal">🥇</div><h3>Juara 1 Olimpiade Matematika Nasional</h3><p>Siswa kami meraih medali emas di Olimpiade Matematika tingkat Nasional yang diikuti 34 provinsi se-Indonesia.</p><div class="year-tag">2025</div></div>
+      <div class="prestasi-card"><div class="medal">🥈</div><h3>Juara 2 Lomba Debat Bahasa Inggris Nasional</h3><p>Tim debat sekolah meraih posisi runner-up di ajang National English Debate Championship tingkat SMA.</p><div class="year-tag">2025</div></div>
+      <div class="prestasi-card"><div class="medal">🏆</div><h3>Sekolah Ramah Anak Terbaik Nasional</h3><p>Penghargaan dari Kementerian PPPA atas implementasi program sekolah ramah anak dan anti-bullying terbaik.</p><div class="year-tag">2024</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="berita" id="berita">
+  <div class="section-center">
+    <div class="sec-tag">Berita & Kegiatan</div>
+    <h2>Info Terbaru Sekolah</h2>
+  </div>
+  <div class="berita-grid">
+    <div class="berita-card">
+      <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&q=80" alt="Berita" class="berita-img">
+      <div class="berita-body"><div class="berita-date">15 Juli 2026</div><h3>Masa Orientasi Siswa Baru 2026/2027 Resmi Dimulai</h3><p>Sebanyak 720 siswa baru mengikuti MOS dengan tema "Generasi Tangguh, Indonesia Maju" selama tiga hari.</p><a href="#" class="baca-lagi">Baca Selengkapnya →</a></div>
+    </div>
+    <div class="berita-card">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="Berita" class="berita-img">
+      <div class="berita-body"><div class="berita-date">2 Juli 2026</div><h3>100% Lulusan Kelas XII Berhasil Lolos PTN 2026</h3><p>Seluruh 348 lulusan kelas XII berhasil diterima di berbagai universitas negeri terkemuka melalui jalur SNBT dan SNBP.</p><a href="#" class="baca-lagi">Baca Selengkapnya →</a></div>
+    </div>
+    <div class="berita-card">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80" alt="Berita" class="berita-img">
+      <div class="berita-body"><div class="berita-date">20 Juni 2026</div><h3>Laboratorium Komputer & AI Baru Resmi Dibuka</h3><p>Sekolah meresmikan laboratorium komputer terbaru dengan 80 unit PC berteknologi AI yang didukung Kementerian Dikbud.</p><a href="#" class="baca-lagi">Baca Selengkapnya →</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-text">SMA Negeri 1 Harapan Bangsa</div>
+      <p class="desc">Sekolah menengah atas negeri terakreditasi A yang berkomitmen mencetak generasi cerdas, berkarakter, dan siap menghadapi tantangan global.</p>
+    </div>
+    <div>
+      <div class="footer-title">Akademik</div>
+      <div class="footer-links"><a href="#">Kurikulum Merdeka</a><a href="#">Jadwal Pelajaran</a><a href="#">Kalender Akademik</a><a href="#">E-Rapor</a></div>
+    </div>
+    <div>
+      <div class="footer-title">Informasi</div>
+      <div class="footer-links"><a href="#">PPDB Online</a><a href="#">Berita Sekolah</a><a href="#">Prestasi</a><a href="#">Galeri Foto</a></div>
+    </div>
+    <div>
+      <div class="footer-title">Kontak</div>
+      <div class="footer-links"><a href="#">(022) 4567-8901</a><a href="#">info@sman1harapan.sch.id</a><a href="#">Jl. Pendidikan No. 1</a><a href="../index.html">← Kembali ke Portfolio</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 SMA Negeri 1 Harapan Bangsa. Demo oleh <a href="../index.html">LukmanWeb</a></div>
+</footer>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[3].Value 
+        

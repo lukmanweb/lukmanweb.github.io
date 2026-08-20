@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+﻿ 
+            <!DOCTYPE html>
 <html lang="id">
 <head>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
@@ -251,5 +252,679 @@
   </div>
   <div class="footer-bottom">&copy; 2026 Klinik Sehat Prima. Demo oleh <a href="../index.html">LukmanWeb</a></div>
 </footer>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
 </body>
-</html>
+</html>.Groups[1].Value + $mobileCss + "`n    " + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/profile-logo.jpg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klinik Sehat Prima — Kesehatan Keluarga, Prioritas Kami</title>
+  <meta name="description" content="Klinik kesehatan modern dengan dokter spesialis, booking online, laboratorium, apotek, dan layanan homecare 24 jam.">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--teal:#0d9488;--teal-light:#14b8a6;--teal-dim:rgba(13,148,136,0.1);--blue:#0ea5e9;--bg:#f0fafa;--white:#fff;--text:#134e4a;--muted:#6b7280;--border:#d1fae5;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);}
+    a{text-decoration:none;color:inherit;}
+
+    /* TOPBAR */
+    .topbar{background:var(--teal);padding:9px 5%;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.85);}
+    .topbar a{color:#fff;font-weight:600;}
+    .emergency{background:#ef4444;color:#fff;padding:4px 12px;border-radius:50px;font-weight:700;font-size:0.75rem;}
+
+    /* NAV */
+    nav{background:#fff;border-bottom:1px solid var(--border);padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,0.06);}
+    .nav-logo{display:flex;align-items:center;gap:10px;}
+    .logo-cross{width:38px;height:38px;background:var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;font-weight:900;}
+    .logo-text strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:800;color:var(--text);}
+    .logo-text span{font-size:0.68rem;color:var(--muted);}
+    .nav-links{display:flex;gap:24px;}
+    .nav-links a{color:var(--muted);font-size:0.86rem;font-weight:500;transition:color .2s;}
+    .nav-links a:hover{color:var(--teal);}
+    .nav-cta{background:var(--teal);color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;font-size:0.85rem;transition:all .2s;}
+    .nav-cta:hover{background:var(--teal-light);}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#042f2e,#0d9488);padding:80px 5% 90px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;overflow:hidden;position:relative;}
+    .hero::after{content:'➕';position:absolute;right:3%;top:20px;font-size:12rem;opacity:0.04;}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:0.78rem;font-weight:700;padding:6px 14px;border-radius:50px;margin-bottom:20px;}
+    .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3.2rem);color:#fff;line-height:1.2;margin-bottom:16px;}
+    .hero h1 span{color:#5eead4;}
+    .hero p{color:rgba(255,255,255,0.75);font-size:0.95rem;line-height:1.8;margin-bottom:32px;max-width:480px;}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+    .btn-white{background:#fff;color:var(--teal);font-weight:700;padding:14px 28px;border-radius:8px;font-size:0.9rem;transition:all .3s;}
+    .btn-white:hover{background:#f0fafa;}
+    .btn-wa{background:#25d366;color:#fff;font-weight:700;padding:14px 28px;border-radius:8px;font-size:0.9rem;transition:all .3s;}
+    .btn-wa:hover{background:#1ebe5d;}
+    .hero-highlights{display:flex;gap:24px;flex-wrap:wrap;}
+    .hl{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:rgba(255,255,255,0.8);}
+    .hl::before{content:'✓';color:#5eead4;font-weight:700;}
+    .hero-card-wrap{position:relative;}
+    .hero-card-img{width:100%;border-radius:20px;height:400px;object-fit:cover;display:block;box-shadow:0 24px 60px rgba(0,0,0,0.3);}
+    .booking-card{position:absolute;bottom:20px;left:20px;right:20px;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-radius:14px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,0.15);}
+    .booking-card h4{font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:12px;}
+    .booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
+    .booking-field select{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:0.8rem;color:var(--text);background:#f9fafb;outline:none;}
+    .booking-btn{display:block;width:100%;background:var(--teal);color:#fff;font-weight:700;padding:11px;border-radius:8px;text-align:center;font-size:0.85rem;border:none;cursor:pointer;transition:all .2s;}
+    .booking-btn:hover{background:var(--teal-light);}
+
+    /* STATS */
+    .stats{background:#fff;border-bottom:1px solid var(--border);}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+    .sbox{background:#fff;padding:32px;text-align:center;}
+    .sbox .num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:800;color:var(--teal);margin-bottom:4px;}
+    .sbox .lbl{font-size:0.8rem;color:var(--muted);}
+
+    /* SPESIALIS */
+    .spesialis{padding:90px 5%;background:var(--bg);}
+    .section-top{text-align:center;margin-bottom:52px;}
+    .sec-tag{display:inline-block;background:var(--teal-dim);border:1px solid rgba(13,148,136,0.3);color:var(--teal);font-size:0.75rem;font-weight:700;padding:5px 16px;border-radius:50px;margin-bottom:12px;}
+    .section-top h2{font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:800;margin-bottom:10px;}
+    .section-top p{color:var(--muted);max-width:520px;margin:0 auto;}
+    .spesialis-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:0 auto;}
+    .spe-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;text-align:center;transition:all .3s;}
+    .spe-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,148,136,0.12);}
+    .spe-img{width:100%;height:160px;object-fit:cover;object-position:top;display:block;}
+    .spe-body{padding:16px;}
+    .spe-badge{display:inline-block;background:var(--teal-dim);color:var(--teal);font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-bottom:8px;}
+    .spe-body h3{font-size:0.92rem;font-weight:700;margin-bottom:4px;color:var(--text);}
+    .spe-body p{font-size:0.75rem;color:var(--muted);margin-bottom:12px;}
+    .spe-jadwal{font-size:0.72rem;color:var(--teal);font-weight:600;background:var(--teal-dim);padding:5px 10px;border-radius:6px;}
+
+    /* LAYANAN */
+    .layanan{background:#fff;padding:90px 5%;border-top:1px solid var(--border);}
+    .lay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .lay-card{border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .3s;}
+    .lay-card:hover{border-color:var(--teal);box-shadow:0 8px 24px rgba(13,148,136,0.1);transform:translateY(-3px);}
+    .lay-icon{width:52px;height:52px;border-radius:12px;background:var(--teal-dim);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;}
+    .lay-card h3{font-size:0.95rem;font-weight:700;margin-bottom:8px;color:var(--text);}
+    .lay-card p{font-size:0.82rem;color:var(--muted);line-height:1.7;}
+
+    /* DOKTER */
+    .dokter{padding:90px 5%;background:var(--bg);}
+    .dok-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .dok-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px;text-align:center;transition:all .3s;}
+    .dok-card:hover{border-color:var(--teal);}
+    .dok-img{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--border);margin:0 auto 14px;}
+    .dok-card h3{font-size:0.92rem;font-weight:700;color:var(--text);margin-bottom:4px;}
+    .dok-card .spesialisasi{font-size:0.75rem;color:var(--teal);font-weight:600;margin-bottom:6px;}
+    .dok-card .pengalaman{font-size:0.72rem;color:var(--muted);}
+    .wa-dok{display:block;margin-top:14px;background:var(--teal-dim);color:var(--teal);font-size:0.78rem;font-weight:700;padding:8px;border-radius:8px;transition:all .2s;}
+    .wa-dok:hover{background:var(--teal);color:#fff;}
+
+    /* TESTI */
+    .testimoni{background:#fff;padding:80px 5%;border-top:1px solid var(--border);}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .testi-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:24px;}
+    .stars{color:#f59e0b;font-size:0.9rem;margin-bottom:12px;}
+    .testi-card p{font-size:0.84rem;color:var(--muted);line-height:1.7;margin-bottom:16px;}
+    .testi-auth{display:flex;align-items:center;gap:10px;}
+    .testi-auth img{width:38px;height:38px;border-radius:50%;object-fit:cover;}
+    .testi-auth strong{display:block;font-size:0.85rem;color:var(--text);}
+    .testi-auth span{font-size:0.72rem;color:var(--muted);}
+
+    /* CTA */
+    .cta{margin:0 5% 90px;background:linear-gradient(135deg,#042f2e,#0d9488);border-radius:24px;padding:72px;text-align:center;}
+    .cta h2{font-family:'Space Grotesk',sans-serif;font-size:2rem;color:#fff;margin-bottom:12px;}
+    .cta p{color:rgba(255,255,255,0.7);max-width:520px;margin:0 auto 36px;line-height:1.8;}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+    /* FOOTER */
+    footer{background:#042f2e;padding:56px 5% 24px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+    .footer-logo{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:12px;}
+    footer p.desc{color:rgba(255,255,255,0.45);font-size:0.82rem;line-height:1.7;}
+    .footer-title{color:#5eead4;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{color:rgba(255,255,255,0.5);font-size:0.82rem;transition:color .2s;}
+    .footer-links a:hover{color:#5eead4;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;text-align:center;color:rgba(255,255,255,0.35);font-size:0.78rem;}
+    .footer-bottom a{color:rgba(94,234,212,0.7);}
+
+    @media(max-width:1024px){.hero{grid-template-columns:1fr;}.spesialis-grid{grid-template-columns:1fr 1fr;}.dok-grid{grid-template-columns:1fr 1fr;}.lay-grid{grid-template-columns:1fr 1fr;}.stats-grid{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:640px){.nav-links{display:none;}.spesialis-grid{grid-template-columns:1fr 1fr;}.lay-grid{grid-template-columns:1fr;}.testi-grid{grid-template-columns:1fr;}.dok-grid{grid-template-columns:1fr 1fr;}.cta{margin:0;border-radius:0;padding:48px 20px;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>🏥 Klinik Sehat Prima — Senin–Minggu: 07.00–21.00 | Darurat: 24 Jam</span>
+  <div style="display:flex;gap:16px;align-items:center;">
+    <span class="emergency">🚨 IGD 24 Jam</span>
+    <a href="tel:+6221555666777">(021) 555-666-777</a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-logo"><div class="logo-cross">➕</div><div class="logo-text"><strong>Klinik Sehat Prima</strong><span>Akreditasi Kemenkes RI</span></div></div>
+  <div class="nav-links">
+    <a href="#spesialis">Spesialis</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#dokter">Dokter</a>
+    <a href="#booking">Booking</a>
+  </div>
+  <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dokter%20di%20Klinik%20Sehat%20Prima" target="_blank" class="nav-cta">📅 Booking Online</a>
+</nav>
+
+<section class="hero" id="booking">
+  <div>
+    <div class="hero-badge">🏅 Klinik Terakreditasi Paripurna Kemenkes RI</div>
+    <h1>Kesehatan <span>Keluarga</span><br>adalah Prioritas Kami</h1>
+    <p>Klinik modern dengan 20+ dokter spesialis, laboratorium lengkap, dan apotek terintegrasi. Booking janji temu online dalam 30 detik.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dokter" target="_blank" class="btn-white">📅 Booking Dokter</a>
+      <a href="https://wa.me/6285712225565?text=Saya%20butuh%20bantuan%20medis%20darurat" target="_blank" class="btn-wa">💬 Chat Dokter</a>
+    </div>
+    <div class="hero-highlights">
+      <div class="hl">20+ Dokter Spesialis</div>
+      <div class="hl">Laboratorium Modern</div>
+      <div class="hl">Apotek 24 Jam</div>
+      <div class="hl">Homecare Tersedia</div>
+    </div>
+  </div>
+  <div class="hero-card-wrap">
+    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=700&q=80" alt="Klinik Sehat Prima" class="hero-card-img">
+    <div class="booking-card">
+      <h4>📅 Booking Janji Temu</h4>
+      <div class="booking-grid">
+        <div class="booking-field"><select><option>Pilih Poli</option><option>Poli Umum</option><option>Poli Jantung</option><option>Poli Anak</option><option>Poli Gigi</option><option>Poli Kandungan</option></select></div>
+        <div class="booking-field"><select><option>Pilih Dokter</option><option>dr. Andi SpJP</option><option>dr. Sari SpA</option><option>dr. Budi SpOG</option></select></div>
+      </div>
+      <button class="booking-btn" onclick="window.open('https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dokter%20di%20Klinik%20Sehat%20Prima','_blank')">💬 Lanjutkan via WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-grid">
+    <div class="sbox"><div class="num">20+</div><div class="lbl">Dokter Spesialis</div></div>
+    <div class="sbox"><div class="num">45.000+</div><div class="lbl">Pasien per Tahun</div></div>
+    <div class="sbox"><div class="num">15+</div><div class="lbl">Tahun Berdiri</div></div>
+    <div class="sbox"><div class="num">4.9 ⭐</div><div class="lbl">Rating Pasien</div></div>
+  </div>
+</div>
+
+<section class="spesialis" id="spesialis">
+  <div class="section-top"><div class="sec-tag">Poli Spesialis</div><h2>Layanan Poli Spesialis</h2><p>Penanganan medis spesialis oleh dokter berpengalaman dengan peralatan diagnostik terkini.</p></div>
+  <div class="spesialis-grid">
+    <div class="spe-card"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&q=80" alt="" class="spe-img"><div class="spe-body"><div class="spe-badge">❤️ Jantung</div><h3>Poli Kardiologi</h3><p>Pemeriksaan jantung lengkap, EKG, echo, dan treadmill test.</p><div class="spe-jadwal">Senin–Jumat 09.00–14.00</div></div></div>
+    <div class="spe-card"><img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=400&q=80" alt="" class="spe-img"><div class="spe-body"><div class="spe-badge">👶 Anak</div><h3>Poli Pediatri</h3><p>Imunisasi, tumbuh kembang, dan penanganan penyakit anak.</p><div class="spe-jadwal">Setiap Hari 08.00–20.00</div></div></div>
+    <div class="spe-card"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80" alt="" class="spe-img"><div class="spe-body"><div class="spe-badge">🦷 Gigi</div><h3>Poli Gigi & Mulut</h3><p>Perawatan gigi komprehensif: tambal, cabut, bleaching, behel.</p><div class="spe-jadwal">Senin–Sabtu 09.00–17.00</div></div></div>
+    <div class="spe-card"><img src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&q=80" alt="" class="spe-img"><div class="spe-body"><div class="spe-badge">🧠 Saraf</div><h3>Poli Neurologi</h3><p>Penanganan stroke, epilepsi, migrain kronis, dan gangguan saraf.</p><div class="spe-jadwal">Selasa & Kamis 10.00–15.00</div></div></div>
+  </div>
+</section>
+
+<section class="layanan" id="layanan">
+  <div class="section-top"><div class="sec-tag">Fasilitas</div><h2>Layanan & Fasilitas Unggulan</h2></div>
+  <div class="lay-grid">
+    <div class="lay-card"><div class="lay-icon">🔬</div><h3>Laboratorium Klinik</h3><p>Pemeriksaan darah lengkap, urin, kultur bakteri, hormon, dan lebih dari 200 jenis tes lab dengan hasil dalam 3 jam.</p></div>
+    <div class="lay-card"><div class="lay-icon">📡</div><h3>Radiologi & Imaging</h3><p>Rontgen digital, USG 4D, CT-Scan, dan MRI dengan teknologi terkini dan refertaling spesialis 24 jam.</p></div>
+    <div class="lay-card"><div class="lay-icon">💊</div><h3>Apotek 24 Jam</h3><p>Apotek terintegrasi dengan sistem e-resep. Obat generik dan branded tersedia lengkap dengan konseling farmasis.</p></div>
+    <div class="lay-card"><div class="lay-icon">🏠</div><h3>Layanan Homecare</h3><p>Perawatan oleh perawat profesional di rumah — suntik, infus, rawat luka, fisioterapi, dan pemantauan pasca operasi.</p></div>
+    <div class="lay-card"><div class="lay-icon">📱</div><h3>Telemedicine / Chat Dokter</h3><p>Konsultasi dengan dokter umum dan spesialis via video call dan chat. Tersedia 24 jam, termasuk malam dan hari libur.</p></div>
+    <div class="lay-card"><div class="lay-icon">🩺</div><h3>Medical Check-Up</h3><p>Paket MCU komprehensif untuk individu, CPNS, pranikah, dan karyawan perusahaan dengan laporan lengkap.</p></div>
+  </div>
+</section>
+
+<section class="dokter" id="dokter">
+  <div class="section-top"><div class="sec-tag">Tim Dokter</div><h2>Dokter Spesialis Kami</h2></div>
+  <div class="dok-grid">
+    <div class="dok-card"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&q=80" alt="" class="dok-img"><h3>dr. Ahmad Fauzi, SpJP</h3><div class="spesialisasi">Spesialis Jantung & Pembuluh Darah</div><div class="pengalaman">18 tahun pengalaman</div><a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dengan%20dr.%20Ahmad%20Fauzi" target="_blank" class="wa-dok">Booking Sekarang</a></div>
+    <div class="dok-card"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&q=80" alt="" class="dok-img"><h3>dr. Sari Dewi, SpA</h3><div class="spesialisasi">Spesialis Anak & Neonatologi</div><div class="pengalaman">12 tahun pengalaman</div><a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dengan%20dr.%20Sari%20Dewi" target="_blank" class="wa-dok">Booking Sekarang</a></div>
+    <div class="dok-card"><img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=200&q=80" alt="" class="dok-img"><h3>dr. Budi Santoso, SpOG</h3><div class="spesialisasi">Spesialis Kandungan & Kebidanan</div><div class="pengalaman">20 tahun pengalaman</div><a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dengan%20dr.%20Budi%20Santoso" target="_blank" class="wa-dok">Booking Sekarang</a></div>
+    <div class="dok-card"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200&q=80" alt="" class="dok-img"><h3>dr. Rini Kurnia, SpS</h3><div class="spesialisasi">Spesialis Saraf & Neurologi</div><div class="pengalaman">10 tahun pengalaman</div><a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dengan%20dr.%20Rini%20Kurnia" target="_blank" class="wa-dok">Booking Sekarang</a></div>
+  </div>
+</section>
+
+<section class="testimoni">
+  <div class="section-top"><div class="sec-tag">Ulasan Pasien</div><h2>Apa Kata Pasien Kami</h2></div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"Booking via WhatsApp sangat mudah. Dokter spesialis jantungnya sangat kompeten dan sabar menjelaskan kondisi saya. Fasilitas laboratoriumnya modern."</p><div class="testi-auth"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt=""><div><strong>Ibu Hartati</strong><span>Pasien Poli Jantung</span></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"Layanan homecare-nya sangat membantu ketika anak saya demam tinggi malam hari. Perawat datang dalam 30 menit dan sangat profesional. Terima kasih."</p><div class="testi-auth"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt=""><div><strong>Pak Denny</strong><span>Orang Tua Pasien</span></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"MCU lengkap dengan harga sangat terjangkau. Hasilnya jelas dan dokter menjelaskan detail setiap temuan. Saya selalu MCU tahunan di sini."</p><div class="testi-auth"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt=""><div><strong>Anita S.</strong><span>Pasien MCU Tahunan</span></div></div></div>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>Jaga Kesehatan Anda Mulai Sekarang</h2>
+  <p>Booking janji dengan dokter spesialis pilihan Anda secara online. Proses mudah, antrian efisien, dan pelayanan premium.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dokter%20di%20Klinik%20Sehat%20Prima" target="_blank" class="btn-white">📅 Booking Sekarang</a>
+    <a href="https://wa.me/6285712225565?text=Saya%20ingin%20konsultasi%20online%20dengan%20dokter" target="_blank" class="btn-wa">💬 Konsultasi Online</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-logo">Klinik Sehat Prima</div><p class="desc">Klinik kesehatan modern terakreditasi Kemenkes RI. 20+ dokter spesialis, laboratorium, radiologi, apotek 24 jam, dan layanan homecare.</p></div>
+    <div><div class="footer-title">Layanan</div><div class="footer-links"><a href="#">Poli Spesialis</a><a href="#">Laboratorium</a><a href="#">Radiologi</a><a href="#">Apotek 24 Jam</a><a href="#">Homecare</a></div></div>
+    <div><div class="footer-title">Informasi</div><div class="footer-links"><a href="#">Profil Dokter</a><a href="#">Jadwal Praktek</a><a href="#">MCU Perusahaan</a><a href="#">Info BPJS</a></div></div>
+    <div><div class="footer-title">Kontak</div><div class="footer-links"><a href="#">(021) 555-666-777</a><a href="#">Darurat: (021) 555-888</a><a href="#">Jl. Kesehatan No. 1</a><a href="../index.html">← Portfolio</a></div></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Klinik Sehat Prima. Demo oleh <a href="../index.html">LukmanWeb</a></div>
+</footer>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>.Groups[2].Value + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/profile-logo.jpg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klinik Sehat Prima — Kesehatan Keluarga, Prioritas Kami</title>
+  <meta name="description" content="Klinik kesehatan modern dengan dokter spesialis, booking online, laboratorium, apotek, dan layanan homecare 24 jam.">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--teal:#0d9488;--teal-light:#14b8a6;--teal-dim:rgba(13,148,136,0.1);--blue:#0ea5e9;--bg:#f0fafa;--white:#fff;--text:#134e4a;--muted:#6b7280;--border:#d1fae5;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);}
+    a{text-decoration:none;color:inherit;}
+
+    /* TOPBAR */
+    .topbar{background:var(--teal);padding:9px 5%;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.85);}
+    .topbar a{color:#fff;font-weight:600;}
+    .emergency{background:#ef4444;color:#fff;padding:4px 12px;border-radius:50px;font-weight:700;font-size:0.75rem;}
+
+    /* NAV */
+    nav{background:#fff;border-bottom:1px solid var(--border);padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,0.06);}
+    .nav-logo{display:flex;align-items:center;gap:10px;}
+    .logo-cross{width:38px;height:38px;background:var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;font-weight:900;}
+    .logo-text strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:800;color:var(--text);}
+    .logo-text span{font-size:0.68rem;color:var(--muted);}
+    .nav-links{display:flex;gap:24px;}
+    .nav-links a{color:var(--muted);font-size:0.86rem;font-weight:500;transition:color .2s;}
+    .nav-links a:hover{color:var(--teal);}
+    .nav-cta{background:var(--teal);color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;font-size:0.85rem;transition:all .2s;}
+    .nav-cta:hover{background:var(--teal-light);}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#042f2e,#0d9488);padding:80px 5% 90px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;overflow:hidden;position:relative;}
+    .hero::after{content:'➕';position:absolute;right:3%;top:20px;font-size:12rem;opacity:0.04;}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:0.78rem;font-weight:700;padding:6px 14px;border-radius:50px;margin-bottom:20px;}
+    .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3.2rem);color:#fff;line-height:1.2;margin-bottom:16px;}
+    .hero h1 span{color:#5eead4;}
+    .hero p{color:rgba(255,255,255,0.75);font-size:0.95rem;line-height:1.8;margin-bottom:32px;max-width:480px;}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+    .btn-white{background:#fff;color:var(--teal);font-weight:700;padding:14px 28px;border-radius:8px;font-size:0.9rem;transition:all .3s;}
+    .btn-white:hover{background:#f0fafa;}
+    .btn-wa{background:#25d366;color:#fff;font-weight:700;padding:14px 28px;border-radius:8px;font-size:0.9rem;transition:all .3s;}
+    .btn-wa:hover{background:#1ebe5d;}
+    .hero-highlights{display:flex;gap:24px;flex-wrap:wrap;}
+    .hl{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:rgba(255,255,255,0.8);}
+    .hl::before{content:'✓';color:#5eead4;font-weight:700;}
+    .hero-card-wrap{position:relative;}
+    .hero-card-img{width:100%;border-radius:20px;height:400px;object-fit:cover;display:block;box-shadow:0 24px 60px rgba(0,0,0,0.3);}
+    .booking-card{position:absolute;bottom:20px;left:20px;right:20px;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-radius:14px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,0.15);}
+    .booking-card h4{font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:12px;}
+    .booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
+    .booking-field select{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:0.8rem;color:var(--text);background:#f9fafb;outline:none;}
+    .booking-btn{display:block;width:100%;background:var(--teal);color:#fff;font-weight:700;padding:11px;border-radius:8px;text-align:center;font-size:0.85rem;border:none;cursor:pointer;transition:all .2s;}
+    .booking-btn:hover{background:var(--teal-light);}
+
+    /* STATS */
+    .stats{background:#fff;border-bottom:1px solid var(--border);}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+    .sbox{background:#fff;padding:32px;text-align:center;}
+    .sbox .num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:800;color:var(--teal);margin-bottom:4px;}
+    .sbox .lbl{font-size:0.8rem;color:var(--muted);}
+
+    /* SPESIALIS */
+    .spesialis{padding:90px 5%;background:var(--bg);}
+    .section-top{text-align:center;margin-bottom:52px;}
+    .sec-tag{display:inline-block;background:var(--teal-dim);border:1px solid rgba(13,148,136,0.3);color:var(--teal);font-size:0.75rem;font-weight:700;padding:5px 16px;border-radius:50px;margin-bottom:12px;}
+    .section-top h2{font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:800;margin-bottom:10px;}
+    .section-top p{color:var(--muted);max-width:520px;margin:0 auto;}
+    .spesialis-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:0 auto;}
+    .spe-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;text-align:center;transition:all .3s;}
+    .spe-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,148,136,0.12);}
+    .spe-img{width:100%;height:160px;object-fit:cover;object-position:top;display:block;}
+    .spe-body{padding:16px;}
+    .spe-badge{display:inline-block;background:var(--teal-dim);color:var(--teal);font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-bottom:8px;}
+    .spe-body h3{font-size:0.92rem;font-weight:700;margin-bottom:4px;color:var(--text);}
+    .spe-body p{font-size:0.75rem;color:var(--muted);margin-bottom:12px;}
+    .spe-jadwal{font-size:0.72rem;color:var(--teal);font-weight:600;background:var(--teal-dim);padding:5px 10px;border-radius:6px;}
+
+    /* LAYANAN */
+    .layanan{background:#fff;padding:90px 5%;border-top:1px solid var(--border);}
+    .lay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .lay-card{border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .3s;}
+    .lay-card:hover{border-color:var(--teal);box-shadow:0 8px 24px rgba(13,148,136,0.1);transform:translateY(-3px);}
+    .lay-icon{width:52px;height:52px;border-radius:12px;background:var(--teal-dim);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;}
+    .lay-card h3{font-size:0.95rem;font-weight:700;margin-bottom:8px;color:var(--text);}
+    .lay-card p{font-size:0.82rem;color:var(--muted);line-height:1.7;}
+
+    /* DOKTER */
+    .dokter{padding:90px 5%;background:var(--bg);}
+    .dok-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .dok-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px;text-align:center;transition:all .3s;}
+    .dok-card:hover{border-color:var(--teal);}
+    .dok-img{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--border);margin:0 auto 14px;}
+    .dok-card h3{font-size:0.92rem;font-weight:700;color:var(--text);margin-bottom:4px;}
+    .dok-card .spesialisasi{font-size:0.75rem;color:var(--teal);font-weight:600;margin-bottom:6px;}
+    .dok-card .pengalaman{font-size:0.72rem;color:var(--muted);}
+    .wa-dok{display:block;margin-top:14px;background:var(--teal-dim);color:var(--teal);font-size:0.78rem;font-weight:700;padding:8px;border-radius:8px;transition:all .2s;}
+    .wa-dok:hover{background:var(--teal);color:#fff;}
+
+    /* TESTI */
+    .testimoni{background:#fff;padding:80px 5%;border-top:1px solid var(--border);}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .testi-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:24px;}
+    .stars{color:#f59e0b;font-size:0.9rem;margin-bottom:12px;}
+    .testi-card p{font-size:0.84rem;color:var(--muted);line-height:1.7;margin-bottom:16px;}
+    .testi-auth{display:flex;align-items:center;gap:10px;}
+    .testi-auth img{width:38px;height:38px;border-radius:50%;object-fit:cover;}
+    .testi-auth strong{display:block;font-size:0.85rem;color:var(--text);}
+    .testi-auth span{font-size:0.72rem;color:var(--muted);}
+
+    /* CTA */
+    .cta{margin:0 5% 90px;background:linear-gradient(135deg,#042f2e,#0d9488);border-radius:24px;padding:72px;text-align:center;}
+    .cta h2{font-family:'Space Grotesk',sans-serif;font-size:2rem;color:#fff;margin-bottom:12px;}
+    .cta p{color:rgba(255,255,255,0.7);max-width:520px;margin:0 auto 36px;line-height:1.8;}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+    /* FOOTER */
+    footer{background:#042f2e;padding:56px 5% 24px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+    .footer-logo{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:12px;}
+    footer p.desc{color:rgba(255,255,255,0.45);font-size:0.82rem;line-height:1.7;}
+    .footer-title{color:#5eead4;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{color:rgba(255,255,255,0.5);font-size:0.82rem;transition:color .2s;}
+    .footer-links a:hover{color:#5eead4;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;text-align:center;color:rgba(255,255,255,0.35);font-size:0.78rem;}
+    .footer-bottom a{color:rgba(94,234,212,0.7);}
+
+    @media(max-width:1024px){.hero{grid-template-columns:1fr;}.spesialis-grid{grid-template-columns:1fr 1fr;}.dok-grid{grid-template-columns:1fr 1fr;}.lay-grid{grid-template-columns:1fr 1fr;}.stats-grid{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:640px){.nav-links{display:none;}.spesialis-grid{grid-template-columns:1fr 1fr;}.lay-grid{grid-template-columns:1fr;}.testi-grid{grid-template-columns:1fr;}.dok-grid{grid-template-columns:1fr 1fr;}.cta{margin:0;border-radius:0;padding:48px 20px;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>🏥 Klinik Sehat Prima — Senin–Minggu: 07.00–21.00 | Darurat: 24 Jam</span>
+  <div style="display:flex;gap:16px;align-items:center;">
+    <span class="emergency">🚨 IGD 24 Jam</span>
+    <a href="tel:+6221555666777">(021) 555-666-777</a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-logo"><div class="logo-cross">➕</div><div class="logo-text"><strong>Klinik Sehat Prima</strong><span>Akreditasi Kemenkes RI</span></div></div>
+  <div class="nav-links">
+    <a href="#spesialis">Spesialis</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#dokter">Dokter</a>
+    <a href="#booking">Booking</a>
+  </div>
+  <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dokter%20di%20Klinik%20Sehat%20Prima" target="_blank" class="nav-cta">📅 Booking Online</a>
+</nav>
+
+<section class="hero" id="booking">
+  <div>
+    <div class="hero-badge">🏅 Klinik Terakreditasi Paripurna Kemenkes RI</div>
+    <h1>Kesehatan <span>Keluarga</span><br>adalah Prioritas Kami</h1>
+    <p>Klinik modern dengan 20+ dokter spesialis, laboratorium lengkap, dan apotek terintegrasi. Booking janji temu online dalam 30 detik.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dokter" target="_blank" class="btn-white">📅 Booking Dokter</a>
+      <a href="https://wa.me/6285712225565?text=Saya%20butuh%20bantuan%20medis%20darurat" target="_blank" class="btn-wa">💬 Chat Dokter</a>
+    </div>
+    <div class="hero-highlights">
+      <div class="hl">20+ Dokter Spesialis</div>
+      <div class="hl">Laboratorium Modern</div>
+      <div class="hl">Apotek 24 Jam</div>
+      <div class="hl">Homecare Tersedia</div>
+    </div>
+  </div>
+  <div class="hero-card-wrap">
+    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=700&q=80" alt="Klinik Sehat Prima" class="hero-card-img">
+    <div class="booking-card">
+      <h4>📅 Booking Janji Temu</h4>
+      <div class="booking-grid">
+        <div class="booking-field"><select><option>Pilih Poli</option><option>Poli Umum</option><option>Poli Jantung</option><option>Poli Anak</option><option>Poli Gigi</option><option>Poli Kandungan</option></select></div>
+        <div class="booking-field"><select><option>Pilih Dokter</option><option>dr. Andi SpJP</option><option>dr. Sari SpA</option><option>dr. Budi SpOG</option></select></div>
+      </div>
+      <button class="booking-btn" onclick="window.open('https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dokter%20di%20Klinik%20Sehat%20Prima','_blank')">💬 Lanjutkan via WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-grid">
+    <div class="sbox"><div class="num">20+</div><div class="lbl">Dokter Spesialis</div></div>
+    <div class="sbox"><div class="num">45.000+</div><div class="lbl">Pasien per Tahun</div></div>
+    <div class="sbox"><div class="num">15+</div><div class="lbl">Tahun Berdiri</div></div>
+    <div class="sbox"><div class="num">4.9 ⭐</div><div class="lbl">Rating Pasien</div></div>
+  </div>
+</div>
+
+<section class="spesialis" id="spesialis">
+  <div class="section-top"><div class="sec-tag">Poli Spesialis</div><h2>Layanan Poli Spesialis</h2><p>Penanganan medis spesialis oleh dokter berpengalaman dengan peralatan diagnostik terkini.</p></div>
+  <div class="spesialis-grid">
+    <div class="spe-card"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&q=80" alt="" class="spe-img"><div class="spe-body"><div class="spe-badge">❤️ Jantung</div><h3>Poli Kardiologi</h3><p>Pemeriksaan jantung lengkap, EKG, echo, dan treadmill test.</p><div class="spe-jadwal">Senin–Jumat 09.00–14.00</div></div></div>
+    <div class="spe-card"><img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=400&q=80" alt="" class="spe-img"><div class="spe-body"><div class="spe-badge">👶 Anak</div><h3>Poli Pediatri</h3><p>Imunisasi, tumbuh kembang, dan penanganan penyakit anak.</p><div class="spe-jadwal">Setiap Hari 08.00–20.00</div></div></div>
+    <div class="spe-card"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80" alt="" class="spe-img"><div class="spe-body"><div class="spe-badge">🦷 Gigi</div><h3>Poli Gigi & Mulut</h3><p>Perawatan gigi komprehensif: tambal, cabut, bleaching, behel.</p><div class="spe-jadwal">Senin–Sabtu 09.00–17.00</div></div></div>
+    <div class="spe-card"><img src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&q=80" alt="" class="spe-img"><div class="spe-body"><div class="spe-badge">🧠 Saraf</div><h3>Poli Neurologi</h3><p>Penanganan stroke, epilepsi, migrain kronis, dan gangguan saraf.</p><div class="spe-jadwal">Selasa & Kamis 10.00–15.00</div></div></div>
+  </div>
+</section>
+
+<section class="layanan" id="layanan">
+  <div class="section-top"><div class="sec-tag">Fasilitas</div><h2>Layanan & Fasilitas Unggulan</h2></div>
+  <div class="lay-grid">
+    <div class="lay-card"><div class="lay-icon">🔬</div><h3>Laboratorium Klinik</h3><p>Pemeriksaan darah lengkap, urin, kultur bakteri, hormon, dan lebih dari 200 jenis tes lab dengan hasil dalam 3 jam.</p></div>
+    <div class="lay-card"><div class="lay-icon">📡</div><h3>Radiologi & Imaging</h3><p>Rontgen digital, USG 4D, CT-Scan, dan MRI dengan teknologi terkini dan refertaling spesialis 24 jam.</p></div>
+    <div class="lay-card"><div class="lay-icon">💊</div><h3>Apotek 24 Jam</h3><p>Apotek terintegrasi dengan sistem e-resep. Obat generik dan branded tersedia lengkap dengan konseling farmasis.</p></div>
+    <div class="lay-card"><div class="lay-icon">🏠</div><h3>Layanan Homecare</h3><p>Perawatan oleh perawat profesional di rumah — suntik, infus, rawat luka, fisioterapi, dan pemantauan pasca operasi.</p></div>
+    <div class="lay-card"><div class="lay-icon">📱</div><h3>Telemedicine / Chat Dokter</h3><p>Konsultasi dengan dokter umum dan spesialis via video call dan chat. Tersedia 24 jam, termasuk malam dan hari libur.</p></div>
+    <div class="lay-card"><div class="lay-icon">🩺</div><h3>Medical Check-Up</h3><p>Paket MCU komprehensif untuk individu, CPNS, pranikah, dan karyawan perusahaan dengan laporan lengkap.</p></div>
+  </div>
+</section>
+
+<section class="dokter" id="dokter">
+  <div class="section-top"><div class="sec-tag">Tim Dokter</div><h2>Dokter Spesialis Kami</h2></div>
+  <div class="dok-grid">
+    <div class="dok-card"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&q=80" alt="" class="dok-img"><h3>dr. Ahmad Fauzi, SpJP</h3><div class="spesialisasi">Spesialis Jantung & Pembuluh Darah</div><div class="pengalaman">18 tahun pengalaman</div><a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dengan%20dr.%20Ahmad%20Fauzi" target="_blank" class="wa-dok">Booking Sekarang</a></div>
+    <div class="dok-card"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&q=80" alt="" class="dok-img"><h3>dr. Sari Dewi, SpA</h3><div class="spesialisasi">Spesialis Anak & Neonatologi</div><div class="pengalaman">12 tahun pengalaman</div><a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dengan%20dr.%20Sari%20Dewi" target="_blank" class="wa-dok">Booking Sekarang</a></div>
+    <div class="dok-card"><img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=200&q=80" alt="" class="dok-img"><h3>dr. Budi Santoso, SpOG</h3><div class="spesialisasi">Spesialis Kandungan & Kebidanan</div><div class="pengalaman">20 tahun pengalaman</div><a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dengan%20dr.%20Budi%20Santoso" target="_blank" class="wa-dok">Booking Sekarang</a></div>
+    <div class="dok-card"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200&q=80" alt="" class="dok-img"><h3>dr. Rini Kurnia, SpS</h3><div class="spesialisasi">Spesialis Saraf & Neurologi</div><div class="pengalaman">10 tahun pengalaman</div><a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dengan%20dr.%20Rini%20Kurnia" target="_blank" class="wa-dok">Booking Sekarang</a></div>
+  </div>
+</section>
+
+<section class="testimoni">
+  <div class="section-top"><div class="sec-tag">Ulasan Pasien</div><h2>Apa Kata Pasien Kami</h2></div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"Booking via WhatsApp sangat mudah. Dokter spesialis jantungnya sangat kompeten dan sabar menjelaskan kondisi saya. Fasilitas laboratoriumnya modern."</p><div class="testi-auth"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt=""><div><strong>Ibu Hartati</strong><span>Pasien Poli Jantung</span></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"Layanan homecare-nya sangat membantu ketika anak saya demam tinggi malam hari. Perawat datang dalam 30 menit dan sangat profesional. Terima kasih."</p><div class="testi-auth"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt=""><div><strong>Pak Denny</strong><span>Orang Tua Pasien</span></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"MCU lengkap dengan harga sangat terjangkau. Hasilnya jelas dan dokter menjelaskan detail setiap temuan. Saya selalu MCU tahunan di sini."</p><div class="testi-auth"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt=""><div><strong>Anita S.</strong><span>Pasien MCU Tahunan</span></div></div></div>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>Jaga Kesehatan Anda Mulai Sekarang</h2>
+  <p>Booking janji dengan dokter spesialis pilihan Anda secara online. Proses mudah, antrian efisien, dan pelayanan premium.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20dokter%20di%20Klinik%20Sehat%20Prima" target="_blank" class="btn-white">📅 Booking Sekarang</a>
+    <a href="https://wa.me/6285712225565?text=Saya%20ingin%20konsultasi%20online%20dengan%20dokter" target="_blank" class="btn-wa">💬 Konsultasi Online</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-logo">Klinik Sehat Prima</div><p class="desc">Klinik kesehatan modern terakreditasi Kemenkes RI. 20+ dokter spesialis, laboratorium, radiologi, apotek 24 jam, dan layanan homecare.</p></div>
+    <div><div class="footer-title">Layanan</div><div class="footer-links"><a href="#">Poli Spesialis</a><a href="#">Laboratorium</a><a href="#">Radiologi</a><a href="#">Apotek 24 Jam</a><a href="#">Homecare</a></div></div>
+    <div><div class="footer-title">Informasi</div><div class="footer-links"><a href="#">Profil Dokter</a><a href="#">Jadwal Praktek</a><a href="#">MCU Perusahaan</a><a href="#">Info BPJS</a></div></div>
+    <div><div class="footer-title">Kontak</div><div class="footer-links"><a href="#">(021) 555-666-777</a><a href="#">Darurat: (021) 555-888</a><a href="#">Jl. Kesehatan No. 1</a><a href="../index.html">← Portfolio</a></div></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Klinik Sehat Prima. Demo oleh <a href="../index.html">LukmanWeb</a></div>
+</footer>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>.Groups[3].Value 
+        

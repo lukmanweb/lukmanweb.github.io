@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+﻿
+            <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -924,5 +925,2028 @@ document.addEventListener('click', (e) => {
 }
 </style>
 
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
 </body>
 </html>
+.Groups[1].Value + $mobileCss + "`n    " + <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zefa Mulia Sejahtera | Solusi Pupuk & Probiotik Pertanian Peternakan Perikanan</title>
+    <meta name="description" content="Katalog resmi PT. Zefa Mulia Sejahtera. Produk unggulan: PRO-B10 Probiotik Herbal, PEPETANI ZEFA Slow Release, dan PRAZAK Bionutrient Booster. Bersertifikat Kementan RI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .product-img-box {
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+        .product-img-box img {
+            max-height: 480px;
+            width: auto;
+            margin: 0 auto;
+            border-radius: var(--radius-sm);
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <a href="#" class="nav-logo-text" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+                    <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:1.1rem;color:var(--green-700);display:flex;align-items:center;gap:6px;flex-wrap:nowrap;">
+                        <span style="font-size:1.2rem;">🌿</span>
+                        <span>PUPUK ZEFA SEJAHTERA</span>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#produk">Katalog Produk</a>
+                <a href="#pro-b10">PRO-B10</a>
+                <a href="#pepetani">PEPETANI ZEFA</a>
+                <a href="#prazak">PRAZAK</a>
+                <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20tertarik%20dengan%20produk%20pupuk%20Anda." target="_blank" class="nav-wa-btn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Hubungi Admin
+                </a>
+            </div>
+
+            <!-- HAMBURGER BUTTON -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Buka Menu" onclick="toggleMobileMenu()">
+                <span class="ham-bar"></span>
+                <span class="ham-bar"></span>
+                <span class="ham-bar"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MOBILE DROPDOWN MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="container">
+            <a href="#produk" class="mobile-link" onclick="closeMobileMenu()">📋 Katalog Produk</a>
+            <a href="#pro-b10" class="mobile-link" onclick="closeMobileMenu()">🧪 PRO-B10</a>
+            <a href="#pepetani" class="mobile-link" onclick="closeMobileMenu()">🌱 PEPETANI ZEFA</a>
+            <a href="#prazak" class="mobile-link" onclick="closeMobileMenu()">💊 PRAZAK</a>
+            <a href="#testimoni" class="mobile-link" onclick="closeMobileMenu()">📸 Testimoni</a>
+            <a href="#keunggulan" class="mobile-link" onclick="closeMobileMenu()">⭐ Keunggulan</a>
+            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20ingin%20konsultasi%20produk%20pupuk." target="_blank" class="mobile-link mobile-link-wa" onclick="closeMobileMenu()">
+                💬 Hubungi Admin via WhatsApp
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="dot"></span> Formulation By Pradipta Paramita Biotech Industry
+                </div>
+                <h1 class="hero-title">
+                    Solusi Bioteknologi Modern untuk <span class="gradient-text">Hasil Panen &amp; Peternakan Maksimal</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Inovasi pupuk hayati slow release &amp; probiotik herbal bersertifikat Kementan RI. Menghemat biaya pupuk kimia, memacu pertumbuhan tanaman, serta menyehatkan ternak &amp; ikan.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="number">3 Utama</span>
+                        <span class="label">Produk Spesialis</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="number">50%</span>
+                        <span class="label">Hemat Pupuk Kimia</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="number">100%</span>
+                        <span class="label">Aman &amp; Ramah Lingkungan</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="https://wa.me/6285727289279?text=Halo%20Zefa%20Mulia%20Sejahtera%2C%20saya%20ingin%20konsultasi%20produk%20pupuk." target="_blank" class="btn btn-wa">
+                        💬 Konsultasi &amp; Pemesanan WA
+                    </a>
+                    <a href="#produk" class="btn btn-outline">Lihat Detail Produk</a>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+                <div style="background:#fff;border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:16px;box-shadow:var(--shadow-lg);text-align:center;">
+                    <img src="assets/images/produk-zefa-gabungan.jpg" alt="3 Produk Utama Pupuk Zefa Sejahtera: PRO-B10, PEPETANI ZEFA, PRAZAK" style="width:100%;height:auto;border-radius:var(--radius-md);object-fit:cover;">
+                    <div style="margin-top:10px;font-weight:700;font-size:0.85rem;color:var(--green-700);">🌿 3 Produk Unggulan Pertanian, Peternakan &amp; Perikanan</div>
+                </div>
+
+                <div class="hero-card-preview">
+                    <div style="background:#eab308;color:#713f12;font-weight:800;font-size:0.8rem;padding:4px 12px;border-radius:50px;display:inline-block;margin-bottom:12px;">SERTIFIKASI RESMI</div>
+                    <h3 style="font-size:1.3rem;margin-bottom:8px;color:#0f172a;">Bersertifikat Kementan RI</h3>
+                    <p style="font-size:0.9rem;color:#475569;margin-bottom:16px;">Semua produk diformulasikan presisi dengan mikroba unggulan (Bacillus, Lactobacillus, Trichoderma, PGPR) &amp; nutrisi mikro-makro lengkap.</p>
+                    <ul style="list-style:none;font-size:0.88rem;color:#1e293b;">
+                        <li style="margin-bottom:6px;">✔️ <strong>PRO-B10</strong>: KEMENTAN RI No. D.2504797 PTS</li>
+                        <li style="margin-bottom:6px;">✔️ <strong>PEPETANI ZEFA</strong>: No. Reg 02.03.2025.370</li>
+                        <li style="margin-bottom:6px;">✔️ <strong>PRAZAK</strong>: No. Reg 03.02.2022.1020</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS DETAIL SECTION -->
+<section class="products" id="produk">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">KATALOG LENGKAP PRODUK ZEFA</span>
+            <h2 class="section-title">Detail Kinerja &amp; Keunggulan <span class="gradient-text">3 Produk Utama</span></h2>
+            <p class="section-desc">Informasi teknis lengkap dari riset laboratorium bioteknologi dan panduan aplikasi penggunaan di lapangan.</p>
+        </div>
+
+        <!-- 1. PRO-B10 -->
+        <div class="product-card-large animate-on-scroll" id="pro-b10">
+            <div class="product-header-banner">
+                <div>
+                    <span style="font-size:0.85rem;opacity:0.9;font-weight:700;letter-spacing:1px;text-transform:uppercase;">PROBIOTIK TERNAK &amp; PERIKANAN MULTIFUNGSI</span>
+                    <h3>PRO-B10 (Probiotik dengan Herbal)</h3>
+                    <p style="opacity:0.9;font-size:0.95rem;">Kemasan: Sachet 500g, Sachet 20g, Box 1kg | Reg Kementan RI No. D.2504797 PTS</p>
+                </div>
+                <span class="badge">SOLUSI TERNAK &amp; IKAN</span>
+            </div>
+
+            <div class="product-content-grid">
+                <div>
+                    <!-- GAMBAR BROSUR RESMI PRO-B10 -->
+                    <div class="product-img-box">
+                        <img src="assets/images/prob10.jpg" alt="Brosur Resmi PRO-B10 Pupuk Zefa">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#15803d;">🔬 Kandungan &amp; Keunggulan Formulasi</h4>
+                    <p style="font-size:0.95rem;color:#334155;margin-bottom:16px;line-height:1.7;">
+                        PRO-B10 menggabungkan <strong>Probiotik Unggulan</strong> (Bacillus subtilis, Lactobacillus bulgaricus, L. plantarum, Saccharomyces cereviceae, Aspergillus niger) dengan <strong>Prebiotik Herbal Alami</strong> (<em>Curcuma domestica</em> / Kunyit &amp; <em>Zingiber officinale</em> / Jahe).
+                    </p>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">💡 Formulasi Probiotik + Prebiotik Herbal (Synbiotik)</div>
+                        <p style="font-size:0.9rem;color:#475569;margin-bottom:10px;">
+                            PRO-B10 merupakan gabungan <strong>Probiotik Unggulan</strong> (mikroba hidup menguntungkan) dan <strong>Prebiotik Herbal</strong> (nutrisi makanan khusus bagi mikroba dari <em>Curcuma domestica</em> / Kunyit &amp; <em>Zingiber officinale</em> / Jahe) yang membentuk sistem <strong>Synbiotik</strong> sempurna.
+                        </p>
+                        <ul class="spec-list">
+                            <li><span>🧪</span><span><strong>Analisis Nutrisi Kunyit</strong>: Karbohidrat 63%, Protein 8.6%, Lemak 8.9%, Serat 6.9%, Kalium 2.5%, Vit A (175 IU), Vit C (49.8mg), Niasin, Calcium, &amp; Phosphor.</span></li>
+                            <li><span>🧪</span><span><strong>Analisis Nutrisi Jahe</strong>: Karbohidrat 66.5%, Protein 8.6%, Lemak 6.4%, Serat 5.9%, Kalium 1.4%, Vit A (175 IU), Vit C (12mg), Niasin, Fe, &amp; Na.</span></li>
+                            <li><span>🦠</span><span><strong>Konsorsium Mikroba Unggulan</strong>: <em>Bacillus subtilis, Bifidobacterium bifidum, B. longum, Lactobacillus bulgaricus, L. plantarum, Saccharomyces cereviceae, Aspergillus niger</em>.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">📊 5 Manfaat Utama Probiotik Pakan (Uji Riset FKH-UGM)</div>
+                        <ul class="spec-list">
+                            <li><span>1️⃣</span><span><strong>Penguraian Pakan &amp; TDN Naik</strong>: Mikroba menghasilkan enzim pengurai (Enzymatic Breakdown) yang memecah pakan sulit terurai sehingga nilai TDN (Total Digestive Nutrient) meningkat drastis.</span></li>
+                            <li><span>2️⃣</span><span><strong>Menurunkan FCR (Feed Conversion Ratio)</strong>: Efisiensi pakan meningkat nyata — jumlah pakan lebih sedikit memberikan bobot badan yang sama.</span></li>
+                            <li><span>3️⃣</span><span><strong>Meningkatkan ADG (Average Daily Gain) &amp; ABW</strong>: Pertambahan bobot harian ternak &amp; bobot rata-rata ikan naik pesat. Waktu panen lebih cepat/maju.</span></li>
+                            <li><span>4️⃣</span><span><strong>Ketahanan Penyakit &amp; Imunitas Tinggi</strong>: Teruji klinis menekan infeksi penyakit ND/Tetelo, <em>Campylobacter</em>, &amp; <em>E. coli</em> (Pericarditis &amp; Perihepatitis) pada unggas.</span></li>
+                            <li><span>5️⃣</span><span><strong>Kualitas Carcas &amp; Lingkungan Bebas Bau</strong>: Daging lebih padat rendah lemak, kuning telur oranye pekat, serta kotoran tidak berbau Amoniak/H2S karena terurai sempurna.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">🐟 Manfaat Khusus Budidaya Perikanan (Patin, Nila, Gurame, Lele)</div>
+                        <ul class="spec-list">
+                            <li><span>🌊</span><span><strong>Mengatasi Bau Tanah (Off Flavours)</strong>: Mengurai senyawa penyebab bau tanah <strong>Geosmin (GSM)</strong> &amp; <strong>2-Methylisoborneol (2-MIB)</strong> akibat akumulasi Cyanobacteria &amp; sisa pakan.</span></li>
+                            <li><span>📈</span><span><strong>Meningkatkan SR (Survival Rate)</strong>: Kematian ikan berkurang drastis dan air kolam tetap seimbang (Parameter Nitrit, Nitrat, Amoniak, H2S, &amp; TOM terkontrol aman).</span></li>
+                            <li><span>🥩</span><span><strong>Daging Ikan Bersih &amp; Tidak Kuning</strong>: Menghasilkan kualitas daging ikan yang segar, putih padat, dan bebas lemak berlebih.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- GAMBAR BROSUR KANDUNGAN PRO-B10 -->
+                    <div class="product-img-box">
+                        <img src="assets/images/prob10-detail.jpg" alt="Detail Indikasi dan Dosis PRO-B10">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#15803d;">🛠️ Dosis &amp; Panduan Aplikasi Lengkap</h4>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">1. Pemberian Langsung Pada Pakan</div>
+                        <p style="font-size:0.9rem;color:#475569;">
+                            Campurkan <strong>4 gram PRO-B10 per kg pakan</strong> (atau 1 sendok makan / 1 sachet 500g untuk 5 zak pakan 50kg). Campurkan dengan 100-300 ml air bersih dulu, aduk merata ke pakan, lalu berikan langsung ke ternak/ikan.
+                        </p>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">2. Fermentasi Pakan Domba / Kambing / Sapi / Ayam</div>
+                        <div class="usage-step">
+                            <span class="step-num">1</span>
+                            <div style="font-size:0.9rem;">Larutkan <strong>100 - 200 gram PRO-B10</strong> ke dalam 8 - 10 liter air bersih + nutrisi pendamping/tetes/dedak.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">2</span>
+                            <div style="font-size:0.9rem;">Campurkan merata pada 50 kg bahan pakan (hijauan/concentrate/dedak) di atas terpal/lantai.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">3</span>
+                            <div style="font-size:0.9rem;">Masukkan ke dalam drum/tong/plastik HDPE, padatkan dan tutup kedap udara rapat-rapat.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">4</span>
+                            <div style="font-size:0.9rem;">Tunggu 1 - 2 malam (atau 21 hari untuk pakan silase komplit). Pakan siap diberikan! (Gunakan hasil fermentasi &lt; 3 hari).</div>
+                        </div>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">3. Penggunaan Pada Kolam &amp; Kotoran Kandang</div>
+                        <div class="usage-step">
+                            <span class="step-num">A</span>
+                            <div style="font-size:0.9rem;"><strong>Air Kolam</strong>: Teberkan 100 gram PRO-B10 per m³ air saat persiapan kolam, lalu secara rutin dicampur pakan harian selama budidaya.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">B</span>
+                            <div style="font-size:0.9rem;"><strong>Kotoran Kandang Bebas Bau &amp; Lalat</strong>: Taburkan langsung pada kotoran basah, atau siramkan larutan PRO-B10 di atas kotoran kering. Kotoran tidak berbau dan lalat hilang!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-cta-bar">
+                <div>
+                    <span style="font-size:0.85rem;color:#64748b;">Butuh konsultasi dosis PRO-B10 untuk ternak/kolam Anda?</span>
+                    <h5 style="font-size:1.1rem;color:#0f172a;">Pesan PRO-B10 Original Zefa</h5>
+                </div>
+                <a href="https://wa.me/6285727289279?text=Halo%2C%20saya%20tertarik%20memesan%20PRO-B10%20Probiotik%20Herbal.%20Mohon%20info%20harga%20dan%20pemesanan." target="_blank" class="btn btn-wa" style="padding:12px 28px;font-size:0.95rem;">
+                    Pesan PRO-B10 via WhatsApp
+                </a>
+            </div>
+        </div>
+
+
+        <!-- 2. PEPETANI ZEFA + SLOW RELEASE -->
+        <div class="product-card-large animate-on-scroll" id="pepetani">
+            <div class="product-header-banner" style="background:linear-gradient(135deg, #166534, #14532d);">
+                <div>
+                    <span style="font-size:0.85rem;opacity:0.9;font-weight:700;letter-spacing:1px;text-transform:uppercase;">PUPUK HAYATI SLOW RELEASE TANAMAN KERAS</span>
+                    <h3>PEPETANI ZEFA + Slow Release</h3>
+                    <p style="opacity:0.9;font-size:0.95rem;">Kemasan: Plastik Kedap 1 kg (Granule &amp; Powder) | No. Pendaftaran: 02.03.2025.370</p>
+                </div>
+                <span class="badge" style="background:#bbf7d0;color:#14532d;">FORMULA TANAMAN KERAS</span>
+            </div>
+
+            <div class="product-content-grid">
+                <div>
+                    <!-- GAMBAR BROSUR RESMI PEPETANI ZEFA -->
+                    <div class="product-img-box">
+                        <img src="assets/images/pepetani.jpg" alt="Brosur Resmi PEPETANI ZEFA Slow Release">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#15803d;">🌱 Solusi Masalah Defisiensi Unsur Hara Tanaman</h4>
+                    <p style="font-size:0.95rem;color:#334155;margin-bottom:16px;line-height:1.7;">
+                        Dirancang khusus untuk tanaman tahunan/keras (<strong>Sawit, Durian, Kakao, Karet, Mangga, Alpukat</strong>). Teknologi <em>Slow Release</em> melepaskan nutrisi secara perlahan sesuai kebutuhan tanaman tanpa risiko lisis/penguapan akibat hujan/panas.
+                    </p>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">⚡ Komposisi Super Lengkap &amp; Peran Biologis (4 in 1 Formula)</div>
+                        <ul class="spec-list">
+                            <li><span>1️⃣</span><span><strong>Pupuk Hayati Multi-Mikroba</strong>: <em>Aspergillus niger (≥1.5x10⁵), Bacillus subtilis (≥3.1x10⁷), Lactobacillus plantarum (≥2.6x10⁸), Pseudomonas fluorescens (≥1.5x10⁷), Saccharomyces cereviceae (≥1.3x10⁷)</em>, plus <em>Acetobacter, Azospirillum, Nitrosomonas, Nitrobacter</em>. Memperbaiki tanah tandus &amp; mengurai Phosphat/Kalium terikat.</span></li>
+                            <li><span>2️⃣</span><span><strong>Kandungan Unsur Makro &amp; Mikro Mineral</strong>: Makromineral N (3.2%), P (6.95%), K (7.0%), Ca (9.1%), Mg (5.5%), S (11.2%). Micromineral Fe (0.93%), Mn (0.32%), Cu (0.25%), Zn (0.29%), Boron (0.57% / 570 ppm), Mo (0.2%), Co (0.003%). Plus Silika penguat dinding sel tanaman!</span></li>
+                            <li><span>3️⃣</span><span><strong>Agensia Hayati Trichoderma (5%)</strong>: <em>T. harzianum, T. viride, T. koningii</em> — Agen biokontrol pembasmi jamur patogen tanah (Layu Fusarium, Rhizoctonia solani, Phytophthora). Mengeluarkan enzim Carboxilmethylcellulase, Xylanase, &amp; Urease yang merombak bahan organik (kohe).</span></li>
+                            <li><span>4️⃣</span><span><strong>PGPR (5%) &amp; Mycorrhiza</strong>: <em>Plant Growth Promoting Rhizobacteria</em> &amp; Mikoriza yang memperluas bidang serapan hifa akar hingga ke pori-pori tanah terkecil, meningkatkan serapan air pada musim kemarau, serta memfiksasi Nitrogen udara secara alami (<em>Bradyrhizobium japonicum</em>).</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">⚠️ Solusi Mencegah &amp; Mengatasi Defisiensi Unsur Hara Tanaman</div>
+                        <ul class="spec-list">
+                            <li><span>🍂</span><span><strong>Defisiensi Nitrogen (N)</strong>: Daun menguning, pucuk muda klorosis, pelepah menguning, tanaman kerdil &amp; mati. Teratasi dengan mikroba penambat N.</span></li>
+                            <li><span>🔴</span><span><strong>Defisiensi Phosphat (P)</strong>: Batang meruncing seperti pensil, anak daun/pelepah memerah/ungu, tanaman mandul &amp; buah keriput minyak rendah. Teratasi dengan pelarut P.</span></li>
+                            <li><span>🟧</span><span><strong>Defisiensi Potasium/Kalium (K)</strong>: Bercak kuning/oranye pada pelepah tua yang menembus sinar matahari, mahkota sawit menguning total, produksi TBS drop. Teratasi dengan ketersediaan ion K.</span></li>
+                            <li><span>☀️</span><span><strong>Defisiensi Magnesium (Mg)</strong>: Pucuk daun tua terkena sinar matahari berubah kuning terang lalu mati. Teratasi dengan Mg 5.5%.</span></li>
+                            <li><span>🌿</span><span><strong>Defisiensi Boron (B)</strong>: Ujung daun terlipat tajam/keriting, pelepah puncak kempis seolah terserang virus, bunga gagal jadi buah. Teratasi dengan Boron 570 ppm!</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- GAMBAR BROSUR PERBANDINGAN PEPETANI ZEFA -->
+                    <div class="product-img-box">
+                        <img src="assets/images/pepetani-detail.jpg" alt="Perbandingan PEPETANI ZEFA vs Pupuk Kimia">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#15803d;">📍 Dosis &amp; Panduan Aplikasi Pemupukan Presisi</h4>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">Dosis Penggunaan Berdasarkan Ukuran Pohon</div>
+                        <div style="background:#fff;border:1px solid var(--border-color);border-radius:8px;padding:14px;margin-bottom:12px;font-size:0.9rem;">
+                            <strong>100 gram s.d. 150 gram (2 - 3 Cup Full) per pohon</strong><br>
+                            <span style="color:#64748b;font-size:0.85rem;">1 Kemasan Box 1 kg cukup untuk 7 s.d. 10 Pohon dewasa (Sawit, Durian, Mangga, Alpukat, Kakao, Karet).</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">Teknik Aplikasi Tajuk Tanaman (Slow Release)</div>
+                        <div class="usage-step">
+                            <span class="step-num">1</span>
+                            <div style="font-size:0.9rem;">Gali 4 lubang kecil mengelilingi pohon pada posisi <strong>50% s.d. 70% dari radius tajuk (ujung lingkaran daun)</strong>.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">2</span>
+                            <div style="font-size:0.9rem;">Tanamkan pupuk PEPETANI ZEFA + SLOW RELEASE secukupnya ke dalam tiap lubang.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">3</span>
+                            <div style="font-size:0.9rem;">Timbun kembali dengan tanah rapat-rapat. Nutrisi akan larut sedikit demi sedikit (Slow Release) terserap sempurna tanpa lisis terbuang hujan.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">4</span>
+                            <div style="font-size:0.9rem;">Ulangi pemupukan tiap <strong>1 s.d. 2 bulan sekali</strong> dengan menggeser posisi lubang.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-cta-bar">
+                <div>
+                    <span style="font-size:0.85rem;color:#64748b;">Cocok untuk perkebunan sawit, durian, &amp; tanaman buah keras.</span>
+                    <h5 style="font-size:1.1rem;color:#0f172a;">Pesan PEPETANI ZEFA Slow Release</h5>
+                </div>
+                <a href="https://wa.me/6285727289279?text=Halo%2C%20saya%20tertarik%20memesan%20PEPETANI%20ZEFA%20Slow%20Release.%20Mohon%20info%20harga%20dan%20pemesanan." target="_blank" class="btn btn-wa" style="padding:12px 28px;font-size:0.95rem;">
+                    Pesan PEPETANI ZEFA via WA
+                </a>
+            </div>
+        </div>
+
+
+        <!-- 3. PRAZAK + NUTRISI -->
+        <div class="product-card-large animate-on-scroll" id="prazak">
+            <div class="product-header-banner" style="background:linear-gradient(135deg, #d97706, #b45309);">
+                <div>
+                    <span style="font-size:0.85rem;opacity:0.9;font-weight:700;letter-spacing:1px;text-transform:uppercase;">PUPUK HAYATI MAJEMUK CAIR &amp; BIONUTRIENT BOOSTER</span>
+                    <h3>PRAZAK + NUTRISI (Bionutrient Booster)</h3>
+                    <p style="opacity:0.9;font-size:0.95rem;">Set Komplit: Biang Prazak 250ml + Nutrisi A (90g) + Nutrisi B (50g) | Reg 03.02.2022.1020</p>
+                </div>
+                <span class="badge" style="background:#fef08a;color:#713f12;">BOOSTER KESUBURAN</span>
+            </div>
+
+            <div class="product-content-grid">
+                <div>
+                    <!-- GAMBAR BROSUR RESMI PRAZAK + NUTRISI TERUPDATE -->
+                    <div class="product-img-box">
+                        <img src="assets/images/prazak-detail.jpg" alt="Brosur Lengkap PRAZAK + NUTRISI A & B Zefa">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#b45309;">🧪 Bioteknologi Pengaktifan Bakteri Dorman</h4>
+                    <p style="font-size:0.95rem;color:#334155;margin-bottom:16px;line-height:1.7;">
+                        Pupuk hayati majemuk cair berisi konsorsium mikroba aktif &amp; didukung <strong>Bionutrisi Booster</strong> (Asam Amino Lysin/Methyonis, Vitamin, ZPT Auxin/IAA). Mengaktifkan bakteri dorman agar siap membenahi tanah &amp; tanaman secara instan.
+                    </p>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">✨ Konsorsium Mikroba &amp; Bionutrisi Booster Spek Tinggi</div>
+                        <ul class="spec-list">
+                            <li><span>🧫</span><span><strong>Konsorsium 8 Mikroba Unggul</strong>: <em>Azotobacter sp, Azospirillum sp, Bacillus subtilis, Lactobacillus plantarum, Pseudomonas fluorescens, Nitrosomonas, Nitrobacter, Trichoderma sp, Aspergillus niger</em> (Jutaan - Ratusan Juta Sel/mL).</span></li>
+                            <li><span>🌬️</span><span><strong>Fiksasi Nitrogen Udara 70%</strong>: Bakteri Azotobacter &amp; Azospirillum menangkap gas Nitrogen bebas di udara (komposisi udara 70% N) untuk disalurkan ke tanaman demi pertumbuhan vegetatif yang cepat &amp; lebat.</span></li>
+                            <li><span>🌱</span><span><strong>Bionutrisi Booster (Nutrisi A &amp; B)</strong>: Menghasilkan <strong>ZPT Alami (Auxin &amp; IAA)</strong> merangsang akar, Asam Amino (Lysin &amp; Methyonis), Vitamin, &amp; C-Organik 19.5% yang membangun kembali tanah retak/rusak.</span></li>
+                            <li><span>📊</span><span><strong>Analisis Laboratorium Bionutrisi Booster</strong>: N-total 2%, P2O5 0.9%, K2O 2.4%, C-Organik 19.5%, Fe 456 ppm, Mn 123 ppm, Cu 147 ppm, Zn 51 ppm, Mo 2.7 ppm, Boron 11 ppm.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">🛡️ 7 Keunggulan Utama PRAZAK Bagi Pertanian</div>
+                        <ul class="spec-list">
+                            <li><span>1️⃣</span><span><strong>Pertumbuhan Cepat</strong>: Mikroba jumlah kerapatan tinggi langsung bekerja cepat pada tanah &amp; akar.</span></li>
+                            <li><span>2️⃣</span><span><strong>Mendukung Pembentukan Tunas &amp; Cabang</strong>: Kandungan ZPT alami memicu percabangan baru.</span></li>
+                            <li><span>3️⃣</span><span><strong>Bobot Buah Lebih Berat</strong>: Kebutuhan hara makro &amp; mikro terpenuhi secara seimbang.</span></li>
+                            <li><span>4️⃣</span><span><strong>Tahan Penyakit &amp; Hama</strong>: Tanaman tidak disukai hama serangga &amp; kebal serangan jamur patogen.</span></li>
+                            <li><span>5️⃣</span><span><strong>Memperbaiki Lahan Rusak</strong>: Makin sering dipakai, tanah makin gembur &amp; kaya bahan organik (Subur Jangka Panjang).</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- GAMBAR BROSUR VERSI KEDUA PRAZAK -->
+                    <div class="product-img-box">
+                        <img src="assets/images/prazak.jpg" alt="Detail Produk PRAZAK Nutrisi A & B Zefa">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#b45309;">🥣 Cara Aktivasi Biang &amp; Dosis Semprot Lapangan</h4>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">Langkah 1: Pembuatan Biang Larutan 1 Liter</div>
+                        <div class="usage-step">
+                            <span class="step-num">1</span>
+                            <div style="font-size:0.9rem;">Siapkan wadah 1 liter, isi dengan <strong>750 ml air bersih</strong> (direbus matang lebih bagus).</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">2</span>
+                            <div style="font-size:0.9rem;">Masukkan seluruh serbuk <strong>Bionutrisi Booster (Nutrisi A &amp; Nutrisi B)</strong>, aduk hingga larut sempurna.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">3</span>
+                            <div style="font-size:0.9rem;">Tuangkan <strong>Biang Prazak 250 ml</strong>, tutup rapat, kocok homogen &amp; eramkan 1 s.d. 2 malam. Larutan biang siap dipakai!</div>
+                        </div>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">Langkah 2: Dosis &amp; Jadwal Aplikasi Lapangan</div>
+                        <div class="usage-step">
+                            <span class="step-num">A</span>
+                            <div style="font-size:0.9rem;"><strong>Tangki Semprot 14 Liter</strong>: Masukkan <strong>200 ml s.d. 400 ml</strong> (1 - 2 gelas) biang yang sudah difermentasi, aduk rata.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">B</span>
+                            <div style="font-size:0.9rem;"><strong>Waktu Semprot Terbaik</strong>: Pagi hari sesudah matahari terbit (<strong>pukul 07.00 s.d. 10.00</strong>) saat stomata daun terbuka. Semprotkan ke daun atau kocor ke perakaran 1-2x seminggu.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">C</span>
+                            <div style="font-size:0.9rem;"><strong>Dosis Per Hektar (Ha)</strong>: Dosis pendamping 5-10 Liter/Ha. Saat pupuk kimia dikurangi hingga 25%, tingkatkan dosis Prazak jadi 15 Liter/Ha (berbanding terbalik).</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">D</span>
+                            <div style="font-size:0.9rem;"><strong>Untuk Tanah Rusak / Keras</strong>: Pada lahan retak-retak berlebihan, wajib ditambahkan pupuk kandang/Humic Acid (C-organik min 40%, 2-4 kg/Ha) sebagai nutrisi pendukung bakteri.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-cta-bar">
+                <div>
+                    <span style="font-size:0.85rem;color:#64748b;">Sangat cocok untuk Padi, Cabai, Sayuran, &amp; Hortikultura.</span>
+                    <h5 style="font-size:1.1rem;color:#0f172a;">Pesan Paket PRAZAK + NUTRISI</h5>
+                </div>
+                <a href="https://wa.me/6285727289279?text=Halo%2C%20saya%20tertarik%20memesan%20Paket%20PRAZAK%20%2B%20Nutrisi.%20Mohon%20info%20harga%20dan%20pemesanan." target="_blank" class="btn btn-wa" style="padding:12px 28px;font-size:0.95rem;background:linear-gradient(135deg,#d97706,#b45309);">
+                    Pesan PRAZAK via WA
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- MOMENTUM BISNIS & KETAHANAN PANGAN SECTION -->
+<section style="padding:70px 0;background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;" id="momentum-bisnis">
+    <div class="container">
+        <div class="section-header animate-on-scroll" style="margin-bottom:40px;">
+            <span class="section-tag" style="background:#fef08a;color:#854d0e;">🚀 MOMENTUM BISNIS SANGAT BAGUS</span>
+            <h2 class="section-title" style="color:#fff;">Program Ketahanan Pangan Nasional<br><span class="gradient-text" style="background:linear-gradient(135deg,#4ade80,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Peluang Emas Bisnis Pupuk Modern</span></h2>
+            <p class="section-desc" style="color:#94a3b8;">Pemerintah baru saat ini sedang gencar menggalakkan program <strong>Swasembada &amp; Ketahanan Pangan Nasional</strong>. Kebutuhan pupuk berkualitas tinggi di seluruh Indonesia melonjak drastis!</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:40px;" class="animate-on-scroll">
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:28px;backdrop-filter:blur(10px);">
+                <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;">
+                    <div style="width:36px;height:24px;border-radius:4px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);display:flex;flex-direction:column;">
+                        <div style="background:#e11d48;height:50%;width:100%;"></div>
+                        <div style="background:#ffffff;height:50%;width:100%;"></div>
+                    </div>
+                    <span style="font-size:1.4rem;">🇮🇩</span>
+                </div>
+                <h3 style="font-size:1.2rem;color:#4ade80;margin-bottom:10px;">1. Fokus Utama Pemerintah Baru</h3>
+                <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.7;">Ketahanan pangan &amp; peningkatan hasil pertanian/peternakan menjadi prioritas utama negara. Kebutuhan produk efisiensi pemupukan dicari jutaan petani seluruh Indonesia.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:28px;backdrop-filter:blur(10px);">
+                <div style="font-size:2.2rem;margin-bottom:14px;">📉</div>
+                <h3 style="font-size:1.2rem;color:#facc15;margin-bottom:10px;">Solusi Kelangkaan Pupuk Kimia</h3>
+                <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.7;">Harga pupuk kimia mahal dan kuota subsidi terbatas. Produk Zefa hadir sebagai jawaban tepat untuk <strong>menghemat biaya pupuk hingga 50%</strong> bagi petani.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:28px;backdrop-filter:blur(10px);">
+                <div style="font-size:2.2rem;margin-bottom:14px;">💰</div>
+                <h3 style="font-size:1.2rem;color:#4ade80;margin-bottom:10px;">Peluang Profit Pasar Masif</h3>
+                <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.7;">Setiap daerah butuh pasokan pupuk &amp; probiotik rutin. Ini adalah momentum terbaik untuk menjadi <strong>Mitra / Reseller Resmi Pupuk Zefa Sejahtera</strong> di wilayah Anda!</p>
+            </div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(234,179,8,0.15));border:1px solid rgba(74,222,128,0.3);border-radius:20px;padding:32px;text-align:center;" class="animate-on-scroll">
+            <h4 style="font-size:1.3rem;color:#fff;margin-bottom:12px;">🌟 Ambil Bagian dalam Ketahanan Pangan Nasional!</h4>
+            <p style="font-size:0.95rem;color:#cbd5e1;max-width:650px;margin:0 auto 20px;">Jangan lewatkan momentum emas ini. Dapatkan margin keuntungan menarik dan dukungan sistem bisnis reseller gratis.</p>
+            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20tertarik%20memanfaatkan%20momentum%20bisnis%20ketahanan%20pangan%20ini.%20Bagaimana%20cara%20jadi%20mitra%2Freseller%3F" target="_blank" class="btn btn-wa" style="padding:14px 32px;">
+                🤝 Gabung Peluang Bisnis / Reseller Zefa Sekarang
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- TRANSISI ORGANIK SECTION -->
+<section class="section-transisi" id="transisi-organik">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">🌿 KELEBIHAN UTAMA PRODUK ZEFA</span>
+            <h2 class="section-title">Organik Bersahabat dengan Kimia,<br><span class="gradient-text">Semakin Hemat di Jangka Panjang</span></h2>
+            <p class="section-desc">Tidak perlu langsung berhenti dari pupuk kimia. Produk Zefa dirancang sebagai <strong>pendamping</strong> pupuk kimia yang secara perlahan mengubah tanah Anda menjadi subur secara alami.</p>
+        </div>
+
+        <!-- JOURNEY 3 FASE -->
+        <div class="transisi-journey-grid animate-on-scroll">
+            <!-- FASE 1 -->
+            <div style="background:#fff;border:2px solid #bbf7d0;border-radius:24px;padding:32px 24px;text-align:center;box-shadow:0 8px 24px rgba(22,163,74,0.08);">
+                <div style="width:64px;height:64px;background:linear-gradient(135deg,#16a34a,#15803d);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;">🧪</div>
+                <div style="background:#dcfce7;color:#14532d;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;display:inline-block;margin-bottom:12px;">FASE 1 — MULAI</div>
+                <h3 style="font-size:1.15rem;margin-bottom:10px;color:#0f172a;">Dampingi<br>Pupuk Kimia</h3>
+                <p style="font-size:0.88rem;color:#475569;line-height:1.6;">Gunakan produk Zefa <strong>bersama</strong> pupuk kimia yang biasa Anda pakai. Tidak perlu ganti total — tambahkan saja secara bertahap.</p>
+                <div style="margin-top:16px;font-size:0.85rem;font-weight:700;color:#16a34a;">🌱 Tanah mulai diperbaiki<br>📉 Dosis kimia bisa dikurangi 25%</div>
+            </div>
+            <!-- ARROW -->
+            <div class="transisi-arrow">↓</div>
+            <!-- FASE 2 -->
+            <div style="background:#fff;border:2px solid #fde68a;border-radius:24px;padding:32px 24px;text-align:center;box-shadow:0 8px 24px rgba(217,119,6,0.08);">
+                <div style="width:64px;height:64px;background:linear-gradient(135deg,#d97706,#b45309);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;">⚖️</div>
+                <div style="background:#fef08a;color:#713f12;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;display:inline-block;margin-bottom:12px;">FASE 2 — TRANSISI</div>
+                <h3 style="font-size:1.15rem;margin-bottom:10px;color:#0f172a;">Kurangi Kimia<br>Secara Bertahap</h3>
+                <p style="font-size:0.88rem;color:#475569;line-height:1.6;">Seiring tanah semakin subur, kebutuhan pupuk kimia otomatis <strong>berkurang 40–50%</strong>. Penghematan biaya sudah mulai terasa nyata.</p>
+                <div style="margin-top:16px;font-size:0.85rem;font-weight:700;color:#d97706;">💰 Hemat 40–50% biaya pupuk<br>🌾 Hasil panen meningkat</div>
+            </div>
+            <!-- ARROW -->
+            <div class="transisi-arrow">↓</div>
+            <!-- FASE 3 -->
+            <div style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #16a34a;border-radius:24px;padding:32px 24px;text-align:center;box-shadow:0 12px 32px rgba(22,163,74,0.18);">
+                <div style="width:64px;height:64px;background:linear-gradient(135deg,#15803d,#14532d);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;">🏆</div>
+                <div style="background:#15803d;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;display:inline-block;margin-bottom:12px;">FASE 3 — FULL ORGANIK</div>
+                <h3 style="font-size:1.15rem;margin-bottom:10px;color:#0f172a;">100% Organik &<br>Tanah Jadi Subur</h3>
+                <p style="font-size:0.88rem;color:#475569;line-height:1.6;">Tanah menjadi <strong>gembur, kaya mikroba, dan subur alami</strong>. Hasil panen terus bagus tanpa ketergantungan kimia. Biaya pupuk minimal!</p>
+                <div style="margin-top:16px;font-size:0.85rem;font-weight:700;color:#15803d;">✅ Bebas kimia berbahaya<br>📈 Profit petani meningkat signifikan</div>
+            </div>
+        </div>
+
+        <!-- BOTTOM STATS -->
+        <div class="transisi-stats-grid animate-on-scroll">
+            <div>
+                <div style="font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,#15803d,#16a34a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">25–50%</div>
+                <div style="font-weight:700;color:#0f172a;margin:8px 0 6px;">Penghematan Pupuk Kimia</div>
+                <div style="font-size:0.85rem;color:#64748b;">Sejak penggunaan pertama produk Zefa, kebutuhan pupuk kimia langsung turun signifikan.</div>
+            </div>
+            <div class="stats-center-item">
+                <div style="font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,#d97706,#b45309);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">Jangka Panjang</div>
+                <div style="font-weight:700;color:#0f172a;margin:8px 0 6px;">Tanah Makin Subur Alami</div>
+                <div style="font-size:0.85rem;color:#64748b;">Tidak seperti kimia yang merusak tanah, produk Zefa memperbaiki struktur tanah secara berkelanjutan.</div>
+            </div>
+            <div>
+                <div style="font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,#15803d,#16a34a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">Lebih Ngirit</div>
+                <div style="font-weight:700;color:#0f172a;margin:8px 0 6px;">Hasil Panen Tetap Bagus</div>
+                <div style="font-size:0.85rem;color:#64748b;">Panen melimpah, biaya pupuk turun drastis — keuntungan petani meningkat dari dua sisi sekaligus.</div>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top:36px;" class="animate-on-scroll">
+            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20ingin%20konsultasi%20cara%20mulai%20transisi%20ke%20pupuk%20organik." target="_blank" class="btn btn-wa">
+                🌿 Konsultasi Cara Mulai Transisi Organik — GRATIS
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="keunggulan">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">JAMINAN KUALITAS ZEFA</span>
+            <h2 class="section-title">Mengapa Memilih Produk <span class="gradient-text">Pupuk Zefa?</span></h2>
+            <p class="section-desc">Solusi teruji laboratorium bioteknologi untuk efisiensi pemupukan dan kesehatan ekosistem pertanian.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">📑</div>
+                <h3 class="feature-title">Izin Kementan RI</h3>
+                <p class="feature-desc">Seluruh produk memiliki nomor pendaftaran resmi Kementerian Pertanian Republik Indonesia. Legal dan terjamin.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🔬</div>
+                <h3 class="feature-title">Formulasi Bioteknologi</h3>
+                <p class="feature-desc">Diformulasikan oleh CV. Pradipta Paramita Biotechnology Industry Karanganyar dengan konsorsium mikroba unggul.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">💸</div>
+                <h3 class="feature-title">Selamatkan Biaya Operasional</h3>
+                <p class="feature-desc">Mengurangi penggunaan pupuk kimia hingga 50% serta menurunkan FCR pakan ternak/ikan secara nyata.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🌍</div>
+                <h3 class="feature-title">Memperbaiki Struktur Tanah</h3>
+                <p class="feature-desc">Mengembalikan kesuburan tanah yang tandus/rusak akibat pemakaian kimia terus menerus dengan C-Organik tinggi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimoni">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">📸 BUKTI NYATA DARI LAPANGAN</span>
+            <h2 class="section-title">Foto Hasil Panen Pelanggan <span class="gradient-text">Pupuk Zefa Sejahtera</span></h2>
+            <p class="section-desc">Bukan sekedar klaim — ini adalah dokumentasi nyata hasil panen petani yang sudah menggunakan produk Zefa.</p>
+        </div>
+
+        <!-- PHOTO TESTIMONIAL GRID -->
+        <div class="testimoni-photo-grid">
+
+            <!-- TESTIMONI 1: Sawit Berbuah -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-sawit-sebelum.jpg" alt="Sawit Berbuah Lebat Pakai PEPETANI ZEFA" style="width:100%;height:280px;object-fit:cover;">
+                    <div style="position:absolute;top:12px;left:12px;background:#15803d;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">✅ PEPETANI ZEFA Slow Release</div>
+                    <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.75rem;padding:4px 10px;border-radius:50px;">📅 30 Mei 2026</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Sawit saya mulai berbuah lebat setelah 2 bulan pakai PEPETANI ZEFA Slow Release. Buahnya lebih besar dan banyak, luar biasa!"</p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:var(--green-600);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">R</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Pak Rasyid</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Petani Sawit, Kalimantan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TESTIMONI 2: Petani Sayur -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-petani-sayur.jpg" alt="Petani Sayur Panen Melimpah Pakai PRAZAK" style="width:100%;height:280px;object-fit:cover;">
+                    <div style="position:absolute;top:12px;left:12px;background:#d97706;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">✅ PRAZAK + NUTRISI</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Tanaman pare saya tumbuh subur banget pakai PRAZAK. Hasilnya banyak, buahnya besar-besar. Hemat pupuk kimia juga!"</p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:#d97706;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">S</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Bu Sri</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Petani Sayuran, Jawa Tengah</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TESTIMONI 3: Chat WA Alpukat -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-wa-alpukat.jpg" alt="Chat WhatsApp Testimoni Alpukat Berbuah Pakai Pepetani" style="width:100%;height:280px;object-fit:cover;object-position:top;">
+                    <div style="position:absolute;top:12px;left:12px;background:#15803d;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">💬 Chat Asli WhatsApp</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Alhamdulillah...punya saya SDH berbuah...pakai pepetani slow releas. Alhamdulillah buk berkat zefa" — <strong>3 bulan setelah pakai Slow Release!</strong></p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:var(--green-600);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">A</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Pak Aleg Berkah</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Petani Alpukat, Milyarder Zefa 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TESTIMONI 4: Sawit Sebelum Aplikasi -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-sawit-aplikasi.jpg" alt="Petani Sawit Mengaplikasikan PEPETANI ZEFA" style="width:100%;height:280px;object-fit:cover;">
+                    <div style="position:absolute;top:12px;left:12px;background:#15803d;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">✅ Cara Pakai di Lapangan</div>
+                    <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.75rem;padding:4px 10px;border-radius:50px;">📅 30 Maret 2026</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Caranya simpel banget, tinggal timbun di sekitar pohon sawit. Dalam 2 bulan sawit mulai berbuah lebat padahal sebelumnya mandul."</p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:var(--green-600);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">H</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Pak Haji</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Kebun Sawit, Sumatra</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TESTIMONI 5: Alpukat Panen Lebat -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);grid-column:span 1;" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-alpukat-panen.jpg" alt="Pohon Alpukat Panen Lebat Pakai PEPETANI ZEFA" style="width:100%;height:280px;object-fit:cover;">
+                    <div style="position:absolute;top:12px;left:12px;background:#15803d;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">✅ Hasil Nyata Alpukat Lebat</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Pohon alpukat saya berbuah sangat lebat pakai PEPETANI ZEFA Slow Release. Buah menggantung di setiap ranting, panen berlimpah!"</p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:var(--green-600);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">D</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Pak Dedi</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Petani Alpukat, Jawa Barat</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- TESTIMONI 6: Pare Kebun Lebat -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-pare-kebun.jpg" alt="Kebun Pare Lebat Hasil PRAZAK Nutrisi" style="width:100%;height:280px;object-fit:cover;">
+                    <div style="position:absolute;top:12px;left:12px;background:#d97706;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">✅ PRAZAK + NUTRISI</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Kebun pare saya berbuah lebat banget setelah semprot PRAZAK. Buahnya panjang-panjang dan sehat. Tidak pernah sepanen ini sebelumnya!"</p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:#d97706;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">W</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Bu Wati</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Petani Pare, Jawa Timur</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- CTA TESTIMONI -->
+        <div style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #bbf7d0;border-radius:20px;padding:32px;text-align:center;" class="animate-on-scroll">
+            <p style="font-size:1.05rem;color:#14532d;font-weight:700;margin-bottom:16px;">📲 Bergabunglah dengan ribuan petani yang sudah merasakan manfaat produk Zefa!</p>
+            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20tertarik%20setelah%20melihat%20hasil%20panen%20pelanggan.%20Boleh%20konsultasi%3F" target="_blank" class="btn btn-wa" style="padding:14px 32px;">
+                💬 Tanya Admin Sekarang — GRATIS
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-box animate-on-scroll">
+            <span style="background:rgba(255,255,255,0.2);color:#fff;padding:6px 16px;border-radius:50px;font-size:0.8rem;font-weight:800;letter-spacing:1px;display:inline-block;margin-bottom:16px;">KONSULTASI GRATIS VIA WHATSAPP</span>
+            <h2 class="cta-title">Siap Tingkatkan Hasil Panen &amp; Peternakan Anda?</h2>
+            <p class="cta-desc">Hubungi tim ahli Pupuk Zefa Sejahtera sekarang untuk panduan pemupukan presisi sesuai kondisi lahan &amp; ternak Anda.</p>
+            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20ingin%20konsultasi%20pemesanan%20pupuk." target="_blank" class="btn btn-wa" style="font-size:1.1rem;padding:18px 36px;background:#fff;color:#15803d;">
+                💬 Chat WhatsApp Admin Sekarang
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-text">🌿 PUPUK ZEFA SEJAHTERA</div>
+                <p style="font-size:0.9rem;line-height:1.7;">Bersama Zefa, Tumbuh Lebih dari Sekadar Bisnis. Perusahaan direct selling berbasis produk bioteknologi pertanian &amp; peternakan berkualitas tinggi.</p>
+            </div>
+            <div>
+                <div class="footer-heading">Produk Unggulan</div>
+                <div class="footer-links">
+                    <a href="#pro-b10">PRO-B10 Probiotik Herbal</a>
+                    <a href="#pepetani">PEPETANI ZEFA Slow Release</a>
+                    <a href="#prazak">PRAZAK + Bionutrisi Booster</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer-heading">Kontak Layanan</div>
+                <div class="footer-links">
+                    <a href="https://wa.me/6285727289279" target="_blank">📱 WhatsApp: +62 857-2728-9279</a>
+                    <a href="https://pupukzefasejahtera.com" target="_blank">🌐 Website: pupukzefasejahtera.com</a>
+                    <a href="https://instagram.com/zefaaofficial" target="_blank">📸 Instagram: @zefaaofficial</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 PT ZEFA MULIA SEJAHTERA All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/6285727289279?text=Halo%20Zefa%20Mulia%20Sejahtera%2C%20saya%20tertarik%20dengan%20produk%20pupuk%20Anda." target="_blank" class="floating-wa">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span>Hubungi Admin</span>
+</a>
+
+<script>
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('animated'), i * 80);
+        }
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// HAMBURGER MENU
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('hamburger-btn');
+    const isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('active', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+}
+function closeMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('hamburger-btn');
+    menu.classList.remove('open');
+    btn.classList.remove('active');
+    btn.setAttribute('aria-expanded', false);
+}
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    const nav = document.getElementById('navbar');
+    if (!nav.contains(e.target)) closeMobileMenu();
+});
+</script>
+
+<style>
+/* HAMBURGER BUTTON */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+.hamburger:hover { background: var(--green-50); }
+.ham-bar {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background: var(--green-700);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+/* Animate to X when active */
+.hamburger.active .ham-bar:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger.active .ham-bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.active .ham-bar:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* MOBILE MENU DROPDOWN */
+.mobile-menu {
+    display: none;
+    background: #fff;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+.mobile-menu.open {
+    display: block;
+    max-height: 500px;
+}
+.mobile-menu .container {
+    padding: 12px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.mobile-link {
+    display: block;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+}
+.mobile-link:hover { background: var(--green-50); color: var(--green-700); }
+.mobile-link-wa {
+    margin-top: 8px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #fff !important;
+    font-weight: 700;
+    text-align: center;
+    padding: 14px;
+    border-radius: 12px;
+}
+.mobile-link-wa:hover { opacity: 0.9; background: linear-gradient(135deg, #25D366, #128C7E); }
+
+/* Show hamburger on mobile, hide on desktop */
+@media (max-width: 767px) {
+    .hamburger { display: flex; }
+    .nav-links { display: none !important; }
+    .nav-tagline { display: none; }
+}
+@media (min-width: 768px) {
+    .mobile-menu { display: none !important; }
+    .hamburger { display: none !important; }
+}
+</style>
+
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[2].Value + <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zefa Mulia Sejahtera | Solusi Pupuk & Probiotik Pertanian Peternakan Perikanan</title>
+    <meta name="description" content="Katalog resmi PT. Zefa Mulia Sejahtera. Produk unggulan: PRO-B10 Probiotik Herbal, PEPETANI ZEFA Slow Release, dan PRAZAK Bionutrient Booster. Bersertifikat Kementan RI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .product-img-box {
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+        .product-img-box img {
+            max-height: 480px;
+            width: auto;
+            margin: 0 auto;
+            border-radius: var(--radius-sm);
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <a href="#" class="nav-logo-text" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+                    <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:1.1rem;color:var(--green-700);display:flex;align-items:center;gap:6px;flex-wrap:nowrap;">
+                        <span style="font-size:1.2rem;">🌿</span>
+                        <span>PUPUK ZEFA SEJAHTERA</span>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#produk">Katalog Produk</a>
+                <a href="#pro-b10">PRO-B10</a>
+                <a href="#pepetani">PEPETANI ZEFA</a>
+                <a href="#prazak">PRAZAK</a>
+                <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20tertarik%20dengan%20produk%20pupuk%20Anda." target="_blank" class="nav-wa-btn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Hubungi Admin
+                </a>
+            </div>
+
+            <!-- HAMBURGER BUTTON -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Buka Menu" onclick="toggleMobileMenu()">
+                <span class="ham-bar"></span>
+                <span class="ham-bar"></span>
+                <span class="ham-bar"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MOBILE DROPDOWN MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="container">
+            <a href="#produk" class="mobile-link" onclick="closeMobileMenu()">📋 Katalog Produk</a>
+            <a href="#pro-b10" class="mobile-link" onclick="closeMobileMenu()">🧪 PRO-B10</a>
+            <a href="#pepetani" class="mobile-link" onclick="closeMobileMenu()">🌱 PEPETANI ZEFA</a>
+            <a href="#prazak" class="mobile-link" onclick="closeMobileMenu()">💊 PRAZAK</a>
+            <a href="#testimoni" class="mobile-link" onclick="closeMobileMenu()">📸 Testimoni</a>
+            <a href="#keunggulan" class="mobile-link" onclick="closeMobileMenu()">⭐ Keunggulan</a>
+            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20ingin%20konsultasi%20produk%20pupuk." target="_blank" class="mobile-link mobile-link-wa" onclick="closeMobileMenu()">
+                💬 Hubungi Admin via WhatsApp
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="dot"></span> Formulation By Pradipta Paramita Biotech Industry
+                </div>
+                <h1 class="hero-title">
+                    Solusi Bioteknologi Modern untuk <span class="gradient-text">Hasil Panen &amp; Peternakan Maksimal</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Inovasi pupuk hayati slow release &amp; probiotik herbal bersertifikat Kementan RI. Menghemat biaya pupuk kimia, memacu pertumbuhan tanaman, serta menyehatkan ternak &amp; ikan.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="number">3 Utama</span>
+                        <span class="label">Produk Spesialis</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="number">50%</span>
+                        <span class="label">Hemat Pupuk Kimia</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="number">100%</span>
+                        <span class="label">Aman &amp; Ramah Lingkungan</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="https://wa.me/6285727289279?text=Halo%20Zefa%20Mulia%20Sejahtera%2C%20saya%20ingin%20konsultasi%20produk%20pupuk." target="_blank" class="btn btn-wa">
+                        💬 Konsultasi &amp; Pemesanan WA
+                    </a>
+                    <a href="#produk" class="btn btn-outline">Lihat Detail Produk</a>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+                <div style="background:#fff;border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:16px;box-shadow:var(--shadow-lg);text-align:center;">
+                    <img src="assets/images/produk-zefa-gabungan.jpg" alt="3 Produk Utama Pupuk Zefa Sejahtera: PRO-B10, PEPETANI ZEFA, PRAZAK" style="width:100%;height:auto;border-radius:var(--radius-md);object-fit:cover;">
+                    <div style="margin-top:10px;font-weight:700;font-size:0.85rem;color:var(--green-700);">🌿 3 Produk Unggulan Pertanian, Peternakan &amp; Perikanan</div>
+                </div>
+
+                <div class="hero-card-preview">
+                    <div style="background:#eab308;color:#713f12;font-weight:800;font-size:0.8rem;padding:4px 12px;border-radius:50px;display:inline-block;margin-bottom:12px;">SERTIFIKASI RESMI</div>
+                    <h3 style="font-size:1.3rem;margin-bottom:8px;color:#0f172a;">Bersertifikat Kementan RI</h3>
+                    <p style="font-size:0.9rem;color:#475569;margin-bottom:16px;">Semua produk diformulasikan presisi dengan mikroba unggulan (Bacillus, Lactobacillus, Trichoderma, PGPR) &amp; nutrisi mikro-makro lengkap.</p>
+                    <ul style="list-style:none;font-size:0.88rem;color:#1e293b;">
+                        <li style="margin-bottom:6px;">✔️ <strong>PRO-B10</strong>: KEMENTAN RI No. D.2504797 PTS</li>
+                        <li style="margin-bottom:6px;">✔️ <strong>PEPETANI ZEFA</strong>: No. Reg 02.03.2025.370</li>
+                        <li style="margin-bottom:6px;">✔️ <strong>PRAZAK</strong>: No. Reg 03.02.2022.1020</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS DETAIL SECTION -->
+<section class="products" id="produk">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">KATALOG LENGKAP PRODUK ZEFA</span>
+            <h2 class="section-title">Detail Kinerja &amp; Keunggulan <span class="gradient-text">3 Produk Utama</span></h2>
+            <p class="section-desc">Informasi teknis lengkap dari riset laboratorium bioteknologi dan panduan aplikasi penggunaan di lapangan.</p>
+        </div>
+
+        <!-- 1. PRO-B10 -->
+        <div class="product-card-large animate-on-scroll" id="pro-b10">
+            <div class="product-header-banner">
+                <div>
+                    <span style="font-size:0.85rem;opacity:0.9;font-weight:700;letter-spacing:1px;text-transform:uppercase;">PROBIOTIK TERNAK &amp; PERIKANAN MULTIFUNGSI</span>
+                    <h3>PRO-B10 (Probiotik dengan Herbal)</h3>
+                    <p style="opacity:0.9;font-size:0.95rem;">Kemasan: Sachet 500g, Sachet 20g, Box 1kg | Reg Kementan RI No. D.2504797 PTS</p>
+                </div>
+                <span class="badge">SOLUSI TERNAK &amp; IKAN</span>
+            </div>
+
+            <div class="product-content-grid">
+                <div>
+                    <!-- GAMBAR BROSUR RESMI PRO-B10 -->
+                    <div class="product-img-box">
+                        <img src="assets/images/prob10.jpg" alt="Brosur Resmi PRO-B10 Pupuk Zefa">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#15803d;">🔬 Kandungan &amp; Keunggulan Formulasi</h4>
+                    <p style="font-size:0.95rem;color:#334155;margin-bottom:16px;line-height:1.7;">
+                        PRO-B10 menggabungkan <strong>Probiotik Unggulan</strong> (Bacillus subtilis, Lactobacillus bulgaricus, L. plantarum, Saccharomyces cereviceae, Aspergillus niger) dengan <strong>Prebiotik Herbal Alami</strong> (<em>Curcuma domestica</em> / Kunyit &amp; <em>Zingiber officinale</em> / Jahe).
+                    </p>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">💡 Formulasi Probiotik + Prebiotik Herbal (Synbiotik)</div>
+                        <p style="font-size:0.9rem;color:#475569;margin-bottom:10px;">
+                            PRO-B10 merupakan gabungan <strong>Probiotik Unggulan</strong> (mikroba hidup menguntungkan) dan <strong>Prebiotik Herbal</strong> (nutrisi makanan khusus bagi mikroba dari <em>Curcuma domestica</em> / Kunyit &amp; <em>Zingiber officinale</em> / Jahe) yang membentuk sistem <strong>Synbiotik</strong> sempurna.
+                        </p>
+                        <ul class="spec-list">
+                            <li><span>🧪</span><span><strong>Analisis Nutrisi Kunyit</strong>: Karbohidrat 63%, Protein 8.6%, Lemak 8.9%, Serat 6.9%, Kalium 2.5%, Vit A (175 IU), Vit C (49.8mg), Niasin, Calcium, &amp; Phosphor.</span></li>
+                            <li><span>🧪</span><span><strong>Analisis Nutrisi Jahe</strong>: Karbohidrat 66.5%, Protein 8.6%, Lemak 6.4%, Serat 5.9%, Kalium 1.4%, Vit A (175 IU), Vit C (12mg), Niasin, Fe, &amp; Na.</span></li>
+                            <li><span>🦠</span><span><strong>Konsorsium Mikroba Unggulan</strong>: <em>Bacillus subtilis, Bifidobacterium bifidum, B. longum, Lactobacillus bulgaricus, L. plantarum, Saccharomyces cereviceae, Aspergillus niger</em>.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">📊 5 Manfaat Utama Probiotik Pakan (Uji Riset FKH-UGM)</div>
+                        <ul class="spec-list">
+                            <li><span>1️⃣</span><span><strong>Penguraian Pakan &amp; TDN Naik</strong>: Mikroba menghasilkan enzim pengurai (Enzymatic Breakdown) yang memecah pakan sulit terurai sehingga nilai TDN (Total Digestive Nutrient) meningkat drastis.</span></li>
+                            <li><span>2️⃣</span><span><strong>Menurunkan FCR (Feed Conversion Ratio)</strong>: Efisiensi pakan meningkat nyata — jumlah pakan lebih sedikit memberikan bobot badan yang sama.</span></li>
+                            <li><span>3️⃣</span><span><strong>Meningkatkan ADG (Average Daily Gain) &amp; ABW</strong>: Pertambahan bobot harian ternak &amp; bobot rata-rata ikan naik pesat. Waktu panen lebih cepat/maju.</span></li>
+                            <li><span>4️⃣</span><span><strong>Ketahanan Penyakit &amp; Imunitas Tinggi</strong>: Teruji klinis menekan infeksi penyakit ND/Tetelo, <em>Campylobacter</em>, &amp; <em>E. coli</em> (Pericarditis &amp; Perihepatitis) pada unggas.</span></li>
+                            <li><span>5️⃣</span><span><strong>Kualitas Carcas &amp; Lingkungan Bebas Bau</strong>: Daging lebih padat rendah lemak, kuning telur oranye pekat, serta kotoran tidak berbau Amoniak/H2S karena terurai sempurna.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">🐟 Manfaat Khusus Budidaya Perikanan (Patin, Nila, Gurame, Lele)</div>
+                        <ul class="spec-list">
+                            <li><span>🌊</span><span><strong>Mengatasi Bau Tanah (Off Flavours)</strong>: Mengurai senyawa penyebab bau tanah <strong>Geosmin (GSM)</strong> &amp; <strong>2-Methylisoborneol (2-MIB)</strong> akibat akumulasi Cyanobacteria &amp; sisa pakan.</span></li>
+                            <li><span>📈</span><span><strong>Meningkatkan SR (Survival Rate)</strong>: Kematian ikan berkurang drastis dan air kolam tetap seimbang (Parameter Nitrit, Nitrat, Amoniak, H2S, &amp; TOM terkontrol aman).</span></li>
+                            <li><span>🥩</span><span><strong>Daging Ikan Bersih &amp; Tidak Kuning</strong>: Menghasilkan kualitas daging ikan yang segar, putih padat, dan bebas lemak berlebih.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- GAMBAR BROSUR KANDUNGAN PRO-B10 -->
+                    <div class="product-img-box">
+                        <img src="assets/images/prob10-detail.jpg" alt="Detail Indikasi dan Dosis PRO-B10">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#15803d;">🛠️ Dosis &amp; Panduan Aplikasi Lengkap</h4>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">1. Pemberian Langsung Pada Pakan</div>
+                        <p style="font-size:0.9rem;color:#475569;">
+                            Campurkan <strong>4 gram PRO-B10 per kg pakan</strong> (atau 1 sendok makan / 1 sachet 500g untuk 5 zak pakan 50kg). Campurkan dengan 100-300 ml air bersih dulu, aduk merata ke pakan, lalu berikan langsung ke ternak/ikan.
+                        </p>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">2. Fermentasi Pakan Domba / Kambing / Sapi / Ayam</div>
+                        <div class="usage-step">
+                            <span class="step-num">1</span>
+                            <div style="font-size:0.9rem;">Larutkan <strong>100 - 200 gram PRO-B10</strong> ke dalam 8 - 10 liter air bersih + nutrisi pendamping/tetes/dedak.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">2</span>
+                            <div style="font-size:0.9rem;">Campurkan merata pada 50 kg bahan pakan (hijauan/concentrate/dedak) di atas terpal/lantai.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">3</span>
+                            <div style="font-size:0.9rem;">Masukkan ke dalam drum/tong/plastik HDPE, padatkan dan tutup kedap udara rapat-rapat.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">4</span>
+                            <div style="font-size:0.9rem;">Tunggu 1 - 2 malam (atau 21 hari untuk pakan silase komplit). Pakan siap diberikan! (Gunakan hasil fermentasi &lt; 3 hari).</div>
+                        </div>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">3. Penggunaan Pada Kolam &amp; Kotoran Kandang</div>
+                        <div class="usage-step">
+                            <span class="step-num">A</span>
+                            <div style="font-size:0.9rem;"><strong>Air Kolam</strong>: Teberkan 100 gram PRO-B10 per m³ air saat persiapan kolam, lalu secara rutin dicampur pakan harian selama budidaya.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">B</span>
+                            <div style="font-size:0.9rem;"><strong>Kotoran Kandang Bebas Bau &amp; Lalat</strong>: Taburkan langsung pada kotoran basah, atau siramkan larutan PRO-B10 di atas kotoran kering. Kotoran tidak berbau dan lalat hilang!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-cta-bar">
+                <div>
+                    <span style="font-size:0.85rem;color:#64748b;">Butuh konsultasi dosis PRO-B10 untuk ternak/kolam Anda?</span>
+                    <h5 style="font-size:1.1rem;color:#0f172a;">Pesan PRO-B10 Original Zefa</h5>
+                </div>
+                <a href="https://wa.me/6285727289279?text=Halo%2C%20saya%20tertarik%20memesan%20PRO-B10%20Probiotik%20Herbal.%20Mohon%20info%20harga%20dan%20pemesanan." target="_blank" class="btn btn-wa" style="padding:12px 28px;font-size:0.95rem;">
+                    Pesan PRO-B10 via WhatsApp
+                </a>
+            </div>
+        </div>
+
+
+        <!-- 2. PEPETANI ZEFA + SLOW RELEASE -->
+        <div class="product-card-large animate-on-scroll" id="pepetani">
+            <div class="product-header-banner" style="background:linear-gradient(135deg, #166534, #14532d);">
+                <div>
+                    <span style="font-size:0.85rem;opacity:0.9;font-weight:700;letter-spacing:1px;text-transform:uppercase;">PUPUK HAYATI SLOW RELEASE TANAMAN KERAS</span>
+                    <h3>PEPETANI ZEFA + Slow Release</h3>
+                    <p style="opacity:0.9;font-size:0.95rem;">Kemasan: Plastik Kedap 1 kg (Granule &amp; Powder) | No. Pendaftaran: 02.03.2025.370</p>
+                </div>
+                <span class="badge" style="background:#bbf7d0;color:#14532d;">FORMULA TANAMAN KERAS</span>
+            </div>
+
+            <div class="product-content-grid">
+                <div>
+                    <!-- GAMBAR BROSUR RESMI PEPETANI ZEFA -->
+                    <div class="product-img-box">
+                        <img src="assets/images/pepetani.jpg" alt="Brosur Resmi PEPETANI ZEFA Slow Release">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#15803d;">🌱 Solusi Masalah Defisiensi Unsur Hara Tanaman</h4>
+                    <p style="font-size:0.95rem;color:#334155;margin-bottom:16px;line-height:1.7;">
+                        Dirancang khusus untuk tanaman tahunan/keras (<strong>Sawit, Durian, Kakao, Karet, Mangga, Alpukat</strong>). Teknologi <em>Slow Release</em> melepaskan nutrisi secara perlahan sesuai kebutuhan tanaman tanpa risiko lisis/penguapan akibat hujan/panas.
+                    </p>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">⚡ Komposisi Super Lengkap &amp; Peran Biologis (4 in 1 Formula)</div>
+                        <ul class="spec-list">
+                            <li><span>1️⃣</span><span><strong>Pupuk Hayati Multi-Mikroba</strong>: <em>Aspergillus niger (≥1.5x10⁵), Bacillus subtilis (≥3.1x10⁷), Lactobacillus plantarum (≥2.6x10⁸), Pseudomonas fluorescens (≥1.5x10⁷), Saccharomyces cereviceae (≥1.3x10⁷)</em>, plus <em>Acetobacter, Azospirillum, Nitrosomonas, Nitrobacter</em>. Memperbaiki tanah tandus &amp; mengurai Phosphat/Kalium terikat.</span></li>
+                            <li><span>2️⃣</span><span><strong>Kandungan Unsur Makro &amp; Mikro Mineral</strong>: Makromineral N (3.2%), P (6.95%), K (7.0%), Ca (9.1%), Mg (5.5%), S (11.2%). Micromineral Fe (0.93%), Mn (0.32%), Cu (0.25%), Zn (0.29%), Boron (0.57% / 570 ppm), Mo (0.2%), Co (0.003%). Plus Silika penguat dinding sel tanaman!</span></li>
+                            <li><span>3️⃣</span><span><strong>Agensia Hayati Trichoderma (5%)</strong>: <em>T. harzianum, T. viride, T. koningii</em> — Agen biokontrol pembasmi jamur patogen tanah (Layu Fusarium, Rhizoctonia solani, Phytophthora). Mengeluarkan enzim Carboxilmethylcellulase, Xylanase, &amp; Urease yang merombak bahan organik (kohe).</span></li>
+                            <li><span>4️⃣</span><span><strong>PGPR (5%) &amp; Mycorrhiza</strong>: <em>Plant Growth Promoting Rhizobacteria</em> &amp; Mikoriza yang memperluas bidang serapan hifa akar hingga ke pori-pori tanah terkecil, meningkatkan serapan air pada musim kemarau, serta memfiksasi Nitrogen udara secara alami (<em>Bradyrhizobium japonicum</em>).</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">⚠️ Solusi Mencegah &amp; Mengatasi Defisiensi Unsur Hara Tanaman</div>
+                        <ul class="spec-list">
+                            <li><span>🍂</span><span><strong>Defisiensi Nitrogen (N)</strong>: Daun menguning, pucuk muda klorosis, pelepah menguning, tanaman kerdil &amp; mati. Teratasi dengan mikroba penambat N.</span></li>
+                            <li><span>🔴</span><span><strong>Defisiensi Phosphat (P)</strong>: Batang meruncing seperti pensil, anak daun/pelepah memerah/ungu, tanaman mandul &amp; buah keriput minyak rendah. Teratasi dengan pelarut P.</span></li>
+                            <li><span>🟧</span><span><strong>Defisiensi Potasium/Kalium (K)</strong>: Bercak kuning/oranye pada pelepah tua yang menembus sinar matahari, mahkota sawit menguning total, produksi TBS drop. Teratasi dengan ketersediaan ion K.</span></li>
+                            <li><span>☀️</span><span><strong>Defisiensi Magnesium (Mg)</strong>: Pucuk daun tua terkena sinar matahari berubah kuning terang lalu mati. Teratasi dengan Mg 5.5%.</span></li>
+                            <li><span>🌿</span><span><strong>Defisiensi Boron (B)</strong>: Ujung daun terlipat tajam/keriting, pelepah puncak kempis seolah terserang virus, bunga gagal jadi buah. Teratasi dengan Boron 570 ppm!</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- GAMBAR BROSUR PERBANDINGAN PEPETANI ZEFA -->
+                    <div class="product-img-box">
+                        <img src="assets/images/pepetani-detail.jpg" alt="Perbandingan PEPETANI ZEFA vs Pupuk Kimia">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#15803d;">📍 Dosis &amp; Panduan Aplikasi Pemupukan Presisi</h4>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">Dosis Penggunaan Berdasarkan Ukuran Pohon</div>
+                        <div style="background:#fff;border:1px solid var(--border-color);border-radius:8px;padding:14px;margin-bottom:12px;font-size:0.9rem;">
+                            <strong>100 gram s.d. 150 gram (2 - 3 Cup Full) per pohon</strong><br>
+                            <span style="color:#64748b;font-size:0.85rem;">1 Kemasan Box 1 kg cukup untuk 7 s.d. 10 Pohon dewasa (Sawit, Durian, Mangga, Alpukat, Kakao, Karet).</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">Teknik Aplikasi Tajuk Tanaman (Slow Release)</div>
+                        <div class="usage-step">
+                            <span class="step-num">1</span>
+                            <div style="font-size:0.9rem;">Gali 4 lubang kecil mengelilingi pohon pada posisi <strong>50% s.d. 70% dari radius tajuk (ujung lingkaran daun)</strong>.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">2</span>
+                            <div style="font-size:0.9rem;">Tanamkan pupuk PEPETANI ZEFA + SLOW RELEASE secukupnya ke dalam tiap lubang.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">3</span>
+                            <div style="font-size:0.9rem;">Timbun kembali dengan tanah rapat-rapat. Nutrisi akan larut sedikit demi sedikit (Slow Release) terserap sempurna tanpa lisis terbuang hujan.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">4</span>
+                            <div style="font-size:0.9rem;">Ulangi pemupukan tiap <strong>1 s.d. 2 bulan sekali</strong> dengan menggeser posisi lubang.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-cta-bar">
+                <div>
+                    <span style="font-size:0.85rem;color:#64748b;">Cocok untuk perkebunan sawit, durian, &amp; tanaman buah keras.</span>
+                    <h5 style="font-size:1.1rem;color:#0f172a;">Pesan PEPETANI ZEFA Slow Release</h5>
+                </div>
+                <a href="https://wa.me/6285727289279?text=Halo%2C%20saya%20tertarik%20memesan%20PEPETANI%20ZEFA%20Slow%20Release.%20Mohon%20info%20harga%20dan%20pemesanan." target="_blank" class="btn btn-wa" style="padding:12px 28px;font-size:0.95rem;">
+                    Pesan PEPETANI ZEFA via WA
+                </a>
+            </div>
+        </div>
+
+
+        <!-- 3. PRAZAK + NUTRISI -->
+        <div class="product-card-large animate-on-scroll" id="prazak">
+            <div class="product-header-banner" style="background:linear-gradient(135deg, #d97706, #b45309);">
+                <div>
+                    <span style="font-size:0.85rem;opacity:0.9;font-weight:700;letter-spacing:1px;text-transform:uppercase;">PUPUK HAYATI MAJEMUK CAIR &amp; BIONUTRIENT BOOSTER</span>
+                    <h3>PRAZAK + NUTRISI (Bionutrient Booster)</h3>
+                    <p style="opacity:0.9;font-size:0.95rem;">Set Komplit: Biang Prazak 250ml + Nutrisi A (90g) + Nutrisi B (50g) | Reg 03.02.2022.1020</p>
+                </div>
+                <span class="badge" style="background:#fef08a;color:#713f12;">BOOSTER KESUBURAN</span>
+            </div>
+
+            <div class="product-content-grid">
+                <div>
+                    <!-- GAMBAR BROSUR RESMI PRAZAK + NUTRISI TERUPDATE -->
+                    <div class="product-img-box">
+                        <img src="assets/images/prazak-detail.jpg" alt="Brosur Lengkap PRAZAK + NUTRISI A & B Zefa">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#b45309;">🧪 Bioteknologi Pengaktifan Bakteri Dorman</h4>
+                    <p style="font-size:0.95rem;color:#334155;margin-bottom:16px;line-height:1.7;">
+                        Pupuk hayati majemuk cair berisi konsorsium mikroba aktif &amp; didukung <strong>Bionutrisi Booster</strong> (Asam Amino Lysin/Methyonis, Vitamin, ZPT Auxin/IAA). Mengaktifkan bakteri dorman agar siap membenahi tanah &amp; tanaman secara instan.
+                    </p>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">✨ Konsorsium Mikroba &amp; Bionutrisi Booster Spek Tinggi</div>
+                        <ul class="spec-list">
+                            <li><span>🧫</span><span><strong>Konsorsium 8 Mikroba Unggul</strong>: <em>Azotobacter sp, Azospirillum sp, Bacillus subtilis, Lactobacillus plantarum, Pseudomonas fluorescens, Nitrosomonas, Nitrobacter, Trichoderma sp, Aspergillus niger</em> (Jutaan - Ratusan Juta Sel/mL).</span></li>
+                            <li><span>🌬️</span><span><strong>Fiksasi Nitrogen Udara 70%</strong>: Bakteri Azotobacter &amp; Azospirillum menangkap gas Nitrogen bebas di udara (komposisi udara 70% N) untuk disalurkan ke tanaman demi pertumbuhan vegetatif yang cepat &amp; lebat.</span></li>
+                            <li><span>🌱</span><span><strong>Bionutrisi Booster (Nutrisi A &amp; B)</strong>: Menghasilkan <strong>ZPT Alami (Auxin &amp; IAA)</strong> merangsang akar, Asam Amino (Lysin &amp; Methyonis), Vitamin, &amp; C-Organik 19.5% yang membangun kembali tanah retak/rusak.</span></li>
+                            <li><span>📊</span><span><strong>Analisis Laboratorium Bionutrisi Booster</strong>: N-total 2%, P2O5 0.9%, K2O 2.4%, C-Organik 19.5%, Fe 456 ppm, Mn 123 ppm, Cu 147 ppm, Zn 51 ppm, Mo 2.7 ppm, Boron 11 ppm.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">🛡️ 7 Keunggulan Utama PRAZAK Bagi Pertanian</div>
+                        <ul class="spec-list">
+                            <li><span>1️⃣</span><span><strong>Pertumbuhan Cepat</strong>: Mikroba jumlah kerapatan tinggi langsung bekerja cepat pada tanah &amp; akar.</span></li>
+                            <li><span>2️⃣</span><span><strong>Mendukung Pembentukan Tunas &amp; Cabang</strong>: Kandungan ZPT alami memicu percabangan baru.</span></li>
+                            <li><span>3️⃣</span><span><strong>Bobot Buah Lebih Berat</strong>: Kebutuhan hara makro &amp; mikro terpenuhi secara seimbang.</span></li>
+                            <li><span>4️⃣</span><span><strong>Tahan Penyakit &amp; Hama</strong>: Tanaman tidak disukai hama serangga &amp; kebal serangan jamur patogen.</span></li>
+                            <li><span>5️⃣</span><span><strong>Memperbaiki Lahan Rusak</strong>: Makin sering dipakai, tanah makin gembur &amp; kaya bahan organik (Subur Jangka Panjang).</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- GAMBAR BROSUR VERSI KEDUA PRAZAK -->
+                    <div class="product-img-box">
+                        <img src="assets/images/prazak.jpg" alt="Detail Produk PRAZAK Nutrisi A & B Zefa">
+                    </div>
+
+                    <h4 style="font-size:1.2rem;margin-bottom:16px;color:#b45309;">🥣 Cara Aktivasi Biang &amp; Dosis Semprot Lapangan</h4>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">Langkah 1: Pembuatan Biang Larutan 1 Liter</div>
+                        <div class="usage-step">
+                            <span class="step-num">1</span>
+                            <div style="font-size:0.9rem;">Siapkan wadah 1 liter, isi dengan <strong>750 ml air bersih</strong> (direbus matang lebih bagus).</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">2</span>
+                            <div style="font-size:0.9rem;">Masukkan seluruh serbuk <strong>Bionutrisi Booster (Nutrisi A &amp; Nutrisi B)</strong>, aduk hingga larut sempurna.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">3</span>
+                            <div style="font-size:0.9rem;">Tuangkan <strong>Biang Prazak 250 ml</strong>, tutup rapat, kocok homogen &amp; eramkan 1 s.d. 2 malam. Larutan biang siap dipakai!</div>
+                        </div>
+                    </div>
+
+                    <div class="detail-box">
+                        <div class="detail-box-title">Langkah 2: Dosis &amp; Jadwal Aplikasi Lapangan</div>
+                        <div class="usage-step">
+                            <span class="step-num">A</span>
+                            <div style="font-size:0.9rem;"><strong>Tangki Semprot 14 Liter</strong>: Masukkan <strong>200 ml s.d. 400 ml</strong> (1 - 2 gelas) biang yang sudah difermentasi, aduk rata.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">B</span>
+                            <div style="font-size:0.9rem;"><strong>Waktu Semprot Terbaik</strong>: Pagi hari sesudah matahari terbit (<strong>pukul 07.00 s.d. 10.00</strong>) saat stomata daun terbuka. Semprotkan ke daun atau kocor ke perakaran 1-2x seminggu.</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">C</span>
+                            <div style="font-size:0.9rem;"><strong>Dosis Per Hektar (Ha)</strong>: Dosis pendamping 5-10 Liter/Ha. Saat pupuk kimia dikurangi hingga 25%, tingkatkan dosis Prazak jadi 15 Liter/Ha (berbanding terbalik).</div>
+                        </div>
+                        <div class="usage-step">
+                            <span class="step-num">D</span>
+                            <div style="font-size:0.9rem;"><strong>Untuk Tanah Rusak / Keras</strong>: Pada lahan retak-retak berlebihan, wajib ditambahkan pupuk kandang/Humic Acid (C-organik min 40%, 2-4 kg/Ha) sebagai nutrisi pendukung bakteri.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-cta-bar">
+                <div>
+                    <span style="font-size:0.85rem;color:#64748b;">Sangat cocok untuk Padi, Cabai, Sayuran, &amp; Hortikultura.</span>
+                    <h5 style="font-size:1.1rem;color:#0f172a;">Pesan Paket PRAZAK + NUTRISI</h5>
+                </div>
+                <a href="https://wa.me/6285727289279?text=Halo%2C%20saya%20tertarik%20memesan%20Paket%20PRAZAK%20%2B%20Nutrisi.%20Mohon%20info%20harga%20dan%20pemesanan." target="_blank" class="btn btn-wa" style="padding:12px 28px;font-size:0.95rem;background:linear-gradient(135deg,#d97706,#b45309);">
+                    Pesan PRAZAK via WA
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- MOMENTUM BISNIS & KETAHANAN PANGAN SECTION -->
+<section style="padding:70px 0;background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;" id="momentum-bisnis">
+    <div class="container">
+        <div class="section-header animate-on-scroll" style="margin-bottom:40px;">
+            <span class="section-tag" style="background:#fef08a;color:#854d0e;">🚀 MOMENTUM BISNIS SANGAT BAGUS</span>
+            <h2 class="section-title" style="color:#fff;">Program Ketahanan Pangan Nasional<br><span class="gradient-text" style="background:linear-gradient(135deg,#4ade80,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Peluang Emas Bisnis Pupuk Modern</span></h2>
+            <p class="section-desc" style="color:#94a3b8;">Pemerintah baru saat ini sedang gencar menggalakkan program <strong>Swasembada &amp; Ketahanan Pangan Nasional</strong>. Kebutuhan pupuk berkualitas tinggi di seluruh Indonesia melonjak drastis!</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:40px;" class="animate-on-scroll">
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:28px;backdrop-filter:blur(10px);">
+                <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;">
+                    <div style="width:36px;height:24px;border-radius:4px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);display:flex;flex-direction:column;">
+                        <div style="background:#e11d48;height:50%;width:100%;"></div>
+                        <div style="background:#ffffff;height:50%;width:100%;"></div>
+                    </div>
+                    <span style="font-size:1.4rem;">🇮🇩</span>
+                </div>
+                <h3 style="font-size:1.2rem;color:#4ade80;margin-bottom:10px;">1. Fokus Utama Pemerintah Baru</h3>
+                <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.7;">Ketahanan pangan &amp; peningkatan hasil pertanian/peternakan menjadi prioritas utama negara. Kebutuhan produk efisiensi pemupukan dicari jutaan petani seluruh Indonesia.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:28px;backdrop-filter:blur(10px);">
+                <div style="font-size:2.2rem;margin-bottom:14px;">📉</div>
+                <h3 style="font-size:1.2rem;color:#facc15;margin-bottom:10px;">Solusi Kelangkaan Pupuk Kimia</h3>
+                <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.7;">Harga pupuk kimia mahal dan kuota subsidi terbatas. Produk Zefa hadir sebagai jawaban tepat untuk <strong>menghemat biaya pupuk hingga 50%</strong> bagi petani.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:28px;backdrop-filter:blur(10px);">
+                <div style="font-size:2.2rem;margin-bottom:14px;">💰</div>
+                <h3 style="font-size:1.2rem;color:#4ade80;margin-bottom:10px;">Peluang Profit Pasar Masif</h3>
+                <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.7;">Setiap daerah butuh pasokan pupuk &amp; probiotik rutin. Ini adalah momentum terbaik untuk menjadi <strong>Mitra / Reseller Resmi Pupuk Zefa Sejahtera</strong> di wilayah Anda!</p>
+            </div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(234,179,8,0.15));border:1px solid rgba(74,222,128,0.3);border-radius:20px;padding:32px;text-align:center;" class="animate-on-scroll">
+            <h4 style="font-size:1.3rem;color:#fff;margin-bottom:12px;">🌟 Ambil Bagian dalam Ketahanan Pangan Nasional!</h4>
+            <p style="font-size:0.95rem;color:#cbd5e1;max-width:650px;margin:0 auto 20px;">Jangan lewatkan momentum emas ini. Dapatkan margin keuntungan menarik dan dukungan sistem bisnis reseller gratis.</p>
+            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20tertarik%20memanfaatkan%20momentum%20bisnis%20ketahanan%20pangan%20ini.%20Bagaimana%20cara%20jadi%20mitra%2Freseller%3F" target="_blank" class="btn btn-wa" style="padding:14px 32px;">
+                🤝 Gabung Peluang Bisnis / Reseller Zefa Sekarang
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- TRANSISI ORGANIK SECTION -->
+<section class="section-transisi" id="transisi-organik">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">🌿 KELEBIHAN UTAMA PRODUK ZEFA</span>
+            <h2 class="section-title">Organik Bersahabat dengan Kimia,<br><span class="gradient-text">Semakin Hemat di Jangka Panjang</span></h2>
+            <p class="section-desc">Tidak perlu langsung berhenti dari pupuk kimia. Produk Zefa dirancang sebagai <strong>pendamping</strong> pupuk kimia yang secara perlahan mengubah tanah Anda menjadi subur secara alami.</p>
+        </div>
+
+        <!-- JOURNEY 3 FASE -->
+        <div class="transisi-journey-grid animate-on-scroll">
+            <!-- FASE 1 -->
+            <div style="background:#fff;border:2px solid #bbf7d0;border-radius:24px;padding:32px 24px;text-align:center;box-shadow:0 8px 24px rgba(22,163,74,0.08);">
+                <div style="width:64px;height:64px;background:linear-gradient(135deg,#16a34a,#15803d);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;">🧪</div>
+                <div style="background:#dcfce7;color:#14532d;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;display:inline-block;margin-bottom:12px;">FASE 1 — MULAI</div>
+                <h3 style="font-size:1.15rem;margin-bottom:10px;color:#0f172a;">Dampingi<br>Pupuk Kimia</h3>
+                <p style="font-size:0.88rem;color:#475569;line-height:1.6;">Gunakan produk Zefa <strong>bersama</strong> pupuk kimia yang biasa Anda pakai. Tidak perlu ganti total — tambahkan saja secara bertahap.</p>
+                <div style="margin-top:16px;font-size:0.85rem;font-weight:700;color:#16a34a;">🌱 Tanah mulai diperbaiki<br>📉 Dosis kimia bisa dikurangi 25%</div>
+            </div>
+            <!-- ARROW -->
+            <div class="transisi-arrow">↓</div>
+            <!-- FASE 2 -->
+            <div style="background:#fff;border:2px solid #fde68a;border-radius:24px;padding:32px 24px;text-align:center;box-shadow:0 8px 24px rgba(217,119,6,0.08);">
+                <div style="width:64px;height:64px;background:linear-gradient(135deg,#d97706,#b45309);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;">⚖️</div>
+                <div style="background:#fef08a;color:#713f12;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;display:inline-block;margin-bottom:12px;">FASE 2 — TRANSISI</div>
+                <h3 style="font-size:1.15rem;margin-bottom:10px;color:#0f172a;">Kurangi Kimia<br>Secara Bertahap</h3>
+                <p style="font-size:0.88rem;color:#475569;line-height:1.6;">Seiring tanah semakin subur, kebutuhan pupuk kimia otomatis <strong>berkurang 40–50%</strong>. Penghematan biaya sudah mulai terasa nyata.</p>
+                <div style="margin-top:16px;font-size:0.85rem;font-weight:700;color:#d97706;">💰 Hemat 40–50% biaya pupuk<br>🌾 Hasil panen meningkat</div>
+            </div>
+            <!-- ARROW -->
+            <div class="transisi-arrow">↓</div>
+            <!-- FASE 3 -->
+            <div style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #16a34a;border-radius:24px;padding:32px 24px;text-align:center;box-shadow:0 12px 32px rgba(22,163,74,0.18);">
+                <div style="width:64px;height:64px;background:linear-gradient(135deg,#15803d,#14532d);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;">🏆</div>
+                <div style="background:#15803d;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;display:inline-block;margin-bottom:12px;">FASE 3 — FULL ORGANIK</div>
+                <h3 style="font-size:1.15rem;margin-bottom:10px;color:#0f172a;">100% Organik &<br>Tanah Jadi Subur</h3>
+                <p style="font-size:0.88rem;color:#475569;line-height:1.6;">Tanah menjadi <strong>gembur, kaya mikroba, dan subur alami</strong>. Hasil panen terus bagus tanpa ketergantungan kimia. Biaya pupuk minimal!</p>
+                <div style="margin-top:16px;font-size:0.85rem;font-weight:700;color:#15803d;">✅ Bebas kimia berbahaya<br>📈 Profit petani meningkat signifikan</div>
+            </div>
+        </div>
+
+        <!-- BOTTOM STATS -->
+        <div class="transisi-stats-grid animate-on-scroll">
+            <div>
+                <div style="font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,#15803d,#16a34a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">25–50%</div>
+                <div style="font-weight:700;color:#0f172a;margin:8px 0 6px;">Penghematan Pupuk Kimia</div>
+                <div style="font-size:0.85rem;color:#64748b;">Sejak penggunaan pertama produk Zefa, kebutuhan pupuk kimia langsung turun signifikan.</div>
+            </div>
+            <div class="stats-center-item">
+                <div style="font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,#d97706,#b45309);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">Jangka Panjang</div>
+                <div style="font-weight:700;color:#0f172a;margin:8px 0 6px;">Tanah Makin Subur Alami</div>
+                <div style="font-size:0.85rem;color:#64748b;">Tidak seperti kimia yang merusak tanah, produk Zefa memperbaiki struktur tanah secara berkelanjutan.</div>
+            </div>
+            <div>
+                <div style="font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,#15803d,#16a34a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">Lebih Ngirit</div>
+                <div style="font-weight:700;color:#0f172a;margin:8px 0 6px;">Hasil Panen Tetap Bagus</div>
+                <div style="font-size:0.85rem;color:#64748b;">Panen melimpah, biaya pupuk turun drastis — keuntungan petani meningkat dari dua sisi sekaligus.</div>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top:36px;" class="animate-on-scroll">
+            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20ingin%20konsultasi%20cara%20mulai%20transisi%20ke%20pupuk%20organik." target="_blank" class="btn btn-wa">
+                🌿 Konsultasi Cara Mulai Transisi Organik — GRATIS
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="keunggulan">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">JAMINAN KUALITAS ZEFA</span>
+            <h2 class="section-title">Mengapa Memilih Produk <span class="gradient-text">Pupuk Zefa?</span></h2>
+            <p class="section-desc">Solusi teruji laboratorium bioteknologi untuk efisiensi pemupukan dan kesehatan ekosistem pertanian.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">📑</div>
+                <h3 class="feature-title">Izin Kementan RI</h3>
+                <p class="feature-desc">Seluruh produk memiliki nomor pendaftaran resmi Kementerian Pertanian Republik Indonesia. Legal dan terjamin.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🔬</div>
+                <h3 class="feature-title">Formulasi Bioteknologi</h3>
+                <p class="feature-desc">Diformulasikan oleh CV. Pradipta Paramita Biotechnology Industry Karanganyar dengan konsorsium mikroba unggul.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">💸</div>
+                <h3 class="feature-title">Selamatkan Biaya Operasional</h3>
+                <p class="feature-desc">Mengurangi penggunaan pupuk kimia hingga 50% serta menurunkan FCR pakan ternak/ikan secara nyata.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🌍</div>
+                <h3 class="feature-title">Memperbaiki Struktur Tanah</h3>
+                <p class="feature-desc">Mengembalikan kesuburan tanah yang tandus/rusak akibat pemakaian kimia terus menerus dengan C-Organik tinggi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimoni">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">📸 BUKTI NYATA DARI LAPANGAN</span>
+            <h2 class="section-title">Foto Hasil Panen Pelanggan <span class="gradient-text">Pupuk Zefa Sejahtera</span></h2>
+            <p class="section-desc">Bukan sekedar klaim — ini adalah dokumentasi nyata hasil panen petani yang sudah menggunakan produk Zefa.</p>
+        </div>
+
+        <!-- PHOTO TESTIMONIAL GRID -->
+        <div class="testimoni-photo-grid">
+
+            <!-- TESTIMONI 1: Sawit Berbuah -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-sawit-sebelum.jpg" alt="Sawit Berbuah Lebat Pakai PEPETANI ZEFA" style="width:100%;height:280px;object-fit:cover;">
+                    <div style="position:absolute;top:12px;left:12px;background:#15803d;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">✅ PEPETANI ZEFA Slow Release</div>
+                    <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.75rem;padding:4px 10px;border-radius:50px;">📅 30 Mei 2026</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Sawit saya mulai berbuah lebat setelah 2 bulan pakai PEPETANI ZEFA Slow Release. Buahnya lebih besar dan banyak, luar biasa!"</p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:var(--green-600);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">R</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Pak Rasyid</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Petani Sawit, Kalimantan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TESTIMONI 2: Petani Sayur -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-petani-sayur.jpg" alt="Petani Sayur Panen Melimpah Pakai PRAZAK" style="width:100%;height:280px;object-fit:cover;">
+                    <div style="position:absolute;top:12px;left:12px;background:#d97706;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">✅ PRAZAK + NUTRISI</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Tanaman pare saya tumbuh subur banget pakai PRAZAK. Hasilnya banyak, buahnya besar-besar. Hemat pupuk kimia juga!"</p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:#d97706;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">S</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Bu Sri</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Petani Sayuran, Jawa Tengah</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TESTIMONI 3: Chat WA Alpukat -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-wa-alpukat.jpg" alt="Chat WhatsApp Testimoni Alpukat Berbuah Pakai Pepetani" style="width:100%;height:280px;object-fit:cover;object-position:top;">
+                    <div style="position:absolute;top:12px;left:12px;background:#15803d;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">💬 Chat Asli WhatsApp</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Alhamdulillah...punya saya SDH berbuah...pakai pepetani slow releas. Alhamdulillah buk berkat zefa" — <strong>3 bulan setelah pakai Slow Release!</strong></p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:var(--green-600);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">A</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Pak Aleg Berkah</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Petani Alpukat, Milyarder Zefa 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TESTIMONI 4: Sawit Sebelum Aplikasi -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-sawit-aplikasi.jpg" alt="Petani Sawit Mengaplikasikan PEPETANI ZEFA" style="width:100%;height:280px;object-fit:cover;">
+                    <div style="position:absolute;top:12px;left:12px;background:#15803d;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">✅ Cara Pakai di Lapangan</div>
+                    <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.75rem;padding:4px 10px;border-radius:50px;">📅 30 Maret 2026</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Caranya simpel banget, tinggal timbun di sekitar pohon sawit. Dalam 2 bulan sawit mulai berbuah lebat padahal sebelumnya mandul."</p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:var(--green-600);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">H</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Pak Haji</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Kebun Sawit, Sumatra</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TESTIMONI 5: Alpukat Panen Lebat -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);grid-column:span 1;" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-alpukat-panen.jpg" alt="Pohon Alpukat Panen Lebat Pakai PEPETANI ZEFA" style="width:100%;height:280px;object-fit:cover;">
+                    <div style="position:absolute;top:12px;left:12px;background:#15803d;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">✅ Hasil Nyata Alpukat Lebat</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Pohon alpukat saya berbuah sangat lebat pakai PEPETANI ZEFA Slow Release. Buah menggantung di setiap ranting, panen berlimpah!"</p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:var(--green-600);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">D</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Pak Dedi</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Petani Alpukat, Jawa Barat</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- TESTIMONI 6: Pare Kebun Lebat -->
+            <div style="background:#fff;border:1px solid #dcfce7;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(22,163,74,0.08);" class="animate-on-scroll">
+                <div style="position:relative;">
+                    <img src="assets/images/testimoni-pare-kebun.jpg" alt="Kebun Pare Lebat Hasil PRAZAK Nutrisi" style="width:100%;height:280px;object-fit:cover;">
+                    <div style="position:absolute;top:12px;left:12px;background:#d97706;color:#fff;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:50px;">✅ PRAZAK + NUTRISI</div>
+                </div>
+                <div style="padding:20px;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p style="font-size:0.92rem;color:#334155;line-height:1.7;font-style:italic;margin-bottom:14px;">"Kebun pare saya berbuah lebat banget setelah semprot PRAZAK. Buahnya panjang-panjang dan sehat. Tidak pernah sepanen ini sebelumnya!"</p>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <div style="width:36px;height:36px;background:#d97706;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;">W</div>
+                        <div>
+                            <div style="font-weight:800;font-size:0.9rem;">Bu Wati</div>
+                            <div style="font-size:0.78rem;color:#64748b;">📍 Petani Pare, Jawa Timur</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- CTA TESTIMONI -->
+        <div style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #bbf7d0;border-radius:20px;padding:32px;text-align:center;" class="animate-on-scroll">
+            <p style="font-size:1.05rem;color:#14532d;font-weight:700;margin-bottom:16px;">📲 Bergabunglah dengan ribuan petani yang sudah merasakan manfaat produk Zefa!</p>
+            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20tertarik%20setelah%20melihat%20hasil%20panen%20pelanggan.%20Boleh%20konsultasi%3F" target="_blank" class="btn btn-wa" style="padding:14px 32px;">
+                💬 Tanya Admin Sekarang — GRATIS
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-box animate-on-scroll">
+            <span style="background:rgba(255,255,255,0.2);color:#fff;padding:6px 16px;border-radius:50px;font-size:0.8rem;font-weight:800;letter-spacing:1px;display:inline-block;margin-bottom:16px;">KONSULTASI GRATIS VIA WHATSAPP</span>
+            <h2 class="cta-title">Siap Tingkatkan Hasil Panen &amp; Peternakan Anda?</h2>
+            <p class="cta-desc">Hubungi tim ahli Pupuk Zefa Sejahtera sekarang untuk panduan pemupukan presisi sesuai kondisi lahan &amp; ternak Anda.</p>
+            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20ingin%20konsultasi%20pemesanan%20pupuk." target="_blank" class="btn btn-wa" style="font-size:1.1rem;padding:18px 36px;background:#fff;color:#15803d;">
+                💬 Chat WhatsApp Admin Sekarang
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-text">🌿 PUPUK ZEFA SEJAHTERA</div>
+                <p style="font-size:0.9rem;line-height:1.7;">Bersama Zefa, Tumbuh Lebih dari Sekadar Bisnis. Perusahaan direct selling berbasis produk bioteknologi pertanian &amp; peternakan berkualitas tinggi.</p>
+            </div>
+            <div>
+                <div class="footer-heading">Produk Unggulan</div>
+                <div class="footer-links">
+                    <a href="#pro-b10">PRO-B10 Probiotik Herbal</a>
+                    <a href="#pepetani">PEPETANI ZEFA Slow Release</a>
+                    <a href="#prazak">PRAZAK + Bionutrisi Booster</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer-heading">Kontak Layanan</div>
+                <div class="footer-links">
+                    <a href="https://wa.me/6285727289279" target="_blank">📱 WhatsApp: +62 857-2728-9279</a>
+                    <a href="https://pupukzefasejahtera.com" target="_blank">🌐 Website: pupukzefasejahtera.com</a>
+                    <a href="https://instagram.com/zefaaofficial" target="_blank">📸 Instagram: @zefaaofficial</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 PT ZEFA MULIA SEJAHTERA All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/6285727289279?text=Halo%20Zefa%20Mulia%20Sejahtera%2C%20saya%20tertarik%20dengan%20produk%20pupuk%20Anda." target="_blank" class="floating-wa">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span>Hubungi Admin</span>
+</a>
+
+<script>
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('animated'), i * 80);
+        }
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// HAMBURGER MENU
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('hamburger-btn');
+    const isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('active', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+}
+function closeMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('hamburger-btn');
+    menu.classList.remove('open');
+    btn.classList.remove('active');
+    btn.setAttribute('aria-expanded', false);
+}
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    const nav = document.getElementById('navbar');
+    if (!nav.contains(e.target)) closeMobileMenu();
+});
+</script>
+
+<style>
+/* HAMBURGER BUTTON */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+.hamburger:hover { background: var(--green-50); }
+.ham-bar {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background: var(--green-700);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+/* Animate to X when active */
+.hamburger.active .ham-bar:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger.active .ham-bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.active .ham-bar:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* MOBILE MENU DROPDOWN */
+.mobile-menu {
+    display: none;
+    background: #fff;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+.mobile-menu.open {
+    display: block;
+    max-height: 500px;
+}
+.mobile-menu .container {
+    padding: 12px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.mobile-link {
+    display: block;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+}
+.mobile-link:hover { background: var(--green-50); color: var(--green-700); }
+.mobile-link-wa {
+    margin-top: 8px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #fff !important;
+    font-weight: 700;
+    text-align: center;
+    padding: 14px;
+    border-radius: 12px;
+}
+.mobile-link-wa:hover { opacity: 0.9; background: linear-gradient(135deg, #25D366, #128C7E); }
+
+/* Show hamburger on mobile, hide on desktop */
+@media (max-width: 767px) {
+    .hamburger { display: flex; }
+    .nav-links { display: none !important; }
+    .nav-tagline { display: none; }
+}
+@media (min-width: 768px) {
+    .mobile-menu { display: none !important; }
+    .hamburger { display: none !important; }
+}
+</style>
+
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[3].Value
+        

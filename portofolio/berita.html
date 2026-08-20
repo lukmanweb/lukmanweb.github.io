@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+﻿ 
+            <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -599,5 +600,1378 @@
       });
     });
   </script>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
 </body>
 </html>
+.Groups[1].Value + $mobileCss + "`n    " + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KABAR NUSANTARA — Portal Berita Indonesia Terkini & Terpercaya</title>
+  <meta name="description" content="Portal berita Indonesia terkini, terpercaya, dan terlengkap. Berita Politik, Ekonomi, Olahraga, Teknologi, Hiburan, dan Internasional.">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #dc2626;
+      --red-dark: #991b1b;
+      --navy: #0f172a;
+      --navy-light: #1e293b;
+      --gray: #64748b;
+      --gray-light: #f1f5f9;
+      --border: #e2e8f0;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ---- BREAKING TICKER ---- */
+    .ticker-bar {
+      background: var(--red);
+      color: white;
+      padding: 8px 0;
+      overflow: hidden;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .ticker-inner {
+      display: flex;
+      gap: 0;
+    }
+    .ticker-label {
+      background: var(--navy);
+      padding: 0 16px;
+      white-space: nowrap;
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 0.78rem;
+      flex-shrink: 0;
+    }
+    .ticker-track {
+      overflow: hidden;
+      flex: 1;
+    }
+    .ticker-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: ticker 35s linear infinite;
+      padding-left: 100%;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* ---- NAVBAR ---- */
+    .navbar {
+      background: var(--navy);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .nav-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: white;
+      letter-spacing: -0.5px;
+    }
+    .brand-name span { color: var(--red); }
+    .brand-tagline {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .nav-date {
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+    .nav-categories {
+      background: var(--navy-light);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav-cats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      overflow-x: auto;
+      padding: 0 20px;
+    }
+    .nav-cats-inner::-webkit-scrollbar { display: none; }
+    .cat-link {
+      color: #cbd5e1;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 10px 16px;
+      white-space: nowrap;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .cat-link:hover, .cat-link.active {
+      color: white;
+      border-bottom-color: var(--red);
+    }
+
+    /* ---- LAYOUT ---- */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .page-wrap {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
+      margin: 24px auto;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+    @media (max-width: 900px) {
+      .page-wrap { grid-template-columns: 1fr; }
+    }
+
+    /* ---- HERO HEADLINE ---- */
+    .hero-headline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 4px;
+      margin-bottom: 28px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      .hero-headline { grid-template-columns: 1fr; }
+    }
+    .hero-main {
+      grid-row: 1 / 3;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-main img {
+      width: 100%; height: 400px; object-fit: cover;
+    }
+    .hero-main-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.9));
+      padding: 24px;
+      color: white;
+    }
+    .hero-main-overlay .cat-badge {
+      background: var(--red);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .hero-main-overlay h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .hero-main-overlay .meta {
+      font-size: 0.75rem;
+      color: #cbd5e1;
+    }
+
+    .hero-sub {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .hero-sub img {
+      width: 100%; height: 198px; object-fit: cover;
+    }
+    .hero-sub-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      padding: 14px;
+      color: white;
+    }
+    .hero-sub-overlay h3 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    /* ---- SECTION TITLE ---- */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 22px;
+      background: var(--red);
+      border-radius: 2px;
+    }
+
+    /* ---- NEWS GRID ---- */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 700px) {
+      .news-grid { grid-template-columns: 1fr; }
+    }
+    .news-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .news-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .news-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .news-card-body {
+      padding: 14px;
+    }
+    .cat-badge {
+      background: var(--red);
+      color: white;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+    .cat-badge.ekonomi { background: #0369a1; }
+    .cat-badge.olahraga { background: #15803d; }
+    .cat-badge.teknologi { background: #6d28d9; }
+    .cat-badge.hiburan { background: #d97706; }
+    .cat-badge.internasional { background: #0f766e; }
+    .news-card-body h3 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    .news-meta {
+      font-size: 0.72rem;
+      color: var(--gray);
+      display: flex;
+      gap: 8px;
+    }
+
+    /* ---- NEWS LIST ---- */
+    .news-list-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .news-list-item:last-child { border-bottom: none; }
+    .news-list-item img {
+      width: 90px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .news-list-item h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    /* ---- SIDEBAR ---- */
+    .sidebar-section {
+      background: white;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+    }
+    .sidebar-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      border-bottom: 2px solid var(--red);
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+      color: var(--navy);
+    }
+    .trending-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    .trending-num {
+      width: 28px;
+      height: 28px;
+      background: var(--red);
+      color: white;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .trending-num.grey { background: var(--gray-light); color: var(--gray); }
+    .trending-item h5 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--navy);
+    }
+    .trending-item h5:hover { color: var(--red); }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--navy);
+      color: #94a3b8;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+    footer a { color: var(--red); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <!-- BREAKING NEWS TICKER -->
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      <div class="ticker-label">🔴 BREAKING</div>
+      <div class="ticker-track">
+        <span class="ticker-content">
+          📌 DPR Sahkan RUU Anggaran Pendapatan Negara 2027 &nbsp;•&nbsp;
+          📌 Timnas Indonesia Lolos ke Final Piala AFF 2026 &nbsp;•&nbsp;
+          📌 IHSG Melonjak 1,4% Ditopang Saham Bank dan Energi &nbsp;•&nbsp;
+          📌 Pemerintah Luncurkan Program Beasiswa LPDP Gelombang 3 &nbsp;•&nbsp;
+          📌 WHO Nyatakan Wabah Flu Babi di Asia Tenggara Sudah Terkendali &nbsp;•&nbsp;
+          📌 Apple Ungkap iPhone 18 Series: Chip A20 dan Layar Lipat Pertama &nbsp;•&nbsp;
+          📌 Gunung Merapi Semburkan Lava Pijar Sejauh 2 Kilometer
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-top">
+      <div class="brand">
+        <div class="brand-name">KABAR<span>NUSANTARA</span></div>
+        <div class="brand-tagline">PORTAL BERITA INDONESIA TERKINI & TERPERCAYA</div>
+      </div>
+      <div class="nav-date" id="navDate"></div>
+    </div>
+    <div class="nav-categories">
+      <div class="nav-cats-inner">
+        <a href="#" class="cat-link active">Beranda</a>
+        <a href="#" class="cat-link">Politik</a>
+        <a href="#" class="cat-link">Ekonomi</a>
+        <a href="#" class="cat-link">Olahraga</a>
+        <a href="#" class="cat-link">Teknologi</a>
+        <a href="#" class="cat-link">Hiburan</a>
+        <a href="#" class="cat-link">Internasional</a>
+        <a href="#" class="cat-link">Daerah</a>
+        <a href="#" class="cat-link">Opini</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="page-wrap">
+    <div>
+      <!-- HERO HEADLINES -->
+      <div class="hero-headline">
+        <div class="hero-main">
+          <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=700&q=80" alt="Headline Utama" />
+          <div class="hero-main-overlay">
+            <span class="cat-badge">POLITIK</span>
+            <h2>Presiden Resmikan Ibu Kota Nusantara: "Ini Tonggak Sejarah Bangsa Indonesia"</h2>
+            <span class="meta">👤 Redaksi KabarNusantara &nbsp;•&nbsp; ⏱️ 2 jam lalu &nbsp;•&nbsp; 👁️ 12.4K views</span>
+          </div>
+        </div>
+        <div class="hero-sub">
+          <img src="https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=400&q=80" alt="Sub Headline 1" />
+          <div class="hero-sub-overlay">
+            <span class="cat-badge" style="font-size:0.65rem; padding:2px 6px; margin-bottom:5px; display:inline-block;">EKONOMI</span>
+            <h3>Rupiah Menguat ke Level Rp 15.200, BI Pertahankan Suku Bunga 5,75%</h3>
+          </div>
+        </div>
+        <div class="hero-sub">
+          <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400&q=80" alt="Sub Headline 2" />
+          <div class="hero-sub-overlay">
+            <span class="cat-badge olahraga" style="font-size:0.65rem; padding:2px 6px; margin-bottom:5px; display:inline-block;">OLAHRAGA</span>
+            <h3>Garuda Muda Taklukkan Thailand 3-1, Tikung ke Final Piala AFF U-23</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- BERITA TERBARU -->
+      <div class="section-title">Berita Terbaru</div>
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" alt="Teknologi" />
+          <div class="news-card-body">
+            <span class="cat-badge teknologi">TEKNOLOGI</span>
+            <h3>Apple Umumkan iPhone 18 Pro Max dengan Chip A20 Bionic dan Kamera 300MP</h3>
+            <div class="news-meta"><span>⏱️ 1 jam lalu</span><span>👁️ 8.2K</span></div>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80" alt="Ekonomi" />
+          <div class="news-card-body">
+            <span class="cat-badge ekonomi">EKONOMI</span>
+            <h3>Ekspor Batu Bara Indonesia Naik 18%, Neraca Perdagangan Surplus $3,2 Miliar</h3>
+            <div class="news-meta"><span>⏱️ 3 jam lalu</span><span>👁️ 5.7K</span></div>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400&q=80" alt="Hiburan" />
+          <div class="news-card-body">
+            <span class="cat-badge hiburan">HIBURAN</span>
+            <h3>Film "Tanah Airku" Raih 5 Juta Penonton, Pecahkan Rekor Box Office Nasional</h3>
+            <div class="news-meta"><span>⏱️ 5 jam lalu</span><span>👁️ 4.1K</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BERITA NASIONAL -->
+      <div class="section-title">Berita Nasional</div>
+      <div style="background: white; border-radius: 10px; border: 1px solid var(--border); padding: 4px 16px; margin-bottom: 28px;">
+        <div class="news-list-item">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=200&q=80" alt="Berita" />
+          <div>
+            <span class="cat-badge" style="margin-bottom:5px;">POLITIK</span>
+            <h4>KPU Tetapkan Jadwal Pilkada Serentak 2027, Pendaftaran Dibuka Bulan Depan</h4>
+            <div class="news-meta"><span>⏱️ 4 jam lalu</span><span>👁️ 6.8K</span></div>
+          </div>
+        </div>
+        <div class="news-list-item">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&q=80" alt="Berita" />
+          <div>
+            <span class="cat-badge internasional">INTERNASIONAL</span>
+            <h4>PBB Tegaskan Gencatan Senjata Gaza Wajib Dipatuhi Semua Pihak Tanpa Syarat</h4>
+            <div class="news-meta"><span>⏱️ 6 jam lalu</span><span>👁️ 9.3K</span></div>
+          </div>
+        </div>
+        <div class="news-list-item">
+          <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=200&q=80" alt="Berita" />
+          <div>
+            <span class="cat-badge teknologi">TEKNOLOGI</span>
+            <h4>Pemerintah Luncurkan Platform AI Nasional "GarudaAI" untuk Sektor Pendidikan</h4>
+            <div class="news-meta"><span>⏱️ 8 jam lalu</span><span>👁️ 7.1K</span></div>
+          </div>
+        </div>
+        <div class="news-list-item">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=200&q=80" alt="Berita" />
+          <div>
+            <span class="cat-badge ekonomi">EKONOMI</span>
+            <h4>Menko Airlangga: Investasi Asing Masuk Rp 480 Triliun di Semester I 2026</h4>
+            <div class="news-meta"><span>⏱️ 10 jam lalu</span><span>👁️ 5.4K</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside>
+      <div class="sidebar-section">
+        <div class="sidebar-title">🔥 Trending Sekarang</div>
+        <div class="trending-item">
+          <div class="trending-num">1</div>
+          <h5>Timnas Indonesia Juara AFF U-23 Setelah Kalahkan Vietnam di Final</h5>
+        </div>
+        <div class="trending-item">
+          <div class="trending-num">2</div>
+          <h5>Rupiah Menguat Tajam ke Rp 15.200 Per Dolar AS Pagi Ini</h5>
+        </div>
+        <div class="trending-item">
+          <div class="trending-num grey">3</div>
+          <h5>Apple Rilis iPhone 18 Pro Max: Harga Mulai Rp 25 Juta di Indonesia</h5>
+        </div>
+        <div class="trending-item">
+          <div class="trending-num grey">4</div>
+          <h5>Gunung Merapi Erupsi, Ribuan Warga Dievakuasi ke Tempat Aman</h5>
+        </div>
+        <div class="trending-item">
+          <div class="trending-num grey">5</div>
+          <h5>Pemerintah Putuskan Libur Nasional Tambahan Dua Hari di Akhir Juli</h5>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">📂 Kategori Populer</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <a href="#" style="background:#fef2f2; color:#dc2626; border:1px solid #fecaca; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Politik</a>
+          <a href="#" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Ekonomi</a>
+          <a href="#" style="background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Olahraga</a>
+          <a href="#" style="background:#faf5ff; color:#7e22ce; border:1px solid #e9d5ff; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Teknologi</a>
+          <a href="#" style="background:#fffbeb; color:#b45309; border:1px solid #fde68a; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Hiburan</a>
+          <a href="#" style="background:#f0fdfa; color:#0f766e; border:1px solid #99f6e4; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Internasional</a>
+          <a href="#" style="background:#fff1f2; color:#be123c; border:1px solid #fecdd3; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Daerah</a>
+          <a href="#" style="background:#f8fafc; color:#475569; border:1px solid #e2e8f0; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Opini</a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">🗞️ Berita Terbaru</div>
+        <div class="news-list-item" style="border: none; padding: 8px 0;">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=90&q=80" alt="Berita" style="border-radius:6px;" />
+          <div>
+            <h4 style="font-size:0.78rem;">Kemenkes Umumkan 12 Rumah Sakit Baru Dibangun di Daerah Terpencil</h4>
+            <div class="news-meta"><span>30 menit lalu</span></div>
+          </div>
+        </div>
+        <div class="news-list-item" style="border: none; padding: 8px 0;">
+          <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=90&q=80" alt="Berita" style="border-radius:6px;" />
+          <div>
+            <h4 style="font-size:0.78rem;">BMKG Keluarkan Peringatan Dini Cuaca Ekstrem di 7 Provinsi</h4>
+            <div class="news-meta"><span>1 jam lalu</span></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 KABAR NUSANTARA — Portal Berita Indonesia Terkini &nbsp;|&nbsp; Demo oleh <a href="../index.html">LukmanWeb</a></p>
+    <p style="margin-top:6px; font-size:0.75rem; color:#64748b;">Website berita premium ini adalah contoh karya jasa pembuatan portal berita profesional</p>
+  </footer>
+
+  <script>
+    // Dynamic Date di Navbar
+    const d = new Date();
+    const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+    const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+    document.getElementById('navDate').textContent = `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+
+    // Cat link active toggle
+    document.querySelectorAll('.cat-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.cat-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[2].Value + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KABAR NUSANTARA — Portal Berita Indonesia Terkini & Terpercaya</title>
+  <meta name="description" content="Portal berita Indonesia terkini, terpercaya, dan terlengkap. Berita Politik, Ekonomi, Olahraga, Teknologi, Hiburan, dan Internasional.">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #dc2626;
+      --red-dark: #991b1b;
+      --navy: #0f172a;
+      --navy-light: #1e293b;
+      --gray: #64748b;
+      --gray-light: #f1f5f9;
+      --border: #e2e8f0;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ---- BREAKING TICKER ---- */
+    .ticker-bar {
+      background: var(--red);
+      color: white;
+      padding: 8px 0;
+      overflow: hidden;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .ticker-inner {
+      display: flex;
+      gap: 0;
+    }
+    .ticker-label {
+      background: var(--navy);
+      padding: 0 16px;
+      white-space: nowrap;
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 0.78rem;
+      flex-shrink: 0;
+    }
+    .ticker-track {
+      overflow: hidden;
+      flex: 1;
+    }
+    .ticker-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: ticker 35s linear infinite;
+      padding-left: 100%;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* ---- NAVBAR ---- */
+    .navbar {
+      background: var(--navy);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .nav-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: white;
+      letter-spacing: -0.5px;
+    }
+    .brand-name span { color: var(--red); }
+    .brand-tagline {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .nav-date {
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+    .nav-categories {
+      background: var(--navy-light);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav-cats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      overflow-x: auto;
+      padding: 0 20px;
+    }
+    .nav-cats-inner::-webkit-scrollbar { display: none; }
+    .cat-link {
+      color: #cbd5e1;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 10px 16px;
+      white-space: nowrap;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .cat-link:hover, .cat-link.active {
+      color: white;
+      border-bottom-color: var(--red);
+    }
+
+    /* ---- LAYOUT ---- */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .page-wrap {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
+      margin: 24px auto;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+    @media (max-width: 900px) {
+      .page-wrap { grid-template-columns: 1fr; }
+    }
+
+    /* ---- HERO HEADLINE ---- */
+    .hero-headline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 4px;
+      margin-bottom: 28px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      .hero-headline { grid-template-columns: 1fr; }
+    }
+    .hero-main {
+      grid-row: 1 / 3;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-main img {
+      width: 100%; height: 400px; object-fit: cover;
+    }
+    .hero-main-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.9));
+      padding: 24px;
+      color: white;
+    }
+    .hero-main-overlay .cat-badge {
+      background: var(--red);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .hero-main-overlay h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .hero-main-overlay .meta {
+      font-size: 0.75rem;
+      color: #cbd5e1;
+    }
+
+    .hero-sub {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .hero-sub img {
+      width: 100%; height: 198px; object-fit: cover;
+    }
+    .hero-sub-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      padding: 14px;
+      color: white;
+    }
+    .hero-sub-overlay h3 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    /* ---- SECTION TITLE ---- */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 22px;
+      background: var(--red);
+      border-radius: 2px;
+    }
+
+    /* ---- NEWS GRID ---- */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 700px) {
+      .news-grid { grid-template-columns: 1fr; }
+    }
+    .news-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .news-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .news-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .news-card-body {
+      padding: 14px;
+    }
+    .cat-badge {
+      background: var(--red);
+      color: white;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+    .cat-badge.ekonomi { background: #0369a1; }
+    .cat-badge.olahraga { background: #15803d; }
+    .cat-badge.teknologi { background: #6d28d9; }
+    .cat-badge.hiburan { background: #d97706; }
+    .cat-badge.internasional { background: #0f766e; }
+    .news-card-body h3 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    .news-meta {
+      font-size: 0.72rem;
+      color: var(--gray);
+      display: flex;
+      gap: 8px;
+    }
+
+    /* ---- NEWS LIST ---- */
+    .news-list-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .news-list-item:last-child { border-bottom: none; }
+    .news-list-item img {
+      width: 90px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .news-list-item h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    /* ---- SIDEBAR ---- */
+    .sidebar-section {
+      background: white;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+    }
+    .sidebar-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      border-bottom: 2px solid var(--red);
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+      color: var(--navy);
+    }
+    .trending-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    .trending-num {
+      width: 28px;
+      height: 28px;
+      background: var(--red);
+      color: white;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .trending-num.grey { background: var(--gray-light); color: var(--gray); }
+    .trending-item h5 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--navy);
+    }
+    .trending-item h5:hover { color: var(--red); }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--navy);
+      color: #94a3b8;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+    footer a { color: var(--red); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <!-- BREAKING NEWS TICKER -->
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      <div class="ticker-label">🔴 BREAKING</div>
+      <div class="ticker-track">
+        <span class="ticker-content">
+          📌 DPR Sahkan RUU Anggaran Pendapatan Negara 2027 &nbsp;•&nbsp;
+          📌 Timnas Indonesia Lolos ke Final Piala AFF 2026 &nbsp;•&nbsp;
+          📌 IHSG Melonjak 1,4% Ditopang Saham Bank dan Energi &nbsp;•&nbsp;
+          📌 Pemerintah Luncurkan Program Beasiswa LPDP Gelombang 3 &nbsp;•&nbsp;
+          📌 WHO Nyatakan Wabah Flu Babi di Asia Tenggara Sudah Terkendali &nbsp;•&nbsp;
+          📌 Apple Ungkap iPhone 18 Series: Chip A20 dan Layar Lipat Pertama &nbsp;•&nbsp;
+          📌 Gunung Merapi Semburkan Lava Pijar Sejauh 2 Kilometer
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-top">
+      <div class="brand">
+        <div class="brand-name">KABAR<span>NUSANTARA</span></div>
+        <div class="brand-tagline">PORTAL BERITA INDONESIA TERKINI & TERPERCAYA</div>
+      </div>
+      <div class="nav-date" id="navDate"></div>
+    </div>
+    <div class="nav-categories">
+      <div class="nav-cats-inner">
+        <a href="#" class="cat-link active">Beranda</a>
+        <a href="#" class="cat-link">Politik</a>
+        <a href="#" class="cat-link">Ekonomi</a>
+        <a href="#" class="cat-link">Olahraga</a>
+        <a href="#" class="cat-link">Teknologi</a>
+        <a href="#" class="cat-link">Hiburan</a>
+        <a href="#" class="cat-link">Internasional</a>
+        <a href="#" class="cat-link">Daerah</a>
+        <a href="#" class="cat-link">Opini</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="page-wrap">
+    <div>
+      <!-- HERO HEADLINES -->
+      <div class="hero-headline">
+        <div class="hero-main">
+          <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=700&q=80" alt="Headline Utama" />
+          <div class="hero-main-overlay">
+            <span class="cat-badge">POLITIK</span>
+            <h2>Presiden Resmikan Ibu Kota Nusantara: "Ini Tonggak Sejarah Bangsa Indonesia"</h2>
+            <span class="meta">👤 Redaksi KabarNusantara &nbsp;•&nbsp; ⏱️ 2 jam lalu &nbsp;•&nbsp; 👁️ 12.4K views</span>
+          </div>
+        </div>
+        <div class="hero-sub">
+          <img src="https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=400&q=80" alt="Sub Headline 1" />
+          <div class="hero-sub-overlay">
+            <span class="cat-badge" style="font-size:0.65rem; padding:2px 6px; margin-bottom:5px; display:inline-block;">EKONOMI</span>
+            <h3>Rupiah Menguat ke Level Rp 15.200, BI Pertahankan Suku Bunga 5,75%</h3>
+          </div>
+        </div>
+        <div class="hero-sub">
+          <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400&q=80" alt="Sub Headline 2" />
+          <div class="hero-sub-overlay">
+            <span class="cat-badge olahraga" style="font-size:0.65rem; padding:2px 6px; margin-bottom:5px; display:inline-block;">OLAHRAGA</span>
+            <h3>Garuda Muda Taklukkan Thailand 3-1, Tikung ke Final Piala AFF U-23</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- BERITA TERBARU -->
+      <div class="section-title">Berita Terbaru</div>
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" alt="Teknologi" />
+          <div class="news-card-body">
+            <span class="cat-badge teknologi">TEKNOLOGI</span>
+            <h3>Apple Umumkan iPhone 18 Pro Max dengan Chip A20 Bionic dan Kamera 300MP</h3>
+            <div class="news-meta"><span>⏱️ 1 jam lalu</span><span>👁️ 8.2K</span></div>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80" alt="Ekonomi" />
+          <div class="news-card-body">
+            <span class="cat-badge ekonomi">EKONOMI</span>
+            <h3>Ekspor Batu Bara Indonesia Naik 18%, Neraca Perdagangan Surplus $3,2 Miliar</h3>
+            <div class="news-meta"><span>⏱️ 3 jam lalu</span><span>👁️ 5.7K</span></div>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400&q=80" alt="Hiburan" />
+          <div class="news-card-body">
+            <span class="cat-badge hiburan">HIBURAN</span>
+            <h3>Film "Tanah Airku" Raih 5 Juta Penonton, Pecahkan Rekor Box Office Nasional</h3>
+            <div class="news-meta"><span>⏱️ 5 jam lalu</span><span>👁️ 4.1K</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BERITA NASIONAL -->
+      <div class="section-title">Berita Nasional</div>
+      <div style="background: white; border-radius: 10px; border: 1px solid var(--border); padding: 4px 16px; margin-bottom: 28px;">
+        <div class="news-list-item">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=200&q=80" alt="Berita" />
+          <div>
+            <span class="cat-badge" style="margin-bottom:5px;">POLITIK</span>
+            <h4>KPU Tetapkan Jadwal Pilkada Serentak 2027, Pendaftaran Dibuka Bulan Depan</h4>
+            <div class="news-meta"><span>⏱️ 4 jam lalu</span><span>👁️ 6.8K</span></div>
+          </div>
+        </div>
+        <div class="news-list-item">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&q=80" alt="Berita" />
+          <div>
+            <span class="cat-badge internasional">INTERNASIONAL</span>
+            <h4>PBB Tegaskan Gencatan Senjata Gaza Wajib Dipatuhi Semua Pihak Tanpa Syarat</h4>
+            <div class="news-meta"><span>⏱️ 6 jam lalu</span><span>👁️ 9.3K</span></div>
+          </div>
+        </div>
+        <div class="news-list-item">
+          <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=200&q=80" alt="Berita" />
+          <div>
+            <span class="cat-badge teknologi">TEKNOLOGI</span>
+            <h4>Pemerintah Luncurkan Platform AI Nasional "GarudaAI" untuk Sektor Pendidikan</h4>
+            <div class="news-meta"><span>⏱️ 8 jam lalu</span><span>👁️ 7.1K</span></div>
+          </div>
+        </div>
+        <div class="news-list-item">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=200&q=80" alt="Berita" />
+          <div>
+            <span class="cat-badge ekonomi">EKONOMI</span>
+            <h4>Menko Airlangga: Investasi Asing Masuk Rp 480 Triliun di Semester I 2026</h4>
+            <div class="news-meta"><span>⏱️ 10 jam lalu</span><span>👁️ 5.4K</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside>
+      <div class="sidebar-section">
+        <div class="sidebar-title">🔥 Trending Sekarang</div>
+        <div class="trending-item">
+          <div class="trending-num">1</div>
+          <h5>Timnas Indonesia Juara AFF U-23 Setelah Kalahkan Vietnam di Final</h5>
+        </div>
+        <div class="trending-item">
+          <div class="trending-num">2</div>
+          <h5>Rupiah Menguat Tajam ke Rp 15.200 Per Dolar AS Pagi Ini</h5>
+        </div>
+        <div class="trending-item">
+          <div class="trending-num grey">3</div>
+          <h5>Apple Rilis iPhone 18 Pro Max: Harga Mulai Rp 25 Juta di Indonesia</h5>
+        </div>
+        <div class="trending-item">
+          <div class="trending-num grey">4</div>
+          <h5>Gunung Merapi Erupsi, Ribuan Warga Dievakuasi ke Tempat Aman</h5>
+        </div>
+        <div class="trending-item">
+          <div class="trending-num grey">5</div>
+          <h5>Pemerintah Putuskan Libur Nasional Tambahan Dua Hari di Akhir Juli</h5>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">📂 Kategori Populer</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <a href="#" style="background:#fef2f2; color:#dc2626; border:1px solid #fecaca; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Politik</a>
+          <a href="#" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Ekonomi</a>
+          <a href="#" style="background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Olahraga</a>
+          <a href="#" style="background:#faf5ff; color:#7e22ce; border:1px solid #e9d5ff; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Teknologi</a>
+          <a href="#" style="background:#fffbeb; color:#b45309; border:1px solid #fde68a; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Hiburan</a>
+          <a href="#" style="background:#f0fdfa; color:#0f766e; border:1px solid #99f6e4; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Internasional</a>
+          <a href="#" style="background:#fff1f2; color:#be123c; border:1px solid #fecdd3; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Daerah</a>
+          <a href="#" style="background:#f8fafc; color:#475569; border:1px solid #e2e8f0; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:700;">Opini</a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">🗞️ Berita Terbaru</div>
+        <div class="news-list-item" style="border: none; padding: 8px 0;">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=90&q=80" alt="Berita" style="border-radius:6px;" />
+          <div>
+            <h4 style="font-size:0.78rem;">Kemenkes Umumkan 12 Rumah Sakit Baru Dibangun di Daerah Terpencil</h4>
+            <div class="news-meta"><span>30 menit lalu</span></div>
+          </div>
+        </div>
+        <div class="news-list-item" style="border: none; padding: 8px 0;">
+          <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=90&q=80" alt="Berita" style="border-radius:6px;" />
+          <div>
+            <h4 style="font-size:0.78rem;">BMKG Keluarkan Peringatan Dini Cuaca Ekstrem di 7 Provinsi</h4>
+            <div class="news-meta"><span>1 jam lalu</span></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 KABAR NUSANTARA — Portal Berita Indonesia Terkini &nbsp;|&nbsp; Demo oleh <a href="../index.html">LukmanWeb</a></p>
+    <p style="margin-top:6px; font-size:0.75rem; color:#64748b;">Website berita premium ini adalah contoh karya jasa pembuatan portal berita profesional</p>
+  </footer>
+
+  <script>
+    // Dynamic Date di Navbar
+    const d = new Date();
+    const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+    const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+    document.getElementById('navDate').textContent = `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+
+    // Cat link active toggle
+    document.querySelectorAll('.cat-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.cat-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[3].Value 
+        

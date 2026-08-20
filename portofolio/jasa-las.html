@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+﻿ 
+            <!DOCTYPE html>
 <html lang="id">
 <head>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
@@ -295,5 +296,770 @@
   </div>
   <div class="footer-bottom">&copy; 2026 BajaBerkah Las. Demo oleh <a href="../index.html">LukmanWeb</a></div>
 </footer>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
 </body>
 </html>
+.Groups[1].Value + $mobileCss + "`n    " + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/profile-logo.jpg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BajaBerkah Las — Jasa Konstruksi Besi & Fabrikasi Baja Profesional</title>
+  <meta name="description" content="Jasa las dan fabrikasi baja profesional. Kanopi, pagar, teralis, railing tangga, konstruksi baja ringan. Garansi kualitas dan harga bersaing.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--dark:#0d0d0d;--dark2:#171717;--orange:#f97316;--orange-dark:#c2560e;--yellow:#fbbf24;--white:#f8f8f8;--text:#e0e0e0;--muted:#a0a0a0;--border:#2a2a2a;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--dark);color:var(--text);}
+    a{text-decoration:none;color:inherit;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,13,13,0.95);backdrop-filter:blur(12px);padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--orange);}
+    .nav-logo{display:flex;align-items:center;gap:10px;}
+    .logo-icon-box{width:40px;height:40px;background:var(--orange);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+    .logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;letter-spacing:2px;}
+    .logo-text span{color:var(--orange);}
+    .nav-links{display:flex;gap:28px;}
+    .nav-links a{color:var(--muted);font-size:0.88rem;font-weight:500;transition:color .2s;}
+    .nav-links a:hover{color:var(--orange);}
+    .nav-cta{background:var(--orange);color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;font-size:0.85rem;transition:all .2s;}
+    .nav-cta:hover{background:var(--orange-dark);}
+
+    /* HERO */
+    .hero{background:linear-gradient(to right, rgba(13,13,13,0.95) 55%, rgba(13,13,13,0.5) 100%), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=80') right center/cover no-repeat;min-height:100vh;padding:130px 5% 80px;display:flex;align-items:center;}
+    .hero-content{max-width:620px;}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,0.15);border:1px solid rgba(249,115,22,0.4);color:var(--orange);font-size:0.78rem;font-weight:700;padding:7px 16px;border-radius:6px;margin-bottom:24px;text-transform:uppercase;letter-spacing:1px;}
+    .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);color:#fff;line-height:1;margin-bottom:16px;letter-spacing:2px;}
+    .hero h1 span{color:var(--orange);}
+    .hero p{color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:36px;max-width:500px;}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+    .btn-orange{background:var(--orange);color:#fff;font-weight:700;padding:15px 32px;border-radius:8px;font-size:0.95rem;transition:all .3s;}
+    .btn-orange:hover{background:var(--orange-dark);transform:translateY(-2px);}
+    .btn-dark{border:2px solid var(--border);color:var(--text);font-weight:600;padding:15px 32px;border-radius:8px;font-size:0.95rem;transition:all .3s;}
+    .btn-dark:hover{border-color:var(--orange);color:var(--orange);}
+
+    /* STATS */
+    .stats{background:var(--orange);padding:0;}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:100%;}
+    .sbox{padding:28px;text-align:center;border-right:1px solid rgba(0,0,0,0.15);}
+    .sbox:last-child{border:none;}
+    .sbox .num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:#fff;letter-spacing:1px;}
+    .sbox .lbl{font-size:0.78rem;color:rgba(255,255,255,0.75);font-weight:500;margin-top:2px;}
+
+    /* LAYANAN */
+    .layanan{padding:90px 5%;background:var(--dark2);}
+    .section-top{text-align:center;margin-bottom:56px;}
+    .sec-tag{display:inline-block;background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.3);color:var(--orange);font-size:0.75rem;font-weight:700;padding:5px 16px;border-radius:4px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+    .section-top h2{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:#fff;letter-spacing:2px;margin-bottom:10px;}
+    .section-top p{color:var(--muted);max-width:540px;margin:0 auto;}
+    .layanan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+    .layanan-card{background:var(--dark);padding:36px;transition:all .3s;position:relative;overflow:hidden;}
+    .layanan-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:0;background:var(--orange);transition:height .3s;}
+    .layanan-card:hover::before{height:100%;}
+    .layanan-card:hover{background:var(--dark2);}
+    .layanan-img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:20px;display:block;}
+    .layanan-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:#fff;letter-spacing:1px;margin-bottom:10px;}
+    .layanan-card p{font-size:0.84rem;color:var(--muted);line-height:1.7;margin-bottom:16px;}
+    .harga-mulai{color:var(--orange);font-weight:700;font-size:0.9rem;}
+
+    /* PORTOFOLIO */
+    .porto{padding:80px 5%;background:var(--dark);}
+    .porto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto;}
+    .porto-item{border-radius:10px;overflow:hidden;position:relative;aspect-ratio:4/3;}
+    .porto-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
+    .porto-item:hover img{transform:scale(1.05);}
+    .porto-overlay{position:absolute;inset:0;background:rgba(249,115,22,0);display:flex;align-items:center;justify-content:center;transition:background .3s;}
+    .porto-item:hover .porto-overlay{background:rgba(249,115,22,0.85);}
+    .porto-overlay span{color:#fff;font-weight:700;font-size:1rem;opacity:0;transition:opacity .3s;}
+    .porto-item:hover .porto-overlay span{opacity:1;}
+
+    /* KEUNGGULAN */
+    .keunggulan{background:var(--dark2);padding:80px 5%;}
+    .keu-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto;}
+    .keu-img img{width:100%;border-radius:14px;height:440px;object-fit:cover;display:block;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+    .keu-content h2{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:#fff;letter-spacing:2px;margin-bottom:20px;line-height:1.1;}
+    .keu-content h2 span{color:var(--orange);}
+    .keu-content p{color:var(--muted);line-height:1.8;margin-bottom:28px;}
+    .keu-list{display:flex;flex-direction:column;gap:14px;}
+    .keu-item{display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--dark);border-radius:10px;border-left:3px solid var(--orange);}
+    .keu-icon{font-size:1.3rem;flex-shrink:0;}
+    .keu-item strong{display:block;color:#fff;font-size:0.9rem;margin-bottom:4px;}
+    .keu-item span{font-size:0.8rem;color:var(--muted);}
+
+    /* PROSES */
+    .proses{padding:80px 5%;background:var(--dark);text-align:center;}
+    .proses-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .step{position:relative;}
+    .step-num{width:60px;height:60px;border-radius:50%;background:var(--orange);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.6rem;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+    .step h3{font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .step p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+    .step-arrow{position:absolute;top:30px;right:-20px;color:var(--orange);font-size:1.5rem;}
+
+    /* TESTIMONI */
+    .testimoni{background:var(--dark2);padding:80px 5%;}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .testi-card{background:var(--dark);border:1px solid var(--border);border-radius:12px;padding:28px;transition:border-color .3s;}
+    .testi-card:hover{border-color:var(--orange);}
+    .stars{color:var(--orange);font-size:0.9rem;margin-bottom:12px;}
+    .testi-card p{font-size:0.85rem;color:var(--muted);line-height:1.7;margin-bottom:20px;font-style:italic;}
+    .testi-author strong{display:block;font-size:0.88rem;color:#fff;margin-bottom:2px;}
+    .testi-author span{font-size:0.75rem;color:var(--muted);}
+
+    /* CTA */
+    .cta{background:var(--orange);padding:72px 5%;text-align:center;}
+    .cta h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#fff;letter-spacing:2px;margin-bottom:12px;}
+    .cta p{color:rgba(255,255,255,0.85);max-width:560px;margin:0 auto 36px;line-height:1.7;}
+    .btn-white{background:#fff;color:var(--orange);font-weight:800;padding:15px 36px;border-radius:8px;font-size:0.95rem;transition:all .3s;}
+    .btn-white:hover{background:var(--dark);color:#fff;}
+
+    /* FOOTER */
+    footer{background:var(--dark2);border-top:2px solid var(--orange);padding:56px 5% 24px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+    .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:#fff;letter-spacing:2px;margin-bottom:12px;}
+    .footer-logo span{color:var(--orange);}
+    footer p.desc{color:var(--muted);font-size:0.82rem;line-height:1.7;}
+    .footer-title{color:var(--orange);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{color:var(--muted);font-size:0.82rem;transition:color .2s;}
+    .footer-links a:hover{color:var(--orange);}
+    .footer-bottom{border-top:1px solid var(--border);padding-top:20px;text-align:center;color:#666;font-size:0.78rem;}
+    .footer-bottom a{color:var(--orange);}
+
+    @media(max-width:900px){.layanan-grid{grid-template-columns:1fr 1fr;}.keu-grid{grid-template-columns:1fr;}.proses-steps{grid-template-columns:1fr 1fr;}.testi-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.stats-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.nav-links{display:none;}.layanan-grid{grid-template-columns:1fr;}.porto-grid{grid-template-columns:1fr 1fr;}.proses-steps{grid-template-columns:1fr;}.step-arrow{display:none;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="logo-icon-box">🔩</div>
+    <div class="logo-text">Baja<span>Berkah</span> Las</div>
+  </div>
+  <div class="nav-links">
+    <a href="#layanan">Layanan</a>
+    <a href="#porto">Hasil Kerja</a>
+    <a href="#proses">Proses</a>
+    <a href="#kontak">Kontak</a>
+  </div>
+  <a href="https://wa.me/6285712225565?text=Saya%20ingin%20survey%20dan%20konsultasi%20jasa%20las" target="_blank" class="nav-cta">📐 Minta Survey Gratis</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🔥 Ahli Fabrikasi Baja & Konstruksi Besi</div>
+    <h1>JASA LAS<br><span>PROFESIONAL</span><br>BERKUALITAS</h1>
+    <p>Spesialis kanopi, pagar besi, railing tangga, teralis, dan konstruksi baja dengan material premium, pengerjaan rapi, dan garansi hasil kerja hingga 5 tahun.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/6285712225565?text=Halo%2C%20saya%20ingin%20konsultasi%20jasa%20las%20dan%20minta%20harga" target="_blank" class="btn-orange">💬 Konsultasi & Harga</a>
+      <a href="#porto" class="btn-dark">🖼 Lihat Hasil Kerja</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-grid">
+    <div class="sbox"><div class="num">850+</div><div class="lbl">Proyek Selesai</div></div>
+    <div class="sbox"><div class="num">12+</div><div class="lbl">Tahun Pengalaman</div></div>
+    <div class="sbox"><div class="num">5 THN</div><div class="lbl">Garansi Hasil Kerja</div></div>
+    <div class="sbox"><div class="num">4.9 ⭐</div><div class="lbl">Rating Pelanggan</div></div>
+  </div>
+</div>
+
+<section class="layanan" id="layanan">
+  <div class="section-top">
+    <div class="sec-tag">Layanan Kami</div>
+    <h2>APA YANG KAMI KERJAKAN</h2>
+    <p>Kami mengerjakan semua jenis pekerjaan las dan fabrikasi baja dengan presisi tinggi dan material berkualitas.</p>
+  </div>
+  <div class="layanan-grid">
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&q=80" alt="Kanopi" class="layanan-img">
+      <h3>Kanopi & Atap Baja</h3>
+      <p>Kanopi carport, teras, dan garasi dengan berbagai model: polycarbonate, spandek, alderon. Kokoh dan tahan cuaca ekstrem.</p>
+      <div class="harga-mulai">Mulai dari Rp 450.000/m²</div>
+    </div>
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1622560480605-d83c661641ab?w=500&q=80" alt="Pagar" class="layanan-img">
+      <h3>Pagar Besi & Teralis</h3>
+      <p>Pagar rumah, pagar minimalis, teralis jendela, dan pintu geser dengan desain modern hingga klasik sesuai selera Anda.</p>
+      <div class="harga-mulai">Mulai dari Rp 350.000/m</div>
+    </div>
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=500&q=80" alt="Konstruksi" class="layanan-img">
+      <h3>Konstruksi Baja Ringan</h3>
+      <p>Rangka atap baja ringan, kuda-kuda baja, dan konstruksi gedung ringan. Lebih kuat, anti rayap, dan pemasangan cepat.</p>
+      <div class="harga-mulai">Mulai dari Rp 150.000/m²</div>
+    </div>
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1590536449195-bf7be629540b?w=500&q=80" alt="Railing" class="layanan-img">
+      <h3>Railing & Handrail Tangga</h3>
+      <p>Railing tangga stainless, besi hollow, pipa, dan besi tempa untuk hunian, apartemen, dan gedung komersial.</p>
+      <div class="harga-mulai">Mulai dari Rp 200.000/m</div>
+    </div>
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&q=80" alt="Pintu" class="layanan-img">
+      <h3>Pintu Besi & Tralis</h3>
+      <p>Pintu besi tempa, pintu geser otomatis, pintu garasi, dan tralis keamanan dengan kunci modern anti-jebol.</p>
+      <div class="harga-mulai">Mulai dari Rp 2.500.000/unit</div>
+    </div>
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1607400201515-c2c41c07d307?w=500&q=80" alt="Custom" class="layanan-img">
+      <h3>Las & Fabrikasi Custom</h3>
+      <p>Pengerjaan custom sesuai desain Anda: meja besi, rak besi, gapura, sign name, bracket, dan kebutuhan industri.</p>
+      <div class="harga-mulai">Hubungi untuk harga khusus</div>
+    </div>
+  </div>
+</section>
+
+<section class="porto" id="porto">
+  <div class="section-top">
+    <div class="sec-tag">Portofolio</div>
+    <h2>HASIL KERJA KAMI</h2>
+    <p>Beberapa proyek yang telah kami selesaikan dengan hasil terbaik</p>
+  </div>
+  <div class="porto-grid">
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=400&q=80" alt=""><div class="porto-overlay"><span>Kanopi Minimalis</span></div></div>
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=80" alt=""><div class="porto-overlay"><span>Konstruksi Baja</span></div></div>
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1590536449195-bf7be629540b?w=400&q=80" alt=""><div class="porto-overlay"><span>Railing Stainless</span></div></div>
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1622560480605-d83c661641ab?w=400&q=80" alt=""><div class="porto-overlay"><span>Pagar Tempa</span></div></div>
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80" alt=""><div class="porto-overlay"><span>Pintu Besi</span></div></div>
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1607400201515-c2c41c07d307?w=400&q=80" alt=""><div class="porto-overlay"><span>Custom Fabrication</span></div></div>
+  </div>
+</section>
+
+<section class="keunggulan">
+  <div class="keu-grid">
+    <div class="keu-img"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80" alt="Tim Las BajaBerkah"></div>
+    <div class="keu-content">
+      <h2>KENAPA PILIH<br><span>BAJABERKAH?</span></h2>
+      <p>Kami bukan sekadar tukang las biasa. Kami adalah tim profesional dengan sertifikasi BNSP yang mengutamakan kualitas, ketepatan ukuran, dan keindahan finishing.</p>
+      <div class="keu-list">
+        <div class="keu-item"><div class="keu-icon">🔩</div><div><strong>Material Besi & Baja Grade A</strong><span>Seluruh material besi/baja kami bersumber dari supplier terpercaya dengan sertifikat SNI</span></div></div>
+        <div class="keu-item"><div class="keu-icon">📐</div><div><strong>Survey & Ukur Gratis</strong><span>Tim kami datang ke lokasi Anda untuk survey dan memberikan estimasi biaya tanpa dipungut biaya</span></div></div>
+        <div class="keu-item"><div class="keu-icon">🏆</div><div><strong>Garansi Hasil 5 Tahun</strong><span>Kami memberikan garansi penuh untuk hasil kerja las dan konstruksi selama 5 tahun</span></div></div>
+        <div class="keu-item"><div class="keu-icon">⚡</div><div><strong>Pengerjaan Cepat & Tepat</strong><span>Estimasi waktu pengerjaan yang akurat dan selesai sesuai jadwal yang telah disepakati</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proses" id="proses">
+  <div class="section-top">
+    <div class="sec-tag">Cara Kerja</div>
+    <h2>PROSES PENGERJAAN</h2>
+    <p>Empat langkah mudah dari konsultasi hingga proyek selesai</p>
+  </div>
+  <div class="proses-steps">
+    <div class="step"><div class="step-num">1</div><h3>Konsultasi & Survey</h3><p>Hubungi kami, tim kami datang survey lokasi dan diskusi desain sesuai kebutuhan Anda.</p><div class="step-arrow">→</div></div>
+    <div class="step"><div class="step-num">2</div><h3>Desain & RAB</h3><p>Kami buat desain dan Rencana Anggaran Biaya yang detail, transparan, dan kompetitif.</p><div class="step-arrow">→</div></div>
+    <div class="step"><div class="step-num">3</div><h3>Fabrikasi & Pemasangan</h3><p>Proses produksi di workshop kami, kemudian pemasangan di lokasi oleh tim terlatih.</p><div class="step-arrow">→</div></div>
+    <div class="step"><div class="step-num">4</div><h3>Finishing & Garansi</h3><p>Pengecatan, anti karat, dan pembersihan. Anda terima kunci dengan garansi resmi tertulis.</p></div>
+  </div>
+</section>
+
+<section class="testimoni">
+  <div class="section-top">
+    <div class="sec-tag">Testimoni</div>
+    <h2>KATA PELANGGAN KAMI</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"Kanopi carport saya dikerjakan hanya 3 hari, hasilnya sangat rapi dan kokoh. Harganya juga transparan tidak ada biaya tambahan. Sangat profesional!"</p><div class="testi-author"><strong>Pak Rudi Santoso</strong><span>Perumahan Griya Asri, Bekasi</span></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"Pagar minimalis modern di rumah baru saya hasilnya sempurna. Sesuai desain yang diminta, las rapi, finishing cat bagus. Garansinya bikin tenang."</p><div class="testi-author"><strong>Ibu Sari Dewi</strong><span>Kavling Hijau, Depok</span></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"Proyek railing tangga gedung kantor 4 lantai selesai tepat waktu dan sesuai spek. Tim BajaBerkah sangat komunikatif dan profesional. Akan pakai lagi!"</p><div class="testi-author"><strong>Bapak Andi K.</strong><span>Kontraktor, Jakarta Timur</span></div></div>
+  </div>
+</section>
+
+<section class="cta" id="kontak">
+  <h2>SIAP MULAI PROYEK ANDA?</h2>
+  <p>Hubungi kami sekarang untuk konsultasi dan survey GRATIS. Tim kami siap membantu mewujudkan hunian impian Anda dengan hasil terbaik.</p>
+  <a href="https://wa.me/6285712225565?text=Halo%20BajaBerkah%2C%20saya%20ingin%20konsultasi%20dan%20minta%20survey%20gratis" target="_blank" class="btn-white">💬 Hubungi via WhatsApp Sekarang</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Baja<span>Berkah</span> Las</div>
+      <p class="desc">Spesialis jasa las dan fabrikasi baja profesional dengan 12+ tahun pengalaman. Melayani kanopi, pagar, railing, konstruksi baja, dan custom fabrication.</p>
+    </div>
+    <div>
+      <div class="footer-title">Layanan</div>
+      <div class="footer-links"><a href="#">Kanopi & Atap</a><a href="#">Pagar & Teralis</a><a href="#">Konstruksi Baja</a><a href="#">Railing Tangga</a><a href="#">Custom Fabrication</a></div>
+    </div>
+    <div>
+      <div class="footer-title">Informasi</div>
+      <div class="footer-links"><a href="#">Tentang Kami</a><a href="#">Galeri Proyek</a><a href="#">Harga & Estimasi</a><a href="#">Area Layanan</a><a href="../index.html">← Kembali ke Portfolio</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 BajaBerkah Las. Demo oleh <a href="../index.html">LukmanWeb</a></div>
+</footer>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[2].Value + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/profile-logo.jpg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BajaBerkah Las — Jasa Konstruksi Besi & Fabrikasi Baja Profesional</title>
+  <meta name="description" content="Jasa las dan fabrikasi baja profesional. Kanopi, pagar, teralis, railing tangga, konstruksi baja ringan. Garansi kualitas dan harga bersaing.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--dark:#0d0d0d;--dark2:#171717;--orange:#f97316;--orange-dark:#c2560e;--yellow:#fbbf24;--white:#f8f8f8;--text:#e0e0e0;--muted:#a0a0a0;--border:#2a2a2a;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--dark);color:var(--text);}
+    a{text-decoration:none;color:inherit;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,13,13,0.95);backdrop-filter:blur(12px);padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--orange);}
+    .nav-logo{display:flex;align-items:center;gap:10px;}
+    .logo-icon-box{width:40px;height:40px;background:var(--orange);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+    .logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;letter-spacing:2px;}
+    .logo-text span{color:var(--orange);}
+    .nav-links{display:flex;gap:28px;}
+    .nav-links a{color:var(--muted);font-size:0.88rem;font-weight:500;transition:color .2s;}
+    .nav-links a:hover{color:var(--orange);}
+    .nav-cta{background:var(--orange);color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;font-size:0.85rem;transition:all .2s;}
+    .nav-cta:hover{background:var(--orange-dark);}
+
+    /* HERO */
+    .hero{background:linear-gradient(to right, rgba(13,13,13,0.95) 55%, rgba(13,13,13,0.5) 100%), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=80') right center/cover no-repeat;min-height:100vh;padding:130px 5% 80px;display:flex;align-items:center;}
+    .hero-content{max-width:620px;}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,0.15);border:1px solid rgba(249,115,22,0.4);color:var(--orange);font-size:0.78rem;font-weight:700;padding:7px 16px;border-radius:6px;margin-bottom:24px;text-transform:uppercase;letter-spacing:1px;}
+    .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);color:#fff;line-height:1;margin-bottom:16px;letter-spacing:2px;}
+    .hero h1 span{color:var(--orange);}
+    .hero p{color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:36px;max-width:500px;}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+    .btn-orange{background:var(--orange);color:#fff;font-weight:700;padding:15px 32px;border-radius:8px;font-size:0.95rem;transition:all .3s;}
+    .btn-orange:hover{background:var(--orange-dark);transform:translateY(-2px);}
+    .btn-dark{border:2px solid var(--border);color:var(--text);font-weight:600;padding:15px 32px;border-radius:8px;font-size:0.95rem;transition:all .3s;}
+    .btn-dark:hover{border-color:var(--orange);color:var(--orange);}
+
+    /* STATS */
+    .stats{background:var(--orange);padding:0;}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:100%;}
+    .sbox{padding:28px;text-align:center;border-right:1px solid rgba(0,0,0,0.15);}
+    .sbox:last-child{border:none;}
+    .sbox .num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:#fff;letter-spacing:1px;}
+    .sbox .lbl{font-size:0.78rem;color:rgba(255,255,255,0.75);font-weight:500;margin-top:2px;}
+
+    /* LAYANAN */
+    .layanan{padding:90px 5%;background:var(--dark2);}
+    .section-top{text-align:center;margin-bottom:56px;}
+    .sec-tag{display:inline-block;background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.3);color:var(--orange);font-size:0.75rem;font-weight:700;padding:5px 16px;border-radius:4px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+    .section-top h2{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:#fff;letter-spacing:2px;margin-bottom:10px;}
+    .section-top p{color:var(--muted);max-width:540px;margin:0 auto;}
+    .layanan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+    .layanan-card{background:var(--dark);padding:36px;transition:all .3s;position:relative;overflow:hidden;}
+    .layanan-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:0;background:var(--orange);transition:height .3s;}
+    .layanan-card:hover::before{height:100%;}
+    .layanan-card:hover{background:var(--dark2);}
+    .layanan-img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:20px;display:block;}
+    .layanan-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:#fff;letter-spacing:1px;margin-bottom:10px;}
+    .layanan-card p{font-size:0.84rem;color:var(--muted);line-height:1.7;margin-bottom:16px;}
+    .harga-mulai{color:var(--orange);font-weight:700;font-size:0.9rem;}
+
+    /* PORTOFOLIO */
+    .porto{padding:80px 5%;background:var(--dark);}
+    .porto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto;}
+    .porto-item{border-radius:10px;overflow:hidden;position:relative;aspect-ratio:4/3;}
+    .porto-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
+    .porto-item:hover img{transform:scale(1.05);}
+    .porto-overlay{position:absolute;inset:0;background:rgba(249,115,22,0);display:flex;align-items:center;justify-content:center;transition:background .3s;}
+    .porto-item:hover .porto-overlay{background:rgba(249,115,22,0.85);}
+    .porto-overlay span{color:#fff;font-weight:700;font-size:1rem;opacity:0;transition:opacity .3s;}
+    .porto-item:hover .porto-overlay span{opacity:1;}
+
+    /* KEUNGGULAN */
+    .keunggulan{background:var(--dark2);padding:80px 5%;}
+    .keu-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto;}
+    .keu-img img{width:100%;border-radius:14px;height:440px;object-fit:cover;display:block;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+    .keu-content h2{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:#fff;letter-spacing:2px;margin-bottom:20px;line-height:1.1;}
+    .keu-content h2 span{color:var(--orange);}
+    .keu-content p{color:var(--muted);line-height:1.8;margin-bottom:28px;}
+    .keu-list{display:flex;flex-direction:column;gap:14px;}
+    .keu-item{display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--dark);border-radius:10px;border-left:3px solid var(--orange);}
+    .keu-icon{font-size:1.3rem;flex-shrink:0;}
+    .keu-item strong{display:block;color:#fff;font-size:0.9rem;margin-bottom:4px;}
+    .keu-item span{font-size:0.8rem;color:var(--muted);}
+
+    /* PROSES */
+    .proses{padding:80px 5%;background:var(--dark);text-align:center;}
+    .proses-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .step{position:relative;}
+    .step-num{width:60px;height:60px;border-radius:50%;background:var(--orange);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.6rem;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+    .step h3{font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .step p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+    .step-arrow{position:absolute;top:30px;right:-20px;color:var(--orange);font-size:1.5rem;}
+
+    /* TESTIMONI */
+    .testimoni{background:var(--dark2);padding:80px 5%;}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .testi-card{background:var(--dark);border:1px solid var(--border);border-radius:12px;padding:28px;transition:border-color .3s;}
+    .testi-card:hover{border-color:var(--orange);}
+    .stars{color:var(--orange);font-size:0.9rem;margin-bottom:12px;}
+    .testi-card p{font-size:0.85rem;color:var(--muted);line-height:1.7;margin-bottom:20px;font-style:italic;}
+    .testi-author strong{display:block;font-size:0.88rem;color:#fff;margin-bottom:2px;}
+    .testi-author span{font-size:0.75rem;color:var(--muted);}
+
+    /* CTA */
+    .cta{background:var(--orange);padding:72px 5%;text-align:center;}
+    .cta h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#fff;letter-spacing:2px;margin-bottom:12px;}
+    .cta p{color:rgba(255,255,255,0.85);max-width:560px;margin:0 auto 36px;line-height:1.7;}
+    .btn-white{background:#fff;color:var(--orange);font-weight:800;padding:15px 36px;border-radius:8px;font-size:0.95rem;transition:all .3s;}
+    .btn-white:hover{background:var(--dark);color:#fff;}
+
+    /* FOOTER */
+    footer{background:var(--dark2);border-top:2px solid var(--orange);padding:56px 5% 24px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+    .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:#fff;letter-spacing:2px;margin-bottom:12px;}
+    .footer-logo span{color:var(--orange);}
+    footer p.desc{color:var(--muted);font-size:0.82rem;line-height:1.7;}
+    .footer-title{color:var(--orange);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{color:var(--muted);font-size:0.82rem;transition:color .2s;}
+    .footer-links a:hover{color:var(--orange);}
+    .footer-bottom{border-top:1px solid var(--border);padding-top:20px;text-align:center;color:#666;font-size:0.78rem;}
+    .footer-bottom a{color:var(--orange);}
+
+    @media(max-width:900px){.layanan-grid{grid-template-columns:1fr 1fr;}.keu-grid{grid-template-columns:1fr;}.proses-steps{grid-template-columns:1fr 1fr;}.testi-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.stats-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.nav-links{display:none;}.layanan-grid{grid-template-columns:1fr;}.porto-grid{grid-template-columns:1fr 1fr;}.proses-steps{grid-template-columns:1fr;}.step-arrow{display:none;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="logo-icon-box">🔩</div>
+    <div class="logo-text">Baja<span>Berkah</span> Las</div>
+  </div>
+  <div class="nav-links">
+    <a href="#layanan">Layanan</a>
+    <a href="#porto">Hasil Kerja</a>
+    <a href="#proses">Proses</a>
+    <a href="#kontak">Kontak</a>
+  </div>
+  <a href="https://wa.me/6285712225565?text=Saya%20ingin%20survey%20dan%20konsultasi%20jasa%20las" target="_blank" class="nav-cta">📐 Minta Survey Gratis</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🔥 Ahli Fabrikasi Baja & Konstruksi Besi</div>
+    <h1>JASA LAS<br><span>PROFESIONAL</span><br>BERKUALITAS</h1>
+    <p>Spesialis kanopi, pagar besi, railing tangga, teralis, dan konstruksi baja dengan material premium, pengerjaan rapi, dan garansi hasil kerja hingga 5 tahun.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/6285712225565?text=Halo%2C%20saya%20ingin%20konsultasi%20jasa%20las%20dan%20minta%20harga" target="_blank" class="btn-orange">💬 Konsultasi & Harga</a>
+      <a href="#porto" class="btn-dark">🖼 Lihat Hasil Kerja</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-grid">
+    <div class="sbox"><div class="num">850+</div><div class="lbl">Proyek Selesai</div></div>
+    <div class="sbox"><div class="num">12+</div><div class="lbl">Tahun Pengalaman</div></div>
+    <div class="sbox"><div class="num">5 THN</div><div class="lbl">Garansi Hasil Kerja</div></div>
+    <div class="sbox"><div class="num">4.9 ⭐</div><div class="lbl">Rating Pelanggan</div></div>
+  </div>
+</div>
+
+<section class="layanan" id="layanan">
+  <div class="section-top">
+    <div class="sec-tag">Layanan Kami</div>
+    <h2>APA YANG KAMI KERJAKAN</h2>
+    <p>Kami mengerjakan semua jenis pekerjaan las dan fabrikasi baja dengan presisi tinggi dan material berkualitas.</p>
+  </div>
+  <div class="layanan-grid">
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=500&q=80" alt="Kanopi" class="layanan-img">
+      <h3>Kanopi & Atap Baja</h3>
+      <p>Kanopi carport, teras, dan garasi dengan berbagai model: polycarbonate, spandek, alderon. Kokoh dan tahan cuaca ekstrem.</p>
+      <div class="harga-mulai">Mulai dari Rp 450.000/m²</div>
+    </div>
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1622560480605-d83c661641ab?w=500&q=80" alt="Pagar" class="layanan-img">
+      <h3>Pagar Besi & Teralis</h3>
+      <p>Pagar rumah, pagar minimalis, teralis jendela, dan pintu geser dengan desain modern hingga klasik sesuai selera Anda.</p>
+      <div class="harga-mulai">Mulai dari Rp 350.000/m</div>
+    </div>
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=500&q=80" alt="Konstruksi" class="layanan-img">
+      <h3>Konstruksi Baja Ringan</h3>
+      <p>Rangka atap baja ringan, kuda-kuda baja, dan konstruksi gedung ringan. Lebih kuat, anti rayap, dan pemasangan cepat.</p>
+      <div class="harga-mulai">Mulai dari Rp 150.000/m²</div>
+    </div>
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1590536449195-bf7be629540b?w=500&q=80" alt="Railing" class="layanan-img">
+      <h3>Railing & Handrail Tangga</h3>
+      <p>Railing tangga stainless, besi hollow, pipa, dan besi tempa untuk hunian, apartemen, dan gedung komersial.</p>
+      <div class="harga-mulai">Mulai dari Rp 200.000/m</div>
+    </div>
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&q=80" alt="Pintu" class="layanan-img">
+      <h3>Pintu Besi & Tralis</h3>
+      <p>Pintu besi tempa, pintu geser otomatis, pintu garasi, dan tralis keamanan dengan kunci modern anti-jebol.</p>
+      <div class="harga-mulai">Mulai dari Rp 2.500.000/unit</div>
+    </div>
+    <div class="layanan-card">
+      <img src="https://images.unsplash.com/photo-1607400201515-c2c41c07d307?w=500&q=80" alt="Custom" class="layanan-img">
+      <h3>Las & Fabrikasi Custom</h3>
+      <p>Pengerjaan custom sesuai desain Anda: meja besi, rak besi, gapura, sign name, bracket, dan kebutuhan industri.</p>
+      <div class="harga-mulai">Hubungi untuk harga khusus</div>
+    </div>
+  </div>
+</section>
+
+<section class="porto" id="porto">
+  <div class="section-top">
+    <div class="sec-tag">Portofolio</div>
+    <h2>HASIL KERJA KAMI</h2>
+    <p>Beberapa proyek yang telah kami selesaikan dengan hasil terbaik</p>
+  </div>
+  <div class="porto-grid">
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=400&q=80" alt=""><div class="porto-overlay"><span>Kanopi Minimalis</span></div></div>
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=80" alt=""><div class="porto-overlay"><span>Konstruksi Baja</span></div></div>
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1590536449195-bf7be629540b?w=400&q=80" alt=""><div class="porto-overlay"><span>Railing Stainless</span></div></div>
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1622560480605-d83c661641ab?w=400&q=80" alt=""><div class="porto-overlay"><span>Pagar Tempa</span></div></div>
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80" alt=""><div class="porto-overlay"><span>Pintu Besi</span></div></div>
+    <div class="porto-item"><img src="https://images.unsplash.com/photo-1607400201515-c2c41c07d307?w=400&q=80" alt=""><div class="porto-overlay"><span>Custom Fabrication</span></div></div>
+  </div>
+</section>
+
+<section class="keunggulan">
+  <div class="keu-grid">
+    <div class="keu-img"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80" alt="Tim Las BajaBerkah"></div>
+    <div class="keu-content">
+      <h2>KENAPA PILIH<br><span>BAJABERKAH?</span></h2>
+      <p>Kami bukan sekadar tukang las biasa. Kami adalah tim profesional dengan sertifikasi BNSP yang mengutamakan kualitas, ketepatan ukuran, dan keindahan finishing.</p>
+      <div class="keu-list">
+        <div class="keu-item"><div class="keu-icon">🔩</div><div><strong>Material Besi & Baja Grade A</strong><span>Seluruh material besi/baja kami bersumber dari supplier terpercaya dengan sertifikat SNI</span></div></div>
+        <div class="keu-item"><div class="keu-icon">📐</div><div><strong>Survey & Ukur Gratis</strong><span>Tim kami datang ke lokasi Anda untuk survey dan memberikan estimasi biaya tanpa dipungut biaya</span></div></div>
+        <div class="keu-item"><div class="keu-icon">🏆</div><div><strong>Garansi Hasil 5 Tahun</strong><span>Kami memberikan garansi penuh untuk hasil kerja las dan konstruksi selama 5 tahun</span></div></div>
+        <div class="keu-item"><div class="keu-icon">⚡</div><div><strong>Pengerjaan Cepat & Tepat</strong><span>Estimasi waktu pengerjaan yang akurat dan selesai sesuai jadwal yang telah disepakati</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proses" id="proses">
+  <div class="section-top">
+    <div class="sec-tag">Cara Kerja</div>
+    <h2>PROSES PENGERJAAN</h2>
+    <p>Empat langkah mudah dari konsultasi hingga proyek selesai</p>
+  </div>
+  <div class="proses-steps">
+    <div class="step"><div class="step-num">1</div><h3>Konsultasi & Survey</h3><p>Hubungi kami, tim kami datang survey lokasi dan diskusi desain sesuai kebutuhan Anda.</p><div class="step-arrow">→</div></div>
+    <div class="step"><div class="step-num">2</div><h3>Desain & RAB</h3><p>Kami buat desain dan Rencana Anggaran Biaya yang detail, transparan, dan kompetitif.</p><div class="step-arrow">→</div></div>
+    <div class="step"><div class="step-num">3</div><h3>Fabrikasi & Pemasangan</h3><p>Proses produksi di workshop kami, kemudian pemasangan di lokasi oleh tim terlatih.</p><div class="step-arrow">→</div></div>
+    <div class="step"><div class="step-num">4</div><h3>Finishing & Garansi</h3><p>Pengecatan, anti karat, dan pembersihan. Anda terima kunci dengan garansi resmi tertulis.</p></div>
+  </div>
+</section>
+
+<section class="testimoni">
+  <div class="section-top">
+    <div class="sec-tag">Testimoni</div>
+    <h2>KATA PELANGGAN KAMI</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"Kanopi carport saya dikerjakan hanya 3 hari, hasilnya sangat rapi dan kokoh. Harganya juga transparan tidak ada biaya tambahan. Sangat profesional!"</p><div class="testi-author"><strong>Pak Rudi Santoso</strong><span>Perumahan Griya Asri, Bekasi</span></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"Pagar minimalis modern di rumah baru saya hasilnya sempurna. Sesuai desain yang diminta, las rapi, finishing cat bagus. Garansinya bikin tenang."</p><div class="testi-author"><strong>Ibu Sari Dewi</strong><span>Kavling Hijau, Depok</span></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>"Proyek railing tangga gedung kantor 4 lantai selesai tepat waktu dan sesuai spek. Tim BajaBerkah sangat komunikatif dan profesional. Akan pakai lagi!"</p><div class="testi-author"><strong>Bapak Andi K.</strong><span>Kontraktor, Jakarta Timur</span></div></div>
+  </div>
+</section>
+
+<section class="cta" id="kontak">
+  <h2>SIAP MULAI PROYEK ANDA?</h2>
+  <p>Hubungi kami sekarang untuk konsultasi dan survey GRATIS. Tim kami siap membantu mewujudkan hunian impian Anda dengan hasil terbaik.</p>
+  <a href="https://wa.me/6285712225565?text=Halo%20BajaBerkah%2C%20saya%20ingin%20konsultasi%20dan%20minta%20survey%20gratis" target="_blank" class="btn-white">💬 Hubungi via WhatsApp Sekarang</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Baja<span>Berkah</span> Las</div>
+      <p class="desc">Spesialis jasa las dan fabrikasi baja profesional dengan 12+ tahun pengalaman. Melayani kanopi, pagar, railing, konstruksi baja, dan custom fabrication.</p>
+    </div>
+    <div>
+      <div class="footer-title">Layanan</div>
+      <div class="footer-links"><a href="#">Kanopi & Atap</a><a href="#">Pagar & Teralis</a><a href="#">Konstruksi Baja</a><a href="#">Railing Tangga</a><a href="#">Custom Fabrication</a></div>
+    </div>
+    <div>
+      <div class="footer-title">Informasi</div>
+      <div class="footer-links"><a href="#">Tentang Kami</a><a href="#">Galeri Proyek</a><a href="#">Harga & Estimasi</a><a href="#">Area Layanan</a><a href="../index.html">← Kembali ke Portfolio</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 BajaBerkah Las. Demo oleh <a href="../index.html">LukmanWeb</a></div>
+</footer>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[3].Value 
+        

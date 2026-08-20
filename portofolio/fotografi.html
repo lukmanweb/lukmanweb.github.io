@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+﻿ 
+            <!DOCTYPE html>
 <html lang="id">
 <head>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
@@ -1187,5 +1188,2554 @@
       observer.observe(el);
     });
   </script>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
 </body>
 </html>
+.Groups[1].Value + $mobileCss + "`n    " + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/profile-logo.jpg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrameStudio — Photography & Videography Professional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --white: #ffffff;
+      --grey: #888888;
+      --light-grey: #f5f5f5;
+      --border: rgba(255,255,255,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 24px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.9), transparent);
+      backdrop-filter: blur(4px);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--black) !important;
+      padding: 10px 24px;
+      border-radius: 2px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+    /* TEAM SECTION STYLES */
+    .team-section {
+      padding: 100px 60px;
+      background: var(--dark);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+    .team-card {
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.4s ease, border-color 0.4s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+    }
+    .team-img-wrap {
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      position: relative;
+    }
+    .team-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(80%);
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+    .team-card:hover .team-img-wrap img {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+    .team-badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: rgba(10,10,10,0.85);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+    }
+    .team-content {
+      padding: 24px;
+    }
+    .team-role {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .team-quote {
+      font-size: 0.85rem;
+      color: var(--grey);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    @media (max-width: 992px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .team-section { padding: 60px 24px; }
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(to right, rgba(10,10,10,0.95) 35%, rgba(10,10,10,0.4) 100%),
+        url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 60px;
+      max-width: 700px;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: fadeUp 0.8s ease 0.15s both;
+    }
+    .hero-title em { color: var(--gold); font-style: italic; }
+    .hero-desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      max-width: 480px;
+      margin-bottom: 44px;
+      animation: fadeUp 0.8s ease 0.3s both;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      animation: fadeUp 0.8s ease 0.45s both;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+      padding: 14px 36px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      border-radius: 2px;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 14px 36px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      border-radius: 2px;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* STATS */
+    .stats-bar {
+      background: var(--dark2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 30px 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 20px;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--grey);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* GALLERY */
+    .gallery-section {
+      padding: 100px 60px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .section-title em { color: var(--gold); font-style: italic; }
+    .gallery-filter {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--grey);
+      padding: 8px 24px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .gallery-masonry {
+      columns: 3;
+      column-gap: 12px;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-info { color: white; }
+    .gallery-info strong { font-size: 0.9rem; display: block; }
+    .gallery-info span { font-size: 0.75rem; color: var(--gold); }
+
+    /* SERVICES */
+    .services-section {
+      background: var(--dark2);
+      padding: 100px 60px;
+      border-top: 1px solid var(--border);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 60px;
+    }
+    .service-card {
+      background: var(--dark);
+      padding: 50px 40px;
+      transition: background 0.3s;
+    }
+    .service-card:hover { background: #1f1f1f; }
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      color: var(--gold);
+    }
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--grey);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .service-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+    }
+    .service-price small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      color: var(--grey);
+      margin-left: 4px;
+    }
+
+    /* ABOUT */
+    .about-section {
+      padding: 100px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+    .about-accent {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 60%;
+      height: 40%;
+      border: 1px solid var(--gold);
+      z-index: -1;
+    }
+    .about-exp {
+      position: absolute;
+      bottom: 30px;
+      left: -30px;
+      background: var(--gold);
+      color: var(--black);
+      padding: 20px 28px;
+      text-align: center;
+    }
+    .about-exp strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      display: block;
+      line-height: 1;
+    }
+    .about-exp span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+    .about-content { }
+    .about-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    .about-content p {
+      color: var(--grey);
+      line-height: 1.9;
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+    .about-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .skill-tag {
+      border: 1px solid var(--border);
+      color: rgba(255,255,255,0.7);
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+    }
+
+    /* PACKAGES */
+    .packages-section {
+      background: var(--dark2);
+      padding: 100px 60px;
+      border-top: 1px solid var(--border);
+    }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .package-card {
+      border: 1px solid var(--border);
+      padding: 44px 36px;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+    .package-card:hover { border-color: var(--gold); }
+    .package-card.popular {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.05);
+    }
+    .popular-tag {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--black);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 18px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .package-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .package-desc {
+      font-size: 0.82rem;
+      color: var(--grey);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .package-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 30px;
+    }
+    .package-price small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: var(--grey);
+    }
+    .package-features {
+      list-style: none;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .package-features li {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .package-features li::before {
+      content: '';
+      width: 18px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .btn-package {
+      display: block;
+      text-align: center;
+      padding: 14px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .btn-package:hover, .package-card.popular .btn-package {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-section {
+      padding: 100px 60px;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .testimonial-card {
+      border: 1px solid var(--border);
+      padding: 36px;
+      transition: border-color 0.3s;
+    }
+    .testimonial-card:hover { border-color: rgba(201,168,76,0.4); }
+    .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 3px; }
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #a07830);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--black);
+      flex-shrink: 0;
+    }
+    .author-name { font-size: 0.88rem; font-weight: 600; }
+    .author-role { font-size: 0.75rem; color: var(--grey); }
+
+    /* CTA */
+    .cta-section {
+      position: relative;
+      padding: 120px 60px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.75)),
+        url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600&q=80') center/cover;
+    }
+    .cta-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .cta-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    .cta-content p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 44px;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark2);
+      border-top: 1px solid var(--border);
+      padding: 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    footer p { font-size: 0.8rem; color: var(--grey); }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 20px 24px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 0 24px; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 24px; }
+      .gallery-section, .services-section, .packages-section, .testimonials-section { padding: 70px 24px; }
+      .gallery-masonry { columns: 2; }
+      .services-grid, .packages-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .about-section { grid-template-columns: 1fr; padding: 70px 24px; gap: 50px; }
+      .cta-section { padding: 80px 24px; }
+      footer { padding: 30px 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Frame<span>Studio</span></a>
+    <ul class="nav-links">
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#tim">Tim Kami</a></li>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#paket">Harga</a></li>
+      <li><a href="https://wa.me/6285712225565?text=Halo%20FrameStudio,%20saya%20ingin%20konsultasi%20sesi%20foto" target="_blank" class="nav-cta">Booking</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-tag">📷 Photography &amp; Videography</div>
+      <h1 class="hero-title">Setiap Momen<br>Layak <em>Diabadikan</em><br>dengan Indah</h1>
+      <p class="hero-desc">Kami mengabadikan momen terbaik hidup Anda — dari pernikahan, wisuda, produk, hingga kegiatan korporat — dengan sentuhan artistik dan profesional.</p>
+      <div class="hero-btns">
+        <a href="#galeri" class="btn-gold">Lihat Galeri</a>
+        <a href="https://wa.me/6285712225565?text=Halo%20FrameStudio,%20saya%20ingin%20booking%20sesi%20foto" target="_blank" class="btn-outline">Booking Sekarang</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">850+</div>
+      <div class="stat-label">Sesi Foto Selesai</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Tahun Pengalaman</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Klien Puas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12</div>
+      <div class="stat-label">Penghargaan</div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" id="galeri">
+    <div class="section-header">
+      <span class="section-tag">Karya Kami</span>
+      <h2 class="section-title">Koleksi <em>Terbaik</em> dari<br>Setiap Sesi Foto</h2>
+    </div>
+    <div class="gallery-filter">
+      <button class="filter-btn active">Semua</button>
+      <button class="filter-btn">Pernikahan</button>
+      <button class="filter-btn">Wisuda</button>
+      <button class="filter-btn">Produk</button>
+      <button class="filter-btn">Korporat</button>
+      <button class="filter-btn">Potret</button>
+    </div>
+    <div class="gallery-masonry">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding Photography">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Pernikahan Sarah & Budi</strong><span>Wedding Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80" alt="Portrait">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Foto Wisuda Anita</strong><span>Portrait Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Product Photography">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Katalog Produk Fashion</strong><span>Product Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=80" alt="Wedding Couple">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Prewedding Rina & Doni</strong><span>Prewedding Session</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80" alt="Birthday Photo">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Ulang Tahun ke-17</strong><span>Birthday Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Corporate">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Annual Meeting PT ABC</strong><span>Corporate Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1485811055483-1c09e64d4576?w=600&q=80" alt="Food Photography">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Katalog Menu Restoran</strong><span>Food Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80" alt="Event Photography">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Festival Musik 2024</strong><span>Event Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=80" alt="Wedding Ceremony">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Akad Nikah Dewi & Rizki</strong><span>Wedding Photography</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM MEMBERS (FROM FREDY PHOTOGRAPHY OFFICIAL PDF) -->
+  <section class="team-section" id="tim">
+    <div class="section-header">
+      <span class="section-tag">Meet The Team</span>
+      <h2 class="section-title">Fotografer &amp; Videografer <em>Profesional</em> Kami</h2>
+      <p style="color: var(--grey); max-width: 600px; margin-top: 12px;">Tim seniman visual berpengalaman di Salatiga, Semarang, dan sekitarnya yang siap mengabadikan momen berharga Anda secara estetik &amp; bercerita.</p>
+    </div>
+
+    <div class="team-grid">
+      <!-- Fredy -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_4.jpg" alt="Fredy - Founder & Photographer">
+          <span class="team-badge">Founder</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Founder &amp; Lead Photographer</div>
+          <div class="team-name">Fredy</div>
+          <p class="team-quote">"Surrounded by works of art that spark imagination, Fredy loves to create, arrange, and photograph masterpieces."</p>
+        </div>
+      </div>
+
+      <!-- Anjas -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_5.jpg" alt="Anjas - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Anjas</div>
+          <p class="team-quote">"Behind the lens, Anjas is a great storyteller. A humble, sincere, and fun-loving visual creator."</p>
+        </div>
+      </div>
+
+      <!-- Ismadi -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_6.jpg" alt="Ismadi - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Ismadi</div>
+          <p class="team-quote">"Expression, story, and moment are his favorite flows in forming a frame."</p>
+        </div>
+      </div>
+
+      <!-- Dita -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_7.jpg" alt="Dita - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Dita</div>
+          <p class="team-quote">"Always dreamed of creating magical and emotional moments through every photo taken."</p>
+        </div>
+      </div>
+
+      <!-- Nunung -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_8.jpg" alt="Nunung - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Nunung</div>
+          <p class="team-quote">"With unique artistic style and creative ideas, she always manages to capture the perfect moment."</p>
+        </div>
+      </div>
+
+      <!-- Andy -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_9.jpg" alt="Andy - Videographer">
+          <span class="team-badge">Videographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Videographer</div>
+          <div class="team-name">Andy</div>
+          <p class="team-quote">"It only took a moment to be completely captivated by this vibrant young cinematic storyteller."</p>
+        </div>
+      </div>
+
+      <!-- Rory -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_10.jpg" alt="Rory - Videographer">
+          <span class="team-badge">Videographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Videographer</div>
+          <div class="team-name">Rory</div>
+          <p class="team-quote">"We call him the eagle-eyed genius. A passionate creator full of cinematic ideas."</p>
+        </div>
+      </div>
+
+      <!-- Mega -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_11.jpg" alt="Mega - Videographer">
+          <span class="team-badge">Videographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Videographer</div>
+          <div class="team-name">Mega</div>
+          <p class="team-quote">"A friendly guy whose creative energy &amp; jokes make clients smile and laugh all day long."</p>
+        </div>
+      </div>
+
+      <!-- Arjuna -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_12.jpg" alt="Arjuna - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Arjuna</div>
+          <p class="team-quote">"The silent shooter who focuses intensely on capturing the authentic story as it unfolds."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="layanan">
+    <div class="section-header">
+      <span class="section-tag">Layanan Kami</span>
+      <h2 class="section-title">Apa yang Bisa<br>Kami <em>Lakukan</em> untuk Anda</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>Wedding Photography</h3>
+        <p>Abadikan hari istimewa pernikahan Anda dengan foto yang penuh emosi, romantis, dan berkesan seumur hidup.</p>
+        <div class="service-price">Mulai Rp 3,5 Juta <small>/ hari</small></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Foto Produk & Katalog</h3>
+        <p>Tampilkan produk Anda dengan foto berkualitas tinggi yang menarik perhatian dan meningkatkan penjualan secara signifikan.</p>
+        <div class="service-price">Mulai Rp 500 Ribu <small>/ produk</small></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Event & Korporat</h3>
+        <p>Dokumentasi profesional untuk konferensi, seminar, pameran, peluncuran produk, dan berbagai acara perusahaan Anda.</p>
+        <div class="service-price">Mulai Rp 1,5 Juta <small>/ hari</small></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <h3>Videografi & Cinematic</h3>
+        <p>Video sinematik berkualitas film untuk pernikahan, iklan produk, company profile, dan konten media sosial Anda.</p>
+        <div class="service-price">Mulai Rp 4 Juta <small>/ proyek</small></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <h3>Portrait & Wisuda</h3>
+        <p>Sesi foto potret individu, keluarga, atau wisuda untuk kenangan yang indah dan profesional.</p>
+        <div class="service-price">Mulai Rp 350 Ribu <small>/ sesi</small></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Editing & Retouching</h3>
+        <p>Layanan editing profesional untuk foto-foto Anda — dari color grading, retouching wajah, hingga background replacement.</p>
+        <div class="service-price">Mulai Rp 50 Ribu <small>/ foto</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="tentang">
+    <div class="about-img-wrap">
+      <img class="about-img" src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=600&q=80" alt="Fotografer Profesional">
+      <div class="about-accent"></div>
+      <div class="about-exp">
+        <strong>7+</strong>
+        <span>Tahun<br>Pengalaman</span>
+      </div>
+    </div>
+    <div class="about-content">
+      <span class="section-tag" style="display:block; margin-bottom:16px;">Tentang Kami</span>
+      <h2>Passion kami adalah<br><em>Bercerita lewat</em><br>Gambar</h2>
+      <p>FrameStudio adalah studio fotografi profesional yang berdiri sejak 2017. Kami percaya bahwa setiap foto adalah sebuah cerita — dan kami hadir untuk menceritakannya dengan cara terbaik.</p>
+      <p>Dengan pengalaman lebih dari 7 tahun dan lebih dari 850 sesi foto yang telah kami selesaikan, kami memiliki keahlian dan kepekaan artistik untuk mengabadikan setiap momen berharga Anda.</p>
+      <div class="about-skills">
+        <span class="skill-tag">Wedding</span>
+        <span class="skill-tag">Portrait</span>
+        <span class="skill-tag">Product</span>
+        <span class="skill-tag">Cinematic Video</span>
+        <span class="skill-tag">Drone</span>
+        <span class="skill-tag">Photo Editing</span>
+        <span class="skill-tag">Event</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="packages-section" id="paket">
+    <div class="section-header">
+      <span class="section-tag">Paket Harga</span>
+      <h2 class="section-title">Pilih Paket yang<br><em>Sesuai</em> Kebutuhan Anda</h2>
+    </div>
+    <div class="packages-grid">
+      <div class="package-card">
+        <div class="package-name">Paket Silver</div>
+        <div class="package-desc">Cocok untuk sesi foto individu atau pasangan.</div>
+        <div class="package-price">Rp 750K <small>/ sesi</small></div>
+        <ul class="package-features">
+          <li>2 jam sesi foto</li>
+          <li>50 foto hasil editing</li>
+          <li>1 lokasi outdoor/indoor</li>
+          <li>Pengiriman via Google Drive</li>
+          <li>Revisi 1x</li>
+        </ul>
+        <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20Paket%20Silver%20FrameStudio" target="_blank" class="btn-package">Pilih Paket</a>
+      </div>
+      <div class="package-card popular">
+        <div class="popular-tag">Paling Diminati</div>
+        <div class="package-name">Paket Gold</div>
+        <div class="package-desc">Terbaik untuk keluarga, wisuda, atau event kecil.</div>
+        <div class="package-price">Rp 1,8 Juta <small>/ sesi</small></div>
+        <ul class="package-features">
+          <li>4 jam sesi foto</li>
+          <li>120 foto hasil editing</li>
+          <li>2 lokasi pilihan</li>
+          <li>1 fotografer + asisten</li>
+          <li>File RAW tersedia</li>
+          <li>Revisi 2x</li>
+        </ul>
+        <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20Paket%20Gold%20FrameStudio" target="_blank" class="btn-package">Pilih Paket</a>
+      </div>
+      <div class="package-card">
+        <div class="package-name">Paket Platinum</div>
+        <div class="package-desc">Solusi lengkap untuk pernikahan atau event besar.</div>
+        <div class="package-price">Rp 5 Juta <small>/ hari</small></div>
+        <ul class="package-features">
+          <li>Full day dokumentasi</li>
+          <li>Foto tidak terbatas</li>
+          <li>2 fotografer profesional</li>
+          <li>Videografer + drone</li>
+          <li>Same-day edit highlights</li>
+          <li>Album fisik eksklusif</li>
+        </ul>
+        <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20Paket%20Platinum%20FrameStudio" target="_blank" class="btn-package">Pilih Paket</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <span class="section-tag">Testimoni</span>
+      <h2 class="section-title">Kata Mereka yang<br>Telah Mempercayai <em>Kami</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Foto pernikahan kami luar biasa! Tim FrameStudio sangat profesional dan bisa menangkap momen-momen yang kami tidak sadari. Hasilnya melampaui ekspektasi!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SR</div>
+          <div>
+            <div class="author-name">Sarah & Rizky</div>
+            <div class="author-role">Klien Wedding Photography</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Foto produk kami langsung meningkatkan konversi toko online hampir 40%! Kualitas gambar benar-benar sangat profesional dan menarik."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">DW</div>
+          <div>
+            <div class="author-name">Dian Wulandari</div>
+            <div class="author-role">Owner Toko Online Fashion</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Event seminar kami didokumentasikan dengan sangat baik. Semua momen penting tertangkap dengan jelas. Tim sangat cekatan dan tidak mengganggu jalannya acara."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AB</div>
+          <div>
+            <div class="author-name">Ahmad Basri</div>
+            <div class="author-role">HR Manager PT Nusantara</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg"></div>
+    <div class="cta-content">
+      <h2>Siap Mengabadikan<br>Momen Terbaik Anda?</h2>
+      <p>Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik untuk sesi foto Anda.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://wa.me/6285712225565?text=Halo%20FrameStudio,%20saya%20ingin%20booking%20sesi%20foto" target="_blank" class="btn-gold">Booking via WhatsApp</a>
+        <a href="tel:+6285712225565" class="btn-outline">Hubungi Kami</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:white; margin-bottom:4px;">Frame<span style="color:var(--gold)">Studio</span></p>
+      <p>Photography &amp; Videography Professional</p>
+    </div>
+    <p>&copy; 2026 FrameStudio. Design by <a href="../index.html">LukmanHakim JasaWeb</a></p>
+    <p style="text-align:right;">
+      <a href="https://wa.me/6285712225565" target="_blank" style="color:var(--grey);">085712225565</a><br>
+      <a href="mailto:info@framestudio.id" style="color:var(--grey);">info@framestudio.id</a>
+    </p>
+  </footer>
+
+  <script>
+    // Gallery filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.gallery-item, .service-card, .package-card, .testimonial-card, .team-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[2].Value + <!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/profile-logo.jpg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrameStudio — Photography & Videography Professional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --white: #ffffff;
+      --grey: #888888;
+      --light-grey: #f5f5f5;
+      --border: rgba(255,255,255,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 24px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.9), transparent);
+      backdrop-filter: blur(4px);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--black) !important;
+      padding: 10px 24px;
+      border-radius: 2px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+    /* TEAM SECTION STYLES */
+    .team-section {
+      padding: 100px 60px;
+      background: var(--dark);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+    .team-card {
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.4s ease, border-color 0.4s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+    }
+    .team-img-wrap {
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      position: relative;
+    }
+    .team-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(80%);
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+    .team-card:hover .team-img-wrap img {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+    .team-badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: rgba(10,10,10,0.85);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+    }
+    .team-content {
+      padding: 24px;
+    }
+    .team-role {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .team-quote {
+      font-size: 0.85rem;
+      color: var(--grey);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    @media (max-width: 992px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .team-section { padding: 60px 24px; }
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(to right, rgba(10,10,10,0.95) 35%, rgba(10,10,10,0.4) 100%),
+        url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 60px;
+      max-width: 700px;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: fadeUp 0.8s ease 0.15s both;
+    }
+    .hero-title em { color: var(--gold); font-style: italic; }
+    .hero-desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      max-width: 480px;
+      margin-bottom: 44px;
+      animation: fadeUp 0.8s ease 0.3s both;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      animation: fadeUp 0.8s ease 0.45s both;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+      padding: 14px 36px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      border-radius: 2px;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 14px 36px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      border-radius: 2px;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* STATS */
+    .stats-bar {
+      background: var(--dark2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 30px 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 20px;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--grey);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* GALLERY */
+    .gallery-section {
+      padding: 100px 60px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .section-title em { color: var(--gold); font-style: italic; }
+    .gallery-filter {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--grey);
+      padding: 8px 24px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .gallery-masonry {
+      columns: 3;
+      column-gap: 12px;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-info { color: white; }
+    .gallery-info strong { font-size: 0.9rem; display: block; }
+    .gallery-info span { font-size: 0.75rem; color: var(--gold); }
+
+    /* SERVICES */
+    .services-section {
+      background: var(--dark2);
+      padding: 100px 60px;
+      border-top: 1px solid var(--border);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 60px;
+    }
+    .service-card {
+      background: var(--dark);
+      padding: 50px 40px;
+      transition: background 0.3s;
+    }
+    .service-card:hover { background: #1f1f1f; }
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      color: var(--gold);
+    }
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--grey);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .service-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+    }
+    .service-price small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      color: var(--grey);
+      margin-left: 4px;
+    }
+
+    /* ABOUT */
+    .about-section {
+      padding: 100px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+    .about-accent {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 60%;
+      height: 40%;
+      border: 1px solid var(--gold);
+      z-index: -1;
+    }
+    .about-exp {
+      position: absolute;
+      bottom: 30px;
+      left: -30px;
+      background: var(--gold);
+      color: var(--black);
+      padding: 20px 28px;
+      text-align: center;
+    }
+    .about-exp strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      display: block;
+      line-height: 1;
+    }
+    .about-exp span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+    .about-content { }
+    .about-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    .about-content p {
+      color: var(--grey);
+      line-height: 1.9;
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+    .about-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .skill-tag {
+      border: 1px solid var(--border);
+      color: rgba(255,255,255,0.7);
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+    }
+
+    /* PACKAGES */
+    .packages-section {
+      background: var(--dark2);
+      padding: 100px 60px;
+      border-top: 1px solid var(--border);
+    }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .package-card {
+      border: 1px solid var(--border);
+      padding: 44px 36px;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+    .package-card:hover { border-color: var(--gold); }
+    .package-card.popular {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.05);
+    }
+    .popular-tag {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--black);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 18px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .package-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .package-desc {
+      font-size: 0.82rem;
+      color: var(--grey);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .package-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 30px;
+    }
+    .package-price small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: var(--grey);
+    }
+    .package-features {
+      list-style: none;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .package-features li {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .package-features li::before {
+      content: '';
+      width: 18px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .btn-package {
+      display: block;
+      text-align: center;
+      padding: 14px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .btn-package:hover, .package-card.popular .btn-package {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-section {
+      padding: 100px 60px;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .testimonial-card {
+      border: 1px solid var(--border);
+      padding: 36px;
+      transition: border-color 0.3s;
+    }
+    .testimonial-card:hover { border-color: rgba(201,168,76,0.4); }
+    .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 3px; }
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #a07830);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--black);
+      flex-shrink: 0;
+    }
+    .author-name { font-size: 0.88rem; font-weight: 600; }
+    .author-role { font-size: 0.75rem; color: var(--grey); }
+
+    /* CTA */
+    .cta-section {
+      position: relative;
+      padding: 120px 60px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.75)),
+        url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600&q=80') center/cover;
+    }
+    .cta-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .cta-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    .cta-content p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 44px;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark2);
+      border-top: 1px solid var(--border);
+      padding: 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    footer p { font-size: 0.8rem; color: var(--grey); }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 20px 24px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 0 24px; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 24px; }
+      .gallery-section, .services-section, .packages-section, .testimonials-section { padding: 70px 24px; }
+      .gallery-masonry { columns: 2; }
+      .services-grid, .packages-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .about-section { grid-template-columns: 1fr; padding: 70px 24px; gap: 50px; }
+      .cta-section { padding: 80px 24px; }
+      footer { padding: 30px 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Frame<span>Studio</span></a>
+    <ul class="nav-links">
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#tim">Tim Kami</a></li>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#paket">Harga</a></li>
+      <li><a href="https://wa.me/6285712225565?text=Halo%20FrameStudio,%20saya%20ingin%20konsultasi%20sesi%20foto" target="_blank" class="nav-cta">Booking</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-tag">📷 Photography &amp; Videography</div>
+      <h1 class="hero-title">Setiap Momen<br>Layak <em>Diabadikan</em><br>dengan Indah</h1>
+      <p class="hero-desc">Kami mengabadikan momen terbaik hidup Anda — dari pernikahan, wisuda, produk, hingga kegiatan korporat — dengan sentuhan artistik dan profesional.</p>
+      <div class="hero-btns">
+        <a href="#galeri" class="btn-gold">Lihat Galeri</a>
+        <a href="https://wa.me/6285712225565?text=Halo%20FrameStudio,%20saya%20ingin%20booking%20sesi%20foto" target="_blank" class="btn-outline">Booking Sekarang</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">850+</div>
+      <div class="stat-label">Sesi Foto Selesai</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Tahun Pengalaman</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Klien Puas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12</div>
+      <div class="stat-label">Penghargaan</div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" id="galeri">
+    <div class="section-header">
+      <span class="section-tag">Karya Kami</span>
+      <h2 class="section-title">Koleksi <em>Terbaik</em> dari<br>Setiap Sesi Foto</h2>
+    </div>
+    <div class="gallery-filter">
+      <button class="filter-btn active">Semua</button>
+      <button class="filter-btn">Pernikahan</button>
+      <button class="filter-btn">Wisuda</button>
+      <button class="filter-btn">Produk</button>
+      <button class="filter-btn">Korporat</button>
+      <button class="filter-btn">Potret</button>
+    </div>
+    <div class="gallery-masonry">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding Photography">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Pernikahan Sarah & Budi</strong><span>Wedding Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80" alt="Portrait">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Foto Wisuda Anita</strong><span>Portrait Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Product Photography">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Katalog Produk Fashion</strong><span>Product Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=80" alt="Wedding Couple">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Prewedding Rina & Doni</strong><span>Prewedding Session</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80" alt="Birthday Photo">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Ulang Tahun ke-17</strong><span>Birthday Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Corporate">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Annual Meeting PT ABC</strong><span>Corporate Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1485811055483-1c09e64d4576?w=600&q=80" alt="Food Photography">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Katalog Menu Restoran</strong><span>Food Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80" alt="Event Photography">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Festival Musik 2024</strong><span>Event Photography</span></div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=80" alt="Wedding Ceremony">
+        <div class="gallery-overlay">
+          <div class="gallery-info"><strong>Akad Nikah Dewi & Rizki</strong><span>Wedding Photography</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM MEMBERS (FROM FREDY PHOTOGRAPHY OFFICIAL PDF) -->
+  <section class="team-section" id="tim">
+    <div class="section-header">
+      <span class="section-tag">Meet The Team</span>
+      <h2 class="section-title">Fotografer &amp; Videografer <em>Profesional</em> Kami</h2>
+      <p style="color: var(--grey); max-width: 600px; margin-top: 12px;">Tim seniman visual berpengalaman di Salatiga, Semarang, dan sekitarnya yang siap mengabadikan momen berharga Anda secara estetik &amp; bercerita.</p>
+    </div>
+
+    <div class="team-grid">
+      <!-- Fredy -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_4.jpg" alt="Fredy - Founder & Photographer">
+          <span class="team-badge">Founder</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Founder &amp; Lead Photographer</div>
+          <div class="team-name">Fredy</div>
+          <p class="team-quote">"Surrounded by works of art that spark imagination, Fredy loves to create, arrange, and photograph masterpieces."</p>
+        </div>
+      </div>
+
+      <!-- Anjas -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_5.jpg" alt="Anjas - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Anjas</div>
+          <p class="team-quote">"Behind the lens, Anjas is a great storyteller. A humble, sincere, and fun-loving visual creator."</p>
+        </div>
+      </div>
+
+      <!-- Ismadi -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_6.jpg" alt="Ismadi - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Ismadi</div>
+          <p class="team-quote">"Expression, story, and moment are his favorite flows in forming a frame."</p>
+        </div>
+      </div>
+
+      <!-- Dita -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_7.jpg" alt="Dita - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Dita</div>
+          <p class="team-quote">"Always dreamed of creating magical and emotional moments through every photo taken."</p>
+        </div>
+      </div>
+
+      <!-- Nunung -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_8.jpg" alt="Nunung - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Nunung</div>
+          <p class="team-quote">"With unique artistic style and creative ideas, she always manages to capture the perfect moment."</p>
+        </div>
+      </div>
+
+      <!-- Andy -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_9.jpg" alt="Andy - Videographer">
+          <span class="team-badge">Videographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Videographer</div>
+          <div class="team-name">Andy</div>
+          <p class="team-quote">"It only took a moment to be completely captivated by this vibrant young cinematic storyteller."</p>
+        </div>
+      </div>
+
+      <!-- Rory -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_10.jpg" alt="Rory - Videographer">
+          <span class="team-badge">Videographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Videographer</div>
+          <div class="team-name">Rory</div>
+          <p class="team-quote">"We call him the eagle-eyed genius. A passionate creator full of cinematic ideas."</p>
+        </div>
+      </div>
+
+      <!-- Mega -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_11.jpg" alt="Mega - Videographer">
+          <span class="team-badge">Videographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Videographer</div>
+          <div class="team-name">Mega</div>
+          <p class="team-quote">"A friendly guy whose creative energy &amp; jokes make clients smile and laugh all day long."</p>
+        </div>
+      </div>
+
+      <!-- Arjuna -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="images/fredy-team/team_12.jpg" alt="Arjuna - Photographer">
+          <span class="team-badge">Photographer</span>
+        </div>
+        <div class="team-content">
+          <div class="team-role">Photographer</div>
+          <div class="team-name">Arjuna</div>
+          <p class="team-quote">"The silent shooter who focuses intensely on capturing the authentic story as it unfolds."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="layanan">
+    <div class="section-header">
+      <span class="section-tag">Layanan Kami</span>
+      <h2 class="section-title">Apa yang Bisa<br>Kami <em>Lakukan</em> untuk Anda</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>Wedding Photography</h3>
+        <p>Abadikan hari istimewa pernikahan Anda dengan foto yang penuh emosi, romantis, dan berkesan seumur hidup.</p>
+        <div class="service-price">Mulai Rp 3,5 Juta <small>/ hari</small></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Foto Produk & Katalog</h3>
+        <p>Tampilkan produk Anda dengan foto berkualitas tinggi yang menarik perhatian dan meningkatkan penjualan secara signifikan.</p>
+        <div class="service-price">Mulai Rp 500 Ribu <small>/ produk</small></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Event & Korporat</h3>
+        <p>Dokumentasi profesional untuk konferensi, seminar, pameran, peluncuran produk, dan berbagai acara perusahaan Anda.</p>
+        <div class="service-price">Mulai Rp 1,5 Juta <small>/ hari</small></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <h3>Videografi & Cinematic</h3>
+        <p>Video sinematik berkualitas film untuk pernikahan, iklan produk, company profile, dan konten media sosial Anda.</p>
+        <div class="service-price">Mulai Rp 4 Juta <small>/ proyek</small></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <h3>Portrait & Wisuda</h3>
+        <p>Sesi foto potret individu, keluarga, atau wisuda untuk kenangan yang indah dan profesional.</p>
+        <div class="service-price">Mulai Rp 350 Ribu <small>/ sesi</small></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Editing & Retouching</h3>
+        <p>Layanan editing profesional untuk foto-foto Anda — dari color grading, retouching wajah, hingga background replacement.</p>
+        <div class="service-price">Mulai Rp 50 Ribu <small>/ foto</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="tentang">
+    <div class="about-img-wrap">
+      <img class="about-img" src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=600&q=80" alt="Fotografer Profesional">
+      <div class="about-accent"></div>
+      <div class="about-exp">
+        <strong>7+</strong>
+        <span>Tahun<br>Pengalaman</span>
+      </div>
+    </div>
+    <div class="about-content">
+      <span class="section-tag" style="display:block; margin-bottom:16px;">Tentang Kami</span>
+      <h2>Passion kami adalah<br><em>Bercerita lewat</em><br>Gambar</h2>
+      <p>FrameStudio adalah studio fotografi profesional yang berdiri sejak 2017. Kami percaya bahwa setiap foto adalah sebuah cerita — dan kami hadir untuk menceritakannya dengan cara terbaik.</p>
+      <p>Dengan pengalaman lebih dari 7 tahun dan lebih dari 850 sesi foto yang telah kami selesaikan, kami memiliki keahlian dan kepekaan artistik untuk mengabadikan setiap momen berharga Anda.</p>
+      <div class="about-skills">
+        <span class="skill-tag">Wedding</span>
+        <span class="skill-tag">Portrait</span>
+        <span class="skill-tag">Product</span>
+        <span class="skill-tag">Cinematic Video</span>
+        <span class="skill-tag">Drone</span>
+        <span class="skill-tag">Photo Editing</span>
+        <span class="skill-tag">Event</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="packages-section" id="paket">
+    <div class="section-header">
+      <span class="section-tag">Paket Harga</span>
+      <h2 class="section-title">Pilih Paket yang<br><em>Sesuai</em> Kebutuhan Anda</h2>
+    </div>
+    <div class="packages-grid">
+      <div class="package-card">
+        <div class="package-name">Paket Silver</div>
+        <div class="package-desc">Cocok untuk sesi foto individu atau pasangan.</div>
+        <div class="package-price">Rp 750K <small>/ sesi</small></div>
+        <ul class="package-features">
+          <li>2 jam sesi foto</li>
+          <li>50 foto hasil editing</li>
+          <li>1 lokasi outdoor/indoor</li>
+          <li>Pengiriman via Google Drive</li>
+          <li>Revisi 1x</li>
+        </ul>
+        <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20Paket%20Silver%20FrameStudio" target="_blank" class="btn-package">Pilih Paket</a>
+      </div>
+      <div class="package-card popular">
+        <div class="popular-tag">Paling Diminati</div>
+        <div class="package-name">Paket Gold</div>
+        <div class="package-desc">Terbaik untuk keluarga, wisuda, atau event kecil.</div>
+        <div class="package-price">Rp 1,8 Juta <small>/ sesi</small></div>
+        <ul class="package-features">
+          <li>4 jam sesi foto</li>
+          <li>120 foto hasil editing</li>
+          <li>2 lokasi pilihan</li>
+          <li>1 fotografer + asisten</li>
+          <li>File RAW tersedia</li>
+          <li>Revisi 2x</li>
+        </ul>
+        <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20Paket%20Gold%20FrameStudio" target="_blank" class="btn-package">Pilih Paket</a>
+      </div>
+      <div class="package-card">
+        <div class="package-name">Paket Platinum</div>
+        <div class="package-desc">Solusi lengkap untuk pernikahan atau event besar.</div>
+        <div class="package-price">Rp 5 Juta <small>/ hari</small></div>
+        <ul class="package-features">
+          <li>Full day dokumentasi</li>
+          <li>Foto tidak terbatas</li>
+          <li>2 fotografer profesional</li>
+          <li>Videografer + drone</li>
+          <li>Same-day edit highlights</li>
+          <li>Album fisik eksklusif</li>
+        </ul>
+        <a href="https://wa.me/6285712225565?text=Saya%20ingin%20booking%20Paket%20Platinum%20FrameStudio" target="_blank" class="btn-package">Pilih Paket</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <span class="section-tag">Testimoni</span>
+      <h2 class="section-title">Kata Mereka yang<br>Telah Mempercayai <em>Kami</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Foto pernikahan kami luar biasa! Tim FrameStudio sangat profesional dan bisa menangkap momen-momen yang kami tidak sadari. Hasilnya melampaui ekspektasi!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SR</div>
+          <div>
+            <div class="author-name">Sarah & Rizky</div>
+            <div class="author-role">Klien Wedding Photography</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Foto produk kami langsung meningkatkan konversi toko online hampir 40%! Kualitas gambar benar-benar sangat profesional dan menarik."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">DW</div>
+          <div>
+            <div class="author-name">Dian Wulandari</div>
+            <div class="author-role">Owner Toko Online Fashion</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Event seminar kami didokumentasikan dengan sangat baik. Semua momen penting tertangkap dengan jelas. Tim sangat cekatan dan tidak mengganggu jalannya acara."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AB</div>
+          <div>
+            <div class="author-name">Ahmad Basri</div>
+            <div class="author-role">HR Manager PT Nusantara</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg"></div>
+    <div class="cta-content">
+      <h2>Siap Mengabadikan<br>Momen Terbaik Anda?</h2>
+      <p>Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik untuk sesi foto Anda.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://wa.me/6285712225565?text=Halo%20FrameStudio,%20saya%20ingin%20booking%20sesi%20foto" target="_blank" class="btn-gold">Booking via WhatsApp</a>
+        <a href="tel:+6285712225565" class="btn-outline">Hubungi Kami</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:white; margin-bottom:4px;">Frame<span style="color:var(--gold)">Studio</span></p>
+      <p>Photography &amp; Videography Professional</p>
+    </div>
+    <p>&copy; 2026 FrameStudio. Design by <a href="../index.html">LukmanHakim JasaWeb</a></p>
+    <p style="text-align:right;">
+      <a href="https://wa.me/6285712225565" target="_blank" style="color:var(--grey);">085712225565</a><br>
+      <a href="mailto:info@framestudio.id" style="color:var(--grey);">info@framestudio.id</a>
+    </p>
+  </footer>
+
+  <script>
+    // Gallery filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.gallery-item, .service-card, .package-card, .testimonial-card, .team-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+<script>
+  // Universal mobile hamburger toggle
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var navEls = document.querySelectorAll('nav ul, #navLinks, #navMenu, .nav-links, .nav-menu');
+      if (!navEls.length) return;
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      
+      // Don't add if hamburger already exists
+      if (nav.querySelector('.mob-hamburger, .hamburger, #hamburger')) return;
+      
+      var btn = document.createElement('button');
+      btn.className = 'mob-hamburger';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.innerHTML = '<span></span><span></span><span></span>';
+      btn.style.cssText = 'display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:9999;color:inherit;';
+      
+      btn.addEventListener('click', function() {
+        navEls.forEach(function(el) {
+          el.classList.toggle('mob-open');
+        });
+        var spans = btn.querySelectorAll('span');
+        var isOpen = navEls[0].classList.contains('mob-open');
+        if (isOpen) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '';
+          spans[2].style.transform = '';
+        }
+      });
+      
+      // Close menu when link clicked
+      navEls.forEach(function(el) {
+        el.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            navEls.forEach(function(n) { n.classList.remove('mob-open'); });
+          });
+        });
+      });
+      
+      nav.appendChild(btn);
+      
+      // Show button on mobile
+      function checkWidth() {
+        btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      checkWidth();
+      window.addEventListener('resize', checkWidth);
+    });
+  })();
+</script>
+</body>
+</html>
+.Groups[3].Value 
+        
