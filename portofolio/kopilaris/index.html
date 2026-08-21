@@ -872,6 +872,25 @@
                         </div>
                     </div>
 
+                    <!-- NOMINAL TRANSFER DINAMIS -->
+                    <div id="nominalTransferBox" class="bg-gradient-to-r from-brandRed-700 to-brandRed-900 text-white p-4 rounded-2xl border-2 border-amberGold-400 shadow-lg">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-money-bill-wave text-amberGold-300"></i>
+                            <span class="text-xs font-black uppercase tracking-wider text-amberGold-200">Total yang Harus Ditransfer</span>
+                        </div>
+                        <div class="flex items-center justify-between flex-wrap gap-3">
+                            <div>
+                                <div id="nominalPaket" class="text-[11px] text-cream-300 font-semibold"></div>
+                                <div id="nominalHarga" class="text-2xl sm:text-3xl font-black text-yellow-300 font-mono tracking-wide"></div>
+                                <div class="text-[10px] text-emerald-300 font-bold mt-0.5">✓ Sudah termasuk FREE ONGKIR Se-Indonesia</div>
+                            </div>
+                            <button type="button" id="salinNominalBtn" class="bg-amberGold-400 hover:bg-amberGold-500 text-brandRed-950 text-xs font-black px-3 py-2 rounded-xl flex items-center gap-1.5 transition-all shadow-md">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Salin Nominal</span>
+                            </button>
+                        </div>
+                    </div>
+
                     <!-- Metode Pembayaran & Info Rekening -->
                     <div>
                         <label class="block text-xs sm:text-sm font-bold text-brandRed-950 mb-1.5">
@@ -1054,6 +1073,27 @@
 
     <!-- SCRIPT LOGIC -->
     <script>
+        // Paket price map
+        const paketHarga = {
+            '2 Box Kopilaris Best Seller (Rp 225.000 - Isi 20 Sachet)': { label: '2 Box Kopilaris Best Seller (Isi 20 Sachet)', harga: 225000, text: 'Rp 225.000' },
+            '1 Box Kopilaris (Rp 125.000 - Isi 10 Sachet)':             { label: '1 Box Kopilaris (Isi 10 Sachet)',              harga: 125000, text: 'Rp 125.000' },
+            '3 Box Kopilaris Super Perkasa (Rp 315.000 - Isi 30 Sachet)':{ label: '3 Box Kopilaris Super Perkasa (Isi 30 Sachet)', harga: 315000, text: 'Rp 315.000' },
+        };
+
+        function updateNominalBox() {
+            const selectEl = document.getElementById('paketSelect');
+            const selected = selectEl.value;
+            const data = paketHarga[selected];
+            if (data) {
+                document.getElementById('nominalPaket').textContent = data.label;
+                document.getElementById('nominalHarga').textContent = data.text;
+                document.getElementById('salinNominalBtn').onclick = function() {
+                    navigator.clipboard.writeText(String(data.harga));
+                    alert('Nominal ' + data.text + ' berhasil disalin! Silakan transfer ke BCA 3200442163 a/n Andy Wibowo.');
+                };
+            }
+        }
+
         // Set Package from Price Card
         function selectPackage(packageName) {
             const selectEl = document.getElementById('paketSelect');
@@ -1063,8 +1103,14 @@
                     break;
                 }
             }
+            updateNominalBox();
             document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
         }
+
+        // Listen paket changes
+        document.getElementById('paketSelect').addEventListener('change', updateNominalBox);
+        // Init on load
+        updateNominalBox();
 
         // Form Submit to WhatsApp 085229885849
         function handleFormSubmit(event) {
@@ -1076,6 +1122,8 @@
             const alamat = document.getElementById('alamatLengkap').value.trim();
             const pembayaran = document.querySelector('input[name="paymentMethod"]:checked').value;
             const catatan = document.getElementById('catatan').value.trim() || '-';
+            const nominalData = paketHarga[paket];
+            const nominalTransfer = nominalData ? nominalData.text : '-';
 
             const waNumber = '6285229885849'; // 085229885849
             
@@ -1088,6 +1136,7 @@
 '*Alamat Lengkap:* ' + alamat + '\n' +
 '*Metode Pembayaran:* ' + pembayaran + ' (FREE ONGKIR)\n' +
 '*Rekening Tujuan:* BCA 3200442163 a/n Andy Wibowo\n' +
+'*Nominal Transfer:* ' + nominalTransfer + ' (sudah termasuk FREE ONGKIR)\n' +
 '*Catatan:* ' + catatan + '\n' +
 '--------------------------------------\n' +
 'Halo Admin Kopilaris, saya ingin konfirmasi pesanan di atas via Transfer BCA. Mohon segera dicek dan kirimkan konfirmasinya, terima kasih!';
