@@ -864,19 +864,33 @@
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
-        <!-- Left: Image Showcase of Car & Bali -->
+        <!-- Left: Image Showcase of Car & Bali Fleet -->
         <div class="relative">
-          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-            <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1000&q=80" alt="Bali Hospitality and Private Tour" class="w-full h-[450px] object-cover">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-br from-slate-100 via-white to-slate-200 p-6 flex flex-col items-center justify-center min-h-[420px]">
+            <!-- Decorative badge -->
+            <div class="w-full flex justify-between items-center mb-4">
+              <span class="inline-flex items-center gap-1.5 bg-bali-emerald/10 text-bali-emerald font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                Official Tour Vehicle
+              </span>
+              <span class="text-xs font-semibold text-slate-500 bg-white/80 px-2.5 py-1 rounded-lg border border-slate-200">
+                100% Private Car
+              </span>
+            </div>
+
+            <!-- Car Photo -->
+            <div class="py-4 my-auto w-full flex items-center justify-center">
+              <img src="assets/images/terios-car.png" alt="Daihatsu Terios R Deluxe White - Wayan Bali Driver Fleet" class="max-h-64 sm:max-h-72 w-auto object-contain drop-shadow-2xl hover:scale-105 transition duration-500">
+            </div>
             
             <!-- Vehicle Badge Overlay -->
-            <div class="absolute bottom-6 left-6 right-6 bg-slate-900/90 backdrop-blur-md rounded-2xl p-4 border border-white/20 text-white flex items-center justify-between">
+            <div class="w-full bg-slate-900/95 backdrop-blur-md rounded-2xl p-4 border border-white/20 text-white flex items-center justify-between mt-4">
               <div>
                 <span class="text-xs uppercase font-bold text-amber-400 block">Our Dedicated Fleet</span>
                 <span class="font-serif text-lg font-bold">Daihatsu Terios R Deluxe (White)</span>
                 <span class="text-xs text-slate-300 block mt-0.5">Dual AC • Super Clean • Up to 6 Passengers</span>
               </div>
-              <div class="w-12 h-12 rounded-xl bg-emerald-700/80 flex items-center justify-center text-white">
+              <div class="w-12 h-12 rounded-xl bg-emerald-700/80 flex items-center justify-center text-white flex-shrink-0">
                 <i data-lucide="car" class="w-6 h-6"></i>
               </div>
             </div>
