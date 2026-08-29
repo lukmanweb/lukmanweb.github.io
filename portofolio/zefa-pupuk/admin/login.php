@@ -42,7 +42,7 @@ if (isAdminLoggedIn()) {
     <title>Admin Login — Zefa Mulia Sejahtera</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
 <body class="admin-body">
 

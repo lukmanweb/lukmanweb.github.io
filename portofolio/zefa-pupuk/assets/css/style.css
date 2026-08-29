@@ -219,7 +219,7 @@ h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 700; color: var
     border-bottom: 1px solid #dcfce7;
 }
 
-/* TRANSISI STATS GRID — vertikal di mobile, horizontal di desktop */
+/* TRANSISI STATS GRID � vertikal di mobile, horizontal di desktop */
 .transisi-stats-grid {
     background: #fff;
     border: 1px solid #dcfce7;
@@ -231,9 +231,8 @@ h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 700; color: var
     text-align: center;
     box-shadow: 0 4px 16px rgba(22, 163, 74, 0.07);
 }
-.stats-center-item { /* border hanya di desktop, hilang di mobile */ }
 
-/* TESTIMONI PHOTO GRID — 1 kolom di mobile */
+/* TESTIMONI PHOTO GRID */
 .testimoni-photo-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -298,4 +297,3 @@ h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 700; color: var
     .hero-cta { flex-direction: column; }
     .btn-wa, .btn-outline { width: 100%; justify-content: center; }
 }
-

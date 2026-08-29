@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/config.php';
 
 // Routing .htaccess mengarahkan /eko ke reseller.php?slug=eko
 // File ini bisa juga dipanggil langsung dari .htaccess

@@ -114,20 +114,25 @@ $settingMsg = $db->query("SELECT value FROM settings WHERE key_name = 'default_w
     <title>Dashboard Admin — Zefa Mulia Sejahtera</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
-<body class="admin-body" style="display:flex;">
+<body class="admin-body">
+
+<!-- Overlay untuk menutup sidebar di mobile -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
 <!-- ====================================================
      SIDEBAR
      ==================================================== -->
-<aside class="admin-sidebar">
+<aside class="admin-sidebar" id="adminSidebar">
     <div class="admin-logo">
+        <!-- Tombol tutup sidebar di mobile -->
+        <button class="sidebar-close-btn" onclick="closeSidebar()" aria-label="Tutup menu">✕</button>
         <div class="brand">🌿 ZEFA ADMIN</div>
         <div class="sub">Panel Manajemen Reseller</div>
     </div>
 
-    <nav style="flex:1;">
+    <nav class="admin-nav">
         <a href="#dashboard" class="admin-nav-item active" onclick="showSection('dashboard', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
             Dashboard
@@ -161,6 +166,14 @@ $settingMsg = $db->query("SELECT value FROM settings WHERE key_name = 'default_w
      MAIN CONTENT
      ==================================================== -->
 <main class="admin-main">
+
+    <!-- Topbar Mobile (hanya tampil di mobile) -->
+    <div class="admin-topbar-mobile">
+        <button class="hamburger-btn" onclick="openSidebar()" aria-label="Buka menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="topbar-title">🌿 ZEFA ADMIN</div>
+    </div>
 
     <!-- Flash Message -->
     <?php if ($message): ?>
@@ -395,21 +408,21 @@ $settingMsg = $db->query("SELECT value FROM settings WHERE key_name = 'default_w
                 </div>
 
                 <div class="form-group">
-                    <label style="display:flex;align-items:center;gap:10px;cursor:pointer;">
-                        <input type="checkbox" name="aktif" checked style="width:16px;height:16px;accent-color:var(--green-400);">
-                        <span style="font-size:0.9rem;">Aktifkan halaman reseller ini segera setelah disimpan</span>
+                    <label class="form-checkbox-label">
+                        <input type="checkbox" name="aktif" checked>
+                        <span>Aktifkan halaman reseller ini segera setelah disimpan</span>
                     </label>
                 </div>
 
                 <!-- Preview -->
-                <div style="background:rgba(74,222,128,0.05);border:1px solid rgba(74,222,128,0.15);border-radius:12px;padding:16px;margin-bottom:24px;">
-                    <div style="font-size:0.8rem;font-weight:700;color:var(--green-400);margin-bottom:8px;">PREVIEW LINK RESELLER</div>
-                    <div style="font-family:monospace;color:#fff;font-size:0.95rem;">
-                        <?= rtrim(SITE_URL, '/') ?>/<span id="slugPreviewFull" style="color:#4ade80;font-weight:700;">nama-reseller</span>
+                <div class="reseller-preview-box">
+                    <div class="reseller-preview-title">🔗 PREVIEW LINK RESELLER</div>
+                    <div class="reseller-preview-url">
+                        <?= rtrim(SITE_URL, '/') ?>/<span id="slugPreviewFull" class="reseller-preview-slug">nama-reseller</span>
                     </div>
                 </div>
 
-                <div style="display:flex;gap:12px;">
+                <div style="display:flex;gap:12px;flex-wrap:wrap;">
                     <button type="submit" class="btn btn-primary">✅ Simpan Reseller</button>
                     <button type="reset" class="btn btn-outline" onclick="document.getElementById('slugPreview').textContent='nama';document.getElementById('slugPreviewFull').textContent='nama-reseller';">Reset Form</button>
                 </div>
@@ -470,6 +483,20 @@ function showSection(name, el) {
     document.querySelectorAll('.admin-nav-item').forEach(a => a.classList.remove('active'));
     if (el) el.classList.add('active');
     window.scrollTo(0, 0);
+    // Tutup sidebar otomatis setelah klik menu di mobile
+    if (window.innerWidth < 768) closeSidebar();
+}
+
+// Sidebar mobile toggle
+function openSidebar() {
+    document.getElementById('adminSidebar').classList.add('open');
+    document.getElementById('sidebarOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeSidebar() {
+    document.getElementById('adminSidebar').classList.remove('open');
+    document.getElementById('sidebarOverlay').classList.remove('active');
+    document.body.style.overflow = '';
 }
 
 // Slug preview
@@ -518,3 +545,4 @@ if (hash && document.getElementById('section-' + hash)) {
 
 </body>
 </html>
+

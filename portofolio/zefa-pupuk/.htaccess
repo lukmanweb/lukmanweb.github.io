@@ -2,21 +2,14 @@ Options -Indexes
 RewriteEngine On
 RewriteBase /
 
-# Redirect ke HTTPS (aktifkan jika sudah ada SSL)
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
 # Block akses langsung ke file sensitif
 RewriteRule ^config\.php$ - [F,L]
 RewriteRule ^database\.sql$ - [F,L]
 
-# Admin area
-RewriteRule ^admin$ admin/index.php [L]
-RewriteRule ^admin/$ admin/index.php [L]
+# Jika file atau folder fisik memang ada, langsung buka file/folder tersebut
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
 
-# Halaman reseller: /eko -> reseller.php?slug=eko
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/admin
-RewriteCond %{REQUEST_URI} !^/assets
-RewriteRule ^([a-zA-Z0-9_-]+)/?$ reseller.php?slug=$1 [QSA,L]
+# Halaman reseller: /hery -> index.php?slug=hery
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?slug=$1 [QSA,L]

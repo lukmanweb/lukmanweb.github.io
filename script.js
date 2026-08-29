@@ -1,5 +1,5 @@
 /* ===========================
-   LukmanWeb â€“ script.js
+   punyalink.id â€“ script.js
    =========================== */
 
 'use strict';
@@ -160,7 +160,7 @@ if (kontakForm) {
     }
 
     const text = encodeURIComponent(
-      `Halo LukmanWeb! ðŸ‘‹\n\n` +
+      `Halo punyalink.id! ðŸ‘‹\n\n` +
       `Nama: ${nama}\n` +
       `No. HP: ${hp}\n` +
       `Jenis Website: ${jenis}\n` +
@@ -226,7 +226,7 @@ document.querySelector('.nav-logo')?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-console.log('%c🚀 LukmanWeb', 'color: #c41220; font-size: 18px; font-weight: bold;');
+console.log('%c🚀 punyalink.id', 'color: #c41220; font-size: 18px; font-weight: bold;');
 console.log('%cJasa Pembuatan Website Profesional | WA: 085712225565', 'color: #6b3a3d; font-size: 12px;');
 
 // ---- Meta Pixel Event Tracking for Meta Ads ----

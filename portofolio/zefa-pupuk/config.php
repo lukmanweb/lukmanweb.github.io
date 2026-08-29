@@ -3,11 +3,11 @@
 // KONFIGURASI ZEFA MULIA SEJAHTERA
 // ====================================================
 
-// Database Configuration (sesuaikan dengan hosting RumahWeb)
+// Database Configuration (Hosting cPanel)
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'zefa_pupuk');
-define('DB_USER', 'root');         // Ganti dengan username DB hosting
-define('DB_PASS', '');             // Ganti dengan password DB hosting
+define('DB_NAME', 'wayj3349_zefapupuk');
+define('DB_USER', 'wayj3349');
+define('DB_PASS', '2mT2rgwaZWFF79');
 define('DB_CHARSET', 'utf8mb4');
 
 // Site Configuration

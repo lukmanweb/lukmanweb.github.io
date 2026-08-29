@@ -25,6 +25,32 @@
             border-radius: var(--radius-sm);
             object-fit: contain;
         }
+        .hero-img-container {
+            max-width: 460px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: 16px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+        .hero-img-container img {
+            width: 100%;
+            max-height: 280px;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+            display: block;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .hero-img-container {
+                max-width: 100%;
+            }
+            .hero-img-container img {
+                max-height: 220px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -46,10 +72,7 @@
                 <a href="#pro-b10">PRO-B10</a>
                 <a href="#pepetani">PEPETANI ZEFA</a>
                 <a href="#prazak">PRAZAK</a>
-                <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20tertarik%20dengan%20produk%20pupuk%20Anda." target="_blank" class="nav-wa-btn">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                    Hubungi Admin
-                </a>
+                
             </div>
 
             <!-- HAMBURGER BUTTON -->
@@ -70,9 +93,7 @@
             <a href="#prazak" class="mobile-link" onclick="closeMobileMenu()">💊 PRAZAK</a>
             <a href="#testimoni" class="mobile-link" onclick="closeMobileMenu()">📸 Testimoni</a>
             <a href="#keunggulan" class="mobile-link" onclick="closeMobileMenu()">⭐ Keunggulan</a>
-            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20ingin%20konsultasi%20produk%20pupuk." target="_blank" class="mobile-link mobile-link-wa" onclick="closeMobileMenu()">
-                💬 Hubungi Admin via WhatsApp
-            </a>
+            
         </div>
     </div>
 </nav>
@@ -107,12 +128,7 @@
                         <span class="label">Aman &amp; Ramah Lingkungan</span>
                     </div>
                 </div>
-                <div class="hero-cta">
-                    <a href="https://wa.me/6285727289279?text=Halo%20Zefa%20Mulia%20Sejahtera%2C%20saya%20ingin%20konsultasi%20produk%20pupuk." target="_blank" class="btn btn-wa">
-                        💬 Konsultasi &amp; Pemesanan WA
-                    </a>
-                    <a href="#produk" class="btn btn-outline">Lihat Detail Produk</a>
-                </div>
+                <div class="hero-cta" style="margin-top:20px;"><a href="#produk" class="btn btn-wa" style="display:inline-flex;padding:12px 28px;font-size:0.95rem;text-decoration:none;background:var(--green-700);">🌿 Lihat Detail Produk</a></div>
             </div>
 
             <div style="display:flex;flex-direction:column;gap:20px;">
@@ -250,14 +266,6 @@
                 </div>
             </div>
 
-            <div class="product-cta-bar">
-                <div>
-                    <span style="font-size:0.85rem;color:#64748b;">Butuh konsultasi dosis PRO-B10 untuk ternak/kolam Anda?</span>
-                    <h5 style="font-size:1.1rem;color:#0f172a;">Pesan PRO-B10 Original Zefa</h5>
-                </div>
-                <a href="https://wa.me/6285727289279?text=Halo%2C%20saya%20tertarik%20memesan%20PRO-B10%20Probiotik%20Herbal.%20Mohon%20info%20harga%20dan%20pemesanan." target="_blank" class="btn btn-wa" style="padding:12px 28px;font-size:0.95rem;">
-                    Pesan PRO-B10 via WhatsApp
-                </a>
             </div>
         </div>
 
@@ -345,14 +353,6 @@
                 </div>
             </div>
 
-            <div class="product-cta-bar">
-                <div>
-                    <span style="font-size:0.85rem;color:#64748b;">Cocok untuk perkebunan sawit, durian, &amp; tanaman buah keras.</span>
-                    <h5 style="font-size:1.1rem;color:#0f172a;">Pesan PEPETANI ZEFA Slow Release</h5>
-                </div>
-                <a href="https://wa.me/6285727289279?text=Halo%2C%20saya%20tertarik%20memesan%20PEPETANI%20ZEFA%20Slow%20Release.%20Mohon%20info%20harga%20dan%20pemesanan." target="_blank" class="btn btn-wa" style="padding:12px 28px;font-size:0.95rem;">
-                    Pesan PEPETANI ZEFA via WA
-                </a>
             </div>
         </div>
 
@@ -448,15 +448,31 @@
                 </div>
             </div>
 
-            <div class="product-cta-bar">
-                <div>
-                    <span style="font-size:0.85rem;color:#64748b;">Sangat cocok untuk Padi, Cabai, Sayuran, &amp; Hortikultura.</span>
-                    <h5 style="font-size:1.1rem;color:#0f172a;">Pesan Paket PRAZAK + NUTRISI</h5>
-                </div>
-                <a href="https://wa.me/6285727289279?text=Halo%2C%20saya%20tertarik%20memesan%20Paket%20PRAZAK%20%2B%20Nutrisi.%20Mohon%20info%20harga%20dan%20pemesanan." target="_blank" class="btn btn-wa" style="padding:12px 28px;font-size:0.95rem;background:linear-gradient(135deg,#d97706,#b45309);">
-                    Pesan PRAZAK via WA
-                </a>
+        <!-- ====================================================
+             VIDEO PANDUAN PENGGUNAAN PUPUK (PRAZAK + NUTRISI)
+             ==================================================== -->
+        <div class="animate-on-scroll" style="margin-top: 40px; background: #ffffff; border: 1px solid var(--border-color); border-radius: 20px; padding: 36px 30px; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 28px;">
+                <span class="section-tag" style="background: #fef3c7; color: #b45309; border: 1px solid #fde68a;">🎬 Video Panduan Resmi</span>
+                <h3 style="font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 800; color: #0f172a; margin-top: 8px; margin-bottom: 8px;">
+                    Kenali Pupuk PRAZAK + Nutrisi & Cara Penggunaannya yang Tepat! 🌱
+                </h3>
+                <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+                    Tonton video penjelasan lengkap mengenai cara aktivasi biang, dosis semprot lapangan, dan tips pemupukan presisi agar hasil panen Anda maksimal.
+                </p>
             </div>
+
+            <div style="max-width: 800px; margin: 0 auto; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.12); border: 2px solid #e2e8f0; background: #000;">
+                <iframe 
+                    src="https://www.youtube-nocookie.com/embed/LzQg3-Bt52k?rel=0" 
+                    title="Kenali Pupuk PRAZAK + Nutrisi & Cara Penggunaannya yang Tepat!" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            
         </div>
 
     </div>
@@ -500,9 +516,7 @@
         <div style="background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(234,179,8,0.15));border:1px solid rgba(74,222,128,0.3);border-radius:20px;padding:32px;text-align:center;" class="animate-on-scroll">
             <h4 style="font-size:1.3rem;color:#fff;margin-bottom:12px;">🌟 Ambil Bagian dalam Ketahanan Pangan Nasional!</h4>
             <p style="font-size:0.95rem;color:#cbd5e1;max-width:650px;margin:0 auto 20px;">Jangan lewatkan momentum emas ini. Dapatkan margin keuntungan menarik dan dukungan sistem bisnis reseller gratis.</p>
-            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20tertarik%20memanfaatkan%20momentum%20bisnis%20ketahanan%20pangan%20ini.%20Bagaimana%20cara%20jadi%20mitra%2Freseller%3F" target="_blank" class="btn btn-wa" style="padding:14px 32px;">
-                🤝 Gabung Peluang Bisnis / Reseller Zefa Sekarang
-            </a>
+            
         </div>
     </div>
 </section>
@@ -567,11 +581,7 @@
             </div>
         </div>
 
-        <div style="text-align:center;margin-top:36px;" class="animate-on-scroll">
-            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20ingin%20konsultasi%20cara%20mulai%20transisi%20ke%20pupuk%20organik." target="_blank" class="btn btn-wa">
-                🌿 Konsultasi Cara Mulai Transisi Organik — GRATIS
-            </a>
-        </div>
+        
     </div>
 </section>
 
@@ -740,29 +750,10 @@
 
         </div>
 
-        <!-- CTA TESTIMONI -->
-        <div style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #bbf7d0;border-radius:20px;padding:32px;text-align:center;" class="animate-on-scroll">
-            <p style="font-size:1.05rem;color:#14532d;font-weight:700;margin-bottom:16px;">📲 Bergabunglah dengan ribuan petani yang sudah merasakan manfaat produk Zefa!</p>
-            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20tertarik%20setelah%20melihat%20hasil%20panen%20pelanggan.%20Boleh%20konsultasi%3F" target="_blank" class="btn btn-wa" style="padding:14px 32px;">
-                💬 Tanya Admin Sekarang — GRATIS
-            </a>
         </div>
-    </div>
 </section>
 
-<!-- CTA SECTION -->
-<section class="cta-section">
-    <div class="container">
-        <div class="cta-box animate-on-scroll">
-            <span style="background:rgba(255,255,255,0.2);color:#fff;padding:6px 16px;border-radius:50px;font-size:0.8rem;font-weight:800;letter-spacing:1px;display:inline-block;margin-bottom:16px;">KONSULTASI GRATIS VIA WHATSAPP</span>
-            <h2 class="cta-title">Siap Tingkatkan Hasil Panen &amp; Peternakan Anda?</h2>
-            <p class="cta-desc">Hubungi tim ahli Pupuk Zefa Sejahtera sekarang untuk panduan pemupukan presisi sesuai kondisi lahan &amp; ternak Anda.</p>
-            <a href="https://wa.me/6285727289279?text=Halo%20Pupuk%20Zefa%20Sejahtera%2C%20saya%20ingin%20konsultasi%20pemesanan%20pupuk." target="_blank" class="btn btn-wa" style="font-size:1.1rem;padding:18px 36px;background:#fff;color:#15803d;">
-                💬 Chat WhatsApp Admin Sekarang
-            </a>
-        </div>
-    </div>
-</section>
+
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -783,7 +774,7 @@
             <div>
                 <div class="footer-heading">Kontak Layanan</div>
                 <div class="footer-links">
-                    <a href="https://wa.me/6285727289279" target="_blank">📱 WhatsApp: +62 857-2728-9279</a>
+                    <span style="color:#94a3b8;font-weight:600;">📱 Hubungi orang yang memberi Info ini</span>
                     <a href="https://pupukzefasejahtera.com" target="_blank">🌐 Website: pupukzefasejahtera.com</a>
                     <a href="https://instagram.com/zefaaofficial" target="_blank">📸 Instagram: @zefaaofficial</a>
                 </div>
@@ -795,11 +786,11 @@
     </div>
 </footer>
 
-<!-- FLOATING WA -->
-<a href="https://wa.me/6285727289279?text=Halo%20Zefa%20Mulia%20Sejahtera%2C%20saya%20tertarik%20dengan%20produk%20pupuk%20Anda." target="_blank" class="floating-wa">
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    <span>Hubungi Admin</span>
-</a>
+<!-- FLOATING BUTTON -->
+<div class="floating-wa" style="cursor:default;pointer-events:none;background:linear-gradient(135deg,#15803d,#166534);box-shadow:0 8px 24px rgba(0,0,0,0.2);font-weight:700;">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+    <span>Hubungi orang yang memberi Info ini</span>
+</div>
 
 <script>
 window.addEventListener('scroll', () => {
