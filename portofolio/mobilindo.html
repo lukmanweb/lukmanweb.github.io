@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobilindo Perkasa — Dealer & Showroom Mobil Baru & Bekas Berkualitas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #CC0000;
+      --primary-dark: #990000;
+      --accent: #F59E0B;
+      --dark: #0B0F19;
+      --dark-card: #1E293B;
+      --light-bg: #F8FAFC;
+      --text-gray: #64748B;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--light-bg); color: var(--dark); line-height: 1.6; }
+    
+    header {
+      background: #FFFFFF;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .btn-wa {
+      background: #10B981;
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(16,185,129,0.25);
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0B0F19 0%, #1E293B 100%);
+      color: white;
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #94A3B8;
+      max-width: 700px;
+      margin: 0 auto 32px;
+    }
+    .filter-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) auto;
+      gap: 16px;
+      align-items: center;
+    }
+    .filter-box select, .filter-box input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .filter-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    /* CARS GRID */
+    .cars-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      color: var(--text-gray);
+      margin-bottom: 36px;
+    }
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    .car-card {
+      background: white;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .car-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+    }
+    .car-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .car-body {
+      padding: 20px;
+    }
+    .car-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #EFF6FF;
+      color: #2563EB;
+      font-size: 0.75rem;
+      font-weight: 800;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .car-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .car-specs {
+      display: flex;
+      gap: 14px;
+      font-size: 0.82rem;
+      color: var(--text-gray);
+      margin-bottom: 16px;
+    }
+    .car-price {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+    .car-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px 0;
+      background: #0B0F19;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 10px;
+      transition: 0.2s;
+    }
+    .car-btn:hover { background: var(--primary); }
+
+    /* FOOTER */
+    footer {
+      background: #0B0F19;
+      color: white;
+      padding: 50px 24px 24px;
+      margin-top: 80px;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom: 1px solid #1E293B;
+      padding-bottom: 30px;
+    }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 20px auto 0;
+      text-align: center;
+      font-size: 0.88rem;
+      color: #94A3B8;
+    }
+    .footer-bottom a { color: #F8FAFC; text-decoration: none; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">🚗 Mobilindo Perkasa</a>
+      <ul class="nav-links">
+        <li><a href="#katalog">Katalog Mobil</a></li>
+        <li><a href="#promo">Promo Kredit</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="https://wa.me/6285122135499?text=Halo%20Mobilindo,%20saya%20tertarik%20konsultasi%20mobil" target="_blank" class="btn-wa">💬 Hubungi Sales</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Beli Mobil Idaman Jadi Lebih Cepat & Mudah</h1>
+    <p>Pilihan terlengkap mobil baru dan bekas berkualitas dengan jaminan garansi mesin, inspeksi 150+ titik, dan cicilan bunga ringan.</p>
+
+    <div class="filter-box">
+      <select>
+        <option>Semua Merek (Toyota, Honda, dll)</option>
+        <option>Toyota</option>
+        <option>Honda</option>
+        <option>Mitsubishi</option>
+        <option>Hyundai</option>
+      </select>
+      <select>
+        <option>Tipe Bodi (SUV, Sedan, MPV)</option>
+        <option>SUV</option>
+        <option>MPV</option>
+        <option>Sedan</option>
+        <option>Hatchback</option>
+      </select>
+      <select>
+        <option>Rentang Harga</option>
+        <option>&lt; Rp 200 Juta</option>
+        <option>Rp 200 - 400 Juta</option>
+        <option>&gt; Rp 400 Juta</option>
+      </select>
+      <button class="filter-btn">Cari Mobil 🔍</button>
+    </div>
+  </section>
+
+  <!-- CARS -->
+  <section class="cars-section" id="katalog">
+    <div class="section-title">Katalog Unit Pilihan Terbaik</div>
+    <div class="section-sub">Semua unit telah lulus inspeksi ketat dan siap pakai langsung jalan</div>
+
+    <div class="cars-grid">
+      <!-- Car 1 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=600&q=80" alt="Toyota Fortuner GR Sport" class="car-img">
+        <div class="car-body">
+          <span class="car-badge">Tahun 2023 • Automatic</span>
+          <div class="car-title">Toyota Fortuner 2.8 GR Sport</div>
+          <div class="car-specs">
+            <span>⛽ Diesel</span>
+            <span>🛣️ 18.000 KM</span>
+            <span>📍 Plat B</span>
+          </div>
+          <div class="car-price">Rp 565.000.000</div>
+          <a href="https://wa.me/6285122135499?text=Tanya%20Toyota%20Fortuner%20GR%20Sport" target="_blank" class="car-btn">Minta Simulasi Kredit / DP</a>
+        </div>
+      </div>
+
+      <!-- Car 2 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=600&q=80" alt="Honda CR-V Turbo" class="car-img">
+        <div class="car-body">
+          <span class="car-badge">Tahun 2022 • Automatic</span>
+          <div class="car-title">Honda CR-V 1.5 Prestige Turbo</div>
+          <div class="car-specs">
+            <span>⛽ Bensin</span>
+            <span>🛣️ 24.500 KM</span>
+            <span>📍 Plat L</span>
+          </div>
+          <div class="car-price">Rp 460.000.000</div>
+          <a href="https://wa.me/6285122135499?text=Tanya%20Honda%20CR-V%20Prestige%20Turbo" target="_blank" class="car-btn">Minta Simulasi Kredit / DP</a>
+        </div>
+      </div>
+
+      <!-- Car 3 -->
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="Mitsubishi Pajero Sport" class="car-img">
+        <div class="car-body">
+          <span class="car-badge">Tahun 2023 • Automatic</span>
+          <div class="car-title">Mitsubishi Pajero Sport Dakar 4x2</div>
+          <div class="car-specs">
+            <span>⛽ Diesel</span>
+            <span>🛣️ 12.000 KM</span>
+            <span>📍 Plat D</span>
+          </div>
+          <div class="car-price">Rp 545.000.000</div>
+          <a href="https://wa.me/6285122135499?text=Tanya%20Mitsubishi%20Pajero%20Sport" target="_blank" class="car-btn">Minta Simulasi Kredit / DP</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>Mobilindo Perkasa Showroom</h3>
+        <p style="color:#94A3B8; font-size:0.9rem;">Pusat Jual Beli Mobil Berkualitas & Bergaransi Resmi.</p>
+      </div>
+      <div>
+        <a href="https://wa.me/6285122135499" target="_blank" class="btn-wa">Chat WhatsApp: 0851-2213-5499</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Mobilindo Perkasa. Demo by <a href="https://punyalink.id" target="_blank">punyalink.id</a>
+    </div>
+  </footer>
+
+</body>
+</html>
