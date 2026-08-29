@@ -167,7 +167,7 @@ if (kontakForm) {
       `${pesan ? `Kebutuhan: ${pesan}\n` : ''}` +
       `\nSaya ingin konsultasi pembuatan website. Terima kasih!`
     );
-    window.open(`https://wa.me/6285712225565?text=${text}`, '_blank');
+    window.open(`https://wa.me/6285122135499?text=${text}`, '_blank');
   });
 }
 
@@ -227,7 +227,7 @@ document.querySelector('.nav-logo')?.addEventListener('click', () => {
 });
 
 console.log('%c🚀 punyalink.id', 'color: #c41220; font-size: 18px; font-weight: bold;');
-console.log('%cJasa Pembuatan Website Profesional | WA: 085712225565', 'color: #6b3a3d; font-size: 12px;');
+console.log('%cJasa Pembuatan Website Profesional | WA: 085122135499', 'color: #6b3a3d; font-size: 12px;');
 
 // ---- Meta Pixel Event Tracking for Meta Ads ----
 document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
