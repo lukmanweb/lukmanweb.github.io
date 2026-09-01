@@ -1351,11 +1351,64 @@ input:focus, select:focus, textarea:focus {
   background: var(--white);
   font-size: 0.85rem;
   font-weight: 500;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .map-bar i {
   color: var(--primary);
   margin-right: 6px;
+}
+
+.map-action-btns {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.location-links-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mt-10 { margin-top: 10px; }
+.mr-15 { margin-right: 15px; }
+.d-inline-flex { display: inline-flex; }
+.d-inline-block { display: inline-block; }
+
+.btn-gojek {
+  align-items: center;
+  gap: 6px;
+  background: #00880f;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 136, 15, 0.25);
+}
+
+.btn-gojek:hover {
+  background: #00660b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 136, 15, 0.4);
+  color: #ffffff;
+}
+
+.btn-gojek-action {
+  background: #00880f;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-gojek-action:hover {
+  background: #00660b;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 136, 15, 0.35);
 }
 
 /* Footer */
