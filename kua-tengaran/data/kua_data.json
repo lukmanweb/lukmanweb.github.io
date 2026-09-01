@@ -1,0 +1,495 @@
+{
+  "profile": {
+    "name": "KUA Kecamatan Tengaran",
+    "fullname": "Kantor Urusan Agama Kecamatan Tengaran",
+    "institution": "Kementerian Agama Kabupaten Semarang",
+    "kanwil": "Kanwil Kemenag Provinsi Jawa Tengah",
+    "tagline": "Melayani dengan Hati, Berintegritas, Transparan dan Profesional",
+    "address": "Jl. Masjid Besar No.13, Desa Tengaran, Kec. Tengaran, Kab. Semarang, Jawa Tengah 50775",
+    "landmarks": "Sebelah timur Masjid Besar Al-Ikhlas Kecamatan Tengaran",
+    "phone": "0812-3456-7890",
+    "whatsapp": "6281234567890",
+    "email": "kua.tengaran@kemenag.go.id",
+    "instagram": "https://www.instagram.com/kua.tengaran/",
+    "mapsUrl": "https://maps.google.com/?q=KUA+Kecamatan+Tengaran+Kabupaten+Semarang",
+    "hours": {
+      "weekday": "Senin - Kamis: 07.30 - 16.00 WIB",
+      "friday": "Jumat: 07.30 - 16.30 WIB",
+      "weekend": "Sabtu - Minggu & Hari Libur Nasional: Tutup (Kecuali Pelayanan Akad Nikah Terjadwal di Luar Kantor)"
+    },
+    "vision": "Unggul dalam setiap pelayanan yang berbasis pada peraturan perundang-undangan, nilai-nilai ketaqwaan dan akhlak mulia.",
+    "missions": [
+      "Meningkatkan mutu pelayanan di bidang organisasi dan kelembagaan.",
+      "Meningkatkan pelayanan prima di bidang pencatatan nikah dan rujuk.",
+      "Meningkatkan pembinaan keluarga sakinah, kemitraan umat, dan pendampingan produk halal.",
+      "Meningkatkan pembinaan kemasjidan, hisab rukyat, dan kerukunan hidup umat beragama.",
+      "Meningkatkan tata kelola perwakafan, ZIS, dan pemberdayaan ekonomi umat.",
+      "Meningkatkan kualitas pelayanan bimbingan manasik haji dan umrah.",
+      "Meningkatkan pembinaan pondok pesantren, madrasah diniyah, TPQ, dan ke-MTQ-an.",
+      "Mengembangkan sistem pelayanan, bimbingan, dan konsultasi berbasis teknologi informasi digital."
+    ],
+    "values": [
+      {
+        "name": "Integritas",
+        "desc": "Keselarasan antara hati, pikiran, perkataan, dan perbuatan yang baik dan benar sesuai regulasi."
+      },
+      {
+        "name": "Profesionalitas",
+        "desc": "Bekerja secara disiplin, kompeten, tepat waktu, dan berorientasi pada hasil terbaik bagi masyarakat."
+      },
+      {
+        "name": "Inovasi",
+        "desc": "Menyempurnakan layanan yang sudah ada dan menciptakan terobosan baru yang mempermudah warga."
+      },
+      {
+        "name": "Tanggung Jawab",
+        "desc": "Bekerja secara tuntas, transparan, akuntabel, dan berani mengambil konsekuensi tugas."
+      },
+      {
+        "name": "Keteladanan",
+        "desc": "Menjadi teladan akhlak mulia dalam pelayanan publik maupun kehidupan bermasyarakat."
+      }
+    ]
+  },
+  "stats": [
+    {
+      "label": "Desa Terlayani",
+      "value": "15",
+      "suffix": "Desa",
+      "desc": "Di seluruh wilayah Kecamatan Tengaran"
+    },
+    {
+      "label": "Indeks Kepuasan (IKM)",
+      "value": "4.92",
+      "suffix": "/5.0",
+      "desc": "Kategori Sangat Memuaskan"
+    },
+    {
+      "label": "Biaya Nikah di Balai KUA",
+      "value": "Rp 0",
+      "suffix": "",
+      "desc": "Gratis PNBP pada jam & hari kerja"
+    },
+    {
+      "label": "Layanan Digital",
+      "value": "100%",
+      "suffix": "",
+      "desc": "Terintegrasi SIMKAH, SIMAS, SIHALAL, & SISKOHAT"
+    }
+  ],
+  "employees": [
+    {
+      "name": "H. Muslih, S.Ag., M.H.",
+      "role": "Kepala KUA Kecamatan Tengaran",
+      "category": "Pimpinan",
+      "nip": "197305141999031002",
+      "badge": "Kepala Kantor",
+      "icon": "user-check",
+      "desc": "Penanggung jawab utama operasional dan seluruh mutu pelayanan publik di KUA Kecamatan Tengaran."
+    },
+    {
+      "name": "Adam Ramadhan, S.H.",
+      "role": "Penghulu Fungsional",
+      "category": "Penghulu",
+      "badge": "Penghulu",
+      "icon": "award",
+      "desc": "Pelayanan pemeriksaan berkas nikah, akad nikah, bimbingan calon pengantin (Bimwin), dan penasehatan perkawinan."
+    },
+    {
+      "name": "Nasrul Fahmi, S.Ag.",
+      "role": "Penghulu Fungsional",
+      "category": "Penghulu",
+      "badge": "Penghulu",
+      "icon": "award",
+      "desc": "Pelayanan akad nikah, verifikasi wali nikah, hisab rukyat/kiblat, serta bimbingan keluarga sakinah."
+    },
+    {
+      "name": "Hj. Laila Afifah, S.Ag.",
+      "role": "JFU – Pengelola Data Dan Informasi",
+      "category": "Administrasi",
+      "badge": "Pengelola Data",
+      "icon": "database",
+      "desc": "Pengelolaan basis data SIMKAH, legalisasi buku nikah, surat rekomendasi nikah, dan pengarsipan akta."
+    },
+    {
+      "name": "Asyiq Ni’am",
+      "role": "JFU – Operator Layanan Operasional",
+      "category": "Administrasi",
+      "badge": "Operator Layanan",
+      "icon": "monitor",
+      "desc": "Pelayanan loket pendaftaran, input data online, front office, dan helpdesk pelayanan masyarakat."
+    },
+    {
+      "name": "Ahmad Fanani, S.Sos.I.",
+      "role": "PPPK Penyuluh Agama Islam",
+      "category": "Penyuluh",
+      "badge": "Penyuluh Islam",
+      "icon": "book-open",
+      "desc": "Bimbingan keagamaan, pembinaan remaja masjid/Rohis sekolah, dan penyuluhan moderasi beragama."
+    },
+    {
+      "name": "Yasin Muharror, S.H., M.Ag.",
+      "role": "PPPK Penyuluh Agama Islam",
+      "category": "Penyuluh",
+      "badge": "Penyuluh Islam",
+      "icon": "book-open",
+      "desc": "Penyuluhan hukum keluarga Islam, pembinaan BP4, dan bimbingan pranikah remaja usia nikah."
+    },
+    {
+      "name": "Miftachussalam, S.Pdi.",
+      "role": "PPPK Penyuluh Agama Islam",
+      "category": "Penyuluh",
+      "badge": "Penyuluh Islam",
+      "icon": "book-open",
+      "desc": "Pembinaan TPQ/Madin, kemitraan ormas Islam, dan bimbingan manasik haji/umrah tingkat kecamatan."
+    },
+    {
+      "name": "Agus Wahib Sabara, S.H.I.",
+      "role": "PPPK Penyuluh Agama Islam",
+      "category": "Penyuluh",
+      "badge": "Penyuluh Islam",
+      "icon": "shield-check",
+      "desc": "Pendamping Proses Produk Halal (PPH/LP3H) sertifikasi halal gratis serta pemberdayaan wakaf dan ZIS."
+    },
+    {
+      "name": "Ma’rifatun, S.Pdi., M.Pd.",
+      "role": "PPPK Penyuluh Agama Islam",
+      "category": "Penyuluh",
+      "badge": "Penyuluh Islam",
+      "icon": "heart-handshake",
+      "desc": "Pembinaan majelis taklim ibu-ibu, ketahanan keluarga sakinah, dan pencegahan stunting pranikah."
+    },
+    {
+      "name": "Kardi, S.Ag.",
+      "role": "PPPK Penyuluh Agama Buddha",
+      "category": "Penyuluh",
+      "badge": "Penyuluh Buddha",
+      "icon": "users",
+      "desc": "Pelayanan bimbingan dan penyuluhan umat Buddha di wilayah Kecamatan Tengaran dan Kabupaten Semarang."
+    }
+  ],
+  "services": [
+    {
+      "id": "daftar-nikah",
+      "title": "Pendaftaran & Pencatatan Nikah (SIMKAH)",
+      "category": "nikah",
+      "icon": "heart",
+      "badge": "Layanan Utama",
+      "cost": "Rp 0,- (Di Balai KUA) / Rp 600.000,- (Di Luar Balai KUA)",
+      "time": "Paling lambat 10 hari kerja sebelum akad",
+      "desc": "Pendaftaran kehendak nikah bagi pasangan calon pengantin melalui sistem SIMKAH Kemenag RI atau langsung di loket KUA.",
+      "requirements": [
+        "Surat Pengantar Nikah dari Kantor Desa/Kelurahan (Model N1 - N2).",
+        "Fotokopi KTP dan Kartu Keluarga (KK) Calon Pengantin & Orang Tua.",
+        "Fotokopi Akta Kelahiran dan Ijazah Terakhir Calon Pengantin.",
+        "Surat Keterangan Sehat dari Puskesmas / Faskes dan Sertifikat ELSIMIL (BKKBN).",
+        "Surat Persetujuan Calon Pengantin (Model N4).",
+        "Surat Izin Orang Tua (Model N5) bagi Catin usia di bawah 21 tahun.",
+        "Dispensasi Pengadilan Agama jika Catin pria/wanita berusia di bawah 19 tahun.",
+        "Akta Cerai Asli bagi yang berstatus cerai hidup, atau Akta Kematian bagi duda/janda cerai mati.",
+        "Surat Izin Komandan/Kesatuan bagi anggota TNI/POLRI aktif.",
+        "Pas foto background biru ukuran 2x3 (4 lembar) dan 4x6 (2 lembar)."
+      ],
+      "flow": [
+        "Urus surat pengantar nikah di Kantor Desa setempat (N1-N2).",
+        "Cek kesehatan di Puskesmas & lengkapi sertifikat Elsimil.",
+        "Daftar online via simkah4.kemenag.go.id atau serahkan berkas ke KUA Tengaran min. 10 hari sebelum akad.",
+        "Pemeriksaan berkas & verifikasi oleh Penghulu (NB/NBT).",
+        "Mengikuti Bimbingan Perkawinan (Bimwin).",
+        "Pelaksanaan Akad Nikah & Penyerahan Buku Nikah dan Kartu Nikah Digital."
+      ]
+    },
+    {
+      "id": "rekomendasi-nikah",
+      "title": "Surat Rekomendasi Nikah (Numpang Nikah)",
+      "category": "nikah",
+      "icon": "file-text",
+      "badge": "Nikah Luar Daerah",
+      "cost": "Gratis (Rp 0,-)",
+      "time": "15 - 30 Menit",
+      "desc": "Layanan penerbitan surat rekomendasi nikah (N10) bagi warga Kecamatan Tengaran yang akan melangsungkan pernikahan di luar wilayah Tengaran.",
+      "requirements": [
+        "Surat pengantar numpang nikah dari Kantor Desa / Kelurahan setempat.",
+        "Fotokopi KTP dan KK Calon Pengantin.",
+        "Fotokopi KTP kedua orang tua.",
+        "Fotokopi Akta Kelahiran dan Ijazah.",
+        "Surat pernyataan status perkawinan (belum pernah menikah / duda / janda)."
+      ],
+      "flow": [
+        "Bawa surat pengantar dari desa ke loket pelayanan KUA Tengaran.",
+        "Petugas melakukan verifikasi data pada sistem SIMKAH.",
+        "Surat rekomendasi nikah (Model N10) dicetak dan ditandatangani Kepala KUA/Penghulu.",
+        "Serahkan surat rekomendasi ke KUA tujuan tempat akad nikah dilangsungkan."
+      ]
+    },
+    {
+      "id": "duplikat-buku-nikah",
+      "title": "Duplikat Buku Nikah (Hilang / Rusak)",
+      "category": "nikah",
+      "icon": "copy",
+      "badge": "Legalisasi",
+      "cost": "Gratis (Rp 0,-)",
+      "time": "1 Hari Kerja",
+      "desc": "Penerbitan ulang buku nikah yang hilang atau rusak bagi pasangan yang pernikahannya tercatat di KUA Tengaran.",
+      "requirements": [
+        "Untuk Buku Nikah RUSAK: Bawa fisik buku nikah asli yang rusak, KTP Suami & Istri, KK, pas foto 2x3 (masing-masing 2 lembar).",
+        "Untuk Buku Nikah HILANG: Surat Keterangan Kehilangan dari Kepolisian (POLSEK/POLRES), Surat Pengantar Desa, KTP Suami & Istri, KK, pas foto 2x3 background biru (masing-masing 2 lembar)."
+      ],
+      "flow": [
+        "Serahkan berkas persyaratan ke loket arsip KUA Tengaran.",
+        "Petugas mencocokkan dengan Buku Register Akta Nikah fisik dan digital.",
+        "Penerbitan Buku Duplikat Nikah resmi berstempel dinas."
+      ]
+    },
+    {
+      "id": "nikah-campuran-wna",
+      "title": "Pernikahan Campuran dengan WNA",
+      "category": "nikah",
+      "icon": "globe",
+      "badge": "Internasional",
+      "cost": "Sesuai ketentuan PNBP (Rp0 di KUA / Rp600rb luar KUA)",
+      "time": "10 - 14 Hari Kerja",
+      "desc": "Pelayanan pencatatan pernikahan antara Warga Negara Indonesia (WNI) dengan Warga Negara Asing (WNA) sesuai regulasi hukum perkawinan RI.",
+      "requirements": [
+        "Certificate of No Impediment (CNI) dari Kedutaan Besar / Kantor Perwakilan negara asal WNA di Indonesia.",
+        "Sertifikat Apostille bagi negara yang menerapkan konvensi apostille.",
+        "Fotokopi Paspor, Visa tinggal / KITAS / KITAP yang masih berlaku.",
+        "Akta Kelahiran WNA (diterjemahkan oleh Penerjemah Tersumpah ke Bhs. Indonesia).",
+        "Surat Keterangan Mualaf (bagi WNA yang baru memeluk Islam).",
+        "Akta Cerai / Akta Kematian bagi WNA status duda/janda.",
+        "Izin poligami dari pengadilan negara asal jika suami beristri lebih dari satu."
+      ],
+      "flow": [
+        "Konsultasi awal berkas ke Penghulu KUA Tengaran.",
+        "Penerjemahan dokumen resmi ke Bahasa Indonesia.",
+        "Input data pada SIMKAH dan pemeriksaan komprehensif.",
+        "Pelaksanaan akad nikah bilingual."
+      ]
+    },
+    {
+      "id": "id-masjid-simas",
+      "title": "Pendaftaran ID Masjid & Musholla (SIMAS)",
+      "category": "kemasjidan",
+      "icon": "landmark",
+      "badge": "SIMAS Kemenag",
+      "cost": "Gratis (Rp 0,-)",
+      "time": "1 - 3 Hari Kerja",
+      "desc": "Pendataan dan penerbitan Nomor ID Registrasi Masjid dan Musholla resmi di Sistem Informasi Masjid (SIMAS) Kemenag RI.",
+      "requirements": [
+        "Surat Pengantar Permohonan ID Masjid dari Desa / Kelurahan setempat.",
+        "Surat Keputusan (SK) Struktur Kepengurusan Takmir Masjid / Musholla yang masih berlaku.",
+        "Surat Bukti Status Tanah (Sertifikat Wakaf / AIW / Surat Hibah / C-Desa).",
+        "Foto fisik bangunan masjid/musholla tampak depan, dalam, dan plang nama.",
+        "Titik Koordinat Lokasi (Google Maps) & Data Luas Tanah / Bangunan."
+      ],
+      "flow": [
+        "Pengurus Takmir mengajukan berkas ke bagian Kemasjidan KUA Tengaran.",
+        "Operator menginput dan memverifikasi data ke portal SIMAS Kemenag RI.",
+        "Penerbitan Surat Keputusan & Piagam ID Registrasi Masjid Nasional dengan barcode resmi."
+      ]
+    },
+    {
+      "id": "layanan-haji-umrah",
+      "title": "Layanan Haji & Umrah Tingkat Kecamatan",
+      "category": "haji",
+      "icon": "compass",
+      "badge": "SISKOHAT",
+      "cost": "Gratis (Pelayanan Kantor)",
+      "time": "Sesuai Tahapan Musim Haji",
+      "desc": "Penyelenggaraan bimbingan manasik haji kecamatan, verifikasi berkas paspor & pelimpahan porsi haji jemaah wilayah Tengaran.",
+      "requirements": [
+        "Bukti Setoran Awal BPIH (Bank Penerima Setoran Haji) dengan Nomor Porsi.",
+        "Fotokopi KTP, KK, Akta Lahir/Buku Nikah/Ijazah calon jemaah.",
+        "Pasfoto khusus haji ukuran 3x4 dan 4x6 (latar putih 80% wajah).",
+        "Bagi pelimpahan porsi: Surat Kematian/Sakit Permanen & Surat Kuasa Ahli Waris."
+      ],
+      "flow": [
+        "Pengecekan estimasi keberangkatan porsi jemaah.",
+        "Verifikasi dokumen jemaah yang masuk alokasi kuota berangkat tahun berjalan.",
+        "Pelaksanaan program Bimbingan Manasik Haji Kecamatan Tengaran (6-8 sesi tatap muka).",
+        "Pemberangkatan terpadu menuju Asrama Haji Donohudan."
+      ]
+    },
+    {
+      "id": "layanan-wakaf-zis",
+      "title": "Penerbitan Akta Ikrar Wakaf (AIW / APAIW)",
+      "category": "wakaf",
+      "icon": "book-marked",
+      "badge": "PPAIW",
+      "cost": "Gratis (Rp 0,-)",
+      "time": "3 - 7 Hari Kerja",
+      "desc": "Pelayanan pencatatan ikrar wakaf tanah/bangunan oleh Kepala KUA selaku Pejabat Pembuat Akta Ikrar Wakaf (PPAIW) untuk perlindungan hukum aset umat.",
+      "requirements": [
+        "Surat pernyataan bermaterai dari Wakif bahwa tanah tidak dalam sengketa.",
+        "Surat keterangan kesediaan menjadi Nazhir (perorangan / organisasi / badan hukum).",
+        "Surat kesediaan untuk diaudit bagi Nazhir.",
+        "Sertifikat Hak Milik (SHM) asli atau Letter C Desa / SPPT PBB.",
+        "Scan/Fotokopi KTP Wakif, seluruh Nazhir, dan 2 orang saksi ikrar."
+      ],
+      "flow": [
+        "Penyerahan berkas permohonan ke meja PPAIW KUA Tengaran.",
+        "Verifikasi riwayat tanah dan pengecekan batas fisik lokasi wakaf.",
+        "Pelaksanaan sidang pengucapan Ikrar Wakaf di hadapan Kepala KUA & Saksi.",
+        "Penandatanganan Buku Akta Ikrar Wakaf (AIW) dan penyerahan salinan ke BPN untuk sertifikasi."
+      ]
+    },
+    {
+      "id": "sertifikasi-halal-sehati",
+      "title": "Pendampingan Sertifikasi Halal Gratis (SEHATI / LP3H)",
+      "category": "halal",
+      "icon": "check-circle-2",
+      "badge": "BPJPH Gratis",
+      "cost": "Gratis 100% (Program SEHATI)",
+      "time": "14 - 21 Hari Kerja",
+      "desc": "Pendampingan Proses Produk Halal (PPH) oleh Penyuluh Agama Islam KUA Tengaran untuk pelaku usaha mikro dan kecil (UMKM) makanan & minuman.",
+      "requirements": [
+        "Memiliki Nomor Induk Berusaha (NIB) berbasis risiko.",
+        "KTP Pemilik Usaha.",
+        "Foto produk, kemasan, label, dan proses pembuatan yang higienis.",
+        "Daftar bahan baku dan supplier yang dipastikan halal (bebas bahan kritis/haram).",
+        "Usaha beromset skala mikro/kecil (Self Declare)."
+      ],
+      "flow": [
+        "Konsultasi dengan Pendamping Halal KUA Tengaran (Agus Wahib Sabara, S.H.I. / Penyuluh).",
+        "Pendaftaran akun di ptsp.halal.go.id (SIHALAL).",
+        "Verifikasi dan validasi lapangan proses produksi halal.",
+        "Sidang Fatwa MUI & Penerbitan Sertifikat Halal resmi BPJPH Kemenag."
+      ]
+    },
+    {
+      "id": "bp4-konseling-keluarga",
+      "title": "Konseling BP4 & Mediasi Keluarga Sakinah",
+      "category": "nikah",
+      "icon": "users",
+      "badge": "Konseling Rahasia",
+      "cost": "Gratis (Rp 0,-)",
+      "time": "Sesuai Kesepakatan Jadwal",
+      "desc": "Layanan bimbingan penasihatan perkawinan, mediasi perselisihan rumah tangga, dan pembinaan keluarga sakinah mawaddah warahmah.",
+      "requirements": [
+        "Fotokopi Buku Nikah / KTP kedua belah pihak suami & istri.",
+        "Surat permohonan mediasi atau pengaduan tertulis (opsional).",
+        "Kedua belah pihak hadir secara kooperatif dalam sesi konseling."
+      ],
+      "flow": [
+        "Pendaftaran sesi konseling di KUA Tengaran.",
+        "Sesi tatap muka mediasi bersama konselor BP4 / Penghulu secara tertutup & profesional.",
+        "Pembuatan lembar kesepakatan damai / rekomendasi tindak lanjut."
+      ]
+    },
+    {
+      "id": "ukur-arah-kiblat",
+      "title": "Pengukuran & Penetapan Arah Kiblat",
+      "category": "kemasjidan",
+      "icon": "navigation",
+      "badge": "Hisab Rukyat",
+      "cost": "Gratis (Rp 0,-)",
+      "time": "1 - 2 Hari Kerja (Sesuai Jadwal Lapangan)",
+      "desc": "Pelayanan penentuan dan kalibrasi arah kiblat untuk masjid, musholla, komplek pemakaman, atau rumah tinggal menggunakan metode falak akurat.",
+      "requirements": [
+        "Surat permohonan kalibrasi kiblat dari Takmir / Panitia Pembangunan Masjid.",
+        "Nama & alamat lengkap lokasi masjid / musholla.",
+        "Kontak penanggung jawab lapangan."
+      ],
+      "flow": [
+        "Pengajuan surat ke KUA Tengaran.",
+        "Penetapan jadwal pengukuran falakiyah oleh tim hisab rukyat / penghulu.",
+        "Pengukuran lapangan menggunakan kompas falak / azimuth theodolite / waktu rashdul qiblat.",
+        "Penerbitan Berita Acara & Sertifikat Kalibrasi Arah Kiblat resmi."
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "id": "fanani-ajak-siswa-rohis-jadi-pemimpin",
+      "title": "Fanani Ajak Siswa Rohis Jadi Pemimpin Berakhlak dan Visioner",
+      "category": "Berita",
+      "published": "2025-11-09",
+      "author": "Ahmad Fanani, S.Sos.I.",
+      "readTime": "3 Menit",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMCYLfpSHxjHZ1JZGM_3XhfyKXvtc6nDPO_sxi6wsvPEiFWYT__U6H5UCZvO6pthBXZDp2OUR_MjMz9LuoMgtnMCoveIvZphsFPBQsYwetudnLc08Ns4xJ5BmODQoM-EuVUpj48UEJf3aFtIuWPfmUUAAekT1v4C6wIJk3fJOyAwt0AkePsdcJ6rkbwJU/w1600/Gambar%20WhatsApp%202025-11-09%20pukul%2017.39.13_355bf861.jpg",
+      "excerpt": "Penyuluh Agama Islam KUA Tengaran Ahmad Fanani memberikan pembekalan kepemimpinan islami bagi siswa-siswi Rohis di wilayah Kecamatan Tengaran.",
+      "content": "KUA Tengaran terus aktif membina generasi muda di wilayah Kecamatan Tengaran. Dalam kegiatan pembinaan Rohis (Rohani Islam) tingkat sekolah menengah, Penyuluh Agama Islam KUA Tengaran, Ahmad Fanani, S.Sos.I., menegaskan pentingnya menanamkan integritas moral, kepemimpinan visioner, dan nilai moderasi beragama sejak dini. Menurutnya, pemuda Rohis harus menjadi pelopor kebaikan, agen perdamaian di lingkungan sekolah, serta cerdas menyaring arus informasi di era digital tanpa kehilangan adab islami."
+    },
+    {
+      "id": "mau-daftar-nikah-yuk-simak-baik-baik",
+      "title": "Mau Daftar Nikah? Yuk Simak Baik-baik Apa Saja yang Perlu Dipersiapkan!",
+      "category": "Edukasi Nikah",
+      "published": "2025-10-28",
+      "author": "Tim Kepenghuluan KUA Tengaran",
+      "readTime": "4 Menit",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEhmAsRJorcvXYrmBUGv4rVW5JjmvXNb9rgZjGgQOdLpMTuueaxb_-piDKg3Djta_buvWK87bbcSTIkp3gofVFSwRjHbFoS2URsNlZKPf78pm_2F6Y6E6Bf5g6IjHNDaX08t6SMKWy6GSDlyCUXDl1GftD-VOSbIlPyctcPM7-lF56iQUK8Xkk2nkfv8nLY=s638",
+      "excerpt": "Panduan lengkap alur pendaftaran nikah melalui SIMKAH, kelengkapan berkas N1-N5, batas waktu 10 hari kerja, dan sertifikat Elsimil.",
+      "content": "Bagi masyarakat Kecamatan Tengaran yang merencanakan pernikahan, pastikan mengurus pendaftaran kehendak nikah paling lambat 10 (sepuluh) hari kerja sebelum hari H. Pendaftaran kini sangat mudah dilakukan secara online melalui portal SIMKAH Kemenag maupun langsung ke loket KUA. Siapkan berkas utama seperti N1-N2 dari kelurahan, fotokopi KTP/KK, akta lahir, hasil tes kesehatan Puskesmas, sertifikat Elsimil anti-stunting, serta pasfoto berlatar belakang biru. Jika menikah di Balai KUA pada jam kerja, biayanya adalah Rp 0 alias GRATIS!"
+    },
+    {
+      "id": "mau-nikah-di-daerah-lain-buat-surat",
+      "title": "Mau Nikah di Luar Daerah? Urus Surat Rekomendasi Nikah (N10) di KUA Asal",
+      "category": "Edukasi Nikah",
+      "published": "2025-10-24",
+      "author": "Pelayanan Data KUA Tengaran",
+      "readTime": "3 Menit",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEhB_J1ycup1kmPIhcfVZckjey01a2QoeQSp3QY-yh2SP_0C17XHWO0mtH0ao_QB06xvRaIvm6dG-nm1o2GUC7ePl90WP_mz-WmhSzo7iEgLU5gG3CefPzQhk1uHlh796PQPq-guanhD2AkoiQvftKq2UOETJLIP5Ph4gGg8i4Eh21omoSDxWvtDIDSwHos=s939",
+      "excerpt": "Langkah mudah mengurus surat rekomendasi numpang nikah bagi calon pengantin asal Tengaran yang akadnya digelar di luar kecamatan.",
+      "content": "Bagi calon pengantin yang berdomisili di Kecamatan Tengaran namun berencana melangsungkan akad nikah di luar wilayah Tengaran (misalnya di kediaman mempelai wanita di luar kota/provinsi), wajib memiliki Surat Rekomendasi Nikah dari KUA Tengaran. Berkas yang dibutuhkan sangat ringkas: Surat Pengantar Numpang Nikah dari kantor desa/kelurahan, fotokopi KTP dan KK kedua calon mempelai, serta surat pernyataan status perkawinan. Proses penerbitan cepat dan tidak dipungut biaya apapun."
+    },
+    {
+      "id": "buku-nikah-hilang-rusak-harus-bagaimana",
+      "title": "Buku Nikah Hilang atau Rusak? Ini Dia Solusi Penerbitan Duplikat Resmi di KUA",
+      "category": "Edukasi Nikah",
+      "published": "2025-10-20",
+      "author": "Bagian Administrasi KUA",
+      "readTime": "3 Menit",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEihLPgy8XBT6MvkXCqyuxe1wUW491eT4eGcWuh30Q_o4V55pHW9zhq_MyZXCqXZh-H97i8qombNA6iZv7bQ7DFNu3LoScykWk0cFD1pZ9nvLITOQZFgVOcGp-LIILSeH7GFwGe0qQcGd9rFYHQhlWNADAoAYl-kmTQVhySlIBQGcrC5OXJAJZsvRkycelcQ=w72-h72-p-k-no-nu",
+      "excerpt": "Panduan mendapatkan Duplikat Buku Nikah resmi tanpa calo dengan syarat surat kepolisian atau fisik buku rusak.",
+      "content": "Masyarakat tidak perlu panik apabila buku nikah mengalami kerusakan atau hilang karena bencana atau musibah. KUA tempat pernikahan dicatat melayani penerbitan Duplikat Buku Nikah resmi tanpa dipungut biaya. Jika hilang, lampirkan Surat Keterangan Tanda Lapor Kehilangan (SKTLK) dari Kepolisian, KTP, KK, dan pasfoto 2x3 suami istri. Jika rusak, cukup bawa fisik buku nikah yang rusak untuk diganti."
+    },
+    {
+      "id": "emang-bisa-nikah-dengan-wna-bisa-dong",
+      "title": "Pernikahan Campuran dengan WNA: Ini Dokumen & Prosedur yang Harus Dipenuhi",
+      "category": "Edukasi Nikah",
+      "published": "2025-10-15",
+      "author": "Penghulu KUA Tengaran",
+      "readTime": "4 Menit",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMCYLfpSHxjHZ1JZGM_3XhfyKXvtc6nDPO_sxi6wsvPEiFWYT__U6H5UCZvO6pthBXZDp2OUR_MjMz9LuoMgtnMCoveIvZphsFPBQsYwetudnLc08Ns4xJ5BmODQoM-EuVUpj48UEJf3aFtIuWPfmUUAAekT1v4C6wIJk3fJOyAwt0AkePsdcJ6rkbwJU/s16000/Gambar%20WhatsApp%202025-11-09%20pukul%2017.39.13_355bf861.jpg",
+      "excerpt": "Syarat utama pernikahan campuran: Certificate of No Impediment dari Kedutaan, Paspor, Apostille, dan Penerjemah Tersumpah.",
+      "content": "Pernikahan beda kewarganegaraan diatur secara ketat dalam regulasi Kemenag dan Hukum Internasional. Dokumen mutlak yang harus dibawa WNA antara lain CNI (Surat izin tidak ada halangan menikah dari Kedubes asal di Jakarta), fotokopi paspor dan visa yang sah, serta terjemahan resmi akta kelahiran. Petugas KUA Tengaran siap membimbing dan melayani proses pendaftaran pernikahan campuran agar memiliki kekuatan hukum sah di Indonesia maupun di negara asal pasangan."
+    },
+    {
+      "id": "perjalanan-menuju-alam-akhirat",
+      "title": "Refleksi Keagamaan: Meniti Perjalanan Kehidupan & Membangun Keluarga yang Berkah",
+      "category": "Artikel Islami",
+      "published": "2025-10-10",
+      "author": "Penyuluh Agama Islam",
+      "readTime": "5 Menit",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMCYLfpSHxjHZ1JZGM_3XhfyKXvtc6nDPO_sxi6wsvPEiFWYT__U6H5UCZvO6pthBXZDp2OUR_MjMz9LuoMgtnMCoveIvZphsFPBQsYwetudnLc08Ns4xJ5BmODQoM-EuVUpj48UEJf3aFtIuWPfmUUAAekT1v4C6wIJk3fJOyAwt0AkePsdcJ6rkbwJU/w1600/Gambar%20WhatsApp%202025-11-09%20pukul%2017.39.13_355bf861.jpg",
+      "excerpt": "Pesan mendalam tentang bekal amal ibadah, membina rumah tangga sebagai ladang pahala, dan ketakwaan kepada Allah SWT.",
+      "content": "Kehidupan dunia adalah tempat berladang amal kebajikan untuk kehidupan abadi di akhirat kelak. Membina mahligai rumah tangga sakinah mawaddah warahmah, memakmurkan masjid, menunaikan zakat serta wakaf, merupakan pilar-pilar penting dalam syariat Islam yang menjadi bekal terbaik bagi setiap hamba. KUA Tengaran mengajak seluruh lapisan masyarakat untuk senantiasa memperkuat kerukunan, menjaga integritas moral keluarga, dan meningkatkan ketakwaan kepada Allah SWT."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Berapa biaya resmi pendaftaran nikah di KUA?",
+      "a": "Berdasarkan Peraturan Pemerintah (PP) No. 59 Tahun 2014, biaya nikah di Balai Nikah KUA pada hari dan jam kerja adalah **Rp 0,- (GRATIS)**. Apabila pelaksanaan akad nikah dilakukan di luar kantor KUA (misalnya di rumah mempelai atau gedung) atau di luar jam kerja, dikenakan tarif PNBP resmi sebesar **Rp 600.000,-** yang disetor langsung oleh calon pengantin ke Kas Negara via Bank/Kantor Pos melalui kode billing SIMPONI (tidak diserahkan tunai kepada petugas)."
+    },
+    {
+      "q": "Kapan batas minimal pendaftaran kehendak nikah sebelum hari H?",
+      "a": "Pendaftaran kehendak nikah wajib dilakukan paling lambat **10 (sepuluh) hari kerja** sebelum hari pelaksanaan akad nikah. Hari Sabtu, Minggu, dan Libur Nasional tidak dihitung sebagai hari kerja. Jika mendesak kurang dari 10 hari kerja, pemohon wajib melampirkan Surat Dispensasi Nikah dari Kantor Kecamatan Tengaran."
+    },
+    {
+      "q": "Berapa usia minimal untuk dapat menikah sesuai undang-undang?",
+      "a": "Sesuai UU No. 16 Tahun 2019 tentang Perubahan UU No. 1 Tahun 1974 tentang Perkawinan, batas usia minimal untuk menikah bagi pria maupun wanita adalah **19 tahun**. Apabila belum mencapai usia 19 tahun, wajib memperoleh penetapan izin **Dispensasi Kawin dari Pengadilan Agama**."
+    },
+    {
+      "q": "Bagaimana cara mendaftarkan ID Masjid / Musholla di wilayah Kecamatan Tengaran?",
+      "a": "Takmir masjid/musholla cukup membawa: (1) Surat pengantar dari kantor desa, (2) SK Susunan Pengurus Takmir terbaru, (3) Bukti surat tanah/wakaf, dan (4) Foto bangunan tampak depan. Berkas diserahkan ke meja Kemasjidan KUA Tengaran untuk diinput ke portal SIMAS Kemenag RI, lalu terbit piagam dan barcode ID Masjid resmi."
+    },
+    {
+      "q": "Apakah pelaku UMKM di Tengaran bisa mendapatkan sertifikat halal gratis?",
+      "a": "Bisa! KUA Kecamatan Tengaran melalui Pendamping Proses Produk Halal (PPH/LP3H) memfasilitasi program SEHATI (Sertifikasi Halal Gratis) BPJPH Kemenag bagi pelaku usaha mikro/kecil makanan & minuman (skema self declare). Silakan datang ke kantor KUA atau hubungi Penyuluh Halal kami untuk dibimbing proses pendaftarannya."
+    },
+    {
+      "q": "Apakah KUA melayani bimbingan manasik haji?",
+      "a": "Ya, KUA Kecamatan Tengaran secara rutin menyelenggarakan program Bimbingan Manasik Haji Tingkat Kecamatan bagi seluruh calon jemaah haji asal Kecamatan Tengaran yang masuk dalam kuota keberangkatan tahun berjalan."
+    }
+  ]
+}

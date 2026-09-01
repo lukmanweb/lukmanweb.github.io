@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16A34A"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield Pentagon (Perisai Pancasila) -->
+  <polygon points="100,8 188,68 160,178 40,178 12,68" fill="url(#g1)" stroke="#F59E0B" stroke-width="5"/>
+  <polygon points="100,18 176,70 150,168 50,168 24,70" fill="none" stroke="#FDE04760" stroke-width="2"/>
+
+  <!-- 8-Point Star at Top (Bintang Emas) -->
+  <polygon points="100,24 105,42 121,42 108,52 113,70 100,58 87,70 92,52 79,42 95,42" fill="url(#g2)" stroke="#D97706" stroke-width="1"/>
+
+  <!-- Open Book / Quran Terbuka (Center) -->
+  <path d="M58,118 Q100,100 100,80 Q100,100 142,118 L138,134 Q100,116 100,98 Q100,116 62,134 Z" fill="white" stroke="#F59E0B" stroke-width="2"/>
+  <line x1="100" y1="82" x2="100" y2="132" stroke="#16A34A" stroke-width="3"/>
+  <!-- Book pages -->
+  <path d="M62,116 Q100,101 100,84 L100,94 Q100,108 66,124 Z" fill="#ECFDF5" opacity="0.5"/>
+  <path d="M138,116 Q100,101 100,84 L100,94 Q100,108 134,124 Z" fill="#ECFDF5" opacity="0.5"/>
+
+  <!-- Left Rice Stalk (Padi - simbol kemakmuran) -->
+  <path d="M54,140 Q44,100 68,62" fill="none" stroke="#FDE047" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="47" cy="124" rx="4.5" ry="3" transform="rotate(-25 47 124)" fill="#F59E0B"/>
+  <ellipse cx="43" cy="108" rx="4.5" ry="3" transform="rotate(-15 43 108)" fill="#F59E0B"/>
+  <ellipse cx="45" cy="92" rx="4.5" ry="3" transform="rotate(-5 45 92)" fill="#F59E0B"/>
+  <ellipse cx="55" cy="77" rx="4.5" ry="3" transform="rotate(15 55 77)" fill="#F59E0B"/>
+
+  <!-- Right Cotton (Kapas - simbol sandang) -->
+  <path d="M146,140 Q156,100 132,62" fill="none" stroke="#FDE047" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="153" cy="124" r="5" fill="white" stroke="#F59E0B" stroke-width="1.5"/>
+  <circle cx="157" cy="108" r="5" fill="white" stroke="#F59E0B" stroke-width="1.5"/>
+  <circle cx="155" cy="92" r="5" fill="white" stroke="#F59E0B" stroke-width="1.5"/>
+  <circle cx="145" cy="77" r="5" fill="white" stroke="#F59E0B" stroke-width="1.5"/>
+
+  <!-- Ribbon Banner (Ikhlas Beramal) -->
+  <path d="M44,150 Q100,168 156,150 L152,166 Q100,184 48,166 Z" fill="url(#g2)" stroke="#D97706" stroke-width="1.5"/>
+  <text x="100" y="163" font-family="Arial, sans-serif" font-size="9" font-weight="900" fill="#064E29" text-anchor="middle" letter-spacing="1">IKHLAS BERAMAL</text>
+</svg>

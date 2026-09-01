@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KUA Kecamatan Tengaran - Portal Resmi Pelayanan Keagamaan & Nikah</title>
+  <meta name="description" content="Portal resmi pelayanan Kantor Urusan Agama (KUA) Kecamatan Tengaran, Kementerian Agama Kabupaten Semarang. Layanan Nikah SIMKAH, ID Masjid SIMAS, Wakaf, Haji, dan Sertifikasi Halal.">
+  <meta name="theme-color" content="#0B8043">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/logo-kemenag.svg" type="image/svg+xml">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#0b8043',
+              800: '#075e31',
+              900: '#054423',
+              950: '#022412',
+            },
+            gold: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-islamic-pattern text-slate-800 min-h-screen flex flex-col antialiased transition-colors duration-300">
+
+  <!-- ================= TOP GOVERNMENT BAR ================= -->
+  <header class="bg-brand-900 text-white text-xs border-b border-brand-800/80 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
+      <!-- Left: Identity & Live Time -->
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1.5">
+          <img src="assets/images/logo-kemenag.svg" alt="Logo Kemenag" class="w-4 h-4 object-contain brightness-110" onerror="this.style.display='none'">
+          <span class="font-bold tracking-wide text-brand-100">KEMENAG KAB. SEMARANG</span>
+        </div>
+        <span class="hidden sm:inline text-brand-400">|</span>
+        <div id="current-local-time" class="hidden sm:block text-brand-200">
+          Memuat waktu...
+        </div>
+      </div>
+
+      <!-- Right: Status Badge & Accessibility Controls -->
+      <div class="flex items-center gap-3 ml-auto">
+        <div id="office-status-badge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-950 text-emerald-300 border border-emerald-700">
+          <span id="office-status-text">Memeriksa status kantor...</span>
+        </div>
+
+        <!-- Font size controls -->
+        <div class="hidden md:flex items-center rounded-lg bg-brand-950/60 p-0.5 border border-brand-800">
+          <button id="font-sm" class="px-1.5 py-0.5 rounded text-[11px] hover:text-white text-brand-300 font-semibold" title="Ukuran Font Kecil">A-</button>
+          <button id="font-base" class="px-1.5 py-0.5 rounded text-[11px] bg-emerald-700 text-white font-semibold" title="Ukuran Font Normal">A</button>
+          <button id="font-lg" class="px-1.5 py-0.5 rounded text-[11px] hover:text-white text-brand-300 font-semibold" title="Ukuran Font Besar">A+</button>
+        </div>
+
+        <!-- Mode Terang Resmi -->
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN NAVIGATION BAR ================= -->
+  <nav class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 no-print transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo & Title -->
+        <a href="#" class="flex items-center gap-3.5 group">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-700 to-teal-800 p-2 shadow-md shadow-brand-900/20 flex items-center justify-center border border-white/20 group-hover:scale-105 transition-transform">
+            <img src="assets/images/logo-kemenag.svg" alt="Kemenag Logo" class="w-full h-full object-contain" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700">Kemenag RI</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-bold border border-amber-300">Zona Integritas</span>
+            </div>
+            <h1 class="text-lg md:text-xl font-extrabold text-slate-900 leading-tight">
+              KUA TENGARAN
+            </h1>
+            <p class="text-[11px] text-slate-500">Kabupaten Semarang • Jawa Tengah</p>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-1 xl:gap-2 text-xs xl:text-sm font-semibold text-slate-700">
+          <a href="#beranda" class="px-3 py-2 rounded-xl hover:text-brand-700 hover:bg-brand-50/80 transition-all">Beranda</a>
+          <a href="#profil" class="px-3 py-2 rounded-xl hover:text-brand-700 hover:bg-brand-50/80 transition-all">Profil & Pegawai</a>
+          <a href="#layanan" class="px-3 py-2 rounded-xl hover:text-brand-700 hover:bg-brand-50/80 transition-all">Katalog Layanan</a>
+          <a href="#simulator" class="px-3 py-2 rounded-xl hover:text-brand-700 hover:bg-brand-50/80 transition-all flex items-center gap-1 text-emerald-700 font-bold">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i> Cek Syarat Nikah
+          </a>
+          <a href="#masjid" class="px-3 py-2 rounded-xl hover:text-brand-700 hover:bg-brand-50/80 transition-all">ID Masjid</a>
+          <a href="#berita" class="px-3 py-2 rounded-xl hover:text-brand-700 hover:bg-brand-50/80 transition-all">Berita & Edukasi</a>
+          <a href="#faq" class="px-3 py-2 rounded-xl hover:text-brand-700 hover:bg-brand-50/80 transition-all">FAQ</a>
+        </div>
+
+        <!-- Right Call to Action -->
+        <div class="hidden lg:flex items-center gap-2.5">
+          <button onclick="openWaModal('Konsultasi Umum')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-700 text-white text-xs font-bold hover:bg-brand-800 shadow-md shadow-brand-700/20 hover:shadow-lg transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Helpdesk WA</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex items-center gap-2 lg:hidden">
+          
+          <button id="mobile-menu-btn" class="p-2 rounded-xl bg-slate-100 text-slate-700 focus:outline-none">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl px-4 pt-2 pb-6 space-y-2 text-sm font-semibold">
+      <a href="#beranda" class="block px-3 py-2.5 rounded-xl hover:bg-emerald-50">Beranda</a>
+      <a href="#profil" class="block px-3 py-2.5 rounded-xl hover:bg-emerald-50">Profil & Struktur Pegawai</a>
+      <a href="#layanan" class="block px-3 py-2.5 rounded-xl hover:bg-emerald-50">Katalog Layanan Publik</a>
+      <a href="#simulator" class="block px-3 py-2.5 rounded-xl text-emerald-700 font-bold bg-emerald-50">📋 Simulator & Syarat Nikah</a>
+      <a href="#masjid" class="block px-3 py-2.5 rounded-xl hover:bg-emerald-50">ID Masjid & SIMAS</a>
+      <a href="#berita" class="block px-3 py-2.5 rounded-xl hover:bg-emerald-50">Berita & Artikel</a>
+      <a href="#faq" class="block px-3 py-2.5 rounded-xl hover:bg-emerald-50">Tanya Jawab (FAQ)</a>
+      <a href="#kontak" class="block px-3 py-2.5 rounded-xl hover:bg-emerald-50">Kontak & Lokasi</a>
+      <div class="pt-3 border-t border-slate-200">
+        <button onclick="openWaModal('Konsultasi Umum')" class="w-full py-3 rounded-xl bg-emerald-700 text-white font-bold text-center flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Konsultasi WhatsApp
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="beranda" class="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 border-b border-slate-200/80">
+    <!-- Subtle Gradient background glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-emerald-500/10 via-amber-500/5 to-transparent blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        
+        <!-- Left Hero Content (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full gov-badge text-brand-800 text-xs font-bold">
+            <span class="w-2 h-2 rounded-full bg-brand-600 animate-ping"></span>
+            <span>PORTAL RESMI KUA KECAMATAN TENGARAN</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
+            Pelayanan Keagamaan & Pernikahan <span class="text-gradient-emerald">Prima, Transparan, & Modern</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
+            Selamat datang di Pusat Informasi & Pelayanan Terpadu KUA Kecamatan Tengaran. Kami berkomitmen memberikan layanan nikah, rujuk, kemasjidan (SIMAS), perwakafan, bimbingan haji, dan sertifikasi halal berintegritas tinggi bebas dari pungutan liar.
+          </p>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="https://simkah4.kemenag.go.id" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-brand-700 text-white text-sm font-bold hover:bg-brand-800 shadow-lg shadow-brand-700/25 hover:shadow-brand-700/40 hover:-translate-y-0.5 transition-all">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span>Daftar Nikah Online (SIMKAH)</span>
+            </a>
+            <a href="#simulator" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-white text-slate-800 border border-slate-200 text-sm font-bold hover:border-brand-500 hover:text-brand-700 transition-all shadow-sm">
+              <i data-lucide="check-circle" class="w-4 h-4 text-brand-600"></i>
+              <span>Simulasi & Cek Syarat Berkas</span>
+            </a>
+            <button onclick="openWaModal('Pendaftaran ID Masjid')" class="inline-flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-amber-500/10 text-amber-700 border border-amber-500/20 text-sm font-bold hover:bg-amber-500/20 transition-all">
+              <i data-lucide="landmark" class="w-4 h-4"></i>
+              <span>ID Masjid / SIMAS</span>
+            </button>
+          </div>
+
+          <!-- Transparency Notice -->
+          <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-emerald-50/80 border border-emerald-200/80 text-xs text-emerald-900">
+            <i data-lucide="shield-check" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+            <div>
+              <strong>Biaya Nikah di Balai KUA Rp 0,- (GRATIS)</strong> pada hari dan jam kerja. Nikah di luar balai KUA Rp 600.000,- langsung setor ke Kas Negara via SIMPONI.
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Card (5 Cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          <!-- Widget Prayer Times & Office Card -->
+          <div class="glass-panel rounded-3xl p-6 shadow-xl relative overflow-hidden">
+            <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center">
+                  <i data-lucide="clock" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h2 class="text-sm font-bold text-slate-900">Jadwal Sholat & Imsakiyah</h2>
+                  <p class="text-[11px] text-slate-500">Wilayah Kec. Tengaran & Kab. Semarang</p>
+                </div>
+              </div>
+              <span class="text-xs font-arabic text-brand-700 font-bold">بِسْمِ اللَّهِ</span>
+            </div>
+
+            <!-- Prayer Times Grid -->
+            <div id="prayer-times-widget" class="grid grid-cols-5 gap-1.5 mb-5">
+              <!-- Rendered via JS -->
+            </div>
+
+            <!-- Jam Layanan KUA Tengaran -->
+            <div class="space-y-2 text-xs text-slate-600 bg-slate-50 p-4 rounded-2xl border border-slate-200/60">
+              <div class="flex items-center justify-between font-medium">
+                <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-brand-600"></i> Senin - Kamis:</span>
+                <span class="font-bold text-slate-800">07.30 - 16.00 WIB</span>
+              </div>
+              <div class="flex items-center justify-between font-medium">
+                <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-brand-600"></i> Jumat:</span>
+                <span class="font-bold text-slate-800">07.30 - 16.30 WIB</span>
+              </div>
+              <div class="flex items-center justify-between text-[11px] text-slate-400 pt-1 border-t border-slate-200">
+                <span>Sabtu - Minggu / Libur:</span>
+                <span>Tutup (Kecuali Akad Luar)</span>
+              </div>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between text-xs pt-3 border-t border-slate-100">
+              <span class="text-slate-500">Alamat Kantor:</span>
+              <a href="#kontak" class="font-semibold text-brand-700 hover:underline flex items-center gap-1">
+                <span>Jl. Masjid Besar No.13</span>
+                <i data-lucide="map-pin" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Stat Mini Cards -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="glass-panel p-4 rounded-2xl text-center">
+              <span class="text-2xl font-black text-brand-700">15</span>
+              <p class="text-xs font-semibold text-slate-700">Desa Terlayani</p>
+              <p class="text-[10px] text-slate-400">Kecamatan Tengaran</p>
+            </div>
+            <div class="glass-panel p-4 rounded-2xl text-center">
+              <span class="text-2xl font-black text-amber-500">4.92<span class="text-xs font-normal">/5.0</span></span>
+              <p class="text-xs font-semibold text-slate-700">Indeks Kepuasan</p>
+              <p class="text-[10px] text-slate-400">Masyarakat (IKM)</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5 NILAI BUDAYA KERJA KEMENAG ================= -->
+  <section class="py-10 bg-white border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700">Landasan Pengabdian</span>
+        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">5 Nilai Budaya Kerja Kementerian Agama</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 text-center space-y-1.5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-2 font-bold text-sm">1</div>
+          <h4 class="text-sm font-bold text-slate-900">Integritas</h4>
+          <p class="text-[11px] text-slate-600">Selaras antara hati, pikiran, perkataan dan perbuatan yang benar.</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 text-center space-y-1.5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-2 font-bold text-sm">2</div>
+          <h4 class="text-sm font-bold text-slate-900">Profesionalitas</h4>
+          <p class="text-[11px] text-slate-600">Disiplin, kompeten, tepat waktu dengan hasil kerja terbaik.</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 text-center space-y-1.5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-2 font-bold text-sm">3</div>
+          <h4 class="text-sm font-bold text-slate-900">Inovasi</h4>
+          <p class="text-[11px] text-slate-600">Menyempurnakan dan membuat terobosan baru yang mempermudah warga.</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 text-center space-y-1.5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-2 font-bold text-sm">4</div>
+          <h4 class="text-sm font-bold text-slate-900">Tanggung Jawab</h4>
+          <p class="text-[11px] text-slate-600">Bekerja tuntas, transparan, dan akuntabel kepada masyarakat.</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 text-center space-y-1.5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-2 font-bold text-sm">5</div>
+          <h4 class="text-sm font-bold text-slate-900">Keteladanan</h4>
+          <p class="text-[11px] text-slate-600">Menjadi contoh akhlak mulia dan taat regulasi bagi masyarakat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE MARRIAGE CHECKLIST SIMULATOR ================= -->
+  <section id="simulator" class="py-16 md:py-20 bg-gradient-to-b from-brand-50/50 via-white to-slate-50 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700">Fitur Cerdas Interaktif</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-1">
+          Simulator & Pengecekan Syarat Berkas Nikah
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Pilih kondisi rencana pernikahan Anda di bawah ini untuk mendapatkan daftar berkas resmi yang disesuaikan secara otomatis.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Form Controls (5 Cols) -->
+        <div class="lg:col-span-5 glass-panel p-6 sm:p-7 rounded-3xl shadow-lg border border-slate-200/80">
+          <h3 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <i data-lucide="sliders" class="w-4 h-4 text-brand-600"></i>
+            <span>Parameter Calon Pengantin</span>
+          </h3>
+
+          <form id="checklist-form" class="space-y-4 text-xs font-semibold">
+            <!-- Kewarganegaraan -->
+            <div>
+              <label class="block text-slate-700 mb-1">Kewarganegaraan Calon:</label>
+              <select name="catin_type" class="w-full p-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 focus:ring-2 focus:ring-brand-500">
+                <option value="wni">Warga Negara Indonesia (WNI)</option>
+                <option value="wna">Pernikahan Campuran dengan WNA</option>
+              </select>
+            </div>
+
+            <!-- Lokasi Akad -->
+            <div>
+              <label class="block text-slate-700 mb-1">Lokasi Pelaksanaan Akad Nikah:</label>
+              <select name="location" class="w-full p-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 focus:ring-2 focus:ring-brand-500">
+                <option value="kua">Di Balai Nikah KUA Tengaran (Hari & Jam Kerja) - Rp 0</option>
+                <option value="luar">Di Luar Balai KUA / Rumah / Masjid / Gedung - Rp 600.000</option>
+              </select>
+            </div>
+
+            <!-- Domisili Catin -->
+            <div>
+              <label class="block text-slate-700 mb-1">Asal Domisili / Wilayah:</label>
+              <select name="domicile" class="w-full p-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 focus:ring-2 focus:ring-brand-500">
+                <option value="tengaran">Warga Asli Kecamatan Tengaran</option>
+                <option value="luar">Numpang Nikah dari Luar Kecamatan Tengaran</option>
+              </select>
+            </div>
+
+            <!-- Status Usia -->
+            <div>
+              <label class="block text-slate-700 mb-1">Usia Calon Pengantin:</label>
+              <select name="age_status" class="w-full p-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 focus:ring-2 focus:ring-brand-500">
+                <option value="dewasa">Usia 21 Tahun Ke Atas</option>
+                <option value="under21">Usia 19 s/d di bawah 21 Tahun (Perlu Izin Ortu Model N5)</option>
+                <option value="under19">Di Bawah 19 Tahun (Wajib Dispensasi Pengadilan Agama)</option>
+              </select>
+            </div>
+
+            <!-- Status Perkawinan Sebelumnya -->
+            <div>
+              <label class="block text-slate-700 mb-1">Status Pernikahan Sebelumnya:</label>
+              <select name="marital_status" class="w-full p-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 focus:ring-2 focus:ring-brand-500">
+                <option value="perawan_jejaka">Belum Pernah Menikah (Jejaka / Perawan)</option>
+                <option value="cerai_hidup">Duda / Janda Cerai Hidup</option>
+                <option value="cerai_mati">Duda / Janda Ditinggal Mati</option>
+              </select>
+            </div>
+
+            <!-- Profesi / Kesatuan -->
+            <div>
+              <label class="block text-slate-700 mb-1">Profesi Khusus:</label>
+              <select name="job_status" class="w-full p-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 focus:ring-2 focus:ring-brand-500">
+                <option value="sipil">Masyarakat Umum / Swasta / PNS</option>
+                <option value="tni_polri">Anggota TNI / POLRI Aktif (Wajib Izin Komandan)</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <!-- Result Box (7 Cols) -->
+        <div class="lg:col-span-7">
+          <div id="checklist-result">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= KATALOG LAYANAN UTAMA ================= -->
+  <section id="layanan" class="py-16 md:py-24 bg-white border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700">Standar Pelayanan Publik</span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-1">
+            Katalog Layanan Resmi KUA
+          </h2>
+          <p class="text-sm text-slate-600 mt-2 max-w-2xl">
+            Seluruh layanan diselenggarakan secara transparan sesuai SOP Kementerian Agama RI dengan kepastian syarat, alur, dan waktu penyelesaian.
+          </p>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="flex flex-wrap gap-2">
+          <button data-filter="all" class="service-filter-btn px-4 py-2 rounded-xl bg-brand-700 text-white text-xs font-bold shadow-md transition-all">Semua</button>
+          <button data-filter="nikah" class="service-filter-btn px-4 py-2 rounded-xl bg-white text-slate-700 text-xs font-bold border border-slate-200 hover:border-brand-500 transition-all">Nikah & Rujuk</button>
+          <button data-filter="kemasjidan" class="service-filter-btn px-4 py-2 rounded-xl bg-white text-slate-700 text-xs font-bold border border-slate-200 hover:border-brand-500 transition-all">Kemasjidan (SIMAS)</button>
+          <button data-filter="wakaf" class="service-filter-btn px-4 py-2 rounded-xl bg-white text-slate-700 text-xs font-bold border border-slate-200 hover:border-brand-500 transition-all">Wakaf & ZIS</button>
+          <button data-filter="haji" class="service-filter-btn px-4 py-2 rounded-xl bg-white text-slate-700 text-xs font-bold border border-slate-200 hover:border-brand-500 transition-all">Haji & Umrah</button>
+          <button data-filter="halal" class="service-filter-btn px-4 py-2 rounded-xl bg-white text-slate-700 text-xs font-bold border border-slate-200 hover:border-brand-500 transition-all">Halal UMKM</button>
+        </div>
+      </div>
+
+      <!-- Services Grid -->
+      <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered by JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SIMAS / ID MASJID SPECIAL HUB ================= -->
+  <section id="masjid" class="py-16 md:py-20 bg-slate-50 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Left Banner (5 Cols) -->
+        <div class="lg:col-span-5 space-y-5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold border border-amber-300">
+            <i data-lucide="landmark" class="w-3.5 h-3.5"></i>
+            <span>PROGRAM KEMASJIDAN NASIONAL</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+            Pendaftaran ID Masjid & Musholla Wilayah Tengaran
+          </h2>
+
+          <p class="text-sm text-slate-600 leading-relaxed">
+            KUA Kecamatan Tengaran merupakan garda terdepan fasilitasi pendaftaran ID Masjid & Musholla ke dalam Sistem Informasi Masjid (SIMAS) Kemenag RI untuk legalitas kelembagaan, bantuan sarana ibadah, dan sertifikasi arah kiblat.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-white border border-slate-200/80">
+              <i data-lucide="file-check-2" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+              <div class="text-xs">
+                <strong class="text-slate-800">Syarat Berkas Ringkas:</strong>
+                <p class="text-slate-500">Surat Pengantar Desa, SK Susunan Takmir, Dokumen Tanah/Wakaf, dan Foto Bangunan.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-white border border-slate-200/80">
+              <i data-lucide="compass" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
+              <div class="text-xs">
+                <strong class="text-slate-800">Pengukuran Arah Kiblat:</strong>
+                <p class="text-slate-500">Pelayanan kalibrasi arah kiblat oleh tim hisab rukyat/penghulu KUA Tengaran.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="openWaModal('Pendaftaran ID Masjid / SIMAS')" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-700 text-white text-xs font-bold hover:bg-brand-800 transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Konsultasi Registrasi Masjid via WA</span>
+          </button>
+        </div>
+
+        <!-- Right Workflow Steps (7 Cols) -->
+        <div class="lg:col-span-7 glass-panel p-6 sm:p-8 rounded-3xl border border-slate-200/80 space-y-6">
+          <h3 class="text-base font-bold text-slate-900 border-b border-slate-100 pb-3">
+            4 Langkah Mudah Mendaftarkan ID Masjid / Musholla
+          </h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 rounded-2xl bg-white border border-slate-200/70 space-y-2">
+              <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center justify-center">1</span>
+              <h4 class="text-sm font-bold text-slate-900">Siapkan Berkas</h4>
+              <p class="text-xs text-slate-600">SK Takmir Desa, status tanah/wakaf, dan foto tampak depan masjid.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white border border-slate-200/70 space-y-2">
+              <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center justify-center">2</span>
+              <h4 class="text-sm font-bold text-slate-900">Serahkan ke KUA</h4>
+              <p class="text-xs text-slate-600">Datang ke loket Kemasjidan KUA Tengaran di Jl. Masjid Besar No.13.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white border border-slate-200/70 space-y-2">
+              <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center justify-center">3</span>
+              <h4 class="text-sm font-bold text-slate-900">Input SIMAS Kemenag</h4>
+              <p class="text-xs text-slate-600">Petugas memvalidasi titik koordinat dan luas aset ke portal nasional.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white border border-slate-200/70 space-y-2">
+              <span class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center justify-center">4</span>
+              <h4 class="text-sm font-bold text-slate-900">Terbit ID & Barcode</h4>
+              <p class="text-xs text-slate-600">Piagam ID Masjid resmi diterbitkan lengkap dengan barcode digital.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 flex items-center justify-between flex-wrap gap-2">
+            <span>Ingin cek apakah masjid Anda sudah terdaftar di SIMAS?</span>
+            <a href="https://simas.kemenag.go.id" target="_blank" class="font-bold underline flex items-center gap-1">
+              <span>Buka Portal SIMAS</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PROFIL & STRUKTUR PEGAWAI ================= -->
+  <section id="profil" class="py-16 md:py-24 bg-white border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700">Sumber Daya Manusia</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-1">
+          Profil & Struktur Kepegawaian KUA Tengaran
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Didukung oleh 11 tenaga profesional berdedikasi tinggi di bawah kepemimpinan Kepala KUA H. Muslih, S.Ag., M.H.
+        </p>
+      </div>
+
+      <!-- Visi & Misi Accordion / Card -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="glass-panel p-6 rounded-3xl border border-slate-200/80 space-y-3">
+          <div class="flex items-center gap-2.5 text-brand-700">
+            <i data-lucide="target" class="w-5 h-5"></i>
+            <h3 class="text-base font-bold">Visi KUA Tengaran</h3>
+          </div>
+          <p class="text-xs md:text-sm text-slate-700 italic leading-relaxed">
+            "Unggul dalam setiap pelayanan yang berbasis pada peraturan perundang-undangan, nilai-nilai ketaqwaan dan akhlak mulia."
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-3xl border border-slate-200/80 space-y-3">
+          <div class="flex items-center gap-2.5 text-amber-600">
+            <i data-lucide="compass" class="w-5 h-5"></i>
+            <h3 class="text-base font-bold">Misi Pelayanan</h3>
+          </div>
+          <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+            Meningkatkan mutu pelayanan nikah-rujuk, pembinaan keluarga sakinah, sertifikasi produk halal UMKM, kemasjidan & hisab rukyat, ZIS-wakaf, serta bimbingan manasik haji berbasis teknologi digital.
+          </p>
+        </div>
+      </div>
+
+      <!-- Filter Pegawai -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+        <button data-filter="all" class="employee-filter-btn px-4 py-2 rounded-xl bg-brand-700 text-white text-xs font-bold transition-all">Semua Pegawai (11)</button>
+        <button data-filter="Pimpinan" class="employee-filter-btn px-4 py-2 rounded-xl bg-white text-slate-700 text-xs font-bold border border-slate-200 transition-all">Kepala Kantor</button>
+        <button data-filter="Penghulu" class="employee-filter-btn px-4 py-2 rounded-xl bg-white text-slate-700 text-xs font-bold border border-slate-200 transition-all">Penghulu</button>
+        <button data-filter="Penyuluh" class="employee-filter-btn px-4 py-2 rounded-xl bg-white text-slate-700 text-xs font-bold border border-slate-200 transition-all">Penyuluh Agama</button>
+        <button data-filter="Administrasi" class="employee-filter-btn px-4 py-2 rounded-xl bg-white text-slate-700 text-xs font-bold border border-slate-200 transition-all">Pelaksana & Operator</button>
+      </div>
+
+      <!-- Employees Grid -->
+      <div id="employees-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Rendered by JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= BERITA & ARTIKEL EDUKASI ================= -->
+  <section id="berita" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700">Informasi & Literasi</span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-1">
+            Berita & Edukasi Keagamaan
+          </h2>
+          <p class="text-sm text-slate-600 mt-1">
+            Publikasi kegiatan, panduan hukum perkawinan, dan artikel bimbingan masyarakat.
+          </p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="relative w-full md:w-72">
+          <input id="post-search" type="text" placeholder="Cari artikel atau berita..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-800 focus:ring-2 focus:ring-brand-500">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3"></i>
+        </div>
+      </div>
+
+      <!-- Posts Grid -->
+      <div id="posts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered by JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FAQ SECTION ================= -->
+  <section id="faq" class="py-16 md:py-24 bg-white border-b border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700">Pusat Bantuan</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+          Pertanyaan yang Sering Diajukan (FAQ)
+        </h2>
+        <p class="text-xs md:text-sm text-slate-600 mt-2">
+          Temukan jawaban cepat atas pertanyaan seputar pendaftaran nikah, biaya PNBP, batas usia, ID Masjid, dan sertifikasi halal.
+        </p>
+
+        <div class="relative max-w-md mx-auto mt-5">
+          <input id="faq-search-input" type="text" placeholder="Ketik kata kunci (contoh: biaya, usia, hilang)..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:ring-2 focus:ring-brand-500">
+          <i data-lucide="help-circle" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3"></i>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion List -->
+      <div id="faq-accordion" class="space-y-3">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="mt-10 p-6 rounded-2xl bg-brand-50 border border-brand-200 text-center space-y-3">
+        <h4 class="text-sm font-bold text-slate-900">Punya pertanyaan lain yang belum terjawab?</h4>
+        <p class="text-xs text-slate-600">Tim petugas dan penyuluh KUA Tengaran siap membantu Anda melalui helpdesk online.</p>
+        <button onclick="openWaModal('Pertanyaan FAQ')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-700 text-white text-xs font-bold hover:bg-brand-800 transition-all">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Tanya Petugas via WhatsApp</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= LOKASI & KONTAK TERPADU ================= -->
+  <section id="kontak" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Left: Contact Details (5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700">Hubungi Kami</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+              Kantor Urusan Agama Kecamatan Tengaran
+            </h2>
+            <p class="text-xs md:text-sm text-slate-600 mt-2">
+              Kementerian Agama Kabupaten Semarang, Jawa Tengah.
+            </p>
+          </div>
+
+          <div class="space-y-3.5 text-xs md:text-sm text-slate-700">
+            <div class="flex items-start gap-3 p-4 rounded-2xl bg-white border border-slate-200/80">
+              <i data-lucide="map-pin" class="w-5 h-5 text-brand-600 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-slate-900">Alamat Kantor:</strong>
+                <p class="mt-0.5">Jl. Masjid Besar No.13, Desa Tengaran, Kec. Tengaran, Kab. Semarang, Jawa Tengah 50775</p>
+                <span class="text-[11px] text-brand-700 font-medium">(Sebelah timur Masjid Besar Al-Ikhlas Kec. Tengaran)</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-4 rounded-2xl bg-white border border-slate-200/80">
+              <i data-lucide="phone" class="w-5 h-5 text-brand-600 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-slate-900">Helpdesk WhatsApp:</strong>
+                <p class="mt-0.5 font-mono">0812-3456-7890</p>
+                <span class="text-[11px] text-slate-400">Aktif pada hari & jam pelayanan kerja</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-4 rounded-2xl bg-white border border-slate-200/80">
+              <i data-lucide="instagram" class="w-5 h-5 text-brand-600 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-slate-900">Media Sosial Resmi:</strong>
+                <p class="mt-0.5">
+                  <a href="https://www.instagram.com/kua.tengaran/" target="_blank" class="text-brand-700 font-bold hover:underline">
+                    @kua.tengaran (Instagram)
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <button onclick="openSkmModal()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 text-slate-950 text-xs font-bold hover:bg-amber-400 shadow-md transition-all">
+              <i data-lucide="star" class="w-4 h-4"></i>
+              <span>Isi Survei Kepuasan (SKM)</span>
+            </button>
+            <a href="https://maps.google.com/?q=KUA+Kecamatan+Tengaran" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-slate-800 border border-slate-200 text-xs font-bold hover:border-brand-500 transition-all">
+              <i data-lucide="navigation" class="w-4 h-4"></i>
+              <span>Petunjuk Arah Google Maps</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Map View (7 Cols) -->
+        <div class="lg:col-span-7">
+          <div class="rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 h-80 sm:h-96 md:h-full min-h-[350px] relative bg-slate-200">
+            <iframe 
+              title="Peta Lokasi KUA Kecamatan Tengaran"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15830.435764264628!2d110.5186!3d-7.4258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a783709b1f7d9%3A0x6a56b6c2c77d540!2sKUA%20Tengaran!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full h-full">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-950 text-slate-300 text-xs pt-12 pb-8 border-t border-brand-900 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-brand-900/80">
+        
+        <div class="space-y-3 md:col-span-2">
+          <div class="flex items-center gap-2.5">
+            <img src="assets/images/logo-kemenag.svg" alt="Logo Kemenag" class="w-6 h-6 object-contain" onerror="this.style.display='none'">
+            <span class="font-bold text-sm text-white tracking-wide">KUA KECAMATAN TENGARAN</span>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed max-w-md">
+            Unit Pelaksana Teknis Kementerian Agama Kabupaten Semarang dalam penyelenggaraan urusan agama Islam, pencatatan pernikahan, bimbingan keluarga sakinah, kemasjidan, wakaf, dan produk halal.
+          </p>
+          <p class="text-[11px] text-brand-300 font-mono">
+            Jl. Masjid Besar No.13 Tengaran 50775 • Kab. Semarang, Jawa Tengah
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-bold text-white text-xs uppercase tracking-wider">Aplikasi Terintegrasi</h4>
+          <ul class="space-y-1.5 text-slate-400">
+            <li><a href="https://simkah4.kemenag.go.id" target="_blank" class="hover:text-brand-400">SIMKAH 4.0 (Nikah)</a></li>
+            <li><a href="https://simas.kemenag.go.id" target="_blank" class="hover:text-brand-400">SIMAS (Masjid Nasional)</a></li>
+            <li><a href="https://ptsp.halal.go.id" target="_blank" class="hover:text-brand-400">SIHALAL (BPJPH)</a></li>
+            <li><a href="https://haji.kemenag.go.id" target="_blank" class="hover:text-brand-400">SISKOHAT (Haji & Umrah)</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-bold text-white text-xs uppercase tracking-wider">Tautan Cepat</h4>
+          <ul class="space-y-1.5 text-slate-400">
+            <li><a href="#simulator" class="hover:text-brand-400">Simulasi Syarat Berkas</a></li>
+            <li><a href="#layanan" class="hover:text-brand-400">Katalog Standar Pelayanan</a></li>
+            <li><a href="#profil" class="hover:text-brand-400">Struktur Kepegawaian</a></li>
+            <li><a href="#faq" class="hover:text-brand-400">Tanya Jawab (FAQ)</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+        <div>
+          © 2026 Kantor Urusan Agama (KUA) Kecamatan Tengaran. Hak Cipta Dilindungi Undang-Undang.
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-brand-400">Ikhlas Beramal</span>
+          <span>•</span>
+          <span>Kementerian Agama RI</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SERVICE MODAL ================= -->
+  <div id="service-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-slate-200" id="service-modal-content">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+
+  <!-- ================= POST MODAL ================= -->
+  <div id="post-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-slate-200" id="post-modal-content">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+
+  <!-- ================= WHATSAPP ROUTER MODAL ================= -->
+  <div id="wa-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900">Helpdesk WhatsApp KUA</h3>
+        </div>
+        <button onclick="closeWaModal()" class="p-1 rounded-lg text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="block text-slate-700 font-semibold mb-1">Nama Lengkap Pemohon:</label>
+          <input id="wa-name" type="text" placeholder="Contoh: Ahmad Fauzi" class="w-full p-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900">
+        </div>
+        <div>
+          <label class="block text-slate-700 font-semibold mb-1">Asal Desa di Kec. Tengaran:</label>
+          <input id="wa-desa" type="text" placeholder="Contoh: Desa Tengaran / Karangduren / Klero" class="w-full p-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900">
+        </div>
+        <div>
+          <label class="block text-slate-700 font-semibold mb-1">Divisi / Topik Layanan:</label>
+          <select id="wa-topic" class="w-full p-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900">
+            <option value="Pendaftaran Nikah & SIMKAH">Pendaftaran Nikah & SIMKAH</option>
+            <option value="Rekomendasi Numpang Nikah">Rekomendasi Numpang Nikah</option>
+            <option value="Duplikat Buku Nikah (Hilang/Rusak)">Duplikat Buku Nikah (Hilang/Rusak)</option>
+            <option value="Pernikahan Campuran WNA">Pernikahan Campuran WNA</option>
+            <option value="Pendaftaran ID Masjid (SIMAS)">Pendaftaran ID Masjid (SIMAS)</option>
+            <option value="Sertifikasi Tanah Wakaf & AIW">Sertifikasi Tanah Wakaf & AIW</option>
+            <option value="Informasi & Bimbingan Haji">Informasi & Bimbingan Haji</option>
+            <option value="Sertifikasi Halal Gratis (SEHATI)">Sertifikasi Halal Gratis (SEHATI)</option>
+            <option value="Konseling BP4 / Mediasi Keluarga">Konseling BP4 / Mediasi Keluarga</option>
+            <option value="Konsultasi Umum">Konsultasi Umum</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-slate-700 font-semibold mb-1">Pesan / Pertanyaan Anda:</label>
+          <textarea id="wa-msg" rows="3" placeholder="Tuliskan pertanyaan atau kendala Anda di sini..." class="w-full p-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900"></textarea>
+        </div>
+      </div>
+
+      <div class="pt-2 flex gap-2">
+        <button onclick="sendWaMessage()" class="w-full py-3 rounded-xl bg-brand-700 text-white font-bold text-xs hover:bg-brand-800 flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Kirim Pesan ke WhatsApp KUA</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PUBLIC SATISFACTION SURVEY (SKM) MODAL ================= -->
+  <div id="skm-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center">
+            <i data-lucide="star" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900">Survei Kepuasan Masyarakat</h3>
+        </div>
+        <button onclick="closeSkmModal()" class="p-1 rounded-lg text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form onsubmit="submitSkm(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block text-slate-700 font-semibold mb-1">Layanan yang Anda Terima:</label>
+          <select class="w-full p-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900" required>
+            <option value="Pelayanan Nikah / SIMKAH">Pelayanan Nikah / SIMKAH</option>
+            <option value="Rekomendasi Nikah">Rekomendasi Nikah</option>
+            <option value="Duplikat Buku Nikah">Duplikat Buku Nikah</option>
+            <option value="Layanan ID Masjid">Layanan ID Masjid</option>
+            <option value="Layanan Wakaf">Layanan Wakaf</option>
+            <option value="Layanan Haji">Layanan Haji</option>
+            <option value="Layanan Halal UMKM">Layanan Halal UMKM</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-slate-700 font-semibold mb-1">Penilaian Kualitas Pelayanan:</label>
+          <div class="grid grid-cols-4 gap-2 text-center text-xs font-semibold">
+            <label class="p-2.5 rounded-xl border border-slate-200 cursor-pointer hover:border-brand-500">
+              <input type="radio" name="rating" value="4" checked class="mb-1">
+              <span>Sangat Puas</span>
+            </label>
+            <label class="p-2.5 rounded-xl border border-slate-200 cursor-pointer hover:border-brand-500">
+              <input type="radio" name="rating" value="3" class="mb-1">
+              <span>Puas</span>
+            </label>
+            <label class="p-2.5 rounded-xl border border-slate-200 cursor-pointer hover:border-brand-500">
+              <input type="radio" name="rating" value="2" class="mb-1">
+              <span>Cukup</span>
+            </label>
+            <label class="p-2.5 rounded-xl border border-slate-200 cursor-pointer hover:border-brand-500">
+              <input type="radio" name="rating" value="1" class="mb-1">
+              <span>Kurang</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-700 font-semibold mb-1">Saran / Masukan untuk KUA Tengaran:</label>
+          <textarea rows="3" placeholder="Tuliskan kritik dan saran Anda demi kemajuan pelayanan publik..." class="w-full p-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs hover:bg-amber-400 transition-all">
+          Kirim Penilaian SKM
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Custom Scripts -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
