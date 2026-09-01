@@ -722,4 +722,29 @@ img {
   .form-box {
     padding: 20px 14px;
   }
+  .philosophy-title {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.5px !important;
+  }
+  .philosophy-sticky {
+    position: static !important;
+  }
+}
+
+/* Philosophy Section Styles */
+.philosophy-sticky {
+  position: sticky;
+  top: 120px;
+}
+
+.philosophy-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.5vw, 48px);
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  word-break: break-word;
 }
