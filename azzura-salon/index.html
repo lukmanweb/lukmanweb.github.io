@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azzura Salon & Beauty Bar | Perawatan Rambut & Kecantikan Premium</title>
+  <meta name="description" content="Azzura Salon & Beauty Bar - Layanan salon kecantikan profesional: Haircut, Coloring, Balayage, Keratin Treatment, Smoothing, Nail Art, dan Perawatan Wajah. Booking online sekarang via WhatsApp!">
+  <meta name="keywords" content="Azzura Salon, Salon Kecantikan, Hair Treatment, Smoothing, Coloring, Balayage, Keratin, Nail Art, Salon Rambut">
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info">
+        <span><i class="fa-solid fa-clock"></i> Buka Setiap Hari: 09.00 - 20.00 WIB</span>
+        <span class="divider">|</span>
+        <span><i class="fa-solid fa-sparkles"></i> Promo Bulan Ini: Diskon 20% Smoothing & Keratin!</span>
+      </div>
+      <div class="top-socials">
+        <a href="https://www.instagram.com/azzura_salon/" target="_blank" rel="noopener" aria-label="Instagram Azzura Salon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/azzurasalon1/?locale=id_ID" target="_blank" rel="noopener" aria-label="Facebook Azzura Salon"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/6281234567890?text=Halo%20Azzura%20Salon,%20saya%20ingin%20tanya%20layanan" target="_blank" rel="noopener" aria-label="WhatsApp Azzura Salon"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="logo-mark">A</span>
+        <div class="logo-text">
+          <span class="brand-name">AZZURA</span>
+          <span class="brand-sub">SALON & BEAUTY BAR</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Beranda</a></li>
+          <li><a href="#about" class="nav-link">Tentang Kami</a></li>
+          <li><a href="#services" class="nav-link">Layanan & Harga</a></li>
+          <li><a href="#calculator" class="nav-link">Kalkulator Biaya</a></li>
+          <li><a href="#gallery" class="nav-link">Galeri Portofolio</a></li>
+          <li><a href="#reviews" class="nav-link">Testimoni</a></li>
+          <li><a href="#contact" class="nav-link">Kontak & Lokasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#booking" class="btn btn-primary btn-sm">
+          <i class="fa-brands fa-whatsapp"></i> Booking Sekarang
+        </a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Buka Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-backdrop"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-badge"><i class="fa-solid fa-gem"></i> Premium Hair & Beauty Experience</span>
+          <h1 class="hero-title">Wujudkan Tampilan Rambut Impian & Kilau Percaya Diri Anda</h1>
+          <p class="hero-subtitle">Nikmati perawatan salon eksklusif dengan hair stylist berpengalaman, produk berkualitas internasional, dan suasana relaksasi yang mewah namun terjangkau.</p>
+          
+          <div class="hero-cta-group">
+            <a href="#booking" class="btn btn-primary">
+              <i class="fa-solid fa-calendar-check"></i> Reservasi Treatment
+            </a>
+            <a href="#services" class="btn btn-secondary">
+              <i class="fa-solid fa-list-check"></i> Lihat Menu Layanan
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">4.9<i class="fa-solid fa-star text-gold"></i></span>
+              <span class="stat-label">Rating Kepuasan</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">10k+</span>
+              <span class="stat-label">Pelanggan Bahagia</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Produk Berkualitas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="image-wrapper main-img">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Suasana Perawatan Azzura Salon">
+          </div>
+          <div class="floating-card promo-card">
+            <div class="card-icon"><i class="fa-solid fa-tag"></i></div>
+            <div class="card-text">
+              <strong>Spesial Smoothing Keratin</strong>
+              <span>Bonus Hair Vitamin & Blow</span>
+            </div>
+          </div>
+          <div class="floating-card rating-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span>"Hasil smoothing lembut & tahan lama banget!"</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us / Features -->
+    <section class="section features-section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Mengapa Memilih Azzura Salon?</span>
+          <h2 class="section-title">Sentuhan Ahli untuk Mahkota Terbaik Anda</h2>
+          <p class="section-desc">Kami memadukan teknik tata rambut modern dengan produk terbaik agar setiap helai rambut Anda tampak sehat, berkilau, dan memukau.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-scissors"></i>
+            </div>
+            <h3>Stylist Berpengalaman</h3>
+            <p>Dikerjakan oleh tim hair stylist profesional yang memahami struktur rambut, teknik pewarnaan, dan model terkini.</p>
+          </div>
+
+          <div class="feature-card highlight">
+            <div class="feature-icon">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3>Produk Premium & Aman</h3>
+            <p>Menggunakan bahan berkualitas tinggi yang telah teruji, bebas bau menyengat, serta merawat kelembapan rambut.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3>Konsultasi Gratis</h3>
+            <p>Diskusikan warna, model potongan, atau masalah rambut Anda secara gratis sebelum memulai perawatan.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-couch"></i>
+            </div>
+            <h3>Tempat Nyaman & Higienis</h3>
+            <p>Ruangan sejuk, bersih, estetik, dan ramah wanita untuk pengalaman memanjakan diri yang menenangkan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services & Pricing Catalog -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Menu Treatment</span>
+          <h2 class="section-title">Layanan Lengkap & Harga Transparan</h2>
+          <p class="section-desc">Pilih perawatan terbaik yang sesuai dengan kebutuhan gaya dan nutrisi rambut Anda.</p>
+        </div>
+
+        <!-- Service Category Tabs -->
+        <div class="category-tabs" id="serviceTabs">
+          <button class="tab-btn active" data-category="all">Semua Treatment</button>
+          <button class="tab-btn" data-category="haircut">Hair Styling & Cut</button>
+          <button class="tab-btn" data-category="coloring">Coloring & Highlights</button>
+          <button class="tab-btn" data-category="treatment">Smoothing & Keratin</button>
+          <button class="tab-btn" data-category="beauty">Nail & Beauty Care</button>
+        </div>
+
+        <!-- Services Grid List -->
+        <div class="services-grid" id="servicesContainer">
+          <!-- Items will be populated / filtered -->
+        </div>
+
+        <div class="text-center mt-40">
+          <p class="text-muted mb-15">*Harga dapat bervariasi sesuai dengan panjang dan ketebalan rambut.</p>
+          <a href="#calculator" class="btn btn-secondary">
+            <i class="fa-solid fa-calculator"></i> Coba Kalkulator Estimasi Biaya
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Price Estimator / Calculator -->
+    <section class="section calculator-section" id="calculator">
+      <div class="container">
+        <div class="calculator-card">
+          <div class="calc-header">
+            <span class="section-subtitle">Simulasi Biaya Cepat</span>
+            <h2>Kalkulator Estimasi Biaya Treatment</h2>
+            <p>Pilih kombinasi perawatan yang Anda inginkan untuk melihat estimasi total biaya dan perkiraan durasi treatment.</p>
+          </div>
+
+          <div class="calc-layout">
+            <div class="calc-selection">
+              <div class="calc-group">
+                <label class="calc-group-title"><i class="fa-solid fa-ruler-vertical"></i> Panjang Rambut:</label>
+                <div class="hair-length-options" id="hairLengthOptions">
+                  <label class="radio-card active">
+                    <input type="radio" name="hairLength" value="short" data-multiplier="1" checked>
+                    <span class="card-label">Pendek</span>
+                    <span class="card-sub">Sebahu ke atas</span>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="hairLength" value="medium" data-multiplier="1.2">
+                    <span class="card-label">Sedang</span>
+                    <span class="card-sub">Di bawah bahu</span>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="hairLength" value="long" data-multiplier="1.4">
+                    <span class="card-label">Panjang / Tebal</span>
+                    <span class="card-sub">Punggung / Pinggang</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <label class="calc-group-title"><i class="fa-solid fa-list-check"></i> Pilih Layanan Perawatan:</label>
+                <div class="calc-checkbox-grid" id="calcTreatments">
+                  <!-- Generated via JS -->
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-summary">
+              <div class="summary-box">
+                <h3>Ringkasan Estimasi</h3>
+                <div class="selected-items-list" id="selectedItemsList">
+                  <p class="empty-hint">Belum ada layanan yang dipilih</p>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-row">
+                  <span>Estimasi Durasi:</span>
+                  <strong id="estimatedTime">0 Menit</strong>
+                </div>
+                <div class="summary-row total-row">
+                  <span>Total Estimasi Biaya:</span>
+                  <strong id="estimatedCost">Rp 0</strong>
+                </div>
+
+                <button class="btn btn-primary btn-block mt-20" id="sendCalcToBookingBtn">
+                  <i class="fa-brands fa-whatsapp"></i> Booking Paket Ini via WhatsApp
+                </button>
+                <small class="summary-footnote"><i class="fa-solid fa-circle-info"></i> Konsultasi lanjutan akan dilakukan oleh stylist kami sebelum tindakan.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery / Transformation Section -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Karya & Transformasi</span>
+          <h2 class="section-title">Portofolio Hasil Karya Azzura Salon</h2>
+          <p class="section-desc">Lihat bagaimana kami menghidupkan kembali pesona dan keanggunan rambut para pelanggan setia kami.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80" alt="Balayage Ash Brown Highlight Azzura Salon">
+            <div class="gallery-overlay">
+              <span class="gallery-badge">Coloring</span>
+              <h4>Balayage Ash Brown Luxe</h4>
+              <p>Gradasi warna elegan dan natural tanpa merusak rambut</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Silk Keratin Smoothing Azzura Salon">
+            <div class="gallery-overlay">
+              <span class="gallery-badge">Smoothing</span>
+              <h4>Silk Keratin Blow Smoothing</h4>
+              <p>Lurus natural, jatuh berkilau, dan mudah diatur setiap hari</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=600&q=80" alt="Korean Layered Haircut Azzura Salon">
+            <div class="gallery-overlay">
+              <span class="gallery-badge">Haircut</span>
+              <h4>Korean Butterfly Haircut</h4>
+              <p>Layer bervolume membingkai wajah agar tampak lebih tirus & segar</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80" alt="Fashion Color Azzura Salon">
+            <div class="gallery-overlay">
+              <span class="gallery-badge">Coloring</span>
+              <h4>Rose Gold & Milk Tea Tone</h4>
+              <p>Nuansa cerah berani dengan perlindungan plex treatment</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80" alt="Nail Art Gel Azzura Beauty">
+            <div class="gallery-overlay">
+              <span class="gallery-badge">Nail Art</span>
+              <h4>Gel Art & Korean Manicure</h4>
+              <p>Desain kuku estetik dengan ketahanan hingga 4 minggu</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Facial & Glow Azzura Beauty">
+            <div class="gallery-overlay">
+              <span class="gallery-badge">Facial</span>
+              <h4>Glow Detox Hair & Face Spa</h4>
+              <p>Sensasi relaksasi menyeluruh untuk melepas penat</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-30">
+          <a href="https://www.instagram.com/azzura_salon/" target="_blank" rel="noopener" class="btn btn-outline">
+            <i class="fa-brands fa-instagram"></i> Lihat Portofolio Lengkap di @azzura_salon
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" id="reviews">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Testimoni Pelanggan</span>
+          <h2 class="section-title">Apa Kata Mereka Tentang Azzura Salon?</h2>
+          <p class="section-desc">Kepuasan dan kenyamanan Anda adalah prioritas utama setiap layanan kami.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="quote">"Suka banget sama hasil keratin smoothing di Azzura Salon! Rambutku yang tadinya megar dan kaku sekarang jadi super lembut dan jatuh alami. Stylistnya juga sabar dan ramah banget."</p>
+            <div class="author-info">
+              <div class="author-avatar">D</div>
+              <div>
+                <strong>Dina Permata</strong>
+                <span>Pelanggan Smoothing Keratin</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card highlight-card">
+            <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="quote">"Tempatnya bersih, wangi, dan pelayanannya top markotop. Coloring balayage hasilnya persis seperti foto referensi yang saya bawa. Nggak bikin rambut bercabang. Worth it banget!"</p>
+            <div class="author-info">
+              <div class="author-avatar">S</div>
+              <div>
+                <strong>Siti Rahmawati</strong>
+                <span>Pelanggan Balayage & Cut</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="quote">"Creambath dan hair spa di Azzura beneran bikin rileks setelah seminggu kerja padat. Pijatan terapisnya pas banget dan harganya ramah di kantong. Pasti bakal balik lagi tiap bulan."</p>
+            <div class="author-info">
+              <div class="author-avatar">N</div>
+              <div>
+                <strong>Nadia Putri</strong>
+                <span>Pelanggan Hair Spa & Blow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="section booking-section" id="booking">
+      <div class="container">
+        <div class="booking-wrapper">
+          <div class="booking-info">
+            <span class="section-subtitle">Reservasi Mudah & Cepat</span>
+            <h2>Jadwalkan Waktu Treatment Terbaik Anda</h2>
+            <p>Hindari antrian panjang dengan melakukan reservasi terlebih dahulu. Isi formulir singkat di samping dan pesan konfirmasi akan otomatis diteruskan ke WhatsApp Azzura Salon.</p>
+            
+            <div class="booking-perks">
+              <div class="perk-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Jadwal fleksibel & kepastian antrian</span>
+              </div>
+              <div class="perk-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Bebas konsultasi gaya & kondisi rambut</span>
+              </div>
+              <div class="perk-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Respons cepat via Official WhatsApp</span>
+              </div>
+            </div>
+
+            <div class="direct-contact-box">
+              <p>Butuh respon mendesak atau pertanyaan langsung?</p>
+              <a href="https://wa.me/6281234567890?text=Halo%20Azzura%20Salon,%20saya%20ingin%20tanya%20jadwal" target="_blank" class="contact-link">
+                <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp Langsung
+              </a>
+            </div>
+          </div>
+
+          <div class="booking-form-box">
+            <h3>Formulir Booking Online</h3>
+            <form id="bookingForm">
+              <div class="form-group">
+                <label for="clientName">Nama Lengkap <span class="required">*</span></label>
+                <input type="text" id="clientName" placeholder="Contoh: Sarah Angelina" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="clientPhone">No. WhatsApp <span class="required">*</span></label>
+                  <input type="tel" id="clientPhone" placeholder="0812xxxxxxx" required>
+                </div>
+                <div class="form-group">
+                  <label for="bookingDate">Pilih Tanggal <span class="required">*</span></label>
+                  <input type="date" id="bookingDate" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="bookingTime">Pilih Jam Kedatangan <span class="required">*</span></label>
+                  <select id="bookingTime" required>
+                    <option value="">Pilih Jam...</option>
+                    <option value="09:00">09:00 WIB</option>
+                    <option value="10:30">10:30 WIB</option>
+                    <option value="12:00">12:00 WIB</option>
+                    <option value="13:30">13:30 WIB</option>
+                    <option value="15:00">15:00 WIB</option>
+                    <option value="16:30">16:30 WIB</option>
+                    <option value="18:00">18:00 WIB</option>
+                    <option value="19:00">19:00 WIB</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="serviceCategorySelect">Kategori Layanan <span class="required">*</span></label>
+                  <select id="serviceCategorySelect" required>
+                    <option value="">Pilih Kategori...</option>
+                    <option value="Haircut & Styling">Haircut & Styling</option>
+                    <option value="Coloring / Balayage / Highlight">Coloring / Balayage</option>
+                    <option value="Keratin Treatment / Smoothing">Keratin / Smoothing</option>
+                    <option value="Hair Spa & Creambath">Hair Spa & Creambath</option>
+                    <option value="Nail Art & Manicure">Nail Art & Manicure</option>
+                    <option value="Paket Custom / Kombinasi">Paket Custom / Kombinasi</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="clientNotes">Catatan Tambahan (Opsional)</label>
+                <textarea id="clientNotes" rows="3" placeholder="Contoh: Rambut tebal sebahu, ingin warna ash brown atau request stylist tertentu"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="fa-brands fa-whatsapp"></i> Konfirmasi Booking via WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Pertanyaan Sering Diajukan</span>
+          <h2 class="section-title">FAQ Seputar Azzura Salon</h2>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apakah harus reservasi terlebih dahulu sebelum datang?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Kami sangat menyarankan reservasi terlebih dahulu agar Anda tidak perlu menunggu antrian, terutama pada akhir pekan (weekend) dan hari libur nasional. Namun, kami juga tetap menerima kunjungan langsung (walk-in) jika slot tersedia.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Berapa lama ketahanan hasil Smoothing & Keratin Treatment?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Ketahanan Japanese Smoothing umumnya berkisar antara 6 hingga 9 bulan (tergantung pertumbuhan akar baru), sedangkan Keratin Treatment bertahan sekitar 3 hingga 5 bulan dengan kilau maksimal menggunakan shampoo tanpa sulfat.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apakah produk yang digunakan aman untuk rambut sensitif / rusak?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Ya, seluruh produk kami telah lulus uji kualitas internasional dan diperkaya dengan serum pelindung rambut (Plex system) untuk meminimalkan risiko kerusakan serta menjaga kelembutan rambut Anda.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Metode pembayaran apa saja yang diterima?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Kami menerima pembayaran Tunai (Cash), QRIS (GoPay, OVO, Dana, ShopeePay, BCA, dll), serta Transfer Bank.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-details">
+            <span class="section-subtitle">Kunjungi Kami</span>
+            <h2>Lokasi & Jam Buka</h2>
+            <p>Nikmati suasana salon yang nyaman dan rileks. Kami siap menyambut Anda dengan senyuman dan pelayanan terbaik.</p>
+
+            <div class="info-list">
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <strong>Alamat Salon:</strong>
+                  <p>Azzura Salon & Beauty Bar</p>
+                  <a href="https://www.google.com/local/place/fid/0x2df67fb3c57a43d9:0x11687281221d1a14/photosphere" target="_blank" rel="noopener" class="text-gold mt-5 d-inline-block" style="font-size:0.85rem; font-weight:600;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Lihat Lokasi di Google Maps / Street View</a>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                <div>
+                  <strong>Jam Operasional:</strong>
+                  <p>Senin - Minggu: 09:00 - 20:00 WIB</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <strong>WhatsApp / Kontak:</strong>
+                  <p>+62 812-3456-7890</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                <div>
+                  <strong>Media Sosial Resmi:</strong>
+                  <div class="social-tags mt-5">
+                    <a href="https://www.instagram.com/azzura_salon/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> @azzura_salon</a>
+                    <a href="https://www.facebook.com/azzurasalon1/?locale=id_ID" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Azzura Salon Facebook</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-wrapper">
+            <div class="map-card">
+              <div class="map-placeholder" style="position: relative; overflow: hidden;">
+                <img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=MJToOyJMACLnK7CPXgfT3Q&cb_client=search.gws-prod.gps&yaw=350.40042&pitch=0&thumbfov=100&w=800&h=500" alt="Google Street View Azzura Salon" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: 15px; left: 15px; background: rgba(35, 25, 30, 0.85); color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 0.8rem; backdrop-filter: blur(4px);">
+                  <i class="fa-solid fa-street-view" style="color: #e06d88; margin-right: 5px;"></i> Google 360° Street View Azzura Salon
+                </div>
+              </div>
+              <div class="map-bar">
+                <span><i class="fa-solid fa-location-dot"></i> Azzura Salon Google Maps</span>
+                <a href="https://www.google.com/local/place/fid/0x2df67fb3c57a43d9:0x11687281221d1a14/photosphere" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Buka Google Maps</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">A</span>
+          <div class="logo-text">
+            <span class="brand-name">AZZURA</span>
+            <span class="brand-sub">SALON & BEAUTY BAR</span>
+          </div>
+        </div>
+        <p>Destinasi terpercaya untuk perawatan mahkota rambut dan kecantikan wanita modern dengan standar pelayanan prima.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navigasi Cepat</h4>
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#services">Layanan & Harga</a></li>
+          <li><a href="#calculator">Kalkulator Biaya</a></li>
+          <li><a href="#gallery">Portofolio</a></li>
+          <li><a href="#booking">Booking Online</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Layanan Favorit</h4>
+        <ul>
+          <li><a href="#services">Silk Keratin Smoothing</a></li>
+          <li><a href="#services">Korean Balayage & Ombre</a></li>
+          <li><a href="#services">Layered Cut & Blowout</a></li>
+          <li><a href="#services">Hair Spa Aromatherapy</a></li>
+          <li><a href="#services">Nail Art Gel Aesthetic</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Ikuti Kami</h4>
+        <div class="footer-social-icons">
+          <a href="https://www.instagram.com/azzura_salon/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/azzurasalon1/?locale=id_ID" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p class="mt-15 text-muted">Hubungi CS kami untuk konsultasi model rambut impian Anda.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 Azzura Salon & Beauty Bar. Hak Cipta Dilindungi.</p>
+        <p class="designed-by">Crafted with elegance for Azzura Salon</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp CTA Widget -->
+  <a href="https://wa.me/6281234567890?text=Halo%20Azzura%20Salon,%20saya%20ingin%20konsultasi%20dan%20booking%20treatment" target="_blank" rel="noopener" class="floating-wa" aria-label="Chat WhatsApp Langsung">
+    <div class="wa-tooltip">Chat Kami Sekarang</div>
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
