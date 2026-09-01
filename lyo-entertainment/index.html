@@ -6,7 +6,9 @@
   <title>LYO ENTERTAINMENT — Modern Music Experience & Wedding Band Kudus</title>
   <meta name="description" content="Lyo Entertainment / Lyo and The Band — Official band from Kudus. Watch official single 'WANTUN NERIMO' and book live music experience for weddings & events." />
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS Compiled CDN Stylesheet (Instant load, no script lag) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <!-- Tailwind 3 CSS CDN Standalone -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -17,38 +19,30 @@
   <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              gold: '#F59E0B',
-              champagne: '#FDE68A',
-              zinc950: '#090A0F',
-              zinc900: '#11131B',
-              zinc800: '#1B1E2B',
-              accent: '#FCD34D'
-            }
-          },
-          fontFamily: {
-            display: ['"Syne"', 'sans-serif'],
-            mono: ['"Space Grotesk"', 'monospace'],
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
   <style>
+    /* Robust Fallback Styles ensuring 100% Styling even if CDN is blocked */
+    :root {
+      --brand-gold: #F59E0B;
+      --brand-accent: #FCD34D;
+      --bg-dark: #000000;
+    }
+    body {
+      background-color: #000000 !important;
+      color: #F4F4F5 !important;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .font-display { font-family: 'Syne', sans-serif !important; }
+    .font-mono { font-family: 'Space Grotesk', monospace !important; }
+
     /* Ultra Modern Mesh Noise & Glow */
     .bg-grid-pattern {
       background-size: 40px 40px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     }
     .cinema-glow {
       position: absolute;
@@ -61,12 +55,13 @@
       background: linear-gradient(135deg, #FFFFFF 0%, #FDE68A 40%, #F59E0B 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      color: #F59E0B;
     }
     .pill-blur {
-      background: rgba(17, 19, 27, 0.65);
+      background: rgba(17, 19, 27, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
     /* Animated Wave Equalizer */
     @keyframes equalize {
@@ -80,6 +75,14 @@
     .eq-bar:nth-child(3) { animation-delay: 0.4s; }
     .eq-bar:nth-child(4) { animation-delay: 0.1s; }
     .eq-bar:nth-child(5) { animation-delay: 0.3s; }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .aspect-video {
+      aspect-ratio: 16 / 9;
+    }
   </style>
 </head>
 
@@ -145,7 +148,7 @@
 
       <!-- Main Monumental Heading -->
       <div class="space-y-2 mb-10" data-aos="fade-up" data-aos-duration="900">
-        <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.95] uppercase">
+        <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl font-black tracking-tighter leading-none uppercase">
           LIVE MUSIC, <br />
           <span class="gold-gradient-text italic font-serif tracking-normal">UNFORGETTABLE</span> <br />
           VIBRATIONS.
@@ -161,7 +164,7 @@
         <!-- Left Action CTA -->
         <div class="lg:col-span-5 space-y-4" data-aos="fade-up" data-aos-delay="200">
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="https://wa.me/6285727706006?text=Halo%20Sherly%20Lyo%20Entertainment,%20saya%20ingin%20cek%20jadwal%20dan%20pricelist" target="_blank" class="px-8 py-4 rounded-2xl bg-amber-400 hover:bg-amber-300 text-black font-mono font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-xl shadow-amber-500/20">
+            <a href="https://wa.me/6285727706006?text=Halo%20Sherly%20Lyo%20Entertainment,%20saya%20ingin%20cek%20jadwal%20dan%20pricelist" target="_blank" class="px-8 py-4 rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-black font-mono font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-xl">
               <i class="fa-brands fa-whatsapp text-lg"></i>
               WhatsApp PIC (Sherly)
             </a>
@@ -226,7 +229,7 @@
             </div>
 
             <!-- Track Sample Card -->
-            <div class="mt-3 p-3 rounded-xl bg-zinc-900/90 border border-zinc-800 flex items-center justify-between text-xs font-mono">
+            <div class="mt-3 p-3 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-between text-xs font-mono">
               <div class="flex items-center gap-3">
                 <div class="w-8 h-8 rounded-lg bg-red-600/20 text-red-400 flex items-center justify-center">
                   <i class="fa-solid fa-play text-xs"></i>
@@ -248,12 +251,12 @@
   </section>
 
   <!-- YOUTUBE & MUSIC RELEASES SECTION -->
-  <section id="releases" class="py-24 bg-zinc-950/90 border-y border-zinc-800/80 relative">
+  <section id="releases" class="py-24 bg-zinc-950 border-y border-zinc-800 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6" data-aos="fade-up">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/60 border border-red-500/30 text-red-400 font-mono text-[11px] uppercase tracking-wider mb-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950 border border-red-500 text-red-400 font-mono text-[11px] uppercase tracking-wider mb-3">
             <i class="fa-brands fa-youtube text-red-500"></i> OFFICIAL RELEASE & MUSIC VIDEO
           </div>
           <h2 class="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
@@ -269,9 +272,9 @@
       <!-- Featured Video Player Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        <!-- Left: YouTube Video Showcase with direct 7gYMKYzRe2E -->
+        <!-- Left: YouTube Video Showcase -->
         <div class="lg:col-span-8" data-aos="fade-right">
-          <div class="pill-blur rounded-3xl p-3 sm:p-4 border border-zinc-800 relative group overflow-hidden shadow-2xl bg-zinc-900/90">
+          <div class="pill-blur rounded-3xl p-3 sm:p-4 border border-zinc-800 relative group overflow-hidden shadow-2xl bg-zinc-900">
             
             <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-black border border-zinc-800">
               <iframe 
@@ -336,7 +339,7 @@
 
   <!-- MARQUEE TEXT TICKER -->
   <div class="border-y border-zinc-800 bg-zinc-950 py-3 overflow-hidden font-mono text-xs uppercase tracking-widest text-zinc-400">
-    <div class="flex gap-8 whitespace-nowrap animate-[marquee_25s_linear_infinite]">
+    <div class="flex gap-8 whitespace-nowrap">
       <span>★ LYO BAND - WANTUN NERIMO</span>
       <span>•</span>
       <span>★ OFFICIAL YOUTUBE @LYOBAND</span>
@@ -371,7 +374,7 @@
             Pesta pernikahan adalah salah satu hari terpenting dalam hidup Anda. Lyo Entertainment memahami setiap detail transisi — dari keheningan sakral saat momen ijab kabul & first dance, hingga lonjakan kegembiraan di sesi *sing-along party*.
           </p>
 
-          <div class="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800 space-y-2">
+          <div class="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-2">
             <p class="font-mono text-xs text-zinc-400 uppercase">Management Contact:</p>
             <p class="font-display text-lg font-bold text-white">Sherly (Lyo Management)</p>
             <p class="font-mono text-xs text-amber-400 font-bold"><i class="fa-solid fa-phone mr-1"></i> +62 857-2770-6006</p>
@@ -422,7 +425,7 @@
   </section>
 
   <!-- PERFORMANCE LINEUP / PACKAGES -->
-  <section id="lineup" class="py-28 bg-zinc-950/70 border-t border-zinc-800/80 relative">
+  <section id="lineup" class="py-28 bg-zinc-950 border-t border-zinc-800 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -446,7 +449,7 @@
             <h3 class="font-display text-2xl font-bold text-white mb-1">Acoustic Trio / Quartet</h3>
             <p class="text-xs text-zinc-400 mb-6">Cocok untuk lamaran, sangjit, intimate wedding & garden party.</p>
             
-            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800/80 mb-6 font-mono text-xs">
+            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800 mb-6 font-mono text-xs">
               <span class="text-amber-400 block font-bold mb-1">LINEUP:</span>
               <p class="text-zinc-300">Vocalist + Acoustic Guitar + Keyboard / Cajon Percussion</p>
             </div>
@@ -464,7 +467,7 @@
         </div>
 
         <!-- Tier 2: Signature Full Band (Featured) -->
-        <div class="pill-blur rounded-3xl p-8 flex flex-col justify-between border-2 border-amber-400 shadow-2xl shadow-amber-500/10 relative transform md:-translate-y-4 bg-zinc-900/90" data-aos="fade-up" data-aos-delay="100">
+        <div class="pill-blur rounded-3xl p-8 flex flex-col justify-between border-2 border-amber-400 shadow-2xl relative transform md:-translate-y-4 bg-zinc-900" data-aos="fade-up" data-aos-delay="100">
           <div class="absolute -top-3.5 left-8 bg-amber-400 text-black font-mono font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider shadow">
             ★ MOST BOOKED FOR WEDDINGS
           </div>
@@ -487,7 +490,7 @@
             </ul>
           </div>
 
-          <a href="https://wa.me/6285727706006?text=Halo%20Sherly,%20saya%20ingin%20tanya%20Signature%20Full%20Band%20Lyo%20Entertainment" target="_blank" class="w-full text-center py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-mono text-xs font-black uppercase tracking-wider shadow-lg transition">
+          <a href="https://wa.me/6285727706006?text=Halo%20Sherly,%20saya%20ingin%20tanya%20Signature%20Full%20Band%20Lyo%20Entertainment" target="_blank" class="w-full text-center py-4 rounded-xl bg-yellow-500 hover:bg-yellow-400 text-black font-mono text-xs font-black uppercase tracking-wider shadow-lg transition">
             Book Signature Band
           </a>
         </div>
@@ -499,7 +502,7 @@
             <h3 class="font-display text-2xl font-bold text-white mb-1">Mini Chamber & Strings</h3>
             <p class="text-xs text-zinc-400 mb-6">Sentuhan string section megah untuk nuansa royal wedding.</p>
             
-            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800/80 mb-6 font-mono text-xs">
+            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800 mb-6 font-mono text-xs">
               <span class="text-amber-400 block font-bold mb-1">LINEUP:</span>
               <p class="text-zinc-300">Full Band + Violin / Cello Section + Guest Singers</p>
             </div>
@@ -611,7 +614,7 @@
 
           <!-- Submit Button -->
           <div class="pt-4">
-            <button type="submit" class="w-full py-4.5 px-6 rounded-2xl bg-amber-400 hover:bg-amber-300 text-black font-mono font-black text-sm tracking-wider uppercase flex items-center justify-center gap-3 transition shadow-xl shadow-amber-400/20">
+            <button type="submit" class="w-full py-4.5 px-6 rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-black font-mono font-black text-sm tracking-wider uppercase flex items-center justify-center gap-3 transition shadow-xl">
               <i class="fa-brands fa-whatsapp text-xl"></i>
               Kirim Rincian Booking via WhatsApp (Sherly)
             </button>
@@ -624,7 +627,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-zinc-800/80 bg-black py-14 text-zinc-500 font-mono text-xs">
+  <footer class="border-t border-zinc-800 bg-black py-14 text-zinc-500 font-mono text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-zinc-900">
         
@@ -661,7 +664,7 @@
   </footer>
 
   <!-- FLOATING CTA BUTTON -->
-  <a href="https://wa.me/6285727706006?text=Halo%20Sherly%20Lyo%20Entertainment,%20saya%20mau%20konsultasi%20live%20music" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-amber-400 hover:bg-amber-300 text-black font-mono font-bold px-5 py-3 rounded-full shadow-2xl shadow-amber-500/40 transition group">
+  <a href="https://wa.me/6285727706006?text=Halo%20Sherly%20Lyo%20Entertainment,%20saya%20mau%20konsultasi%20live%20music" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-yellow-500 hover:bg-yellow-400 text-black font-mono font-bold px-5 py-3 rounded-full shadow-2xl transition group">
     <i class="fa-brands fa-whatsapp text-xl"></i>
     <span class="text-xs tracking-wider">BOOK BAND</span>
   </a>
@@ -669,11 +672,13 @@
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      once: true,
-      duration: 800,
-      offset: 60
-    });
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        once: true,
+        duration: 800,
+        offset: 60
+      });
+    }
 
     function dispatchWhatsApp() {
       const name = document.getElementById('clientName').value;
