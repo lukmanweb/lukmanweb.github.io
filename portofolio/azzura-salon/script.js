@@ -11,7 +11,7 @@ const treatmentsData = [
     basePrice: 75000,
     duration: 45,
     description: "Potongan rambut tren terkini disesuaikan dengan bentuk wajah, sudah termasuk keramas rileks dan styling blow finish.",
-    img: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=500&q=80",
+    img: "assets/img/haircut.jpg",
     hasLengthMultiplier: false
   },
   {
@@ -21,7 +21,7 @@ const treatmentsData = [
     basePrice: 50000,
     duration: 35,
     description: "Penataan rambut bervolume, bouncy wave, atau sleek straight untuk acara wisuda, pesta, atau photoshoot.",
-    img: "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=500&q=80",
+    img: "assets/img/styling.jpg",
     hasLengthMultiplier: false
   },
   {
@@ -31,7 +31,7 @@ const treatmentsData = [
     basePrice: 250000,
     duration: 120,
     description: "Meluruskan sekaligus memperbaiki rambut rusak, kusam, dan mengembang menjadi halus lembut seperti sutra dan mudah diatur.",
-    img: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80",
+    img: "assets/img/keratin.jpg",
     hasLengthMultiplier: true
   },
   {
@@ -41,7 +41,7 @@ const treatmentsData = [
     basePrice: 220000,
     duration: 150,
     description: "Pelurusan rambut tahan lama dengan hasil lurus berkilau natural dan tidak kaku menggunakan formula lembut.",
-    img: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=500&q=80",
+    img: "assets/img/smoothing.jpg",
     hasLengthMultiplier: true
   },
   {
@@ -51,7 +51,7 @@ const treatmentsData = [
     basePrice: 85000,
     duration: 60,
     description: "Perawatan nutrisi batang rambut dan kulit kepala disertai pijatan relaksasi bahu dan punggung yang menenangkan.",
-    img: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=500&q=80",
+    img: "assets/img/balayage.jpg",
     hasLengthMultiplier: false
   },
   {
@@ -61,7 +61,7 @@ const treatmentsData = [
     basePrice: 350000,
     duration: 180,
     description: "Teknik pewarnaan gradasi dimensional tanpa garis tegas, membuat penampilan semakin modern & glowing tanpa merusak rambut.",
-    img: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=500&q=80",
+    img: "assets/img/balayage.jpg",
     hasLengthMultiplier: true
   },
   {
@@ -71,7 +71,7 @@ const treatmentsData = [
     basePrice: 180000,
     duration: 90,
     description: "Pewarnaan merata dari akar hingga ujung rambut dengan pilihan warna trendi (Ash, Cokelat, Burgundy, Mocha, dll).",
-    img: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=500&q=80",
+    img: "assets/img/smoothing.jpg",
     hasLengthMultiplier: true
   },
   {
@@ -81,7 +81,7 @@ const treatmentsData = [
     basePrice: 95000,
     duration: 60,
     description: "Pembersihan kutikula, perapian kuku, dan aplikasi kutek gel tahan hingga 4 minggu dengan pilihan desain estetik.",
-    img: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=500&q=80",
+    img: "assets/img/nailart.jpg",
     hasLengthMultiplier: false
   },
   {
@@ -91,7 +91,7 @@ const treatmentsData = [
     basePrice: 110000,
     duration: 60,
     description: "Pembersihan komedo, masker pelembap mencerahkan, dan totok wajah untuk melancarkan sirkulasi darah.",
-    img: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80",
+    img: "assets/img/facial.jpg",
     hasLengthMultiplier: false
   }
 ];
