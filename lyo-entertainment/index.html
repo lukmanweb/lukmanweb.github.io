@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lyo Entertainment - Wedding & Event Music Band Kudus</title>
+  <meta name="description" content="Lyo Entertainment (Lyo and The Band) - Vendor Live Music & Entertainment Terbaik di Kudus, Pati, Semarang & Sekitarnya untuk Wedding, Engagement, & Gathering." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts (Playfair Display & Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              goldLight: '#F3E5AB',
+              goldDark: '#AA7C11',
+              dark: '#0B0D13',
+              darkCard: '#131722',
+              darkBorder: '#232938',
+              accent: '#E6C35C'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glass-card {
+      background: rgba(19, 23, 34, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+    }
+    .glass-card:hover {
+      border-color: rgba(212, 175, 55, 0.5);
+      box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.25);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #FFE6A3 0%, #D4AF37 50%, #B8860B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(11, 13, 19, 0) 70%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-dark text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-black">
+
+  <!-- Glow Backgrounds -->
+  <div class="hero-glow top-0 left-1/4 -translate-x-1/2"></div>
+  <div class="hero-glow top-[800px] right-0 translate-x-1/3"></div>
+
+  <!-- NAVIGATION -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card bg-opacity-90 border-b border-brand-darkBorder" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <img src="logo.jpg" alt="Lyo Entertainment Logo" class="w-12 h-12 rounded-full border border-brand-gold/60 p-0.5 object-cover group-hover:scale-105 transition-transform" />
+          <div class="flex flex-col">
+            <span class="font-serif text-xl tracking-wider font-bold gradient-text">LYO</span>
+            <span class="text-[10px] tracking-[0.25em] text-gray-400 uppercase -mt-1 font-semibold">Entertainment</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#about" class="text-gray-300 hover:text-brand-accent transition">Tentang Kami</a>
+          <a href="#services" class="text-gray-300 hover:text-brand-accent transition">Layanan</a>
+          <a href="#packages" class="text-gray-300 hover:text-brand-accent transition">Paket Musik</a>
+          <a href="#calculator" class="text-gray-300 hover:text-brand-accent transition">Estimasi Harga</a>
+          <a href="#gallery" class="text-gray-300 hover:text-brand-accent transition">Galeri</a>
+          <a href="#faq" class="text-gray-300 hover:text-brand-accent transition">FAQ</a>
+        </nav>
+
+        <!-- Header CTA -->
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="https://wa.me/6285727706006?text=Halo%20Lyo%20Entertainment,%20saya%20tertarik%20untuk%20konsultasi%20booking%20live%20music%20acara%20saya" target="_blank" rel="noopener noreferrer" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-bold rounded-full group bg-gradient-to-br from-brand-gold to-yellow-600 group-hover:from-yellow-400 group-hover:to-brand-gold text-black shadow-lg shadow-brand-gold/20 hover:shadow-brand-gold/40 transition-all">
+            <span class="px-5 py-2.5 transition-all ease-in duration-75 bg-brand-gold rounded-full flex items-center gap-2 group-hover:bg-transparent font-bold">
+              <i class="fa-brands fa-whatsapp text-base"></i>
+              Konsultasi Sherly
+            </span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobileMenuBtn" class="text-gray-300 hover:text-brand-gold focus:outline-none p-2" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-brand-darkCard/95 border-b border-brand-darkBorder px-6 py-6 space-y-4 backdrop-blur-xl">
+      <a href="#about" class="block text-gray-300 hover:text-brand-gold font-medium py-1">Tentang Kami</a>
+      <a href="#services" class="block text-gray-300 hover:text-brand-gold font-medium py-1">Layanan</a>
+      <a href="#packages" class="block text-gray-300 hover:text-brand-gold font-medium py-1">Paket Musik</a>
+      <a href="#calculator" class="block text-gray-300 hover:text-brand-gold font-medium py-1">Estimasi Harga</a>
+      <a href="#gallery" class="block text-gray-300 hover:text-brand-gold font-medium py-1">Galeri</a>
+      <a href="#faq" class="block text-gray-300 hover:text-brand-gold font-medium py-1">FAQ</a>
+      <div class="pt-4 border-t border-gray-800">
+        <a href="https://wa.me/6285727706006?text=Halo%20Lyo%20Entertainment,%20saya%20ingin%20info%20booking%20live%20music" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-brand-gold text-black font-bold shadow-md">
+          <i class="fa-brands fa-whatsapp text-lg"></i> Hubungi via WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden flex items-center min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-up" data-aos-duration="1000">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-gold/40 bg-brand-gold/10 text-brand-accent text-xs font-semibold tracking-wide uppercase">
+            <i class="fa-solid fa-music text-xs"></i>
+            Professional Wedding & Event Band • Kudus & Sekitarnya
+          </div>
+          
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+            Harmoni Elegan untuk <br class="hidden sm:inline" />
+            <span class="gradient-text font-serif italic">Momen Terindah</span> Hidup Anda.
+          </h1>
+          
+          <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+            Menghadirkan alunan musik berkelas dengan aransemen memikat. Siap menyempurnakan hari bahagia Pernikahan, Engagement, hingga Corporate Gathering Anda di Kudus, Pati, Semarang, dan sekitarnya.
+          </p>
+
+          <!-- Badges / Highlights -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-sm text-gray-300">
+            <span class="flex items-center gap-2 bg-brand-darkCard/80 border border-brand-darkBorder px-3.5 py-2 rounded-xl">
+              <i class="fa-solid fa-star text-brand-gold"></i> Premium Sound Quality
+            </span>
+            <span class="flex items-center gap-2 bg-brand-darkCard/80 border border-brand-darkBorder px-3.5 py-2 rounded-xl">
+              <i class="fa-solid fa-compact-disc text-brand-gold"></i> All Genre Mastery
+            </span>
+            <span class="flex items-center gap-2 bg-brand-darkCard/80 border border-brand-darkBorder px-3.5 py-2 rounded-xl">
+              <i class="fa-solid fa-heart text-brand-gold"></i> Custom Song Request
+            </span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="https://wa.me/6285727706006?text=Halo%20Sherly%20Lyo%20Entertainment,%20saya%20ingin%20tanya%20pricelist%20dan%20ketersediaan%20jadwal%20acara" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-yellow-400 via-brand-gold to-yellow-600 text-black font-extrabold text-base shadow-xl shadow-brand-gold/25 hover:shadow-brand-gold/50 hover:scale-[1.02] transition-all transform duration-200">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              Tanya Pricelist & Booking
+            </a>
+            <a href="#packages" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border border-brand-gold/30 hover:border-brand-gold bg-brand-darkCard/60 hover:bg-brand-darkCard text-white font-semibold transition-all">
+              <i class="fa-solid fa-sliders text-brand-gold"></i>
+              Lihat Format Paket
+            </a>
+          </div>
+
+          <!-- Social Proof -->
+          <div class="pt-6 border-t border-brand-darkBorder flex items-center justify-center lg:justify-start gap-6 text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-white text-base">150+</span> Event Sukses
+            </div>
+            <div class="h-4 w-px bg-gray-700"></div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-white text-base">5.0★</span> Kepuasan Klien & WO
+            </div>
+            <div class="h-4 w-px bg-gray-700"></div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-brand-gold"></i> Base: Kudus, Jawa Tengah
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual / Interactive Media Card -->
+        <div class="lg:col-span-5 relative" data-aos="fade-left" data-aos-duration="1000">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Glow Backing -->
+            <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold via-amber-500 to-yellow-300 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+            
+            <div class="relative glass-card rounded-3xl p-4 overflow-hidden border border-brand-gold/30">
+              <!-- Feature Banner Image -->
+              <div class="relative h-64 sm:h-72 rounded-2xl overflow-hidden mb-4 bg-zinc-900 group">
+                <img src="van-banner.jpg" alt="Lyo and The Band Tour Van" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+                <span class="absolute bottom-3 left-3 bg-black/70 backdrop-blur-md border border-brand-gold/40 text-brand-gold px-3 py-1 rounded-full text-xs font-semibold">
+                  <i class="fa-solid fa-van-shuttle mr-1"></i> Lyo & The Band On Tour
+                </span>
+              </div>
+
+              <!-- Mini Music Player Simulation widget -->
+              <div class="bg-brand-dark/90 rounded-2xl p-4 border border-brand-darkBorder">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold">
+                      <i class="fa-solid fa-music text-base"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-bold text-white">Romantic Acoustic & Full Band Set</h4>
+                      <p class="text-xs text-gray-400">Wedding & Gathering Repertoire</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] px-2 py-1 rounded bg-brand-gold/20 text-brand-gold font-bold">LIVE REPERTOIRE</span>
+                </div>
+
+                <!-- Fake progress bar & controls -->
+                <div class="w-full bg-gray-800 rounded-full h-1.5 mb-3 overflow-hidden">
+                  <div class="bg-brand-gold h-1.5 rounded-full w-3/4"></div>
+                </div>
+
+                <div class="flex items-center justify-between text-xs text-gray-400">
+                  <div class="flex gap-3">
+                    <button class="hover:text-white"><i class="fa-solid fa-backward-step"></i></button>
+                    <button class="text-brand-gold hover:text-white font-bold"><i class="fa-solid fa-circle-play text-xl"></i></button>
+                    <button class="hover:text-white"><i class="fa-solid fa-forward-step"></i></button>
+                  </div>
+                  <span class="italic text-[11px] text-gray-300">"Can't Help Falling in Love / Perfect"</span>
+                </div>
+              </div>
+
+              <!-- Quick Booking Notice -->
+              <div class="mt-4 pt-3 border-t border-brand-darkBorder flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2 text-emerald-400 font-medium">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  Booking Open: Jadwal 2026/2027
+                </div>
+                <a href="https://instagram.com/lyo.ent" target="_blank" class="text-gray-400 hover:text-brand-gold flex items-center gap-1">
+                  <i class="fa-brands fa-instagram"></i> @lyo.ent
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT & PHILOSOPHY SECTION -->
+  <section id="about" class="py-20 relative bg-brand-dark/50 border-y border-brand-darkBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Logo & visual aesthetic -->
+        <div class="lg:col-span-5 flex justify-center" data-aos="zoom-in">
+          <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-2 bg-gradient-to-tr from-brand-gold via-amber-200 to-transparent shadow-2xl shadow-brand-gold/10">
+            <div class="w-full h-full rounded-full overflow-hidden bg-brand-darkCard flex items-center justify-center p-6 border-2 border-brand-gold/50">
+              <img src="logo.jpg" alt="Lyo Entertainment Gold Seal" class="w-full h-full object-contain rounded-full shadow-inner hover:rotate-6 transition-transform duration-500" />
+            </div>
+            <!-- Floating badge -->
+            <div class="absolute -bottom-2 right-4 bg-brand-darkCard border border-brand-gold text-white px-4 py-2 rounded-2xl shadow-xl flex items-center gap-2">
+              <i class="fa-solid fa-award text-brand-gold text-lg"></i>
+              <div>
+                <p class="text-[10px] text-gray-400 uppercase font-semibold">Reputasi Vendor</p>
+                <p class="text-xs font-bold text-brand-gold">Terpercaya di Kudus</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Story & Value proposition -->
+        <div class="lg:col-span-7 space-y-6" data-aos="fade-up">
+          <div class="inline-flex items-center gap-2 text-brand-accent text-xs font-bold tracking-widest uppercase">
+            <span class="w-8 h-0.5 bg-brand-gold"></span>
+            Tentang Lyo Entertainment
+          </div>
+          
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold leading-snug">
+            Membawa Suasana Magis Melalui Musik yang <span class="gradient-text">Hidup & Berjiwa</span>.
+          </h2>
+
+          <p class="text-gray-300 leading-relaxed">
+            Berawal dari kota Kudus, <strong>Lyo Entertainment</strong> (dikenal juga dengan <em>Lyo and The Band</em>) didirikan dengan satu visi: menyajikan hiburan musik live yang tidak sekadar mengiringi, melainkan menghidupkan setiap emosi dalam pesta pernikahan dan perayaan istimewa Anda.
+          </p>
+
+          <p class="text-gray-400 leading-relaxed text-sm">
+            Kami mengombinasikan vokal berkarakter, musisi berpengalaman, tata audio profesional, dan sinkronisasi yang mulus dengan <em>rundown Wedding Organizer (WO)</em>. Dari lagu jazz klasik, pop romantis masa kini, ballad emosional, hingga upbeat song untuk after party yang energik.
+          </p>
+
+          <!-- 3 Pillars Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <div class="p-4 rounded-2xl bg-brand-darkCard border border-brand-darkBorder">
+              <i class="fa-solid fa-sliders text-brand-gold text-2xl mb-2"></i>
+              <h4 class="font-bold text-white text-sm mb-1">Fleksibel & Dinamis</h4>
+              <p class="text-xs text-gray-400">Pilihan format dari Solo, Akustik, Full Band hingga Mini Chamber.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-brand-darkCard border border-brand-darkBorder">
+              <i class="fa-solid fa-handshake-angle text-brand-gold text-2xl mb-2"></i>
+              <h4 class="font-bold text-white text-sm mb-1">WO Synergy</h4>
+              <p class="text-xs text-gray-400">Kolaborasi kompak dengan WO, MC, dan venue untuk rundown yang rapi.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-brand-darkCard border border-brand-darkBorder">
+              <i class="fa-solid fa-music text-brand-gold text-2xl mb-2"></i>
+              <h4 class="font-bold text-white text-sm mb-1">Lagu Kustom</h4>
+              <p class="text-xs text-gray-400">Request lagu sakral saat entrance mempelai, first dance, atau cake cutting.</p>
+            </div>
+          </div>
+
+          <!-- Contact Coordinator Info -->
+          <div class="p-4 rounded-2xl bg-gradient-to-r from-brand-darkCard to-brand-dark border border-brand-gold/20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center">
+                <i class="fa-solid fa-headset text-lg"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400">Contact & Management Liaison:</p>
+                <p class="text-sm font-bold text-white">Sherly (+62 857-2770-6006)</p>
+              </div>
+            </div>
+            <a href="https://wa.me/6285727706006" target="_blank" class="text-xs font-bold text-brand-gold hover:underline flex items-center gap-1">
+              Chat Sekarang <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT SERVICES SECTION -->
+  <section id="services" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-brand-accent text-xs font-bold tracking-widest uppercase mb-2 block">Layanan Kami</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">
+          Solusi Musik untuk <span class="gradient-text">Segala Suasana</span>
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base">
+          Kami siap menyesuaikan aransemen musik dan susunan pemain sesuai nuansa acara yang Anda impikan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Service 1: Wedding Reception -->
+        <div class="glass-card rounded-3xl p-8 transition duration-300 relative group" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:bg-brand-gold group-hover:text-black transition-all">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white mb-3">Wedding Reception & Akad</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Menciptakan nuansa sakral saat ijab kabul/pemberkatan dan suasana romantis, megah serta hangat sepanjang resepsi pernikahan.
+          </p>
+          <ul class="space-y-2.5 text-xs text-gray-300 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Special Entrance Wedding March</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Romantic Dinner & Mingling Music</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> First Dance & Toast Melody</li>
+          </ul>
+          <a href="https://wa.me/6285727706006?text=Halo%20Lyo%20Entertainment,%20saya%20ingin%20tanya%20layanan%20Wedding%20Music" target="_blank" class="text-xs font-bold text-brand-gold hover:text-yellow-300 flex items-center gap-1.5">
+            Konsultasikan Wedding <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- Service 2: Engagement & Intimate Gathering -->
+        <div class="glass-card rounded-3xl p-8 transition duration-300 relative group border-brand-gold/40 shadow-xl" data-aos="fade-up" data-aos-delay="200">
+          <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-yellow-400 to-brand-gold text-black text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+            Most Popular
+          </div>
+          <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:bg-brand-gold group-hover:text-black transition-all">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white mb-3">Engagement & Lamaran</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Format akustik manis yang pas untuk suasana intimate keluarga, mempererat kehangatan momen lamaran dan pertunangan.
+          </p>
+          <ul class="space-y-2.5 text-xs text-gray-300 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Akustik Halus & Tidak Bising</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Harmoni Vokal Duet / Solo</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Interaksi Hangat Bersama Keluarga</li>
+          </ul>
+          <a href="https://wa.me/6285727706006?text=Halo%20Lyo%20Entertainment,%20saya%20ingin%20tanya%20layanan%20Engagement%20Music" target="_blank" class="text-xs font-bold text-brand-gold hover:text-yellow-300 flex items-center gap-1.5">
+            Konsultasikan Lamaran <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- Service 3: Corporate & Gala Gathering -->
+        <div class="glass-card rounded-3xl p-8 transition duration-300 relative group" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:bg-brand-gold group-hover:text-black transition-all">
+            <i class="fa-solid fa-champagne-glasses"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white mb-3">Corporate & Birthday Gala</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Pesta ulang tahun, company anniversary, gala dinner, hingga festival dengan repertoar lagu hits yang membakar semangat audiens.
+          </p>
+          <ul class="space-y-2.5 text-xs text-gray-300 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Full Band High Energy Performance</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Sing Along Hits 80s, 90s, & Top 40</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Adaptable Stage Setup</li>
+          </ul>
+          <a href="https://wa.me/6285727706006?text=Halo%20Lyo%20Entertainment,%20saya%20ingin%20tanya%20layanan%20Corporate%20Gathering" target="_blank" class="text-xs font-bold text-brand-gold hover:text-yellow-300 flex items-center gap-1.5">
+            Konsultasikan Gathering <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BAND PACKAGES FORMAT SECTION -->
+  <section id="packages" class="py-24 bg-brand-darkCard/40 border-t border-brand-darkBorder relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-brand-accent text-xs font-bold tracking-widest uppercase mb-2 block">Pilihan Formasi</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">
+          Pilihan Format <span class="gradient-text">Live Performance</span>
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base">
+          Sesuaikan format pemain dengan ukuran venue, jumlah tamu, dan konsep estetika acara Anda.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Tier 1: Acoustic Intimate -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-brand-darkBorder hover:border-brand-gold/40 transition" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Pilihan Intimate</div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2">Acoustic Trio / Quartet</h3>
+            <p class="text-gray-400 text-xs mb-6">Cocok untuk acara lamaran, sangjit, intimate wedding, atau dinner santai.</p>
+            
+            <div class="p-4 rounded-2xl bg-brand-dark mb-6 border border-brand-darkBorder">
+              <span class="text-xs text-gray-400 block mb-1">Formasi Pemain:</span>
+              <span class="text-sm font-bold text-brand-gold block">1-2 Vocalist + Acoustic Guitar + Keyboard / Cajon</span>
+            </div>
+
+            <div class="space-y-3 text-xs text-gray-300 mb-8">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> Suara akustik lembut & tidak bising
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> Repertoar Pop, Jazz, Bossa, Ballad
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> Durasi perform 2-3 jam fleksibel
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> Termasuk koordinasi lagu khusus
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/6285727706006?text=Halo%20Sherly,%20saya%20tertarik%20dengan%20Paket%20Acoustic%20Lyo%20Entertainment" target="_blank" class="w-full text-center py-3.5 px-4 rounded-xl border border-brand-gold/50 hover:bg-brand-gold hover:text-black text-brand-gold font-bold text-xs transition duration-200">
+            Tanya Harga Paket Akustik
+          </a>
+        </div>
+
+        <!-- Tier 2: Signature Full Band (Featured) -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-brand-gold shadow-2xl shadow-brand-gold/10 relative transform md:-translate-y-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-yellow-400 via-brand-gold to-yellow-600 text-black font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+            ★ Rekomendasi Utama
+          </div>
+
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-2 mt-2">Wedding Reception Star</div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2">Signature Full Band</h3>
+            <p class="text-gray-300 text-xs mb-6">Format paling lengkap untuk pesta ballroom, gedung serbaguna, dan resepsi megah.</p>
+            
+            <div class="p-4 rounded-2xl bg-brand-dark mb-6 border border-brand-gold/30">
+              <span class="text-xs text-gray-400 block mb-1">Formasi Pemain:</span>
+              <span class="text-sm font-bold text-brand-accent block">Male & Female Vocal + Keyboard + Bass + Guitar + Drum / Percussion + Saxophone</span>
+            </div>
+
+            <div class="space-y-3 text-xs text-gray-300 mb-8">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> Live arrangement spektakuler
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> Duet romantis & energik
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> Free request opening entrance & ritual
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> Pilihan include Sound System & Lighting
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/6285727706006?text=Halo%20Sherly,%20saya%20ingin%20tanya%20penawaran%20Signature%20Full%20Band%20Lyo%20Entertainment" target="_blank" class="w-full text-center py-3.5 px-4 rounded-xl bg-gradient-to-r from-yellow-400 via-brand-gold to-yellow-600 text-black font-extrabold text-xs shadow-lg shadow-brand-gold/30 hover:scale-105 transition duration-200">
+            Dapatkan Penawaran Signature
+          </a>
+        </div>
+
+        <!-- Tier 3: Chamber / All-in Luxury -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-brand-darkBorder hover:border-brand-gold/40 transition" data-aos="fade-up" data-aos-delay="300">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Grand Luxury</div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2">Mini Chamber & Royal Set</h3>
+            <p class="text-gray-400 text-xs mb-6">Aransemen megah dengan instrumen string (biola/cello) untuk kemewahan paripurna.</p>
+            
+            <div class="p-4 rounded-2xl bg-brand-dark mb-6 border border-brand-darkBorder">
+              <span class="text-xs text-gray-400 block mb-1">Formasi Pemain:</span>
+              <span class="text-sm font-bold text-brand-gold block">Full Band + Violin / Cello Section + Guest Singers</span>
+            </div>
+
+            <div class="space-y-3 text-xs text-gray-300 mb-8">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> Nuansa orkestra mini yang sangat mewah
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> Sangat cocok untuk Grand Ballroom
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> Aransemen lagu khusus dibuat custom
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-brand-gold"></i> VIP Event Service & MC Collaboration
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/6285727706006?text=Halo%20Sherly,%20saya%20ingin%20tanya%20paket%20Royal%20Mini%20Chamber%20Lyo%20Entertainment" target="_blank" class="w-full text-center py-3.5 px-4 rounded-xl border border-brand-gold/50 hover:bg-brand-gold hover:text-black text-brand-gold font-bold text-xs transition duration-200">
+            Tanya Paket Royal Chamber
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Notice regarding custom request -->
+      <div class="mt-12 text-center p-6 rounded-2xl glass-card max-w-2xl mx-auto border border-brand-gold/20">
+        <p class="text-xs text-gray-300">
+          <i class="fa-solid fa-circle-info text-brand-gold mr-1.5"></i>
+          Punya susunan instrumen impian sendiri (misal: penambahan Saxophone Solo, Sound System Paket Besar, MC Partner)? Kami dapat menyesuaikan kebutuhan spesifik Anda!
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BOOKING ESTIMATOR / CALCULATOR -->
+  <section id="calculator" class="py-24 relative bg-brand-dark/70">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12" data-aos="fade-up">
+        <span class="text-brand-accent text-xs font-bold tracking-widest uppercase mb-2 block">Kalkulator Interaktif</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-3">
+          Simulasi Estimasi & <span class="gradient-text">Kebutuhan Acara</span>
+        </h2>
+        <p class="text-gray-400 text-sm">
+          Pilih preferensi acara Anda untuk membuat draf pesanan langsung ke WhatsApp admin Sherly.
+        </p>
+      </div>
+
+      <!-- Calculator Card -->
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-brand-gold/30 shadow-2xl" data-aos="fade-up">
+        <form id="calcForm" class="space-y-6" onsubmit="event.preventDefault(); sendCustomQuote();">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Nama Pemesan -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Nama Anda</label>
+              <input type="text" id="clientName" placeholder="Contoh: Rian & Amanda" required class="w-full bg-brand-dark border border-brand-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition" />
+            </div>
+
+            <!-- Tanggal Acara -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Perkiraan Tanggal Acara</label>
+              <input type="date" id="eventDate" required class="w-full bg-brand-dark border border-brand-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Jenis Acara -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Jenis Acara</label>
+              <select id="eventType" class="w-full bg-brand-dark border border-brand-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition">
+                <option value="Wedding Reception">Wedding Reception (Resepsi Pernikahan)</option>
+                <option value="Akad / Holy Matrimony">Akad Nikah / Pemberkatan</option>
+                <option value="Engagement / Lamaran">Engagement / Acara Lamaran</option>
+                <option value="Corporate Gathering / Gala Dinner">Corporate Gathering / Gala Dinner</option>
+                <option value="Birthday Party / Anniversary">Birthday Party / Anniversary</option>
+              </select>
+            </div>
+
+            <!-- Kota / Lokasi -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Lokasi / Kota Venue</label>
+              <select id="eventCity" class="w-full bg-brand-dark border border-brand-darkBorder rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition">
+                <option value="Kudus">Kudus (Kota)</option>
+                <option value="Pati">Pati</option>
+                <option value="Jepara">Jepara</option>
+                <option value="Semarang">Semarang</option>
+                <option value="Demak / Grobogan">Demak / Purwodadi</option>
+                <option value="Lainnya (Luar Kota)">Kota Lainnya</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Format Formasi Pilihan -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Pilihan Format Musik</label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-brand-darkBorder bg-brand-dark cursor-pointer hover:border-brand-gold/50 has-[:checked]:border-brand-gold has-[:checked]:bg-brand-gold/10">
+                <input type="radio" name="bandFormat" value="Acoustic Trio/Quartet" checked class="text-brand-gold focus:ring-0" />
+                <div class="text-xs">
+                  <span class="font-bold text-white block">Acoustic Set</span>
+                  <span class="text-gray-400">Trio / Quartet</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-brand-darkBorder bg-brand-dark cursor-pointer hover:border-brand-gold/50 has-[:checked]:border-brand-gold has-[:checked]:bg-brand-gold/10">
+                <input type="radio" name="bandFormat" value="Signature Full Band" class="text-brand-gold focus:ring-0" />
+                <div class="text-xs">
+                  <span class="font-bold text-white block">Signature Full Band</span>
+                  <span class="text-gray-400">Paling Favorit</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-brand-darkBorder bg-brand-dark cursor-pointer hover:border-brand-gold/50 has-[:checked]:border-brand-gold has-[:checked]:bg-brand-gold/10">
+                <input type="radio" name="bandFormat" value="Chamber / Royal Set" class="text-brand-gold focus:ring-0" />
+                <div class="text-xs">
+                  <span class="font-bold text-white block">Royal Chamber</span>
+                  <span class="text-gray-400">+ Violin / Saxophone</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Tambahan Layanan -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Kebutuhan Tambahan (Opsional)</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <label class="flex items-center gap-2 p-3 bg-brand-dark rounded-xl border border-brand-darkBorder cursor-pointer">
+                <input type="checkbox" id="addSound" class="rounded text-brand-gold focus:ring-0" />
+                <span>Termasuk Sound System Paket Event</span>
+              </label>
+              <label class="flex items-center gap-2 p-3 bg-brand-dark rounded-xl border border-brand-darkBorder cursor-pointer">
+                <input type="checkbox" id="addMC" class="rounded text-brand-gold focus:ring-0" />
+                <span>Rekomendasi / Paket MC Wedding</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-4">
+            <button type="submit" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-yellow-400 via-brand-gold to-yellow-600 text-black font-extrabold text-base flex items-center justify-center gap-3 shadow-xl shadow-brand-gold/30 hover:shadow-brand-gold/50 hover:scale-[1.01] transition-all">
+              <i class="fa-brands fa-whatsapp text-2xl"></i>
+              Kirim Rincian Acara ke WhatsApp (Sherly - 085727706006)
+            </button>
+            <p class="text-center text-[11px] text-gray-400 mt-2">
+              *Format pesan akan otomatis terisi rapi saat membuka WhatsApp.
+            </p>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY & REPERTOIRE SECTION -->
+  <section id="gallery" class="py-24 relative border-t border-brand-darkBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-brand-accent text-xs font-bold tracking-widest uppercase mb-2 block">Dokumentasi & Galeri</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold">
+            Kilas Momen & <span class="gradient-text">Aksi Panggung</span>
+          </h2>
+        </div>
+        <a href="https://instagram.com/lyo.ent" target="_blank" class="inline-flex items-center gap-2 text-sm text-brand-gold hover:underline font-semibold">
+          <i class="fa-brands fa-instagram text-lg"></i> Follow @lyo.ent di Instagram <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+        </a>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Gallery Item 1 -->
+        <div class="glass-card rounded-3xl overflow-hidden group relative" data-aos="zoom-in" data-aos-delay="100">
+          <div class="h-64 overflow-hidden relative">
+            <img src="van-banner.jpg" alt="Lyo and The Band Live Tour" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-80"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-[10px] uppercase font-bold text-brand-gold bg-black/60 px-2.5 py-1 rounded-full backdrop-blur-md">Tour Fleet</span>
+              <h4 class="text-base font-bold text-white mt-1">Lyo and The Band Tour Van</h4>
+              <p class="text-xs text-gray-300">Siap melayani event di seluruh Jawa Tengah & sekitarnya</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 2 -->
+        <div class="glass-card rounded-3xl overflow-hidden group relative" data-aos="zoom-in" data-aos-delay="200">
+          <div class="h-64 overflow-hidden relative bg-gradient-to-br from-zinc-800 to-zinc-950 flex items-center justify-center p-6 text-center">
+            <div class="space-y-3">
+              <div class="w-16 h-16 rounded-full bg-brand-gold/10 border border-brand-gold/30 mx-auto flex items-center justify-center text-brand-gold text-2xl group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-compact-disc"></i>
+              </div>
+              <h4 class="text-base font-bold text-white">Repertoire Multigenre</h4>
+              <p class="text-xs text-gray-400">Pop, Jazz, Rock Classic, R&B, Dangdut Acoustic, Indie & Mandarin Hits</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 3 -->
+        <div class="glass-card rounded-3xl overflow-hidden group relative" data-aos="zoom-in" data-aos-delay="300">
+          <div class="h-64 overflow-hidden relative bg-gradient-to-tr from-amber-950/40 via-zinc-900 to-zinc-950 flex flex-col justify-between p-6">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-brand-gold font-bold"><i class="fa-solid fa-music mr-1"></i> Live Set</span>
+              <i class="fa-brands fa-facebook text-gray-400 text-lg"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white mb-1">Vokal Harmonis Berkelas</h4>
+              <p class="text-xs text-gray-400">Harmoni vokal pria dan wanita yang memukau dan menyentuh hati para tamu undangan.</p>
+            </div>
+            <a href="https://web.facebook.com/photo/?fbid=827812686020523&set=a.501683511966777" target="_blank" class="text-xs text-brand-gold font-bold hover:underline flex items-center gap-1">
+              Lihat di Facebook <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Genres Badges -->
+      <div class="mt-12 p-8 glass-card rounded-3xl border border-brand-darkBorder text-center">
+        <h3 class="text-sm font-bold uppercase tracking-widest text-brand-gold mb-6">Genre & Aliran Musik yang Kami Kuasai</h3>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <span class="px-4 py-2 rounded-xl bg-brand-dark border border-brand-darkBorder text-xs text-gray-300 font-medium">Romantic Pop</span>
+          <span class="px-4 py-2 rounded-xl bg-brand-dark border border-brand-darkBorder text-xs text-gray-300 font-medium">Smooth Jazz & Bossa Nova</span>
+          <span class="px-4 py-2 rounded-xl bg-brand-dark border border-brand-darkBorder text-xs text-gray-300 font-medium">Indonesian Evergreens (90s - Now)</span>
+          <span class="px-4 py-2 rounded-xl bg-brand-dark border border-brand-darkBorder text-xs text-gray-300 font-medium">Western Billboard Top 40</span>
+          <span class="px-4 py-2 rounded-xl bg-brand-dark border border-brand-darkBorder text-xs text-gray-300 font-medium">Mandarin Love Songs</span>
+          <span class="px-4 py-2 rounded-xl bg-brand-dark border border-brand-darkBorder text-xs text-gray-300 font-medium">Acoustic Dangdut & Campursari Hits</span>
+          <span class="px-4 py-2 rounded-xl bg-brand-dark border border-brand-darkBorder text-xs text-gray-300 font-medium">Rock Ballad & Sing Along Party</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS & WO PARTNERS -->
+  <section class="py-24 relative bg-brand-dark/40 border-t border-brand-darkBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-brand-accent text-xs font-bold tracking-widest uppercase mb-2 block">Kata Klien Kami</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">
+          Dipercaya Pengantin & <span class="gradient-text">Wedding Organizer</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="flex text-brand-gold text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs text-gray-300 italic leading-relaxed mb-6">
+              "Lyo Entertainment bener-bener bikin resepsi kami di Kudus terasa hidup banget! Suara vokalisnya merdu, pas entrance pengantin aransemennya bikin merinding haru. Thank you Kak Sherly dan tim!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-darkBorder">
+            <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center font-bold text-xs text-brand-gold">
+              DA
+            </div>
+            <div>
+              <h5 class="text-xs font-bold text-white">Dian & Arya</h5>
+              <p class="text-[10px] text-gray-400">Wedding di Kudus</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between border-brand-gold/30" data-aos="fade-up" data-aos-delay="200">
+          <div>
+            <div class="flex text-brand-gold text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs text-gray-300 italic leading-relaxed mb-6">
+              "Sebagai WO, kami seneng banget koordinasi sama Lyo Entertainment. Selalu on time, rundown ditaati dengan tertib, dan mampu membaca mood audiens pas jeda makan maupun acara sakral."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-darkBorder">
+            <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center font-bold text-xs text-brand-gold">
+              WO
+            </div>
+            <div>
+              <h5 class="text-xs font-bold text-white">Partner Wedding Organizer</h5>
+              <p class="text-[10px] text-gray-400">Kudus & Pati Region</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+          <div>
+            <div class="flex text-brand-gold text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs text-gray-300 italic leading-relaxed mb-6">
+              "Paket akustiknya pas lamaran kemaren sangat intimate! Gak terlalu keras jadi tamu tetep enak ngobrol, tapi lagunya enak-enak semua. Recommended banget!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-darkBorder">
+            <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center font-bold text-xs text-brand-gold">
+              FR
+            </div>
+            <div>
+              <h5 class="text-xs font-bold text-white">Fajar & Rina</h5>
+              <p class="text-[10px] text-gray-400">Engagement Party</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="py-24 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="text-brand-accent text-xs font-bold tracking-widest uppercase mb-2 block">Pertanyaan Umum</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-3">
+          Frequently Asked <span class="gradient-text">Questions</span>
+        </h2>
+        <p class="text-gray-400 text-sm">Semua hal yang sering ditanyakan seputar booking dan teknis penampilan.</p>
+      </div>
+
+      <div class="space-y-4" data-aos="fade-up">
+        
+        <details class="glass-card rounded-2xl p-5 group border border-brand-darkBorder open:border-brand-gold/40">
+          <summary class="flex justify-between items-center font-bold text-sm text-white cursor-pointer list-none">
+            <span>Berapa jauh area jangkauan Lyo Entertainment?</span>
+            <i class="fa-solid fa-chevron-down text-brand-gold text-xs group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs text-gray-300 mt-3 leading-relaxed">
+            Basis utama kami berada di Kudus, Jawa Tengah. Namun kami sering dan sangat siap mengisi acara di seluruh wilayah sekitarnya seperti Pati, Jepara, Demak, Grobogan/Purwodadi, Semarang, Salatiga, Solo, hingga luar provinsi.
+          </p>
+        </details>
+
+        <details class="glass-card rounded-2xl p-5 group border border-brand-darkBorder open:border-brand-gold/40">
+          <summary class="flex justify-between items-center font-bold text-sm text-white cursor-pointer list-none">
+            <span>Apakah pengantin bisa request lagu khusus?</span>
+            <i class="fa-solid fa-chevron-down text-brand-gold text-xs group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs text-gray-300 mt-3 leading-relaxed">
+            Tentu saja! Anda dapat merequest lagu favorit khusus untuk prosesi sakral seperti Bride Entrance, Wedding Dance, Lempar Buket, hingga lagu kenangan cinta Anda dan pasangan.
+          </p>
+        </details>
+
+        <details class="glass-card rounded-2xl p-5 group border border-brand-darkBorder open:border-brand-gold/40">
+          <summary class="flex justify-between items-center font-bold text-sm text-white cursor-pointer list-none">
+            <span>Berapa lama durasi penampilan Lyo Entertainment dalam sebuah acara?</span>
+            <i class="fa-solid fa-chevron-down text-brand-gold text-xs group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs text-gray-300 mt-3 leading-relaxed">
+            Standar durasi penampilan resepsi adalah 2 hingga 3 jam sesuai dengan rundown acara Anda. Kami juga dapat menyesuaikan jika ada prosesi akad sebelum resepsi atau after party tambahan.
+          </p>
+        </details>
+
+        <details class="glass-card rounded-2xl p-5 group border border-brand-darkBorder open:border-brand-gold/40">
+          <summary class="flex justify-between items-center font-bold text-sm text-white cursor-pointer list-none">
+            <span>Bagaimana cara booking dan pembayaran?</span>
+            <i class="fa-solid fa-chevron-down text-brand-gold text-xs group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs text-gray-300 mt-3 leading-relaxed">
+            Cukup hubungi Sherly via WhatsApp di nomor 0857-2770-6006 untuk mengecek ketersediaan tanggal. Setelah tanggal dikonfirmasi aman, pembayaran DP (Down Payment) dapat dilakukan untuk mengunci jadwal acara Anda.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="rounded-3xl p-8 sm:p-14 bg-gradient-to-b from-brand-darkCard to-black border-2 border-brand-gold/40 text-center relative overflow-hidden shadow-2xl shadow-brand-gold/20" data-aos="zoom-in">
+        
+        <!-- Glow accents -->
+        <div class="absolute -top-24 -left-24 w-64 h-64 bg-brand-gold/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-gold/20 rounded-full blur-3xl"></div>
+
+        <img src="logo.jpg" alt="Lyo Logo" class="w-20 h-20 rounded-full mx-auto mb-6 border-2 border-brand-gold shadow-lg" />
+
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4 text-white">
+          Wujudkan Momen Pernikahan Impian Bersama <span class="gradient-text">Lyo Entertainment</span>
+        </h2>
+        <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 font-light">
+          Jadwal tanggal baik cepat terisi! Jangan biarkan hari istimewa Anda terlewat tanpa alunan harmoni terbaik. Konsultasikan tanggal dan format musik Anda sekarang.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://wa.me/6285727706006?text=Halo%20Sherly%20Lyo%20Entertainment,%20saya%20ingin%20booking%20live%20music%20untuk%20acara%20saya" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-yellow-400 via-brand-gold to-yellow-600 text-black font-extrabold text-base shadow-2xl shadow-brand-gold/40 hover:scale-105 transition-all">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            Chat WhatsApp: 085727706006 (Sherly)
+          </a>
+          <a href="https://instagram.com/lyo.ent" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl border border-gray-700 bg-brand-dark/80 hover:bg-brand-dark hover:border-brand-gold text-white font-semibold text-sm transition">
+            <i class="fa-brands fa-instagram text-lg"></i>
+            Instagram @lyo.ent
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black border-t border-brand-darkBorder py-12 text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        
+        <!-- Col 1: Brand -->
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center gap-3">
+            <img src="logo.jpg" alt="Lyo Logo" class="w-10 h-10 rounded-full border border-brand-gold/50" />
+            <span class="font-serif text-lg font-bold gradient-text">LYO ENTERTAINMENT</span>
+          </div>
+          <p class="text-gray-400 text-xs max-w-md leading-relaxed">
+            Grup musik & vendor live entertainment profesional asal Kudus, Jawa Tengah. Melayani wedding, engagement, gathering, gala dinner, dan pertunjukan musik berkualitas tinggi.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="space-y-2">
+          <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-3">Navigasi Cepat</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="hover:text-brand-gold transition">Tentang Kami</a></li>
+            <li><a href="#services" class="hover:text-brand-gold transition">Layanan Acara</a></li>
+            <li><a href="#packages" class="hover:text-brand-gold transition">Paket Musik</a></li>
+            <li><a href="#calculator" class="hover:text-brand-gold transition">Kalkulator Estimasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Details -->
+        <div class="space-y-2">
+          <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-3">Kontak Resmi</h4>
+          <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-gold"></i> 0857-2770-6006 (Sherly)</p>
+          <p class="flex items-center gap-2"><i class="fa-brands fa-instagram text-brand-gold"></i> @lyo.ent</p>
+          <p class="flex items-center gap-2"><i class="fa-brands fa-facebook text-brand-gold"></i> Lyo and The Band</p>
+          <p class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-gold"></i> Kudus, Jawa Tengah</p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-gray-900 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>© 2026 Lyo Entertainment. All rights reserved.</p>
+        <p class="text-[11px] text-gray-400">Crafted with passion for memorable celebrations.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/6285727706006?text=Halo%20Sherly%20Lyo%20Entertainment,%20saya%20mau%20konsultasi%20live%20music" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-4 py-3 rounded-full shadow-2xl shadow-emerald-500/50 hover:scale-105 transition-all group" aria-label="Chat WhatsApp Sherly">
+    <i class="fa-brands fa-whatsapp text-2xl animate-bounce"></i>
+    <span class="text-xs font-bold pr-1 hidden sm:inline-block">Chat Sherly (085727706006)</span>
+  </a>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      offset: 100
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when link is clicked
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Interactive booking quote generator
+    function sendCustomQuote() {
+      const name = document.getElementById('clientName').value;
+      const date = document.getElementById('eventDate').value;
+      const type = document.getElementById('eventType').value;
+      const city = document.getElementById('eventCity').value;
+      
+      const bandFormatElem = document.querySelector('input[name="bandFormat"]:checked');
+      const bandFormat = bandFormatElem ? bandFormatElem.value : 'Acoustic Set';
+
+      const addSound = document.getElementById('addSound').checked ? 'Ya (Butuh Sound System)' : 'Tidak';
+      const addMC = document.getElementById('addMC').checked ? 'Ya (Butuh MC)' : 'Tidak';
+
+      const message = `Halo Kak Sherly (Lyo Entertainment), saya ingin konsultasi booking live music:
+
+Nama: ${name}
+Tanggal Acara: ${date}
+Jenis Acara: ${type}
+Lokasi / Kota: ${city}
+Pilihan Format: ${bandFormat}
+Paket Sound System: ${addSound}
+Paket MC: ${addMC}
+
+Mohon info ketersediaan jadwal & penawaran pricelistnya ya. Terima kasih!`;
+
+      const encoded = encodeURIComponent(message);
+      window.open(`https://wa.me/6285727706006?text=${encoded}`, '_blank');
+    }
+  </script>
+</body>
+</html>
